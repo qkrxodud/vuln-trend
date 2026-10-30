@@ -1,0 +1,74 @@
+# check-conventions.py 고정 시험의 기대 위반 목록 — "경로:줄 규칙" (경로는 이 폴더 기준).
+# 여기 없는 위반이 나오면 오탐, 여기 있는데 안 나오면 놓침이다. 둘 다 run-convention-tests.py 가 실패로 본다.
+# 규칙 이름: ctor, if-not, bean-field, bean-mutable, setter, layer, value, lambda-not, import-order, placeholder, fake-location, no-type, log-message
+
+# 규칙 1 — 생성자 직접 작성 (단위 11 개발자 시험 u11probe)
+main/java/com/vulntrend/batch/application/probe/CatchNested.java:9 ctor        # 중첩 static 클래스 private Slot(
+main/java/com/vulntrend/batch/application/probe/CatchNested.java:15 ctor       # 내부 클래스
+main/java/com/vulntrend/batch/application/probe/CatchNested.java:22 ctor       # 3단 중첩 제네릭, 여러 줄 시그니처
+main/java/com/vulntrend/batch/application/probe/CatchNested.java:34 ctor       # 중첩 enum
+main/java/com/vulntrend/batch/application/probe/CatchTopClass.java:5 ctor      # 최상위 클래스(회귀)
+main/java/com/vulntrend/batch/application/probe/CatchTopEnum.java:9 ctor       # 최상위 enum
+# 규칙 1 — 검사자 시험 g11/probe·probe2
+main/java/com/vulntrend/batch/application/probe/C1NestedStatic.java:8 ctor
+main/java/com/vulntrend/batch/application/probe/C2Inner.java:6 ctor
+main/java/com/vulntrend/batch/application/probe/C3Deep.java:8 ctor
+main/java/com/vulntrend/batch/application/probe/C4NestedEnum.java:16 ctor      # 상수 본문 A("a") { … } 가 있는 중첩 enum
+main/java/com/vulntrend/batch/application/probe/C5TopEnum.java:8 ctor
+main/java/com/vulntrend/batch/application/probe/C6AnnotatedCtor.java:6 ctor    # 애너테이션 별도 줄
+main/java/com/vulntrend/batch/application/probe/C6AnnotatedCtor.java:10 ctor   # 같은 줄 애너테이션 @Deprecated public X(
+main/java/com/vulntrend/batch/application/probe/C7OneLine.java:5 ctor          # 한 줄 선언 static class Y { Y() { } }
+main/java/com/vulntrend/batch/application/probe/C7OneLine.java:7 ctor          # 한 줄에 필드와 생성자
+main/java/com/vulntrend/batch/application/probe/C8Generic.java:7 ctor          # 최상위 제네릭 클래스
+main/java/com/vulntrend/batch/application/probe/C8Generic.java:12 ctor         # 제네릭 생성자 <U> W(
+main/java/com/vulntrend/batch/application/probe/C9AnnotatedClass.java:8 ctor   # 같은 줄 애너테이션 클래스 @Getter static class Q
+main/java/com/vulntrend/batch/application/probe/C9AnnotatedClass.java:13 ctor  # @SuppressWarnings("unused") private static final class R
+main/java/com/vulntrend/batch/application/probe/C10Local.java:7 ctor           # 지역 클래스
+main/java/com/vulntrend/batch/application/probe/C10Local.java:14 ctor          # 인터페이스 안 클래스
+main/java/com/vulntrend/batch/application/probe/C10Local.java:21 ctor          # record 안 클래스
+main/java/com/vulntrend/batch/application/probe/C11BraceInStringComment.java:12 ctor
+main/java/com/vulntrend/batch/application/probe/C12Glob.java:8 ctor            # 문자열 "/api/**" 뒤 — 토크나이저(minor 1)
+main/java/com/vulntrend/batch/application/probe/C13Url.java:8 ctor             # 문자열 "http://x" 뒤
+main/java/com/vulntrend/batch/application/probe/C14Quote.java:11 ctor          # 문자 '"' 와 이스케이프 문자열 뒤
+main/java/com/vulntrend/batch/global/error/exception/ProbeException.java:10 ctor  # 예외 파일 안 중첩 비예외 클래스(예외 생성자 자체는 허용)
+# 잡지 말 것(목록에 없음): IgnoreNested·N1Ignore(@Builder private, Lombok, new/호출/익명/람다/문자열/주석),
+#   N4Shapes(@lombok.Builder 전체 이름, 같은 이름 메서드, Inner.class, 필드 익명 클래스), IgnoreRecord·N2Record(record), N3Iface(인터페이스 메서드), test 경로 도우미, test/fake/FakeOk
+
+# 다른 규칙 회귀
+main/java/com/vulntrend/batch/application/rules/RulesBean.java:12 bean-mutable   # 3-b 허용 목록 밖 바뀌는 그릇
+main/java/com/vulntrend/batch/application/rules/RulesBean.java:13 bean-field     # 3 final 아닌 필드
+main/java/com/vulntrend/batch/application/rules/RulesBean.java:17 setter         # 4 (21줄 @Override setReadListener 는 제외)
+main/java/com/vulntrend/batch/application/rules/RulesBean.java:25 if-not         # 2 (28줄 문자열 속 "if (!x) -> !y @Value(" 는 제외)
+main/java/com/vulntrend/batch/application/rules/RulesBean.java:29 lambda-not     # 7
+main/java/com/vulntrend/batch/application/rules/ValueUser.java:1 import-order    # 8
+main/java/com/vulntrend/batch/application/rules/ValueUser.java:9 value           # 6
+main/java/com/vulntrend/batch/application/rules/ValueUser.java:12 setter         # @Setter
+main/java/com/vulntrend/batch/infrastructure/rules/LayerLeak.java:3 layer        # 5 (domain import 는 허용)
+test/java/com/vulntrend/batch/application/rules/FakeMisplaced.java:4 fake-location  # 10 (테스트 setter 는 제외)
+resources/application.yml:3 placeholder      # 기본값 있는 것·주석은 제외
+# (허용 목록 ALLOWED_STATEFUL_BEANS 는 비어 있다 — 대상이 생기면 픽스처와 함께 추가)
+# 규칙 1 — 단위 11 r1 재검사 지적(리더 보강)
+main/java/com/vulntrend/batch/application/probe/C15TopAnnotated.java:4 ctor    # 최상위 타입 같은 줄 애너테이션 — 예전엔 파일 통째로 건너뜀
+main/java/com/vulntrend/batch/application/probe/C16SealedTop.java:4 ctor       # sealed 최상위 클래스 — 예전엔 파일 통째로 건너뜀
+main/java/com/vulntrend/batch/global/error/exception/A10Box.java:4 ctor        # 타입 매개변수 경계 <E extends Exception> 는 예외 상속이 아님
+# 타입 선언을 알아보지 못한 파일 — 모든 규칙을 조용히 건너뛰지 않고 위반으로 알린다
+main/java/com/vulntrend/batch/application/probe/C17UnreadableHead.java:1 no-type
+# 규칙 11 — 프레임워크 예외 문장 로그(규칙 12 는 웹 전용이라 가져오지 않음)
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:11 log-message    # 프레임워크 예외(매개변수)
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:19 log-message    # 원인 사슬 getCause().getMessage()
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:22 log-message    # getLocalizedMessage
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:26 log-message    # 선언 타입을 못 찾은 변수 — 통과시키지 않음
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:35 log-message    # catch 의 외부 예외(final)
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:44 log-message    # 다중 catch(A | B e2)의 외부 예외
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:52 log-message    # 같은 이름 e 의 뒤쪽 선언(외부) — 먼저 나온 선언만 보면 놓침(리뷰어 지적 2026-10-30)
+# 잡지 말 것: LogProbe 15(우리 예외 매개변수)·20(마지막 인자 예외 객체 = 스택 기록)·21(로그 아님)·33(catch 의 우리 예외)·40(같은 이름 e 의 가장 가까운 앞 선언이 우리 예외)
+# 규칙 11 — 검사자 r1 재검사가 못 본다고 지적한 모양들(리더 보강 2026-10-30)
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:59 log-message    # 여러 줄 호출
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:61 log-message    # LOGGER 이름
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:62 log-message    # 예외 toString
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:63 log-message    # 호출 결과 .getMessage()
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:64 log-message    # {} 자리에 예외 객체
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:65 log-message    # fluent API
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:68 log-message    # {} 수 = 인자 수면 마지막 예외도 문장으로 찍힘
+# 잡지 말 것: LogProbe 67(StringBuilder 의 toString)
+main/java/com/vulntrend/batch/runner/rules/LogProbe.java:74 log-message    # 필드 예외 — 선언 모양이 달라 못 찾음 → 위반(닫힌 쪽, r2 검사자 신호)

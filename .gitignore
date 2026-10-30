@@ -1,0 +1,21 @@
+# 로컬 DB 볼륨·비밀 값 (기획서 4장)
+pgdata/
+.env
+
+# batch 빌드 산출물
+batch/build/
+batch/.gradle/
+.gradle/
+
+# web 빌드 산출물
+web/node_modules/
+web/dist/
+
+# 편집기·OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Playwright MCP 가 만드는 작업 폴더
+.playwright-mcp/

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+body{margin:0;background:#fff;color:#24231f;font-family:Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#4f7a6a;text-decoration:none}a:hover{text-decoration:underline}
+@keyframes vtIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.vt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vt-mobile-only{display:none}
+@media (max-width:1023px){
+  .vt-panel{display:none !important}
+  .vt-mobile-only{display:inline}
+}
+</style>
+</helmet>
+<div style="max-width:1280px;margin:0 auto;padding:28px 28px 40px;display:flex;flex-direction:column;gap:28px">
+
+  <!-- 헤더: 로고 · 검색 · 갱신 시각 (펄스·초 카운터 제거) -->
+  <header style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:28px;height:28px;border-radius:8px;background:#2f4f45;color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px">V</div>
+      <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em">VulnTrend</div>
+    </div>
+    <div style="flex:1 1 320px;max-width:520px;display:flex;align-items:center;gap:8px;background:#f6f4ef;border:1px solid #e4e0d6;border-radius:12px;padding:8px 12px" style-focus-within="border-color:#4f7a6a;background:#fff">
+      <span style="color:#8a8a8a;font-size:14px" aria-hidden="true">⌕</span>
+      <input value="{{ q }}" onInput="{{ onSearch }}" placeholder="CVE-ID 또는 제품명 검색" aria-label="CVE-ID 또는 제품명 검색" style="flex:1;border:none;background:transparent;font:inherit;font-size:14px;color:#24231f;outline:none">
+      <sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ onClearQ }}" aria-label="검색 지우기" style="font:inherit;font-size:12px;border:none;background:#eeeae2;color:#4a4a4d;border-radius:999px;padding:2px 8px;cursor:pointer">지우기</button>
+      </sc-if>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:14px;color:#77777a;white-space:nowrap">
+      <span>마지막 갱신</span>
+      <span style="color:#24231f;font-weight:600;font-variant-numeric:tabular-nums">2026-10-30 09:00</span>
+      <span>({{ agoLabel }})</span>
+    </div>
+  </header>
+
+  <!-- 36시간 초과 시 stale 배너 (prop: stale) -->
+  <sc-if value="{{ stale }}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="display:flex;align-items:center;gap:12px;background:#fbf3e4;border:1px solid #e9d4a3;color:#6b4e12;border-radius:12px;padding:12px 16px;font-size:14px;margin-top:-12px">
+      <span style="font-weight:700">⚠ 데이터가 오래됐습니다.</span>
+      <span>마지막 갱신이 36시간을 넘었습니다. 수집이 지연되고 있을 수 있으니 최신 정보는 NVD·CISA KEV 원문을 확인하세요.</span>
+    </div>
+  </sc-if>
+
+  <!-- KPI 4개: 24시간 신규 / KEV 신규 / Critical / 고위험(EPSS 0.5+) -->
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+    <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+      <button onClick="{{ k.onClick }}" aria-pressed="{{ k.pressed }}" style="text-align:left;font:inherit;color:inherit;cursor:{{ k.cursor }};background:{{ k.bg }};border:1px solid {{ k.border }};border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;transition:all .2s" style-hover="transform:translateY(-2px)">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#4a4a4d">
+          <span>{{ k.label }}</span>
+          <span style="font-size:12px;color:#8a8a8a">{{ k.hint }}</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-size:40px;font-weight:700;letter-spacing:-0.03em;color:{{ k.color }};font-variant-numeric:tabular-nums">{{ k.display }}</span>
+          <span style="font-size:13px;font-weight:600;color:#a44a38;background:#f5e6e1;padding:2px 8px;border-radius:999px">{{ k.delta }}</span>
+        </div>
+        <div style="font-size:12px;color:#8a8a8a">{{ k.sub }}</div>
+      </button>
+    </sc-for>
+  </section>
+
+  <!-- 차트: 14일 막대(달력일) + 7일 심각도 도넛(미평가 포함) -->
+  <section style="display:flex;flex-wrap:wrap;gap:32px">
+    <div style="flex:2 1 520px;min-width:0;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="font-size:17px;font-weight:600">최근 14일 일별 신규 건수</div>
+          <div style="font-size:12px;color:#8a8a8a">공개일(KST) 기준 · 매 수집마다 14일 재계산</div>
+        </div>
+        <div style="display:flex;gap:14px;font-size:13px;color:#4a4a4d">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:3px;background:#4f7a6a"></span>전체</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:3px;background:#b85c4a"></span>Critical</span>
+        </div>
+      </div>
+      <div style="position:relative;height:260px;margin-top:8px;padding-left:36px" role="img" aria-label="최근 14일 일별 신규 CVE 건수 막대 차트">
+        <sc-for list="{{ grid }}" as="g" hint-placeholder-count="5">
+          <div style="position:absolute;left:36px;right:0;bottom:calc(24px + {{ g.pct }} * (100% - 24px) / 100);border-top:1px solid #e9e5dc"></div>
+          <div style="position:absolute;left:0;width:28px;text-align:right;bottom:calc(24px + {{ g.pct }} * (100% - 24px) / 100 - 8px);font-size:12px;color:#8a8a8a">{{ g.v }}</div>
+        </sc-for>
+        <div style="position:absolute;left:36px;right:0;top:0;bottom:0;display:flex;gap:6px">
+          <sc-for list="{{ bars }}" as="b" hint-placeholder-count="14">
+            <div tabIndex="0" aria-label="{{ b.aria }}" onMouseEnter="{{ b.onEnter }}" onMouseLeave="{{ b.onLeave }}" onFocus="{{ b.onEnter }}" onBlur="{{ b.onLeave }}" style="flex:1;display:flex;flex-direction:column;align-items:center;position:relative;cursor:default;outline:none;border-radius:6px" style-focus-visible="box-shadow:0 0 0 2px #4f7a6a">
+              <div style="flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center">
+                <div style="width:68%;height:{{ b.h }}%;display:flex;flex-direction:column;border-radius:6px 6px 2px 2px;overflow:hidden;opacity:{{ b.op }};transition:opacity .15s">
+                  <div style="height:{{ b.critPct }}%;background:#b85c4a"></div>
+                  <div style="flex:1;background:#4f7a6a"></div>
+                </div>
+              </div>
+              <div style="height:24px;line-height:24px;font-size:11px;color:{{ b.labelColor }};font-weight:{{ b.labelWeight }};font-variant-numeric:tabular-nums">{{ b.d }}</div>
+              <sc-if value="{{ b.hover }}" hint-placeholder-val="{{ false }}">
+                <div role="tooltip" style="position:absolute;bottom:calc({{ b.h }}% * 0.9 + 34px);left:50%;transform:translateX(-50%);background:#24231f;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px;white-space:nowrap;z-index:2;display:flex;flex-direction:column;gap:2px;animation:vtIn .15s">
+                  <span style="color:#b9b9bd">{{ b.d }}</span>
+                  <span style="font-weight:600">신규 {{ b.v }}건</span>
+                  <span style="color:#e8a898">Critical {{ b.c }}건</span>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <div style="font-size:17px;font-weight:600">최근 7일 심각도 분포</div>
+        <div style="font-size:12px;color:#8a8a8a">CVSS 미평가(Awaiting Analysis) 포함</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <div style="position:relative;width:200px;height:200px;flex-shrink:0" role="img" aria-label="최근 7일 신규 CVE 심각도 분포 도넛 차트">
+          <svg viewBox="0 0 160 160" width="200" height="200" style="transform:rotate(-90deg)">
+            <sc-for list="{{ segs }}" as="s" hint-placeholder-count="5">
+              <circle cx="80" cy="80" r="60" fill="none" stroke="{{ s.color }}" stroke-width="{{ s.sw }}" stroke-dasharray="{{ s.dash }}" stroke-dashoffset="{{ s.offset }}" onMouseEnter="{{ s.onEnter }}" onMouseLeave="{{ s.onLeave }}" style="transition:stroke-width .2s;cursor:pointer"></circle>
+            </sc-for>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none">
+            <span style="font-size:13px;color:#77777a">{{ center.label }}</span>
+            <span style="font-size:30px;font-weight:700;letter-spacing:-0.02em">{{ center.value }}</span>
+            <span style="font-size:12px;color:#8a8a8a">{{ center.sub }}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;flex:1;min-width:120px">
+          <sc-for list="{{ segs }}" as="s" hint-placeholder-count="5">
+            <div tabIndex="0" onMouseEnter="{{ s.onEnter }}" onMouseLeave="{{ s.onLeave }}" onFocus="{{ s.onEnter }}" onBlur="{{ s.onLeave }}" style="display:flex;align-items:center;gap:8px;font-size:14px;opacity:{{ s.op }};cursor:pointer;outline:none;border-radius:6px;padding:2px 4px" style-focus-visible="box-shadow:0 0 0 2px #4f7a6a">
+              <span style="width:10px;height:10px;border-radius:3px;background:{{ s.color }}"></span>
+              <span style="flex:1">{{ s.name }}</span>
+              <span style="font-size:12px;color:#8a8a8a">{{ s.n }}건</span>
+              <span style="font-weight:600;font-variant-numeric:tabular-nums;width:40px;text-align:right">{{ s.pct }}%</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 목록 + 상세 패널 -->
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:17px;font-weight:600">지금 주목할 취약점</div>
+        <div style="font-size:13px;color:#77777a">{{ listSub }}</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-left:auto">
+        <div role="group" aria-label="보기 전환" style="display:flex;gap:6px;background:#f2efe9;padding:4px;border-radius:999px">
+          <sc-for list="{{ views }}" as="v" hint-placeholder-count="2">
+            <button onClick="{{ v.onClick }}" aria-pressed="{{ v.pressed }}" style="font:inherit;font-size:13px;border:none;cursor:pointer;padding:6px 14px;border-radius:999px;background:{{ v.bg }};color:{{ v.color }};font-weight:{{ v.weight }};box-shadow:{{ v.shadow }}">{{ v.label }}</button>
+          </sc-for>
+        </div>
+        <div role="group" aria-label="필터" style="display:flex;gap:6px;background:#f2efe9;padding:4px;border-radius:999px">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+            <button onClick="{{ f.onClick }}" aria-pressed="{{ f.pressed }}" style="font:inherit;font-size:13px;border:none;cursor:pointer;padding:6px 14px;border-radius:999px;background:{{ f.bg }};color:{{ f.color }};font-weight:{{ f.weight }};box-shadow:{{ f.shadow }}">{{ f.label }} {{ f.count }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px dashed #d4cfc4;border-radius:14px;padding:28px;text-align:center;color:#77777a;font-size:14px">조건에 맞는 취약점이 없습니다. 검색어나 필터를 바꿔 보세요.</div>
+        </sc-if>
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px">
+          <sc-if value="{{ g.showHeader }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ g.onToggle }}" aria-expanded="{{ g.open }}" style="font:inherit;color:inherit;background:#f6f4ef;border:none;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;text-align:left;flex-wrap:wrap" style-hover="background:#f2efe9">
+              <span style="font-size:16px;font-weight:700">{{ g.name }}</span>
+              <span style="font-size:13px;color:#77777a;white-space:nowrap;flex-shrink:0">{{ g.count }}건</span>
+              <sc-if value="{{ g.hasKev }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:#f5e6e1;color:#8a3a2a;white-space:nowrap;flex-shrink:0">KEV {{ g.kev }}</span></sc-if>
+              <span style="margin-left:auto;font-size:13px;color:#77777a">최고 점수 <b style="color:{{ g.topColor }}">{{ g.top }}</b></span>
+              <span style="font-size:12px;color:#a0a0a3;width:36px;text-align:right">{{ g.chev }}</span>
+            </button>
+          </sc-if>
+          <sc-if value="{{ g.open }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="2">
+          <button onClick="{{ r.onClick }}" aria-pressed="{{ r.selected }}" style="font:inherit;color:inherit;text-align:left;cursor:pointer;background:{{ r.bg }};border:1.5px solid {{ r.border }};border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;transition:all .2s;animation:vtIn .3s" style-hover="border-color:#a9c4b8">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600">{{ r.id }}</span>
+              <sc-if value="{{ r.kev }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:#f5e6e1;color:#8a3a2a">KEV</span></sc-if>
+              <sc-if value="{{ r.ransomware }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:#f5e6e1;color:#8a3a2a;border:1px solid #e3b7ab">랜섬웨어</span></sc-if>
+              <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:{{ r.sevBg }};color:{{ r.sevColor }};font-weight:600">{{ r.sevLabel }}</span>
+              <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:#eeeae2;color:#4a4a4d">{{ r.product }}</span>
+              <sc-if value="{{ r.kev }}" hint-placeholder-val="{{ false }}"><span style="margin-left:auto;font-size:12px;color:#8a3a2a;font-weight:600;white-space:nowrap">KEV 패치 기한 {{ r.due }}</span></sc-if>
+              <span class="vt-mobile-only" style="margin-left:auto;font-size:12px;color:#4f7a6a;font-weight:600">상세 →</span>
+            </div>
+            <sc-if value="{{ r.hasWhat }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:14px;color:#3a3a3d;text-wrap:pretty">{{ r.what }}</div>
+            </sc-if>
+            <sc-if value="{{ r.noWhat }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:13.5px;color:#6a6a6d;text-wrap:pretty"><span style="font-size:11px;font-weight:600;color:#8a8a8a;background:#f2efe9;padding:1px 6px;border-radius:4px;margin-right:6px">원문</span>{{ r.descEn }}</div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+              <div style="flex:1;min-width:120px;height:6px;background:#e9e5dc;border-radius:999px;overflow:hidden">
+                <div style="height:100%;width:{{ r.barW }}%;background:{{ r.barColor }};border-radius:999px;transition:width .8s cubic-bezier(.2,.8,.2,1)"></div>
+              </div>
+              <span style="font-size:13px;color:#77777a;font-variant-numeric:tabular-nums">점수 <b style="color:#24231f">{{ r.score }}</b></span>
+              <span style="font-size:13px;color:#77777a;font-variant-numeric:tabular-nums">EPSS <b style="color:#24231f">{{ r.epss }}</b> <span style="color:#8a8a8a">({{ r.pctLabel }})</span></span>
+              <span style="font-size:13px;color:#77777a;font-variant-numeric:tabular-nums">CVSS <b style="color:#24231f">{{ r.cvss }}</b></span>
+            </div>
+          </button>
+        </sc-for>
+          </div>
+          </sc-if>
+        </div>
+        </sc-for>
+        <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onMore }}" style="font:inherit;font-size:14px;font-weight:600;color:#4f7a6a;background:#fff;border:1.5px solid #d9e4df;border-radius:12px;padding:12px;cursor:pointer" style-hover="background:#f1f5f2">더 보기 ({{ moreCount }}건 더)</button>
+        </sc-if>
+      </div>
+
+      <!-- 상세 패널: 데스크톱 전용(모바일은 /cve/ 페이지로 이동) -->
+      <sc-if value="{{ hasSel }}" hint-placeholder-val="{{ true }}">
+      <aside class="vt-panel" aria-label="선택한 취약점 상세" style="border:1px solid #e4e0d6;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:20px;position:sticky;top:16px;background:#fff;box-shadow:0 6px 24px rgba(20,20,30,.05)">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600">{{ sel.id }}</span>
+            <sc-if value="{{ sel.kev }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:#f5e6e1;color:#8a3a2a">KEV</span></sc-if>
+            <sc-if value="{{ sel.ransomware }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:#f5e6e1;color:#8a3a2a;border:1px solid #e3b7ab">랜섬웨어</span></sc-if>
+            <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:{{ sel.sevBg }};color:{{ sel.sevColor }};font-weight:600">{{ sel.sevLabel }}</span>
+            <span style="font-size:12px;padding:3px 9px;border-radius:999px;background:#eeeae2;color:#4a4a4d">{{ sel.product }}</span>
+          </div>
+          <div style="font-size:16px;font-weight:600;color:#24231f;text-wrap:pretty">{{ sel.title }}</div>
+        </div>
+
+        <!-- 영향 제품·버전 (영향 자산·SLA 대체) -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;background:{{ sel.urgBg }};border-radius:12px;padding:14px 16px">
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#6a6a6d">영향 버전</span><span style="font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">{{ sel.affected }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#6a6a6d">수정 버전</span><span style="font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">{{ sel.fixed }}</span></div>
+          <sc-if value="{{ sel.kev }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#6a6a6d">KEV 패치 기한</span><span style="font-size:14px;font-weight:700;color:#8a3a2a;font-variant-numeric:tabular-nums">{{ sel.due }}</span></div>
+          </sc-if>
+        </div>
+
+        <!-- 한국어 요약 what/who/action -->
+        <sc-if value="{{ sel.hasSummary }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="font-size:14px;font-weight:600">요약</div>
+            <span style="font-size:11px;color:#8a8a8a;background:#f2efe9;padding:2px 8px;border-radius:999px">AI 생성 · 원문 확인 필요</span>
+          </div>
+          <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 10px;font-size:14px;line-height:1.55">
+            <span style="color:#8a8a8a">무엇이</span><span style="color:#3a3a3d;text-wrap:pretty">{{ sel.what }}</span>
+            <span style="color:#8a8a8a">누가</span><span style="color:#3a3a3d;text-wrap:pretty">{{ sel.who }}</span>
+            <span style="color:#8a8a8a">조치</span><span style="color:#24231f;font-weight:600;text-wrap:pretty">{{ sel.action }}</span>
+          </div>
+        </div>
+        </sc-if>
+        <sc-if value="{{ sel.noSummary }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:14px;font-weight:600">원문 설명 <span style="font-size:11px;font-weight:500;color:#8a8a8a">한국어 요약은 상위 20건에만 제공</span></div>
+          <div style="font-size:14px;color:#4a4a4d;line-height:1.55;text-wrap:pretty">{{ sel.descEn }}</div>
+        </div>
+        </sc-if>
+
+        <!-- 점수 구성: 0이 아닌 항만 + 감쇠 -->
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font-size:14px;font-weight:600">점수 구성</div>
+            <div style="font-size:13px;color:#77777a">트렌드 점수 <b style="color:#24231f;font-size:16px">{{ sel.score }}</b></div>
+          </div>
+          <sc-for list="{{ factors }}" as="fa" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:130px minmax(0,1fr) 52px;align-items:center;gap:10px;font-size:13px">
+              <span style="color:#4a4a4d">{{ fa.label }}</span>
+              <div style="height:8px;background:#e9e5dc;border-radius:999px;overflow:hidden"><div style="height:100%;width:{{ fa.w }}%;background:{{ fa.color }};border-radius:999px;transition:width .6s cubic-bezier(.2,.8,.2,1)"></div></div>
+              <span style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">{{ fa.v }}</span>
+            </div>
+          </sc-for>
+          <div style="display:grid;grid-template-columns:130px minmax(0,1fr) 52px;align-items:center;gap:10px;font-size:13px;color:#77777a">
+            <span>시간 감쇠</span>
+            <span style="font-size:12px">{{ sel.decayNote }}</span>
+            <span style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">{{ sel.decayLabel }}</span>
+          </div>
+          <div style="font-size:13px;color:#4a4a4d;background:#f6f4ef;border-radius:10px;padding:10px 12px;text-wrap:pretty"><b>왜 지금?</b> {{ sel.why }}</div>
+        </div>
+
+        <!-- 조치 + 링크 (체크리스트·명령어 블록 삭제) -->
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:14px;font-weight:600">조치</div>
+          <div style="font-size:14px;color:#24231f;line-height:1.55;text-wrap:pretty">{{ sel.actionLine }}</div>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:13px">
+            <a href="{{ sel.vendorUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;font-weight:600;color:#4a4a4d;background:#eeeae2;padding:2px 6px;border-radius:4px">벤더</span>{{ sel.vendorTitle }}</a>
+            <a href="{{ sel.nvdUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;font-weight:600;color:#4a4a4d;background:#eeeae2;padding:2px 6px;border-radius:4px">NVD</span>NVD 원문 {{ sel.id }}</a>
+          </div>
+        </div>
+
+        <a href="{{ sel.detailHref }}" style="display:flex;justify-content:center;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#4f7a6a;background:#f1f5f2;border-radius:10px;padding:11px" style-hover="background:#e6efea;text-decoration:none">상세 페이지 열기 →</a>
+      </aside>
+      </sc-if>
+    </div>
+    <div class="vt-sr" aria-live="polite">{{ liveText }}</div>
+  </section>
+
+  <!-- 푸터 고지 -->
+  <footer style="border-top:1px solid #e9e5dc;padding-top:20px;display:flex;flex-direction:column;gap:10px;font-size:12px;color:#77777a;line-height:1.6">
+    <div style="display:flex;flex-wrap:wrap;gap:6px 16px">
+      <span style="color:#4a4a4d;font-weight:600">데이터 출처</span>
+      <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a>
+      <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a>
+      <a href="https://www.first.org/epss/" target="_blank" rel="noopener">FIRST EPSS</a>
+      <a href="https://osv.dev/" target="_blank" rel="noopener">OSV.dev / GitHub Advisory Database</a>
+    </div>
+    <div>This product uses the NVD API but is not endorsed or certified by the NVD. EPSS 데이터는 FIRST.org의 Exploit Prediction Scoring System(Jacobs et al.)을 사용합니다. CVE는 The MITRE Corporation의 등록 상표입니다.</div>
+    <div>이 사이트는 정보 제공 목적이며 정확성·완전성을 보장하지 않습니다. 한국어 요약은 AI가 생성한 것으로 반드시 원문을 확인하세요. 뉴스는 제목과 링크만 표시하며 본문을 재게시하지 않습니다.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;animateOnLoad&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;defaultFilter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;전체&quot;,&quot;KEV&quot;,&quot;Critical&quot;],&quot;default&quot;:&quot;전체&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;stale&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pageSize&quot;:{&quot;editor&quot;:&quot;number&quot;,&quot;default&quot;:20,&quot;tsType&quot;:&quot;number&quot;}}">
+// 달력일(KST) 기준 14일. x축은 월/일 표기
+const DAYS=['10/17','10/18','10/19','10/20','10/21','10/22','10/23','10/24','10/25','10/26','10/27','10/28','10/29','10/30'];
+const COUNTS=[121,98,84,131,144,152,118,96,88,139,156,161,133,142];
+const CRIT=[5,3,2,7,8,9,4,3,2,6,10,12,7,11];
+// 최근 7일 심각도 분포. 미평가(Awaiting Analysis) 포함. 합 871
+const SEGS=[{name:'Critical',n:52,color:'#b85c4a'},{name:'High',n:253,color:'#d9925f'},{name:'Medium',n:383,color:'#d8bb72'},{name:'Low',n:113,color:'#a9a69c'},{name:'미평가',n:70,color:'#dedbd3'}];
+const SEG_TOTAL=SEGS.reduce((a,s)=>a+s.n,0);
+const SEV={CRITICAL:{label:'Critical',bg:'#f5e6e1',color:'#8a3a2a'},HIGH:{label:'High',bg:'#f8ecdf',color:'#8a5a2a'},MEDIUM:{label:'Medium',bg:'#f6f0dc',color:'#7a6420'},LOW:{label:'Low',bg:'#eeeae2',color:'#5a5a5d'},UNRATED:{label:'미평가',bg:'#f2f0eb',color:'#8a8a8a'}};
+// MVP 데이터: NVD + KEV + EPSS. age = 기준 시각(published / kev_added 중 최신)부터 경과일
+const CVES=[
+{id:'CVE-2026-41203',kev:true,ransomware:false,product:'Chrome',title:'Chrome V8 타입 혼동 원격 코드 실행',what:'V8 엔진의 타입 혼동으로 악성 웹페이지 방문만으로 원격 코드가 실행됩니다.',who:'Chrome 130.0.6723.91 미만을 쓰는 모든 데스크톱 사용자.',action:'Chrome을 130.0.6723.91 이상으로 업데이트',descEn:'Type confusion in V8 in Google Chrome prior to 130.0.6723.91 allowed a remote attacker to execute arbitrary code via a crafted HTML page.',epss:0.91,pct:0.997,cvss:8.8,cvssVer:'3.1',age:2,due:'2026-11-13',affected:'< 130.0.6723.91',fixed:'130.0.6723.91',vendorUrl:'https://chromereleases.googleblog.com/',vendorTitle:'Chrome Releases: Stable Channel Update'},
+{id:'CVE-2026-39877',kev:true,ransomware:true,product:'Windows',title:'Windows Win32k 권한 상승',what:'Win32k 드라이버 결함으로 일반 사용자 프로세스가 SYSTEM 권한을 얻습니다.',who:'10월 누적 업데이트를 적용하지 않은 Windows 10/11, Server 2019/2022.',action:'2026년 10월 누적 업데이트 적용',descEn:'Win32k Elevation of Privilege Vulnerability.',epss:0.64,pct:0.98,cvss:7.8,cvssVer:'3.1',age:5,due:'2026-11-05',affected:'Win 10 22H2 · 11 · Server 2019/2022',fixed:'2026-10 누적 업데이트',vendorUrl:'https://msrc.microsoft.com/update-guide/',vendorTitle:'MSRC Security Update Guide'},
+{id:'CVE-2026-40011',kev:false,ransomware:false,product:'Spring',title:'Spring Security 경로 매칭 인가 우회',what:'경로 매칭 처리 차이로 인증 없이 보호된 경로에 접근할 수 있습니다.',who:'spring-security 6.3.4 이하를 쓰는 서비스.',action:'spring-security를 6.3.5 이상으로 업그레이드',descEn:'Spring Security authorization rules can be bypassed via crafted request paths in versions 6.3.4 and earlier.',epss:0.42,pct:0.96,cvss:9.1,cvssVer:'3.1',age:3,affected:'spring-security ≤ 6.3.4',fixed:'6.3.5',vendorUrl:'https://spring.io/security/',vendorTitle:'Spring Security Advisories'},
+{id:'CVE-2026-38120',kev:false,ransomware:false,product:'OpenSSH',title:'OpenSSH sshd 사전 인증 경쟁 조건',what:'sshd의 사전 인증 단계 경쟁 조건으로 원격 코드 실행이 가능합니다.',who:'OpenSSH 9.8p1 이하가 외부에 노출된 서버.',action:'OpenSSH 9.9p1 이상으로 업데이트',descEn:'A race condition in sshd pre-authentication handling in OpenSSH through 9.8p1 may allow remote code execution.',epss:0.33,pct:0.95,cvss:8.1,cvssVer:'3.1',age:7,affected:'OpenSSH ≤ 9.8p1',fixed:'9.9p1',vendorUrl:'https://www.openssh.com/security.html',vendorTitle:'OpenSSH Security'},
+{id:'CVE-2026-41877',kev:false,ransomware:false,product:'Tomcat',title:'Tomcat 부분 PUT 역직렬화',what:'부분 PUT 요청 처리 중 역직렬화가 일어나 코드 실행이 가능합니다. 기본 설정에서는 영향이 없습니다.',who:'DefaultServlet readonly=false로 운영하는 Tomcat 10.1.0~10.1.30.',action:'Tomcat 10.1.31 이상으로 업그레이드, 그전까지 readonly=true 유지',descEn:'Apache Tomcat 10.1.0 through 10.1.30 is vulnerable to deserialization during partial PUT handling when the DefaultServlet is writable.',epss:0.18,pct:0.90,cvss:9.8,cvssVer:'3.1',age:1,affected:'Tomcat 10.1.0 – 10.1.30',fixed:'10.1.31',vendorUrl:'https://tomcat.apache.org/security-10.html',vendorTitle:'Apache Tomcat Security'},
+{id:'CVE-2026-40988',kev:false,ransomware:false,product:'Chrome',title:'Chrome WebGPU 해제 후 사용',what:'WebGPU의 해제 후 사용으로 샌드박스 내부에서 코드 실행이 가능합니다.',who:'Chrome 130.0.6723.91 미만 사용자.',action:'Chrome을 130.0.6723.91 이상으로 업데이트',descEn:'Use after free in WebGPU in Google Chrome prior to 130.0.6723.91 allowed a remote attacker to potentially exploit heap corruption.',epss:0.12,pct:0.85,cvss:8.3,cvssVer:'3.1',age:2,affected:'< 130.0.6723.91',fixed:'130.0.6723.91',vendorUrl:'https://chromereleases.googleblog.com/',vendorTitle:'Chrome Releases: Stable Channel Update'},
+{id:'CVE-2026-39902',kev:false,ransomware:false,product:'Windows',title:'Windows SMB 클라이언트 정보 노출',what:'악성 링크로 SMB 연결을 유도해 NTLM 인증 해시가 유출될 수 있습니다.',who:'10월 누적 업데이트 미적용 Windows 10/11, Server 2022.',action:'2026년 10월 누적 업데이트 적용, 외부 445 포트 차단',descEn:'Windows SMB Client Information Disclosure Vulnerability.',epss:0.27,pct:0.93,cvss:6.5,cvssVer:'3.1',age:5,affected:'Win 10 · 11 · Server 2022',fixed:'2026-10 누적 업데이트',vendorUrl:'https://msrc.microsoft.com/update-guide/',vendorTitle:'MSRC Security Update Guide'},
+{id:'CVE-2026-40315',kev:false,ransomware:false,product:'Spring',title:'Spring Framework 데이터 바인딩 서비스 거부',what:'데이터 바인딩 처리 결함으로 원격 서비스 거부가 가능합니다.',who:'spring-framework 6.1.13 이하를 쓰는 외부 API 서비스.',action:'spring-framework를 6.1.14 이상으로 업그레이드',descEn:'Spring Framework versions 6.1.13 and earlier are susceptible to a denial of service via data binding.',epss:0.09,pct:0.80,cvss:7.5,cvssVer:'3.1',age:4,affected:'spring-framework ≤ 6.1.13',fixed:'6.1.14',vendorUrl:'https://spring.io/security/',vendorTitle:'Spring Security Advisories'},
+// 아래는 한국어 요약 없음(상위 20건 밖 또는 미생성) → 영어 원문 첫 문장 노출
+{id:'CVE-2026-41512',kev:true,ransomware:true,product:'Ivanti Connect Secure',descEn:'Ivanti Connect Secure before 22.7R2.6 contains a stack-based buffer overflow that allows unauthenticated remote code execution.',epss:0.88,pct:0.995,cvss:9.0,cvssVer:'3.1',age:9,due:'2026-11-02',affected:'< 22.7R2.6',fixed:'22.7R2.6',vendorUrl:'https://forums.ivanti.com/s/security-advisories',vendorTitle:'Ivanti Security Advisory'},
+{id:'CVE-2026-40742',kev:true,ransomware:false,product:'FortiOS',descEn:'An out-of-bounds write in FortiOS SSL-VPN may allow a remote unauthenticated attacker to execute arbitrary code via crafted requests.',epss:0.71,pct:0.99,cvss:9.8,cvssVer:'3.1',age:12,due:'2026-11-08',affected:'FortiOS 7.4.0 – 7.4.4',fixed:'7.4.5',vendorUrl:'https://www.fortiguard.com/psirt',vendorTitle:'FortiGuard PSIRT Advisory'},
+{id:'CVE-2026-41690',kev:false,ransomware:false,product:'Linux kernel',descEn:'A use-after-free in the Linux kernel netfilter subsystem allows a local user to escalate privileges.',epss:0.05,pct:0.72,cvss:7.8,cvssVer:'3.1',age:1,affected:'kernel 6.6 – 6.11.4',fixed:'6.11.5',vendorUrl:'https://www.kernel.org/',vendorTitle:'kernel.org'},
+{id:'CVE-2026-41822',kev:false,ransomware:false,product:'GitLab',descEn:'GitLab CE/EE allows an unauthenticated attacker to trigger a pipeline as another user under certain conditions.',epss:0.21,pct:0.91,cvss:9.6,cvssVer:'4.0',age:2,affected:'17.0 – 17.4.1',fixed:'17.4.2',vendorUrl:'https://about.gitlab.com/releases/categories/releases/',vendorTitle:'GitLab Patch Release'},
+{id:'CVE-2026-41388',kev:false,ransomware:false,product:'WordPress 플러그인',descEn:'The Contact Form Builder plugin for WordPress is vulnerable to arbitrary file upload due to missing file type validation.',epss:0.31,pct:0.94,cvss:9.8,cvssVer:'3.1',age:1,affected:'≤ 3.2.1',fixed:'3.2.2',vendorUrl:'https://wordpress.org/plugins/',vendorTitle:'WordPress Plugin Directory'},
+{id:'CVE-2026-41901',kev:false,ransomware:false,product:'PHP',descEn:'In PHP, a flaw in the multipart body parser may lead to memory corruption when handling crafted uploads.',epss:0.07,pct:0.78,cvss:8.1,cvssVer:'3.1',age:1,affected:'8.2.0 – 8.3.12',fixed:'8.3.13',vendorUrl:'https://www.php.net/ChangeLog-8.php',vendorTitle:'PHP ChangeLog'},
+{id:'CVE-2026-40577',kev:false,ransomware:false,product:'Cisco IOS XE',descEn:'A vulnerability in the web UI of Cisco IOS XE Software could allow an authenticated remote attacker to execute commands with root privileges.',epss:0.16,pct:0.89,cvss:7.2,cvssVer:'3.1',age:6,affected:'17.9 – 17.12.3',fixed:'17.12.4',vendorUrl:'https://sec.cloudapps.cisco.com/security/center/publicationListing.x',vendorTitle:'Cisco Security Advisories'},
+{id:'CVE-2026-41644',kev:false,ransomware:false,product:'Node.js',descEn:'Node.js HTTP/2 server may crash when receiving a flood of malformed frames, resulting in denial of service.',epss:0.04,pct:0.66,cvss:7.5,cvssVer:'3.1',age:3,affected:'20.x < 20.18.1 · 22.x < 22.10.1',fixed:'20.18.1 / 22.10.1',vendorUrl:'https://nodejs.org/en/blog/vulnerability',vendorTitle:'Node.js Security Releases'},
+{id:'CVE-2026-41255',kev:false,ransomware:false,product:'Django',descEn:'Django is vulnerable to SQL injection in QuerySet.values() when column aliases are derived from untrusted input.',epss:0.11,pct:0.84,cvss:8.6,cvssVer:'3.1',age:4,affected:'5.0 – 5.1.1',fixed:'5.1.2',vendorUrl:'https://www.djangoproject.com/weblog/',vendorTitle:'Django Security Releases'},
+{id:'CVE-2026-41730',kev:false,ransomware:false,product:'Jenkins',descEn:'Jenkins does not properly restrict agent-to-controller messages, allowing agents to read arbitrary files on the controller.',epss:0.14,pct:0.87,cvss:8.8,cvssVer:'3.1',age:2,affected:'≤ 2.479',fixed:'2.480',vendorUrl:'https://www.jenkins.io/security/advisories/',vendorTitle:'Jenkins Security Advisory'},
+{id:'CVE-2026-41966',kev:false,ransomware:false,product:'vCenter Server',descEn:'VMware vCenter Server contains a heap overflow in the DCERPC protocol implementation that may lead to remote code execution.',epss:0.23,pct:0.92,cvss:9.8,cvssVer:'3.1',age:1,affected:'8.0 < 8.0 U3d',fixed:'8.0 U3d',vendorUrl:'https://support.broadcom.com/web/ecx/security-advisory',vendorTitle:'Broadcom Security Advisory'},
+{id:'CVE-2026-42010',kev:false,ransomware:false,product:'Apache HTTP Server',descEn:'Apache HTTP Server mod_proxy may forward requests to unintended backends when configured with certain RewriteRule patterns.',epss:0.02,pct:0.48,cvss:null,cvssVer:null,age:0,affected:'2.4.0 – 2.4.62',fixed:'2.4.63',vendorUrl:'https://httpd.apache.org/security/vulnerabilities_24.html',vendorTitle:'Apache HTTP Server Vulnerabilities'},
+{id:'CVE-2026-42031',kev:false,ransomware:false,product:'curl',descEn:'curl may reuse a connection with mismatched TLS client certificate settings, leaking credentials to an unintended host.',epss:0.01,pct:0.31,cvss:null,cvssVer:null,age:0,affected:'7.75.0 – 8.10.1',fixed:'8.11.0',vendorUrl:'https://curl.se/docs/security.html',vendorTitle:'curl Security Problems'}];
+
+// MVP 점수식: (KEV 50 + 랜섬웨어 10 + EPSS×30 + CVSS) × 0.5^(age/30). JSON 출력은 정수 반올림
+function compute(c){
+  const kev=c.kev?50:0, ran=c.ransomware?10:0, epss=c.epss*30, cvss=c.cvss??0;
+  const decay=Math.pow(0.5,c.age/30);
+  const raw=kev+ran+epss+cvss;
+  const sev=c.cvss==null?'UNRATED':c.cvss>=9?'CRITICAL':c.cvss>=7?'HIGH':c.cvss>=4?'MEDIUM':'LOW';
+  let why;
+  if(c.kev&&c.ransomware) why='랜섬웨어 캠페인에 실제 사용 중인 취약점입니다. CISA 악용 목록(KEV)에 등재됐습니다.';
+  else if(c.kev) why='CISA 악용 목록(KEV)에 등재됐습니다. 실제 공격에 쓰이고 있다는 뜻입니다.';
+  else if(c.pct>=0.95) why=`30일 내 악용 확률이 전체 CVE 중 상위 ${Math.max(1,Math.round((1-c.pct)*100))}%입니다.`;
+  else if(c.cvss!=null) why=`CVSS ${c.cvss.toFixed(1)}, 최근 공개된 취약점입니다.`;
+  else why='CVSS 평가 전(Awaiting Analysis)인 최근 공개 취약점입니다.';
+  return {...c,sev,parts:{kev,ran,epss,cvss},decay,raw,score:Math.round(raw*decay),why};
+}
+const ALL=CVES.map(compute).sort((a,b)=>b.score-a.score);
+const ease=x=>1-Math.pow(1-x,3);
+const C=2*Math.PI*60;
+const pctLabel=p=>`상위 ${Math.max(1,Math.round((1-p)*100))}%`;
+
+class Component extends DCLogic {
+  state={t:0,filter:null,q:'',selId:ALL[0].id,hoverBar:null,hoverSeg:null,view:'product',collapsed:{},showAll:false};
+  componentDidMount(){
+    const anim=this.props.animateOnLoad??true;
+    if(!anim){this.setState({t:1});}else{
+      const t0=Date.now();
+      this.anim=setInterval(()=>{const p=Math.min(1,(Date.now()-t0)/1100);this.setState({t:p});if(p>=1)clearInterval(this.anim);},16);
+    }
+  }
+  componentWillUnmount(){clearInterval(this.anim);}
+  renderVals(){
+    const s=this.state,e=ease(s.t);
+    const pageSize=this.props.pageSize??20;
+    const filter=s.filter??(this.props.defaultFilter&&this.props.defaultFilter!=='전체'?this.props.defaultFilter:null);
+    const q=s.q.trim().toLowerCase();
+    const matchQ=c=>!q||c.id.toLowerCase().includes(q)||c.product.toLowerCase().includes(q)||(c.title||'').toLowerCase().includes(q);
+    const matchF=c=>!filter||(filter==='KEV'?c.kev:filter==='Critical'?c.sev==='CRITICAL':true);
+
+    // KPI: 1~3은 24시간 롤링, 4는 전체 누적. 전일 대비 증감
+    const kpiDef=[
+      {label:'24시간 신규',v:142,y:133,sub:'최근 24시간 공개된 CVE'},
+      {label:'KEV 신규',v:3,y:1,sub:'24시간 내 CISA 악용 목록 등재',color:'#8a3a2a',f:'KEV'},
+      {label:'Critical',v:11,y:7,sub:'24시간 신규 중 CVSS 9.0 이상',f:'Critical'},
+      {label:'고위험 (EPSS 0.5+)',v:318,y:313,sub:'전체 CVE 중 30일 내 악용 확률 50% 이상'}];
+    const kpis=kpiDef.map(k=>{const act=k.f&&filter===k.f;const d=k.v-k.y;return {...k,display:Math.round(k.v*e),delta:(d>=0?'+':'')+d,color:k.color||'#24231f',
+      bg:act?'#eef4f0':'#f6f4ef',border:act?'#4f7a6a':'transparent',cursor:k.f?'pointer':'default',pressed:!!act,
+      hint:k.f?(act?'필터 해제':'클릭해 필터'):`어제 ${k.y}`,
+      onClick:k.f?()=>this.setState({filter:act?'':k.f}):undefined};});
+
+    const max=180;
+    const bars=DAYS.map((d,i)=>({d,v:COUNTS[i],c:CRIT[i],h:(COUNTS[i]/max*100*e).toFixed(2),critPct:(CRIT[i]/COUNTS[i]*100).toFixed(2),
+      hover:s.hoverBar===i,op:s.hoverBar===null||s.hoverBar===i?1:0.4,aria:`${d} 신규 ${COUNTS[i]}건, Critical ${CRIT[i]}건`,
+      labelColor:i===13?'#24231f':'#8a8a8a',labelWeight:i===13?700:400,
+      onEnter:()=>this.setState({hoverBar:i}),onLeave:()=>this.setState({hoverBar:null})}));
+    const grid=[0,40,80,120,160].map(v=>({v,pct:(v/max*100).toFixed(2)}));
+
+    let acc=0;
+    const segs=SEGS.map((g,i)=>{const pct=g.n/SEG_TOTAL;const len=pct*C*e;const off=-acc*e;acc+=pct*C;const hv=s.hoverSeg===i;
+      return {...g,pct:Math.round(pct*100),dash:`${Math.max(0,len-2).toFixed(2)} ${C.toFixed(2)}`,offset:off.toFixed(2),sw:hv?26:20,
+        op:s.hoverSeg===null||hv?1:0.45,onEnter:()=>this.setState({hoverSeg:i}),onLeave:()=>this.setState({hoverSeg:null})};});
+    const hs=s.hoverSeg!==null?SEGS[s.hoverSeg]:null;
+    const center=hs?{label:hs.name,value:Math.round(hs.n/SEG_TOTAL*100)+'%',sub:hs.n+'건'}:{label:'최근 7일',value:String(SEG_TOTAL),sub:'건'};
+
+    const filtered=ALL.filter(c=>matchF(c)&&matchQ(c));
+    const limit=s.showAll?filtered.length:pageSize;
+    const shown=filtered.slice(0,limit);
+    const hasMore=filtered.length>limit;
+    const filters=[{label:'전체',k:''},{label:'KEV',k:'KEV'},{label:'Critical',k:'Critical'}].map(f=>{const act=(filter||'')===f.k;
+      const count=ALL.filter(c=>matchQ(c)&&(!f.k||(f.k==='KEV'?c.kev:c.sev==='CRITICAL'))).length;
+      return {label:f.label,count,pressed:act,bg:act?'#fff':'transparent',color:act?'#24231f':'#6a6a6d',weight:act?600:400,shadow:act?'0 1px 3px rgba(0,0,0,.1)':'none',onClick:()=>this.setState({filter:f.k,showAll:false})};});
+    const fmtDue=d=>d?d.slice(5).replace('-','-'):'';
+    const rows=shown.map(c=>{const sel=c.id===s.selId;const sv=SEV[c.sev];
+      return {...c,epss:c.epss.toFixed(2),pctLabel:pctLabel(c.pct),cvss:c.cvss==null?'미평가':c.cvss.toFixed(1)+(c.cvssVer==='4.0'?' (v4)':''),
+        sevLabel:sv.label,sevBg:sv.bg,sevColor:sv.color,due:fmtDue(c.due),
+        hasWhat:!!c.what,noWhat:!c.what,selected:sel,bg:sel?'#f1f5f2':'#fff',border:sel?'#4f7a6a':'#e4e0d6',
+        barW:(Math.min(100,c.score)*e).toFixed(1),barColor:c.score>=70?'#b85c4a':c.score>=40?'#d9925f':'#d8bb72',
+        onClick:()=>this.setState({selId:c.id})};});
+    const byProduct=s.view!=='score';
+    let groups;
+    if(byProduct){
+      const names=[...new Set(rows.map(r=>r.product))];
+      groups=names.map(n=>{const gr=rows.filter(r=>r.product===n);const kev=gr.filter(r=>r.kev).length;const top=gr[0].score;
+        const open=!s.collapsed[n];
+        return {name:n,rows:gr,count:gr.length,kev,hasKev:kev>0,top,topColor:top>=70?'#b85c4a':top>=40?'#b8693d':'#24231f',
+          showHeader:true,open,chev:open?'접기':'펼치기',
+          onToggle:()=>this.setState(st=>({collapsed:{...st.collapsed,[n]:open}}))};});
+    } else groups=[{name:'',rows,showHeader:false,open:true}];
+    const views=[{label:'소프트웨어별',k:'product'},{label:'점수순',k:'score'}].map(v=>{const act=s.view===v.k;
+      return {label:v.label,pressed:act,bg:act?'#fff':'transparent',color:act?'#24231f':'#6a6a6d',weight:act?600:400,shadow:act?'0 1px 3px rgba(0,0,0,.1)':'none',onClick:()=>this.setState({view:v.k})};});
+    const listSub=(byProduct?'소프트웨어별 묶음 · 그룹은 최고 점수순':'트렌드 점수순')+` · 상위 ${Math.min(limit,filtered.length)}건 표시`+(q?` · "${s.q.trim()}" 검색 결과`:'');
+
+    const cve=ALL.find(c=>c.id===s.selId);
+    const hasSel=!!cve;
+    let sel={},factors=[];
+    if(cve){
+      const sv=SEV[cve.sev];
+      sel={...cve,title:cve.title||cve.descEn.split('. ')[0],sevLabel:sv.label,sevBg:sv.bg,sevColor:sv.color,due:cve.due||'',fixed:cve.fixed||'미정',
+        hasSummary:!!cve.what,noSummary:!cve.what,
+        actionLine:cve.action?cve.action+'.':`${cve.fixed||'수정 버전'}으로 업데이트하세요. 자세한 조치는 벤더 어드바이저리를 확인하세요.`,
+        urgBg:cve.kev?'#f8efeb':cve.sev==='CRITICAL'?'#f8f3e8':'#f6f4ef',
+        decayLabel:'×'+cve.decay.toFixed(2),decayNote:`기준 시각 후 ${cve.age}일 경과 · 30일마다 절반`,
+        nvdUrl:`https://nvd.nist.gov/vuln/detail/${cve.id}`,detailHref:`#/cve/${cve.id}`};
+      const p=cve.parts;
+      factors=[
+        {label:'실제 악용 (KEV)',v:p.kev,w:100,color:'#b85c4a'},
+        {label:'랜섬웨어 사용',v:p.ran,w:100,color:'#a44a38'},
+        {label:'악용 확률 (EPSS)',v:p.epss,w:p.epss/30*100,color:'#d9925f'},
+        {label:'심각도 (CVSS)',v:p.cvss,w:p.cvss*10,color:'#d8bb72'}]
+        .filter(f=>f.v>0).map(f=>({...f,v:'+'+(Number.isInteger(f.v)?f.v:f.v.toFixed(1)),w:f.w.toFixed(1)}));
+    }
+    return {q:s.q,hasQ:!!q,onSearch:ev=>this.setState({q:ev.target.value,showAll:false}),onClearQ:()=>this.setState({q:''}),
+      agoLabel:'3시간 전',stale:!!this.props.stale,kpis,bars,grid,segs,center,filters,groups,views,listSub,
+      empty:filtered.length===0,hasMore,moreCount:filtered.length-limit,onMore:()=>this.setState({showAll:true}),
+      hasSel,sel,factors,liveText:cve?`${cve.id} 상세 표시 중`:''};
+  }
+}
+</script>
+</body>
+</html>

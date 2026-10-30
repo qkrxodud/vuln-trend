@@ -1,0 +1,16 @@
+# 로컬 Postgres 16 (기획서 4장). 접속: localhost:${DB_PORT}(기본 5432), DB·사용자·비밀번호 모두 vuln
+# 5432 를 다른 프로젝트가 쓰고 있으면 .env 에 DB_PORT=5433 처럼 바꾼다(배치도 같은 DB_PORT 를 읽는다)
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: vuln
+      POSTGRES_USER: vuln
+      POSTGRES_PASSWORD: vuln
+    ports: ["${DB_PORT:-5432}:5432"]
+    volumes: ["./pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vuln -d vuln"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
