@@ -10,7 +10,8 @@ public enum ErrorCode {
 
     DOMAIN_RULE_VIOLATED("A domain rule was violated."),
     SOURCE_FETCH_FAILED("A data source did not answer or answered badly."),
-    OUTPUT_WRITE_FAILED("A site data file could not be written.");
+    OUTPUT_WRITE_FAILED("A site data file could not be written."),
+    PUBLISH_FAILED("The site data could not be committed or pushed.");
 
     private final String message;
 }
