@@ -43,7 +43,8 @@ public class ProductKey {
                 .build();
     }
 
-    private static String normalize(String raw) {
+    /** 맞춰 적는 규칙 하나. 원래 이름(ProductMention)도 같은 규칙으로 묶음 표기를 알아본다 */
+    static String normalize(String raw) {
         if (Objects.isNull(raw)) {
             return "";
         }
