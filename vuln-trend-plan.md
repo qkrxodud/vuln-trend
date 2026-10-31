@@ -268,10 +268,11 @@ where rejected = false;
 | 뉴스 언급 ≥ 3 | 최근 7일 보안 뉴스 N건 언급 |
 | 그 외 | CVSS N.N, 최근 공개 |
 
-### 한국어 요약 (Claude Opus 5.5, Anthropic 공식 Java SDK — 사용자 결정 2026-10-31. 원래 Spring AI)
+### 한국어 요약 (OpenAI/ChatGPT, OpenAI 공식 Java SDK — 사용자 결정 2026-10-31. 이전: Claude Opus 5.5 + Anthropic SDK, 그 전: Spring AI)
 
-- 거절(refusal) 대비 서버 쪽 대체 `fallbacks: "default"`(베타 server-side-fallback-2026-07-01) 사용, `summary.model` 에는 실제 응답 모델 기록. 출력 속 버전 숫자가 원문에 없으면 버림(코드 검사). SDK 3.3.0 이 키를 Bearer 로 보내는 것으로 관찰됨 → 실제 키 첫 실행에서 401 여부 확인(사용자 결정 2026-10-31)
-- 모델 `claude-opus-5-5`, 호출은 `com.anthropic:anthropic-java`. 환경 변수 `SUMMARY_MODEL`·`SUMMARY_API_KEY`(비면 요약 단계만 건너뜀, 시작은 거부하지 않음). 응답 `{what, who, action}` 은 구조화 출력, effort 는 low 부터. refusal 이면 그 건만 요약 없이. 어림 비용 하루 약 $0.20(20건)
+- (2026-10-31 OpenAI 로 전환) 서버 쪽 대체(fallbacks)는 Anthropic 전용이라 없음. 거절이면 그 건만 요약 없이 넘어감. 모델 이름은 코드 기본값 없이 `.env` 의 `SUMMARY_MODEL`. 출력 속 버전 검사·명령어 버리기·하루 20콜·호출 기록은 그대로
+- 모델 `gpt-6-luna`(OpenAI 문서: 비용에 민감한 대량 작업용, $0.10/$0.50 per MTok, 하루 20건 약 0.5센트 — 사용자 "싸면서 적정한 것" 2026-10-31). 한국어 품질이 Gate G 검수에서 부족하면 `gpt-6.1-terra`($1/$5)로 `.env` 한 줄 변경. `gpt-6-astra`($10/$50)는 비용 때문에 제외
+- 호출은 `com.openai:openai-java`, 응답 `{what, who, action}` 은 구조화 출력(json_schema). 키 `SUMMARY_API_KEY`(OpenAI 키), 모델 `SUMMARY_MODEL` — 둘 중 하나라도 비면 요약 단계만 건너뜀
 - 대상: 트렌드 상위 20건 중 `summary` 없는 것. 일 상한 20콜. 생성된 건은 재생성하지 않음
 - 출력 구조: `{what, who, action}` 각 1문장. `action`은 "X 버전 이상으로 업데이트" 수준까지만. **명령어·스크립트·설정값 생성 금지**
 - 프롬프트 가드: 입력은 NVD description + 영향 제품·버전 범위만. "원문에 없는 버전·제품·수치를 만들지 말 것" 명시. 모르면 "원문 참고"로 답하게 함
@@ -475,7 +476,7 @@ MVP에서 **넣지 않는 것**: 영향 자산 수, 조치 기한 SLA(KEV `dueDa
 | 제공 형태 | 웹사이트만 |
 | 호스팅 | GitHub Pages (정적), 로컬 배치 → push. 배포는 Actions 단일 경로 |
 | 레포 | 코드 + 데이터 단일 레포 (Q1). per-CVE 파일 상한 + orphan 재생성 |
-| 백엔드 | Spring Boot 배치 (웹서버 없음), Java 17. 요약은 Anthropic Java SDK + Claude Opus 5.5 |
+| 백엔드 | Spring Boot 배치 (웹서버 없음), Java 17. 요약은 OpenAI(ChatGPT) Java SDK, 모델은 `.env` 의 `SUMMARY_MODEL` |
 | DB | Docker PostgreSQL 16 (로컬 전용, JSONB 원본 보관). PK `vuln_id` |
 | 프론트 | React (Vite + TS), Thymeleaf 아님. `VITE_BASE` 환경변수 |
 | 1차 소스 | NVD + KEV(dueDate, 랜섬웨어) + EPSS(percentile) |
