@@ -5,10 +5,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
+import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeCollector;
+import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
@@ -32,6 +34,7 @@ class BatchRunnerTest {
 
     private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
     private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
+    private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
 
     @Test
     @DisplayName("수집이 실패한 소스가 있으면 점수 매기기와 게시로 넘어가지 않는다")
@@ -109,12 +112,38 @@ class BatchRunnerTest {
     }
 
     @Test
-    @DisplayName("점수를 다시 매긴 뒤 한국어 요약 단계로 넘어간다")
-    void summarizesAfterScoring(CapturedOutput output) {
+    @DisplayName("점수를 다시 매긴 뒤 최근 일별 통계를 다시 센다")
+    void recountsStatsAfterScoring(CapturedOutput output) {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
 
+        assertThat(stats.recalculated()).isNotNull();
         assertThat(output.toString().indexOf("Trend score recalculated"))
+                .isLessThan(output.toString().indexOf("Daily statistics recalculated"));
+    }
+
+    @Test
+    @DisplayName("일별 통계를 다시 센 뒤 한국어 요약 단계로 넘어간다")
+    void summarizesAfterStats(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(output.toString().indexOf("Daily statistics recalculated"))
                 .isLessThan(output.toString().indexOf("Korean summary is skipped"));
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행에서는 일별 통계를 다시 세지 않는다")
+    void noStatsAfterFailure() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+
+        assertThat(stats.recalculated()).isNull();
+    }
+
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행에서는 일별 통계를 다시 세지 않는다")
+    void noStatsInBackfill() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(stats.recalculated()).isNull();
     }
 
     @Test
@@ -155,6 +184,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new ScoreService(scores, clock), new SummaryService(new SummaryProperties(20, "", "")));
+                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock),
+                new SummaryService(new SummaryProperties(20, "", "")));
     }
 }

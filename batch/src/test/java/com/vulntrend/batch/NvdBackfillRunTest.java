@@ -6,9 +6,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
+import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
@@ -125,6 +127,6 @@ class NvdBackfillRunTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
-                new SummaryService(new SummaryProperties(20, "", "")));
+                new DailyStatService(new FakeDailyStatRepository(), clock), new SummaryService(new SummaryProperties(20, "", "")));
     }
 }

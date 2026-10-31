@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
+import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
@@ -27,6 +28,7 @@ import com.vulntrend.batch.infrastructure.nvd.NvdStubServer;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import com.vulntrend.batch.infrastructure.persistence.enrichment.JdbcKevRepository;
 import com.vulntrend.batch.infrastructure.persistence.score.JdbcTrendScoreRepository;
+import com.vulntrend.batch.infrastructure.persistence.stat.JdbcDailyStatRepository;
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
@@ -61,7 +63,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @JdbcTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({PostgresTestConfig.class, JdbcVulnerabilityRepository.class, JdbcSyncStateRepository.class,
-        JdbcKevRepository.class, JdbcTrendScoreRepository.class})
+        JdbcKevRepository.class, JdbcTrendScoreRepository.class, JdbcDailyStatRepository.class})
 @ExtendWith(OutputCaptureExtension.class)
 @DisplayName("수집 실패 규칙 — 실제 저장 구조에서")
 class CollectionFailureRuleRunTest {
@@ -80,6 +82,9 @@ class CollectionFailureRuleRunTest {
 
     @Autowired
     private JdbcTrendScoreRepository trendScores;
+
+    @Autowired
+    private JdbcDailyStatRepository dailyStats;
 
     @Autowired
     private JdbcTemplate jdbc;
@@ -116,6 +121,7 @@ class CollectionFailureRuleRunTest {
             assertThat(output).contains("KEV");
             assertThat(output).doesNotContain("Primary product changed");
             assertThat(output).doesNotContain("Trend score recalculated");
+            assertThat(output).doesNotContain("Daily statistics recalculated");
         }
 
         @Test
@@ -142,7 +148,7 @@ class CollectionFailureRuleRunTest {
     }
 
     @Test
-    @DisplayName("KEV 까지 다 가져오면 같은 실행에서 NVD 가 새로 올린 CVE 에도 KEV 표시가 붙고 대표 제품을 고른 뒤 점수를 매긴다")
+    @DisplayName("KEV 까지 다 가져오면 같은 실행에서 NVD 가 새로 올린 CVE 에도 KEV 표시가 붙고 대표 제품·점수·일별 통계로 이어진다")
     void kevSucceeds(CapturedOutput output) throws IOException {
         kev.answer(200, kevCatalog());
 
@@ -153,6 +159,7 @@ class CollectionFailureRuleRunTest {
                 Boolean.class)).isTrue();
         assertThat(output).contains("Primary product changed");
         assertThat(output).contains("Trend score recalculated for 2 vulnerabilities");
+        assertThat(output).contains("Daily statistics recalculated");
         assertThat(output).doesNotContain("scoring and publishing are skipped");
     }
 
@@ -171,7 +178,8 @@ class CollectionFailureRuleRunTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
-                new ScoreService(trendScores, clock), new SummaryService(new SummaryProperties(20, "", "")));
+                new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock),
+                new SummaryService(new SummaryProperties(20, "", "")));
     }
 
     private static String closedUrl() throws IOException {
