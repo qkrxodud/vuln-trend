@@ -9,7 +9,8 @@ import lombok.RequiredArgsConstructor;
 public enum ErrorCode {
 
     DOMAIN_RULE_VIOLATED("A domain rule was violated."),
-    SOURCE_FETCH_FAILED("A data source did not answer or answered badly.");
+    SOURCE_FETCH_FAILED("A data source did not answer or answered badly."),
+    OUTPUT_WRITE_FAILED("A site data file could not be written.");
 
     private final String message;
 }
