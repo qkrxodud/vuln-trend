@@ -267,6 +267,7 @@ where rejected = false;
 
 ### 한국어 요약 (Claude Opus 5.5, Anthropic 공식 Java SDK — 사용자 결정 2026-10-31. 원래 Spring AI)
 
+- 거절(refusal) 대비 서버 쪽 대체 `fallbacks: "default"`(베타 server-side-fallback-2026-07-01) 사용, `summary.model` 에는 실제 응답 모델 기록. 출력 속 버전 숫자가 원문에 없으면 버림(코드 검사). SDK 3.3.0 이 키를 Bearer 로 보내는 것으로 관찰됨 → 실제 키 첫 실행에서 401 여부 확인(사용자 결정 2026-10-31)
 - 모델 `claude-opus-5-5`, 호출은 `com.anthropic:anthropic-java`. 환경 변수 `SUMMARY_MODEL`·`SUMMARY_API_KEY`(비면 요약 단계만 건너뜀, 시작은 거부하지 않음). 응답 `{what, who, action}` 은 구조화 출력, effort 는 low 부터. refusal 이면 그 건만 요약 없이. 어림 비용 하루 약 $0.20(20건)
 - 대상: 트렌드 상위 20건 중 `summary` 없는 것. 일 상한 20콜. 생성된 건은 재생성하지 않음
 - 출력 구조: `{what, who, action}` 각 1문장. `action`은 "X 버전 이상으로 업데이트" 수준까지만. **명령어·스크립트·설정값 생성 금지**
