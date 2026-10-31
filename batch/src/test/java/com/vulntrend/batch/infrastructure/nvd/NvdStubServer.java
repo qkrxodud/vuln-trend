@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/** NVD 흉내 HTTP 서버(외부 시스템이라 테스트 안에서 띄운다). 미리 넣어 둔 답을 순서대로 돌려주고 받은 요청을 기억한다 */
+/** NVD 흉내 HTTP 서버(외부 시스템이라 테스트 안에서 띄운다). 미리 넣어 둔 답을 순서대로 돌려주고 받은 요청을 기억한다. 쿼리 없는 파일 요청(KEV)도 받는다 */
 public class NvdStubServer implements AutoCloseable {
 
     private final HttpServer server;
@@ -80,6 +80,9 @@ public class NvdStubServer implements AutoCloseable {
 
     private static Map<String, String> query(String raw) {
         Map<String, String> params = new LinkedHashMap<>();
+        if (raw == null) {
+            return params;  // KEV·EPSS 처럼 쿼리 없이 파일 하나를 받는 요청
+        }
         for (String pair : raw.split("&")) {
             String[] kv = pair.split("=", 2);
             params.put(kv[0], URLDecoder.decode(kv[1], StandardCharsets.UTF_8));

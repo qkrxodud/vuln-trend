@@ -3,8 +3,12 @@ package com.vulntrend.batch.runner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.domain.collect.SourceName;
+import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeCollector;
+import com.vulntrend.batch.fake.FakeProductAliasCatalog;
+import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import java.time.Clock;
 import java.time.Instant;
@@ -71,7 +75,38 @@ class BatchRunnerTest {
         assertThat(output).contains("Backfill of NVD for the last 30 days failed");
     }
 
+    @Test
+    @DisplayName("수집이 모두 끝나면 대표 제품을 고른 뒤 점수 단계로 넘어간다")
+    void assignsPrimaryProductsAfterCollection(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.loading(SourceName.KEV, 1)).run();
+
+        assertThat(output).contains("Primary product changed");
+        assertThat(output.toString().indexOf("Primary product changed"))
+                .isLessThan(output.toString().indexOf("Scoring step is not wired yet"));
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행에서는 대표 제품도 고르지 않는다")
+    void noAssignmentAfterFailure(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.EPSS)).run();
+
+        assertThat(output).doesNotContain("Primary product changed");
+        assertThat(output).doesNotContain("Scoring step");
+    }
+
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행에서는 대표 제품을 고르지 않는다")
+    void noAssignmentInBackfill(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(output).doesNotContain("Primary product changed");
+    }
+
     private BatchRunner runnerWith(FakeCollector... collectors) {
-        return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock));
+        ProductAssignService assignment = new ProductAssignService(
+                new FakeProductAliasCatalog(ProductAliases.of(List.of())),
+                new FakeProductAssignmentRepository(List.of(), List.of()));
+        return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
+                assignment);
     }
 }

@@ -4,7 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.domain.collect.SourceName;
+import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.fake.FakeProductAliasCatalog;
+import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.global.config.NvdProperties;
 import com.vulntrend.batch.infrastructure.nvd.NvdClient;
 import com.vulntrend.batch.infrastructure.nvd.NvdCollector;
@@ -112,6 +116,9 @@ class NvdBackfillRunTest {
                 Duration.ZERO, 2, Duration.ZERO);
         NvdClient client = new NvdClient(properties, HttpClient.newHttpClient(), new ObjectMapper(), duration -> { });
         NvdCollector collector = new NvdCollector(client, new NvdCveMapper(new ObjectMapper()), vulnerabilities, clock);
-        return new BatchRunner(new CollectService(List.of(collector), syncStates, clock));
+        ProductAssignService assignment = new ProductAssignService(
+                new FakeProductAliasCatalog(ProductAliases.of(List.of())),
+                new FakeProductAssignmentRepository(List.of(), List.of()));
+        return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment);
     }
 }
