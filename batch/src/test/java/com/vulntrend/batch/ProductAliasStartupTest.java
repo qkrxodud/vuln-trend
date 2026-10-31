@@ -28,7 +28,7 @@ class ProductAliasStartupTest {
                 "select display_name from product_alias where cpe_vendor = 'microsoft' and cpe_product = 'windows_10_1607'",
                 String.class);
 
-        assertThat(products).isEqualTo(50);
+        assertThat(products).isEqualTo(90);
         assertThat(windows).isEqualTo("Windows");
     }
 }

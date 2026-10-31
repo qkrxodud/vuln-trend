@@ -20,13 +20,22 @@ class ProductMappingCheckTest {
     }
 
     @Test
-    @DisplayName("표에 없는 제품이 있으면 많은 순서대로 product-alias.yml 후보로 보여 주고 확인 필요다")
+    @DisplayName("제조사를 모르면 물음표로 적어 yml 에 넣기 전에 확인하게 한다")
+    void unknownVendor() {
+        GateItem item = ProductMappingCheck.judge(List.of(new ProductCount(null, "media_server", 4)), 0, 100);
+
+        assertThat(item.getEvidence()).containsExactly("?:media_server — 4건");
+    }
+
+    @Test
+    @DisplayName("표에 없는 제품이 있으면 많은 순서대로 제조사:제품 꼴의 product-alias.yml 후보로 보여 주고 확인 필요다")
     void unmappedAreCandidates() {
         GateItem item = ProductMappingCheck.judge(
-                List.of(new ProductCount("connect_secure", 4), new ProductCount("sharepoint_server", 2)), 0, 100);
+                List.of(new ProductCount("ivanti", "connect_secure", 4),
+                        new ProductCount("microsoft", "sharepoint_server", 2)), 0, 100);
 
         assertThat(item.getStatus()).isEqualTo(GateStatus.REVIEW);
         assertThat(item.getDetail()).contains("2개", "6건");
-        assertThat(item.getEvidence()).containsExactly("connect_secure — 4건", "sharepoint_server — 2건");
+        assertThat(item.getEvidence()).containsExactly("ivanti:connect_secure — 4건", "microsoft:sharepoint_server — 2건");
     }
 }

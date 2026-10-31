@@ -12,8 +12,8 @@ public class FakeGateQueryRepository implements GateQueryRepository {
     private int withoutProduct;
     private int askedTop;
 
-    public FakeGateQueryRepository unmapped(String name, int count) {
-        unmapped.add(new ProductCount(name, count));
+    public FakeGateQueryRepository unmapped(String vendor, String name, int count) {
+        unmapped.add(new ProductCount(vendor, name, count));
         return this;
     }
 

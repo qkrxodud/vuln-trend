@@ -97,7 +97,7 @@ class GateCheckSampleTest {
         assertThat(topTen.getEvidence().get(0)).startsWith("1. CVE-2026-109618 80점 = KEV 50.0");
         GateItem unmapped = report.getItems().get(1);
         assertThat(unmapped.getStatus()).isEqualTo(GateStatus.REVIEW);
-        assertThat(unmapped.getEvidence()).containsExactly("connect_secure — 2건");
+        assertThat(unmapped.getEvidence()).containsExactly("?:connect_secure — 2건");
         assertThat(unmapped.getDetail()).contains("제품 없음 97건");
     }
 

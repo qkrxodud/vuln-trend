@@ -26,6 +26,17 @@
 #   제외한 것: WordPress·Jenkins 플러그인(CPE vendor 가 플러그인 작성자라 자동으로 빠짐, KEV 는 Core 만 매핑),
 #             "Microsoft / Edge and Internet Explorer" 처럼 두 제품을 대등하게 묶은 KEV 표기
 #   여러 제품을 묶은 KEV 표기("iOS and macOS" 등)는 맨 앞 제품으로 매핑했다.
+#
+# 추가 2026-11-01 (Gate G "미매핑 대표 제품 상위 노출 건을 yml 에 추가", 백엔드 B)
+#   근거: 첫 하루 실행(bbe0756) 뒤 Gate 점검 ② — 트렌드 상위 100건 중 표에 없던 대표 제품 44개(60건).
+#   제조사와 표준 이름이 분명한 40개를 아래 "Gate G 추가" 묶음에 넣었다. 줄마다 출처(CPE vendor:product, KEV 표기, 예시 CVE)를 적는다.
+#   CPE 별칭은 실제로 관찰한 표기만 넣었다(관찰하지 않은 판·모델 표기는 넣지 않음). KEV 가 "Multiple Products" 면 KEV 별칭을 넣지 않는다(위 (c)).
+#   넣지 않은 것(애매함 — 다음 튜닝 때 다시 본다):
+#     - brotli: CPE 제조사가 둘(google, andybalholm — 다른 구현). CVE-2026-111497
+#     - connection_manager_for_objectscale (progress): KEV 표기는 "Progress / LoadMaster" 라 CPE 와 KEV 가 가리키는 제품이 다름. CVE-2026-8037
+#     - enterprise_linux (redhat): 배포판이 CPE 첫 항목으로 나온 경우, 실제 제품은 libuser(KEV). CVE-2015-3246
+#     - fedora (fedoraproject): 같은 경우, 실제 제품은 ProFTPD(KEV). CVE-2015-3306
+#     - cisco:asyncos 의 KEV 표기 "Secure Email Gateway" 는 넣지 않았다(장비 이름 ≠ 운영체제 이름). CPE 별칭만 넣음
 
 products:
 
@@ -542,3 +553,314 @@ products:
       - { vendor: sap, product: netweaver }
     kev:
       - { vendor: "SAP", product: "NetWeaver" }
+
+  # --- Gate G 추가 (2026-11-01, 첫 하루 실행 상위 100건의 미매핑 제품) ---
+  # 출처 CPE jfrog:artifactory · KEV JFrog / Artifactory · CVE-2026-42016 외 3건
+  - slug: jfrog-artifactory
+    display_name: JFrog Artifactory
+    cpe:
+      - { vendor: "jfrog", product: "artifactory" }
+    kev:
+      - { vendor: "JFrog", product: "Artifactory" }
+
+  # 출처 CPE plex:media_server · KEV Plex / Media Server · CVE-2026-96652 외 3건
+  - slug: plex-media-server
+    display_name: Plex Media Server
+    cpe:
+      - { vendor: "plex", product: "media_server" }
+    kev:
+      - { vendor: "Plex", product: "Media Server" }
+
+  # 출처 CPE adobe:commerce · KEV Adobe / Commerce and Magento · CVE-2026-48356 외 2건
+  - slug: adobe-commerce
+    display_name: Adobe Commerce
+    cpe:
+      - { vendor: "adobe", product: "commerce" }
+    kev:
+      - { vendor: "Adobe", product: "Commerce and Magento" }
+
+  # 출처 CPE mikrotik:routeros · KEV MikroTik / RouterOS · CVE-2026-67277 외 2건
+  - slug: routeros
+    display_name: MikroTik RouterOS
+    cpe:
+      - { vendor: "mikrotik", product: "routeros" }
+    kev:
+      - { vendor: "MikroTik", product: "RouterOS" }
+
+  # 출처 CPE cisco:asyncos · CVE-2026-76461, CVE-2026-76519
+  - slug: cisco-asyncos
+    display_name: Cisco AsyncOS
+    cpe:
+      - { vendor: "cisco", product: "asyncos" }
+
+  # 출처 CPE ahsay:cloud_backup_suite · KEV Ahsay / AhsayCBS · CVE-2026-105133, CVE-2026-105134
+  - slug: ahsaycbs
+    display_name: AhsayCBS
+    cpe:
+      - { vendor: "ahsay", product: "cloud_backup_suite" }
+    kev:
+      - { vendor: "Ahsay", product: "AhsayCBS" }
+
+  # 출처 CPE papercut:papercut_mf · KEV PaperCut / NG/MF · CVE-2026-81578, CVE-2026-82078
+  - slug: papercut-ng-mf
+    display_name: "PaperCut NG·MF"
+    cpe:
+      - { vendor: "papercut", product: "papercut_mf" }
+    kev:
+      - { vendor: "PaperCut", product: "NG/MF" }
+
+  # 출처 CPE sonicwall:sma8200v · KEV SonicWall / SMA1000 Appliances · CVE-2026-83548, CVE-2026-83549 (CPE 는 모델 sma8200v)
+  - slug: sonicwall-sma1000
+    display_name: SonicWall SMA 1000
+    cpe:
+      - { vendor: "sonicwall", product: "sma8200v" }
+    kev:
+      - { vendor: "SonicWall", product: "SMA1000 Appliances" }
+
+  # 출처 CPE arista:velocloud_orchestrator · KEV Arista / VeloCloud Orchestrator · CVE-2026-114625, CVE-2026-93952
+  - slug: velocloud-orchestrator
+    display_name: VeloCloud Orchestrator
+    cpe:
+      - { vendor: "arista", product: "velocloud_orchestrator" }
+    kev:
+      - { vendor: "Arista", product: "VeloCloud Orchestrator" }
+
+  # 출처 CPE zammad:zammad · KEV Zammad GmbH / Zammad · CVE-2026-102489, CVE-2026-102490
+  - slug: zammad
+    display_name: Zammad
+    cpe:
+      - { vendor: "zammad", product: "zammad" }
+    kev:
+      - { vendor: "Zammad GmbH", product: "Zammad" }
+
+  # 출처 CPE acronis:acronis_backup · KEV Acronis / Backup · CVE-2026-87886
+  - slug: acronis-backup
+    display_name: Acronis Backup
+    cpe:
+      - { vendor: "acronis", product: "acronis_backup" }
+    kev:
+      - { vendor: "Acronis", product: "Backup" }
+
+  # 출처 CPE ajaxpro.2_project:ajaxpro.2 · KEV Ajax.NET Professional / Ajax.NET Professional · CVE-2021-23758
+  - slug: ajax-net-professional
+    display_name: Ajax.NET Professional
+    cpe:
+      - { vendor: "ajaxpro.2_project", product: "ajaxpro.2" }
+    kev:
+      - { vendor: "Ajax.NET Professional", product: "Ajax.NET Professional" }
+
+  # 출처 CPE wso2:api_control_plane · CVE-2026-5430 (KEV 는 Multiple Products)
+  - slug: wso2-api-control-plane
+    display_name: WSO2 API Control Plane
+    cpe:
+      - { vendor: "wso2", product: "api_control_plane" }
+
+  # 출처 CPE redhat:automatic_bug_reporting_tool · KEV Red Hat / Automatic Bug Reporting Tool · CVE-2015-5287
+  - slug: abrt
+    display_name: Red Hat ABRT
+    cpe:
+      - { vendor: "redhat", product: "automatic_bug_reporting_tool" }
+    kev:
+      - { vendor: "Red Hat", product: "Automatic Bug Reporting Tool" }
+
+  # 출처 CPE atlassian:bitbucket_data_center · CVE-2026-21589 (KEV 는 Multiple Products)
+  - slug: bitbucket-data-center
+    display_name: Atlassian Bitbucket Data Center
+    cpe:
+      - { vendor: "atlassian", product: "bitbucket_data_center" }
+
+  # 출처 CPE cisco:catalyst_sd-wan_manager · KEV Cisco / Catalyst SD-WAN Manager · CVE-2026-76504
+  - slug: cisco-catalyst-sd-wan-manager
+    display_name: Cisco Catalyst SD-WAN Manager
+    cpe:
+      - { vendor: "cisco", product: "catalyst_sd-wan_manager" }
+    kev:
+      - { vendor: "Cisco", product: "Catalyst SD-WAN Manager" }
+
+  # 출처 CPE collabora:collabora_online_-_built-in_code_server · KEV Collabora / Collabora Online – Built-in CODE Server · CVE-2026-110447
+  - slug: collabora-online
+    display_name: Collabora Online
+    cpe:
+      - { vendor: "collabora", product: "collabora_online_-_built-in_code_server" }
+    kev:
+      - { vendor: "Collabora", product: "Collabora Online – Built-in CODE Server" }
+
+  # 출처 CPE onlyoffice:document_server · KEV ONLYOFFICE / Docs · CVE-2021-3199
+  - slug: onlyoffice-docs
+    display_name: ONLYOFFICE Docs
+    cpe:
+      - { vendor: "onlyoffice", product: "document_server" }
+    kev:
+      - { vendor: "ONLYOFFICE", product: "Docs" }
+
+  # 출처 CPE fortinet:fortimail · KEV Fortinet / FortiMail · CVE-2026-104286
+  - slug: fortimail
+    display_name: FortiMail
+    cpe:
+      - { vendor: "fortinet", product: "fortimail" }
+    kev:
+      - { vendor: "Fortinet", product: "FortiMail" }
+
+  # 출처 CPE checkpoint:gaia_embedded · CVE-2026-85102 (KEV 는 Multiple Products)
+  - slug: check-point-gaia-embedded
+    display_name: Check Point Gaia Embedded
+    cpe:
+      - { vendor: "checkpoint", product: "gaia_embedded" }
+
+  # 출처 CPE gitea:gitea · KEV Gitea / Gitea · CVE-2026-60004
+  - slug: gitea
+    display_name: Gitea
+    cpe:
+      - { vendor: "gitea", product: "gitea" }
+    kev:
+      - { vendor: "Gitea", product: "Gitea" }
+
+  # 출처 CPE zyxel:gs1900-8_firmware · KEV Zyxel / GS1900 Series Switches · CVE-2026-7273 (CPE 는 모델 gs1900-8)
+  - slug: zyxel-gs1900
+    display_name: Zyxel GS1900
+    cpe:
+      - { vendor: "zyxel", product: "gs1900-8_firmware" }
+    kev:
+      - { vendor: "Zyxel", product: "GS1900 Series Switches" }
+
+  # 출처 CPE oracle:http_server · KEV Oracle / HTTP Server and Oracle Weblogic Server Proxy Plug-in · CVE-2026-21962 (KEV 묶음 표기는 맨 앞 제품으로)
+  - slug: oracle-http-server
+    display_name: Oracle HTTP Server
+    cpe:
+      - { vendor: "oracle", product: "http_server" }
+    kev:
+      - { vendor: "Oracle", product: "HTTP Server and Oracle Weblogic Server Proxy Plug-in" }
+
+  # 출처 CPE cisco:identity_services_engine · KEV Cisco / Identity Services Engine · CVE-2026-76460
+  - slug: cisco-ise
+    display_name: Cisco Identity Services Engine
+    cpe:
+      - { vendor: "cisco", product: "identity_services_engine" }
+    kev:
+      - { vendor: "Cisco", product: "Identity Services Engine" }
+
+  # 출처 CPE kestra:kestra · KEV Kestra / Kestra OSS · CVE-2026-49869
+  - slug: kestra
+    display_name: Kestra
+    cpe:
+      - { vendor: "kestra", product: "kestra" }
+    kev:
+      - { vendor: "Kestra", product: "Kestra OSS" }
+
+  # 출처 CPE litellm:litellm · KEV BerriAI / LiteLLM · CVE-2026-59822
+  - slug: litellm
+    display_name: LiteLLM
+    cpe:
+      - { vendor: "litellm", product: "litellm" }
+    kev:
+      - { vendor: "BerriAI", product: "LiteLLM" }
+
+  # 출처 CPE metabase:metabase · KEV Metabase / Metabase · CVE-2026-72898
+  - slug: metabase
+    display_name: Metabase
+    cpe:
+      - { vendor: "metabase", product: "metabase" }
+    kev:
+      - { vendor: "Metabase", product: "Metabase" }
+
+  # 출처 CPE checkpoint:multi-domain_security_management · CVE-2026-93616 (KEV 는 Multiple Products)
+  - slug: check-point-mdsm
+    display_name: Check Point Multi-Domain Security Management
+    cpe:
+      - { vendor: "checkpoint", product: "multi-domain_security_management" }
+
+  # 출처 CPE n-able:n-central · KEV N-able / N-central · CVE-2026-86218
+  - slug: n-central
+    display_name: N-able N-central
+    cpe:
+      - { vendor: "n-able", product: "n-central" }
+    kev:
+      - { vendor: "N-able", product: "N-central" }
+
+  # 출처 CPE owncloud:owncloud_server · KEV ownCloud / ownCloud · CVE-2023-49105
+  - slug: owncloud-server
+    display_name: ownCloud Server
+    cpe:
+      - { vendor: "owncloud", product: "owncloud_server" }
+    kev:
+      - { vendor: "ownCloud", product: "ownCloud" }
+
+  # 출처 CPE anyscale:ray · KEV Ray-Project / Ray · CVE-2025-62593
+  - slug: ray
+    display_name: Ray
+    cpe:
+      - { vendor: "anyscale", product: "ray" }
+    kev:
+      - { vendor: "Ray-Project", product: "Ray" }
+
+  # 출처 CPE beyondtrust:remote_support · KEV BeyondTrust / Remote Support · CVE-2026-102764
+  - slug: beyondtrust-remote-support
+    display_name: BeyondTrust Remote Support
+    cpe:
+      - { vendor: "beyondtrust", product: "remote_support" }
+    kev:
+      - { vendor: "BeyondTrust", product: "Remote Support" }
+
+  # 출처 CPE cisco:secure_firewall_management_center · KEV Cisco / Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management · CVE-2026-20079
+  - slug: cisco-secure-fmc
+    display_name: Cisco Secure Firewall Management Center
+    cpe:
+      - { vendor: "cisco", product: "secure_firewall_management_center" }
+    kev:
+      - { vendor: "Cisco", product: "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management" }
+
+  # 출처 CPE e-guardian:siteguard · KEV EG Secure Solutions / SiteGuard Server Edition · CVE-2026-106931
+  - slug: siteguard
+    display_name: SiteGuard
+    cpe:
+      - { vendor: "e-guardian", product: "siteguard" }
+    kev:
+      - { vendor: "EG Secure Solutions", product: "SiteGuard Server Edition" }
+
+  # 출처 CPE siemens:software_center · KEV Siemens / Software Center · CVE-2026-110936
+  - slug: siemens-software-center
+    display_name: Siemens Software Center
+    cpe:
+      - { vendor: "siemens", product: "software_center" }
+    kev:
+      - { vendor: "Siemens", product: "Software Center" }
+
+  # 출처 CPE microsoft:sql_server · KEV Microsoft / SQL Server · CVE-2019-1068
+  - slug: sql-server
+    display_name: Microsoft SQL Server
+    cpe:
+      - { vendor: "microsoft", product: "sql_server" }
+    kev:
+      - { vendor: "Microsoft", product: "SQL Server" }
+
+  # 출처 CPE encode:starlette · KEV Kludex / Starlette · CVE-2026-48710
+  - slug: starlette
+    display_name: Starlette
+    cpe:
+      - { vendor: "encode", product: "starlette" }
+    kev:
+      - { vendor: "Kludex", product: "Starlette" }
+
+  # 출처 CPE strapi:strapi · KEV Strapi / Strapi · CVE-2023-22894
+  - slug: strapi
+    display_name: Strapi
+    cpe:
+      - { vendor: "strapi", product: "strapi" }
+    kev:
+      - { vendor: "Strapi", product: "Strapi" }
+
+  # 출처 CPE sangoma:switchvox · KEV Sangoma / Switchvox · CVE-2026-9586
+  - slug: switchvox
+    display_name: Sangoma Switchvox
+    cpe:
+      - { vendor: "sangoma", product: "switchvox" }
+    kev:
+      - { vendor: "Sangoma", product: "Switchvox" }
+
+  # 출처 CPE jetbrains:teamcity · KEV JetBrains / TeamCity · CVE-2026-63077
+  - slug: teamcity
+    display_name: JetBrains TeamCity
+    cpe:
+      - { vendor: "jetbrains", product: "teamcity" }
+    kev:
+      - { vendor: "JetBrains", product: "TeamCity" }

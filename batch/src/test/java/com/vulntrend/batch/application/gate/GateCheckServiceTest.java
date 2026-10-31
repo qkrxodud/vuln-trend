@@ -169,7 +169,7 @@ class GateCheckServiceTest {
         @Test
         @DisplayName("제품 표에 없는 대표 제품이 있으면 그 항목이 확인 필요가 되고 실패로 치지는 않는다")
         void unmappedIsReview() {
-            gateQueries.unmapped("connect_secure", 4);
+            gateQueries.unmapped("ivanti", "connect_secure", 4);
 
             GateReport report = service().check();
 

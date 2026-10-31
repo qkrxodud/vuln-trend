@@ -27,9 +27,9 @@ class YamlProductAliasCatalogTest {
         private final ProductAliases aliases = catalog.load();
 
         @Test
-        @DisplayName("초기 제품 50개가 모두 들어 있다")
-        void hasFiftyProducts() {
-            assertThat(aliases.productCount()).isEqualTo(50);
+        @DisplayName("초기 제품 50개와 Gate G 에서 더한 40개, 제품 90개가 모두 들어 있다")
+        void hasNinetyProducts() {
+            assertThat(aliases.productCount()).isEqualTo(90);
         }
 
         @ParameterizedTest(name = "{0} / {1} → {3}")
@@ -43,6 +43,13 @@ class YamlProductAliasCatalogTest {
                 "Palo Alto Networks | PAN-OS          | pan-os         | Palo Alto PAN-OS",
                 "microsoft          | .net_framework  | dotnet         | .NET",
                 "apple              | ipados          | ios            | iOS·iPadOS",
+                "jfrog              | artifactory     | jfrog-artifactory | JFrog Artifactory",
+                "Plex               | Media Server    | plex-media-server | Plex Media Server",
+                "mikrotik           | routeros        | routeros       | MikroTik RouterOS",
+                "Collabora          | Collabora Online – Built-in CODE Server | collabora-online | Collabora Online",
+                "oracle             | http_server     | oracle-http-server | Oracle HTTP Server",
+                "apache             | http_server     | apache-http-server | Apache HTTP Server",
+                "microsoft          | sql_server      | sql-server     | Microsoft SQL Server",
                 "f5                 | nginx           | nginx          | nginx",
                 "WordPress          | Core            | wordpress      | WordPress"})
         @DisplayName("CPE 표기와 KEV 표기가 같은 표준 이름으로 이어진다")

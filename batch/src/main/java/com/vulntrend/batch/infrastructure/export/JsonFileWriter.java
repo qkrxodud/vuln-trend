@@ -20,12 +20,17 @@ import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.FileAttribute;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Stream;
 import java.util.zip.GZIPOutputStream;
 import lombok.RequiredArgsConstructor;
@@ -60,6 +65,10 @@ public class JsonFileWriter implements SiteDataWriter, DocumentSizer {
                     .withArrayEmptySeparator(""))
                     .withObjectIndenter(new DefaultIndenter("  ", "\n"))
                     .withArrayIndenter(new DefaultIndenter("  ", "\n")));
+    /** 임시 파일은 Java 기본이 600 이라 그대로 옮기면 남이 못 읽는다. 사이트 데이터는 비밀이 아니므로 644 로 만든다(POSIX 일 때) */
+    private static final boolean POSIX = FileSystems.getDefault().supportedFileAttributeViews().contains("posix");
+    private static final FileAttribute<Set<PosixFilePermission>> READABLE =
+            PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rw-r--r--"));
     private static final byte[] LAST_LINE = "\n".getBytes(StandardCharsets.UTF_8);
 
     private final OutputProperties properties;
@@ -92,7 +101,9 @@ public class JsonFileWriter implements SiteDataWriter, DocumentSizer {
 
     private static void replace(Path target, byte[] content) throws IOException {
         Files.createDirectories(target.getParent());
-        Path temp = Files.createTempFile(target.getParent(), ".", ".tmp");
+        Path temp = POSIX
+                ? Files.createTempFile(target.getParent(), ".", ".tmp", READABLE)
+                : Files.createTempFile(target.getParent(), ".", ".tmp");
         try {
             Files.write(temp, content);
             Files.move(temp, target, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);

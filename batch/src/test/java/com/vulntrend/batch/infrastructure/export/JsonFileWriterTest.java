@@ -12,9 +12,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -24,6 +26,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Stream;
 import java.util.zip.GZIPOutputStream;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -126,6 +129,20 @@ class JsonFileWriterTest {
                 assertThat(files).containsExactly(dataDir.resolve("meta.json"));
             }
         }
+    }
+
+    @Test
+    @DisplayName("새로 쓴 파일과 바꿔 쓴 파일은 누구나 읽고 주인만 고칠 수 있다(644)")
+    void readableByOthers() throws IOException {
+        Assumptions.assumeTrue(FileSystems.getDefault().supportedFileAttributeViews().contains("posix"));
+        writer.write(META, sample("CVE-2026-41203", null));
+        assertThat(PosixFilePermissions.toString(Files.getPosixFilePermissions(dataDir.resolve("meta.json"))))
+                .isEqualTo("rw-r--r--");
+
+        writer.write(META, sample("CVE-2026-41203", "Chrome"));
+
+        assertThat(PosixFilePermissions.toString(Files.getPosixFilePermissions(dataDir.resolve("meta.json"))))
+                .isEqualTo("rw-r--r--");
     }
 
     @Test
