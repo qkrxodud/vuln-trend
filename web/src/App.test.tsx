@@ -99,3 +99,16 @@ describe('좁은 화면 (1024px 미만, 5.10)', () => {
     expect(screen.getByLabelText('현재 주소')).toHaveTextContent('/cve/CVE-2026-41203')
   })
 })
+
+describe('푸터 고지 (5.11)', () => {
+  it.each([
+    ['메인', '/'],
+    ['상세 페이지', '/cve/CVE-2026-41203'],
+    ['없는 주소', '/없는-주소'],
+  ])('%s 화면 맨 아래에 고지 푸터를 둔다', async (_name, path) => {
+    renderApp(path)
+
+    const footer = await screen.findByRole('contentinfo')
+    expect(footer).toHaveTextContent('not endorsed or certified by the NVD')
+  })
+})
