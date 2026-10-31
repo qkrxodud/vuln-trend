@@ -1,8 +1,8 @@
-import { TREND_FILTERS } from '../../lib/trend-filter.ts'
+import { TREND_FILTERS, type TrendFilter } from '../../lib/trend-filter.ts'
 import { useTrendFilter } from '../../hooks/use-trend-filter.ts'
 
-// 전체 / KEV / Critical. 목록 옆 필터도 이 컴포넌트를 쓴다 (R1)
-export const TrendFilterTabs = () => {
+// 전체 / KEV / Critical. 헤더와 목록 옆에서 같은 상태를 쓴다 (R1). 목록 옆은 건수를 함께 적는다
+export const TrendFilterTabs = ({ counts }: { counts?: Record<TrendFilter, number> }) => {
   const { filter, setFilter } = useTrendFilter()
   return (
     <div role="group" aria-label="취약점 필터" className="inline-flex gap-1 self-start rounded-full bg-chip p-1">
@@ -20,7 +20,7 @@ export const TrendFilterTabs = () => {
                 : 'rounded-full px-3.5 py-1.5 text-[13px] text-ink-soft hover:text-ink'
             }
           >
-            {option.label}
+            {counts === undefined ? option.label : `${option.label} ${counts[option.value]}`}
           </button>
         )
       })}
