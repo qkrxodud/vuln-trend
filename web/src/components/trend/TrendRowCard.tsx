@@ -29,11 +29,15 @@ export const TrendRowCard = ({ row, selected, onSelect }: TrendRowCardProps) => 
         {row.kev_ransomware ? <Badge tone="ransomware">랜섬웨어</Badge> : null}
         <Badge style={{ background: severity.background, color: severity.color }}>{severity.label}</Badge>
         {row.primary_product === null ? null : <Badge tone="neutral">{row.primary_product}</Badge>}
-        {row.is_kev && row.kev_due_date !== null ? (
-          <span className="ml-auto text-xs font-semibold whitespace-nowrap text-kev">
-            KEV 패치 기한 {formatDueDate(row.kev_due_date)}
+        {/* 오른쪽 끝: KEV 기한, 좁은 화면에서는 상세 페이지로 간다는 표시(디자인 원본 vt-mobile-only)도 함께 */}
+        <span className="ml-auto flex items-center gap-3 text-xs font-semibold whitespace-nowrap">
+          {row.is_kev && row.kev_due_date !== null ? (
+            <span className="text-kev">KEV 패치 기한 {formatDueDate(row.kev_due_date)}</span>
+          ) : null}
+          <span aria-hidden="true" className="text-accent lg:hidden">
+            상세 →
           </span>
-        ) : null}
+        </span>
       </span>
       {row.summary_what === null ? (
         <span className="text-[13.5px] text-ink-soft">

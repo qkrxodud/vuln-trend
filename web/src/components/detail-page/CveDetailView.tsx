@@ -22,16 +22,16 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
 )
 
 const ScoreTile = ({ label, value, sub }: { label: string; value: string; sub: string | null }) => (
-  <li className="flex flex-col gap-1 rounded-2xl bg-paper px-5 py-4">
-    <span className="text-sm text-ink-soft">{label}</span>
-    <span className="text-[34px] leading-tight font-bold tracking-tight tabular-nums">{value}</span>
+  <li className="flex min-w-0 flex-col gap-1 rounded-2xl bg-paper px-3 py-3 sm:px-5 sm:py-4">
+    <span className="text-[13px] text-ink-soft sm:text-sm">{label}</span>
+    <span className="text-2xl leading-tight font-bold sm:text-[34px] tracking-tight tabular-nums">{value}</span>
     {sub === null ? null : <span className="text-xs text-ink-faint">{sub}</span>}
   </li>
 )
 
 // 점수 3종: 트렌드 / EPSS(상위 N%) / CVSS(버전·심각도)
 const ScoreTiles = ({ detail }: { detail: CveDetail }) => (
-  <ul aria-label="점수" className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,180px),1fr))] gap-3">
+  <ul aria-label="점수" className="grid grid-cols-3 gap-2 sm:gap-3">
     <ScoreTile label="트렌드 점수" value={String(detail.score)} sub={null} />
     <ScoreTile label="EPSS" value={formatEpss(detail.epss)} sub={formatTopPercent(detail.epss_percentile)} />
     <ScoreTile

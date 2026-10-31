@@ -107,7 +107,7 @@ export const DailyNewChart = ({ daily }: { daily: DailyCount[] }) => {
           dataKey="label"
           tickLine={false}
           axisLine={false}
-          interval={0}
+          interval="preserveEnd"
           tick={<DayTick latestIndex={bars.length - 1} />}
           height={24}
         />

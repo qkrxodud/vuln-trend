@@ -37,7 +37,7 @@ export const KpiCards = () => {
     <section aria-label="오늘 현황">
       <LoadableView loadable={meta} label="오늘 현황">
         {(data) => (
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {KPI_DEFINITIONS.map((definition) => (
               <KpiCard
                 key={definition.key}

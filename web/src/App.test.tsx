@@ -7,6 +7,7 @@ import App from './App.tsx'
 import { DataProvider } from './hooks/DataProvider.tsx'
 import { TrendFilterProvider } from './hooks/TrendFilterProvider.tsx'
 import { FakeFetch } from './test/fake/fake-fetch.ts'
+import { setViewportWidth } from './test/fake/fake-media.ts'
 import { cveDetail, metaWithVersion, stats } from './test/fixtures.ts'
 import { trendRow } from './test/rows.ts'
 
@@ -15,8 +16,10 @@ const second = trendRow({ id: 'CVE-2026-41203', score: 84, title: '두 번째 �
 
 const LocationProbe = () => <output aria-label="현재 주소">{useLocation().pathname}</output>
 
+let server: FakeFetch
+
 const renderApp = (path: string) => {
-  const server = new FakeFetch()
+  server = new FakeFetch()
     .serve('/vuln-trend/data/meta.json', metaWithVersion('v1'))
     .serve('/vuln-trend/data/stats.json?v=v1', stats)
     .serve('/vuln-trend/data/index.json?v=v1', [first, second])
@@ -72,5 +75,27 @@ describe('메인 화면과 상세 패널 (D8)', () => {
 
     expect(await screen.findByRole('heading', { level: 1, name: 'CVE-2026-41203' })).toBeInTheDocument()
     expect(screen.queryByRole('complementary', { name: '선택한 취약점 상세' })).not.toBeInTheDocument()
+  })
+})
+
+describe('좁은 화면 (1024px 미만, 5.10)', () => {
+  it('옆 패널을 그리지 않고, 패널용 상세도 받지 않는다', async () => {
+    setViewportWidth(375)
+    renderApp('/')
+
+    await screen.findByRole('button', { name: /CVE-2026-40117/ })
+
+    expect(screen.queryByRole('complementary', { name: '선택한 취약점 상세' })).not.toBeInTheDocument()
+    expect(server.requestsTo('/vuln-trend/data/cve/CVE-2026-40117.json?v=v1')).toHaveLength(0)
+  })
+
+  it('목록에서 취약점을 누르면 바로 상세 페이지로 간다', async () => {
+    setViewportWidth(375)
+    const user = renderApp('/')
+
+    await user.click(await screen.findByRole('button', { name: /CVE-2026-41203/ }))
+
+    expect(await screen.findByRole('heading', { level: 1, name: 'CVE-2026-41203' })).toBeInTheDocument()
+    expect(screen.getByLabelText('현재 주소')).toHaveTextContent('/cve/CVE-2026-41203')
   })
 })

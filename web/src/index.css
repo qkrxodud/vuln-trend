@@ -33,4 +33,7 @@
 
 body {
   @apply bg-white font-sans text-ink antialiased;
+  /* 한국어는 낱말 중간에서 줄을 바꾸지 않는다. 긴 영어 토큰·URL 은 넘치지 않게 끊는다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }

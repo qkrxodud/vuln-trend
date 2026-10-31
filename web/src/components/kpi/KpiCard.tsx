@@ -13,19 +13,19 @@ export interface KpiCardProps {
   toggle?: { pressed: boolean; onToggle: () => void }
 }
 
-const CARD_BASE = 'flex w-full flex-col gap-1.5 rounded-2xl border px-[22px] py-5 text-left'
+const CARD_BASE = 'flex h-full w-full flex-col gap-1.5 rounded-2xl border px-4 py-4 text-left sm:px-[22px] sm:py-5'
 
 const CardBody = ({ label, description, today, yesterday, tone = 'default', toggle }: KpiCardProps) => {
   const hint = toggle === undefined ? `어제 ${formatCount(yesterday)}` : toggle.pressed ? '필터 해제' : '눌러서 필터'
   return (
     <>
-      <span className="flex items-center justify-between text-[15px] text-ink-soft">
+      <span className="flex flex-wrap items-center justify-between gap-x-2 text-sm text-ink-soft sm:text-[15px]">
         <span>{label}</span>
         <span className="text-xs text-ink-faint">{hint}</span>
       </span>
       <span className="flex items-baseline gap-2.5">
         <span
-          className={`text-[40px] leading-tight font-bold tracking-tight tabular-nums ${tone === 'kev' ? 'text-kev' : 'text-ink'}`}
+          className={`text-[32px] leading-tight sm:text-[40px] font-bold tracking-tight tabular-nums ${tone === 'kev' ? 'text-kev' : 'text-ink'}`}
         >
           {formatCount(today)}
         </span>
@@ -50,7 +50,7 @@ export const KpiCard = (props: KpiCardProps): ReactNode => {
     )
   }
   return (
-    <div data-kpi>
+    <div data-kpi className="h-full">
       <button
         type="button"
         aria-pressed={toggle.pressed}
