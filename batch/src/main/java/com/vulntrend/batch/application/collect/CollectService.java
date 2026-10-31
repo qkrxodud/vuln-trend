@@ -9,6 +9,7 @@ import com.vulntrend.batch.global.error.VulnTrendException;
 import java.time.Clock;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Service;
  * 수집 순회(기획서 6장 1~4단계). 등록된 수집기를 하나씩 돌리고 소스마다 진행 기록을 따로 남긴다.
  * 한 소스의 실패(우리 예외)는 그 소스만 실패로 기록하고 다음 소스로 넘어간다 — 다른 소스 커서를 막지 않는다(WBS 2.4).
  * 우리 예외가 아닌 것(프로그램 오류·DB 장애)은 잡지 않는다 — 실행 전체가 멈추고 아무것도 게시되지 않는다.
+ * 순서는 빈 등록 순서가 아니라 SourceName 선언 순서(NVD → KEV → EPSS → OSV → NEWS, 기획서 6장 단계 순서)다.
+ * KEV·EPSS 표시가 같은 실행에서 NVD 가 새로 넣은 CVE 에도 붙게 하려는 것이다(백엔드 B 요청 2026-10-31).
  */
 @Slf4j
 @Service
@@ -31,10 +34,14 @@ public class CollectService {
     public CollectOutcome collectAll() {
         Instant now = clock.instant();
         List<CollectResult> results = new ArrayList<>();
-        for (Collector collector : collectors) {
+        for (Collector collector : inSourceOrder()) {
             results.add(collectOne(collector, now));
         }
         return CollectOutcome.of(results);
+    }
+
+    private List<Collector> inSourceOrder() {
+        return collectors.stream().sorted(Comparator.comparing(Collector::source)).toList();
     }
 
     private CollectResult collectOne(Collector collector, Instant now) {

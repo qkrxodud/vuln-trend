@@ -83,6 +83,21 @@ class CollectServiceTest {
     }
 
     @Test
+    @DisplayName("수집기는 등록 순서와 상관없이 NVD → KEV → EPSS 순서로 돈다")
+    void runsInSourceOrder() {
+        // given: EPSS·KEV·NVD 순서로 등록됨 — KEV 표시가 같은 실행에서 NVD 가 새로 넣은 CVE 에도 붙으려면 NVD 가 먼저다
+        List<FakeCollector> registered = List.of(FakeCollector.loading(SourceName.EPSS, 1),
+                FakeCollector.loading(SourceName.KEV, 1), FakeCollector.loading(SourceName.NVD, 1));
+
+        // when
+        CollectOutcome outcome = new CollectService(List.copyOf(registered), syncStates, clock).collectAll();
+
+        // then
+        assertThat(outcome.getResults()).extracting(result -> result.getSource())
+                .containsExactly(SourceName.NVD, SourceName.KEV, SourceName.EPSS);
+    }
+
+    @Test
     @DisplayName("수집기가 하나도 없으면 실패 없이 빈 결과가 나온다")
     void noCollectors() {
         CollectOutcome outcome = new CollectService(List.of(), syncStates, clock).collectAll();
