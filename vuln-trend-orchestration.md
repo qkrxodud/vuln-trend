@@ -32,7 +32,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 소유자 | 경로 |
 |---|---|
 | 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summarize/**`·`…/infrastructure/ai/**` |
-| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`·`…/infrastructure/feed/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
+| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/domain/stat/**`·`…/application/stat/**`, `…/domain/export/**`, `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`·`…/infrastructure/feed/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
 | 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**`, Gate G 화면 쪽 점검 스크립트(`web/scripts/`) |
 | 오케스트레이터 | `vuln-trend-wbs.md`, `vuln-trend-plan.md`, 이 파일, `CLAUDE.md`, `.claude/**`, `scripts/**` |
 
@@ -56,7 +56,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 역할 | 세션 | 지금 하는 것 | 다음 관문 |
 |---|---|---|---|
 | 백엔드 A | `vuln-trend-1f` | 6.3 실행(상위 20건·상한·fallbacks·버전 검사) | 요약 키는 사용자 |
-| 백엔드 B | `vuln-trend-25` | 3.5 커밋 → 4.1 JsonExporter | — |
+| 백엔드 B | `vuln-trend-25` | 4.1 커밋 → 4.2 파일별 생성 | — |
 | 프론트 | `vuln-trend-0e` | 대기(Gate G 점검 커밋 6107bb7) | M1 뒤 gate:check·목업 교체 |
 
 ### 재개 메모 (2026-10-30 일시 정지 — 지난 정지, 아래 2026-10-31 정지가 최신)
@@ -117,3 +117,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-31 | 3.4·5.12 승인. G1 yesterday.high_risk null 허용(사용자 확정 규칙의 귀결, 오케스트레이터 승인) | — |
 | 2026-10-31 | 5.13 커밋(298ae30). 프론트 다음 배정 = Gate G 점검 준비(사용자 결정) | 사용자 결정 |
 | 2026-10-31 | Gate G 점검·6.2·3.5 승인. 요약 fallbacks·버전 검사 결정 | 사용자 결정 |
+| 2026-10-31 | 4.1 승인. B 소유에 domain/stat·application/stat·domain/export 추가 | 사용자 승인 |

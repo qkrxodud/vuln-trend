@@ -309,7 +309,7 @@ web/public/data/
 ```
 
 원칙
-- **필드 이름은 모든 파일에서 snake_case** (사용자 결정 2026-10-30). 배치는 Jackson 전역 `SNAKE_CASE` 전략 하나로 출력하고, 프론트는 이름을 바꾸지 않고 그대로 쓴다. 상세 필드 정의는 `web/src/types/*.ts` 가 계약(G1)
+- **필드 이름은 모든 파일에서 snake_case** (사용자 결정 2026-10-30). 배치는 출력 전용 Jackson 매퍼 하나(`SNAKE_CASE`)로 모든 파일을 출력하고(Spring 전역 설정은 NVD 응답 읽기를 깨므로 쓰지 않음, 사용자 확정 2026-10-31). 점수 구성 항은 소수 1자리(50.0) 그대로 쓰며, 프론트는 이름을 바꾸지 않고 그대로 쓴다. 상세 필드 정의는 `web/src/types/*.ts` 가 계약(G1)
 - 메인이 읽는 `index.json`은 작게. 전체를 한 파일에 넣지 않음
 - **per-CVE 파일 생성 범위**: index / recent / products / ecosystems 목록에 등장하는 건 + 점수 상위 N건만 (상한 수천 개). 그 외 CVE는 검색 결과에서 NVD 링크로 연결. 연 2~3만 파일을 전부 커밋하면 git 작업이 느려짐
 - 내용이 같으면 파일을 건드리지 않아 git diff 최소화 (push 속도의 핵심). 감쇠 때문에 `trend_score`는 매 실행 바뀌므로 JSON에는 **정수로 반올림**해 출력, `score_breakdown` 항도 소수 1자리로 제한해 churn을 줄임
