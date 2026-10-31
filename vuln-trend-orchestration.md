@@ -55,8 +55,8 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 
 | 역할 | 세션 | 지금 하는 것 | 다음 관문 |
 |---|---|---|---|
-| 백엔드 A | `vuln-trend-1f` | 4.3 커밋 → 4.4 끝에서 끝까지 시험 틀 | ExportService 뒤 러너 연결·종료 코드 1 |
-| 백엔드 B | `vuln-trend-25` | 4.2 파일별 생성(① meta·stats 끝, ② index·recent 진행) | — |
+| 백엔드 A | `vuln-trend-1f` | 4.4 시험 틀 준비 완료(DailyRunEndToEndTest) | B 4.2 커밋 뒤 러너 연결·종료 코드 1 |
+| 백엔드 B | `vuln-trend-25` | 4.2 커밋 후 대기 | 다음 배정 사용자와 결정 |
 | 프론트 | `vuln-trend-0e` | 대기 — 사용자가 새 디자인(claude.ai/design 링크) 적용 요청, 파일 내보내기 대기 | 새 디자인 비교 → 재작업 범위 결정 |
 
 ### 재개 메모 (2026-10-30 일시 정지 — 지난 정지, 아래 2026-10-31 정지가 최신)
@@ -120,3 +120,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-31 | 4.1 승인. B 소유에 domain/stat·application/stat·domain/export 추가 | 사용자 승인 |
 | 2026-10-31 | 6.3 승인(V2 summary_call). 4.3 GitPusher B→A 재배정, A 소유에 infrastructure/publish·마이그레이션. 사용자 새 디자인 요청(링크는 직접 열 수 없어 파일 내보내기 요청) | 사용자 승인·요청 |
 | 2026-10-31 | 4.3 승인, A 소유에 domain/publish | 사용자 승인 |
+| 2026-10-31 | 4.2 승인 | 사용자 승인 |
