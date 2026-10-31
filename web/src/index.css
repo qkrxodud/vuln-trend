@@ -19,6 +19,13 @@
   --color-warn-line: #e9d4a3;
   --color-warn-ink: #6b4e12;
 
+  /* 심각도 5색 고정: Critical 빨강 / High 주황 / Medium 노랑 / Low 회색 / 미평가 연회색 (기획서 8장 색상 규칙) */
+  --color-sev-critical: #b85c4a;
+  --color-sev-high: #d9925f;
+  --color-sev-medium: #d8bb72;
+  --color-sev-low: #a9a69c;
+  --color-sev-unrated: #dedbd3;
+
   /* KEV: 빨강 하나만 (기획서 8장 색상 규칙) */
   --color-kev: #8a3a2a;
   --color-kev-bg: #f5e6e1;
