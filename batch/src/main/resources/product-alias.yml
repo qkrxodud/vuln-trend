@@ -1,0 +1,544 @@
+# product-alias.yml — 제품 이름 표준화 표의 초기 데이터 (기획서 5장 product_alias, 메모 P11, WBS 0.5)
+#
+# 모양: 제품(slug) 하나에 CPE 별칭과 KEV 별칭을 여럿 단다. 적재기가 별칭 하나를 product_alias 한 행으로 펼친다.
+#   slug         : 제품 묶음 키(소문자·숫자·하이픈). affected_product.slug 에 들어간다
+#   display_name : 사이트에 보이는 이름. vulnerability.primary_product 에 들어간다
+#   cpe          : NVD CPE 2.3 cpe:2.3:<part>:<vendor>:<product>:... 의 vendor·product 원문
+#   kev          : CISA KEV 의 vendorProject·product 원문(대소문자·공백 그대로)
+# 키 정규화: 적재와 조회 양쪽에서 같은 규칙을 쓴다 — 소문자로 바꾸고, 영문·숫자가 아닌 글자가 이어지면 밑줄 하나로,
+#   앞뒤 밑줄은 뗀다. 예) "Palo Alto Networks"/"PAN-OS" → palo_alto_networks/pan_os, google/chrome → google/chrome
+#   그래서 CPE 와 KEV 별칭이 같은 (cpe_vendor, cpe_product) 열에 함께 들어간다. 테이블 열은 추가하지 않는다.
+# 범위: 정규화한 (vendor, product) 가 정확히 같을 때만 매핑한다. 미매핑 제품은 CPE product 원문 그대로 보인다(기획서 5장 메모).
+#   공개 후 2주 튜닝 루틴에서 메인 상위에 올라온 미매핑 제품을 여기에 추가한다(기획서 10장).
+#
+# 확정 2026-10-31 (사용자, 오케스트레이터 권고안대로)
+#   (a) "초기 50개"는 제품(slug) 50개로 해석한다. 별칭을 펼친 행은 그보다 많다.
+#   (b) Windows Server 는 windows 로 합친다. NVD 표본에서 windows_server_* 가 CPE 첫 항목으로 나온 적이 없다.
+#   (c) KEV 매핑(리스크 R7)은 혼합안: KEV 원문 별칭을 여기에 명시하고, 적재·조회 양쪽에 같은 정규화를 쓰며,
+#       테이블 열은 추가하지 않는다. KEV 의 "Multiple Products" 류는 매핑하지 않고 CPE 첫 항목으로 넘긴다(WBS 2.3).
+#
+# 근거 데이터(2026-10-30 백엔드 B 조사)
+#   - CISA KEV 카탈로그 2026.10.29판(1764건)의 vendorProject/product 빈도와 표기 변형
+#   - NVD 2026-08 발행 CVE 14000건 중 CPE 가 있는 4516건의 "CPE 첫 항목" 빈도(primary_product 규칙이 쓰는 값)
+#     예) Windows CVE 의 첫 항목은 windows_10_1607 이 165건, windows_10_22h2 는 1건이었다
+#   - NVD CPE 사전 API(cpeMatchString)로 표기 존재·폐기(deprecated) 여부 확인
+#   - 프론트(0e) 초안 50행을 이어받아 고쳤다
+#   제외한 것: WordPress·Jenkins 플러그인(CPE vendor 가 플러그인 작성자라 자동으로 빠짐, KEV 는 Core 만 매핑),
+#             "Microsoft / Edge and Internet Explorer" 처럼 두 제품을 대등하게 묶은 KEV 표기
+#   여러 제품을 묶은 KEV 표기("iOS and macOS" 등)는 맨 앞 제품으로 매핑했다.
+
+products:
+
+  # --- Microsoft ---
+  - slug: windows
+    display_name: Windows
+    cpe:
+      - { vendor: microsoft, product: windows_10_1507 }
+      - { vendor: microsoft, product: windows_10_1607 }
+      - { vendor: microsoft, product: windows_10_1809 }
+      - { vendor: microsoft, product: windows_10_21h2 }
+      - { vendor: microsoft, product: windows_10_22h2 }
+      - { vendor: microsoft, product: windows_11_22h2 }
+      - { vendor: microsoft, product: windows_11_23h2 }
+      - { vendor: microsoft, product: windows_11_24h2 }
+      - { vendor: microsoft, product: windows_11_25h2 }
+      - { vendor: microsoft, product: windows_11_26h1 }
+      - { vendor: microsoft, product: windows_server_2008 }
+      - { vendor: microsoft, product: windows_server_2012 }
+      - { vendor: microsoft, product: windows_server_2016 }
+      - { vendor: microsoft, product: windows_server_2019 }
+      - { vendor: microsoft, product: windows_server_2022 }
+      - { vendor: microsoft, product: windows_server_2022_23h2 }
+      - { vendor: microsoft, product: windows_server_2025 }
+    kev:
+      - { vendor: "Microsoft", product: "Windows" }
+      - { vendor: "Microsoft", product: "Win32k" }
+      - { vendor: "Microsoft", product: "DirectX Graphics Kernel (DXGKRNL)" }
+      - { vendor: "Microsoft", product: "Windows Ancillary Function Driver for WinSock" }
+      - { vendor: "Microsoft", product: "Windows CNG Key Isolation Service" }
+      - { vendor: "Microsoft", product: "Windows COM+ Event System Service" }
+      - { vendor: "Microsoft", product: "Internet Key Exchange (IKE) Service Extensions" }
+
+  - slug: office
+    display_name: Microsoft Office
+    cpe:
+      - { vendor: microsoft, product: 365_apps }
+      - { vendor: microsoft, product: office }
+      - { vendor: microsoft, product: office_2016 }
+      - { vendor: microsoft, product: office_2019 }
+      - { vendor: microsoft, product: office_2021 }
+      - { vendor: microsoft, product: office_2024 }
+    kev:
+      - { vendor: "Microsoft", product: "Office" }
+      - { vendor: "Microsoft", product: "Office Outlook" }
+      - { vendor: "Microsoft", product: "Word" }
+
+  - slug: exchange-server
+    display_name: Microsoft Exchange Server
+    cpe:
+      - { vendor: microsoft, product: exchange_server }
+      - { vendor: microsoft, product: exchange_server_subscription_edition }
+    kev:
+      - { vendor: "Microsoft", product: "Exchange Server" }
+      - { vendor: "Microsoft", product: "Exchange" }
+
+  - slug: sharepoint-server
+    display_name: Microsoft SharePoint Server
+    cpe:
+      - { vendor: microsoft, product: sharepoint_server }
+    kev:
+      - { vendor: "Microsoft", product: "SharePoint" }
+      - { vendor: "Microsoft", product: "SharePoint Server" }
+
+  - slug: edge
+    display_name: Microsoft Edge
+    cpe:
+      - { vendor: microsoft, product: edge_chromium }
+      - { vendor: microsoft, product: edge }
+    kev:
+      - { vendor: "Microsoft", product: "Edge" }
+
+  - slug: dotnet
+    display_name: .NET
+    cpe:
+      - { vendor: microsoft, product: .net }
+      - { vendor: microsoft, product: .net_framework }
+    kev:
+      - { vendor: "Microsoft", product: ".NET Framework" }
+      - { vendor: "Microsoft", product: ".NET Core and Visual Studio" }
+
+  # --- 브라우저 ---
+  - slug: chrome
+    display_name: Chrome
+    cpe:
+      - { vendor: google, product: chrome }
+    kev:
+      - { vendor: "Google", product: "Chrome" }
+      - { vendor: "Google", product: "Chrome Blink" }
+      - { vendor: "Google", product: "Chrome FreeType" }
+      - { vendor: "Google", product: "Chrome Media" }
+      - { vendor: "Google", product: "Chrome WebAudio" }
+      - { vendor: "Google", product: "Chrome for Android UI" }
+      - { vendor: "Google", product: "Chromium" }
+      - { vendor: "Google", product: "Chromium V8" }
+      - { vendor: "Google", product: "Chromium Animation" }
+      - { vendor: "Google", product: "Chromium Blink" }
+      - { vendor: "Google", product: "Chromium GPU" }
+      - { vendor: "Google", product: "Chromium Indexed DB API" }
+      - { vendor: "Google", product: "Chromium Intents" }
+      - { vendor: "Google", product: "Chromium Mojo" }
+      - { vendor: "Google", product: "Chromium Network Service" }
+      - { vendor: "Google", product: "Chromium PopupBlocker" }
+      - { vendor: "Google", product: "Chromium Portals" }
+      - { vendor: "Google", product: "Chromium Skia" }
+      - { vendor: "Google", product: "Chromium WebGL" }
+      - { vendor: "Google", product: "Chromium WebP" }
+      - { vendor: "Google", product: "Chromium WebRTC" }
+      - { vendor: "Google", product: "Chromium libvpx" }
+
+  - slug: firefox
+    display_name: Firefox
+    cpe:
+      - { vendor: mozilla, product: firefox }
+      - { vendor: mozilla, product: firefox_esr }   # 폐기된 옛 표기. 옛 CVE 를 위해 남긴다
+    kev:
+      - { vendor: "Mozilla", product: "Firefox" }
+      - { vendor: "Mozilla", product: "Firefox and Thunderbird" }
+      - { vendor: "Mozilla", product: "Firefox, Firefox ESR, and Thunderbird" }
+
+  - slug: safari
+    display_name: Safari
+    cpe:
+      - { vendor: apple, product: safari }
+
+  # --- 운영체제 ---
+  - slug: ios
+    display_name: iOS·iPadOS
+    cpe:
+      - { vendor: apple, product: iphone_os }
+      - { vendor: apple, product: ipados }
+    kev:
+      - { vendor: "Apple", product: "iOS" }
+      - { vendor: "Apple", product: "iOS and iPadOS" }
+      - { vendor: "Apple", product: "iOS and macOS" }
+      - { vendor: "Apple", product: "iOS, iPadOS, and macOS" }
+      - { vendor: "Apple", product: "iOS, iPadOS, and watchOS" }
+      - { vendor: "Apple", product: "iOS, macOS, watchOS" }
+
+  - slug: macos
+    display_name: macOS
+    cpe:
+      - { vendor: apple, product: macos }
+      - { vendor: apple, product: mac_os_x }
+    kev:
+      - { vendor: "Apple", product: "macOS" }
+
+  - slug: android
+    display_name: Android
+    cpe:
+      - { vendor: google, product: android }
+    kev:
+      - { vendor: "Android", product: "Android OS" }
+      - { vendor: "Android", product: "Framework" }
+      - { vendor: "Android", product: "Kernel" }
+      - { vendor: "Android", product: "Android Kernel" }
+      - { vendor: "Android", product: "Runtime" }
+
+  - slug: linux-kernel
+    display_name: Linux Kernel
+    cpe:
+      - { vendor: linux, product: linux_kernel }
+    kev:
+      - { vendor: "Linux", product: "Kernel" }
+
+  # --- 오픈소스 기반 라이브러리·도구 ---
+  - slug: openssl
+    display_name: OpenSSL
+    cpe:
+      - { vendor: openssl, product: openssl }
+    kev:
+      - { vendor: "OpenSSL", product: "OpenSSL" }
+
+  - slug: openssh
+    display_name: OpenSSH
+    cpe:
+      - { vendor: openbsd, product: openssh }
+
+  - slug: curl
+    display_name: curl
+    cpe:
+      - { vendor: haxx, product: curl }
+      - { vendor: haxx, product: libcurl }
+
+  # --- 웹 서버·미들웨어 ---
+  - slug: apache-http-server
+    display_name: Apache HTTP Server
+    cpe:
+      - { vendor: apache, product: http_server }
+    kev:
+      - { vendor: "Apache", product: "HTTP Server" }
+
+  - slug: nginx
+    display_name: nginx
+    cpe:
+      - { vendor: f5, product: nginx }
+      - { vendor: f5, product: nginx_open_source }
+      - { vendor: f5, product: nginx_plus }
+      - { vendor: nginx, product: nginx }          # 사전에서 폐기된 옛 표기. 옛 CVE 를 위해 남긴다
+
+  - slug: tomcat
+    display_name: Apache Tomcat
+    cpe:
+      - { vendor: apache, product: tomcat }
+    kev:
+      - { vendor: "Apache", product: "Tomcat" }
+
+  - slug: struts
+    display_name: Apache Struts
+    cpe:
+      - { vendor: apache, product: struts }
+    kev:
+      - { vendor: "Apache", product: "Struts" }
+      - { vendor: "Apache", product: "Struts 1" }
+      - { vendor: "Apache", product: "Struts 2" }
+
+  - slug: log4j
+    display_name: Apache Log4j
+    cpe:
+      - { vendor: apache, product: log4j }
+    kev:
+      - { vendor: "Apache", product: "Log4j2" }
+
+  - slug: spring-framework
+    display_name: Spring Framework
+    cpe:
+      - { vendor: vmware, product: spring_framework }
+    kev:
+      - { vendor: "VMware", product: "Spring Framework" }
+
+  - slug: weblogic-server
+    display_name: Oracle WebLogic Server
+    cpe:
+      - { vendor: oracle, product: weblogic_server }
+    kev:
+      - { vendor: "Oracle", product: "WebLogic Server" }
+
+  # --- 언어·런타임 ---
+  - slug: php
+    display_name: PHP
+    cpe:
+      - { vendor: php, product: php }
+    kev:
+      - { vendor: "PHP Group", product: "PHP" }
+      - { vendor: "PHP", product: "PHP" }
+      - { vendor: "PHP", product: "FastCGI Process Manager (FPM)" }
+
+  - slug: nodejs
+    display_name: Node.js
+    cpe:
+      - { vendor: nodejs, product: nodejs }        # 현재 표기(사전 69건, 폐기 0)
+      - { vendor: nodejs, product: node.js }       # 폐기된 옛 표기. 옛 CVE 를 위해 남긴다
+
+  - slug: java-se
+    display_name: Java SE
+    cpe:
+      - { vendor: oracle, product: jdk }           # 현재 표기(사전 671건 중 491건 유효, JDK 25 까지)
+      - { vendor: oracle, product: jre }           # 확인 필요: 사전 조회가 응답 없이 끝나 현재 표기인지 미확인
+      - { vendor: oracle, product: java_se }       # 폐기된 옛 표기(18건 중 17건 폐기)
+      - { vendor: oracle, product: openjdk }
+    kev:
+      - { vendor: "Oracle", product: "Java SE" }
+      - { vendor: "Oracle", product: "Java Runtime Environment (JRE)" }
+      - { vendor: "Oracle", product: "Java SE JDK and JRE" }
+      - { vendor: "Oracle", product: "Java SE and JRockit" }
+
+  # --- 데이터베이스 ---
+  - slug: postgresql
+    display_name: PostgreSQL
+    cpe:
+      - { vendor: postgresql, product: postgresql }
+
+  # --- CMS·협업·개발 도구 ---
+  - slug: wordpress
+    display_name: WordPress
+    cpe:
+      - { vendor: wordpress, product: wordpress }
+    kev:
+      - { vendor: "WordPress", product: "Core" }
+
+  - slug: drupal
+    display_name: Drupal
+    cpe:
+      - { vendor: drupal, product: drupal }
+    kev:
+      - { vendor: "Drupal", product: "Core" }
+      - { vendor: "Drupal", product: "Drupal Core" }
+
+  - slug: jenkins
+    display_name: Jenkins
+    cpe:
+      - { vendor: jenkins, product: jenkins }
+    kev:
+      - { vendor: "Jenkins", product: "Jenkins" }
+      - { vendor: "Jenkins", product: "Jenkins Command Line Interface (CLI)" }
+      - { vendor: "Jenkins", product: "Jenkins Stapler Web Framework" }
+      - { vendor: "Jenkins", product: "Jenkins User Interface (UI)" }
+
+  - slug: gitlab
+    display_name: GitLab
+    cpe:
+      - { vendor: gitlab, product: gitlab }
+    kev:
+      - { vendor: "GitLab", product: "GitLab" }
+      - { vendor: "GitLab", product: "GitLab CE/EE" }
+      - { vendor: "GitLab", product: "Community Edition and Enterprise Edition" }
+      - { vendor: "GitLab", product: "Community and Enterprise Editions" }
+
+  - slug: confluence
+    display_name: Atlassian Confluence
+    cpe:
+      - { vendor: atlassian, product: confluence_data_center }
+      - { vendor: atlassian, product: confluence_server }
+    kev:
+      - { vendor: "Atlassian", product: "Confluence" }
+      - { vendor: "Atlassian", product: "Confluence Server" }
+      - { vendor: "Atlassian", product: "Confluence Data Center and Server" }
+      - { vendor: "Atlassian", product: "Confluence Server and Data Center" }
+      - { vendor: "Atlassian", product: "Confluence Server and Data Server" }
+      - { vendor: "Atlassian", product: "Confluence Server/Data Center" }
+
+  - slug: coldfusion
+    display_name: Adobe ColdFusion
+    cpe:
+      - { vendor: adobe, product: coldfusion }
+    kev:
+      - { vendor: "Adobe", product: "ColdFusion" }
+
+  - slug: acrobat-reader
+    display_name: Adobe Acrobat·Reader
+    cpe:
+      - { vendor: adobe, product: acrobat_reader_dc }
+      - { vendor: adobe, product: acrobat_dc }
+      - { vendor: adobe, product: acrobat_reader }
+      - { vendor: adobe, product: acrobat }
+    kev:
+      - { vendor: "Adobe", product: "Acrobat" }
+      - { vendor: "Adobe", product: "Reader" }
+      - { vendor: "Adobe", product: "Acrobat and Reader" }
+      - { vendor: "Adobe", product: "Reader and Acrobat" }
+
+  - slug: winrar
+    display_name: WinRAR
+    cpe:
+      - { vendor: rarlab, product: winrar }
+    kev:
+      - { vendor: "RARLAB", product: "WinRAR" }
+
+  - slug: screenconnect
+    display_name: ConnectWise ScreenConnect
+    cpe:
+      - { vendor: connectwise, product: screenconnect }
+    kev:
+      - { vendor: "ConnectWise", product: "ScreenConnect" }
+
+  # --- 메일 ---
+  - slug: zimbra
+    display_name: Zimbra Collaboration
+    cpe:
+      - { vendor: synacor, product: zimbra_collaboration_suite }
+    kev:
+      - { vendor: "Synacor", product: "Zimbra Collaboration Suite (ZCS)" }
+      - { vendor: "Synacor", product: "Zimbra Collaboration Suite" }
+      - { vendor: "Synacor", product: "Zimbra Collaborate Suite (ZCS)" }
+
+  - slug: roundcube
+    display_name: Roundcube Webmail
+    cpe:
+      - { vendor: roundcube, product: webmail }
+    kev:
+      - { vendor: "Roundcube", product: "Webmail" }
+      - { vendor: "Roundcube", product: "Roundcube Webmail" }
+
+  # --- 가상화 ---
+  - slug: vcenter-server
+    display_name: VMware vCenter Server
+    cpe:
+      - { vendor: vmware, product: vcenter_server }
+    kev:
+      - { vendor: "VMware", product: "vCenter Server" }
+      - { vendor: "VMware", product: "vCenter Server and Cloud Foundation" }
+      - { vendor: "Broadcom", product: "VMware vCenter" }
+      - { vendor: "Broadcom", product: "VMware vCenter Server" }
+
+  - slug: esxi
+    display_name: VMware ESXi
+    cpe:
+      - { vendor: vmware, product: esxi }
+    kev:
+      - { vendor: "VMware", product: "ESXi" }
+      - { vendor: "VMware", product: "ESXi and Workstation" }
+      - { vendor: "VMware", product: "ESXi, Workstation, and Fusion" }
+
+  # --- 네트워크·보안 장비 (KEV 단골) ---
+  - slug: cisco-ios
+    display_name: Cisco IOS·IOS XE
+    cpe:
+      - { vendor: cisco, product: ios }
+      - { vendor: cisco, product: ios_xe }
+    kev:
+      - { vendor: "Cisco", product: "IOS" }
+      - { vendor: "Cisco", product: "IOS Software" }
+      - { vendor: "Cisco", product: "IOS software" }
+      - { vendor: "Cisco", product: "IOS XE Software" }
+      - { vendor: "Cisco", product: "IOS XE Web UI" }
+      - { vendor: "Cisco", product: "Cisco IOS XE Web UI" }
+      - { vendor: "Cisco", product: "IOS and IOS XE" }
+      - { vendor: "Cisco", product: "IOS and IOS XE Software" }
+      - { vendor: "Cisco", product: "IOS Software and Cisco IOS XE Software" }
+
+  - slug: cisco-asa
+    display_name: Cisco ASA·FTD
+    cpe:
+      - { vendor: cisco, product: adaptive_security_appliance_software }
+      - { vendor: cisco, product: firepower_threat_defense }   # 폐기된 옛 표기. 지금은 secure_firewall_threat_defense
+      - { vendor: cisco, product: secure_firewall_threat_defense }
+    kev:
+      - { vendor: "Cisco", product: "Adaptive Security Appliance (ASA)" }
+      - { vendor: "Cisco", product: "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)" }
+      - { vendor: "Cisco", product: "Secure Firewall ASA Software and Cisco Secure FTD Software" }
+      - { vendor: "Cisco", product: "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)" }
+
+  - slug: pan-os
+    display_name: Palo Alto PAN-OS
+    cpe:
+      - { vendor: paloaltonetworks, product: pan-os }
+    kev:
+      - { vendor: "Palo Alto Networks", product: "PAN-OS" }
+
+  - slug: fortios
+    display_name: FortiOS
+    cpe:
+      - { vendor: fortinet, product: fortios }
+    kev:
+      - { vendor: "Fortinet", product: "FortiOS" }
+      - { vendor: "Fortinet", product: "FortiOS and FortiProxy" }
+      - { vendor: "Fortinet", product: "FortiOS and FortiProxy SSL-VPN" }
+      - { vendor: "Fortinet", product: "FortiOS and FortiADC" }
+
+  - slug: ivanti-connect-secure
+    display_name: Ivanti Connect Secure
+    cpe:
+      - { vendor: ivanti, product: connect_secure }
+      - { vendor: pulsesecure, product: pulse_connect_secure }   # 폐기된 옛 표기(Ivanti 인수 전)
+    kev:
+      - { vendor: "Ivanti", product: "Connect Secure" }
+      - { vendor: "Ivanti", product: "Connect Secure and Policy Secure" }
+      - { vendor: "Ivanti", product: "Connect Secure, Policy Secure, and Neurons" }
+      - { vendor: "Ivanti", product: "Connect Secure, Policy Secure, and ZTA Gateways" }
+      - { vendor: "Ivanti", product: "Pulse Connect Secure" }
+      - { vendor: "Ivanti", product: "Pulse Connect Secure and Pulse Policy Secure" }
+      - { vendor: "Pulse Secure", product: "Pulse Connect Secure" }
+
+  - slug: ivanti-epmm
+    display_name: Ivanti EPMM
+    cpe:
+      - { vendor: ivanti, product: endpoint_manager_mobile }
+    kev:
+      - { vendor: "Ivanti", product: "Endpoint Manager Mobile (EPMM)" }
+      - { vendor: "Ivanti", product: "Endpoint Manager Mobile (EPMM) and MobileIron Core" }
+
+  - slug: netscaler
+    display_name: Citrix NetScaler ADC·Gateway
+    cpe:
+      - { vendor: citrix, product: netscaler_application_delivery_controller }
+      - { vendor: citrix, product: netscaler_gateway }
+    kev:
+      - { vendor: "Citrix", product: "NetScaler" }
+      - { vendor: "Citrix", product: "NetScaler ADC and Gateway" }
+      - { vendor: "Citrix", product: "NetScaler ADC and NetScaler Gateway" }
+      - { vendor: "Citrix", product: "Application Delivery Controller (ADC) and Gateway" }
+      - { vendor: "Citrix", product: "Application Delivery Controller (ADC), Gateway, and SD-WAN WANOP Appliance" }
+
+  - slug: big-ip
+    display_name: F5 BIG-IP
+    cpe:
+      - { vendor: f5, product: big-ip_access_policy_manager }
+      - { vendor: f5, product: big-ip_advanced_firewall_manager }
+      - { vendor: f5, product: big-ip_advanced_web_application_firewall }
+      - { vendor: f5, product: big-ip_analytics }
+      - { vendor: f5, product: big-ip_application_acceleration_manager }
+      - { vendor: f5, product: big-ip_application_security_manager }
+      - { vendor: f5, product: big-ip_application_visibility_and_reporting }
+      - { vendor: f5, product: big-ip_carrier-grade_nat }
+      - { vendor: f5, product: big-ip_ddos_hybrid_defender }
+      - { vendor: f5, product: big-ip_domain_name_system }
+      - { vendor: f5, product: big-ip_edge_gateway }
+      - { vendor: f5, product: big-ip_fraud_protection_service }
+      - { vendor: f5, product: big-ip_global_traffic_manager }
+      - { vendor: f5, product: big-ip_link_controller }
+      - { vendor: f5, product: big-ip_local_traffic_manager }
+      - { vendor: f5, product: big-ip_policy_enforcement_manager }
+      - { vendor: f5, product: big-ip_ssl_orchestrator }
+      - { vendor: f5, product: big-ip_webaccelerator }
+      - { vendor: f5, product: big-ip_websafe }
+    kev:
+      - { vendor: "F5", product: "BIG-IP" }
+      - { vendor: "F5", product: "BIG-IP APM" }
+      - { vendor: "F5", product: "BIG-IP Configuration Utility" }
+      - { vendor: "F5", product: "BIG-IP Traffic Management Microkernel" }
+      - { vendor: "F5", product: "BIG-IP and BIG-IQ Centralized Management" }
+
+  - slug: junos
+    display_name: Juniper Junos OS
+    cpe:
+      - { vendor: juniper, product: junos }
+    kev:
+      - { vendor: "Juniper", product: "Junos OS" }
+
+  # --- 업무용 서버 ---
+  - slug: sap-netweaver
+    display_name: SAP NetWeaver
+    cpe:
+      - { vendor: sap, product: netweaver }
+    kev:
+      - { vendor: "SAP", product: "NetWeaver" }

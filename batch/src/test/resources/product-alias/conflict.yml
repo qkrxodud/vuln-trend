@@ -1,0 +1,9 @@
+products:
+  - slug: chrome
+    display_name: Chrome
+    cpe:
+      - { vendor: google, product: chrome }
+  - slug: edge
+    display_name: Microsoft Edge
+    kev:
+      - { vendor: "Google", product: "Chrome" }
