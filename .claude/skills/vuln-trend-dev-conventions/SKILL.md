@@ -28,6 +28,7 @@ description: vuln-trend 배치(batch/, Spring Boot·Java 17·JdbcTemplate·Flywa
 ## 2. record 는 DTO 에서만
 
 - record는 **`dto` 패키지**의 요청·응답·명령 객체에만 쓴다: `application/{기능}/dto`(명령·결과), `infrastructure/{소스}/dto`(NVD·KEV·EPSS·OSV 응답을 Jackson 으로 받는 모양), `global/error/dto`.
+- `domain/{기능}/dto` 의 record 는 저장소 → 출력으로 값을 나르는 운반용에 한한다(예: `domain/score/dto/TrendListing`, 2026-10-31 승인). 규칙·행위를 가진 도메인 개념은 일반 클래스로 쓴다.
 - 엔티티·값 객체·서비스 내부 값·테스트 도우미는 일반 클래스로 쓴다.
 - 왜: 사용자 규칙("record는 숨겨져서 읽기 힘들다"). 서비스 내부 값과 테스트 도우미에 record를 써서 **두 번 지적받았다.** `check-records.sh` 가 잡는다.
 

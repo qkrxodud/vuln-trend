@@ -209,7 +209,7 @@ create table sync_state (
 6. daily_stat → 최근 14일 행 전부 재계산 (NVD가 과거 날짜로 소급 발행하므로 당일만 갱신하면 틀림)
 7. 요약       → trend 상위 20건 중 summary 없는 것만 LLM 호출 후 insert (일 상한 20콜)
 8. JSON 출력  → 쿼리 결과를 web/public/data/ 에 파일로 (내용 변경분만). rejected 건의 per-CVE 파일은 삭제
-9. git push   → ProcessBuilder: git add -A && git commit -m "data: <시각>" && git push
+9. git push   → ProcessBuilder: 데이터 폴더만 add·commit("data: <한국 시각>") 후 push. 변경 없으면 생략, 출력은 읽지 않고 종료 코드로 판정. 원격이 없으면 실패(종료 코드 1)
 ```
 
 ### 실패 규칙
@@ -304,7 +304,7 @@ web/public/data/
                             행: id, title, score, score_breakdown{kev, ransomware, epss, news, poc, cvss, decay},
                                 why_now, is_kev, kev_ransomware, kev_due_date, poc_count, epss, epss_percentile, cvss, cvss_version,
                                 severity, primary_product, summary_what(있으면)
-  recent.json               최근 7일 신규
+  recent.json               최근 7일(한국 달력일) 발행 건 중 트렌드 순서 상위 100건 (사용자 결정 2026-10-31 — 전부 실으면 수 MB·상세 파일 수천 개)
   search-index.json         전체 CVE id + 제목 + 제품명 (1년치 3~4MB, 검색창 포커스 시 lazy load)
   cve/CVE-2026-XXXXX.json   상세 1건씩 — 생성 범위 제한 (아래)
   products/chrome.json      제품별 목록 + 월별 추이

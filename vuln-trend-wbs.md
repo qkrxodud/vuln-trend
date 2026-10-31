@@ -22,7 +22,7 @@
 | 1 | NVD 수집 | 3~4일 | 16 | 14 | 진행 중 |
 | 2 | KEV·EPSS 보강 | 2일 | 10 | 10 | 완료(DoD 실측은 NVD 키 대기) |
 | 3 | 점수·통계 | 1~2일 | 10 | 10 | 구현 완료(DoD 10초 실측은 NVD 키 대기) |
-| 4 | JSON 출력·push | 2일 | 15 | 2 | 진행 중 |
+| 4 | JSON 출력·push | 2일 | 15 | 3 | 진행 중 |
 | 5 | 프론트 | 6~8일 | 36 | 34 | 원격 레포 대기(2건) |
 | 6 | 한국어 요약 | 2일 | 8 | 8 | 구현 완료(실요약 검수는 키 대기·Gate G) |
 | G | 공개 전 점검 | 0.5일 | 10 | 0 | 미착수 |
@@ -172,14 +172,14 @@
 - [ ] `meta.json`: `updatedAt`, `version`, `today{4}`, `yesterday{4}` (D11, P16)
 - [ ] `stats.json`: 최근 14일 일별 {신규, Critical}, 최근 7일 심각도 분포(미평가 포함)
 - [ ] `index.json`: 상위 100건, 행 필드 전부 (id, title, score, score_breakdown, why_now, is_kev, kev_due_date, poc_count, epss, epss_percentile, cvss, cvss_version, severity, primary_product, summary_what)
-- [ ] `recent.json`: 최근 7일 신규
+- [ ] `recent.json`: 최근 7일 신규 중 트렌드 상위 100건(사용자 결정)
 - [ ] `search-index.json`: 전체 CVE id + 제목 + 제품명 (1년치)
 - [ ] `cve/CVE-*.json`: 생성 범위 = index/recent 등장 건 + 점수 상위 N건 (상한 수천). 영향 제품·버전, 점수 구성, 원문, 참고 링크 포함 (P6)
 - [ ] `rejected=true` 건: 기존 `cve/*.json` 삭제, 모든 목록·search-index 제외 (R5)
 - [ ] `products/`, `ecosystems/`는 **2단계** (§8 백로그). MVP는 생성 안 함
 
 ### 4.3 GitPusher
-- [ ] ProcessBuilder: `git add -A && git commit -m "data: <시각>" && git push` → 6장 9번
+- [x] ProcessBuilder: 데이터 폴더만 `git add -A -- <data>` → `git commit -m "data: <한국 시각>" -- <data>` → `git push` (코드 변경 섞이지 않음) → 6장 9번
 - [ ] 1~4단계 전부 성공 시만 실행. 변경 파일 0이면 commit 생략
 - [ ] 실패한 실행은 프로세스 종료 코드 1 (cron·Actions 가 실패를 알도록, 사용자 결정 2026-10-31)
 
@@ -360,3 +360,5 @@
 | 2026-10-31 | 3.5·6.2 체크, Phase 3 구현 완료. 요약에 서버 쪽 대체(fallbacks)·출력 버전 검사 추가(6.3, 사용자 결정). Gate G 화면 점검 스크립트 커밋 | 사용자 승인·결정 |
 | 2026-10-31 | 4.1 체크. 출력 전용 SNAKE_CASE 매퍼, 점수 구성 소수 1자리 | 사용자 승인 |
 | 2026-10-31 | 6.3 체크, Phase 6 구현 완료. summary_call 표(V2) 추가. 4.3 GitPusher 를 A 로 재배정 | 사용자 승인, 부하 조정 |
+| 2026-10-31 | recent.json 범위 = 최근 7일 중 트렌드 상위 100건 | 사용자 결정 |
+| 2026-10-31 | 4.3 첫 항목 체크(GitPusher 단독). 원격이 없으면 push 실패를 그대로 둠(사용자 결정) | 사용자 승인 |

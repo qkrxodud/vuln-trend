@@ -31,7 +31,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 
 | 소유자 | 경로 |
 |---|---|
-| 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summary/**`·`…/infrastructure/summary/**`·`…/infrastructure/persistence/summary/**`, 마이그레이션 V1·V2 이후 전부, (4.3) `…/infrastructure/publish/**` |
+| 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summary/**`·`…/infrastructure/summary/**`·`…/infrastructure/persistence/summary/**`, 마이그레이션 V1·V2 이후 전부, (4.3) `…/domain/publish/**`·`…/infrastructure/publish/**` |
 | 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/domain/stat/**`·`…/application/stat/**`, `…/domain/export/**`, `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`·`…/infrastructure/feed/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter) |
 | 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**`, Gate G 화면 쪽 점검 스크립트(`web/scripts/`) |
 | 오케스트레이터 | `vuln-trend-wbs.md`, `vuln-trend-plan.md`, 이 파일, `CLAUDE.md`, `.claude/**`, `scripts/**` |
@@ -55,7 +55,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 
 | 역할 | 세션 | 지금 하는 것 | 다음 관문 |
 |---|---|---|---|
-| 백엔드 A | `vuln-trend-1f` | 6.3 커밋 → 4.3 GitPusher(재배정)·종료 코드 1 | 러너 연결은 4.2 ExportService 뒤 |
+| 백엔드 A | `vuln-trend-1f` | 4.3 커밋 → 4.4 끝에서 끝까지 시험 틀 | ExportService 뒤 러너 연결·종료 코드 1 |
 | 백엔드 B | `vuln-trend-25` | 4.2 파일별 생성(① meta·stats 끝, ② index·recent 진행) | — |
 | 프론트 | `vuln-trend-0e` | 대기 — 사용자가 새 디자인(claude.ai/design 링크) 적용 요청, 파일 내보내기 대기 | 새 디자인 비교 → 재작업 범위 결정 |
 
@@ -119,3 +119,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-31 | Gate G 점검·6.2·3.5 승인. 요약 fallbacks·버전 검사 결정 | 사용자 결정 |
 | 2026-10-31 | 4.1 승인. B 소유에 domain/stat·application/stat·domain/export 추가 | 사용자 승인 |
 | 2026-10-31 | 6.3 승인(V2 summary_call). 4.3 GitPusher B→A 재배정, A 소유에 infrastructure/publish·마이그레이션. 사용자 새 디자인 요청(링크는 직접 열 수 없어 파일 내보내기 요청) | 사용자 승인·요청 |
+| 2026-10-31 | 4.3 승인, A 소유에 domain/publish | 사용자 승인 |
