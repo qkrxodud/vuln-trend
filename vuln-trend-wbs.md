@@ -18,7 +18,7 @@
 
 | Phase | 내용 | 예상 | 태스크 수 | 완료 | 상태 |
 |---|---|---|---|---|---|
-| 0 | 준비 | 1일 | 18 | 15 | 진행 중 |
+| 0 | 준비 | 1일 | 18 | 16 | 원격·NVD 키 대기 |
 | 1 | NVD 수집 | 3~4일 | 16 | 14 | 진행 중 |
 | 2 | KEV·EPSS 보강 | 2일 | 10 | 10 | 완료(DoD 실측은 NVD 키 대기) |
 | 3 | 점수·통계 | 1~2일 | 10 | 10 | 구현 완료(DoD 10초 실측은 NVD 키 대기) |
@@ -73,7 +73,7 @@
 ### 0.6 코드 컨벤션 (2026-10-30 추가)
 - [x] clarity-api 하네스에서 코드 규칙만 가져오기: `vuln-trend-dev-conventions`·`domain-test-writing` 스킬, `CLAUDE.md` 작업 규칙
 - [x] 검사 도구 `scripts/check-all.sh` + `check-records.sh`·`check-exceptions.sh`·`check-conventions.py`·`check-display-names.sh` + 회귀 시험(57건 일치)
-- [ ] 패키지 루트(`com.vulntrend.batch` 가정)·기능 하위 패키지 구조 확정 → 0.3 골격과 함께 (결정 대기)
+- [x] 패키지 루트 `com.vulntrend.batch`·계층 아래 기능 하위 패키지 구조 — 0.3~4.4 전 커밋에서 이 구조로 확정
 - [x] `check-all.sh` 가 `batch/gradlew` 를 찾아 빌드·커버리지까지 돌아가는지 확인 → 0.3 뒤
 
 **DoD**: 빈 DB에 bootRun 한 번으로 테이블 8개 + product_alias 50행. 레포 push 됨. `bash scripts/check-all.sh` 종료 코드 0.
@@ -291,6 +291,8 @@
 - [ ] 한국어 요약 20건에 명령어·없는 버전 생성 사례 0건 (수동 검수)
 - [ ] 레포 크기 확인, 커밋당 변경 파일 수 기록 (성장 추세 기준점)
 - [ ] 미매핑 `primary_product` 상위 노출 건을 `product-alias.yml`에 추가
+
+점검 도구(2026-10-31 준비): 화면 쪽 `cd web && npm run gate:check`, 배치 쪽 `--gate-check`(NVD 키 필요). 둘 다 항목별 통과/실패/확인 필요 표.
 
 **통과 시 M2 공개.**
 
