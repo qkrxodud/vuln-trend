@@ -2,6 +2,7 @@ package com.vulntrend.batch;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.domain.summary.Summarizer;
 import com.vulntrend.batch.global.config.SummaryProperties;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import org.junit.jupiter.api.DisplayName;
@@ -27,6 +28,24 @@ class SummaryKeyStartupTest {
         try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER)) {
             assertThat(context.isRunning()).isTrue();
             assertThat(context.getBean(SummaryProperties.class).isNotConfigured()).isTrue();
+        }
+    }
+
+    @Test
+    @DisplayName("요약 열쇠가 없으면 Claude 에 연결할 준비를 하지 않는다")
+    void noClaudeWithoutKey() {
+        try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER)) {
+            assertThat(context.getBeansOfType(Summarizer.class)).isEmpty();
+        }
+    }
+
+    @Test
+    @DisplayName("요약 열쇠만 주면 사용자가 고른 Claude Opus 5.5 로 요약한다")
+    void defaultModel() {
+        try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER,
+                "--SUMMARY_API_KEY=summary-key-41c9e7")) {
+            assertThat(context.getBean(SummaryProperties.class).getModel()).isEqualTo("claude-opus-5-5");
+            assertThat(context.getBeansOfType(Summarizer.class)).hasSize(1);
         }
     }
 
