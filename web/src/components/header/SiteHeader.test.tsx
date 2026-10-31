@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { MemoryRouter } from 'react-router'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createDataClient } from '../../api/data-client.ts'
 import { DataProvider } from '../../hooks/DataProvider.tsx'
@@ -19,12 +20,14 @@ const renderHeaderAt = (now: string) => {
   vi.setSystemTime(new Date(now))
   const server = new FakeFetch().serve('/vuln-trend/data/meta.json', metaWithVersion('v1'))
   render(
-    <DataProvider client={createDataClient(server.fetch, '/vuln-trend/')}>
-      <TrendFilterProvider>
-        <SiteHeader />
-        <ListFilterProbe />
-      </TrendFilterProvider>
-    </DataProvider>,
+    <MemoryRouter>
+      <DataProvider client={createDataClient(server.fetch, '/vuln-trend/')}>
+        <TrendFilterProvider>
+          <SiteHeader />
+          <ListFilterProbe />
+        </TrendFilterProvider>
+      </DataProvider>
+    </MemoryRouter>,
   )
 }
 
@@ -72,7 +75,7 @@ describe('사이트 머리글', () => {
   it('검색어를 지우기 버튼으로 한 번에 비운다', async () => {
     renderHeaderAt('2026-10-30T12:00:00+09:00')
     const user = userEvent.setup()
-    const search = screen.getByRole('searchbox', { name: 'CVE-ID 또는 제품명 검색' })
+    const search = screen.getByRole('combobox', { name: 'CVE-ID 또는 제품명 검색' })
 
     expect(screen.queryByRole('button', { name: '검색 지우기' })).not.toBeInTheDocument()
     await user.type(search, 'chrome')
