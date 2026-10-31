@@ -462,6 +462,11 @@ MVP에서 **넣지 않는 것**: 영향 자산 수, 조치 기한 SLA(KEV `dueDa
 - 뉴스 기사는 링크+제목만 저장·노출. 본문 재게시 금지
 - NVD/KEV/EPSS/OSV는 공개 데이터. 단 NVD 비인증 문구와 EPSS 출처 표기는 의무 (8장 푸터)
 
+### 매일 자동 실행 (2026-11-01 설정)
+
+- macOS launchd `~/Library/LaunchAgents/com.vulntrend.daily.plist` 가 매일 09:00(한국)에 `scripts/run-daily.sh` 를 부른다. 스크립트는 Docker·DB 를 띄운 뒤 `./gradlew bootRun`, 기록은 `~/Library/Logs/vuln-trend/`(최근 30개), 끝나면 macOS 알림. Mac 이 잠자기면 깨어날 때 한 번 실행, 꺼져 있으면 그날은 건너뜀
+- 멈추기: `launchctl bootout gui/$(id -u)/com.vulntrend.daily` / 즉시 한 번: `launchctl kickstart gui/$(id -u)/com.vulntrend.daily`
+
 ### GitHub Actions로 옮길 때 (선택)
 
 - 로컬 PC 없이 자동 갱신하려면 Actions 스케줄(`cron: '0 */6 * * *'`)로 배치 실행 후 commit

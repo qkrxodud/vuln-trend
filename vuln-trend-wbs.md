@@ -22,8 +22,8 @@
 | 1 | NVD 수집 | 3~4일 | 16 | 16 | DoD: 적재·원본 조회 ✅, 증분 2회는 하루 실행(push 권한) 대기 |
 | 2 | KEV·EPSS 보강 | 2일 | 10 | 10 | 완료(DoD 실측은 NVD 키 대기) |
 | 3 | 점수·통계 | 1~2일 | 10 | 10 | 구현 완료(DoD 10초 실측은 NVD 키 대기) |
-| 4 | JSON 출력·push | 2일 | 15 | 14 | 구현 완료(5분 실측·M1 은 키·원격 대기) |
-| 5 | 프론트 | 6~8일 | 36 | 35 | 데이터 push 재배포 확인 1건(하루 실행 뒤) |
+| 4 | JSON 출력·push | 2일 | 15 | 15 | 완료 — M1 달성 2026-11-01 |
+| 5 | 프론트 | 6~8일 | 36 | 36 | 완료(새 디자인 반영은 별도) |
 | 6 | 한국어 요약 | 2일 | 8 | 8 | 구현 완료(실요약 검수는 키 대기·Gate G) |
 | G | 공개 전 점검 | 0.5일 | 10 | 0 | 미착수 |
 | 7 | 다듬기(공개 후) | 2~3일 | 5 | 0 | 미착수 |
@@ -184,7 +184,7 @@
 - [x] 실패한 실행은 프로세스 종료 코드 1 (cron·Actions 가 실패를 알도록, 사용자 결정 2026-10-31)
 
 ### 4.4 파이프라인 검증
-- [ ] ⛔ 전체 흐름 end-to-end 1회: 실행 시간 5분 이내 — 흐름은 DailyRunEndToEndTest 로 확인(스텁·임시 원격), 5분 실측은 NVD 키·원격 대기 → 11장
+- [x] 전체 흐름 end-to-end 1회: 실행 시간 5분 이내 — 2026-11-01 첫 하루 실행 약 3.5분(수집→점수→통계→요약→출력 1,005파일→push). 요약 20건 실패(OpenAIInvalidDataException, A 조사 중)
 - [x] 두 번째 실행에서 변경 없는 파일의 git diff가 0임을 확인 — DailyRunEndToEndTest("0 written, 7 unchanged", 커밋 0)
 
 **DoD (= M1)**: `web/public/data/` 7종 파일 생성, 레포에 데이터 커밋 1회 이상. 프론트 착수 가능.
@@ -252,7 +252,7 @@
 
 ### 5.13 배포
 - [x] GitHub Actions 워크플로: `web/` 빌드 → Pages 배포 (Source: GitHub Actions) (P17) — `.github/workflows/pages.yml`. actionlint 는 사용자가 직접 실행
-- [ ] ⛔ 데이터 커밋 push 시에도 Actions가 재배포되는지 확인 — GitHub 원격 레포 대기
+- [x] 데이터 커밋 push 시에도 Actions가 재배포되는지 확인 — 2026-11-01 데이터 커밋 bbe0756 push → run 41215228046 build·deploy 성공, 공개 meta.version=20261101-0030
 - [x] 첫 배포 URL 접속 확인 — https://qkrxodud.github.io/vuln-trend/ (2026-11-01, Actions 재실행 성공, og:url·base 경로 정상, JSON gzip 전송 확인)
 
 **DoD**: 실제 JSON으로 메인·상세·검색이 데스크톱·모바일에서 동작, Actions 배포 녹색.
@@ -281,7 +281,7 @@
 
 ## 9. Gate G — 공개 전 점검 (M2 Go/No-go)
 
-- [ ] 배치 3일 연속 성공 (로그·`sync_state` 확인)
+- [ ] ⏳ 배치 3일 연속 성공 (로그·`sync_state` 확인) — 1일차 2026-11-01 성공
 - [ ] 상위 10건을 매일 육안 확인해 가중치 1회 이상 조정 → 11장
 - [ ] stale 배너: `meta.updatedAt`을 임의로 과거로 바꿔 배너 노출 확인
 - [ ] 푸터 고지 5종 전부 노출
@@ -378,3 +378,5 @@
 | 2026-11-01 | Pages 켬, 첫 배포 성공(qkrxodud.github.io/vuln-trend), JSON gzip 전송 확인 | 사용자 |
 | 2026-11-01 | R10 발견·대응. 원격 main=8281ee8 그대로 확인 | 백엔드 A 보고 |
 | 2026-11-01 | R10 닫힘(a1f3fe7), 요약 OpenAI 전환 커밋(a7696c4) | — |
+| 2026-11-01 | 첫 하루 실행 성공·M1 달성(bbe0756, 재배포 성공). 요약 20건 실패 → A 조사 | 사용자 실행 |
+| 2026-11-01 | 매일 09:00 자동 실행 등록(launchd + scripts/run-daily.sh) | 사용자 결정 |
