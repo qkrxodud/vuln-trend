@@ -1,1 +1,24 @@
 @import 'tailwindcss';
+
+/* 디자인 원본(design/VulnTrend Dashboard.dc.html) 색. 심각도·KEV 색은 기획서 8장 색상 규칙으로 5.5·5.12 에서 더한다 */
+@theme {
+  --font-sans: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-ink: #24231f;
+  --color-ink-soft: #4a4a4d;
+  --color-ink-muted: #77777a;
+  --color-ink-faint: #8a8a8a;
+  --color-brand: #2f4f45;
+  --color-accent: #4f7a6a;
+  --color-paper: #f6f4ef;
+  --color-line: #e4e0d6;
+  --color-chip: #eeeae2;
+  --color-warn-bg: #fbf3e4;
+  --color-warn-line: #e9d4a3;
+  --color-warn-ink: #6b4e12;
+}
+
+body {
+  @apply bg-white font-sans text-ink antialiased;
+}

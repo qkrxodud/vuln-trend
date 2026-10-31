@@ -1,0 +1,48 @@
+import { describe, expect, it } from 'vitest'
+import { formatKstShort, formatTimeAgo, isStale } from './kst-time.ts'
+
+const UPDATED = '2026-10-30T09:00:00+09:00'
+const hoursAfter = (hours: number): Date => new Date(Date.parse(UPDATED) + hours * 3_600_000)
+
+describe('마지막 갱신 시각 표기', () => {
+  it('방문자의 시간대와 상관없이 한국 시각 "월-일 시:분"으로 적는다', () => {
+    expect(formatKstShort('2026-10-30T00:00:00Z')).toBe('10-30 09:00')
+  })
+
+  it('한국 날짜로는 다음 날이 되는 시각도 한국 날짜로 적는다', () => {
+    expect(formatKstShort('2026-10-30T15:30:00Z')).toBe('10-31 00:30')
+  })
+})
+
+describe('갱신 뒤 지난 시간', () => {
+  it('1분이 안 됐으면 "방금 전"', () => {
+    expect(formatTimeAgo(UPDATED, hoursAfter(0.01))).toBe('방금 전')
+  })
+
+  it('1시간이 안 됐으면 분으로 적는다', () => {
+    expect(formatTimeAgo(UPDATED, hoursAfter(0.5))).toBe('30분 전')
+  })
+
+  it('이틀이 안 됐으면 시간으로 적는다', () => {
+    expect(formatTimeAgo(UPDATED, hoursAfter(3))).toBe('3시간 전')
+    expect(formatTimeAgo(UPDATED, hoursAfter(47.9))).toBe('47시간 전')
+  })
+
+  it('이틀이 넘으면 날로 적는다', () => {
+    expect(formatTimeAgo(UPDATED, hoursAfter(72))).toBe('3일 전')
+  })
+
+  it('방문자 시계가 갱신 시각보다 앞서 있어도 "방금 전"으로 적는다', () => {
+    expect(formatTimeAgo(UPDATED, hoursAfter(-2))).toBe('방금 전')
+  })
+})
+
+describe('데이터가 오래됐는지 판단 (배치 실패를 방문자가 아는 유일한 수단)', () => {
+  it('갱신 뒤 36시간까지는 오래되지 않았다', () => {
+    expect(isStale(UPDATED, hoursAfter(36))).toBe(false)
+  })
+
+  it('갱신 뒤 36시간을 넘으면 오래됐다', () => {
+    expect(isStale(UPDATED, hoursAfter(36.01))).toBe(true)
+  })
+})
