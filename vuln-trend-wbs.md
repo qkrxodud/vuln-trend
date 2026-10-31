@@ -19,11 +19,11 @@
 | Phase | 내용 | 예상 | 태스크 수 | 완료 | 상태 |
 |---|---|---|---|---|---|
 | 0 | 준비 | 1일 | 18 | 15 | 진행 중 |
-| 1 | NVD 수집 | 3~4일 | 16 | 9 | 진행 중 |
-| 2 | KEV·EPSS 보강 | 2일 | 10 | 0 | 미착수 |
+| 1 | NVD 수집 | 3~4일 | 16 | 12 | 진행 중 |
+| 2 | KEV·EPSS 보강 | 2일 | 10 | 3 | 진행 중 |
 | 3 | 점수·통계 | 1~2일 | 10 | 0 | 미착수 |
 | 4 | JSON 출력·push | 2일 | 14 | 0 | 미착수 |
-| 5 | 프론트 | 6~8일 | 36 | 11 | 진행 중 |
+| 5 | 프론트 | 6~8일 | 36 | 14 | 진행 중 |
 | 6 | 한국어 요약 | 2일 | 8 | 0 | 미착수 |
 | G | 공개 전 점검 | 0.5일 | 10 | 0 | 미착수 |
 | 7 | 다듬기(공개 후) | 2~3일 | 5 | 0 | 미착수 |
@@ -96,9 +96,9 @@
 - [x] `published_at`, `last_modified_at` UTC 저장
 
 ### 1.3 저장
-- [ ] `vulnerability_raw` upsert (source=`nvd`, payload JSONB)
-- [ ] `vulnerability` upsert: JdbcTemplate batch + `on conflict (vuln_id) do update` (JPA saveAll 금지) → 5장 메모
-- [ ] `affected_product`, `reference_link` upsert (PK 충돌 무시)
+- [x] `vulnerability_raw` upsert (source=`nvd`, payload JSONB)
+- [x] `vulnerability` upsert: JdbcTemplate batch + `on conflict (vuln_id) do update` (JPA saveAll 금지) → 5장 메모
+- [x] `affected_product`, `reference_link` upsert (PK 충돌 무시)
 
 ### 1.4 `sync_state` 커서
 - [ ] 성공한 실행에서만 `last_synced_at` 전진, 실패 시 `status=FAIL` 기록 → 6장 실패 규칙
@@ -115,9 +115,9 @@
 ## 4. Phase 2 — KEV·EPSS 보강 (2일)
 
 ### 2.1 KevCollector
-- [ ] CISA KEV JSON 1개 다운로드, `vulnerability_raw(source=kev)` 보관 → 3장
-- [ ] `is_kev`, `kev_added_at`, `kev_due_date`, `kev_ransomware` update (D2, P5)
-- [ ] KEV에 있으나 `vulnerability`에 없는 CVE는 로그만 (NVD 다음 증분에서 들어옴)
+- [x] CISA KEV JSON 1개 다운로드, `vulnerability_raw(source=kev)` 보관 → 3장
+- [x] `is_kev`, `kev_added_at`, `kev_due_date`, `kev_ransomware` update (D2, P5)
+- [x] KEV에 있으나 `vulnerability`에 없는 CVE는 로그만 (NVD 다음 증분에서 들어옴)
 
 ### 2.2 EpssCollector
 - [ ] FIRST EPSS CSV 전체 다운로드(gz 해제)
@@ -212,9 +212,9 @@
 - [x] 24h 신규 / KEV 신규 / Critical / 고위험(EPSS 0.5+) + 어제 대비 증감 (D12)
 
 ### 5.5 차트
-- [ ] 최근 14일 일별 신규 막대, Critical 적층, x축 `10/30` 형식 (S1)
-- [ ] 최근 7일 심각도 도넛, 미평가 범주, 범례에 비율 (P14)
-- [ ] 툴팁 hover + 키보드 포커스 (S3)
+- [x] 최근 14일 일별 신규 막대, Critical 적층, x축 `10/30` 형식 (S1)
+- [x] 최근 7일 심각도 도넛, 미평가 범주, 범례에 비율 (P14)
+- [x] 툴팁 hover + 키보드 포커스 (S3)
 
 ### 5.6 트렌드 목록
 - [ ] 상위 20건 + "더 보기" (index.json 100건 내에서) (D15)
@@ -345,3 +345,5 @@
 | 2026-10-30 | 0.1~0.4(원격 레포 제외)·0.6-4·5.1 체크. 기획서 7장 snake_case 통일·`kev_ransomware` 추가, 4장 `DB_PORT` | G0 검증 통과, 프론트 5.1 사용자 승인 |
 | 2026-10-31 | 1.1·5.2 체크. R7 닫힘(KEV 별칭 혼합안), 0.5 "50개"=제품 50개·Windows Server 합침 | 사용자 승인·확정 |
 | 2026-10-31 | 0.5·1.2·5.3·5.4 체크. CVSS 3.0 을 3.1 다음 순위로, 0.0 은 LOW, product_alias 는 통째 교체 | 사용자 승인·결정 |
+| 2026-10-31 | 1.3 체크. 수집 순서 NVD→KEV→EPSS→OSV→NEWS 고정(B 요청, A 반영) | 사용자 승인 |
+| 2026-10-31 | 2.1·5.5 체크. KEV: 목록에서 내려간 CVE 표시 해제, 빈 목록이면 실패(사용자 확정) | 사용자 승인 |
