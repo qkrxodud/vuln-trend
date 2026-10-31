@@ -2,6 +2,8 @@ package com.vulntrend.batch;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.domain.collect.Collector;
+import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import java.time.Clock;
 import java.util.List;
@@ -24,6 +26,9 @@ class SchemaStartupTest {
 
     @Autowired
     private Clock clock;
+
+    @Autowired
+    private List<Collector> collectors;
 
     @Test
     @DisplayName("빈 저장소에서 처음 실행하면 기획서 5장의 저장 구조 8개를 먼저 만들고 시작한다")
@@ -60,6 +65,12 @@ class SchemaStartupTest {
                         + "order by ordinal_position", String.class);
 
         assertThat(columns).containsExactly("vuln_id", "what", "who", "action", "model", "generated_at");
+    }
+
+    @Test
+    @DisplayName("NVD 수집기가 하루 한 번 실행의 수집 대상에 들어 있다")
+    void nvdCollectorIsRegistered() {
+        assertThat(collectors).extracting(Collector::source).contains(SourceName.NVD);
     }
 
     @Test

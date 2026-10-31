@@ -13,35 +13,43 @@ import java.util.Deque;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /** NVD 흉내 HTTP 서버(외부 시스템이라 테스트 안에서 띄운다). 미리 넣어 둔 답을 순서대로 돌려주고 받은 요청을 기억한다 */
-class NvdStubServer implements AutoCloseable {
+public class NvdStubServer implements AutoCloseable {
 
     private final HttpServer server;
     private final Deque<Answer> answers = new ArrayDeque<>();
     private final List<Received> received = new ArrayList<>();
 
-    NvdStubServer() throws IOException {
+    public NvdStubServer() throws IOException {
         server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
         server.createContext("/cves", this::handle);
         server.start();
     }
 
-    String baseUrl() {
+    public String baseUrl() {
         return "http://127.0.0.1:" + server.getAddress().getPort() + "/cves";
     }
 
-    NvdStubServer answer(int status, String body) {
+    public NvdStubServer answer(int status, String body) {
         answers.add(new Answer(status, body));
         return this;
     }
 
     /** startIndex 부터 count 건이 든 한 쪽. 전체는 total 건 */
-    NvdStubServer page(int startIndex, int count, int total) {
+    public NvdStubServer page(int startIndex, int count, int total) {
         return answer(200, pageJson(startIndex, count, total));
     }
 
-    List<Received> received() {
+    /** 주어진 cve JSON 들을 한 쪽(전체 = 그 수)으로 돌려준다 */
+    public NvdStubServer pageOf(List<String> cveJsons) {
+        String items = cveJsons.stream().map(cve -> "{\"cve\":" + cve + "}").collect(Collectors.joining(","));
+        return answer(200, "{\"resultsPerPage\":" + cveJsons.size() + ",\"startIndex\":0,\"totalResults\":"
+                + cveJsons.size() + ",\"vulnerabilities\":[" + items + "]}");
+    }
+
+    public List<Received> received() {
         return List.copyOf(received);
     }
 
@@ -94,7 +102,7 @@ class NvdStubServer implements AutoCloseable {
         }
     }
 
-    static class Received {
+    public static class Received {
         private final Map<String, String> query;
         private final String apiKey;
 
@@ -103,11 +111,11 @@ class NvdStubServer implements AutoCloseable {
             this.apiKey = apiKey;
         }
 
-        String param(String name) {
+        public String param(String name) {
             return query.get(name);
         }
 
-        String apiKey() {
+        public String apiKey() {
             return apiKey;
         }
     }
