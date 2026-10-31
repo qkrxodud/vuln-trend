@@ -32,7 +32,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 소유자 | 경로 |
 |---|---|
 | 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summarize/**`·`…/infrastructure/ai/**` |
-| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
+| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`·`…/infrastructure/feed/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
 | 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**` |
 | 오케스트레이터 | `vuln-trend-wbs.md`, `vuln-trend-plan.md`, 이 파일, `CLAUDE.md`, `.claude/**`, `scripts/**` |
 
@@ -55,9 +55,9 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 
 | 역할 | 세션 | 지금 하는 것 | 다음 관문 |
 |---|---|---|---|
-| 백엔드 A | `vuln-trend-1f` | 1.4 커서·멱등·NvdCollector | — |
-| 백엔드 B | `vuln-trend-25` | 2.1 커밋 → 2.2 EPSS | — |
-| 프론트 | `vuln-trend-0e` | B 다음 5.5 커밋 → 5.6 트렌드 목록 | — |
+| 백엔드 A | `vuln-trend-1f` | 1.5 백필 실행 방식(키 없이 스텁) | 실제 백필은 NVD 키 뒤 |
+| 백엔드 B | `vuln-trend-25` | 2.2 커밋 → 2.3 primary_product | — |
+| 프론트 | `vuln-trend-0e` | B 다음 5.7 커밋 → 5.8 상세 페이지 | — |
 
 ### 재개 메모 (2026-10-30 일시 정지 — 지난 정지, 아래 2026-10-31 정지가 최신)
 
@@ -96,3 +96,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-31 | 규칙 8(공유 폴더 빌드 유지·경로 지정 커밋) 추가, B 소유에 application/product. 1.2·0.5·5.3·5.4 승인 | 사용자 결정 |
 | 2026-10-31 | 두 번째 일시 정지, 재개 메모 추가. WBS 1.3 체크 | 사용자 이동 |
 | 2026-10-31 | 재개. 2.1·5.5 승인, KEV 규칙 (f)(g) 확정 | 사용자 "이어서 진행" |
+| 2026-10-31 | 1.4·2.2·5.6·5.7 승인, B 소유에 infrastructure/feed 추가, 검증 worktree 2개 정리 | 사용자 승인 |

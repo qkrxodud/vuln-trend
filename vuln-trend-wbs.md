@@ -19,11 +19,11 @@
 | Phase | 내용 | 예상 | 태스크 수 | 완료 | 상태 |
 |---|---|---|---|---|---|
 | 0 | 준비 | 1일 | 18 | 15 | 진행 중 |
-| 1 | NVD 수집 | 3~4일 | 16 | 12 | 진행 중 |
-| 2 | KEV·EPSS 보강 | 2일 | 10 | 3 | 진행 중 |
+| 1 | NVD 수집 | 3~4일 | 16 | 14 | 진행 중 |
+| 2 | KEV·EPSS 보강 | 2일 | 10 | 5 | 진행 중 |
 | 3 | 점수·통계 | 1~2일 | 10 | 0 | 미착수 |
 | 4 | JSON 출력·push | 2일 | 14 | 0 | 미착수 |
-| 5 | 프론트 | 6~8일 | 36 | 14 | 진행 중 |
+| 5 | 프론트 | 6~8일 | 36 | 22 | 진행 중 |
 | 6 | 한국어 요약 | 2일 | 8 | 0 | 미착수 |
 | G | 공개 전 점검 | 0.5일 | 10 | 0 | 미착수 |
 | 7 | 다듬기(공개 후) | 2~3일 | 5 | 0 | 미착수 |
@@ -101,8 +101,8 @@
 - [x] `affected_product`, `reference_link` upsert (PK 충돌 무시)
 
 ### 1.4 `sync_state` 커서
-- [ ] 성공한 실행에서만 `last_synced_at` 전진, 실패 시 `status=FAIL` 기록 → 6장 실패 규칙
-- [ ] 같은 구간 두 번 실행해도 중복·누락 없음 (멱등 확인)
+- [x] 성공한 실행에서만 `last_synced_at` 전진, 실패 시 `status=FAIL` 기록 → 6장 실패 규칙
+- [x] 같은 구간 두 번 실행해도 중복·누락 없음 (멱등 확인)
 
 ### 1.5 초기 백필
 - [ ] 최근 1년을 120일 구간으로 나눠 1회성 실행 (프로파일 또는 CLI 인자)
@@ -120,8 +120,8 @@
 - [x] KEV에 있으나 `vulnerability`에 없는 CVE는 로그만 (NVD 다음 증분에서 들어옴)
 
 ### 2.2 EpssCollector
-- [ ] FIRST EPSS CSV 전체 다운로드(gz 해제)
-- [ ] `epss_score`, `epss_percentile` 둘 다 update, `vuln_id` 조인 (P10)
+- [x] FIRST EPSS CSV 전체 다운로드(현재 주소 epss.empiricalsecurity.com, 2026-10-31 확인)(gz 해제)
+- [x] `epss_score`, `epss_percentile` 둘 다 update, `vuln_id` 조인 (P10)
 
 ### 2.3 `primary_product` 선정
 - [ ] 규칙 구현: KEV vendorProject/product > (OSV, 2단계) > CPE 첫 항목 → 5장 메모 P11
@@ -217,16 +217,16 @@
 - [x] 툴팁 hover + 키보드 포커스 (S3)
 
 ### 5.6 트렌드 목록
-- [ ] 상위 20건 + "더 보기" (index.json 100건 내에서) (D15)
-- [ ] 행: CVE-ID, 배지(KEV/랜섬웨어/제품), KEV `dueDate`(KEV만), `summary_what` 없으면 영어 원문 첫 문장, 점수·EPSS "0.91 (상위 3%)"·CVSS
-- [ ] 보기 전환: 소프트웨어별(`primary_product` 묶음, 그룹은 최고 점수순) / 점수순 (D7)
-- [ ] 필터 전체/KEV/Critical 적용
+- [x] 상위 20건 + "더 보기" (index.json 100건 내에서) (D15)
+- [x] 행: CVE-ID, 배지(KEV/랜섬웨어/제품), KEV `dueDate`(KEV만), `summary_what` 없으면 영어 원문 첫 문장, 점수·EPSS "0.91 (상위 3%)"·CVSS
+- [x] 보기 전환: 소프트웨어별(`primary_product` 묶음, 그룹은 최고 점수순) / 점수순 (D7)
+- [x] 필터 전체/KEV/Critical 적용
 
 ### 5.7 상세 패널 (데스크톱 ≥1024px)
-- [ ] 행 선택 시 `cve/CVE-xxx.json` lazy fetch, URL `/cve/…`로 갱신 (D8)
-- [ ] 영향 제품·버전 (MVP는 NVD CPE 범위), 점수 구성 막대(0 아닌 항만), 왜 지금?, 조치 `action` 1~3줄 + 벤더 링크
-- [ ] 하단 "상세 페이지 열기" 링크
-- [ ] 패널 열림 `aria-live` 알림 (S3)
+- [x] 행 선택 시 `cve/CVE-xxx.json` lazy fetch, URL `/cve/…`로 갱신 (D8)
+- [x] 영향 제품·버전 (MVP는 NVD CPE 범위), 점수 구성 막대(0 아닌 항만), 왜 지금?, 조치 `action` 1~3줄 + 벤더 링크
+- [x] 하단 "상세 페이지 열기" 링크
+- [x] 패널 열림 `aria-live` 알림 (S3)
 
 ### 5.8 상세 페이지 `/cve/CVE-xxx`
 - [ ] 머리: CVE-ID, 배지, 점수 3종 큰 숫자, 영향 제품·버전
@@ -347,3 +347,4 @@
 | 2026-10-31 | 0.5·1.2·5.3·5.4 체크. CVSS 3.0 을 3.1 다음 순위로, 0.0 은 LOW, product_alias 는 통째 교체 | 사용자 승인·결정 |
 | 2026-10-31 | 1.3 체크. 수집 순서 NVD→KEV→EPSS→OSV→NEWS 고정(B 요청, A 반영) | 사용자 승인 |
 | 2026-10-31 | 2.1·5.5 체크. KEV: 목록에서 내려간 CVE 표시 해제, 빈 목록이면 실패(사용자 확정) | 사용자 승인 |
+| 2026-10-31 | 1.4·2.2·5.6·5.7 체크. EPSS: 점수 없는 CVE 는 값 없이 두고 빈 파일은 실패, KEV·EPSS 공통 내려받기(사용자 확정) | 사용자 승인 |
