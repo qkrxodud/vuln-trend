@@ -6,4 +6,7 @@ public interface DocumentSizer {
     long prettyBytes(Object document);
 
     long compactBytes(Object document);
+
+    /** 지금 모양을 gzip(레벨 6)으로 묶었을 때 — 사이트가 실제로 보내는 크기에 가깝다(R8) */
+    long gzipBytes(Object document);
 }

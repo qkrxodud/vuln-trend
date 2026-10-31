@@ -17,6 +17,7 @@ import com.vulntrend.batch.domain.export.SiteDataWriter;
 import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.global.config.OutputProperties;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -26,6 +27,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+import java.util.zip.GZIPOutputStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -141,6 +143,32 @@ public class JsonFileWriter implements SiteDataWriter, DocumentSizer {
         } catch (IOException failure) {
             throw failed(path, failure);
         }
+    }
+
+    @Override
+    public Optional<Long> gzipSizeOf(DataFilePath path) {
+        Path file = Path.of(properties.getDir()).resolve(path.getValue());
+        try {
+            return Files.isRegularFile(file) ? Optional.of(gzipped(path, Files.readAllBytes(file))) : Optional.empty();
+        } catch (IOException failure) {
+            throw failed(path, failure);
+        }
+    }
+
+    @Override
+    public long gzipBytes(Object document) {
+        return gzipped(MEASURED, serialize(MEASURED, document));
+    }
+
+    /** gzip 기본 압축(zlib 레벨 6, 웹 서버가 흔히 쓰는 값)으로 묶은 바이트 수 */
+    private static long gzipped(DataFilePath path, byte[] content) {
+        ByteArrayOutputStream packed = new ByteArrayOutputStream();
+        try (GZIPOutputStream out = new GZIPOutputStream(packed)) {
+            out.write(content);
+        } catch (IOException failure) {
+            throw failed(path, failure);
+        }
+        return packed.size();
     }
 
     /** 이 클래스가 실제로 쓰는 바이트와 같다(끝 줄바꿈 포함) */

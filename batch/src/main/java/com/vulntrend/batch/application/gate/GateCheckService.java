@@ -20,8 +20,8 @@ import com.vulntrend.batch.domain.gate.RepositoryHistory;
 import com.vulntrend.batch.domain.gate.SearchIndexSizeCheck;
 import com.vulntrend.batch.domain.gate.dto.DataCommit;
 import com.vulntrend.batch.domain.gate.dto.SizeEstimate;
+import com.vulntrend.batch.domain.gate.dto.StoredFileSize;
 import com.vulntrend.batch.domain.score.TrendListRepository;
-import com.vulntrend.batch.domain.stat.StatDays;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStateRepository;
 import com.vulntrend.batch.global.error.exception.SourceFetchException;
@@ -38,7 +38,7 @@ import org.springframework.stereotype.Service;
 /**
  * Gate G 배치 쪽 점검(WBS 9장). 웹의 npm run gate:check 와 짝이다 — 같은 표 모양, 실패가 있으면 종료 코드 1, 확인 필요는 사람이 판단.
  * 항목: ① 배치 3일 연속 성공 ② 미매핑 대표 제품(상위 100) ③ 레포 크기·커밋당 변경 파일 수 ④ search-index 크기(R8)와 줄이는 방법별 예상
- * ⑤ 상위 10건 점수 구성(가중치 조정 판단용). 읽기만 하고 아무것도 쓰지 않는다. git 을 읽지 못하면 ①·③ 만 실패로 적고 나머지는 계속 판정한다.
+ * ⑤ 상위 10건 점수 구성(가중치 조정 판단용). ④ 의 gzip 크기를 모르면 파일 크기로 판정한다(더 엄격한 쪽). 읽기만 하고 아무것도 쓰지 않는다. git 을 읽지 못하면 ①·③ 만 실패로 적고 나머지는 계속 판정한다.
  */
 @Service
 @RequiredArgsConstructor
@@ -70,7 +70,8 @@ public class GateCheckService {
                 ProductMappingCheck.judge(gateQueries.unmappedProducts(UNMAPPED_TOP),
                         gateQueries.withoutProduct(UNMAPPED_TOP), UNMAPPED_TOP),
                 repoGrowth(commits),
-                SearchIndexSizeCheck.judge(files.sizeOf(SEARCH_INDEX), estimates(now)),
+                SearchIndexSizeCheck.judge(files.sizeOf(SEARCH_INDEX).map(bytes -> new StoredFileSize(bytes,
+                        files.gzipSizeOf(SEARCH_INDEX).orElse(bytes))), estimates(now)),
                 topTen(now)));
     }
 
@@ -94,14 +95,15 @@ public class GateCheckService {
     private List<SizeEstimate> estimates(Instant now) {
         List<SizeEstimate> estimates = new ArrayList<>(List.of(estimate("전체", details.searchEntries())));
         MONTHS.forEach(months -> estimates.add(estimate("최근 " + months + "개월",
-                details.searchEntriesSince(now.atZone(StatDays.CALENDAR).minusMonths(months).toInstant()))));
+                details.searchEntriesSince(SearchIndexFileExport.since(now, months)))));
         return estimates;
     }
 
     /** 실제로 쓰는 문서 모양(SearchIndexFileExport 와 같은 줄)으로 잰다 */
     private SizeEstimate estimate(String scope, List<SearchListing> entries) {
         List<?> document = entries.stream().map(SearchIndexFileExport::entry).toList();
-        return new SizeEstimate(scope, entries.size(), sizer.prettyBytes(document), sizer.compactBytes(document));
+        return new SizeEstimate(scope, entries.size(), sizer.prettyBytes(document), sizer.compactBytes(document),
+                sizer.gzipBytes(document));
     }
 
     private GateItem topTen(Instant now) {

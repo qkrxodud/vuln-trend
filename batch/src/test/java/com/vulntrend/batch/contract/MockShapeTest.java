@@ -90,9 +90,9 @@ class MockShapeTest {
     @DisplayName("search-index.json 은 번호·제목·제품을 같은 이름으로 싣는다")
     void searchIndex() throws IOException {
         FakeCveDetailRepository repository = new FakeCveDetailRepository()
-                .search(new SearchListing(CveId.from("CVE-2026-41203"), "제목", "Chrome"));
+                .search(new SearchListing(CveId.from("CVE-2026-41203"), "제목", "Chrome"), NOW);
 
-        new SearchIndexFileExport(repository, writer).write();
+        new SearchIndexFileExport(repository, writer).write(NOW);
 
         assertSameShape(dataDir.resolve("search-index.json"), "search-index.json");
     }

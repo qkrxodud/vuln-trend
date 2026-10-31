@@ -16,4 +16,7 @@ public interface SiteDataWriter {
 
     /** 그 파일의 크기(바이트). 없으면 비어 있다 */
     Optional<Long> sizeOf(DataFilePath path);
+
+    /** 그 파일을 gzip(레벨 6)으로 묶었을 때의 크기. 없으면 비어 있다(R8) */
+    Optional<Long> gzipSizeOf(DataFilePath path);
 }

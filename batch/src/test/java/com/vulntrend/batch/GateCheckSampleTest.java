@@ -111,9 +111,9 @@ class GateCheckSampleTest {
     }
 
     @Test
-    @DisplayName("search-index 를 쓰면 실제 크기로 판정하고 기간별 예상 건수는 점점 줄어든다")
+    @DisplayName("search-index 를 쓰면 실제 파일의 gzip 크기로 판정하고 기간별 예상을 함께 남긴다")
     void writtenSearchIndexMeasured() {
-        new SearchIndexFileExport(details, files).write();
+        new SearchIndexFileExport(details, files).write(NOW);
 
         GateItem size = service().check().getItems().get(3);
 

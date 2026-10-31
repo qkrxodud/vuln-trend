@@ -41,7 +41,7 @@ public class ExportService {
         WriteOutcome statsOutcome = stats.write(now);
         Listed indexed = index.write(now);
         Listed recentListed = recent.write(now);
-        WriteOutcome searchOutcome = searchIndex.write();
+        WriteOutcome searchOutcome = searchIndex.write(now);
         Set<CveId> scope = new LinkedHashSet<>(indexed.getIds());
         scope.addAll(recentListed.getIds());
         scope.addAll(repository.topIds(DETAIL_TOP));

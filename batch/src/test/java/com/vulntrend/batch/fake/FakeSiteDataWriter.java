@@ -22,6 +22,7 @@ public class FakeSiteDataWriter implements SiteDataWriter {
     private final Set<String> files = new TreeSet<>();
     private final List<String> removed = new ArrayList<>();
     private final Map<String, Long> sizes = new LinkedHashMap<>();
+    private final Map<String, Long> gzipSizes = new LinkedHashMap<>();
 
     public FakeSiteDataWriter existing(String path) {
         files.add(path);
@@ -55,6 +56,16 @@ public class FakeSiteDataWriter implements SiteDataWriter {
     public FakeSiteDataWriter sized(String path, long bytes) {
         sizes.put(path, bytes);
         return this;
+    }
+
+    public FakeSiteDataWriter sized(String path, long bytes, long gzipBytes) {
+        gzipSizes.put(path, gzipBytes);
+        return sized(path, bytes);
+    }
+
+    @Override
+    public Optional<Long> gzipSizeOf(DataFilePath path) {
+        return Optional.ofNullable(gzipSizes.get(path.getValue()));
     }
 
     public <T> Optional<T> document(String path, Class<T> type) {

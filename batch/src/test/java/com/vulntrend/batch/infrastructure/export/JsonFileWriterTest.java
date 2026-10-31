@@ -8,6 +8,7 @@ import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.global.config.OutputProperties;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import com.vulntrend.batch.infrastructure.export.dto.ExportSampleJson;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -22,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Stream;
+import java.util.zip.GZIPOutputStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -234,6 +236,21 @@ class JsonFileWriterTest {
             assertThat(writer.prettyBytes(sample("CVE-2026-41203", null))).isEqualTo(Files.size(dataDir.resolve("meta.json")));
             assertThat(writer.compactBytes(sample("CVE-2026-41203", null)))
                     .isLessThan(writer.prettyBytes(sample("CVE-2026-41203", null)));
+        }
+
+        @Test
+        @DisplayName("gzip 크기는 지금 모양을 레벨 6 으로 묶은 바이트이고 써 둔 파일도 같은 값으로 잰다")
+        void gzip() throws IOException {
+            writer.write(META, sample("CVE-2026-41203", null));
+            byte[] pretty = Files.readAllBytes(dataDir.resolve("meta.json"));
+            ByteArrayOutputStream packed = new ByteArrayOutputStream();
+            try (GZIPOutputStream out = new GZIPOutputStream(packed)) {
+                out.write(pretty);
+            }
+
+            assertThat(writer.gzipBytes(sample("CVE-2026-41203", null))).isEqualTo(packed.size());
+            assertThat(writer.gzipSizeOf(META)).contains((long) packed.size());
+            assertThat(writer.gzipSizeOf(DataFilePath.of("index.json"))).isEmpty();
         }
 
         @Test

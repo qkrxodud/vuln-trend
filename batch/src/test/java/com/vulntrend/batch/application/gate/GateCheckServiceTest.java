@@ -42,7 +42,8 @@ class GateCheckServiceTest {
             .size(100L * 1024 * 1024, 0);
     private final FakeSyncStateRepository syncStates = new FakeSyncStateRepository();
     private final FakeGateQueryRepository gateQueries = new FakeGateQueryRepository();
-    private final FakeSiteDataWriter files = new FakeSiteDataWriter().sized("search-index.json", 1024L * 1024);
+    private final FakeSiteDataWriter files = new FakeSiteDataWriter().sized("search-index.json", 12L * 1024 * 1024,
+            2L * 1024 * 1024);
     private final FakeCveDetailRepository details = new FakeCveDetailRepository()
             .search(new SearchListing(CveId.from("CVE-2026-50001"), "새 건", null), Instant.parse("2026-10-30T00:00:00Z"))
             .search(new SearchListing(CveId.from("CVE-2026-20001"), "넉 달 전", null),
@@ -74,6 +75,15 @@ class GateCheckServiceTest {
     }
 
     @Test
+    @DisplayName("search-index 는 파일이 4MB 를 넘어도 gzip 크기로 판정해 통과한다")
+    void searchIndexByGzip() {
+        GateItem item = service().check().getItems().get(3);
+
+        assertThat(item.getStatus()).isEqualTo(GateStatus.PASS);
+        assertThat(item.getDetail()).isEqualTo("gzip 2.00MB ≤ 4MB (파일 12.00MB)");
+    }
+
+    @Test
     @DisplayName("제품 표에 없는 대표 제품은 트렌드 상위 100건에서 찾는다")
     void unmappedAmongTopHundred() {
         service().check();
@@ -91,10 +101,10 @@ class GateCheckServiceTest {
             GateItem item = service().check().getItems().get(3);
 
             assertThat(item.getEvidence()).containsExactly(
-                    "전체: 3건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB",
-                    "최근 12개월: 3건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB",
-                    "최근 9개월: 2건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB",
-                    "최근 6개월: 2건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB");
+                    "전체: 3건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB, gzip 0.00MB",
+                    "최근 12개월: 3건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB, gzip 0.00MB",
+                    "최근 9개월: 2건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB, gzip 0.00MB",
+                    "최근 6개월: 2건, 지금 모양 0.00MB, 줄바꿈 없이 0.00MB, gzip 0.00MB");
         }
     }
 
@@ -148,9 +158,10 @@ class GateCheckServiceTest {
         }
 
         @Test
-        @DisplayName("search-index 가 4MB 를 넘으면 그 항목이 실패한다")
+        @DisplayName("search-index 의 gzip 크기가 4MB 를 넘으면 그 항목이 실패한다")
         void bigSearchIndex() {
-            FakeSiteDataWriter big = new FakeSiteDataWriter().sized("search-index.json", 5L * 1024 * 1024);
+            FakeSiteDataWriter big = new FakeSiteDataWriter().sized("search-index.json", 40L * 1024 * 1024,
+                    5L * 1024 * 1024);
 
             assertThat(service(history, big).check().getItems().get(3).getStatus()).isEqualTo(GateStatus.FAIL);
         }
