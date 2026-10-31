@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
+import { siteMetaTags } from './src/lib/site-meta.ts'
 
 // GitHub Pages 프로젝트 사이트 기본 경로. 도메인을 연결하면 VITE_BASE=/ 로 빌드한다 (기획서 8장 프론트 기술, P8)
 const DEFAULT_BASE = '/vuln-trend/'
@@ -41,10 +42,18 @@ const render404 = (base: string): string => `<!doctype html>
 </html>
 `
 
+// 사이트 공유 미리보기 태그를 <title> 아래에 넣는다. VITE_SITE_URL 은 배포 워크플로가 Pages 주소로 준다 (5.13)
+const siteMeta = (siteUrl: string | undefined): Plugin => ({
+  name: 'vuln-trend-site-meta',
+  transformIndexHtml(html) {
+    return html.replace('</title>', `</title>\n    ${siteMetaTags(siteUrl)}`)
+  },
+})
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     base: env.VITE_BASE || DEFAULT_BASE,
-    plugins: [react(), tailwindcss(), spaFallback404()],
+    plugins: [react(), tailwindcss(), spaFallback404(), siteMeta(env.VITE_SITE_URL)],
   }
 })

@@ -83,8 +83,8 @@ const DailyTable = ({ bars }: { bars: DailyBar[] }) => (
 export const DailyNewChart = ({ daily }: { daily: DailyCount[] }) => {
   const bars = toDailyBars(daily)
   return (
-    <div className="flex min-w-0 flex-[2_1_520px] flex-col gap-3.5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="flex min-w-0 flex-col gap-3.5">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-0.5">
           <h2 className="text-[17px] font-semibold">{TITLE}</h2>
           <p className="text-xs text-ink-faint">공개일(KST) 기준 · 매 수집마다 14일 재계산</p>

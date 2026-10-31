@@ -22,12 +22,12 @@ export const SeverityDonut = ({ distribution }: { distribution: SeverityDistribu
   const clear = () => setActiveIndex(null)
 
   return (
-    <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-3.5">
+    <div className="flex min-w-0 flex-col gap-3.5">
       <div className="flex flex-col gap-0.5">
         <h2 className="text-[17px] font-semibold">최근 7일 심각도 분포</h2>
         <p className="text-xs text-ink-faint">CVSS 미평가(Awaiting Analysis) 포함</p>
       </div>
-      <div className="flex flex-wrap items-center gap-6">
+      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
         <div className="relative shrink-0" style={{ width: DONUT_SIZE, height: DONUT_SIZE }}>
           <PieChart width={DONUT_SIZE} height={DONUT_SIZE} title="최근 7일 신규 CVE 심각도 분포 도넛 차트">
             <Pie

@@ -1,4 +1,4 @@
-import { ChartsSection } from '../components/charts/ChartsSection.tsx'
+import { LazyChartsSection } from '../components/charts/LazyChartsSection.tsx'
 import { SiteFooter } from '../components/footer/SiteFooter.tsx'
 import { SiteHeader } from '../components/header/SiteHeader.tsx'
 import { KpiCards } from '../components/kpi/KpiCards.tsx'
@@ -10,7 +10,7 @@ export const HomePage = ({ selectedId }: { selectedId: string | null }) => (
     <SiteHeader />
     <main className="flex flex-col gap-7">
       <KpiCards />
-      <ChartsSection />
+      <LazyChartsSection />
       <TrendSection selectedId={selectedId} />
     </main>
     <SiteFooter />
