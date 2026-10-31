@@ -1,7 +1,10 @@
 package com.vulntrend.batch.infrastructure.persistence.stat;
 
+import com.vulntrend.batch.domain.stat.DailyStat;
 import com.vulntrend.batch.domain.stat.DailyStatRepository;
 import com.vulntrend.batch.domain.stat.StatDays;
+import java.time.LocalDate;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -78,6 +81,14 @@ public class JdbcDailyStatRepository implements DailyStatRepository {
                 unrated_count = excluded.unrated_count
             """;
 
+    /** 비어 있는 칸은 getInt 가 0 으로 읽는다 */
+    private static final String FIND_BETWEEN = """
+            select stat_date, new_count, critical_count, high_count, medium_count, low_count, unrated_count
+            from daily_stat
+            where stat_date between :first and :last
+            order by stat_date
+            """;
+
     private final NamedParameterJdbcTemplate jdbc;
 
     @Override
@@ -86,5 +97,13 @@ public class JdbcDailyStatRepository implements DailyStatRepository {
                 .addValue("first", days.getFirst())
                 .addValue("today", days.getToday());
         return jdbc.update(RECALCULATE, params);
+    }
+
+    @Override
+    public List<DailyStat> findBetween(LocalDate first, LocalDate last) {
+        MapSqlParameterSource params = new MapSqlParameterSource().addValue("first", first).addValue("last", last);
+        return jdbc.query(FIND_BETWEEN, params, (rs, rowNum) -> DailyStat.of(rs.getObject("stat_date", LocalDate.class),
+                rs.getInt("new_count"), rs.getInt("critical_count"), rs.getInt("high_count"), rs.getInt("medium_count"),
+                rs.getInt("low_count"), rs.getInt("unrated_count")));
     }
 }

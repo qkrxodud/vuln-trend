@@ -22,6 +22,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +32,7 @@ import org.springframework.stereotype.Component;
  * - 이름은 모든 파일에서 snake_case(G1). 수집 쪽(NVD·KEV 의 camelCase 읽기)을 건드리지 않도록 이 출력에만 쓰는 매퍼를 둔다
  * - 값이 없으면 이름을 남기고 null. 소수는 지수 표기 없이, 날짜는 ISO-8601(오프셋 유지), 맵은 키 순서
  * - 들여쓰기 두 칸·줄바꿈 LF·끝 줄바꿈 하나 — 같은 내용이면 같은 바이트가 나와 git 차이가 작다
+ * - 상세 폴더의 파일을 고르고 지울 수 있다(생성 범위 밖·철회 건 정리, R5)
  * - 이미 있는 파일과 바이트가 같으면 쓰지 않는다. 다르면 같은 폴더의 임시 파일에 쓴 뒤 한 번에 바꿔 끼운다(반쪽 파일 없음)
  */
 @Component
@@ -94,5 +97,34 @@ public class JsonFileWriter implements SiteDataWriter {
     private static OutputWriteException failed(DataFilePath path, Exception failure) {
         return new OutputWriteException(
                 "Could not write " + path.getValue() + " (" + failure.getClass().getSimpleName() + ").");
+    }
+
+    /** 데이터 파일 경로 모양(DataFilePath)인 JSON 파일만 고른다 — 임시 파일(.…tmp)·다른 파일은 건드리지 않는다 */
+    @Override
+    public List<DataFilePath> listFolder(String folder) {
+        Path dir = Path.of(properties.getDir()).resolve(folder);
+        if (Files.isDirectory(dir)) {
+            try (Stream<Path> files = Files.list(dir)) {
+                return files.map(file -> folder + "/" + file.getFileName())
+                        .filter(DataFilePath::isDataFile)
+                        .sorted()
+                        .map(DataFilePath::of)
+                        .toList();
+            } catch (IOException failure) {
+                throw new OutputWriteException(
+                        "Could not list " + folder + " (" + failure.getClass().getSimpleName() + ").");
+            }
+        }
+        return List.of();
+    }
+
+    @Override
+    public boolean remove(DataFilePath path) {
+        try {
+            return Files.deleteIfExists(Path.of(properties.getDir()).resolve(path.getValue()));
+        } catch (IOException failure) {
+            throw new OutputWriteException(
+                    "Could not remove " + path.getValue() + " (" + failure.getClass().getSimpleName() + ").");
+        }
     }
 }

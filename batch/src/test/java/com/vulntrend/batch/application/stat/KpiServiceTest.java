@@ -4,10 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.domain.stat.KpiSummary;
 import com.vulntrend.batch.fake.FakeKpiRepository;
-import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneOffset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +14,6 @@ class KpiServiceTest {
 
     /** 한국 시각 2026-10-31 09:00 실행 */
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
-    private static final Clock CLOCK = Clock.fixed(NOW, ZoneOffset.UTC);
 
     @Test
     @DisplayName("지금 창과 어제 창에서 신규·KEV 신규·Critical 을 센다")
@@ -25,7 +22,7 @@ class KpiServiceTest {
                 .arrivals(Instant.parse("2026-10-30T00:00:00Z"), 134, 1, 10)
                 .arrivals(Instant.parse("2026-10-29T00:00:00Z"), 135, 1, 9);
 
-        KpiSummary summary = new KpiService(repository, CLOCK).summarize();
+        KpiSummary summary = new KpiService(repository).summarize(NOW);
 
         assertThat(summary.getToday().getNewCount()).isEqualTo(134);
         assertThat(summary.getToday().getKevNewCount()).isEqualTo(1);
@@ -40,7 +37,7 @@ class KpiServiceTest {
         FakeKpiRepository repository = new FakeKpiRepository().highRiskNow(318)
                 .highRiskRecorded(LocalDate.parse("2026-10-30"), 313);
 
-        KpiSummary summary = new KpiService(repository, CLOCK).summarize();
+        KpiSummary summary = new KpiService(repository).summarize(NOW);
 
         assertThat(summary.getToday().getHighRiskCount()).contains(318);
         assertThat(summary.getYesterday().getHighRiskCount()).contains(313);
@@ -51,7 +48,7 @@ class KpiServiceTest {
     void unknownYesterdayHighRisk() {
         FakeKpiRepository repository = new FakeKpiRepository().highRiskNow(318);
 
-        KpiSummary summary = new KpiService(repository, CLOCK).summarize();
+        KpiSummary summary = new KpiService(repository).summarize(NOW);
 
         assertThat(summary.getYesterday().getHighRiskCount()).isEmpty();
     }

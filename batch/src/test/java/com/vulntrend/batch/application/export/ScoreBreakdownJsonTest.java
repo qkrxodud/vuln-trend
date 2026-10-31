@@ -1,9 +1,9 @@
-package com.vulntrend.batch.infrastructure.export;
+package com.vulntrend.batch.application.export;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.application.export.dto.ScoreBreakdownJson;
 import com.vulntrend.batch.domain.score.ScoreBreakdown;
-import com.vulntrend.batch.infrastructure.export.dto.ScoreBreakdownJson;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.junit.jupiter.api.DisplayName;

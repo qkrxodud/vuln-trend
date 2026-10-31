@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 /**
@@ -12,6 +13,7 @@ import lombok.Getter;
  * 이름 조각은 영숫자로 시작하고 영숫자·밑줄·하이픈만 쓴다 — 데이터 폴더 밖(.., 절대 경로)이나 JSON 이 아닌 파일은 만들 수 없다.
  */
 @Getter
+@EqualsAndHashCode
 public class DataFilePath {
 
     private static final Pattern SHAPE =
@@ -25,10 +27,14 @@ public class DataFilePath {
     }
 
     public static DataFilePath of(String value) {
-        boolean valid = Objects.nonNull(value) && SHAPE.matcher(value).matches();
-        if (valid) {
+        if (isDataFile(value)) {
             return DataFilePath.builder().value(value).build();
         }
         throw new DomainValidationException("Data file path must be a JSON file inside the data folder.");
+    }
+
+    /** 데이터 파일 경로 모양인가(폴더의 다른 파일·임시 파일을 거를 때) */
+    public static boolean isDataFile(String value) {
+        return Objects.nonNull(value) && SHAPE.matcher(value).matches();
     }
 }

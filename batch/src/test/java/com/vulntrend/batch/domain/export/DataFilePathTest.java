@@ -33,4 +33,11 @@ class DataFilePathTest {
         assertThatThrownBy(() -> DataFilePath.of("")).isInstanceOf(DomainValidationException.class);
         assertThatThrownBy(() -> DataFilePath.of(null)).isInstanceOf(DomainValidationException.class);
     }
+
+    @Test
+    @DisplayName("같은 경로는 같은 파일이다")
+    void samePathSameFile() {
+        assertThat(DataFilePath.of("cve/CVE-2026-41203.json")).isEqualTo(DataFilePath.of("cve/CVE-2026-41203.json"))
+                .isNotEqualTo(DataFilePath.of("cve/CVE-2026-50001.json"));
+    }
 }

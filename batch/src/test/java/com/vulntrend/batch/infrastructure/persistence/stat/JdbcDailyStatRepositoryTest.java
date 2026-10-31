@@ -2,12 +2,15 @@ package com.vulntrend.batch.infrastructure.persistence.stat;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.domain.stat.DailyStat;
 import com.vulntrend.batch.domain.stat.StatDays;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import org.junit.jupiter.api.DisplayName;
@@ -200,6 +203,48 @@ class JdbcDailyStatRepositoryTest {
             repository.recalculate(StatDays.recent(NOW.plusSeconds(3600 * 9)));
 
             assertThat(stat("2026-10-31")).containsEntry("high_risk_count", 0);
+        }
+    }
+
+    @Nested
+    @DisplayName("날치 통계를 읽으면")
+    class Reading {
+
+        @Test
+        @DisplayName("양끝을 포함한 그 사이 날들을 날짜 순서로 심각도 다섯 갈래와 함께 읽는다")
+        void betweenInOrder() {
+            vulnerability("CVE-2026-30001", "2026-10-29T01:00:00Z", "CRITICAL");
+            vulnerability("CVE-2026-30002", "2026-10-29T02:00:00Z", "HIGH");
+            vulnerability("CVE-2026-30003", "2026-10-29T03:00:00Z", null);
+            repository.recalculate(DAYS);
+
+            List<DailyStat> stats = repository.findBetween(LocalDate.parse("2026-10-25"),
+                    LocalDate.parse("2026-10-31"));
+
+            assertThat(stats).extracting(DailyStat::getStatDate).containsExactly(
+                    LocalDate.parse("2026-10-25"), LocalDate.parse("2026-10-26"), LocalDate.parse("2026-10-27"),
+                    LocalDate.parse("2026-10-28"), LocalDate.parse("2026-10-29"), LocalDate.parse("2026-10-30"),
+                    LocalDate.parse("2026-10-31"));
+            DailyStat day = stats.get(4);
+            assertThat(day.getNewCount()).isEqualTo(3);
+            assertThat(day.getCriticalCount()).isEqualTo(1);
+            assertThat(day.getHighCount()).isEqualTo(1);
+            assertThat(day.getMediumCount()).isZero();
+            assertThat(day.getLowCount()).isZero();
+            assertThat(day.getUnratedCount()).isEqualTo(1);
+        }
+
+        @Test
+        @DisplayName("통계가 없는 날은 빠지고 비어 있는 갈래는 0 으로 읽는다")
+        void missingDaysAndEmptyCounts() {
+            jdbc.update("insert into daily_stat (stat_date, new_count) values ('2026-10-17', 4)");
+
+            List<DailyStat> stats = repository.findBetween(LocalDate.parse("2026-10-16"),
+                    LocalDate.parse("2026-10-17"));
+
+            assertThat(stats).hasSize(1);
+            assertThat(stats.get(0).getNewCount()).isEqualTo(4);
+            assertThat(stats.get(0).getCriticalCount()).isZero();
         }
     }
 

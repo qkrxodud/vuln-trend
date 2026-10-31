@@ -1,4 +1,4 @@
-package com.vulntrend.batch.infrastructure.export.dto;
+package com.vulntrend.batch.application.export.dto;
 
 import com.vulntrend.batch.domain.score.ScoreBreakdown;
 import java.math.BigDecimal;

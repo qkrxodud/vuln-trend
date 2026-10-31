@@ -155,6 +155,64 @@ class JsonFileWriterTest {
         assertThat(dataDir.resolve("meta.json")).doesNotExist();
     }
 
+    @Nested
+    @DisplayName("상세 폴더의 파일은")
+    class Folder {
+
+        @Test
+        @DisplayName("JSON 파일만 데이터 폴더 기준 경로로 이름 순서대로 고른다")
+        void listsJsonFiles() throws IOException {
+            writer.write(DataFilePath.of("cve/CVE-2026-50001.json"), sample("CVE-2026-50001", null));
+            writer.write(DataFilePath.of("cve/CVE-2026-41203.json"), sample("CVE-2026-41203", null));
+            Files.writeString(dataDir.resolve("cve/README.txt"), "설명");
+            Files.writeString(dataDir.resolve("cve/.CVE-2026-1.json.tmp"), "임시");
+
+            assertThat(writer.listFolder("cve")).extracting(DataFilePath::getValue)
+                    .containsExactly("cve/CVE-2026-41203.json", "cve/CVE-2026-50001.json");
+        }
+
+        @Test
+        @DisplayName("폴더가 아직 없으면 고를 파일이 없다")
+        void noFolder() {
+            assertThat(writer.listFolder("cve")).isEmpty();
+        }
+
+        @Test
+        @DisplayName("폴더를 읽을 수 없으면 출력 실패로 알린다")
+        void unreadableFolder() throws IOException {
+            Path folder = Files.createDirectories(dataDir.resolve("cve"));
+            folder.toFile().setReadable(false);
+            try {
+                assertThatThrownBy(() -> writer.listFolder("cve")).isInstanceOf(OutputWriteException.class)
+                        .hasMessageContaining("cve").hasMessageNotContaining(dataDir.toString());
+            } finally {
+                folder.toFile().setReadable(true);
+            }
+        }
+
+        @Test
+        @DisplayName("지울 수 없으면 출력 실패로 알린다")
+        void unremovable() throws IOException {
+            Files.createDirectories(dataDir.resolve("cve/CVE-2026-41203.json"));
+            Files.writeString(dataDir.resolve("cve/CVE-2026-41203.json/안쪽"), "폴더 자리에 파일");
+
+            assertThatThrownBy(() -> writer.remove(DataFilePath.of("cve/CVE-2026-41203.json")))
+                    .isInstanceOf(OutputWriteException.class).hasMessageContaining("cve/CVE-2026-41203.json");
+        }
+
+        @Test
+        @DisplayName("지우면 그 파일만 사라지고 없는 파일은 지운 것으로 치지 않는다")
+        void removes() throws IOException {
+            writer.write(DataFilePath.of("cve/CVE-2026-41203.json"), sample("CVE-2026-41203", null));
+            writer.write(DataFilePath.of("cve/CVE-2026-50001.json"), sample("CVE-2026-50001", null));
+
+            assertThat(writer.remove(DataFilePath.of("cve/CVE-2026-41203.json"))).isTrue();
+            assertThat(writer.remove(DataFilePath.of("cve/CVE-2026-41203.json"))).isFalse();
+            assertThat(dataDir.resolve("cve/CVE-2026-41203.json")).doesNotExist();
+            assertThat(dataDir.resolve("cve/CVE-2026-50001.json")).exists();
+        }
+    }
+
     private static ExportSampleJson sample(String id, String product) {
         Map<String, Integer> counts = new TreeMap<>(Map.of("new", 134, "critical", 10));
         return new ExportSampleJson(id, 67, new BigDecimal("0.94310"), new BigDecimal("0.99900"),

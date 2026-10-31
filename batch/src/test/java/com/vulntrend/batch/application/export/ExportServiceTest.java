@@ -1,0 +1,89 @@
+package com.vulntrend.batch.application.export;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import com.vulntrend.batch.application.stat.KpiService;
+import com.vulntrend.batch.domain.vulnerability.CveId;
+import com.vulntrend.batch.fake.FakeCveDetailRepository;
+import com.vulntrend.batch.fake.FakeDailyStatRepository;
+import com.vulntrend.batch.fake.FakeKpiRepository;
+import com.vulntrend.batch.fake.FakeSiteDataWriter;
+import com.vulntrend.batch.fake.FakeTrendListRepository;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+@DisplayName("사이트 데이터 내보내기")
+class ExportServiceTest {
+
+    private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
+
+    private final FakeSiteDataWriter writer = new FakeSiteDataWriter();
+    private final FakeTrendListRepository trends = new FakeTrendListRepository()
+            .with(TrendListings.kev("CVE-2026-41203"))
+            .with(TrendListings.unrated("CVE-2026-50001"));
+    private final FakeCveDetailRepository details = new FakeCveDetailRepository()
+            .detail(TrendListings.kevDetail("CVE-2026-41203"))
+            .detail(TrendListings.bareDetail("CVE-2026-50001"))
+            .detail(TrendListings.bareDetail("CVE-2026-60001"))
+            .top("CVE-2026-41203", "CVE-2026-60001");
+
+    @Test
+    @DisplayName("상세 파일은 index·recent 에 실린 CVE 와 점수 상위 1000건에 대해서만 만든다")
+    void detailScope() {
+        service().exportAll();
+
+        assertThat(details.askedTop()).isEqualTo(1000);
+        assertThat(details.askedDetails()).containsExactly(CveId.from("CVE-2026-41203"), CveId.from("CVE-2026-50001"),
+                CveId.from("CVE-2026-60001"));
+    }
+
+    @Test
+    @DisplayName("목록 파일과 상세 파일을 다 쓴 뒤 마지막에 meta.json 을 써서 판 이름이 가장 늦게 바뀐다")
+    void metaLast() {
+        service().exportAll();
+
+        assertThat(writer.order()).startsWith("stats.json", "index.json", "recent.json", "search-index.json");
+        assertThat(writer.order()).endsWith("meta.json");
+        assertThat(writer.order()).contains("cve/CVE-2026-41203.json", "cve/CVE-2026-50001.json",
+                "cve/CVE-2026-60001.json");
+    }
+
+    @Test
+    @DisplayName("쓴 수·그대로 둔 수·지운 수·상세 파일 수를 알린다")
+    void result() {
+        writer.existing("cve/CVE-2021-44228.json");
+
+        ExportResult result = service().exportAll();
+
+        assertThat(result.getWritten()).isEqualTo(8);
+        assertThat(result.getUnchanged()).isZero();
+        assertThat(result.getRemoved()).isEqualTo(1);
+        assertThat(result.getDetailFiles()).isEqualTo(3);
+        assertThat(result.hasChanges()).isTrue();
+    }
+
+    @Test
+    @DisplayName("다시 내보내도 바뀐 것이 없으면 바뀐 파일이 없다고 알린다")
+    void nothingChanged() {
+        ExportService service = service();
+        service.exportAll();
+
+        ExportResult again = service.exportAll();
+
+        assertThat(again.getWritten()).isZero();
+        assertThat(again.getUnchanged()).isEqualTo(8);
+        assertThat(again.hasChanges()).isFalse();
+    }
+
+    private ExportService service() {
+        FakeCveDetailRepository repository = details;
+        return new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
+                new IndexFileExport(trends, writer), new RecentFileExport(trends, writer),
+                new SearchIndexFileExport(repository, writer), new CveDetailFileExport(repository, writer),
+                new MetaFileExport(new KpiService(new FakeKpiRepository()), writer), repository,
+                Clock.fixed(NOW, ZoneOffset.UTC));
+    }
+}
