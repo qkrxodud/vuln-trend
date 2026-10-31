@@ -389,7 +389,7 @@ MVP에서 **넣지 않는 것**: 영향 자산 수, 조치 기한 SLA(KEV `dueDa
 ### 푸터 고지 (필수)
 
 - "This product uses the NVD API but is not endorsed or certified by the NVD."
-- EPSS: FIRST 출처 표기(Jacobs et al., EPSS, FIRST.org)
+- EPSS: FIRST 출처 표기(Jacobs et al., EPSS, FIRST.org) + 점수 생성 주체 Empirical Security 병기(first.org/epss 푸터 문구 기준, 2026-10-31 확인·사용자 승인). 데이터 주소 epss.empiricalsecurity.com
 - CVE는 MITRE의 등록 상표
 - 데이터 출처: NVD · CISA KEV · FIRST EPSS · OSV.dev / GitHub Advisory Database
 - 면책: 정보 제공 목적, 정확성·완전성 보장 안 함. AI 요약은 원문 확인 필요
