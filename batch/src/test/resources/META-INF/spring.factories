@@ -1,0 +1,2 @@
+# 시험 전용: 모든 시험 Spring 컨텍스트가 실제 원격·실제 열쇠를 보면 시작하지 않는다(support/TestIsolationGuard)
+org.springframework.context.ApplicationContextInitializer=com.vulntrend.batch.support.TestIsolationGuard

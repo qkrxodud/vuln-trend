@@ -15,6 +15,7 @@ import com.vulntrend.batch.domain.summary.KoreanSummary;
 import com.vulntrend.batch.domain.summary.Summarizer;
 import com.vulntrend.batch.domain.summary.SummaryResult;
 import com.vulntrend.batch.fake.FakeSummarizer;
+import com.vulntrend.batch.global.config.PublishProperties;
 import com.vulntrend.batch.global.error.exception.CollectionFailedException;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import com.vulntrend.batch.infrastructure.feed.FeedStubServer;
@@ -41,6 +42,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -88,6 +90,10 @@ class DailyRunEndToEndTest {
     private FakeSummarizer claude;
     @Autowired
     private JdbcTemplate jdbc;
+    @Autowired
+    private PublishProperties publishProperties;
+    @Autowired
+    private ApplicationContext context;
 
     @BeforeAll
     static void startSources() throws IOException {
@@ -115,12 +121,23 @@ class DailyRunEndToEndTest {
         registry.add("epss.max-attempts", () -> "1");
         registry.add("output.dir", () -> site.dataDir().toString());
         registry.add("publish.repo-dir", () -> site.work().toString());
+        // 이중 안전장치: .env 가 어떻게 읽히든 원격은 임시 저장소의 origin, 요약은 아래 가짜뿐이다
+        registry.add("publish.remote", () -> "origin");
+        registry.add("summary.api-key", () -> "");
     }
 
     @BeforeEach
     void emptyStores() {
         jdbc.execute("truncate summary_call, summary, daily_stat, affected_product, reference_link, "
                 + "vulnerability_raw, vulnerability, sync_state cascade");
+    }
+
+    @Test
+    @DisplayName("시험은 실제 원격·실제 요약 모델에 닿지 않는다 — 원격은 임시 저장소, 요약은 가짜 하나뿐이다")
+    void neverTouchesRealServices() {
+        assertThat(publishProperties.getRemote()).isEqualTo("origin");
+        assertThat(context.getBeansOfType(Summarizer.class).values()).singleElement()
+                .isInstanceOf(FakeSummarizer.class);
     }
 
     @Test

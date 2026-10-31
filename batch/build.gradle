@@ -53,6 +53,14 @@ jacoco {
 
 tasks.named('test') {
     useJUnitPlatform()
+    // 시험은 루트 .env(실제 NVD·요약 열쇠, PUBLISH_REMOTE)를 절대 읽지 않는다 — application.properties 의 .env 가져오기를 없는 파일로 돌린다.
+    // 2026-11-01: 공유 폴더에서 시험이 실제 .env 를 읽어 GitHub push 와 실제 요약 호출을 시도한 일이 있었다
+    systemProperty 'vulntrend.env-file', '/nonexistent/vuln-trend-test.env'
+    // 시험 안에서 바깥으로 나가는 길을 막는다: HTTPS 는 닿지 않는 대리 서버로(흉내 서버는 모두 http://127.0.0.1),
+    // 시험이 부르는 git 은 로컬 경로(file)만. 시험 컨텍스트는 실제 같은 원격·열쇠를 보면 시작하지 않는다(support/TestIsolationGuard)
+    systemProperty 'https.proxyHost', '127.0.0.1'
+    systemProperty 'https.proxyPort', '9'
+    environment 'GIT_ALLOW_PROTOCOL', 'file'
     finalizedBy jacocoTestReport
 }
 
