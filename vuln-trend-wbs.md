@@ -336,7 +336,7 @@
 | R7 | KEV vendorProject/product 가 자유 표기라 CPE 기준 `product_alias` 와 바로 맞지 않음 | 0.5, 2.3 | 닫힘 | 혼합안 확정(2026-10-31): yml 에 KEV 원문 별칭 + 같은 정규화, 열 추가 없음. 기획서 5장 메모 반영 |
 | R8 | search-index.json 크기 — 실측 전체 58MB, 12개월 14MB(gzip 2MB) | 4, G | 결정: 최근 12개월 + gzip 4MB 기준. B·프론트 반영 중, Pages gzip 전송 확인됨(2026-11-01) | 1년치 적재 뒤 실측 → 압축 쓰기·기간 축소(최근 N개월)·필드 배열화 중 결정 |
 | R9 | 오케스트레이터 세션의 GitHub push 가 자동 모드 권한 검사(Data Exfiltration)에 막힘. 배치의 GitPusher 도 같은 push 라 우회 금지 | 4, 5, G | 열림 | 사용자가 직접 첫 push 하거나 권한 규칙 추가. 그 전에는 하루 실행(게시) 보류 |
-| R10 | 배치 시험이 루트 .env 를 읽음(spring.config.import ../.env) → 공유 폴더 check-all 이 실제 GitHub push 를 5회 시도(non-fast-forward 거절, 원격 무변화 확인)·OpenAI 실제 호출 최대 5회 | 시험 전체 | 열림 — 공유 폴더 시험 금지, A 수정 중(시험 env-file 차단·원격/키 안전장치·외부 요청 0 확인) |
+| R10 | 배치 시험이 루트 .env 를 읽음(spring.config.import ../.env) → 공유 폴더 check-all 이 실제 GitHub push 를 5회 시도(non-fast-forward 거절, 원격 무변화 확인)·OpenAI 실제 호출 최대 5회 | 시험 전체 | 닫힘(2026-11-01, a1f3fe7) — 시험 격리·외부 차단, 실제 .env 가 있는 공유 폴더에서 외부 요청 0 확인 |
 
 새 블로커는 여기에 행 추가. 해결되면 상태를 `닫힘`으로.
 
@@ -377,3 +377,4 @@
 | 2026-11-01 | R8 결정: search-index 최근 12개월, Gate 기준 gzip 4MiB | 사용자 결정 |
 | 2026-11-01 | Pages 켬, 첫 배포 성공(qkrxodud.github.io/vuln-trend), JSON gzip 전송 확인 | 사용자 |
 | 2026-11-01 | R10 발견·대응. 원격 main=8281ee8 그대로 확인 | 백엔드 A 보고 |
+| 2026-11-01 | R10 닫힘(a1f3fe7), 요약 OpenAI 전환 커밋(a7696c4) | — |
