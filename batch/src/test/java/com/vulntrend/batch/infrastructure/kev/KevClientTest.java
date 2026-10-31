@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.vulntrend.batch.global.config.KevProperties;
 import com.vulntrend.batch.global.error.exception.SourceFetchException;
-import java.io.IOException;
+import com.vulntrend.batch.infrastructure.feed.FeedStubServer;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +18,10 @@ class KevClientTest {
 
     private static final String CATALOG = "{\"vulnerabilities\":[]}";
 
-    private final KevStubServer cisa = new KevStubServer();
+    private final FeedStubServer cisa = new FeedStubServer();
     private final List<Duration> pauses = new ArrayList<>();
     private final KevClient client = new KevClient(
             new KevProperties(cisa.url(), 3, Duration.ofSeconds(2), Duration.ofSeconds(5)), pauses::add);
-
-    KevClientTest() throws IOException {
-    }
 
     @AfterEach
     void stop() {

@@ -11,6 +11,7 @@ import com.vulntrend.batch.domain.vulnerability.SyncWindow;
 import com.vulntrend.batch.fake.FakeKevRepository;
 import com.vulntrend.batch.global.config.KevProperties;
 import com.vulntrend.batch.global.error.exception.SourceFetchException;
+import com.vulntrend.batch.infrastructure.feed.FeedStubServer;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Clock;
@@ -29,15 +30,12 @@ class KevCollectorTest {
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
     private static final SyncWindow ANY_WINDOW = SyncWindow.of(NOW.minus(Duration.ofDays(1)), NOW);
 
-    private final KevStubServer cisa = new KevStubServer();
+    private final FeedStubServer cisa = new FeedStubServer();
     private final FakeKevRepository repository = new FakeKevRepository(
             Set.of(CveId.from("CVE-2021-44228"), CveId.from("CVE-2024-3400")));
     private final KevCollector collector = new KevCollector(
             new KevClient(new KevProperties(cisa.url(), 1, Duration.ofSeconds(2), Duration.ofSeconds(5)), d -> { }),
             new KevCatalogParser(new ObjectMapper()), repository, Clock.fixed(NOW, ZoneOffset.UTC));
-
-    KevCollectorTest() throws IOException {
-    }
 
     @AfterEach
     void stop() {
