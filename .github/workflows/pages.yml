@@ -1,0 +1,64 @@
+# web/ 를 빌드해 GitHub Pages 로 배포한다 (WBS 5.13, P17). Pages 설정의 Source 는 "GitHub Actions"
+# 배치가 web/public/data/*.json 을 커밋해 push 해도 경로 필터(web/**)에 걸려 다시 배포된다
+name: Deploy web to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포는 한 번에 하나. 진행 중인 배포는 끊지 않고 마지막 push 만 뒤이어 배포한다
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # base_path: 프로젝트 사이트면 "/vuln-trend", 도메인을 붙이면 "". base_url: 공유 미리보기(og:url·og:image) 절대 주소
+      - id: pages
+        uses: actions/configure-pages@v6
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+
+      - run: npm run build
+        env:
+          VITE_BASE: ${{ steps.pages.outputs.base_path }}/
+          VITE_SITE_URL: ${{ steps.pages.outputs.base_url }}
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
