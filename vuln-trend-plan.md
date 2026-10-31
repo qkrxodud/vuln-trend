@@ -194,6 +194,9 @@ create table sync_state (
 - `primary_product` 선정 규칙: KEV `vendorProject/product` > OSV package(ecosystem 포함) > CPE 첫 항목. 셋 모두 `product_alias`로 정규화. KEV 표기는 자유 형식이라 `product-alias.yml` 에 제품마다 KEV 원문 별칭을 명시하고, 적재·조회 양쪽에 같은 정규화(소문자, 영숫자 외 연속 문자는 `_`)를 쓴다. 테이블 열은 추가하지 않는다. KEV "Multiple Products" 류는 매핑하지 않고 다음 순위로 넘긴다. 초기 데이터 "50개"는 제품(slug) 50개이며 행은 별칭 포함 80~100개. Windows Server 는 `windows` 로 합친다(사용자 확정 2026-10-31, WBS R7). 순위 세부(사용자 확정 2026-10-31): KEV 표기(표) > CPE 첫 항목(표) > CPE 첫 항목 원문 > KEV 제품 원문(NVD 가 아직 CPE 를 달지 않은 KEV 신규 건) > 없음. KEV 표기가 표에 없으면 CPE 표준 이름을 쓴다. 미매핑 제품은 CPE product 원문을 그대로 노출하고, 메인 상위에 올라온 건만 2주 튜닝 루틴에서 매핑 추가
 - `why_now`는 DB에 저장하지 않고 JSON 출력 시 규칙 템플릿으로 생성 (6장)
 
+- 추가 표(V2, 사용자 승인 2026-10-31): `summary_call(vuln_id → vulnerability, called_at timestamptz, outcome GENERATED|DISCARDED|REFUSED|FAILED, model, PK(vuln_id, called_at))` — 하루 요약 상한을 호출 수로 세고, 버리거나 거절된 CVE 를 다시 부르지 않기 위해. FAILED 만 다음 실행에서 다시 고른다. 상위 20건 정렬은 index 와 같은 `trend_score desc nulls last, published_at desc nulls last, vuln_id`, 철회 제외
+- 요약을 남길 때 제목이 "설명에서 만든 임시 제목"이면 what 첫 문장으로 바꾼다(GHSA 등 앞선 출처 제목은 덮지 않음, P3)
+
 ## 6. 배치 실행 흐름
 
 ```
