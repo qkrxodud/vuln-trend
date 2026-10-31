@@ -1,6 +1,7 @@
 package com.vulntrend.batch.domain.export;
 
 import java.util.List;
+import java.util.Optional;
 
 /** 사이트 데이터 파일 쓰기(WBS 4.1·4.2). 문서는 JSON 계약(web/src/types) 모양의 값이다 */
 public interface SiteDataWriter {
@@ -12,4 +13,7 @@ public interface SiteDataWriter {
 
     /** 그 파일을 지운다. 없으면 아무 일도 하지 않고 false */
     boolean remove(DataFilePath path);
+
+    /** 그 파일의 크기(바이트). 없으면 비어 있다 */
+    Optional<Long> sizeOf(DataFilePath path);
 }

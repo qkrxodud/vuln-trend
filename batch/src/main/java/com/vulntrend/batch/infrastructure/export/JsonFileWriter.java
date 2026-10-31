@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.vulntrend.batch.domain.export.DataFilePath;
+import com.vulntrend.batch.domain.export.DocumentSizer;
 import com.vulntrend.batch.domain.export.SiteDataWriter;
 import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.global.config.OutputProperties;
@@ -23,6 +24,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -37,16 +39,19 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RequiredArgsConstructor
-public class JsonFileWriter implements SiteDataWriter {
+public class JsonFileWriter implements SiteDataWriter, DocumentSizer {
 
-    private static final ObjectWriter JSON = JsonMapper.builder()
+    private static final DataFilePath MEASURED = DataFilePath.of("measured.json");
+    private static final JsonMapper MAPPER = JsonMapper.builder()
             .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
             .addModule(new JavaTimeModule())
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
             .enable(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS)
             .enable(JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN)
             .serializationInclusion(JsonInclude.Include.ALWAYS)
-            .build()
+            .build();
+    private static final ObjectWriter COMPACT = MAPPER.writer();
+    private static final ObjectWriter JSON = MAPPER
             .writer(new DefaultPrettyPrinter(Separators.createDefaultInstance()
                     .withObjectFieldValueSpacing(Separators.Spacing.AFTER)
                     .withObjectEmptySeparator("")
@@ -125,6 +130,32 @@ public class JsonFileWriter implements SiteDataWriter {
         } catch (IOException failure) {
             throw new OutputWriteException(
                     "Could not remove " + path.getValue() + " (" + failure.getClass().getSimpleName() + ").");
+        }
+    }
+
+    @Override
+    public Optional<Long> sizeOf(DataFilePath path) {
+        Path file = Path.of(properties.getDir()).resolve(path.getValue());
+        try {
+            return Files.isRegularFile(file) ? Optional.of(Files.size(file)) : Optional.empty();
+        } catch (IOException failure) {
+            throw failed(path, failure);
+        }
+    }
+
+    /** 이 클래스가 실제로 쓰는 바이트와 같다(끝 줄바꿈 포함) */
+    @Override
+    public long prettyBytes(Object document) {
+        return serialize(MEASURED, document).length;
+    }
+
+    /** 줄바꿈·들여쓰기 없이 썼을 때(Gate G 크기 비교용, 지금은 이렇게 쓰지 않는다) */
+    @Override
+    public long compactBytes(Object document) {
+        try {
+            return COMPACT.writeValueAsBytes(document).length;
+        } catch (JsonProcessingException failure) {
+            throw failed(MEASURED, failure);
         }
     }
 }

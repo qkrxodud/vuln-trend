@@ -38,6 +38,8 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
 
     private static final String SEARCH_ENTRIES = "select vuln_id, title, primary_product from vulnerability where "
             + TrendOrder.LISTED + " order by published_at desc nulls last, vuln_id";
+    private static final String SEARCH_ENTRIES_SINCE = "select vuln_id, title, primary_product from vulnerability where "
+            + TrendOrder.LISTED + " and published_at >= :from order by published_at desc, vuln_id";
     private static final String TOP_IDS = "select vuln_id from vulnerability where " + TrendOrder.LISTED + " "
             + TrendOrder.ORDER_BY + " limit :limit";
     private static final String DETAILS = "select " + JdbcTrendListRepository.COLUMNS
@@ -67,6 +69,13 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
     public List<SearchListing> searchEntries() {
         return jdbc.query(SEARCH_ENTRIES, (rs, rowNum) -> new SearchListing(CveId.from(rs.getString("vuln_id")),
                 rs.getString("title"), rs.getString("primary_product")));
+    }
+
+    @Override
+    public List<SearchListing> searchEntriesSince(Instant from) {
+        return jdbc.query(SEARCH_ENTRIES_SINCE, new MapSqlParameterSource("from", from.atOffset(ZoneOffset.UTC)),
+                (rs, rowNum) -> new SearchListing(CveId.from(rs.getString("vuln_id")), rs.getString("title"),
+                        rs.getString("primary_product")));
     }
 
     @Override

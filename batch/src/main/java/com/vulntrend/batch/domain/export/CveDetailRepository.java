@@ -13,6 +13,9 @@ public interface CveDetailRepository {
     /** 검색 색인: 철회되지 않은 전체 CVE, 최근 발행 순(발행일이 없으면 맨 뒤) → 번호 순 */
     List<SearchListing> searchEntries();
 
+    /** 검색 색인 중 발행 시각이 from 이후인 것(같은 순서). 발행일이 없는 건은 빠진다 — Gate G 기간별 크기 실측용 */
+    List<SearchListing> searchEntriesSince(Instant from);
+
     /** 트렌드 순서 상위 limit 건의 번호 */
     List<CveId> topIds(int limit);
 

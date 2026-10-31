@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
  * - KEV 가 아니면 kev_ransomware 는 false, kev_due_date 는 null(계약). 제목이 아직 없으면 CVE 번호
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class TrendRows {
+public final class TrendRows {
 
-    static TrendRowJson from(TrendListing listing) {
+    public static TrendRowJson from(TrendListing listing) {
         String id = listing.id().getValue();
         boolean ransomware = listing.kev() && listing.kevRansomware();
         WhyNowFacts facts = WhyNowFacts.of(listing.kev(), ransomware, listing.pocCount(), listing.epssPercentile(),

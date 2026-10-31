@@ -21,6 +21,7 @@ public class FakeSiteDataWriter implements SiteDataWriter {
     private final List<String> order = new ArrayList<>();
     private final Set<String> files = new TreeSet<>();
     private final List<String> removed = new ArrayList<>();
+    private final Map<String, Long> sizes = new LinkedHashMap<>();
 
     public FakeSiteDataWriter existing(String path) {
         files.add(path);
@@ -44,6 +45,16 @@ public class FakeSiteDataWriter implements SiteDataWriter {
     public boolean remove(DataFilePath path) {
         removed.add(path.getValue());
         return files.remove(path.getValue());
+    }
+
+    @Override
+    public Optional<Long> sizeOf(DataFilePath path) {
+        return Optional.ofNullable(sizes.get(path.getValue()));
+    }
+
+    public FakeSiteDataWriter sized(String path, long bytes) {
+        sizes.put(path, bytes);
+        return this;
     }
 
     public <T> Optional<T> document(String path, Class<T> type) {

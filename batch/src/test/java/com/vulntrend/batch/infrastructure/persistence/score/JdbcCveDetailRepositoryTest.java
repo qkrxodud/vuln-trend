@@ -58,6 +58,19 @@ class JdbcCveDetailRepositoryTest {
     }
 
     @Test
+    @DisplayName("기간을 정한 검색 색인은 그 시각 이후 발행 건만 같은 순서로 주고 발행일이 없는 건은 뺀다")
+    void searchEntriesSince() {
+        vulnerability("CVE-2026-70001", "10", "2026-10-29T00:00:00Z", "제목 1", null);
+        vulnerability("CVE-2026-70002", "10", "2026-05-01T00:00:00Z", "제목 2", null);
+        vulnerability("CVE-2026-70003", "10", "2026-05-03T00:00:00Z", "제목 3", null);
+        vulnerability("CVE-2026-70004", "10", null, "제목 4", null);
+
+        assertThat(repository.searchEntriesSince(Instant.parse("2026-05-03T00:00:00Z")))
+                .extracting(SearchListing::id)
+                .containsExactly(CveId.from("CVE-2026-70001"), CveId.from("CVE-2026-70003"));
+    }
+
+    @Test
     @DisplayName("점수 상위 번호는 트렌드 순서를 따르고 철회 건을 뺀다")
     void topIdsInTrendOrder() {
         vulnerability("CVE-2026-70001", "10", "2026-10-29T00:00:00Z", null, null);

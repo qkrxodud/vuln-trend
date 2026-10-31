@@ -5,6 +5,7 @@ import com.vulntrend.batch.domain.export.CveDetailRepository;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.SiteDataWriter;
 import com.vulntrend.batch.domain.export.WriteOutcome;
+import com.vulntrend.batch.domain.export.dto.SearchListing;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +25,13 @@ public class SearchIndexFileExport {
     private final SiteDataWriter writer;
 
     public WriteOutcome write() {
-        List<SearchEntryJson> entries = repository.searchEntries().stream()
-                .map(entry -> new SearchEntryJson(entry.id().getValue(),
-                        Optional.ofNullable(entry.title()).orElse(entry.id().getValue()), entry.product()))
-                .toList();
+        List<SearchEntryJson> entries = repository.searchEntries().stream().map(SearchIndexFileExport::entry).toList();
         return writer.write(PATH, entries);
+    }
+
+    /** 검색 한 건의 JSON 모양. Gate G 크기 실측도 이 모양으로 잰다 */
+    public static SearchEntryJson entry(SearchListing listing) {
+        return new SearchEntryJson(listing.id().getValue(),
+                Optional.ofNullable(listing.title()).orElse(listing.id().getValue()), listing.product());
     }
 }

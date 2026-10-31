@@ -18,6 +18,7 @@ public class FakeCveDetailRepository implements CveDetailRepository {
     private final Map<CveId, CveDetailListing> details = new LinkedHashMap<>();
     private final List<CveId> topIds = new ArrayList<>();
     private final List<CveId> askedDetails = new ArrayList<>();
+    private final Map<CveId, Instant> published = new LinkedHashMap<>();
     private int askedTop;
 
     public FakeCveDetailRepository search(SearchListing entry) {
@@ -40,6 +41,19 @@ public class FakeCveDetailRepository implements CveDetailRepository {
     @Override
     public List<SearchListing> searchEntries() {
         return List.copyOf(searchEntries);
+    }
+
+    /** 발행 시각을 모르므로 검색 줄마다 넣어 둔 발행 시각으로 거른다 */
+    @Override
+    public List<SearchListing> searchEntriesSince(Instant from) {
+        return searchEntries.stream()
+                .filter(entry -> published.containsKey(entry.id()) && published.get(entry.id()).compareTo(from) >= 0)
+                .toList();
+    }
+
+    public FakeCveDetailRepository search(SearchListing entry, Instant publishedAt) {
+        published.put(entry.id(), publishedAt);
+        return search(entry);
     }
 
     @Override

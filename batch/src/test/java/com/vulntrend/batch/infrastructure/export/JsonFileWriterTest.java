@@ -213,6 +213,36 @@ class JsonFileWriterTest {
         }
     }
 
+    @Nested
+    @DisplayName("크기는")
+    class Sizes {
+
+        @Test
+        @DisplayName("쓴 파일의 바이트 수로 재고 없는 파일은 모른다고 알린다")
+        void fileSize() throws IOException {
+            writer.write(META, sample("CVE-2026-41203", null));
+
+            assertThat(writer.sizeOf(META)).contains(Files.size(dataDir.resolve("meta.json")));
+            assertThat(writer.sizeOf(DataFilePath.of("index.json"))).isEmpty();
+        }
+
+        @Test
+        @DisplayName("지금 모양은 쓴 파일과 같은 바이트이고 줄바꿈 없는 모양은 더 작다")
+        void prettyAndCompact() throws IOException {
+            writer.write(META, sample("CVE-2026-41203", null));
+
+            assertThat(writer.prettyBytes(sample("CVE-2026-41203", null))).isEqualTo(Files.size(dataDir.resolve("meta.json")));
+            assertThat(writer.compactBytes(sample("CVE-2026-41203", null)))
+                    .isLessThan(writer.prettyBytes(sample("CVE-2026-41203", null)));
+        }
+
+        @Test
+        @DisplayName("JSON 으로 옮길 수 없는 문서는 잴 수 없어 출력 실패로 알린다")
+        void unmeasurable() {
+            assertThatThrownBy(() -> writer.compactBytes(new Object())).isInstanceOf(OutputWriteException.class);
+        }
+    }
+
     private static ExportSampleJson sample(String id, String product) {
         Map<String, Integer> counts = new TreeMap<>(Map.of("new", 134, "critical", 10));
         return new ExportSampleJson(id, 67, new BigDecimal("0.94310"), new BigDecimal("0.99900"),
