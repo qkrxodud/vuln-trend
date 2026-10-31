@@ -190,6 +190,7 @@ create table sync_state (
 메모
 - 수집 upsert는 `insert ... on conflict (vuln_id) do update`. JPA `saveAll`은 select 후 update라 느리므로 수집 경로는 MyBatis 또는 JdbcTemplate batch 사용. 조회·JSON 생성은 JPA 가능
 - 검색은 프론트에서 `search-index.json`(제목+제품명) 필터로 충분. 필요해지면 `to_tsvector`
+- 수집 upsert 세부(사용자 승인 2026-10-31): `title` 은 처음 들어갈 때만 NVD 값(coalesce) — GHSA·요약이 고친 제목을 NVD 재수집이 덮지 않음. `affected_product` 충돌 시 `vulnerable_range` 만 갱신(slug·ecosystem·fixed_version 보존). `product_alias` 는 yml 원본과 같게 통째 교체. CVSS 선택은 NVD 3.1 > CNA 3.1 > NVD 3.0 > CNA 3.0 > 4.0 > UNRATED, 점수 0.0 은 LOW
 - `primary_product` 선정 규칙: KEV `vendorProject/product` > OSV package(ecosystem 포함) > CPE 첫 항목. 셋 모두 `product_alias`로 정규화. KEV 표기는 자유 형식이라 `product-alias.yml` 에 제품마다 KEV 원문 별칭을 명시하고, 적재·조회 양쪽에 같은 정규화(소문자, 영숫자 외 연속 문자는 `_`)를 쓴다. 테이블 열은 추가하지 않는다. KEV "Multiple Products" 류는 매핑하지 않고 다음 순위로 넘긴다. 초기 데이터 "50개"는 제품(slug) 50개이며 행은 별칭 포함 80~100개. Windows Server 는 `windows` 로 합친다(사용자 확정 2026-10-31, WBS R7). 미매핑 제품은 CPE product 원문을 그대로 노출하고, 메인 상위에 올라온 건만 2주 튜닝 루틴에서 매핑 추가
 - `why_now`는 DB에 저장하지 않고 JSON 출력 시 규칙 템플릿으로 생성 (6장)
 

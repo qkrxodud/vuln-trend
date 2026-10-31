@@ -13,6 +13,7 @@
 5. 코드 규칙은 `CLAUDE.md` 와 `vuln-trend-dev-conventions`·`domain-test-writing` 스킬을 따른다. 규칙과 부딪히면 우회하지 말고 "결정 대기"로 적고 보고한다.
 6. 보고·질문은 `SendMessage` 로 `vuln-trend-4a` 에게. 번호를 붙인 짧은 항목으로.
 7. **작업 묶음(D2)마다 멈춘다**(CLAUDE.md 작업 규칙 1, 사용자 재확인 2026-10-30). 보고 → 오케스트레이터 검증 → 사용자 확인 → 오케스트레이터가 "다음 진행"을 보낸다. 관문(§4)은 다른 판에 넘길 계약이 생기는 지점이다.
+8. **공유 폴더에서 빌드를 깨지 않는다**(사용자 결정 2026-10-31). TDD Red 단계에서도 아직 없는 클래스는 컴파일되는 빈 뼈대를 먼저 둔다. 커밋은 자기 파일 경로만 지정해 add 하고(`git add -A` 금지), 커밋 순서는 오케스트레이터가 정한다(인덱스 잠금 충돌 방지).
 
 ## 2. 배정
 
@@ -31,7 +32,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 소유자 | 경로 |
 |---|---|
 | 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summarize/**`·`…/infrastructure/ai/**` |
-| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
+| 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
 | 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**` |
 | 오케스트레이터 | `vuln-trend-wbs.md`, `vuln-trend-plan.md`, 이 파일, `CLAUDE.md`, `.claude/**`, `scripts/**` |
 
@@ -54,9 +55,9 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 
 | 역할 | 세션 | 지금 하는 것 | 다음 관문 |
 |---|---|---|---|
-| 백엔드 A | `vuln-trend-1f` | 1.1 승인 → 커밋(자기 경로만) → 1.2 파싱 | — |
-| 백엔드 B | `vuln-trend-25` | 0.5 yml 확정·로더 (a~c 사용자 확정) | 승인 뒤 2.1 |
-| 프론트 | `vuln-trend-0e` | 5.2 승인 → A 커밋 뒤 web/ 커밋 → 5.3 헤더 | — |
+| 백엔드 A | `vuln-trend-1f` | 1.3 저장 완료 → 승인 대기 | — |
+| 백엔드 B | `vuln-trend-25` | 0.5 커밋 → 2.1 KEV | — |
+| 프론트 | `vuln-trend-0e` | 5.4 승인 → B 커밋 뒤 web/ 커밋 → 5.5 차트 | — |
 
 ### 재개 메모 (2026-10-30 일시 정지)
 
@@ -81,3 +82,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-30 | 전 판 일시 정지, 재개 메모 추가 | 사용자 이동 |
 | 2026-10-31 | 재개. B 결정 (a)~(c)는 사용자 답이 없어 권고안으로 진행, 결정 대기 표기 | 사용자 "이어서 진행" |
 | 2026-10-31 | 1.1·5.2 승인, 커밋 순서 A→프론트(인덱스 잠금 회피). B 결정 (a)~(c) 확정 | 사용자 승인 |
+| 2026-10-31 | 규칙 8(공유 폴더 빌드 유지·경로 지정 커밋) 추가, B 소유에 application/product. 1.2·0.5·5.3·5.4 승인 | 사용자 결정 |

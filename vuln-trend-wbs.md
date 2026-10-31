@@ -18,12 +18,12 @@
 
 | Phase | 내용 | 예상 | 태스크 수 | 완료 | 상태 |
 |---|---|---|---|---|---|
-| 0 | 준비 | 1일 | 18 | 14 | 진행 중 |
-| 1 | NVD 수집 | 3~4일 | 16 | 3 | 진행 중 |
+| 0 | 준비 | 1일 | 18 | 15 | 진행 중 |
+| 1 | NVD 수집 | 3~4일 | 16 | 9 | 진행 중 |
 | 2 | KEV·EPSS 보강 | 2일 | 10 | 0 | 미착수 |
 | 3 | 점수·통계 | 1~2일 | 10 | 0 | 미착수 |
 | 4 | JSON 출력·push | 2일 | 14 | 0 | 미착수 |
-| 5 | 프론트 | 6~8일 | 36 | 6 | 진행 중 |
+| 5 | 프론트 | 6~8일 | 36 | 11 | 진행 중 |
 | 6 | 한국어 요약 | 2일 | 8 | 0 | 미착수 |
 | G | 공개 전 점검 | 0.5일 | 10 | 0 | 미착수 |
 | 7 | 다듬기(공개 후) | 2~3일 | 5 | 0 | 미착수 |
@@ -68,7 +68,7 @@
 
 ### 0.5 외부 키·초기 데이터
 - [ ] NVD API 키 발급, `.env`에 `NVD_API_KEY` → 3장 NVD 주의사항
-- [ ] `batch/resources/product-alias.yml` 초기 50개 작성, 기동 시 `product_alias` upsert 적재 → 5장 메모 P11
+- [x] `batch/resources/product-alias.yml` 초기 50개(제품 50·별칭 258) 작성, 기동 시 `product_alias` 를 원본과 같게 교체(사용자 확정 2026-10-31) → 5장 메모 P11
 
 ### 0.6 코드 컨벤션 (2026-10-30 추가)
 - [x] clarity-api 하네스에서 코드 규칙만 가져오기: `vuln-trend-dev-conventions`·`domain-test-writing` 스킬, `CLAUDE.md` 작업 규칙
@@ -88,12 +88,12 @@
 - [x] 요청 구간 120일 상한 자동 분할
 
 ### 1.2 파싱 규칙
-- [ ] `vulnStatus=Rejected` 신규 건 제외, 기존 건은 `rejected=true` → 3장 수집 규칙
-- [ ] CVSS 선택: NVD v3.1 > CNA v3.1 > v4, `cvss_version` 기록, 없으면 `UNRATED` (S2)
-- [ ] `title` 임시값: description 첫 문장 80자 (GHSA·요약은 나중 단계에서 덮어씀, P3)
-- [ ] CPE configurations → `affected_product` (vendor, product, `vulnerable_range`는 versionStart/End로)
-- [ ] references 태그 Vendor Advisory / Patch → `reference_link(source=vendor)` (R4)
-- [ ] `published_at`, `last_modified_at` UTC 저장
+- [x] `vulnStatus=Rejected` 신규 건 제외, 기존 건은 `rejected=true` → 3장 수집 규칙
+- [x] CVSS 선택: NVD v3.1 > CNA v3.1 > v3.0(사용자 결정 2026-10-31) > v4, `cvss_version` 기록, 없으면 `UNRATED` (S2)
+- [x] `title` 임시값: description 첫 문장 80자 (GHSA·요약은 나중 단계에서 덮어씀, P3)
+- [x] CPE configurations → `affected_product` (vendor, product, `vulnerable_range`는 versionStart/End로)
+- [x] references 태그 Vendor Advisory / Patch → `reference_link(source=vendor)` (R4)
+- [x] `published_at`, `last_modified_at` UTC 저장
 
 ### 1.3 저장
 - [ ] `vulnerability_raw` upsert (source=`nvd`, payload JSONB)
@@ -203,13 +203,13 @@
 - [x] 로딩·오류 상태 컴포넌트
 
 ### 5.3 헤더
-- [ ] 로고 + "마지막 갱신 MM-DD HH:mm (N시간 전)" KST 고정 표기, 펄스·초 카운터 없음 (D5)
-- [ ] `updatedAt` 36시간 초과 시 "데이터가 오래됐습니다" 배너
-- [ ] 검색창 (5.9와 연결)
-- [ ] 필터 [전체 | KEV | Critical] — 목록 옆 필터와 상태 공유 (R1)
+- [x] 로고 + "마지막 갱신 MM-DD HH:mm (N시간 전)" KST 고정 표기, 펄스·초 카운터 없음 (D5)
+- [x] `updatedAt` 36시간 초과 시 "데이터가 오래됐습니다" 배너
+- [x] 검색창 (5.9와 연결)
+- [x] 필터 [전체 | KEV | Critical] — 목록 옆 필터와 상태 공유 (R1)
 
 ### 5.4 KPI 4
-- [ ] 24h 신규 / KEV 신규 / Critical / 고위험(EPSS 0.5+) + 어제 대비 증감 (D12)
+- [x] 24h 신규 / KEV 신규 / Critical / 고위험(EPSS 0.5+) + 어제 대비 증감 (D12)
 
 ### 5.5 차트
 - [ ] 최근 14일 일별 신규 막대, Critical 적층, x축 `10/30` 형식 (S1)
@@ -344,3 +344,4 @@
 | 2026-10-30 | Phase 0 에 0.6 코드 컨벤션 4건 추가(2건 완료). 태스크 14→18 | 개발 착수 전 코드 규칙·검사 도구 필요(clarity-api 하네스에서 이식) |
 | 2026-10-30 | 0.1~0.4(원격 레포 제외)·0.6-4·5.1 체크. 기획서 7장 snake_case 통일·`kev_ransomware` 추가, 4장 `DB_PORT` | G0 검증 통과, 프론트 5.1 사용자 승인 |
 | 2026-10-31 | 1.1·5.2 체크. R7 닫힘(KEV 별칭 혼합안), 0.5 "50개"=제품 50개·Windows Server 합침 | 사용자 승인·확정 |
+| 2026-10-31 | 0.5·1.2·5.3·5.4 체크. CVSS 3.0 을 3.1 다음 순위로, 0.0 은 LOW, product_alias 는 통째 교체 | 사용자 승인·결정 |
