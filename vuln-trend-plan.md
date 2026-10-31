@@ -236,6 +236,8 @@ update vulnerability set trend_score =
 where rejected = false;
 ```
 
+구현 메모(사용자 확정 2026-10-31, WBS 3.1): ① `kev_added_at` 은 `::timestamp at time zone 'UTC'`(UTC 자정) — `::timestamptz` 는 DB 세션 시간대를 타서 KST 면 9시간 어긋남 ② `now()` 대신 실행 시각(Clock)을 넘김 ③ 기준 시각을 하나도 모르면 감쇠 없이(비율 1) ④ 랜섬웨어 10점은 `is_kev` 일 때만 ⑤ 정렬은 저장된 `trend_score`(numeric(8,2)), 화면 숫자는 소수 1자리로 반올림한 7항의 합(드물게 1점 차이 가능)
+
 - 시간 감쇠: 기준 시각은 `max(published_at, kev_added_at, last_mention_at)` 중 최신. 30일마다 절반. 없으면 Log4Shell류(KEV, EPSS 0.9+, CVSS 10)가 영원히 1위
 - KEV에 새로 등재된 오래된 CVE는 `kev_added_at` 때문에 다시 상위로 떠오름 (의도된 동작)
 
