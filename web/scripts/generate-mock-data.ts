@@ -599,7 +599,8 @@ const meta: Meta = {
   updated_at: toKstDateTime(NOW),
   version: 'mock-20261030-0900',
   today: sumKpi(SEEDS, 0, 1),
-  yesterday: { ...sumKpi(SEEDS, 1, 2), high_risk: 313 },
+  // MOCK_NO_YESTERDAY_HIGH_RISK=1 이면 어제 고위험 스냅샷이 없는 경우(첫 실행)를 흉내 낸다 → 고위험 카드 증감 숨김
+  yesterday: { ...sumKpi(SEEDS, 1, 2), high_risk: process.env.MOCK_NO_YESTERDAY_HIGH_RISK === '1' ? null : 313 },
 }
 
 // 14일 막대: 평일 120~160, 주말 60~80 정도로 흉내

@@ -13,6 +13,12 @@ export interface KpiCounts {
   high_risk: number
 }
 
+/**
+ * 어제 창. 고위험은 전체 스냅샷이라 어제 스냅샷이 없으면(첫 실행, 수집 실패) null 이고,
+ * 그때 화면은 증감을 숨긴다 (사용자 확정 규칙 "어제 고위험이 비면 증감을 숨김")
+ */
+export type YesterdayKpiCounts = Omit<KpiCounts, 'high_risk'> & { high_risk: number | null }
+
 export interface Meta {
   /** 배치가 JSON 을 쓴 시각. 36시간을 넘으면 "데이터가 오래됐습니다" 배너 */
   updated_at: IsoDateTime
@@ -21,5 +27,5 @@ export interface Meta {
   /** 지금 기준 24시간 창 */
   today: KpiCounts
   /** 48~24시간 전 창 (어제 대비 증감용) */
-  yesterday: KpiCounts
+  yesterday: YesterdayKpiCounts
 }

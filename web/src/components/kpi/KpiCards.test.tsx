@@ -99,3 +99,29 @@ describe('오늘 현황 KPI 4개', () => {
     expect(screen.getByText(/오늘 현황 불러오는 중/)).toHaveAttribute('role', 'status')
   })
 })
+
+describe('어제 고위험 스냅샷이 없을 때 (첫 실행·수집 실패)', () => {
+  const metaWithoutYesterdayHighRisk = () => {
+    const meta = metaWithVersion('v1')
+    return { ...meta, yesterday: { ...meta.yesterday, high_risk: null } }
+  }
+
+  it('고위험 카드는 오늘 값만 보이고 증감과 "어제 N" 을 숨긴다', async () => {
+    renderKpis(new FakeFetch().serve(META_URL, metaWithoutYesterdayHighRisk()))
+
+    const card = await cardNamed('고위험 (EPSS 0.5+)')
+
+    expect(within(card).getByText('318')).toBeInTheDocument()
+    expect(within(card).queryByText(/^[+−]\d|^0$/)).toBeNull()
+    expect(card).not.toHaveTextContent('어제')
+  })
+
+  it('나머지 카드는 그대로 어제 대비 증감을 보인다', async () => {
+    renderKpis(new FakeFetch().serve(META_URL, metaWithoutYesterdayHighRisk()))
+
+    const card = await cardNamed('24시간 신규')
+
+    expect(within(card).getByText('+9')).toBeInTheDocument()
+    expect(within(card).getByText('어제 133건보다 9건 늘었습니다')).toBeInTheDocument()
+  })
+})
