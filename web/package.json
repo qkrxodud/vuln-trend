@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "mock:data": "node scripts/generate-mock-data.ts",
+    "gate:check": "npm run build && node scripts/gate/gate-check.ts",
     "preview": "vite preview",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
@@ -34,6 +35,7 @@
     "@vitest/coverage-v8": "^5.0.5",
     "jsdom": "^29.1.1",
     "oxlint": "^1.89.0",
+    "playwright-core": "^1.64.1",
     "prettier": "^3.9.10",
     "tailwindcss": "^4.3.3",
     "typescript": "~7.0.2",
