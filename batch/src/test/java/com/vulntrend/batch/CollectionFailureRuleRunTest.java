@@ -1,6 +1,7 @@
 package com.vulntrend.batch;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
@@ -14,6 +15,8 @@ import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakePublisher;
+import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.global.config.KevProperties;
 import com.vulntrend.batch.global.config.NvdProperties;
@@ -33,6 +36,7 @@ import com.vulntrend.batch.infrastructure.persistence.stat.JdbcDailyStatReposito
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -117,7 +121,7 @@ class CollectionFailureRuleRunTest {
         @Test
         @DisplayName("대표 제품 고르기와 점수 매기기로 넘어가지 않는다")
         void stopsBeforeScoring(CapturedOutput output) throws IOException {
-            runner(closedUrl()).run();
+            catchThrowable(runner(closedUrl())::run);
 
             assertThat(output).contains("scoring and publishing are skipped");
             assertThat(output).contains("KEV");
@@ -129,7 +133,7 @@ class CollectionFailureRuleRunTest {
         @Test
         @DisplayName("KEV 는 실패로 기록되고 마지막으로 가져온 시각이 그대로 남아 다음 실행에서 다시 가져온다")
         void kevFailsAndKeepsCursor() throws IOException {
-            runner(closedUrl()).run();
+            catchThrowable(runner(closedUrl())::run);
 
             SyncState state = syncStates.findBySource(SourceName.KEV);
             assertThat(state.getStatus()).isEqualTo(SyncStatus.FAIL);
@@ -140,7 +144,7 @@ class CollectionFailureRuleRunTest {
         @Test
         @DisplayName("NVD 는 KEV 실패와 상관없이 다 가져온 것으로 기록되고 진행 기록이 지금으로 옮겨진다")
         void nvdSucceedsIndependently() throws IOException {
-            runner(closedUrl()).run();
+            catchThrowable(runner(closedUrl())::run);
 
             SyncState state = syncStates.findBySource(SourceName.NVD);
             assertThat(state.getStatus()).isEqualTo(SyncStatus.SUCCESS);
@@ -182,7 +186,8 @@ class CollectionFailureRuleRunTest {
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock),
                 new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
-                        new FakeSummaryRepository(List.of(), 0), clock));
+                        new FakeSummaryRepository(List.of(), 0), clock),
+                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working());
     }
 
     private static String closedUrl() throws IOException {

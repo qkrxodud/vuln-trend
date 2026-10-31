@@ -1,6 +1,7 @@
 package com.vulntrend.batch.runner;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
@@ -8,15 +9,25 @@ import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
+import com.vulntrend.batch.domain.export.DataFilePath;
+import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.domain.summary.SummarySource;
+import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakePublisher;
+import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.SummaryProperties;
+import com.vulntrend.batch.global.error.exception.CollectionFailedException;
+import com.vulntrend.batch.global.error.exception.OutputWriteException;
+import com.vulntrend.batch.global.error.exception.PublishException;
+import com.vulntrend.batch.support.SiteExports;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -25,6 +36,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
@@ -37,6 +49,112 @@ class BatchRunnerTest {
     private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
     private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
     private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
+    private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
+    private FakePublisher publisher = FakePublisher.working();
+    private SummaryService summary = new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+            new FakeSummaryRepository(List.of(), 0), clock);
+
+    @Test
+    @DisplayName("수집이 실패한 실행은 종료 코드 1 로 끝나 cron·Actions 가 실패를 안다")
+    void collectionFailureExitCode() {
+        Throwable failure = catchThrowable(() -> runnerWith(
+                FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run());
+
+        assertThat(failure).isInstanceOf(CollectionFailedException.class).hasMessageContaining("KEV");
+        assertThat(((ExitCodeGenerator) failure).getExitCode()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("한국어 요약 다음에 사이트 데이터 파일을 쓰고, 바뀐 파일이 있으면 게시한다")
+    void exportsThenPublishes(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(siteData.files()).contains("meta.json", "index.json");
+        assertThat(publisher.published()).isEqualTo(1);
+        assertThat(output.toString().indexOf("Korean summary is skipped"))
+                .isLessThan(output.toString().indexOf("Site data exported"));
+    }
+
+    @Test
+    @DisplayName("바뀐 데이터 파일이 하나도 없으면 게시하지 않는다")
+    void noChangesNoPublish(CapturedOutput output) {
+        // 같은 사이트 데이터 폴더·같은 게시 창구에 두 번 돌린다(수집 진행 기록은 새로 — 고정 시계에서 같은 구간을 다시 받게)
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(publisher.published()).isEqualTo(1);
+        assertThat(output).contains("Site data is unchanged; nothing to publish");
+    }
+
+    @Test
+    @DisplayName("데이터 파일을 쓰지 못하면 반쪽 데이터를 게시하지 않고 종료 코드 1 로 끝난다")
+    void outputFailureStopsPublishing() {
+        siteData = new FakeSiteDataWriter() {
+            @Override
+            public WriteOutcome write(DataFilePath path, Object document) {
+                throw new OutputWriteException(path.getValue());
+            }
+        };
+
+        Throwable failure = catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run());
+
+        assertThat(failure).isInstanceOf(OutputWriteException.class);
+        assertThat(((ExitCodeGenerator) failure).getExitCode()).isEqualTo(1);
+        assertThat(publisher.published()).isZero();
+    }
+
+    @Test
+    @DisplayName("게시하지 못하면 종료 코드 1 로 끝난다")
+    void publishFailureExitCode() {
+        publisher = FakePublisher.failing();
+
+        Throwable failure = catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run());
+
+        assertThat(failure).isInstanceOf(PublishException.class);
+        assertThat(((ExitCodeGenerator) failure).getExitCode()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("한국어 요약 단계가 실패해도 데이터 파일을 쓰고 게시한다")
+    void summaryFailureIsNotFatal() {
+        summary = new SummaryService(new SummaryProperties(20, "claude-opus-5-5", "key"),
+                Optional.of(source -> { throw new IllegalStateException("down"); }),
+                new FakeSummaryRepository(List.of(SummarySource.of(CveId.from("CVE-2026-0001"), "A flaw.", List.of(),
+                        null)), 0), clock);
+
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(publisher.published()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행은 데이터 파일을 쓰지도 게시하지도 않는다")
+    void noExportAfterCollectionFailure() {
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3),
+                FakeCollector.failing(SourceName.EPSS)).run());
+
+        assertThat(siteData.files()).isEmpty();
+        assertThat(publisher.published()).isZero();
+    }
+
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행은 데이터 파일을 쓰지도 게시하지도 않는다")
+    void noExportInBackfill() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(siteData.files()).isEmpty();
+        assertThat(publisher.published()).isZero();
+    }
+
+    @Test
+    @DisplayName("지난 기간 가져오기가 실패한 실행도 종료 코드 1 로 끝난다")
+    void backfillFailureExitCode() {
+        Throwable failure = catchThrowable(() -> runnerWith(FakeCollector.failing(SourceName.NVD))
+                .run("--backfill-days=30"));
+
+        assertThat(failure).isInstanceOf(CollectionFailedException.class);
+    }
 
     @Test
     @DisplayName("수집이 실패한 소스가 있으면 점수 매기기와 게시로 넘어가지 않는다")
@@ -46,7 +164,7 @@ class BatchRunnerTest {
                 FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV));
 
         // when
-        runner.run();
+        catchThrowable(runner::run);
 
         // then
         assertThat(output).contains("scoring and publishing are skipped");
@@ -82,7 +200,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("지난 기간 가져오기가 실패하면 실패를 남기고 끝낸다")
     void backfillFailure(CapturedOutput output) {
-        runnerWith(FakeCollector.failing(SourceName.NVD)).run("--backfill-days=30");
+        catchThrowable(() -> runnerWith(FakeCollector.failing(SourceName.NVD)).run("--backfill-days=30"));
 
         assertThat(output).contains("Backfill of NVD for the last 30 days failed");
     }
@@ -108,7 +226,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("수집이 실패한 실행에서는 점수를 다시 매기지 않는다")
     void noRescoreAfterFailure() {
-        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run());
 
         assertThat(scores.rescoredAt()).isNull();
     }
@@ -135,7 +253,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("수집이 실패한 실행에서는 일별 통계를 다시 세지 않는다")
     void noStatsAfterFailure() {
-        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run());
 
         assertThat(stats.recalculated()).isNull();
     }
@@ -151,7 +269,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("수집이 실패한 실행에서는 한국어 요약 단계로 넘어가지 않는다")
     void noSummaryAfterFailure(CapturedOutput output) {
-        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run());
 
         assertThat(output).doesNotContain("Korean summary");
     }
@@ -167,7 +285,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("수집이 실패한 실행에서는 대표 제품도 고르지 않는다")
     void noAssignmentAfterFailure(CapturedOutput output) {
-        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.EPSS)).run();
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.EPSS)).run());
 
         assertThat(output).doesNotContain("Primary product changed");
         assertThat(output).doesNotContain("Trend score recalculated");
@@ -186,8 +304,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock),
-                new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
-                        new FakeSummaryRepository(List.of(), 0), clock));
+                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), summary,
+                SiteExports.writingTo(siteData, clock), publisher);
     }
 }

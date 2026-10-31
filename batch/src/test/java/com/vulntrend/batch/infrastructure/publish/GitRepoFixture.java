@@ -77,6 +77,11 @@ public class GitRepoFixture {
         return lines(git(remote, "show", "--name-only", "--format=", "main"));
     }
 
+    /** 작업 폴더의 데이터 폴더에서 아직 커밋하지 않은 변경들 */
+    public List<String> uncommittedData() throws IOException {
+        return lines(git(work, "status", "--porcelain", "--", DATA));
+    }
+
     /** 작업 저장소에서 아직 커밋하지 않고 올려 둔(staged) 파일들 */
     public List<String> stagedFiles() throws IOException {
         return lines(git(work, "diff", "--cached", "--name-only"));

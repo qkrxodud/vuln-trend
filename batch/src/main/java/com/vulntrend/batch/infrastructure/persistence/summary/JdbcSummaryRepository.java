@@ -6,6 +6,7 @@ import com.vulntrend.batch.domain.summary.SummaryProduct;
 import com.vulntrend.batch.domain.summary.SummaryRepository;
 import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
+import com.vulntrend.batch.infrastructure.persistence.score.TrendOrder;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,10 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class JdbcSummaryRepository implements SummaryRepository {
 
-    // 사이트 상위 목록과 같은 순서·같은 철회 제외 조건(백엔드 B 의 TrendOrder.ORDER_BY·LISTED 와 같은 문자열).
-    // B 의 4.2 커밋 뒤 그 상수로 바꾼다. desc 의 기본은 nulls first 라 nulls last 가 없으면 점수 없는 건이 맨 앞에 온다
-    private static final String ORDER_BY = "order by trend_score desc nulls last, published_at desc nulls last, vuln_id";
-    private static final String LISTED = "coalesce(rejected, false) = false";
+    // 사이트 상위 목록(index.json)과 같은 순서·같은 철회 제외 조건을 쓴다(백엔드 B 의 TrendOrder)
     private static final String TOP_WITHOUT_SUMMARY = """
             with top as (
                 select vuln_id, description, cvss_score, trend_score, published_at
@@ -52,7 +50,7 @@ public class JdbcSummaryRepository implements SummaryRepository {
               and not exists (select 1 from summary s where s.vuln_id = top.vuln_id)
               and not exists (select 1 from summary_call c where c.vuln_id = top.vuln_id and c.outcome in (:final))
             %s
-            """.formatted(LISTED, ORDER_BY, ORDER_BY);
+            """.formatted(TrendOrder.LISTED, TrendOrder.ORDER_BY, TrendOrder.ORDER_BY);
     private static final String PRODUCTS = """
             select vuln_id, vendor, product, vulnerable_range, fixed_version
             from affected_product where vuln_id in (:ids) order by vuln_id, vendor, product

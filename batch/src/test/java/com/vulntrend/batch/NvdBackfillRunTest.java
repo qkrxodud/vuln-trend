@@ -13,6 +13,8 @@ import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakePublisher;
+import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.NvdProperties;
@@ -26,6 +28,7 @@ import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.time.Clock;
@@ -130,6 +133,7 @@ class NvdBackfillRunTest {
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
-                        new FakeSummaryRepository(List.of(), 0), clock));
+                        new FakeSummaryRepository(List.of(), 0), clock),
+                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working());
     }
 }
