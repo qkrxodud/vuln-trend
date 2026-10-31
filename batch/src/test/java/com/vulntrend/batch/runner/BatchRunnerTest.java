@@ -4,12 +4,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
+import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -24,7 +26,10 @@ import org.springframework.boot.test.system.OutputCaptureExtension;
 @ExtendWith(OutputCaptureExtension.class)
 class BatchRunnerTest {
 
-    private final Clock clock = Clock.fixed(Instant.parse("2026-10-30T00:00:00Z"), ZoneOffset.UTC);
+    private static final Instant NOW = Instant.parse("2026-10-30T00:00:00Z");
+
+    private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
+    private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
 
     @Test
     @DisplayName("수집이 실패한 소스가 있으면 점수 매기기와 게시로 넘어가지 않는다")
@@ -82,7 +87,31 @@ class BatchRunnerTest {
 
         assertThat(output).contains("Primary product changed");
         assertThat(output.toString().indexOf("Primary product changed"))
-                .isLessThan(output.toString().indexOf("Scoring step is not wired yet"));
+                .isLessThan(output.toString().indexOf("Trend score recalculated"));
+    }
+
+    @Test
+    @DisplayName("수집이 모두 끝나면 이번 실행 시각을 기준으로 점수를 다시 매긴다")
+    void rescoresAfterCollection() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(scores.rescoredAt()).isEqualTo(NOW);
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행에서는 점수를 다시 매기지 않는다")
+    void noRescoreAfterFailure() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+
+        assertThat(scores.rescoredAt()).isNull();
+    }
+
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행에서는 점수를 다시 매기지 않는다")
+    void noRescoreInBackfill() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(scores.rescoredAt()).isNull();
     }
 
     @Test
@@ -91,7 +120,7 @@ class BatchRunnerTest {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.EPSS)).run();
 
         assertThat(output).doesNotContain("Primary product changed");
-        assertThat(output).doesNotContain("Scoring step");
+        assertThat(output).doesNotContain("Trend score recalculated");
     }
 
     @Test
@@ -107,6 +136,6 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment);
+                assignment, new ScoreService(scores, clock));
     }
 }
