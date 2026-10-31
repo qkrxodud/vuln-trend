@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatKstShort, formatTimeAgo, isStale } from './kst-time.ts'
+import { formatKstDate, formatKstShort, formatKstTime, formatTimeAgo, isStale } from './kst-time.ts'
 
 const UPDATED = '2026-10-30T09:00:00+09:00'
 const hoursAfter = (hours: number): Date => new Date(Date.parse(UPDATED) + hours * 3_600_000)
@@ -44,5 +44,17 @@ describe('데이터가 오래됐는지 판단 (배치 실패를 방문자가 아
 
   it('갱신 뒤 36시간을 넘으면 오래됐다', () => {
     expect(isStale(UPDATED, hoursAfter(36.01))).toBe(true)
+  })
+})
+
+describe('오늘 막대가 어느 날인지 (한국 달력일)', () => {
+  it('UTC 로는 전날이어도 한국 날짜와 시각으로 적는다', () => {
+    expect(formatKstDate('2026-10-31T15:30:53Z')).toBe('2026-11-01')
+    expect(formatKstTime('2026-10-31T15:30:53Z')).toBe('00:30')
+  })
+
+  it('한국 시각으로 받은 갱신 시각도 그대로 읽는다', () => {
+    expect(formatKstDate('2026-11-02T09:00:00+09:00')).toBe('2026-11-02')
+    expect(formatKstTime('2026-11-02T09:00:00+09:00')).toBe('09:00')
   })
 })

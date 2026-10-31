@@ -15,8 +15,27 @@ const DAYS_FROM_HOURS = 48
 
 /** `10-30 09:00` */
 export const formatKstShort = (iso: string): string => {
-  const parts = Object.fromEntries(KST_PARTS.formatToParts(new Date(iso)).map((part) => [part.type, part.value]))
+  const parts = kstParts(iso)
   return `${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`
+}
+
+const KST_DATE = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Seoul',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+})
+
+const kstParts = (iso: string): Record<string, string> =>
+  Object.fromEntries(KST_PARTS.formatToParts(new Date(iso)).map((part) => [part.type, part.value]))
+
+/** `2026-11-01` (KST 달력일) */
+export const formatKstDate = (iso: string): string => KST_DATE.format(new Date(iso))
+
+/** `09:00` (KST) */
+export const formatKstTime = (iso: string): string => {
+  const parts = kstParts(iso)
+  return `${parts.hour}:${parts.minute}`
 }
 
 /** `방금 전` / `30분 전` / `3시간 전` / `3일 전`. 초 단위는 보이지 않는다 */

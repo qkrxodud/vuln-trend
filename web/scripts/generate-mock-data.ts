@@ -1,8 +1,8 @@
 // 목업 JSON 생성기 — M1(배치가 실제 JSON 을 쓰기) 전까지 화면 개발용.
-// 실행: node scripts/generate-mock-data.ts  (web/ 에서, Node 22.6+ 타입 제거 실행)
+// 실행: npm run mock:data -- --out <폴더>  (web/ 에서, Node 22.6+ 타입 제거 실행)
 // 점수·왜 지금? 은 기획서 6장 MVP 점수식·규칙 템플릿을 그대로 따라 숫자가 서로 맞게 만든다.
 // CVE 번호와 내용은 가짜다. 실제 취약점이 아니다.
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { CvssVersion, IsoDate, Severity } from '../src/types/common.ts'
 import type { AffectedProduct, CveDetail, ReferenceLink } from '../src/types/cve.ts'
@@ -10,8 +10,16 @@ import type { KpiCounts, Meta } from '../src/types/meta.ts'
 import type { SearchIndex } from '../src/types/search.ts'
 import type { DailyCount, Stats } from '../src/types/stats.ts'
 import type { ScoreBreakdown, TrendRow } from '../src/types/trend.ts'
+import { mockOutputPlan, refuseOverwrite } from './mock-guard.ts'
 
-const OUT_DIR = join(import.meta.dirname, '..', 'public', 'data')
+// M1 뒤 public/data 는 배치 산출물이다. 덮어쓰려면 --force, 다른 곳에 쓰려면 --out <폴더>
+const plan = mockOutputPlan(process.argv.slice(2), join(import.meta.dirname, '..', 'public', 'data'))
+const refusal = refuseOverwrite(plan, existsSync(join(plan.outDir, 'meta.json')))
+if (refusal !== null) {
+  console.error(refusal)
+  process.exit(1)
+}
+const OUT_DIR = plan.outDir
 const NOW = new Date('2026-10-30T09:00:00+09:00')
 const DAY_MS = 86_400_000
 const HALF_LIFE_DAYS = 30

@@ -1,5 +1,6 @@
 // 차트 데이터 모양 만들기 (기획서 8장 차트 표, S1·P14)
 import type { DailyCount, SeverityDistribution } from '../types/stats.ts'
+import { formatKstDate, formatKstTime } from './kst-time.ts'
 
 export interface DailyBar {
   date: string
@@ -10,6 +11,8 @@ export interface DailyBar {
   /** 막대 아래칸: Critical 이 아닌 신규. 위칸 Critical 과 합치면 total */
   nonCritical: number
   isLatest: boolean
+  /** 마지막 갱신과 같은 날이면 그날은 갱신 시각까지만 센 막대. 아니면 `null`. 예: `09:00` */
+  inProgressUntil: string | null
 }
 
 export type SeverityKey = keyof SeverityDistribution
@@ -37,7 +40,14 @@ export const formatMonthDay = (isoDate: string): string => {
   return `${Number(month)}/${Number(day)}`
 }
 
-export const toDailyBars = (daily: DailyCount[]): DailyBar[] =>
+// 배치는 하루 한 번 돈다. 갱신한 날의 막대는 그 시각까지만 센 것이라 낮게 보인다
+const inProgressUntil = (date: string, updatedAt: string | null): string | null => {
+  if (updatedAt === null) return null
+  if (formatKstDate(updatedAt) !== date) return null
+  return formatKstTime(updatedAt)
+}
+
+export const toDailyBars = (daily: DailyCount[], updatedAt: string | null = null): DailyBar[] =>
   daily.map((day, index) => ({
     date: day.date,
     label: formatMonthDay(day.date),
@@ -45,7 +55,12 @@ export const toDailyBars = (daily: DailyCount[]): DailyBar[] =>
     critical: day.critical,
     nonCritical: day.new - day.critical,
     isLatest: index === daily.length - 1,
+    inProgressUntil: inProgressUntil(day.date, updatedAt),
   }))
+
+/** 툴팁·표의 날짜. 진행 중이면 `11/1 (진행 중, 09:00까지)` */
+export const dailyBarTitle = (bar: DailyBar): string =>
+  bar.inProgressUntil === null ? bar.label : `${bar.label} (진행 중, ${bar.inProgressUntil}까지)`
 
 export const toSeverityShares = (distribution: SeverityDistribution): { total: number; shares: SeverityShare[] } => {
   const total = SEVERITY_ORDER.reduce((sum, { key }) => sum + distribution[key], 0)

@@ -50,6 +50,19 @@ describe('추이 차트', () => {
     })
   })
 
+  describe('오늘 막대 (진행 중)', () => {
+    it('마지막 갱신과 같은 날의 막대는 표에서도 갱신 시각까지 센 진행 중이라고 읽힌다', async () => {
+      renderCharts()
+
+      const table = await screen.findByRole('table', { name: '최근 14일 일별 신규 건수' })
+      const headers = within(table)
+        .getAllByRole('rowheader')
+        .map((header) => header.textContent)
+
+      expect(headers).toEqual(['10/29', '10/30 (진행 중, 09:00까지)'])
+    })
+  })
+
   describe('최근 7일 심각도 분포', () => {
     it('가운데에 7일 신규 합계를 보인다', async () => {
       renderCharts()

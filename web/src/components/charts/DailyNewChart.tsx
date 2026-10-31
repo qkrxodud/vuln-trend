@@ -1,6 +1,6 @@
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 import { formatCount } from '../../lib/kpi.ts'
-import { toDailyBars, type DailyBar } from '../../lib/charts.ts'
+import { dailyBarTitle, toDailyBars, type DailyBar } from '../../lib/charts.ts'
 import type { DailyCount } from '../../types/stats.ts'
 
 const TITLE = '최근 14일 일별 신규 건수'
@@ -23,7 +23,7 @@ const DailyTooltip = ({ active, payload }: DailyTooltipProps) => {
   if (active !== true || bar === undefined) return null
   return (
     <div className="flex flex-col gap-0.5 rounded-[10px] bg-ink px-3 py-2 text-xs whitespace-nowrap text-white">
-      <span className="text-[#b9b9bd]">{bar.label}</span>
+      <span className="text-[#b9b9bd]">{dailyBarTitle(bar)}</span>
       <span className="font-semibold">신규 {formatCount(bar.total)}건</span>
       <span className="text-[#e8a898]">Critical {formatCount(bar.critical)}건</span>
     </div>
@@ -33,14 +33,17 @@ const DailyTooltip = ({ active, payload }: DailyTooltipProps) => {
 interface DayTickProps {
   x?: number | string
   y?: number | string
+  /** 보이는 눈금의 순번. 막대 순번과 다를 수 있어 쓰지 않는다 */
   index?: number
   payload?: { value: string }
-  latestIndex: number
+  bars: DailyBar[]
 }
 
-// x축 날짜. 가장 최근 날 라벨만 진하게 (디자인 원본)
-const DayTick = ({ x, y, index, payload, latestIndex }: DayTickProps) => {
-  const latest = index === latestIndex
+// x축 날짜. 가장 최근 날 라벨만 진하게 (디자인 원본). 갱신한 날이면 아래에 "진행 중"을 덧붙인다
+// 좁은 화면은 라벨을 건너뛰어 눈금 순번이 막대 순번과 다르다. 막대는 라벨로 찾는다
+export const DayTick = ({ x, y, payload, bars }: DayTickProps) => {
+  const bar = bars.find((candidate) => candidate.label === payload?.value)
+  const latest = bar?.isLatest === true
   return (
     <text
       x={x}
@@ -53,6 +56,11 @@ const DayTick = ({ x, y, index, payload, latestIndex }: DayTickProps) => {
       className="tabular-nums"
     >
       {payload?.value}
+      {bar === undefined || bar.inProgressUntil === null ? null : (
+        <tspan x={x} dy={13} fontSize={10} fontWeight={400} fill="var(--color-ink-faint)">
+          진행 중
+        </tspan>
+      )}
     </text>
   )
 }
@@ -71,7 +79,7 @@ const DailyTable = ({ bars }: { bars: DailyBar[] }) => (
     <tbody>
       {bars.map((bar) => (
         <tr key={bar.date}>
-          <th scope="row">{bar.label}</th>
+          <th scope="row">{dailyBarTitle(bar)}</th>
           <td>{bar.total}</td>
           <td>{bar.critical}</td>
         </tr>
@@ -80,8 +88,8 @@ const DailyTable = ({ bars }: { bars: DailyBar[] }) => (
   </table>
 )
 
-export const DailyNewChart = ({ daily }: { daily: DailyCount[] }) => {
-  const bars = toDailyBars(daily)
+export const DailyNewChart = ({ daily, updatedAt }: { daily: DailyCount[]; updatedAt: string | null }) => {
+  const bars = toDailyBars(daily, updatedAt)
   return (
     <div className="flex min-w-0 flex-col gap-3.5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -108,8 +116,8 @@ export const DailyNewChart = ({ daily }: { daily: DailyCount[] }) => {
           tickLine={false}
           axisLine={false}
           interval="preserveEnd"
-          tick={<DayTick latestIndex={bars.length - 1} />}
-          height={24}
+          tick={<DayTick bars={bars} />}
+          height={38}
         />
         <YAxis width={36} tickLine={false} axisLine={false} allowDecimals={false} tick={{ fontSize: 12 }} />
         <Tooltip

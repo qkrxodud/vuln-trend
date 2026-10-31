@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { useCveDetail } from '../../hooks/use-data.ts'
-import { nvdUrl } from '../../lib/cve-detail.ts'
+import { nvdUrl, SUMMARY_MISSING } from '../../lib/cve-detail.ts'
 import { groupReferences } from '../../lib/references.ts'
 import { SEVERITY_BADGE } from '../../lib/severity.ts'
 import { formatEpss, formatTopPercent } from '../../lib/trend-list.ts'
@@ -45,9 +45,7 @@ const ScoreTiles = ({ detail }: { detail: CveDetail }) => (
 const SummarySection = ({ detail }: { detail: CveDetail }) => (
   <Section id="cve-summary" title="한국어 요약">
     {detail.summary === null ? (
-      <p className="text-sm text-ink-soft">
-        한국어 요약은 트렌드 상위 20건에만 제공합니다. 아래 원문 설명을 확인하세요.
-      </p>
+      <p className="text-sm text-ink-soft">{SUMMARY_MISSING}</p>
     ) : (
       <>
         <dl className="grid grid-cols-[72px_minmax(0,1fr)] gap-x-3 gap-y-2 text-[15px] leading-relaxed">

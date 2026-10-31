@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatMonthDay, toDailyBars, toSeverityShares } from './charts.ts'
+import { dailyBarTitle, formatMonthDay, toDailyBars, toSeverityShares } from './charts.ts'
 
 describe('일별 신규 막대 (최근 14일, KST 달력일)', () => {
   it('날짜는 "월/일"로 적는다', () => {
@@ -20,6 +20,36 @@ describe('일별 신규 막대 (최근 14일, KST 달력일)', () => {
     ])
 
     expect(bars.map((bar) => bar.isLatest)).toEqual([false, true])
+  })
+})
+
+describe('오늘 막대는 갱신 시각까지만 센 것 (진행 중)', () => {
+  const daily = [
+    { date: '2026-10-31', new: 436, critical: 37 },
+    { date: '2026-11-01', new: 5, critical: 0 },
+  ]
+
+  it('마지막 갱신과 같은 날의 막대는 갱신 시각까지 센 진행 중으로 표시한다', () => {
+    const bars = toDailyBars(daily, '2026-11-01T09:00:00+09:00')
+
+    expect(bars.map((bar) => bar.inProgressUntil)).toEqual([null, '09:00'])
+  })
+
+  it('갱신이 지난 날에 멈춰 있으면 진행 중인 막대가 없다', () => {
+    const bars = toDailyBars(daily, '2026-11-02T09:00:00+09:00')
+
+    expect(bars.map((bar) => bar.inProgressUntil)).toEqual([null, null])
+  })
+
+  it('갱신 시각을 모르면 진행 중으로 표시하지 않는다', () => {
+    expect(toDailyBars(daily, null).map((bar) => bar.inProgressUntil)).toEqual([null, null])
+  })
+
+  it('툴팁과 표의 날짜는 진행 중이면 언제까지 셌는지 함께 적는다', () => {
+    const [done, today] = toDailyBars(daily, '2026-11-01T09:00:00+09:00')
+
+    expect(dailyBarTitle(done)).toBe('10/31')
+    expect(dailyBarTitle(today)).toBe('11/1 (진행 중, 09:00까지)')
   })
 })
 

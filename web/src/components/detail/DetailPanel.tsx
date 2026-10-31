@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { useCveDetail } from '../../hooks/use-data.ts'
-import { DEFAULT_ACTION, vendorLinks } from '../../lib/cve-detail.ts'
+import { DEFAULT_ACTION, SUMMARY_MISSING, vendorLinks } from '../../lib/cve-detail.ts'
 import type { CveDetail } from '../../types/cve.ts'
 import { LoadableView } from '../state/LoadableView.tsx'
 import { AffectedFacts } from './AffectedFacts.tsx'
@@ -15,7 +15,7 @@ const SummaryBlock = ({ detail }: { detail: CveDetail }) => {
     return (
       <div className="flex flex-col gap-2">
         <h4 className="text-sm font-semibold">
-          원문 설명 <span className="text-[11px] font-medium text-ink-faint">한국어 요약은 상위 20건에만 제공</span>
+          원문 설명 <span className="text-[11px] font-medium text-ink-faint">{SUMMARY_MISSING}</span>
         </h4>
         <p className="text-sm leading-relaxed text-ink-soft">{detail.description}</p>
       </div>

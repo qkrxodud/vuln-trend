@@ -68,7 +68,7 @@ describe('선택한 취약점 상세 패널', () => {
     expect(within(aside).getByText('KEV')).toBeInTheDocument()
     expect(within(aside).getByText('랜섬웨어')).toBeInTheDocument()
     expect(within(aside).getByRole('heading', { name: cveDetail.title })).toBeInTheDocument()
-    expect(within(aside).getByText('Chrome < 130.0.6723.58')).toBeInTheDocument()
+    expect(within(aside).getByRole('list', { name: '영향 제품' })).toHaveTextContent('Chrome < 130.0.6723.58')
     expect(within(aside).getByText('미정')).toBeInTheDocument()
     expect(within(aside).getByText('11-13')).toBeInTheDocument()
   })
@@ -81,12 +81,13 @@ describe('선택한 취약점 상세 패널', () => {
     expect(within(aside).getByText('Chrome 130 미만을 쓰는 모든 사용자')).toBeInTheDocument()
   })
 
-  it('요약이 없으면 영어 원문 설명을 보이고 요약 제공 범위를 알린다', async () => {
+  it('요약이 없으면 영어 원문 설명을 보이고, 순위와 상관없이 요약이 아직 없다고만 알린다', async () => {
     renderPanel({ ...kevDetail, summary: null })
     const aside = await panel()
 
     expect(within(aside).getByText(cveDetail.description)).toBeInTheDocument()
-    expect(within(aside).getByText('한국어 요약은 상위 20건에만 제공')).toBeInTheDocument()
+    expect(within(aside).getByText('한국어 요약이 아직 없습니다. 원문 설명을 확인하세요.')).toBeInTheDocument()
+    expect(within(aside).queryByText(/상위 20건/)).toBeNull()
   })
 
   it('점수 구성은 0 이 아닌 항과 시간 감쇠, 왜 지금? 을 보인다', async () => {

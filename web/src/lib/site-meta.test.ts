@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import indexHtml from '../../index.html?raw'
 import { OG_IMAGE_FILE, SITE_DESCRIPTION, SITE_TITLE, siteMetaTags } from './site-meta.ts'
 
 // 머리말 문자열을 DOM 으로 읽어 meta 값을 꺼낸다
@@ -52,5 +53,13 @@ describe('사이트 공유 미리보기 (OG 태그, P23)', () => {
     const html = siteMetaTags('https://example.github.io/a?b=1&c="2"/')
 
     expect(metaContent(html, 'og:url')).toBe('https://example.github.io/a?b=1&c="2"/')
+  })
+})
+
+describe('브라우저 탭 제목', () => {
+  it('메인 탭 제목은 공유 미리보기 제목과 같다', () => {
+    const title = new DOMParser().parseFromString(indexHtml, 'text/html').title
+
+    expect(title).toBe(SITE_TITLE)
   })
 })

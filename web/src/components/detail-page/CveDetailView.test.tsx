@@ -91,7 +91,7 @@ describe('CVE 상세 페이지', () => {
       renderView(detail)
       await loaded()
 
-      expect(screen.getByText('Chrome < 130.0.6723.58')).toBeInTheDocument()
+      expect(screen.getByRole('list', { name: '영향 제품' })).toHaveTextContent('Chrome < 130.0.6723.58')
       expect(screen.getByText('미정')).toBeInTheDocument()
       expect(screen.getByText('11-13')).toBeInTheDocument()
     })
@@ -124,14 +124,13 @@ describe('CVE 상세 페이지', () => {
       )
     })
 
-    it('한국어 요약이 없으면 원문 설명을 보라고 안내한다', async () => {
+    it('한국어 요약이 없으면 순위와 상관없이 원문 설명을 보라고 안내한다', async () => {
       renderView({ ...detail, summary: null })
       await loaded()
       const summary = screen.getByRole('region', { name: '한국어 요약' })
 
-      expect(
-        within(summary).getByText('한국어 요약은 트렌드 상위 20건에만 제공합니다. 아래 원문 설명을 확인하세요.'),
-      ).toBeInTheDocument()
+      expect(within(summary).getByText('한국어 요약이 아직 없습니다. 원문 설명을 확인하세요.')).toBeInTheDocument()
+      expect(within(summary).queryByText(/상위 20건/)).toBeNull()
     })
 
     it('원문 설명과 참고 링크(벤더·NVD)를 보인다', async () => {
