@@ -1,18 +1,34 @@
 // 데이터 파일만 보고 판정하는 Gate G 항목 (WBS 9장): search-index.json 크기, 한국어 요약 검수 보조
+import { gzipSync } from 'node:zlib'
 import type { CveDetail, Summary } from '../../src/types/cve.ts'
 import type { GateResult } from './report.ts'
 
 const MB = 1024 * 1024
-// 기획서 7장: 1년치 3~4MB. 넘으면 연도별 분할을 검토한다
+// 판정 기준은 gzip(레벨 6) 크기다. Pages 가 gzip 으로 보내므로 사용자가 받는 양이 이것이다 (사용자 결정 2026-11-01: 1년치 파일 14MB·gzip 2MB)
 export const SEARCH_INDEX_LIMIT_BYTES = 4 * MB
+export const SEARCH_INDEX_GZIP_LEVEL = 6
 
-const SIZE_ITEM = 'search-index.json 크기'
+const SIZE_ITEM = 'search-index.json 크기 (gzip)'
 
-export const checkSearchIndexSize = (bytes: number | null): GateResult => {
-  if (bytes === null) return { item: SIZE_ITEM, status: 'fail', detail: '파일 없음' }
-  const size = `${(bytes / MB).toFixed(2)}MB`
-  if (bytes > SEARCH_INDEX_LIMIT_BYTES) return { item: SIZE_ITEM, status: 'fail', detail: `${size} > 4MB 한도` }
-  return { item: SIZE_ITEM, status: 'pass', detail: `${size} ≤ 4MB` }
+export interface FileSizes {
+  file: number
+  gzip: number
+}
+
+export const measureSizes = (content: Uint8Array): FileSizes => ({
+  file: content.byteLength,
+  gzip: gzipSync(content, { level: SEARCH_INDEX_GZIP_LEVEL }).byteLength,
+})
+
+const mb = (bytes: number) => `${(bytes / MB).toFixed(2)}MB`
+
+export const checkSearchIndexSize = (sizes: FileSizes | null): GateResult => {
+  if (sizes === null) return { item: SIZE_ITEM, status: 'fail', detail: '파일 없음' }
+  const fileSize = `(파일 ${mb(sizes.file)})`
+  if (sizes.gzip > SEARCH_INDEX_LIMIT_BYTES) {
+    return { item: SIZE_ITEM, status: 'fail', detail: `gzip ${mb(sizes.gzip)} > 4MB 한도 ${fileSize}` }
+  }
+  return { item: SIZE_ITEM, status: 'pass', detail: `gzip ${mb(sizes.gzip)} ≤ 4MB ${fileSize}` }
 }
 
 export interface SummarySuspect {

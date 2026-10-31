@@ -1,25 +1,46 @@
+import { gzipSync } from 'node:zlib'
 import { describe, expect, it } from 'vitest'
 import { cveDetail } from '../../src/test/fixtures.ts'
 import type { CveDetail, Summary } from '../../src/types/cve.ts'
-import { auditSummary, checkSearchIndexSize, checkSummaries, SEARCH_INDEX_LIMIT_BYTES } from './static-checks.ts'
+import {
+  auditSummary,
+  checkSearchIndexSize,
+  checkSummaries,
+  measureSizes,
+  SEARCH_INDEX_GZIP_LEVEL,
+  SEARCH_INDEX_LIMIT_BYTES,
+} from './static-checks.ts'
 
 const MB = 1024 * 1024
 
-describe('search-index.json 크기 (4MB 이하)', () => {
-  it('4MB 는 MiB 로 센다', () => {
+describe('search-index.json 크기 (gzip 4MB 이하)', () => {
+  it('4MB 는 MiB 로 세고, gzip 은 레벨 6 으로 잰다', () => {
     expect(SEARCH_INDEX_LIMIT_BYTES).toBe(4 * MB)
+    expect(SEARCH_INDEX_GZIP_LEVEL).toBe(6)
   })
 
-  it('4MB 이하면 통과하고 크기를 적는다', () => {
-    const result = checkSearchIndexSize(3.2 * MB)
+  it('파일이 4MB 를 넘어도 gzip 이 4MB 이하면 통과한다', () => {
+    const result = checkSearchIndexSize({ file: 14 * MB, gzip: 2 * MB })
 
     expect(result.status).toBe('pass')
-    expect(result.detail).toContain('3.20MB')
+  })
+
+  it('gzip 도 4MB 를 넘으면 실패한다', () => {
+    const result = checkSearchIndexSize({ file: 20 * MB, gzip: 4.5 * MB })
+
+    expect(result.status).toBe('fail')
+    expect(result.detail).toContain('4.50MB')
   })
 
   it('딱 4MB 는 통과, 1바이트라도 넘으면 실패한다', () => {
-    expect(checkSearchIndexSize(4 * MB).status).toBe('pass')
-    expect(checkSearchIndexSize(4 * MB + 1).status).toBe('fail')
+    expect(checkSearchIndexSize({ file: 14 * MB, gzip: 4 * MB }).status).toBe('pass')
+    expect(checkSearchIndexSize({ file: 14 * MB, gzip: 4 * MB + 1 }).status).toBe('fail')
+  })
+
+  it('근거에 gzip 크기와 파일 크기를 함께 적는다', () => {
+    const result = checkSearchIndexSize({ file: 14.2 * MB, gzip: 2.05 * MB })
+
+    expect(result.detail).toBe('gzip 2.05MB ≤ 4MB (파일 14.20MB)')
   })
 
   it('파일이 없으면 실패한다', () => {
@@ -27,6 +48,22 @@ describe('search-index.json 크기 (4MB 이하)', () => {
 
     expect(result.status).toBe('fail')
     expect(result.detail).toContain('없음')
+  })
+})
+
+describe('search-index.json 크기 재기', () => {
+  it('파일 크기는 바이트 그대로, gzip 크기는 레벨 6 으로 압축한 크기다', () => {
+    const content = new TextEncoder().encode(
+      JSON.stringify(
+        Array.from({ length: 2000 }, (_, i) => ({ id: `CVE-2026-${i}`, title: 'Apache HTTP Server 원격 코드 실행' })),
+      ),
+    )
+
+    const sizes = measureSizes(content)
+
+    expect(sizes.file).toBe(content.byteLength)
+    expect(sizes.gzip).toBe(gzipSync(content, { level: 6 }).byteLength)
+    expect(sizes.gzip).toBeLessThan(sizes.file)
   })
 })
 
