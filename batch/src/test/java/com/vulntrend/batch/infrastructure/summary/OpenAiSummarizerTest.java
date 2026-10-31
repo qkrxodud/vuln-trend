@@ -12,7 +12,9 @@ import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.global.config.SummaryProperties;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.StreamSupport;
 import org.junit.jupiter.api.AfterEach;
@@ -125,6 +127,20 @@ class OpenAiSummarizerTest {
         }
 
         @Test
+        @DisplayName("실제 응답처럼 모델 이름이 SDK 가 아는 이름(gpt-6-luna)이어도 읽어서 요약으로 쓴다")
+        void realResponseShape() throws IOException {
+            // 2026-11-01 첫 하루 실행에서 받은 실제 응답 그대로(열쇠·요청 정보 없음). 이 모양에서 요약 20건이 모두 실패했다
+            openAi.answer(200, resource("/openai/response-completed.json"));
+
+            SummaryResult result = summarizer().summarize(LOG4SHELL);
+
+            assertThat(result.isGenerated()).isTrue();
+            assertThat(result.getModel()).contains("gpt-6-luna");
+            assertThat(result.getSummary()).map(KoreanSummary::getWhat).hasValueSatisfying(
+                    what -> assertThat(what).contains("Log4j2"));
+        }
+
+        @Test
         @DisplayName("원문에 없는 버전이 나오면 요약을 버린다")
         void discardsInventedVersions() throws IOException {
             openAi.answer(200, completed("""
@@ -230,6 +246,12 @@ class OpenAiSummarizerTest {
 
     private static List<String> texts(JsonNode array) {
         return StreamSupport.stream(array.spliterator(), false).map(JsonNode::asText).toList();
+    }
+
+    private static String resource(String path) throws IOException {
+        try (InputStream in = OpenAiSummarizerTest.class.getResourceAsStream(path)) {
+            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        }
     }
 
     private String completed(String text) throws IOException {

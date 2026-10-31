@@ -10,8 +10,10 @@ import com.openai.errors.OpenAIServiceException;
 import com.openai.errors.PermissionDeniedException;
 import com.openai.errors.RateLimitException;
 import com.openai.errors.UnauthorizedException;
+import com.openai.models.ChatModel;
 import com.openai.models.Reasoning;
 import com.openai.models.ReasoningEffort;
+import com.openai.models.ResponsesModel;
 import com.openai.models.responses.Response;
 import com.openai.models.responses.ResponseCreateParams;
 import com.openai.models.responses.ResponseFormatTextJsonSchemaConfig;
@@ -48,6 +50,7 @@ public class OpenAiSummarizer implements Summarizer {
     private static final long MAX_OUTPUT_TOKENS = 2_000L;
     private static final String SCHEMA_NAME = "korean_summary";
     private static final List<String> FIELDS = List.of("what", "who", "action");
+    private static final String UNKNOWN_MODEL = "unknown";
 
     private final OpenAIClient client;
     private final SummaryProperties properties;
@@ -100,7 +103,7 @@ public class OpenAiSummarizer implements Summarizer {
     }
 
     private SummaryResult read(Response response, SummarySource source) {
-        String model = response.model().asString();
+        String model = modelName(response.model());
         List<ResponseOutputMessage.Content> contents = response.output().stream()
                 .flatMap(item -> item.message().stream())
                 .flatMap(message -> message.content().stream())
@@ -119,6 +122,18 @@ public class OpenAiSummarizer implements Summarizer {
                 .map(ResponseOutputText::text)
                 .collect(Collectors.joining());
         return parse(text, model, source);
+    }
+
+    /**
+     * 응답의 model 은 세 갈래 중 하나로 읽힌다: SDK 가 아는 채팅 모델(gpt-6-luna 등), Responses 전용 모델, 그 밖의 문자열.
+     * asString() 은 "그 밖의 문자열"일 때만 값이 있어, SDK 가 아는 이름이면 OpenAIInvalidDataException 을 낸다
+     * (2026-11-01 첫 하루 실행에서 요약 20건이 모두 이것으로 실패). 있는 갈래의 이름을 쓴다.
+     */
+    private static String modelName(ResponsesModel model) {
+        return model.string()
+                .or(() -> model.chat().map(ChatModel::asString))
+                .or(() -> model.only().map(ResponsesModel.ResponsesOnlyModel::asString))
+                .orElse(UNKNOWN_MODEL);
     }
 
     private SummaryResult parse(String text, String model, SummarySource source) {
