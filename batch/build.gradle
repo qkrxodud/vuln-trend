@@ -91,3 +91,13 @@ jacocoTestCoverageVerification {
 tasks.named('check') {
     dependsOn jacocoTestCoverageVerification
 }
+
+// Gate G 배치 점검(WBS 9장, 백엔드 B 의 GateCheckService): 읽기만 한다. 웹의 npm run gate:check 와 짝.
+// 실행: (cd batch && ./gradlew gateCheck). 실패 항목이 있으면 종료 코드 1. NVD 키가 없으면 배치가 시작하지 않는다(사용자 결정)
+tasks.register('gateCheck', org.springframework.boot.gradle.tasks.run.BootRun) {
+    group = 'verification'
+    description = 'Runs the Gate G batch check (read-only) and prints the result table.'
+    mainClass = 'com.vulntrend.batch.VulnTrendBatchApplication'
+    classpath = sourceSets.main.runtimeClasspath
+    args '--gate-check'
+}

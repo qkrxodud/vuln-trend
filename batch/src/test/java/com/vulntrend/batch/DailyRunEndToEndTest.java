@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.export.ExportService;
+import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
@@ -81,6 +82,8 @@ class DailyRunEndToEndTest {
     private ExportService export;
     @Autowired
     private Publisher publisher;
+    @Autowired
+    private GateCheckService gate;
     @Autowired
     private FakeSummarizer claude;
     @Autowired
@@ -225,7 +228,7 @@ class DailyRunEndToEndTest {
     }
 
     private BatchRunner assemble() {
-        return new BatchRunner(collect, productAssignment, score, dailyStat, summary, export, publisher);
+        return new BatchRunner(collect, productAssignment, score, dailyStat, summary, export, publisher, gate);
     }
 
     // 흉내 서버는 준비한 답을 한 번씩만 쓰므로 실행마다 세 소스의 답을 새로 넣는다. kevStatus 가 200 이 아니면 KEV 만 실패

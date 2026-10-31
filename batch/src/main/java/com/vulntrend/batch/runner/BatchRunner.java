@@ -4,14 +4,17 @@ import com.vulntrend.batch.application.collect.CollectOutcome;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.export.ExportResult;
 import com.vulntrend.batch.application.export.ExportService;
+import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.CollectResult;
 import com.vulntrend.batch.domain.collect.SourceName;
+import com.vulntrend.batch.domain.gate.GateReport;
 import com.vulntrend.batch.domain.publish.Publisher;
 import com.vulntrend.batch.global.error.exception.CollectionFailedException;
+import com.vulntrend.batch.global.error.exception.GateCheckFailedException;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import java.time.Duration;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +33,7 @@ import org.springframework.stereotype.Component;
  * 러너 빈은 실행마다 바뀌는 값을 들고 있지 않는다 — 결과는 지역 변수와 예외로만 다룬다.
  * 소스별 진행 기록은 CollectService 가 따로 남긴다 — 한 소스가 실패해도 다른 소스 커서는 전진한다.
  * --backfill-days=N 이면 지난 N일 NVD 만 한 번 가져오고 끝낸다(WBS 1.5). 백필은 게시하지 않는다.
+ * --gate-check 면 Gate G 배치 점검 표만 남긴다(읽기만). 실패 항목이 있으면 종료 코드 1(GateCheckFailedException).
  * batch.runner.enabled=false 면 등록하지 않는다 — 테스트 프로필이 실제 NVD 를 부르지 않게 한다.
  */
 @Slf4j
@@ -45,10 +49,15 @@ public class BatchRunner implements CommandLineRunner {
     private final SummaryService summary;
     private final ExportService export;
     private final Publisher publisher;
+    private final GateCheckService gate;
 
     @Override
     public void run(String... args) {
         RunMode mode = RunMode.from(args);
+        if (mode.isGateCheck()) {
+            gateCheck();
+            return;
+        }
         if (mode.isBackfill()) {
             backfill(mode.getBackfillSpan());
             return;
@@ -82,6 +91,15 @@ public class BatchRunner implements CommandLineRunner {
         } catch (OutputWriteException e) {
             log.warn("Site data could not be written ({}); nothing is pushed this run.", e.getMessage());
             throw e;
+        }
+    }
+
+    // 점검 표는 웹 gate:check 와 같은 모양(| 항목 | 결과 | 근거 |)으로 그대로 남긴다
+    private void gateCheck() {
+        GateReport report = gate.check();
+        log.info("Gate G batch check\n{}", report.render());
+        if (report.hasFailure()) {
+            throw new GateCheckFailedException("See the failing items in the table above.");
         }
     }
 

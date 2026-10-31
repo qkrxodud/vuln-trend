@@ -36,6 +36,7 @@ import com.vulntrend.batch.infrastructure.persistence.stat.JdbcDailyStatReposito
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
 import java.io.InputStream;
@@ -187,7 +188,8 @@ class CollectionFailureRuleRunTest {
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock),
                 new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
-                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working());
+                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working(),
+                GateChecks.failing(clock));
     }
 
     private static String closedUrl() throws IOException {

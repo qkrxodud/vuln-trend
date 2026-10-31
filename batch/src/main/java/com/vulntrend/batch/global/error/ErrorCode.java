@@ -12,7 +12,8 @@ public enum ErrorCode {
     COLLECTION_FAILED("Collection did not complete, so nothing was published."),
     SOURCE_FETCH_FAILED("A data source did not answer or answered badly."),
     OUTPUT_WRITE_FAILED("A site data file could not be written."),
-    PUBLISH_FAILED("The site data could not be committed or pushed.");
+    PUBLISH_FAILED("The site data could not be committed or pushed."),
+    GATE_CHECK_FAILED("The Gate G batch check found a failing item.");
 
     private final String message;
 }

@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
@@ -25,8 +26,10 @@ import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.SummaryProperties;
 import com.vulntrend.batch.global.error.exception.CollectionFailedException;
+import com.vulntrend.batch.global.error.exception.GateCheckFailedException;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import com.vulntrend.batch.global.error.exception.PublishException;
+import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.time.Clock;
 import java.time.Instant;
@@ -51,8 +54,37 @@ class BatchRunnerTest {
     private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
     private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
     private FakePublisher publisher = FakePublisher.working();
+    private GateCheckService gate = GateChecks.passing(clock, "2026-10-30T09:00", "2026-10-29T09:00",
+            "2026-10-28T09:00");
     private SummaryService summary = new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
             new FakeSummaryRepository(List.of(), 0), clock);
+
+    @Test
+    @DisplayName("Gate G 배치 점검 실행은 점검 표만 남기고 수집·점수·출력·게시는 하지 않는다")
+    void gateCheckOnly(CapturedOutput output) {
+        FakeCollector nvd = FakeCollector.loading(SourceName.NVD, 3);
+
+        runnerWith(nvd).run("--gate-check");
+
+        assertThat(output).contains("Gate G batch check", "| 항목 | 결과 | 근거 |");
+        assertThat(nvd.receivedWindows()).isEmpty();
+        assertThat(scores.rescoredAt()).isNull();
+        assertThat(siteData.files()).isEmpty();
+        assertThat(publisher.published()).isZero();
+    }
+
+    @Test
+    @DisplayName("Gate G 배치 점검에 실패한 항목이 있으면 종료 코드 1 로 끝난다")
+    void gateCheckFailureExitCode(CapturedOutput output) {
+        gate = GateChecks.failing(clock);
+
+        Throwable failure = catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3))
+                .run("--gate-check"));
+
+        assertThat(failure).isInstanceOf(GateCheckFailedException.class);
+        assertThat(((ExitCodeGenerator) failure).getExitCode()).isEqualTo(1);
+        assertThat(output).contains("| 항목 | 결과 | 근거 |");
+    }
 
     @Test
     @DisplayName("수집이 실패한 실행은 종료 코드 1 로 끝나 cron·Actions 가 실패를 안다")
@@ -305,6 +337,6 @@ class BatchRunnerTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
                 assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), summary,
-                SiteExports.writingTo(siteData, clock), publisher);
+                SiteExports.writingTo(siteData, clock), publisher, gate);
     }
 }

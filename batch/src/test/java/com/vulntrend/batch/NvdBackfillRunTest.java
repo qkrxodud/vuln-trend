@@ -28,6 +28,7 @@ import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
 import java.net.http.HttpClient;
@@ -134,6 +135,7 @@ class NvdBackfillRunTest {
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
-                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working());
+                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working(),
+                GateChecks.failing(clock));
     }
 }

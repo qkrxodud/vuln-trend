@@ -56,4 +56,21 @@ class RunModeTest {
                 named("숫자가 아닐 때", "--backfill-days=year"),
                 named("값이 비어 있을 때", "--backfill-days="));
     }
+
+    @Test
+    @DisplayName("--gate-check 를 주면 Gate G 배치 점검만 하는 실행이다")
+    void gateCheck() {
+        RunMode mode = RunMode.from("--gate-check");
+
+        assertThat(mode.isGateCheck()).isTrue();
+        assertThat(mode.isBackfill()).isFalse();
+        assertThat(RunMode.from().isGateCheck()).isFalse();
+    }
+
+    @Test
+    @DisplayName("점검과 지난 기간 가져오기를 함께 주면 시작하지 않는다")
+    void gateCheckWithBackfillRefused() {
+        assertThatThrownBy(() -> RunMode.from("--gate-check", "--backfill-days=30"))
+                .isInstanceOf(DomainValidationException.class);
+    }
 }
