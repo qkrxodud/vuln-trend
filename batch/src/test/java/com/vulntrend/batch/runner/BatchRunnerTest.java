@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
+import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeCollector;
@@ -12,6 +13,7 @@ import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
+import com.vulntrend.batch.global.config.SummaryProperties;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -55,7 +57,7 @@ class BatchRunnerTest {
         runner.run();
 
         assertThat(output).contains("Collection finished");
-        assertThat(output).doesNotContain("skipped");
+        assertThat(output).doesNotContain("scoring and publishing are skipped");
     }
 
     @Test
@@ -107,6 +109,23 @@ class BatchRunnerTest {
     }
 
     @Test
+    @DisplayName("점수를 다시 매긴 뒤 한국어 요약 단계로 넘어간다")
+    void summarizesAfterScoring(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(output.toString().indexOf("Trend score recalculated"))
+                .isLessThan(output.toString().indexOf("Korean summary is skipped"));
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행에서는 한국어 요약 단계로 넘어가지 않는다")
+    void noSummaryAfterFailure(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3), FakeCollector.failing(SourceName.KEV)).run();
+
+        assertThat(output).doesNotContain("Korean summary");
+    }
+
+    @Test
     @DisplayName("지난 기간을 한 번 가져오는 실행에서는 점수를 다시 매기지 않는다")
     void noRescoreInBackfill() {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
@@ -136,6 +155,6 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new ScoreService(scores, clock));
+                assignment, new ScoreService(scores, clock), new SummaryService(new SummaryProperties(20, "", "")));
     }
 }

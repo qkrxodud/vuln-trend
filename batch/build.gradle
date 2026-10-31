@@ -24,6 +24,13 @@ repositories {
     mavenCentral()
 }
 
+// Spring AI 1.1.x 가 Boot 3.5·Spring 6.2 짝이다(2.x 는 Boot 4 용)
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.ai:spring-ai-bom:1.1.8'
+    }
+}
+
 dependencies {
     // 웹서버 없는 배치(spring.main.web-application-type=none). 수집 경로 저장은 JdbcTemplate(기획서 5장 메모)
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
@@ -31,6 +38,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
     runtimeOnly 'org.postgresql:postgresql'
+    // 요약은 제공자 중립 ChatModel 창구만 쓴다. 제공자 모듈(spring-ai-starter-model-anthropic 등)은 결정 대기
+    implementation 'org.springframework.ai:spring-ai-model'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

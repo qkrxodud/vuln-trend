@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
+import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
@@ -14,6 +15,7 @@ import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.global.config.KevProperties;
 import com.vulntrend.batch.global.config.NvdProperties;
+import com.vulntrend.batch.global.config.SummaryProperties;
 import com.vulntrend.batch.infrastructure.kev.KevCatalogParser;
 import com.vulntrend.batch.infrastructure.kev.KevClient;
 import com.vulntrend.batch.infrastructure.kev.KevCollector;
@@ -169,7 +171,7 @@ class CollectionFailureRuleRunTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
-                new ScoreService(trendScores, clock));
+                new ScoreService(trendScores, clock), new SummaryService(new SummaryProperties(20, "", "")));
     }
 
     private static String closedUrl() throws IOException {
