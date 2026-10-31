@@ -1,17 +1,22 @@
 package com.vulntrend.batch.application.collect;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.vulntrend.batch.domain.collect.CollectResult;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
+import com.vulntrend.batch.global.error.exception.DomainValidationException;
 import java.time.Clock;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("수집 순회")
@@ -95,6 +100,60 @@ class CollectServiceTest {
         // then
         assertThat(outcome.getResults()).extracting(result -> result.getSource())
                 .containsExactly(SourceName.NVD, SourceName.KEV, SourceName.EPSS);
+    }
+
+    @Nested
+    @DisplayName("지난 기간을 한 번 가져올 때(백필)")
+    class Backfill {
+
+        @Test
+        @DisplayName("지금부터 정한 날 수만큼 거슬러 올라간 구간을 그 소스의 수집기에만 넘긴다")
+        void passesSpanToOneSource() {
+            FakeCollector nvd = FakeCollector.loading(SourceName.NVD, 900);
+            FakeCollector kev = FakeCollector.loading(SourceName.KEV, 1);
+
+            CollectResult result = new CollectService(List.of(kev, nvd), syncStates, clock)
+                    .backfill(SourceName.NVD, Duration.ofDays(365));
+
+            assertThat(result.getLoadedCount()).isEqualTo(900);
+            assertThat(nvd.receivedWindows()).singleElement().satisfies(window -> {
+                assertThat(window.getFrom()).isEqualTo(NOW.minus(Duration.ofDays(365)));
+                assertThat(window.getUntil()).isEqualTo(NOW);
+            });
+            assertThat(kev.receivedWindows()).isEmpty();
+        }
+
+        @Test
+        @DisplayName("다 가져오면 다음 하루 한 번 실행이 지금부터 이어 가도록 진행 기록이 옮겨진다")
+        void advancesCursor() {
+            new CollectService(List.of(FakeCollector.loading(SourceName.NVD, 1)), syncStates, clock)
+                    .backfill(SourceName.NVD, Duration.ofDays(365));
+
+            assertThat(syncStates.findBySource(SourceName.NVD).getLastSyncedAt()).contains(NOW);
+        }
+
+        @Test
+        @DisplayName("실패하면 실패로 기록되고 마지막으로 가져온 시각은 그대로 남는다")
+        void failureKeepsCursor() {
+            syncStates.save(SyncState.restore(SourceName.NVD, LAST_RUN, LAST_RUN, SyncStatus.SUCCESS));
+
+            CollectResult result = new CollectService(List.of(FakeCollector.failing(SourceName.NVD)), syncStates, clock)
+                    .backfill(SourceName.NVD, Duration.ofDays(365));
+
+            assertThat(result.isFailed()).isTrue();
+            assertThat(syncStates.findBySource(SourceName.NVD).getStatus()).isEqualTo(SyncStatus.FAIL);
+            assertThat(syncStates.findBySource(SourceName.NVD).getLastSyncedAt()).contains(LAST_RUN);
+        }
+
+        @Test
+        @DisplayName("그 소스의 수집기가 없으면 시작하지 않는다")
+        void missingCollectorIsRefused() {
+            CollectService service = new CollectService(List.of(FakeCollector.loading(SourceName.KEV, 1)), syncStates,
+                    clock);
+
+            assertThatThrownBy(() -> service.backfill(SourceName.NVD, Duration.ofDays(365)))
+                    .isInstanceOf(DomainValidationException.class);
+        }
     }
 
     @Test

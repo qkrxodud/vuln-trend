@@ -49,6 +49,28 @@ class BatchRunnerTest {
         assertThat(output).doesNotContain("skipped");
     }
 
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행은 NVD 만 가져오고 점수 매기기와 게시로 넘어가지 않는다")
+    void backfillRunsNvdOnly(CapturedOutput output) {
+        FakeCollector nvd = FakeCollector.loading(SourceName.NVD, 3);
+        FakeCollector kev = FakeCollector.loading(SourceName.KEV, 1);
+
+        runnerWith(nvd, kev).run("--backfill-days=365");
+
+        assertThat(nvd.receivedWindows()).hasSize(1);
+        assertThat(kev.receivedWindows()).isEmpty();
+        assertThat(output).contains("Backfill of NVD for the last 365 days loaded 3 records");
+        assertThat(output).doesNotContain("Collection finished");
+    }
+
+    @Test
+    @DisplayName("지난 기간 가져오기가 실패하면 실패를 남기고 끝낸다")
+    void backfillFailure(CapturedOutput output) {
+        runnerWith(FakeCollector.failing(SourceName.NVD)).run("--backfill-days=30");
+
+        assertThat(output).contains("Backfill of NVD for the last 30 days failed");
+    }
+
     private BatchRunner runnerWith(FakeCollector... collectors) {
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock));
     }

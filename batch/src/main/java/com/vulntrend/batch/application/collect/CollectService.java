@@ -2,15 +2,19 @@ package com.vulntrend.batch.application.collect;
 
 import com.vulntrend.batch.domain.collect.CollectResult;
 import com.vulntrend.batch.domain.collect.Collector;
+import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStateRepository;
 import com.vulntrend.batch.domain.vulnerability.SyncWindow;
 import com.vulntrend.batch.global.error.VulnTrendException;
+import com.vulntrend.batch.global.error.exception.DomainValidationException;
 import java.time.Clock;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -44,10 +48,29 @@ public class CollectService {
         return collectors.stream().sorted(Comparator.comparing(Collector::source)).toList();
     }
 
+    /**
+     * 지난 span 기간을 source 한 소스만 한 번 가져온다(WBS 1.5 백필). 구간은 [지금 - span, 지금).
+     * 성공하면 커서를 지금으로 옮겨 다음 하루 한 번 실행이 이어 가고, 실패하면 FAIL 로 남기고 커서는 그대로 둔다.
+     */
+    public CollectResult backfill(SourceName source, Duration span) {
+        Collector collector = collectors.stream()
+                .filter(candidate -> candidate.source() == source)
+                .findFirst()
+                .orElseThrow(() -> new DomainValidationException("No collector is registered for " + source + "."));
+        Instant now = clock.instant();
+        SyncState state = syncStates.findBySource(source);
+        return collectWindow(collector, state, () -> SyncWindow.of(now.minus(span), now), now);
+    }
+
     private CollectResult collectOne(Collector collector, Instant now) {
         SyncState state = syncStates.findBySource(collector.source());
+        return collectWindow(collector, state, () -> state.windowUntil(now), now);
+    }
+
+    private CollectResult collectWindow(Collector collector, SyncState state, Supplier<SyncWindow> windowOf,
+            Instant now) {
         try {
-            SyncWindow window = state.windowUntil(now);
+            SyncWindow window = windowOf.get();
             CollectResult result = collector.collect(window);
             syncStates.save(state.succeeded(window, now));
             log.info("Source {} loaded {} records for window {}.", collector.source(), result.getLoadedCount(), window);
