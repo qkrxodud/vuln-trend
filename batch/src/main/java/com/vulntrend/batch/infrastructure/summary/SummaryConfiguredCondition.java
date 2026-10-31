@@ -6,8 +6,8 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- * 요약 열쇠와 모델 이름이 모두 있을 때만 Claude 클라이언트를 만든다. 열쇠가 없으면 클라이언트 자체가 없어서
- * SDK 가 ANTHROPIC_API_KEY 환경 변수나 로그인 정보를 대신 찾아 쓰는 일이 없다(열쇠를 읽는 길은 SummaryProperties 하나).
+ * 요약 열쇠와 모델 이름이 모두 있을 때만 요약 클라이언트(OpenAI)를 만든다. 열쇠가 없으면 클라이언트 자체가 없어서
+ * SDK 가 OPENAI_API_KEY 같은 환경 변수를 대신 찾아 쓰는 일이 없다(열쇠를 읽는 길은 SummaryProperties 하나).
  */
 public class SummaryConfiguredCondition implements Condition {
 

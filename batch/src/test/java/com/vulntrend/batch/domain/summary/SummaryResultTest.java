@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("한국어 요약 결과")
 class SummaryResultTest {
 
-    private static final String MODEL = "claude-opus-5-5";
+    private static final String MODEL = "gpt-6-luna";
     private static final SummarySource LOG4SHELL = SummarySource.of(CveId.from("CVE-2021-44228"),
             "Apache Log4j2 2.0-beta9 through 2.15.0 JNDI features do not protect against attacker controlled LDAP.",
             List.of(SummaryProduct.of("apache", "log4j", ">= 2.0-beta9, < 2.15.0", "2.15.0")), new BigDecimal("10.0"));
@@ -63,7 +63,7 @@ class SummaryResultTest {
     }
 
     @Test
-    @DisplayName("Claude 가 요약을 거절하면 요약 없이 넘어간다")
+    @DisplayName("요약 모델이 요약을 거절하면 요약 없이 넘어간다")
     void refused() {
         SummaryResult result = SummaryResult.refused(MODEL);
 

@@ -8,8 +8,8 @@ import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-/** Claude Messages API 흉내. 마지막 요청 본문·보낸 열쇠를 기억하고, 정해 둔 상태 코드와 본문으로 답한다 */
-public class AnthropicStubServer implements AutoCloseable {
+/** OpenAI Responses API 흉내. 마지막 요청 본문·경로·보낸 열쇠를 기억하고, 정해 둔 상태 코드와 본문으로 답한다 */
+public class OpenAiStubServer implements AutoCloseable {
 
     private final HttpServer server;
     private int status = 200;
@@ -17,16 +17,16 @@ public class AnthropicStubServer implements AutoCloseable {
     private String lastRequestBody;
     private String lastCredential;
     private String lastPath;
-    private String lastBetaHeader;
 
-    public AnthropicStubServer() throws IOException {
+    public OpenAiStubServer() throws IOException {
         server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
         server.createContext("/", this::handle);
         server.start();
     }
 
+    /** SDK 의 baseUrl 은 /v1 까지 포함한다(기본 https://api.openai.com/v1) */
     public String baseUrl() {
-        return "http://127.0.0.1:" + server.getAddress().getPort();
+        return "http://127.0.0.1:" + server.getAddress().getPort() + "/v1";
     }
 
     public void answer(int status, String body) {
@@ -38,7 +38,7 @@ public class AnthropicStubServer implements AutoCloseable {
         return lastRequestBody;
     }
 
-    /** SDK 3.x 는 열쇠를 x-api-key 또는 Authorization: Bearer 로 보낸다. 어느 쪽이든 실려 간 열쇠 값 */
+    /** Authorization: Bearer 뒤에 실려 간 열쇠 값 */
     public String lastCredential() {
         return lastCredential;
     }
@@ -47,14 +47,10 @@ public class AnthropicStubServer implements AutoCloseable {
         return lastPath;
     }
 
-    public String lastBetaHeader() {
-        return lastBetaHeader;
-    }
-
     private void handle(HttpExchange exchange) throws IOException {
         lastPath = exchange.getRequestURI().getPath();
-        lastCredential = credentialOf(exchange);
-        lastBetaHeader = exchange.getRequestHeaders().getFirst("anthropic-beta");
+        String authorization = exchange.getRequestHeaders().getFirst("Authorization");
+        lastCredential = Objects.isNull(authorization) ? null : authorization.replaceFirst("^Bearer ", "");
         lastRequestBody = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
         byte[] bytes = body.getBytes(StandardCharsets.UTF_8);
         exchange.getResponseHeaders().add("Content-Type", "application/json");
@@ -62,15 +58,6 @@ public class AnthropicStubServer implements AutoCloseable {
         try (OutputStream out = exchange.getResponseBody()) {
             out.write(bytes);
         }
-    }
-
-    private static String credentialOf(HttpExchange exchange) {
-        String apiKey = exchange.getRequestHeaders().getFirst("x-api-key");
-        if (Objects.nonNull(apiKey)) {
-            return apiKey;
-        }
-        String authorization = exchange.getRequestHeaders().getFirst("Authorization");
-        return Objects.isNull(authorization) ? null : authorization.replaceFirst("^Bearer ", "");
     }
 
     @Override

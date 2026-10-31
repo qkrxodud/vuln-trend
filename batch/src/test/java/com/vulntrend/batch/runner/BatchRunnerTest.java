@@ -150,7 +150,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("한국어 요약 단계가 실패해도 데이터 파일을 쓰고 게시한다")
     void summaryFailureIsNotFatal() {
-        summary = new SummaryService(new SummaryProperties(20, "claude-opus-5-5", "key"),
+        summary = new SummaryService(new SummaryProperties(20, "gpt-6-luna", "key"),
                 Optional.of(source -> { throw new IllegalStateException("down"); }),
                 new FakeSummaryRepository(List.of(SummarySource.of(CveId.from("CVE-2026-0001"), "A flaw.", List.of(),
                         null)), 0), clock);

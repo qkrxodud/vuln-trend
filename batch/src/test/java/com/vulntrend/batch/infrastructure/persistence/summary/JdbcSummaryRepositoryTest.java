@@ -59,7 +59,7 @@ class JdbcSummaryRepositoryTest {
             vulnerability("CVE-2026-0001", "30.00", false);
             vulnerability("CVE-2026-0002", "20.00", false);
             vulnerability("CVE-2026-0003", "10.00", false);
-            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "claude-opus-5-5", NOW, "t", "t");
+            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "gpt-6-luna", NOW, "t", "t");
 
             assertThat(ids(repository.findTopWithoutSummary(2))).containsExactly("CVE-2026-0002");
         }
@@ -69,8 +69,8 @@ class JdbcSummaryRepositoryTest {
         void skipsDiscardedAndRefused() {
             vulnerability("CVE-2026-0001", "30.00", false);
             vulnerability("CVE-2026-0002", "20.00", false);
-            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "claude-opus-5-5", NOW);
-            repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.REFUSED, "claude-opus-4-8", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.REFUSED, "gpt-6-luna-2026-05-18", NOW);
 
             assertThat(repository.findTopWithoutSummary(20)).isEmpty();
         }
@@ -140,12 +140,12 @@ class JdbcSummaryRepositoryTest {
     }
 
     @Test
-    @DisplayName("오늘 Claude 를 부른 횟수는 하루가 시작된 뒤의 호출만 센다")
+    @DisplayName("오늘 요약 모델을 부른 횟수는 하루가 시작된 뒤의 호출만 센다")
     void countsCallsSinceStartOfDay() {
         vulnerability("CVE-2026-0001", "30.00", false);
         vulnerability("CVE-2026-0002", "20.00", false);
         repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.FAILED, null, NOW.minusSeconds(1));
-        repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.GENERATED, "claude-opus-5-5", NOW);
+        repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.GENERATED, "gpt-6-luna", NOW);
 
         assertThat(repository.countCallsSince(NOW)).isEqualTo(1);
     }
@@ -159,11 +159,11 @@ class JdbcSummaryRepositoryTest {
         void savesSummary() {
             vulnerability("CVE-2026-0001", "30.00", false);
 
-            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "claude-opus-4-8", NOW, "t", "t");
+            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "gpt-6-luna-2026-05-18", NOW, "t", "t");
 
             assertThat(jdbc.queryForMap("select what, who, action, model, generated_at from summary"))
                     .containsEntry("what", "원격 코드 실행 취약점이다.")
-                    .containsEntry("model", "claude-opus-4-8");
+                    .containsEntry("model", "gpt-6-luna-2026-05-18");
             assertThat(jdbc.queryForObject("select generated_at from summary", OffsetDateTime.class).toInstant())
                     .isEqualTo(NOW);
         }
@@ -172,10 +172,10 @@ class JdbcSummaryRepositoryTest {
         @DisplayName("한 번 만든 요약은 다시 만들어도 바뀌지 않는다")
         void neverRegenerates() {
             vulnerability("CVE-2026-0001", "30.00", false);
-            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "claude-opus-5-5", NOW, "t", "t");
+            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "gpt-6-luna", NOW, "t", "t");
 
             repository.saveSummary(CveId.from("CVE-2026-0001"), KoreanSummary.of("다른 문장이다.", "누구", "원문 참고"),
-                    "claude-opus-4-8", NOW.plusSeconds(60), "t", "t");
+                    "gpt-6-luna-2026-05-18", NOW.plusSeconds(60), "t", "t");
 
             assertThat(jdbc.queryForObject("select what from summary", String.class)).isEqualTo("원격 코드 실행 취약점이다.");
         }
@@ -185,7 +185,7 @@ class JdbcSummaryRepositoryTest {
         void raisesDescriptionTitle() {
             vulnerability("CVE-2026-0001", "30.00", false);
 
-            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "claude-opus-5-5", NOW,
+            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "gpt-6-luna", NOW,
                     "Description of CVE-2026-0001", "원격 코드 실행 취약점이다");
 
             assertThat(title("CVE-2026-0001")).isEqualTo("원격 코드 실행 취약점이다");
@@ -197,7 +197,7 @@ class JdbcSummaryRepositoryTest {
             vulnerability("CVE-2026-0001", "30.00", false);
             jdbc.update("update vulnerability set title = 'Remote code execution in Foo' where vuln_id = 'CVE-2026-0001'");
 
-            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "claude-opus-5-5", NOW,
+            repository.saveSummary(CveId.from("CVE-2026-0001"), SUMMARY, "gpt-6-luna", NOW,
                     "Description of CVE-2026-0001", "원격 코드 실행 취약점이다");
 
             assertThat(title("CVE-2026-0001")).isEqualTo("Remote code execution in Foo");

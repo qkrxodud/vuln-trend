@@ -32,7 +32,7 @@ class SummaryServiceTest {
     private static final Instant NOW = Instant.parse("2026-10-31T01:00:00Z");
     private static final Instant KOREAN_MIDNIGHT = Instant.parse("2026-10-30T15:00:00Z");
     private static final String KEY = "summary-key-41c9e7";
-    private static final String MODEL = "claude-opus-5-5";
+    private static final String MODEL = "gpt-6-luna";
     private static final SummaryProperties CONFIGURED = new SummaryProperties(20, MODEL, KEY);
     private static final KoreanSummary GOOD = KoreanSummary.of("원격 코드 실행 취약점이다. 쉽게 악용된다.",
             "Foo 사용자가 영향받는다.", "원문 참고");
@@ -65,13 +65,13 @@ class SummaryServiceTest {
         @DisplayName("트렌드 상위 20건 중 요약이 없는 CVE 를 하나씩 요약한다")
         void summarizesTopTwenty() {
             FakeSummaryRepository repository = new FakeSummaryRepository(targets(3), 0);
-            FakeSummarizer claude = generating(MODEL);
+            FakeSummarizer summarizer = generating(MODEL);
 
-            int generated = service(claude, repository).summarizeTop();
+            int generated = service(summarizer, repository).summarizeTop();
 
             assertThat(generated).isEqualTo(3);
             assertThat(repository.requestedTop()).isEqualTo(20);
-            assertThat(claude.asked()).hasSize(3);
+            assertThat(summarizer.asked()).hasSize(3);
             assertThat(repository.saved()).hasSize(3);
         }
 
@@ -80,9 +80,9 @@ class SummaryServiceTest {
         void recordsAnsweringModel() {
             FakeSummaryRepository repository = new FakeSummaryRepository(targets(1), 0);
 
-            service(generating("claude-opus-4-8"), repository).summarizeTop();
+            service(generating("gpt-6-luna-2026-05-18"), repository).summarizeTop();
 
-            assertThat(repository.saved().get(id(1)).model()).isEqualTo("claude-opus-4-8");
+            assertThat(repository.saved().get(id(1)).model()).isEqualTo("gpt-6-luna-2026-05-18");
         }
 
         @Test
@@ -102,14 +102,14 @@ class SummaryServiceTest {
         void recordsEveryCall() {
             List<SummarySource> sources = targets(3);
             FakeSummaryRepository repository = new FakeSummaryRepository(sources, 0);
-            FakeSummarizer claude = new FakeSummarizer(source -> switch (source.getCveId().getValue()) {
+            FakeSummarizer summarizer = new FakeSummarizer(source -> switch (source.getCveId().getValue()) {
                 case "CVE-2026-0001" -> SummaryResult.from(KoreanSummary.of("문제다.", "누구", "sudo rm -rf / 실행"),
                         MODEL, source);
-                case "CVE-2026-0002" -> SummaryResult.refused("claude-opus-4-8");
+                case "CVE-2026-0002" -> SummaryResult.refused("gpt-6-luna-2026-05-18");
                 default -> SummaryResult.failed();
             });
 
-            int generated = service(claude, repository).summarizeTop();
+            int generated = service(summarizer, repository).summarizeTop();
 
             assertThat(generated).isZero();
             assertThat(repository.saved()).isEmpty();
@@ -145,23 +145,23 @@ class SummaryServiceTest {
         @Test
         @DisplayName("오늘 이미 18번 불렀으면 남은 2번만 부른다")
         void callsOnlyWhatIsLeft(CapturedOutput output) {
-            FakeSummarizer claude = generating(MODEL);
+            FakeSummarizer summarizer = generating(MODEL);
 
-            service(claude, new FakeSummaryRepository(targets(5), 18)).summarizeTop();
+            service(summarizer, new FakeSummaryRepository(targets(5), 18)).summarizeTop();
 
-            assertThat(claude.asked()).extracting(SummarySource::getCveId).containsExactly(id(1), id(2));
+            assertThat(summarizer.asked()).extracting(SummarySource::getCveId).containsExactly(id(1), id(2));
             assertThat(output).contains("3 wait for tomorrow");
         }
 
         @Test
         @DisplayName("오늘 20번을 다 불렀으면 더 부르지 않고 이번 실행은 요약 없이 넘어간다")
         void limitUsedUp(CapturedOutput output) {
-            FakeSummarizer claude = generating(MODEL);
+            FakeSummarizer summarizer = generating(MODEL);
 
-            int generated = service(claude, new FakeSummaryRepository(targets(3), 20)).summarizeTop();
+            int generated = service(summarizer, new FakeSummaryRepository(targets(3), 20)).summarizeTop();
 
             assertThat(generated).isZero();
-            assertThat(claude.asked()).isEmpty();
+            assertThat(summarizer.asked()).isEmpty();
             assertThat(output).contains("daily limit of 20 calls is used up");
         }
     }
@@ -183,8 +183,8 @@ class SummaryServiceTest {
         assertThat(output).doesNotContain("store is down");
     }
 
-    private SummaryService service(FakeSummarizer claude, FakeSummaryRepository repository) {
-        return new SummaryService(CONFIGURED, Optional.of(claude), repository, clock);
+    private SummaryService service(FakeSummarizer summarizer, FakeSummaryRepository repository) {
+        return new SummaryService(CONFIGURED, Optional.of(summarizer), repository, clock);
     }
 
     private static FakeSummarizer generating(String model) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-/** Claude 흉내. 정해 둔 규칙으로 답하고, 요약을 부탁받은 원문을 순서대로 기억한다 */
+/** 요약 모델 흉내. 정해 둔 규칙으로 답하고, 요약을 부탁받은 원문을 순서대로 기억한다 */
 public class FakeSummarizer implements Summarizer {
 
     private final Function<SummarySource, SummaryResult> answer;

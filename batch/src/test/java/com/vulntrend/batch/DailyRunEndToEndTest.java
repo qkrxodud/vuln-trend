@@ -52,13 +52,13 @@ import org.springframework.test.context.DynamicPropertySource;
 
 /**
  * WBS 4.4 끝에서 끝까지: 실제 설정·실제 저장 구조(Postgres)·실제 수집기로 하루 한 번 실행을 돌린다.
- * NVD·KEV·EPSS 는 흉내 서버, Claude 는 가짜 Summarizer, git 원격은 임시 폴더의 bare 저장소다(실제 레포·원격은 건드리지 않는다).
+ * NVD·KEV·EPSS 는 흉내 서버, 요약 모델은 가짜 Summarizer, git 원격은 임시 폴더의 bare 저장소다(실제 레포·원격은 건드리지 않는다).
  * 수집 → 대표 제품 → 점수 → 일별 통계 → 요약 → 사이트 데이터 파일 → git push 까지 한 번에 확인한다.
  * 시험끼리 같은 원격을 쓰므로 원격 확인은 "실행 전보다 몇 개 늘었나"로 한다. "5분 이내"는 실데이터 실측이라 NVD 키 뒤로 미룬다.
  */
 @SpringBootTest
 @ActiveProfiles("test")
-@Import({PostgresTestConfig.class, DailyRunEndToEndTest.ClaudeStandIn.class})
+@Import({PostgresTestConfig.class, DailyRunEndToEndTest.SummarizerStandIn.class})
 @DisplayName("하루 한 번 실행 — 끝에서 끝까지")
 class DailyRunEndToEndTest {
 
@@ -87,7 +87,7 @@ class DailyRunEndToEndTest {
     @Autowired
     private GateCheckService gate;
     @Autowired
-    private FakeSummarizer claude;
+    private FakeSummarizer summarizer;
     @Autowired
     private JdbcTemplate jdbc;
     @Autowired
@@ -227,14 +227,14 @@ class DailyRunEndToEndTest {
     }
 
     @Test
-    @DisplayName("두 번째 실행은 이미 요약한 CVE 를 Claude 에 다시 묻지 않는다")
+    @DisplayName("두 번째 실행은 이미 요약한 CVE 를 요약 모델에 다시 묻지 않는다")
     void secondRunDoesNotResummarize() throws IOException {
         runner().run();
-        int askedAfterFirst = claude.asked().size();
+        int askedAfterFirst = summarizer.asked().size();
 
         runner().run();
 
-        assertThat(claude.asked()).hasSize(askedAfterFirst);
+        assertThat(summarizer.asked()).hasSize(askedAfterFirst);
         assertThat(jdbc.queryForObject("select count(*) from summary", Integer.class)).isEqualTo(2);
     }
 
@@ -270,15 +270,15 @@ class DailyRunEndToEndTest {
         return bytes.toByteArray();
     }
 
-    /** Claude 대신 답하는 가짜. 요약 열쇠가 없어 실제 클라이언트는 만들어지지 않는다 */
+    /** 요약 모델(OpenAI) 대신 답하는 가짜. 요약 열쇠가 없어 실제 클라이언트는 만들어지지 않는다 */
     @TestConfiguration(proxyBeanMethods = false)
-    static class ClaudeStandIn {
+    static class SummarizerStandIn {
 
         @Bean
-        FakeSummarizer claudeStandIn() {
+        FakeSummarizer summarizerStandIn() {
             return new FakeSummarizer(source -> SummaryResult.from(KoreanSummary.of(
                     source.getCveId() + " 은 원격 코드 실행 취약점이다.", "원문 참고", "원문 참고"),
-                    "claude-opus-5-5", source));
+                    "gpt-6-luna", source));
         }
     }
 }

@@ -32,8 +32,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
     runtimeOnly 'org.postgresql:postgresql'
-    // 한국어 요약: Anthropic 공식 Java SDK 로 Claude 를 부른다(사용자 결정 2026-10-31, Spring AI 는 쓰지 않음)
-    implementation 'com.anthropic:anthropic-java:3.3.0'
+    // 한국어 요약: OpenAI 공식 Java SDK 로 부른다(사용자 결정 2026-11-01, Claude·Anthropic SDK 대체). 모델은 SUMMARY_MODEL
+    implementation 'com.openai:openai-java:4.95.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

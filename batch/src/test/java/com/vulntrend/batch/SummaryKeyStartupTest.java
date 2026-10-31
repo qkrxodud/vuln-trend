@@ -32,19 +32,28 @@ class SummaryKeyStartupTest {
     }
 
     @Test
-    @DisplayName("요약 열쇠가 없으면 Claude 에 연결할 준비를 하지 않는다")
-    void noClaudeWithoutKey() {
+    @DisplayName("요약 열쇠가 없으면 요약 모델에 연결할 준비를 하지 않는다")
+    void noSummarizerWithoutKey() {
         try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER)) {
             assertThat(context.getBeansOfType(Summarizer.class)).isEmpty();
         }
     }
 
     @Test
-    @DisplayName("요약 열쇠만 주면 사용자가 고른 Claude Opus 5.5 로 요약한다")
-    void defaultModel() {
+    @DisplayName("요약 열쇠만 주고 모델 이름을 적지 않으면 요약을 켜지 않는다")
+    void noDefaultModel() {
         try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER,
                 "--SUMMARY_API_KEY=summary-key-41c9e7")) {
-            assertThat(context.getBean(SummaryProperties.class).getModel()).isEqualTo("claude-opus-5-5");
+            assertThat(context.getBean(SummaryProperties.class).getModel()).isEmpty();
+            assertThat(context.getBeansOfType(Summarizer.class)).isEmpty();
+        }
+    }
+
+    @Test
+    @DisplayName("요약 열쇠와 모델 이름을 모두 주면 요약 창구가 준비된다")
+    void summarizerWhenConfigured() {
+        try (ConfigurableApplicationContext context = start(NO_ENV_FILE, NVD_KEY, NO_RUNNER,
+                "--SUMMARY_API_KEY=summary-key-41c9e7", "--SUMMARY_MODEL=gpt-6-luna")) {
             assertThat(context.getBeansOfType(Summarizer.class)).hasSize(1);
         }
     }

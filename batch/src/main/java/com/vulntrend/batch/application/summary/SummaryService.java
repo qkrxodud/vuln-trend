@@ -55,7 +55,7 @@ public class SummaryService {
         }
     }
 
-    private int summarizeWith(Summarizer claude) {
+    private int summarizeWith(Summarizer summaryModel) {
         Instant now = clock.instant();
         int limit = properties.getDailyLimit();
         int left = limit - repository.countCallsSince(startOfKoreanDay(now));
@@ -67,7 +67,7 @@ public class SummaryService {
         List<SummarySource> thisRun = targets.stream().limit(left).toList();
         Map<SummaryOutcome, Integer> counts = new EnumMap<>(SummaryOutcome.class);
         for (SummarySource source : thisRun) {
-            SummaryOutcome outcome = summarizeOne(claude, source);
+            SummaryOutcome outcome = summarizeOne(summaryModel, source);
             counts.merge(outcome, 1, Integer::sum);
         }
         log.info("Korean summary for {} of the top {} CVEs: {} generated, {} discarded, {} refused, {} failed; "
@@ -77,8 +77,8 @@ public class SummaryService {
         return count(counts, SummaryOutcome.GENERATED);
     }
 
-    private SummaryOutcome summarizeOne(Summarizer claude, SummarySource source) {
-        SummaryResult result = claude.summarize(source);
+    private SummaryOutcome summarizeOne(Summarizer summaryModel, SummarySource source) {
+        SummaryResult result = summaryModel.summarize(source);
         Instant calledAt = clock.instant();
         repository.recordCall(source.getCveId(), result.getOutcome(), result.getModel().orElse(null), calledAt);
         result.getSummary().ifPresent(summary -> save(source, summary, result.getModel().orElseThrow(), calledAt));
