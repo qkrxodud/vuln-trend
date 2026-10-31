@@ -265,8 +265,9 @@ where rejected = false;
 | 뉴스 언급 ≥ 3 | 최근 7일 보안 뉴스 N건 언급 |
 | 그 외 | CVSS N.N, 최근 공개 |
 
-### 한국어 요약 (Spring AI)
+### 한국어 요약 (Claude Opus 5.5, Anthropic 공식 Java SDK — 사용자 결정 2026-10-31. 원래 Spring AI)
 
+- 모델 `claude-opus-5-5`, 호출은 `com.anthropic:anthropic-java`. 환경 변수 `SUMMARY_MODEL`·`SUMMARY_API_KEY`(비면 요약 단계만 건너뜀, 시작은 거부하지 않음). 응답 `{what, who, action}` 은 구조화 출력, effort 는 low 부터. refusal 이면 그 건만 요약 없이. 어림 비용 하루 약 $0.20(20건)
 - 대상: 트렌드 상위 20건 중 `summary` 없는 것. 일 상한 20콜. 생성된 건은 재생성하지 않음
 - 출력 구조: `{what, who, action}` 각 1문장. `action`은 "X 버전 이상으로 업데이트" 수준까지만. **명령어·스크립트·설정값 생성 금지**
 - 프롬프트 가드: 입력은 NVD description + 영향 제품·버전 범위만. "원문에 없는 버전·제품·수치를 만들지 말 것" 명시. 모르면 "원문 참고"로 답하게 함
@@ -293,7 +294,7 @@ vuln-trend/
 
 ```
 web/public/data/
-  meta.json                 updated_at, version, today{new, kev_new, critical, high_risk}, yesterday{같은 4개}
+  meta.json                 updated_at, version, today{new, kev_new, critical, high_risk}, yesterday{같은 4개 — high_risk 는 null 가능, 그때 증감 숨김}
   stats.json                최근 14일 일별 {신규, Critical}, 최근 7일 심각도 분포(미평가 포함)
   index.json                트렌드 상위 100건 (UI는 20건 + "더 보기")
                             행: id, title, score, score_breakdown{kev, ransomware, epss, news, poc, cvss, decay},
@@ -470,7 +471,7 @@ MVP에서 **넣지 않는 것**: 영향 자산 수, 조치 기한 SLA(KEV `dueDa
 | 제공 형태 | 웹사이트만 |
 | 호스팅 | GitHub Pages (정적), 로컬 배치 → push. 배포는 Actions 단일 경로 |
 | 레포 | 코드 + 데이터 단일 레포 (Q1). per-CVE 파일 상한 + orphan 재생성 |
-| 백엔드 | Spring Boot 배치 (웹서버 없음), Java 17 |
+| 백엔드 | Spring Boot 배치 (웹서버 없음), Java 17. 요약은 Anthropic Java SDK + Claude Opus 5.5 |
 | DB | Docker PostgreSQL 16 (로컬 전용, JSONB 원본 보관). PK `vuln_id` |
 | 프론트 | React (Vite + TS), Thymeleaf 아님. `VITE_BASE` 환경변수 |
 | 1차 소스 | NVD + KEV(dueDate, 랜섬웨어) + EPSS(percentile) |
