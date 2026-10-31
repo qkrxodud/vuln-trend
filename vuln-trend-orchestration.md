@@ -33,7 +33,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 |---|---|
 | 백엔드 A | `docker-compose.yml`, `.gitignore`, `.env.example`, `batch/build.gradle`·`settings.gradle`·`gradlew*`·`lombok.config`, `batch/src/main/resources/application*.properties`, `batch/src/main/resources/db/migration/V1__*.sql`, `…/runner/**`, `…/global/**`, `…/domain/vulnerability/**`(Vulnerability·CveId·CvssSelection·SyncState·SyncWindow), `…/domain/collect/**`(Collector·CollectResult·SourceName), `…/application/collect/**`, `…/infrastructure/nvd/**`, `…/infrastructure/persistence/vulnerability/**`, `…/infrastructure/persistence/syncstate/**`, (Phase 6) `…/domain/summary/**`·`…/application/summarize/**`·`…/infrastructure/ai/**` |
 | 백엔드 B | `batch/src/main/resources/product-alias.yml`, `…/domain/product/**`(ProductAlias·primary_product 규칙), `…/domain/enrichment/**`(KEV·EPSS 값), `…/domain/score/**`(TrendScore·WhyNowTemplate·KPI), `…/application/product/**`·`…/application/enrich/**`·`…/application/score/**`·`…/application/export/**`, `…/infrastructure/kev/**`·`…/infrastructure/epss/**`·`…/infrastructure/feed/**`, `…/infrastructure/persistence/{product,enrichment,score,stat}/**`, `…/infrastructure/export/**`(JsonExporter·GitPusher) |
-| 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**` |
+| 프론트 | `web/**` 전부(목업 JSON `web/public/data/**` 포함, M1 까지), `.github/workflows/**`, Gate G 화면 쪽 점검 스크립트(`web/scripts/`) |
 | 오케스트레이터 | `vuln-trend-wbs.md`, `vuln-trend-plan.md`, 이 파일, `CLAUDE.md`, `.claude/**`, `scripts/**` |
 
 공유 파일 변경 요청 예: B 가 `application.properties` 에 `kev.url` 키가 필요하면 → A 에게 "application.properties 에 `kev.url=https://…` 추가 요청" → A 가 넣고 답한다. `build.gradle` 의존성 추가도 같다.
@@ -57,7 +57,7 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 |---|---|---|---|
 | 백엔드 A | `vuln-trend-1f` | 6.1 커밋 → 6.2 (Anthropic Java SDK·Opus 5.5) + B 3.3 커밋 뒤 통계 연결 | 요약 키는 사용자 |
 | 백엔드 B | `vuln-trend-25` | 3.4 커밋 → 3.5 검증(표본) | 실측 DoD 는 NVD 키 뒤 |
-| 프론트 | `vuln-trend-0e` | B 다음 G1 null 변경 커밋 → 5.13 워크플로 파일 | 실제 배포는 원격 레포 뒤 |
+| 프론트 | `vuln-trend-0e` | Gate G 점검 준비(npm run gate:check — stale·푸터·캐시·색인 크기·요약 의심 검출) | M1 뒤 실데이터로 실행 |
 
 ### 재개 메모 (2026-10-30 일시 정지 — 지난 정지, 아래 2026-10-31 정지가 최신)
 
@@ -115,3 +115,4 @@ Phase 6(요약)은 Phase 3 뒤면 가능하므로 A 가 Phase 1·2.4 를 끝낸 
 | 2026-10-31 | 3.2·5.11 승인. A 가 Red 를 공유 폴더에서 돌려 몇 분간 빌드 깨짐 → 규칙 8 재확인 | 사용자 승인 |
 | 2026-10-31 | 3.3·6.1 승인, 요약은 Opus 5.5 + 공식 Java SDK 로 결정, 5.12 대비·lazy 결정 | 사용자 결정 |
 | 2026-10-31 | 3.4·5.12 승인. G1 yesterday.high_risk null 허용(사용자 확정 규칙의 귀결, 오케스트레이터 승인) | — |
+| 2026-10-31 | 5.13 커밋(298ae30). 프론트 다음 배정 = Gate G 점검 준비(사용자 결정) | 사용자 결정 |
