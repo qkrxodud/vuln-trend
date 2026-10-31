@@ -306,7 +306,7 @@ web/public/data/
                                 why_now, is_kev, kev_ransomware, kev_due_date, poc_count, epss, epss_percentile, cvss, cvss_version,
                                 severity, primary_product, summary_what(있으면)
   recent.json               최근 7일(한국 달력일) 발행 건 중 트렌드 순서 상위 100건 (사용자 결정 2026-10-31 — 전부 실으면 수 MB·상세 파일 수천 개)
-  search-index.json         전체 CVE id + 제목 + 제품명 (1년치 3~4MB, 검색창 포커스 시 lazy load)
+  search-index.json         최근 12개월 발행 CVE id + 제목 + 제품명 (실측 약 9.8만 건, 파일 14MB·gzip 2MB, 검색창 포커스 시 lazy load. 사용자 결정 2026-11-01)
   cve/CVE-2026-XXXXX.json   상세 1건씩 — 생성 범위 제한 (아래)
   products/chrome.json      제품별 목록 + 월별 추이
   ecosystems/packagist.json 생태계별 목록 (PHP/Python/JS/Java...)
