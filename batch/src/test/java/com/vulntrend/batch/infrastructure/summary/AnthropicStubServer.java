@@ -17,6 +17,7 @@ public class AnthropicStubServer implements AutoCloseable {
     private String lastRequestBody;
     private String lastCredential;
     private String lastPath;
+    private String lastBetaHeader;
 
     public AnthropicStubServer() throws IOException {
         server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
@@ -46,9 +47,14 @@ public class AnthropicStubServer implements AutoCloseable {
         return lastPath;
     }
 
+    public String lastBetaHeader() {
+        return lastBetaHeader;
+    }
+
     private void handle(HttpExchange exchange) throws IOException {
         lastPath = exchange.getRequestURI().getPath();
         lastCredential = credentialOf(exchange);
+        lastBetaHeader = exchange.getRequestHeaders().getFirst("anthropic-beta");
         lastRequestBody = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
         byte[] bytes = body.getBytes(StandardCharsets.UTF_8);
         exchange.getResponseHeaders().add("Content-Type", "application/json");

@@ -7,12 +7,14 @@ import com.anthropic.errors.AnthropicServiceException;
 import com.anthropic.errors.PermissionDeniedException;
 import com.anthropic.errors.RateLimitException;
 import com.anthropic.errors.UnauthorizedException;
-import com.anthropic.models.messages.JsonOutputFormat;
-import com.anthropic.models.messages.Message;
-import com.anthropic.models.messages.MessageCreateParams;
-import com.anthropic.models.messages.OutputConfig;
-import com.anthropic.models.messages.StopReason;
-import com.anthropic.models.messages.TextBlock;
+import com.anthropic.models.beta.AnthropicBeta;
+import com.anthropic.models.beta.messages.BetaFallbackBlock;
+import com.anthropic.models.beta.messages.BetaJsonOutputFormat;
+import com.anthropic.models.beta.messages.BetaMessage;
+import com.anthropic.models.beta.messages.BetaOutputConfig;
+import com.anthropic.models.beta.messages.BetaStopReason;
+import com.anthropic.models.beta.messages.BetaTextBlock;
+import com.anthropic.models.beta.messages.MessageCreateParams;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.domain.summary.KoreanSummary;
@@ -31,9 +33,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Claude 로 한국어 요약 한 건을 받는다(WBS 6.2). 실패해도 던지지 않고 결과로 알린다 — 요약은 비치명 단계다.
+ * Claude 로 한국어 요약 한 건을 받는다(WBS 6.2·6.3). 실패해도 던지지 않고 결과로 알린다 — 요약은 비치명 단계다.
  * Opus 5.5: thinking 설정은 보내지 않는다(끄면 400). 깊이는 effort LOW 로 낮춘다. assistant 미리 채우기도 400 이라
- * 답의 모양은 구조화 출력(output_config.format)으로 정한다. 거절(stop_reason=refusal)은 그 CVE 만 요약 없이 넘긴다.
+ * 답의 모양은 구조화 출력(output_config.format)으로 정한다.
+ * 거절 대비(사용자 결정 2026-10-31): 베타 server-side-fallback-2026-07-01 + fallbacks "default" — 거절되면 서버가 거절 분류에 맞는
+ * 모델로 다시 답하게 한다. 대체가 일어나면 답에 fallback 블록이 오고, 남기는 모델 이름은 응답의 실제 model 이다.
+ * 대체 모델의 답도 명령어·버전 검사를 똑같이 거친다. 대체 모델까지 거절하면(stop_reason=refusal) 그 CVE 만 요약 없이 넘긴다.
  * 로그에는 SDK 예외 문장을 넣지 않는다(요청 정보가 들어 있을 수 있음) — 예외 종류 이름과 상태 코드만.
  */
 @Slf4j
@@ -51,7 +56,7 @@ public class AnthropicSummarizer implements Summarizer {
     @Override
     public SummaryResult summarize(SummarySource source) {
         try {
-            return read(client.messages().create(paramsFor(source)));
+            return read(client.beta().messages().create(paramsFor(source)), source);
         } catch (UnauthorizedException | PermissionDeniedException e) {
             log.warn("Korean summary request failed: the summary API key was rejected ({}).",
                     e.getClass().getSimpleName());
@@ -70,19 +75,21 @@ public class AnthropicSummarizer implements Summarizer {
         return MessageCreateParams.builder()
                 .model(properties.getModel())
                 .maxTokens(MAX_TOKENS)
+                .addBeta(AnthropicBeta.SERVER_SIDE_FALLBACK_2026_07_01)
+                .fallbacksDefault()
                 .system(SummaryPrompt.instructions())
-                .outputConfig(OutputConfig.builder()
-                        .effort(OutputConfig.Effort.LOW)
-                        .format(JsonOutputFormat.builder().schema(schema()).build())
+                .outputConfig(BetaOutputConfig.builder()
+                        .effort(BetaOutputConfig.Effort.LOW)
+                        .format(BetaJsonOutputFormat.builder().schema(schema()).build())
                         .build())
                 .addUserMessage(SummaryPrompt.request(source))
                 .build();
     }
 
-    private static JsonOutputFormat.Schema schema() {
+    private static BetaJsonOutputFormat.Schema schema() {
         Map<String, Object> fields = new LinkedHashMap<>();
         FIELDS.forEach(field -> fields.put(field, Map.of("type", "string")));
-        return JsonOutputFormat.Schema.builder()
+        return BetaJsonOutputFormat.Schema.builder()
                 .putAdditionalProperty("type", JsonValue.from("object"))
                 .putAdditionalProperty("properties", JsonValue.from(fields))
                 .putAdditionalProperty("required", JsonValue.from(FIELDS))
@@ -90,30 +97,40 @@ public class AnthropicSummarizer implements Summarizer {
                 .build();
     }
 
-    private SummaryResult read(Message message) {
-        Optional<StopReason> stopReason = message.stopReason();
-        if (stopReason.filter(StopReason.REFUSAL::equals).isPresent()) {
-            log.info("Claude declined to summarize this CVE; it stays without a summary.");
-            return SummaryResult.refused();
+    private SummaryResult read(BetaMessage message, SummarySource source) {
+        String model = message.model().asString();
+        message.content().stream().flatMap(block -> block.fallback().stream())
+                .forEach(fallback -> logFallback(fallback, source));
+        Optional<BetaStopReason> stopReason = message.stopReason();
+        if (stopReason.filter(BetaStopReason.REFUSAL::equals).isPresent()) {
+            log.info("Claude declined to summarize {}; it stays without a summary.", source.getCveId());
+            return SummaryResult.refused(model);
         }
-        if (stopReason.filter(StopReason.END_TURN::equals).isEmpty()) {
-            log.warn("Korean summary ended early ({}); it stays without a summary.", stopReason.orElse(null));
+        if (stopReason.filter(BetaStopReason.END_TURN::equals).isEmpty()) {
+            log.warn("Korean summary of {} ended early ({}); it stays without a summary.", source.getCveId(),
+                    stopReason.orElse(null));
             return SummaryResult.failed();
         }
         String text = message.content().stream()
                 .flatMap(block -> block.text().stream())
-                .map(TextBlock::text)
+                .map(BetaTextBlock::text)
                 .collect(Collectors.joining());
-        return parse(text);
+        return parse(text, model, source);
     }
 
-    private SummaryResult parse(String text) {
+    private static void logFallback(BetaFallbackBlock fallback, SummarySource source) {
+        log.info("Claude {} declined {} ({}); {} answered instead.", fallback.from().model().asString(),
+                source.getCveId(), fallback.trigger().category().map(Object::toString).orElse("unknown"),
+                fallback.to().model().asString());
+    }
+
+    private SummaryResult parse(String text, String model, SummarySource source) {
         try {
             SummaryOutput output = objectMapper.readValue(text, SummaryOutput.class);
-            return SummaryResult.from(KoreanSummary.of(output.what(), output.who(), output.action()),
-                    properties.getModel());
+            return SummaryResult.from(KoreanSummary.of(output.what(), output.who(), output.action()), model, source);
         } catch (JsonProcessingException e) {
-            log.warn("Korean summary was not in the expected shape ({}).", e.getClass().getSimpleName());
+            log.warn("Korean summary of {} was not in the expected shape ({}).", source.getCveId(),
+                    e.getClass().getSimpleName());
             return SummaryResult.failed();
         }
     }

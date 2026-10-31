@@ -14,6 +14,7 @@ import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.global.config.KevProperties;
 import com.vulntrend.batch.global.config.NvdProperties;
 import com.vulntrend.batch.global.config.SummaryProperties;
@@ -42,6 +43,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -179,7 +181,8 @@ class CollectionFailureRuleRunTest {
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock),
-                new SummaryService(new SummaryProperties(20, "", "")));
+                new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+                        new FakeSummaryRepository(List.of(), 0), clock));
     }
 
     private static String closedUrl() throws IOException {

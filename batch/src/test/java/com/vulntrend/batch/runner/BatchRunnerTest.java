@@ -13,6 +13,7 @@ import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.SummaryProperties;
@@ -20,6 +21,7 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -185,6 +187,7 @@ class BatchRunnerTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
                 assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock),
-                new SummaryService(new SummaryProperties(20, "", "")));
+                new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+                        new FakeSummaryRepository(List.of(), 0), clock));
     }
 }

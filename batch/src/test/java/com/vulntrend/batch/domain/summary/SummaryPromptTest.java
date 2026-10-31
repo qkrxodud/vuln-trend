@@ -2,8 +2,8 @@ package com.vulntrend.batch.domain.summary;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.vulntrend.batch.domain.vulnerability.AffectedProduct;
 import com.vulntrend.batch.domain.vulnerability.CveId;
+import java.math.BigDecimal;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -64,10 +64,10 @@ class SummaryPromptTest {
     class Request {
 
         @Test
-        @DisplayName("NVD 설명과 영향받는 제품·버전 범위만 넘긴다")
+        @DisplayName("NVD 설명과 영향받는 제품·버전 범위만 넘기고 CVE 번호와 점수는 넘기지 않는다")
         void onlyDescriptionAndProducts() {
-            SummarySource source = SummarySource.of(DESCRIPTION, List.of(
-                    AffectedProduct.of(LOG4SHELL, "apache", "log4j", ">= 2.0-beta9, < 2.15.0")));
+            SummarySource source = SummarySource.of(LOG4SHELL, DESCRIPTION, List.of(
+                    SummaryProduct.of("apache", "log4j", ">= 2.0-beta9, < 2.15.0", null)), new BigDecimal("10.0"));
 
             assertThat(SummaryPrompt.request(source)).isEqualTo("""
                     <description>
@@ -82,16 +82,25 @@ class SummaryPromptTest {
         @Test
         @DisplayName("버전 범위가 없는 제품은 모든 버전이 영향받는다고 넘긴다")
         void allVersions() {
-            SummarySource source = SummarySource.of(DESCRIPTION, List.of(
-                    AffectedProduct.of(LOG4SHELL, "apache", "log4j", null)));
+            SummarySource source = SummarySource.of(LOG4SHELL, DESCRIPTION, List.of(
+                    SummaryProduct.of("apache", "log4j", null, null)), null);
 
             assertThat(SummaryPrompt.request(source)).contains("- apache log4j: 모든 버전");
         }
 
         @Test
+        @DisplayName("고친 버전을 알면 그 버전도 함께 넘긴다")
+        void fixedVersion() {
+            SummarySource source = SummarySource.of(LOG4SHELL, DESCRIPTION, List.of(
+                    SummaryProduct.of("apache", "log4j", "< 2.15.0", "2.15.0")), null);
+
+            assertThat(SummaryPrompt.request(source)).contains("- apache log4j: < 2.15.0 (고친 버전 2.15.0)");
+        }
+
+        @Test
         @DisplayName("영향받는 제품을 모르면 모른다고 넘긴다")
         void noProducts() {
-            assertThat(SummaryPrompt.request(SummarySource.of(DESCRIPTION, List.of())))
+            assertThat(SummaryPrompt.request(SummarySource.of(LOG4SHELL, DESCRIPTION, List.of(), null)))
                     .contains("<affected_products>\n(원문에 없음)\n</affected_products>");
         }
     }

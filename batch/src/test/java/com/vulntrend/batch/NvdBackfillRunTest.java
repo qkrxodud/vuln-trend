@@ -13,6 +13,7 @@ import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakeSummaryRepository;
 import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.NvdProperties;
 import com.vulntrend.batch.global.config.SummaryProperties;
@@ -32,6 +33,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -127,6 +129,7 @@ class NvdBackfillRunTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
-                new DailyStatService(new FakeDailyStatRepository(), clock), new SummaryService(new SummaryProperties(20, "", "")));
+                new DailyStatService(new FakeDailyStatRepository(), clock), new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+                        new FakeSummaryRepository(List.of(), 0), clock));
     }
 }

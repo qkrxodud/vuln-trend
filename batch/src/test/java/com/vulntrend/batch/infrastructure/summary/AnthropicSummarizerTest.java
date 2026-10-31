@@ -6,12 +6,13 @@ import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.domain.summary.KoreanSummary;
+import com.vulntrend.batch.domain.summary.SummaryProduct;
 import com.vulntrend.batch.domain.summary.SummaryResult;
 import com.vulntrend.batch.domain.summary.SummarySource;
-import com.vulntrend.batch.domain.vulnerability.AffectedProduct;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.global.config.SummaryProperties;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.StreamSupport;
 import org.junit.jupiter.api.AfterEach;
@@ -30,9 +31,10 @@ class AnthropicSummarizerTest {
 
     private static final String KEY = "summary-key-41c9e7";
     private static final String MODEL = "claude-opus-5-5";
-    private static final SummarySource LOG4SHELL = SummarySource.of(
+    private static final String FALLBACK_MODEL = "claude-opus-4-8";
+    private static final SummarySource LOG4SHELL = SummarySource.of(CveId.from("CVE-2021-44228"),
             "Apache Log4j2 2.0-beta9 through 2.15.0 JNDI features do not protect against attacker controlled LDAP.",
-            List.of(AffectedProduct.of(CveId.from("CVE-2021-44228"), "apache", "log4j", ">= 2.0-beta9, < 2.15.0")));
+            List.of(SummaryProduct.of("apache", "log4j", ">= 2.0-beta9, < 2.15.0", null)), new BigDecimal("10.0"));
     private static final String GOOD_SUMMARY = """
             {"what": "로그 문자열로 원격 코드를 실행할 수 있는 취약점이다.", \
             "who": "Log4j 2.0-beta9 이상 2.15.0 미만 사용자가 영향받는다.", \
@@ -92,6 +94,17 @@ class AnthropicSummarizerTest {
         }
 
         @Test
+        @DisplayName("거절되면 서버가 거절 분류에 맞는 다른 Claude 모델로 다시 답하게 한다")
+        void serverSideFallback() throws IOException {
+            claude.answer(200, message("end_turn", GOOD_SUMMARY));
+
+            summarizer().summarize(LOG4SHELL);
+
+            assertThat(request().path("fallbacks").asText()).isEqualTo("default");
+            assertThat(claude.lastBetaHeader()).contains("server-side-fallback-2026-07-01");
+        }
+
+        @Test
         @DisplayName("지시문은 따로 보내고 원문은 사용자 글 하나로만 보낸다")
         void instructionsAndSourceOnly() throws IOException {
             claude.answer(200, message("end_turn", GOOD_SUMMARY));
@@ -124,6 +137,16 @@ class AnthropicSummarizerTest {
         }
 
         @Test
+        @DisplayName("원문에 없는 버전이 나오면 요약을 버린다")
+        void discardsInventedVersions() throws IOException {
+            claude.answer(200, message("end_turn", """
+                    {"what": "원격 코드 실행 취약점이다.", "who": "Log4j 사용자가 영향받는다.", \
+                    "action": "Log4j 2.17.1 이상으로 업데이트한다."}"""));
+
+            assertThat(summarizer().summarize(LOG4SHELL).isDiscarded()).isTrue();
+        }
+
+        @Test
         @DisplayName("답에 명령어가 섞여 있으면 요약을 버린다")
         void discardsCommands() throws IOException {
             claude.answer(200, message("end_turn", """
@@ -147,7 +170,7 @@ class AnthropicSummarizerTest {
             SummaryResult result = summarizer().summarize(LOG4SHELL);
 
             assertThat(result.isRefused()).isTrue();
-            assertThat(output).contains("declined to summarize");
+            assertThat(output).contains("declined to summarize CVE-2021-44228");
         }
 
         @Test
@@ -164,6 +187,48 @@ class AnthropicSummarizerTest {
             claude.answer(200, message("end_turn", "요약할 수 없습니다"));
 
             assertThat(summarizer().summarize(LOG4SHELL).isFailed()).isTrue();
+        }
+    }
+
+    @Nested
+    @DisplayName("Claude Opus 5.5 가 거절해 다른 모델이 대신 답하면")
+    class Fallback {
+
+        @Test
+        @DisplayName("실제로 답한 모델 이름을 요약과 함께 남긴다")
+        void recordsAnsweringModel(CapturedOutput output) throws IOException {
+            claude.answer(200, fallbackMessage("end_turn", GOOD_SUMMARY));
+
+            SummaryResult result = summarizer().summarize(LOG4SHELL);
+
+            assertThat(result.isGenerated()).isTrue();
+            assertThat(result.getModel()).contains(FALLBACK_MODEL);
+            assertThat(output).contains("Claude claude-opus-5-5 declined CVE-2021-44228 (cyber); "
+                    + "claude-opus-4-8 answered instead.");
+        }
+
+        @Test
+        @DisplayName("대신 쓴 요약도 명령어가 섞이면 버린다")
+        void fallbackStillGuarded() throws IOException {
+            claude.answer(200, fallbackMessage("end_turn", """
+                    {"what": "원격 코드 실행 취약점이다.", "who": "Log4j 사용자가 영향받는다.", \
+                    "action": "pip install -U log4j 로 올린다."}"""));
+
+            assertThat(summarizer().summarize(LOG4SHELL).isDiscarded()).isTrue();
+        }
+
+        @Test
+        @DisplayName("대신 답하던 모델까지 거절하면 이 CVE 는 요약 없이 넘어간다")
+        void fallbackAlsoRefused() throws IOException {
+            claude.answer(200, """
+                    {"id": "msg_1", "type": "message", "role": "assistant", "model": "claude-opus-4-8", \
+                    "content": [%s], "stop_reason": "refusal", "stop_sequence": null, \
+                    "usage": {"input_tokens": 10, "output_tokens": 0}}""".formatted(FALLBACK_BLOCK));
+
+            SummaryResult result = summarizer().summarize(LOG4SHELL);
+
+            assertThat(result.isRefused()).isTrue();
+            assertThat(result.getModel()).contains(FALLBACK_MODEL);
         }
     }
 
@@ -206,6 +271,18 @@ class AnthropicSummarizerTest {
 
     private static List<String> texts(JsonNode array) {
         return StreamSupport.stream(array.spliterator(), false).map(JsonNode::asText).toList();
+    }
+
+    private static final String FALLBACK_BLOCK = """
+            {"type": "fallback", "from": {"model": "claude-opus-5-5"}, "to": {"model": "claude-opus-4-8"}, \
+            "trigger": {"type": "refusal", "category": "cyber"}}""";
+
+    private String fallbackMessage(String stopReason, String text) throws IOException {
+        return """
+                {"id": "msg_1", "type": "message", "role": "assistant", "model": "claude-opus-4-8", \
+                "content": [%s, {"type": "text", "text": %s}], "stop_reason": "%s", "stop_sequence": null, \
+                "usage": {"input_tokens": 10, "output_tokens": 20}}""".formatted(FALLBACK_BLOCK,
+                objectMapper.writeValueAsString(text), stopReason);
     }
 
     private String message(String stopReason, String text) throws IOException {

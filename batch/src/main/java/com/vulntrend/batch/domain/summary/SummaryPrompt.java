@@ -1,13 +1,12 @@
 package com.vulntrend.batch.domain.summary;
 
-import com.vulntrend.batch.domain.vulnerability.AffectedProduct;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
- * 한국어 요약 지시문(기획서 6장 요약 가드, WBS 6.2). 지시문은 모든 요청에 똑같이 보내고, 원문은 사용자 글로 따로 보낸다.
+ * 한국어 요약 지시문(기획서 6장 요약 가드, WBS 6.2·6.3). 지시문은 모든 요청에 똑같이 보내고, 원문은 사용자 글로 따로 보낸다.
  * 원문(NVD 설명)은 남이 쓴 글이라 그 안의 문장을 지시로 따르지 않게 태그로 감싼다.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -41,12 +40,15 @@ public final class SummaryPrompt {
                 + "<affected_products>\n" + productLines(source.getProducts()) + "\n</affected_products>";
     }
 
-    private static String productLines(List<AffectedProduct> products) {
+    private static String productLines(List<SummaryProduct> products) {
         if (products.isEmpty()) {
             return NO_PRODUCTS;
         }
-        return products.stream()
-                .map(p -> "- " + p.getVendor() + " " + p.getProduct() + ": " + p.getVulnerableRange().orElse(ALL_VERSIONS))
-                .collect(Collectors.joining("\n"));
+        return products.stream().map(SummaryPrompt::productLine).collect(Collectors.joining("\n"));
+    }
+
+    private static String productLine(SummaryProduct p) {
+        String line = "- " + p.getVendor() + " " + p.getProduct() + ": " + p.getVulnerableRange().orElse(ALL_VERSIONS);
+        return p.getFixedVersion().map(fixed -> line + " (고친 버전 " + fixed + ")").orElse(line);
     }
 }

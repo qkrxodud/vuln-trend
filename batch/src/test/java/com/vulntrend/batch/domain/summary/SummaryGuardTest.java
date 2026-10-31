@@ -3,14 +3,25 @@ package com.vulntrend.batch.domain.summary;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Named.named;
 
+import com.vulntrend.batch.domain.vulnerability.CveId;
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Named;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-@DisplayName("요약에 섞인 명령어 찾기")
+@DisplayName("요약에 섞인 명령어·지어낸 버전 찾기")
 class SummaryGuardTest {
+
+    private static final SummarySource LOG4SHELL = SummarySource.of(CveId.from("CVE-2021-44228"),
+            "Apache Log4j2 2.0-beta9 through 2.15.0 JNDI features do not protect against attacker controlled LDAP.",
+            List.of(SummaryProduct.of("apache", "log4j", ">= 2.0-beta9, < 2.15.0", "2.15.1"),
+                    SummaryProduct.of("apache", "log4j-core-2.16", null, null)),
+            new BigDecimal("10.0"));
 
     @ParameterizedTest(name = "{0}")
     @MethodSource("commands")
@@ -49,5 +60,58 @@ class SummaryGuardTest {
                 named("부등호 범위", "버전 >= 2.0, < 2.15.0 이 영향받는다."),
                 named("원문 참고", "원문 참고"),
                 named("공격 설명", "공격자가 LDAP 서버를 통해 원격에서 코드를 실행할 수 있다."));
+    }
+
+    @Nested
+    @DisplayName("원문에 없는 버전")
+    class Versions {
+
+        @Test
+        @DisplayName("원문 어디에도 없는 버전이 나오면 지어낸 것으로 본다")
+        void inventedVersion() {
+            assertThat(SummaryGuard.hasUnknownVersion("Log4j 2.17.1 이상으로 업데이트한다.", LOG4SHELL)).isTrue();
+        }
+
+        @Test
+        @DisplayName("앞에 v 를 붙여도 같은 버전으로 본다")
+        void prefixedVersion() {
+            assertThat(SummaryGuard.hasUnknownVersion("v2.17.1 이상으로 업데이트한다.", LOG4SHELL)).isTrue();
+            assertThat(SummaryGuard.hasUnknownVersion("v2.15.0 미만이 영향받는다.", LOG4SHELL)).isFalse();
+        }
+
+        @ParameterizedTest(name = "{0}")
+        @MethodSource("com.vulntrend.batch.domain.summary.SummaryGuardTest#knownVersions")
+        @DisplayName("원문에 있는 버전은 통과한다")
+        void knownVersion(String text) {
+            assertThat(SummaryGuard.hasUnknownVersion(text, LOG4SHELL)).isFalse();
+        }
+
+        @Test
+        @DisplayName("CVSS 점수는 버전으로 보지 않는다")
+        void scoreIsNotVersion() {
+            assertThat(SummaryGuard.hasUnknownVersion("심각도 점수 10.0 의 원격 코드 실행 취약점이다.", LOG4SHELL)).isFalse();
+        }
+
+        @Test
+        @DisplayName("점수가 없는 CVE 에서 원문에 없는 숫자는 점수로 봐주지 않는다")
+        void noScore() {
+            SummarySource unrated = SummarySource.of(CveId.from("CVE-2026-0001"), "A flaw in Foo.", List.of(), null);
+
+            assertThat(SummaryGuard.hasUnknownVersion("점수 9.8 의 취약점이다.", unrated)).isTrue();
+        }
+
+        @Test
+        @DisplayName("버전 숫자가 없는 문장은 그대로 통과한다")
+        void noVersion() {
+            assertThat(SummaryGuard.hasUnknownVersion("원문 참고", LOG4SHELL)).isFalse();
+        }
+    }
+
+    static Stream<Named<String>> knownVersions() {
+        return Stream.of(
+                named("설명에 있는 버전", "Log4j 2.0-beta9 이상 2.15.0 이하가 영향받는다."),
+                named("영향 범위에 있는 버전", "2.15.0 미만 사용자가 영향받는다."),
+                named("고친 버전", "Log4j 2.15.1 이상으로 업데이트한다."),
+                named("제품 이름에 든 버전", "log4j-core-2.16 사용자도 확인한다."));
     }
 }

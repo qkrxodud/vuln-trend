@@ -31,6 +31,10 @@ public class KoreanSummary {
         return sentences().filter(Objects::nonNull).anyMatch(SummaryGuard::hasCommand);
     }
 
+    public boolean hasUnknownVersion(SummarySource source) {
+        return sentences().filter(Objects::nonNull).anyMatch(sentence -> SummaryGuard.hasUnknownVersion(sentence, source));
+    }
+
     public boolean isIncomplete() {
         return sentences().anyMatch(sentence -> Objects.isNull(sentence) || sentence.isBlank());
     }
