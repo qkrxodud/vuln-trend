@@ -52,6 +52,10 @@ export interface TrendRow {
   severity: Severity
   /** product_alias 로 정규화된 표시 이름. 매핑이 없으면 CPE product 원문, 제품 정보가 아예 없으면 `null` */
   primary_product: string | null
+  /** 제품군 키(categories.json 의 product_families). 모르면 `null` = 분류 전. 배치가 내보내기 전에는 없음 (2026-11-01) */
+  product_family?: string | null
+  /** 공격 유형 키들(categories.json 의 attack_types). 모르면 `[]` = 분류 전. 배치가 내보내기 전에는 없음 */
+  attack_types?: string[]
   /** 한국어 요약 what. 아직 없으면 `null` (화면은 title 로 대신 보인다) */
   summary_what: string | null
   /** 수정 버전 모음(제품·가지 합침). 목록 행의 "→ n 이상으로 업데이트". 배치가 내보내기 전에는 없음 */

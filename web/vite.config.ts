@@ -1,9 +1,10 @@
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import { cvePageHtml, minePageHtml, newPageHtml, siteMetaBlock } from './src/lib/site-meta.ts'
+import { categoryPageHtml, cvePageHtml, minePageHtml, newPageHtml, siteMetaBlock } from './src/lib/site-meta.ts'
+import type { Categories } from './src/types/categories.ts'
 import type { CveDetail } from './src/types/cve.ts'
 
 // GitHub Pages 프로젝트 사이트 기본 경로. 도메인을 연결하면 VITE_BASE=/ 로 빌드한다 (기획서 8장 프론트 기술, P8)
@@ -80,7 +81,28 @@ const cveStaticPages = (siteUrl: string | undefined): Plugin => {
       // 내 제품 화면(/mine)도 같은 이유로 둔다
       mkdirSync(join(outDir, 'mine'), { recursive: true })
       writeFileSync(join(outDir, 'mine', 'index.html'), minePageHtml(shell, siteUrl))
-      this.info(`CVE static pages: ${files.length} (+ /new, /mine)`)
+      // 분류 화면(/type/<key>, /family/<key>)도 미리보기로 응답한다. 배치가 아직 분류를 내보내지 않았으면 건너뛴다.
+      // 키는 폴더 이름이 되므로 영소문자·숫자·밑줄만 받는다
+      const categoriesFile = join(outDir, 'data', 'categories.json')
+      const categories = existsSync(categoriesFile)
+        ? (JSON.parse(readFileSync(categoriesFile, 'utf8')) as Categories)
+        : { attack_types: [], product_families: [] }
+      const axes = [
+        ['type', categories.attack_types],
+        ['family', categories.product_families],
+      ] as const
+      let categoryPages = 0
+      axes.forEach(([axis, list]) =>
+        list
+          .filter((category) => /^[a-z0-9_]+$/.test(category.key))
+          .forEach((category) => {
+            const pageDir = join(outDir, axis, category.key)
+            mkdirSync(pageDir, { recursive: true })
+            writeFileSync(join(pageDir, 'index.html'), categoryPageHtml(shell, axis, category, siteUrl))
+            categoryPages += 1
+          }),
+      )
+      this.info(`CVE static pages: ${files.length} (+ /new, /mine, categories ${categoryPages})`)
     },
   }
 }

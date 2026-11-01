@@ -1,5 +1,6 @@
 // 배치가 쓴 정적 JSON(web/public/data)을 읽는다. 기획서 7장 캐시 원칙(P16):
 // meta.json 은 매번 서버에 확인(no-cache), 나머지는 ?v=<meta.version> 으로 새 배치 때만 다시 받는다.
+import type { Categories } from '../types/categories.ts'
 import type { CveDetail } from '../types/cve.ts'
 import type { Meta } from '../types/meta.ts'
 import type { SearchIndex } from '../types/search.ts'
@@ -16,6 +17,8 @@ export interface DataClient {
   /** 최근 7일 새 CVE. 그 화면에 들어올 때만 읽는다 */
   recent(version: string): Promise<RecentList>
   searchIndex(version: string): Promise<SearchIndex>
+  /** 공격 유형·제품군 분류. 배치가 아직 내보내지 않았으면(404) `null` */
+  categories(version: string): Promise<Categories | null>
   /** 상세 파일을 만들지 않은 CVE(P6)는 `null` */
   cveDetail(cveId: string, version: string): Promise<CveDetail | null>
 }
@@ -66,6 +69,7 @@ export const createDataClient = (fetchFn: FetchFn, baseUrl: string = import.meta
     trendIndex: (version) => loadRequired<TrendIndex>(versionedUrl('index.json', version)),
     recent: (version) => loadRequired<RecentList>(versionedUrl('recent.json', version)),
     searchIndex: (version) => loadRequired<SearchIndex>(versionedUrl('search-index.json', version)),
+    categories: (version) => load<Categories>(versionedUrl('categories.json', version), {}, true),
     cveDetail: (cveId, version) => load<CveDetail>(versionedUrl(`cve/${cveId}.json`, version), {}, true),
   }
 }

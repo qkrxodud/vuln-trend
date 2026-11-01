@@ -146,3 +146,38 @@ export const minePageHtml = (shell: string, siteUrl: string | undefined): string
     `${MINE_TITLE} | ${SITE_NAME}`,
     siteUrl,
   )
+
+const AXIS_TITLE = { type: '공격 유형', family: '제품군' } as const
+
+interface CategorySummary {
+  key: string
+  label: string
+  count_7d: number
+  count_30d: number
+  kev_count: number
+}
+
+/** /type/<key>, /family/<key> 분류 정적 페이지. 미리보기에 분류 이름과 빌드 때의 건수를 담는다 */
+export const categoryPageHtml = (
+  shell: string,
+  axis: 'type' | 'family',
+  category: CategorySummary,
+  siteUrl: string | undefined,
+): string => {
+  const count = (value: number) => value.toLocaleString('en-US')
+  const description =
+    `최근 7일 ${count(category.count_7d)}건 · 30일 ${count(category.count_30d)}건 · KEV 누적 ${count(category.kev_count)}건. ` +
+    `${category.label} 취약점을 트렌드 점수 순으로 봅니다.`
+  return withPageMeta(
+    shell,
+    {
+      title: `${AXIS_TITLE[axis]}: ${category.label} — ${SITE_NAME}`,
+      description,
+      type: 'website',
+      path: `${axis}/${category.key}`,
+      canonical: true,
+    },
+    `${category.label} 취약점 | ${SITE_NAME}`,
+    siteUrl,
+  )
+}

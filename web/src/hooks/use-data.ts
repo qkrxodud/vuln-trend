@@ -1,5 +1,6 @@
 import { useCallback, useContext } from 'react'
 import type { DataClient } from '../api/data-client.ts'
+import type { Categories } from '../types/categories.ts'
 import type { CveDetail } from '../types/cve.ts'
 import type { Meta } from '../types/meta.ts'
 import type { SearchIndex } from '../types/search.ts'
@@ -39,6 +40,7 @@ const loadStats = (client: DataClient, version: string) => client.stats(version)
 const loadTrendIndex = (client: DataClient, version: string) => client.trendIndex(version)
 const loadRecent = (client: DataClient, version: string) => client.recent(version)
 const loadSearchIndex = (client: DataClient, version: string) => client.searchIndex(version)
+const loadCategories = (client: DataClient, version: string) => client.categories(version)
 
 export const useMeta = (): Loadable<Meta> => useDataContext().meta
 
@@ -56,6 +58,9 @@ export const useRecentIf = (enabled: boolean): Loadable<RecentList> =>
 /** 1년치 수 MB 라 검색창을 쓰기 시작할 때(enabled)만 받는다 (P19) */
 export const useSearchIndex = (enabled: boolean): Loadable<SearchIndex> =>
   useVersioned(enabled ? 'search-index' : null, loadSearchIndex)
+
+/** 공격 유형·제품군 분류(약 60KB gzip). 아직 없으면 `ready` + `null` */
+export const useCategories = (): Loadable<Categories | null> => useVersioned('categories', loadCategories)
 
 /** 고른 CVE 의 상세. 상세 파일이 없는 CVE 는 `ready` + `null` (NVD 링크로 안내) */
 export const useCveDetail = (cveId: string | null): Loadable<CveDetail | null> => {

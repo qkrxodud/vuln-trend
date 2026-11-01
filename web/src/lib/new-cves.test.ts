@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { trendRow } from '../test/rows.ts'
+import { UNCLASSIFIED } from './categories.ts'
 import {
   ALL_NEW,
   dateOptions,
@@ -121,5 +122,21 @@ describe('선택지', () => {
     const many = [...rows, trendRow({ primary_product: 'Apache Tomcat' })]
 
     expect(productSuggestions(many, 2)).toEqual(['Apache Tomcat', 'GitLab'])
+  })
+})
+
+describe('분류로 거르기', () => {
+  const classified = [
+    trendRow({ id: 'r', attack_types: ['rce'], product_family: 'network' }),
+    trendRow({ id: 'x', attack_types: ['xss'], product_family: 'web_cms' }),
+    trendRow({ id: 'u', attack_types: [], product_family: null }),
+  ]
+  const ids = (list: { id: string }[]) => list.map((row) => row.id)
+
+  it('공격 유형·제품군으로 거르고, "분류 전"만 따로 볼 수도 있다', () => {
+    expect(ids(filterNew(classified, { ...ALL_NEW, attackType: 'rce' }))).toEqual(['r'])
+    expect(ids(filterNew(classified, { ...ALL_NEW, family: 'web_cms' }))).toEqual(['x'])
+    expect(ids(filterNew(classified, { ...ALL_NEW, family: UNCLASSIFIED }))).toEqual(['u'])
+    expect(isFiltered({ ...ALL_NEW, attackType: 'rce' })).toBe(true)
   })
 })

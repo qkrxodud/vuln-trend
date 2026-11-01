@@ -2,6 +2,7 @@
 // recent.json(약 3,400건)을 화면에서 거르고 정렬한다. 한 번에 50건씩 그린다
 import type { IsoDate, Severity } from '../types/common.ts'
 import type { TrendRow } from '../types/trend.ts'
+import { matchesCategory } from './categories.ts'
 import { formatKstDate } from './kst-time.ts'
 import { productName } from './urgency.ts'
 
@@ -19,16 +20,30 @@ export interface NewFilter {
   product: string
   /** KST 공개일. `null` 이면 모든 날 */
   date: IsoDate | null
+  /** 공격 유형 키, 또는 분류 전(UNCLASSIFIED). `null` 이면 모두 */
+  attackType: string | null
+  /** 제품군 키, 또는 분류 전(UNCLASSIFIED). `null` 이면 모두 */
+  family: string | null
 }
 
-export const ALL_NEW: NewFilter = { severities: [], kevOnly: false, fixOnly: false, product: '', date: null }
+export const ALL_NEW: NewFilter = {
+  severities: [],
+  kevOnly: false,
+  fixOnly: false,
+  product: '',
+  date: null,
+  attackType: null,
+  family: null,
+}
 
 export const isFiltered = (filter: NewFilter): boolean =>
   filter.severities.length > 0 ||
   filter.kevOnly ||
   filter.fixOnly ||
   filter.product.trim() !== '' ||
-  filter.date !== null
+  filter.date !== null ||
+  filter.attackType !== null ||
+  filter.family !== null
 
 export const hasFixInfo = (row: TrendRow): boolean =>
   (row.fix_versions ?? []).length > 0 || (row.patch_url ?? null) !== null
@@ -47,7 +62,9 @@ export const filterNew = (rows: TrendRow[], filter: NewFilter): TrendRow[] => {
       (filter.kevOnly === false || row.is_kev) &&
       (filter.fixOnly === false || hasFixInfo(row)) &&
       (product === '' || productName(row).toLowerCase().includes(product)) &&
-      (filter.date === null || publishedDate(row) === filter.date),
+      (filter.date === null || publishedDate(row) === filter.date) &&
+      matchesCategory(row, 'type', filter.attackType) &&
+      matchesCategory(row, 'family', filter.family),
   )
 }
 

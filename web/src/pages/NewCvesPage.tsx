@@ -6,8 +6,9 @@ import { DetailPanel } from '../components/detail/DetailPanel.tsx'
 import { LoadingState } from '../components/state/LoadingState.tsx'
 import { ErrorState } from '../components/state/ErrorState.tsx'
 import { WatchRow } from '../components/watch/WatchRow.tsx'
-import { useMeta, useRecent } from '../hooks/use-data.ts'
+import { useCategories, useMeta, useRecent } from '../hooks/use-data.ts'
 import { useIsDesktop } from '../hooks/use-media-query.ts'
+import { axisCategories, countByCategory, UNCLASSIFIED, type CategoryAxis } from '../lib/categories.ts'
 import { formatCount } from '../lib/kpi.ts'
 import { formatKstDateTime } from '../lib/kst-time.ts'
 import {
@@ -23,6 +24,7 @@ import {
 } from '../lib/new-cves.ts'
 import { SEVERITY_BADGE } from '../lib/severity.ts'
 import { referenceDate } from '../lib/urgency.ts'
+import type { Categories } from '../types/categories.ts'
 import type { Severity } from '../types/common.ts'
 import type { Meta } from '../types/meta.ts'
 import type { TrendRow } from '../types/trend.ts'
@@ -34,15 +36,55 @@ const TOGGLE =
   'rounded-full border border-axis bg-surface px-3 py-1.5 text-[13px] text-ink-2 aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:font-semibold aria-pressed:text-white'
 const CLEAR = 'rounded-full border border-axis bg-surface px-2.5 py-0.5 text-xs font-semibold text-ink'
 
+const SELECT = 'max-w-[11rem] rounded-full border border-axis bg-surface px-2.5 py-1 text-[13px] text-ink'
+
+// 공격 유형·제품군 고르기. 이름은 categories.json 의 label, 건수는 최근 7일 안에서 센다
+const CategorySelect = ({
+  axis,
+  label,
+  rows,
+  categories,
+  value,
+  onChange,
+}: {
+  axis: CategoryAxis
+  label: string
+  rows: TrendRow[]
+  categories: Categories
+  value: string | null
+  onChange: (value: string | null) => void
+}) => {
+  const counts = countByCategory(rows, axis)
+  return (
+    <label className="inline-flex items-center gap-1.5">
+      {label}
+      <select
+        value={value ?? ''}
+        onChange={(event) => onChange(event.target.value === '' ? null : event.target.value)}
+        className={SELECT}
+      >
+        <option value="">모두</option>
+        {axisCategories(categories, axis).map((category) => (
+          <option key={category.key} value={category.key}>
+            {`${category.label} (${formatCount(counts.get(category.key) ?? 0)})`}
+          </option>
+        ))}
+        <option value={UNCLASSIFIED}>{`분류 전 (${formatCount(counts.get(UNCLASSIFIED) ?? 0)})`}</option>
+      </select>
+    </label>
+  )
+}
+
 interface FiltersProps {
   rows: TrendRow[]
+  categories: Categories | null
   filter: NewFilter
   sort: NewSort
   onFilter: (filter: NewFilter) => void
   onSort: (sort: NewSort) => void
 }
 
-const Filters = ({ rows, filter, sort, onFilter, onSort }: FiltersProps) => {
+const Filters = ({ rows, categories, filter, sort, onFilter, onSort }: FiltersProps) => {
   const dates = dateOptions(rows)
   const toggleSeverity = (severity: Severity) =>
     onFilter({
@@ -102,6 +144,26 @@ const Filters = ({ rows, filter, sort, onFilter, onSort }: FiltersProps) => {
             ))}
           </datalist>
         </label>
+        {categories === null ? null : (
+          <>
+            <CategorySelect
+              axis="type"
+              label="공격 유형"
+              rows={rows}
+              categories={categories}
+              value={filter.attackType}
+              onChange={(attackType) => onFilter({ ...filter, attackType })}
+            />
+            <CategorySelect
+              axis="family"
+              label="제품군"
+              rows={rows}
+              categories={categories}
+              value={filter.family}
+              onChange={(family) => onFilter({ ...filter, family })}
+            />
+          </>
+        )}
         {dates.length === 0 ? null : (
           <label className="inline-flex items-center gap-1.5">
             공개일
@@ -179,21 +241,52 @@ const NewList = ({
   )
 }
 
-const NewBody = ({ meta, rows }: { meta: Meta; rows: TrendRow[] }) => {
-  const [filter, setFilter] = useState<NewFilter>(ALL_NEW)
+// 분류 화면에서 /new?type=키·?family=키 로 들어오면 그 분류로 거른 채 시작한다
+const CATEGORY_PARAMS = { attackType: 'type', family: 'family' } as const
+
+const NewBody = ({ meta, rows, categories }: { meta: Meta; rows: TrendRow[]; categories: Categories | null }) => {
+  const [params, setParams] = useSearchParams()
+  const [filter, setFilterState] = useState<NewFilter>(() =>
+    categories === null
+      ? ALL_NEW
+      : { ...ALL_NEW, attackType: params.get(CATEGORY_PARAMS.attackType), family: params.get(CATEGORY_PARAMS.family) },
+  )
   const [sort, setSort] = useState<NewSort>('latest')
   const deferredFilter = useDeferredValue(filter)
-  const [params, setParams] = useSearchParams()
   const isDesktop = useIsDesktop()
   const navigate = useNavigate()
   const today = referenceDate(meta.updated_at)
   const matched = sortNew(filterNew(rows, deferredFilter), sort)
   const selectedId = isDesktop ? (params.get('cve') ?? matched[0]?.id ?? null) : null
 
-  // 데스크톱은 주소에 ?cve= 로 남겨 옆 패널에, 좁은 화면은 상세 페이지로 (지금 규칙)
+  // 분류 필터는 주소에도 남겨 링크로 나눌 수 있게 한다
+  const setFilter = (next: NewFilter) => {
+    setFilterState(next)
+    setParams(
+      (current) => {
+        const updated = new URLSearchParams(current)
+        ;(['attackType', 'family'] as const).forEach((field) => {
+          const value = next[field]
+          if (value === null) updated.delete(CATEGORY_PARAMS[field])
+          else updated.set(CATEGORY_PARAMS[field], value)
+        })
+        return updated
+      },
+      { replace: true },
+    )
+  }
+
+  // 데스크톱은 주소에 ?cve= 로 남겨 옆 패널에, 좁은 화면은 상세 페이지로 (지금 규칙). 분류 필터는 그대로 둔다
   const select = (cveId: string) => {
     if (isDesktop) {
-      setParams({ cve: cveId }, { replace: true })
+      setParams(
+        (current) => {
+          const updated = new URLSearchParams(current)
+          updated.set('cve', cveId)
+          return updated
+        },
+        { replace: true },
+      )
       return
     }
     navigate(`/cve/${cveId}`)
@@ -208,6 +301,7 @@ const NewBody = ({ meta, rows }: { meta: Meta; rows: TrendRow[] }) => {
         </p>
         <p className="mt-1 mb-0 text-[13px] text-ink-3">
           한국어 요약은 점수 상위 건에만 있습니다. 나머지는 NVD 영문 제목으로 보입니다.
+          {categories === null ? null : ' NVD 가 아직 분석하지 않은 새 CVE 는 분류 전입니다.'}
         </p>
       </div>
       {rows.length === 0 ? (
@@ -218,7 +312,14 @@ const NewBody = ({ meta, rows }: { meta: Meta; rows: TrendRow[] }) => {
         </p>
       ) : (
         <>
-          <Filters rows={rows} filter={filter} sort={sort} onFilter={setFilter} onSort={setSort} />
+          <Filters
+            rows={rows}
+            categories={categories}
+            filter={filter}
+            sort={sort}
+            onFilter={setFilter}
+            onSort={setSort}
+          />
           <div
             role="status"
             aria-label="목록 범위"
@@ -273,19 +374,24 @@ const NewBody = ({ meta, rows }: { meta: Meta; rows: TrendRow[] }) => {
 const NewContent = () => {
   const meta = useMeta()
   const recent = useRecent()
+  const categories = useCategories()
   if (meta.status === 'error') return <ErrorState label="갱신 정보" onRetry={meta.retry} />
   if (recent.status === 'error') return <ErrorState label="최근 7일 새 CVE" onRetry={recent.retry} />
-  if (meta.status !== 'ready' || recent.status !== 'ready') {
+  // 분류 파일은 못 받아도 목록은 보인다(분류 필터만 뺀다)
+  const categoriesReady = categories.status === 'ready' || categories.status === 'error'
+  if (meta.status !== 'ready' || recent.status !== 'ready' || categoriesReady === false) {
     return (
       <div className="min-h-screen">
         <LoadingState label="최근 7일 새 CVE" />
       </div>
     )
   }
-  return <NewBody meta={meta.data} rows={recent.data} />
+  return (
+    <NewBody meta={meta.data} rows={recent.data} categories={categories.status === 'ready' ? categories.data : null} />
+  )
 }
 
-// "최근 7일 새 CVE" 화면 /new (사용자 결정 2026-11-01). 이 화면에 들어올 때만 recent.json 을 받는다
+// "최근 7일 새 CVE" 화면 /new (사용자 결정 2026-11-01). 이 화면에 들어올 때만 recent.json·categories.json 을 받는다
 const NewCvesPage = () => (
   <div className="mx-auto flex max-w-[1280px] flex-col gap-4 px-4 pt-5 pb-10 sm:px-7 sm:pt-6">
     <title>최근 7일 새 CVE — VulnTrend</title>

@@ -5,6 +5,7 @@ import type { CveDetail } from '../types/cve.ts'
 import {
   cvePageHtml,
   cvePageMeta,
+  categoryPageHtml,
   minePageHtml,
   newPageHtml,
   OG_IMAGE_FILE,
@@ -245,5 +246,40 @@ describe('내 제품 정적 페이지 (/mine 링크 공유)', () => {
       'https://example.github.io/vuln-trend/mine',
     )
     expect(meta('og:image')).toBe(`https://example.github.io/vuln-trend/${OG_IMAGE_FILE}`)
+  })
+})
+
+describe('분류 정적 페이지 (/type·/family 링크 공유)', () => {
+  it('분류 이름과 최근 건수를 탭 제목과 미리보기에 담는다', () => {
+    const shell = `<html><head><title>${SITE_TITLE}</title>
+    ${siteMetaBlock('https://example.github.io/vuln-trend/')}
+    </head><body></body></html>`
+    const category = { key: 'rce', label: '원격 코드 실행', count_7d: 12, count_30d: 1234, kev_count: 3 }
+    const head = new DOMParser().parseFromString(
+      categoryPageHtml(shell, 'type', category, 'https://example.github.io/vuln-trend/'),
+      'text/html',
+    )
+    const meta = (key: string) =>
+      head.querySelector(`meta[property="${key}"], meta[name="${key}"]`)?.getAttribute('content')
+
+    expect(head.title).toBe('원격 코드 실행 취약점 | VulnTrend')
+    expect(meta('og:title')).toBe('공격 유형: 원격 코드 실행 — VulnTrend')
+    expect(meta('og:description')).toBe(
+      '최근 7일 12건 · 30일 1,234건 · KEV 누적 3건. 원격 코드 실행 취약점을 트렌드 점수 순으로 봅니다.',
+    )
+    expect(meta('og:url')).toBe('https://example.github.io/vuln-trend/type/rce')
+    expect(head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+      'https://example.github.io/vuln-trend/type/rce',
+    )
+  })
+
+  it('제품군은 /family 주소와 "제품군" 이름을 쓴다', () => {
+    const shell = `<html><head><title>${SITE_TITLE}</title>${siteMetaBlock(undefined)}</head></html>`
+    const category = { key: 'network', label: '네트워크·보안 장비', count_7d: 2, count_30d: 7, kev_count: 29 }
+    const head = new DOMParser().parseFromString(categoryPageHtml(shell, 'family', category, undefined), 'text/html')
+
+    expect(head.querySelector('meta[property="og:title"]')?.getAttribute('content')).toBe(
+      '제품군: 네트워크·보안 장비 — VulnTrend',
+    )
   })
 })

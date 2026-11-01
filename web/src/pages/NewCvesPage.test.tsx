@@ -7,6 +7,7 @@ import App from '../App.tsx'
 import { DataProvider } from '../hooks/DataProvider.tsx'
 import { FakeFetch } from '../test/fake/fake-fetch.ts'
 import { setViewportWidth } from '../test/fake/fake-media.ts'
+import { categoriesFixture } from '../test/categories.ts'
 import { metaWithVersion, stats } from '../test/fixtures.ts'
 import { trendRow } from '../test/rows.ts'
 import type { TrendRow } from '../types/trend.ts'
@@ -198,5 +199,50 @@ describe('빈 상태와 실패', () => {
     renderAt('/new', [], 500)
 
     expect(await screen.findByRole('button', { name: /다시 시도/ })).toBeInTheDocument()
+  })
+})
+
+describe('분류로 거르기 (공격 유형·제품군)', () => {
+  const classified = () => [
+    trendRow({ id: 'CVE-2026-801', attack_types: ['rce'], product_family: 'network' }),
+    trendRow({ id: 'CVE-2026-802', attack_types: ['xss'], product_family: 'web_cms' }),
+    trendRow({ id: 'CVE-2026-803', attack_types: [], product_family: null }),
+  ]
+  const withCategories = (path: string) => {
+    const user = renderAt(path, classified())
+    server.serve('/vuln-trend/data/categories.json?v=v1', categoriesFixture())
+    return user
+  }
+
+  it('배치가 준 분류 이름으로 고르고, 최근 7일 안 건수와 "분류 전"을 함께 보인다', async () => {
+    const user = withCategories('/new')
+    await page()
+    const type = screen.getByRole('combobox', { name: '공격 유형' })
+
+    expect(within(type).getByRole('option', { name: '원격 코드 실행 (1)' })).toBeInTheDocument()
+    expect(within(type).getByRole('option', { name: '분류 전 (1)' })).toBeInTheDocument()
+    await user.selectOptions(screen.getByRole('combobox', { name: '제품군' }), 'web_cms')
+
+    expect(rows()).toEqual(['CVE-2026-802'])
+    expect(screen.getByLabelText('현재 주소')).toHaveTextContent('/new?family=web_cms')
+    expect(screen.getByText(/NVD 가 아직 분석하지 않은 새 CVE 는 분류 전입니다/)).toBeInTheDocument()
+  })
+
+  it('분류 화면에서 /new?type=키 로 들어오면 그 분류로 거른 채 시작하고, 골라도 거른 상태가 주소에 남는다', async () => {
+    const user = withCategories('/new?type=rce')
+    await page()
+
+    expect(screen.getByRole('combobox', { name: '공격 유형' })).toHaveValue('rce')
+    expect(rows()).toEqual(['CVE-2026-801'])
+    await user.click(screen.getByRole('button', { name: /^CVE-2026-801, 점수/ }))
+    expect(screen.getByLabelText('현재 주소')).toHaveTextContent('/new?type=rce&cve=CVE-2026-801')
+  })
+
+  it('분류 파일이 아직 없으면 분류 필터 없이 그대로 쓴다', async () => {
+    renderAt('/new', classified())
+    await page()
+
+    expect(screen.queryByRole('combobox', { name: '공격 유형' })).toBeNull()
+    expect(rows()).toHaveLength(3)
   })
 })

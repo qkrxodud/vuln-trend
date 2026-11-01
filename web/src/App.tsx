@@ -19,6 +19,7 @@ const MainRoute = () => {
 // 최근 7일 새 CVE(/new)는 따로 청크로 나눠 메인 첫 로드를 늘리지 않는다
 const NewCvesPage = lazy(() => import('./pages/NewCvesPage.tsx'))
 const MinePage = lazy(() => import('./pages/MinePage.tsx'))
+const CategoryPage = lazy(() => import('./pages/CategoryPage.tsx'))
 
 const RouteLoading = ({ label }: { label: string }) => (
   <div className="min-h-screen">
@@ -32,7 +33,7 @@ const NewCvesRoute = () => (
   </Suspense>
 )
 
-// 라우트는 기획서 8장: 메인 / 상세 /cve/:id. 제품·생태계 페이지는 2단계
+// 라우트는 기획서 8장: 메인 / 상세 /cve/:id. 최근 7일 /new, 내 제품 /mine, 분류 /type/:key·/family/:key
 // 내 제품(localStorage) 상태는 모든 화면이 같이 쓴다
 const App = () => (
   <MineProvider>
@@ -45,6 +46,22 @@ const App = () => (
         element={
           <Suspense fallback={<RouteLoading label="내 제품" />}>
             <MinePage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/type/:key"
+        element={
+          <Suspense fallback={<RouteLoading label="분류" />}>
+            <CategoryPage axis="type" />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/family/:key"
+        element={
+          <Suspense fallback={<RouteLoading label="분류" />}>
+            <CategoryPage axis="family" />
           </Suspense>
         }
       />

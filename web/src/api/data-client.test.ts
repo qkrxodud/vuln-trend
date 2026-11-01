@@ -53,6 +53,13 @@ describe('사이트 데이터 파일 읽기', () => {
       ])
     })
 
+    it('분류 파일도 같은 버전 규칙으로 받고, 배치가 아직 내보내지 않았으면 "없음"으로 알린다', async () => {
+      server.serve('/vuln-trend/data/categories.json?v=v1', { attack_types: [], product_families: [] })
+
+      expect(await client.categories('v1')).toEqual({ attack_types: [], product_families: [] })
+      expect(await client.categories('v2')).toBeNull()
+    })
+
     it('한 화면에서 같은 파일을 여러 번 찾아도 한 번만 받는다', async () => {
       server.serve(STATS_URL, stats)
 
