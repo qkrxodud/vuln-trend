@@ -17,6 +17,7 @@ import { formatEpssPercent, formatEpssRank, isNewKev } from '../../lib/list-mode
 import { severityLabel } from '../../lib/severity.ts'
 import { kevAddedDaysAgo, productName } from '../../lib/urgency.ts'
 import type { CveDetail } from '../../types/cve.ts'
+import { MineToggle } from '../mine/MineToggle.tsx'
 import { KevBadge, NewKevBadge, PocBadge, RansomBadge } from '../signal/SignalBadges.tsx'
 import { Diamond } from '../signal/UrgentBadge.tsx'
 
@@ -439,6 +440,7 @@ export const DetailBody = ({ detail, today, rank, level }: DetailBodyProps) => {
           >
             {productName(detail)}
           </span>
+          <MineToggle product={detail.primary_product} />
         </div>
         <TitleTag className="mt-2 mb-0 text-[15px] leading-[1.55] font-normal text-ink-2 [overflow-wrap:anywhere]">
           {detail.title}

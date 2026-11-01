@@ -127,3 +127,22 @@ export const newPageHtml = (shell: string, siteUrl: string | undefined): string 
     `${NEW_TITLE} | ${SITE_NAME}`,
     siteUrl,
   )
+
+const MINE_TITLE = '내 제품'
+const MINE_DESCRIPTION =
+  '쓰는 제품을 고르면 그 제품의 취약점만 모아 점수순·최신순으로 봅니다. 고른 제품은 이 브라우저에만 저장됩니다.'
+
+/** /mine(내 제품) 정적 페이지. 고른 제품은 브라우저에만 있으므로 미리보기는 화면 소개만 담는다 */
+export const minePageHtml = (shell: string, siteUrl: string | undefined): string =>
+  withPageMeta(
+    shell,
+    {
+      title: `${MINE_TITLE} — ${SITE_NAME}`,
+      description: MINE_DESCRIPTION,
+      type: 'website',
+      path: 'mine',
+      canonical: true,
+    },
+    `${MINE_TITLE} | ${SITE_NAME}`,
+    siteUrl,
+  )

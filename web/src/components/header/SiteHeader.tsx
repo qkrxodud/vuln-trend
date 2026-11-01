@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router'
 import { useMeta } from '../../hooks/use-data.ts'
+import { useMineNews } from '../../hooks/use-mine-news.ts'
 import { useNow } from '../../hooks/use-now.ts'
 import { isStale } from '../../lib/kst-time.ts'
 import { SearchBox } from './SearchBox.tsx'
@@ -12,6 +13,25 @@ import { UpdatedAt } from './UpdatedAt.tsx'
 // 두 화면: 주목 목록(/) 과 최근 7일 새 CVE(/new). 지금 화면에 aria-current="page" (NavLink)
 const NAV =
   'rounded-full px-3 py-1 font-semibold text-ink-2 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-white'
+
+// "내 제품" 탭: 마지막 방문 뒤 새로 생긴 내 제품 취약점 수를 배지로. 배지는 탭 모서리에 겹쳐 띄워 생기고 없어져도 줄이 밀리지 않는다
+const MineTab = () => {
+  const count = useMineNews()
+  const fresh = typeof count === 'number' && count > 0 ? count : null
+  return (
+    <NavLink to="/mine" className={`relative ${NAV}`} aria-label={fresh === null ? '내 제품' : `내 제품 새 ${fresh}건`}>
+      내 제품
+      {fresh === null ? null : (
+        <span
+          aria-hidden="true"
+          className="absolute -top-2 left-full -translate-x-3 rounded-full bg-ink-2 px-1.5 text-[11px] leading-4 font-semibold text-white tabular-nums"
+        >
+          {fresh}
+        </span>
+      )}
+    </NavLink>
+  )
+}
 
 export const SiteHeader = () => {
   const meta = useMeta()
@@ -40,6 +60,7 @@ export const SiteHeader = () => {
         <NavLink to="/new" className={NAV}>
           최근 7일 새 CVE
         </NavLink>
+        <MineTab />
       </nav>
       {/* meta 가 오기 전에도 상태 줄 높이(좁으면 두 줄)를 잡아 두어 아래가 밀리지 않게 한다 */}
       {updatedAt === null ? (

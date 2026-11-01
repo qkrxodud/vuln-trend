@@ -49,6 +49,10 @@ export const useTrendIndex = (): Loadable<TrendIndex> => useVersioned('index', l
 /** 최근 7일 새 CVE(약 3,400건). /new 화면만 부르므로 메인 첫 로드에는 받지 않는다 */
 export const useRecent = (): Loadable<RecentList> => useVersioned('recent', loadRecent)
 
+/** 내 제품이 있을 때만 recent.json 을 받는다(머리글 배지·메인 한 줄). 같은 키라 /new 와 받은 값을 함께 쓴다 */
+export const useRecentIf = (enabled: boolean): Loadable<RecentList> =>
+  useVersioned(enabled ? 'recent' : null, loadRecent)
+
 /** 1년치 수 MB 라 검색창을 쓰기 시작할 때(enabled)만 받는다 (P19) */
 export const useSearchIndex = (enabled: boolean): Loadable<SearchIndex> =>
   useVersioned(enabled ? 'search-index' : null, loadSearchIndex)

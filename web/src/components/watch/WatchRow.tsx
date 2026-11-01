@@ -1,8 +1,10 @@
+import { useMineOptional } from '../../hooks/use-mine.ts'
 import { rowFixLine, type RowFixLine } from '../../lib/fix-actions.ts'
 import { formatEpssPercent, formatEpssRank, isNewKev } from '../../lib/list-model.ts'
 import { severityLabel } from '../../lib/severity.ts'
 import { dueInDays, kevAddedDaysAgo, productName, URGENT_WITHIN_DAYS } from '../../lib/urgency.ts'
 import type { TrendRow } from '../../types/trend.ts'
+import { MineToggle } from '../mine/MineToggle.tsx'
 import { DueLabel, KevBadge, NewKevBadge, PocBadge, RansomBadge } from '../signal/SignalBadges.tsx'
 
 interface WatchRowProps {
@@ -61,7 +63,7 @@ const Facts = ({ row, today }: { row: TrendRow; today: string }) => {
 // 목록 행 (design/v6 c-list .vtc-row): 순위·점수 | ID·배지·제품·CISA 기한 / 요약 / 사실 칩. why_now 는 상세에만 (CONSENSUS 3절)
 // 조치 한 줄: "→ 19.4.2 이상으로 업데이트 (외 2개) · 패치 공지 ↗" (사용자 피드백 2026-11-01)
 const FixLine = ({ fix }: { fix: RowFixLine }) => (
-  <p className="m-0 -mt-1.5 pr-4 pb-3 pl-[86px] text-[13px] text-ink-2">
+  <span className="min-w-0">
     →{' '}
     {fix.highest === null ? null : (
       <>
@@ -80,12 +82,13 @@ const FixLine = ({ fix }: { fix: RowFixLine }) => (
         패치 공지<span className="sr-only"> (새 창)</span> ↗
       </a>
     )}
-  </p>
+  </span>
 )
 
 export const WatchRow = ({ row, rank, today, selected, onSelect }: WatchRowProps) => {
   const addedAgo = kevAddedDaysAgo(row, today)
   const fix = rowFixLine(row)
+  const mine = useMineOptional()
   return (
     // 카드 = 고르기 버튼 + (있으면) 조치 한 줄. 링크는 버튼 밖에 두어 눌러도 행을 고르지 않는다
     <div
@@ -139,7 +142,13 @@ export const WatchRow = ({ row, rank, today, selected, onSelect }: WatchRowProps
           <Facts row={row} today={today} />
         </span>
       </button>
-      {fix === null ? null : <FixLine fix={fix} />}
+      {fix === null && (mine === null || row.primary_product === null) ? null : (
+        // 아래 줄: 조치 한 줄(있으면) + ☆ 내 제품. 둘 다 버튼 밖이라 눌러도 행을 고르지 않는다
+        <p className="m-0 -mt-1.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 pr-4 pb-3 pl-[86px] text-[13px] text-ink-2">
+          {fix === null ? <span /> : <FixLine fix={fix} />}
+          <MineToggle product={row.primary_product} />
+        </p>
+      )}
     </div>
   )
 }

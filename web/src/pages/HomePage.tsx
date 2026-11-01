@@ -1,6 +1,7 @@
 import { SiteFooter } from '../components/footer/SiteFooter.tsx'
 import { SiteHeader } from '../components/header/SiteHeader.tsx'
 import { KpiCards } from '../components/kpi/KpiCards.tsx'
+import { MineNewsLine } from '../components/mine/MineNewsLine.tsx'
 import { ProductBars } from '../components/products/ProductBars.tsx'
 import { QuadrantCard } from '../components/quadrants/QuadrantCard.tsx'
 import { TrendCard } from '../components/trend-card/TrendCard.tsx'
@@ -17,6 +18,7 @@ export const HomePage = ({ selectedId }: { selectedId: string | null }) => (
       <main className="flex flex-col gap-4">
         <MainReady>
           <KpiCards selectedId={selectedId} />
+          <MineNewsLine />
           {/* 차트 (design/v6 CONSENSUS 8절): 1행 4칸 건수표(3fr) | 추이(2fr), 2행 제품 막대(목록과 같은 820px 상한).
             1000px 이하는 4칸 건수표 → 추이 → 막대 한 줄 */}
           <div className="grid gap-4 min-[1001px]:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">

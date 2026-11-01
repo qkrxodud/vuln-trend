@@ -12,25 +12,28 @@ export const DetailPanel = ({ cveId }: { cveId: string }) => {
   const detail = useCveDetail(cveId)
   const { today, rank } = useDetailContext(cveId)
   return (
+    // 높이를 화면에 맞춰 고정하고 본문만 안에서 스크롤한다. 상세가 늦게 와도 아래 링크가 제자리에 있다 (밀림 0)
     <aside
       aria-label={PANEL_LABEL}
-      className="flex max-h-[calc(100vh-32px)] min-w-0 flex-col gap-5 overflow-auto rounded-xl border border-border bg-surface p-[22px]"
+      className="flex h-[calc(100vh-32px)] min-w-0 flex-col gap-4 rounded-xl border border-border bg-surface p-[22px]"
     >
-      <LoadableView loadable={detail} label="취약점 상세">
-        {(data) =>
-          data === null || today === null ? (
-            <>
-              <span className="font-mono text-lg font-bold text-ink">{cveId}</span>
-              <NoDetail cveId={cveId} />
-            </>
-          ) : (
-            <DetailBody detail={data} today={today} rank={rank} level="panel" />
-          )
-        }
-      </LoadableView>
+      <div className="-mx-1 flex min-h-0 flex-1 flex-col gap-5 overflow-auto px-1">
+        <LoadableView loadable={detail} label="취약점 상세">
+          {(data) =>
+            data === null || today === null ? (
+              <>
+                <span className="font-mono text-lg font-bold text-ink">{cveId}</span>
+                <NoDetail cveId={cveId} />
+              </>
+            ) : (
+              <DetailBody detail={data} today={today} rank={rank} level="panel" />
+            )
+          }
+        </LoadableView>
+      </div>
       <Link
         to={`/cve/${cveId}`}
-        className="flex items-center justify-center gap-1.5 rounded-[10px] bg-surface-sunk p-[11px] text-sm font-semibold text-ink hover:bg-border"
+        className="flex shrink-0 items-center justify-center gap-1.5 rounded-[10px] bg-surface-sunk p-[11px] text-sm font-semibold text-ink hover:bg-border"
       >
         상세 페이지 열기 →
       </Link>

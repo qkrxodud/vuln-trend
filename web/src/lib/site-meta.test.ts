@@ -5,6 +5,7 @@ import type { CveDetail } from '../types/cve.ts'
 import {
   cvePageHtml,
   cvePageMeta,
+  minePageHtml,
   newPageHtml,
   OG_IMAGE_FILE,
   SITE_DESCRIPTION,
@@ -217,6 +218,31 @@ describe('최근 7일 새 CVE 정적 페이지 (/new 링크 공유)', () => {
     expect(meta('og:url')).toBe('https://example.github.io/vuln-trend/new')
     expect(head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
       'https://example.github.io/vuln-trend/new',
+    )
+    expect(meta('og:image')).toBe(`https://example.github.io/vuln-trend/${OG_IMAGE_FILE}`)
+  })
+})
+
+describe('내 제품 정적 페이지 (/mine 링크 공유)', () => {
+  it('앱 셸의 탭 제목과 미리보기 묶음을 그 화면 것으로 바꾸되, 고른 제품은 담지 않는다', () => {
+    const shell = `<html><head><title>${SITE_TITLE}</title>
+    ${siteMetaBlock('https://example.github.io/vuln-trend/')}
+    <script type="module" src="/vuln-trend/assets/index.js"></script></head><body></body></html>`
+    const head = new DOMParser().parseFromString(
+      minePageHtml(shell, 'https://example.github.io/vuln-trend/'),
+      'text/html',
+    )
+    const meta = (key: string) =>
+      head.querySelector(`meta[property="${key}"], meta[name="${key}"]`)?.getAttribute('content')
+
+    expect(head.title).toBe('내 제품 | VulnTrend')
+    expect(meta('og:title')).toBe('내 제품 — VulnTrend')
+    expect(meta('og:description')).toBe(
+      '쓰는 제품을 고르면 그 제품의 취약점만 모아 점수순·최신순으로 봅니다. 고른 제품은 이 브라우저에만 저장됩니다.',
+    )
+    expect(meta('og:url')).toBe('https://example.github.io/vuln-trend/mine')
+    expect(head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+      'https://example.github.io/vuln-trend/mine',
     )
     expect(meta('og:image')).toBe(`https://example.github.io/vuln-trend/${OG_IMAGE_FILE}`)
   })
