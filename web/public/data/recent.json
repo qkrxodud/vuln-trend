@@ -1,8 +1,8 @@
 [
   {
     "id": "CVE-2026-76418",
-    "title": "A vulnerability in the Remote Access SSL VPN service of Cisco Secure Firewall…",
-    "score": 55,
+    "title": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게…",
+    "score": 54,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -10,7 +10,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -4.1
+      "decay": -4.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -23,11 +23,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Cisco ASA·FTD",
-    "summary_what": null
+    "summary_what": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게 재시작시켜 서비스 거부를 일으킬 수 있습니다."
   },
   {
-    "id": "CVE-2026-120189",
-    "title": "A vulnerability was identified in D-Link DIR-505 1.10B02",
+    "id": "CVE-2026-120198",
+    "title": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117",
     "score": 10,
     "score_breakdown": {
       "kev": 0.0,
@@ -46,6 +46,110 @@
     "epss": null,
     "epss_percentile": null,
     "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-120195",
+    "title": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": -0.1
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-120189",
+    "title": "A vulnerability was identified in D-Link DIR-505 1.10B02",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": -0.1
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-120197",
+    "title": "A flaw has been found in WAVLINK WL-WN530HG4B M_V260724",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.9,
+      "decay": -0.1
+    },
+    "why_now": "CVSS 9.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.9,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-120196",
+    "title": "A vulnerability was detected in WAVLINK WN579X3-D V250402",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.9,
+      "decay": -0.1
+    },
+    "why_now": "CVSS 9.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
@@ -104,6 +208,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-61738",
+    "title": "SOCFortress CoPilot focuses on providing a single pane of glass for all your…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00558,
+    "epss_percentile": 0.46539,
+    "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2025-31704",
     "title": "A vulnerability has been found in the Dahua Intelligent Connection Center",
     "score": 10,
@@ -130,32 +260,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-61738",
-    "title": "SOCFortress CoPilot focuses on providing a single pane of glass for all your…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 10.0,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 10.0, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00558,
-    "epss_percentile": 0.46539,
-    "cvss": 10.0,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-116512",
     "title": "The Project Manager – AI Powered Project Management, Task Management, Kanban…",
     "score": 10,
@@ -175,32 +279,6 @@
     "poc_count": 0,
     "epss": 0.00584,
     "epss_percentile": 0.47952,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-119706",
-    "title": "InternLM LMDeploy 0.9.0 through 0.18.0 contains an unauthenticated remote code…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.3,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.01030,
-    "epss_percentile": 0.63716,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -244,7 +322,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -260,27 +338,27 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-112816",
-    "title": "Improper certificate validation in the HTTPS listener in Canonical LXD 4.0.14…",
+    "id": "CVE-2026-119706",
+    "title": "InternLM LMDeploy 0.9.0 through 0.18.0 contains an unauthenticated remote code…",
     "score": 10,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
-      "epss": 0.1,
+      "epss": 0.3,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 10.0,
-      "decay": -0.3
+      "cvss": 9.8,
+      "decay": -0.4
     },
-    "why_now": "CVSS 10.0, 최근 공개",
+    "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
     "poc_count": 0,
-    "epss": 0.00303,
-    "epss_percentile": 0.23148,
-    "cvss": 10.0,
-    "cvss_version": "4.0",
+    "epss": 0.01030,
+    "epss_percentile": 0.63716,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
     "summary_what": null
@@ -312,6 +390,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-112816",
+    "title": "Improper certificate validation in the HTTPS listener in Canonical LXD 4.0.14…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00303,
+    "epss_percentile": 0.23148,
+    "cvss": 10.0,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-61826",
     "title": "Bazarr is a companion application to Sonarr and Radarr",
     "score": 10,
@@ -322,7 +426,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -452,7 +556,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -478,7 +582,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -504,7 +608,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -530,7 +634,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -539,32 +643,6 @@
     "poc_count": 0,
     "epss": 0.00708,
     "epss_percentile": 0.53487,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-63377",
-    "title": "TAKO AI Agent for Okta is a local-first AI agent that helps Okta administrators…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00397,
-    "epss_percentile": 0.33975,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -598,6 +676,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-63377",
+    "title": "TAKO AI Agent for Okta is a local-first AI agent that helps Okta administrators…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.3
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00397,
+    "epss_percentile": 0.33975,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-61620",
     "title": "HoneySQL turns Clojure data structures into SQL",
     "score": 10,
@@ -608,7 +712,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -634,7 +738,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -660,7 +764,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -669,32 +773,6 @@
     "poc_count": 0,
     "epss": 0.00408,
     "epss_percentile": 0.35079,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-61737",
-    "title": "ng-antd-admin is an Angular and NestJS administration system template",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00507,
-    "epss_percentile": 0.43295,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -712,7 +790,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -721,6 +799,84 @@
     "poc_count": 0,
     "epss": 0.00520,
     "epss_percentile": 0.44179,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-61737",
+    "title": "ng-antd-admin is an Angular and NestJS administration system template",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00507,
+    "epss_percentile": 0.43295,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-97854",
+    "title": "Yamaha wireless LAN router NWR100 provided by Yamaha Corporation contains an OS…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.7
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.01369,
+    "epss_percentile": 0.71884,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-90888",
+    "title": "Unauthenticated PHP Object Injection in LeadSnap <= 1.25 versions",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00320,
+    "epss_percentile": 0.25010,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -738,7 +894,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -780,84 +936,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-97854",
-    "title": "Yamaha wireless LAN router NWR100 provided by Yamaha Corporation contains an OS…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.4,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.6
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.01369,
-    "epss_percentile": 0.71884,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-90888",
-    "title": "Unauthenticated PHP Object Injection in LeadSnap <= 1.25 versions",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00320,
-    "epss_percentile": 0.25010,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-119597",
-    "title": "OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00371,
-    "epss_percentile": 0.31046,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-119145",
     "title": "Frappe before 15.121.0 and 16.x before 16.34.0 contains a path traversal…",
     "score": 10,
@@ -884,6 +962,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-119597",
+    "title": "OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00371,
+    "epss_percentile": 0.31046,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-103039",
     "title": "The Gravity Forms plugin for WordPress is vulnerable to PHP Object Injection in…",
     "score": 10,
@@ -894,7 +998,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -912,7 +1016,7 @@
   {
     "id": "CVE-2026-107249",
     "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes…",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -920,7 +1024,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -964,7 +1068,7 @@
   {
     "id": "CVE-2026-110186",
     "title": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute…",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -972,7 +1076,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -990,7 +1094,7 @@
   {
     "id": "CVE-2026-61564",
     "title": "AVideo is a video-sharing Platform",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -998,7 +1102,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -1016,7 +1120,7 @@
   {
     "id": "CVE-2026-104317",
     "title": "IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could…",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1024,7 +1128,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1042,7 +1146,7 @@
   {
     "id": "CVE-2026-61567",
     "title": "AVideo is a video-sharing Platform",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1050,7 +1154,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -1102,7 +1206,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1120,7 +1224,7 @@
   {
     "id": "CVE-2026-62002",
     "title": "Unauthenticated PHP Object Injection in Meals & Wheels <= 1.1.13 versions",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1128,7 +1232,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1146,7 +1250,7 @@
   {
     "id": "CVE-2026-61997",
     "title": "Unauthenticated PHP Object Injection in Legal Stone <= 1.2.11 versions",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1154,7 +1258,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1172,7 +1276,7 @@
   {
     "id": "CVE-2026-54859",
     "title": "Unauthenticated PHP Object Injection in Preservation <= 1.15 versions",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1180,7 +1284,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1206,7 +1310,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1232,7 +1336,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1258,7 +1362,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1284,7 +1388,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1310,7 +1414,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1336,7 +1440,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1362,7 +1466,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1388,7 +1492,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1414,7 +1518,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1440,7 +1544,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1466,7 +1570,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1492,7 +1596,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1518,7 +1622,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1544,7 +1648,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1570,7 +1674,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1596,7 +1700,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1622,7 +1726,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1648,7 +1752,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1674,7 +1778,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1700,7 +1804,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1726,7 +1830,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1752,7 +1856,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1778,7 +1882,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1804,7 +1908,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -1830,7 +1934,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1856,7 +1960,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1934,7 +2038,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -1960,7 +2064,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2012,7 +2116,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2038,7 +2142,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -2064,7 +2168,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2090,7 +2194,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -2116,7 +2220,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -2168,7 +2272,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2194,7 +2298,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2203,6 +2307,58 @@
     "poc_count": 0,
     "epss": 0.01196,
     "epss_percentile": 0.68097,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-103780",
+    "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.9
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00830,
+    "epss_percentile": 0.57565,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-86400",
+    "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.9
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00896,
+    "epss_percentile": 0.59568,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2288,58 +2444,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-103780",
-    "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.8
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00830,
-    "epss_percentile": 0.57565,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-86400",
-    "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.3,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.8
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00896,
-    "epss_percentile": 0.59568,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-93327",
     "title": "A Deserialization of Untrusted Data vulnerability in the SubWorkflow task in…",
     "score": 9,
@@ -2350,7 +2454,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.4, 최근 공개",
     "is_kev": false,
@@ -2402,7 +2506,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.4, 최근 공개",
     "is_kev": false,
@@ -2489,110 +2593,6 @@
     "poc_count": 0,
     "epss": 0.00518,
     "epss_percentile": 0.44069,
-    "cvss": 10.0,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-103409",
-    "title": "A Missing authentication for critical function vulnerability in Juniper…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.7
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00347,
-    "epss_percentile": 0.28362,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-109218",
-    "title": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.8
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00643,
-    "epss_percentile": 0.50851,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-115968",
-    "title": "Deserialization of Untrusted Data vulnerability in Ultimate Member Ultimate…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.8
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00408,
-    "epss_percentile": 0.35079,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-65145",
-    "title": "NVIDIA NeMo Agent Toolkit contains a vulnerability where a attacker could cause…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 10.0,
-      "decay": -1.0
-    },
-    "why_now": "CVSS 10.0, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00526,
-    "epss_percentile": 0.44615,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",

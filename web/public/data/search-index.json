@@ -1,5 +1,60 @@
 [
   {
+    "id": "CVE-2026-120218",
+    "title": "A flaw has been found in Typemill up to 2.26.0",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120217",
+    "title": "A vulnerability was detected in Delgan loguru 0.7.3",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120198",
+    "title": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-118168",
+    "title": "The MapPress  WordPress plugin before 2.97.15 does not restrict which user's…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113482",
+    "title": "The Media Library Assistant WordPress plugin before 3.44 does not escape one of…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113481",
+    "title": "The Media Library Assistant WordPress plugin before 3.44 does not check that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107343",
+    "title": "The Kali Forms — Contact Form & Drag-and-Drop Builder WordPress plugin before…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107342",
+    "title": "The Kali Forms — Contact Form & Drag-and-Drop Builder WordPress plugin before…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120197",
+    "title": "A flaw has been found in WAVLINK WL-WN530HG4B M_V260724",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120196",
+    "title": "A vulnerability was detected in WAVLINK WN579X3-D V250402",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120195",
+    "title": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A…",
+    "product": null
+  },
+  {
     "id": "CVE-2026-120192",
     "title": "A security vulnerability has been detected in Presenton up to 0.9.11-beta",
     "product": null
@@ -6931,7 +6986,7 @@
   },
   {
     "id": "CVE-2026-76418",
-    "title": "A vulnerability in the Remote Access SSL VPN service of Cisco Secure Firewall…",
+    "title": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게…",
     "product": "Cisco ASA·FTD"
   },
   {
@@ -20341,7 +20396,7 @@
   },
   {
     "id": "CVE-2026-114625",
-    "title": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may…",
+    "title": "인증된 사용자가 운영자 권한을 얻어 내부 전용 기능에 접근하고 VCO 호스트와 관리 데이터의 기밀성·무결성·가용성을 침해할 수 있습니다",
     "product": "VeloCloud Orchestrator"
   },
   {
@@ -21441,7 +21496,7 @@
   },
   {
     "id": "CVE-2026-111497",
-    "title": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in…",
+    "title": "Brotli 디코더의 버퍼 오버플로 취약점으로 원격 비인증 공격자가 메모리를 손상·노출하거나 서비스 거부 및 임의 코드 실행을 유발할 수…",
     "product": "brotli"
   },
   {
@@ -24026,7 +24081,7 @@
   },
   {
     "id": "CVE-2026-109619",
-    "title": "PHP has various global state that temporarily points into request memory",
+    "title": "요청 메모리가 해제된 뒤에도 초기화되지 않은 전역 상태를 이용해 공격자가 원격 코드 실행을 유발할 수 있습니다",
     "product": "PHP"
   },
   {
@@ -43066,7 +43121,7 @@
   },
   {
     "id": "CVE-2026-111357",
-    "title": "Ivanti Connect Secure 22.8R2.4 mishandles the manner in which the dsinvoked…",
+    "title": "dsinvoked 브로커가 DSCache 설정 데이터를 신뢰하는 방식의 취약점으로 공격자가 루트 권한을 획득할 수 있습니다",
     "product": "Ivanti Connect Secure"
   },
   {
@@ -43271,7 +43326,7 @@
   },
   {
     "id": "CVE-2026-102764",
-    "title": "The vulnerability exists within internal components of BeyondTrust’s Remote…",
+    "title": "메시지 발신 출처 검증이 미흡해 공격자가 조건에 따라 어플라이언스에서 파일 작업을 수행할 수 있습니다",
     "product": "BeyondTrust Remote Support"
   },
   {
@@ -49346,7 +49401,7 @@
   },
   {
     "id": "CVE-2026-106931",
-    "title": "SiteGuard Server Edition contains an OS command injection vulnerability, which…",
+    "title": "OS 명령 삽입 취약점으로 공격자가 영향을 받는 시스템에서 root 또는 SYSTEM 권한으로 임의의 OS 명령을 실행할 수 있습니다",
     "product": "SiteGuard"
   },
   {
@@ -49481,7 +49536,7 @@
   },
   {
     "id": "CVE-2026-110447",
-    "title": "Collabora Online Built-in CODE Server before 26.4.303 (richdocumentscode), a…",
+    "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
     "product": "Collabora Online"
   },
   {
@@ -60776,7 +60831,7 @@
   },
   {
     "id": "CVE-2026-97229",
-    "title": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 19.2…",
+    "title": "정규식 검증 미흡으로 인증되지 않은 공격자가 조작된 CI/CD 정규식을 이용해 GitLab 서버에서 임의 코드를 실행할 수 있습니다",
     "product": "GitLab"
   },
   {
@@ -78596,7 +78651,7 @@
   },
   {
     "id": "CVE-2026-21589",
-    "title": "This is a vulnerability in Bitbucket Data Center, Confluence Data Center, Jira…",
+    "title": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며…",
     "product": "Atlassian Bitbucket Data Center"
   },
   {
@@ -80791,12 +80846,12 @@
   },
   {
     "id": "CVE-2026-105134",
-    "title": "A flaw has been found in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44",
+    "title": "Replication Receiver의 취약점으로 원격 공격자가 OS 명령을 실행할 수 있습니다",
     "product": "AhsayCBS"
   },
   {
     "id": "CVE-2026-105133",
-    "title": "A vulnerability was detected in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44",
+    "title": "API의 인증 처리 취약점으로 원격 공격자가 인증을 우회할 수 있으며, 공개된 공격 방법이 있습니다",
     "product": "AhsayCBS"
   },
   {
@@ -223051,7 +223106,7 @@
   },
   {
     "id": "CVE-2026-41709",
-    "title": "VMware ESX contains an insufficient logging vulnerability. A malicious…",
+    "title": "VMware ESX의 로깅 미흡 취약점으로, 악의적인 관리자가 일부 작업을 로그에 남기지 않고 수행할 수 있습니다",
     "product": "VMware ESXi"
   },
   {
@@ -251926,7 +251981,7 @@
   },
   {
     "id": "CVE-2026-48356",
-    "title": "Adobe Commerce is affected by an Unrestricted Upload of File with Dangerous…",
+    "title": "위험한 파일 형식의 무제한 업로드 취약점으로, 사용자가 악성 URL이나 손상된 웹페이지와 상호작용하면 공격자가 임의 코드를 실행하고 피해자의…",
     "product": "Adobe Commerce"
   },
   {
@@ -320671,7 +320726,7 @@
   },
   {
     "id": "CVE-2026-46300",
-    "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet…",
+    "title": "skb 병합 과정에서 공유 프래그먼트 표시가 사라져 ESP가 페이지 캐시 데이터를 제자리에서 복호화할 수 있는 커널 취약점입니다",
     "product": "Linux Kernel"
   },
   {
