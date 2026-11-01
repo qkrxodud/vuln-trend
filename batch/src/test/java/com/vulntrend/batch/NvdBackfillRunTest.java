@@ -3,6 +3,7 @@ package com.vulntrend.batch;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.publish.SitePublishService;
@@ -12,6 +13,7 @@ import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.application.vulnerability.LegacyTitleService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
@@ -136,6 +138,7 @@ class NvdBackfillRunTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
+                new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),

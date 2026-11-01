@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.publish.SitePublishService;
@@ -15,6 +16,7 @@ import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
+import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
@@ -189,6 +191,7 @@ class CollectionFailureRuleRunTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
+                new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),

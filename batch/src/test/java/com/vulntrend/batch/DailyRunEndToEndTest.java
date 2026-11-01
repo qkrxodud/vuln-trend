@@ -3,6 +3,7 @@ package com.vulntrend.batch;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
+import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.export.ExportService;
 import com.vulntrend.batch.application.gate.GateCheckService;
@@ -75,6 +76,8 @@ class DailyRunEndToEndTest {
     private CollectService collect;
     @Autowired
     private ProductAssignService productAssignment;
+    @Autowired
+    private AttackTypeAssignService attackTypes;
     @Autowired
     private ScoreService score;
     @Autowired
@@ -159,6 +162,8 @@ class DailyRunEndToEndTest {
         assertThat(jdbc.queryForObject("select count(*) from summary", Integer.class)).isEqualTo(2);
         assertThat(jdbc.queryForObject("select title from vulnerability where vuln_id = 'CVE-2021-44228'",
                 String.class)).isEqualTo("CVE-2021-44228 은 원격 코드 실행 취약점이다");
+        assertThat(jdbc.queryForObject("select array_to_string(attack_types, ',') from vulnerability "
+                + "where vuln_id = 'CVE-2021-44228'", String.class)).isEqualTo("rce,injection,dos");
     }
 
     @Test
@@ -269,7 +274,7 @@ class DailyRunEndToEndTest {
     }
 
     private BatchRunner assemble() {
-        return new BatchRunner(collect, productAssignment, score, dailyStat, legacyTitles, summary, export, publishing,
+        return new BatchRunner(collect, productAssignment, attackTypes, score, dailyStat, legacyTitles, summary, export, publishing,
                 gate);
     }
 

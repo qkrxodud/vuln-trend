@@ -3,6 +3,7 @@ package com.vulntrend.batch.runner;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
+import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
@@ -18,6 +19,7 @@ import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.domain.publish.PublishRecord;
 import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
+import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
 import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
@@ -59,6 +61,8 @@ class BatchRunnerTest {
     private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
     private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
     private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
+    private final FakeAttackTypeAssignmentRepository attackTypes = new FakeAttackTypeAssignmentRepository()
+            .with(CveId.from("CVE-2026-0001"), List.of("CWE-79"), List.of());
     private LegacyTitleService legacyTitles = new LegacyTitleService(new FakeLegacyTitleRepository(List.of()));
     private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
     private FakePublisher publisher = FakePublisher.working();
@@ -287,6 +291,27 @@ class BatchRunnerTest {
     }
 
     @Test
+    @DisplayName("대표 제품을 고른 다음, 점수 단계 앞에서 약점 번호로 공격 유형을 매긴다")
+    void assignsAttackTypesBeforeScoring(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        String log = output.toString();
+        assertThat(attackTypes.keysOf(CveId.from("CVE-2026-0001"))).containsExactly("xss");
+        assertThat(log.indexOf("Primary product changed")).isLessThan(log.indexOf("Attack types changed"));
+        assertThat(log.indexOf("Attack types changed")).isLessThan(log.indexOf("Trend score recalculated"));
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행과 지난 기간을 한 번 가져오는 실행에서는 공격 유형을 매기지 않는다")
+    void noAttackTypesInFailureOrBackfill() {
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3),
+                FakeCollector.failing(SourceName.KEV)).run());
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(attackTypes.keysOf(CveId.from("CVE-2026-0001"))).isEmpty();
+    }
+
+    @Test
     @DisplayName("수집이 모두 끝나면 이번 실행 시각을 기준으로 점수를 다시 매긴다")
     void rescoresAfterCollection() {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
@@ -395,7 +420,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
+                assignment, new AttackTypeAssignService(attackTypes), new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
                 SiteExports.writingTo(siteData, clock), new SitePublishService(publisher, records, clock), gate);
     }
 }
