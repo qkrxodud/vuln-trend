@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   checkCacheBusting,
   checkFooterText,
+  checkRecentLazy,
   checkSearchIndexLazy,
   checkStaleBanner,
   FOOTER_NOTICES,
@@ -129,6 +130,32 @@ describe('search-index.json 은 검색창 포커스 전에는 받지 않는다',
     expect(checkSearchIndexLazy({ beforeFocus: [], afterFocus: [] })).toMatchObject({
       status: 'fail',
       detail: '포커스 뒤에도 search-index.json 을 받지 않음',
+    })
+  })
+})
+
+describe('recent.json 지연 로드 (최근 7일 새 CVE, 2026-11-01)', () => {
+  const VERSION = '20261101-1849'
+  const recent = `/vuln-trend/data/recent.json?v=${VERSION}`
+
+  it('메인에서는 받지 않고, /new 에 들어가면 지금 version 으로 받으면 통과', () => {
+    expect(checkRecentLazy({ onMain: ['/vuln-trend/data/index.json?v=x'], onNew: [recent] }, VERSION).status).toBe(
+      'pass',
+    )
+  })
+
+  it('메인에서 받으면 실패', () => {
+    expect(checkRecentLazy({ onMain: [recent], onNew: [recent] }, VERSION)).toMatchObject({
+      status: 'fail',
+      detail: '메인 첫 화면에서 recent.json 을 받음',
+    })
+  })
+
+  it('/new 에 들어가도 받지 않거나, version 이 다르면 실패', () => {
+    expect(checkRecentLazy({ onMain: [], onNew: [] }, VERSION).status).toBe('fail')
+    expect(checkRecentLazy({ onMain: [], onNew: ['/vuln-trend/data/recent.json?v=old'] }, VERSION)).toMatchObject({
+      status: 'fail',
+      detail: `recent.json 이 지금 version(${VERSION})으로 요청되지 않음`,
     })
   })
 })

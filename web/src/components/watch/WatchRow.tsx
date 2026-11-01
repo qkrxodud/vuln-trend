@@ -7,7 +7,8 @@ import { DueLabel, KevBadge, NewKevBadge, PocBadge, RansomBadge } from '../signa
 
 interface WatchRowProps {
   row: TrendRow
-  rank: number
+  /** 점수 순위. `null` 이면 적지 않는다(최근 7일 새 CVE 화면) */
+  rank: number | null
   today: string
   selected: boolean
   onSelect: (cveId: string) => void
@@ -21,9 +22,9 @@ const dueSpeech = (row: TrendRow, today: string): string => {
 }
 
 // 행 하나를 화면 읽기 프로그램에 한 문장으로 들려준다. 안쪽 글자는 그림과 같은 내용이라 숨긴다
-const speechOf = (row: TrendRow, rank: number, today: string): string => {
+const speechOf = (row: TrendRow, rank: number | null, today: string): string => {
   const kev = isNewKev(row, today) ? ', 새 KEV' : row.is_kev ? ', KEV' : ''
-  return `${rank}위 ${row.id}, 점수 ${row.score}점, ${productName(row)}${dueSpeech(row, today)}${row.kev_ransomware ? ', 랜섬웨어' : ''}${kev}`
+  return `${rank === null ? '' : `${rank}위 `}${row.id}, 점수 ${row.score}점, ${productName(row)}${dueSpeech(row, today)}${row.kev_ransomware ? ', 랜섬웨어' : ''}${kev}`
 }
 
 const Facts = ({ row, today }: { row: TrendRow; today: string }) => {
@@ -103,7 +104,7 @@ export const WatchRow = ({ row, rank, today, selected, onSelect }: WatchRowProps
         className="grid w-full grid-cols-[60px_minmax(0,1fr)] items-start gap-3.5 rounded-[10px] py-3.5 pr-4 pl-3 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
       >
         <span aria-hidden="true" className="flex flex-col items-start gap-1">
-          <span className="text-xs font-semibold text-ink-3">{rank}위</span>
+          {rank === null ? null : <span className="text-xs font-semibold text-ink-3">{rank}위</span>}
           <span className="text-[26px] leading-none font-extrabold tracking-tight text-ink">
             {row.score}
             <small className="ml-0.5 text-xs font-semibold text-ink-3">점</small>

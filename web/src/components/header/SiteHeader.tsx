@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router'
 import { useMeta } from '../../hooks/use-data.ts'
 import { useNow } from '../../hooks/use-now.ts'
 import { isStale } from '../../lib/kst-time.ts'
@@ -8,6 +9,10 @@ import { UpdatedAt } from './UpdatedAt.tsx'
 // 머리글 (design/v6 a-top): 로고 · 한 줄 소개 · 검색 · 수집 상태 줄, 그 아래 오래된 데이터 안내.
 // 검색창은 v6 시안에 없지만 남긴다(사용자 결정 Q2, 2026-11-01). 목록 필터는 목록 쪽에만 둔다
 // meta 를 못 받았을 때의 오류 안내는 본문 영역이 보이므로 머리글은 상태 줄만 비운다
+// 두 화면: 주목 목록(/) 과 최근 7일 새 CVE(/new). 지금 화면에 aria-current="page" (NavLink)
+const NAV =
+  'rounded-full px-3 py-1 font-semibold text-ink-2 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-white'
+
 export const SiteHeader = () => {
   const meta = useMeta()
   const now = useNow()
@@ -28,6 +33,14 @@ export const SiteHeader = () => {
         </a>
         <SearchBox />
       </div>
+      <nav aria-label="화면" className="flex flex-wrap gap-1 text-sm">
+        <NavLink to="/" end className={NAV}>
+          지금 주목할 취약점
+        </NavLink>
+        <NavLink to="/new" className={NAV}>
+          최근 7일 새 CVE
+        </NavLink>
+      </nav>
       {/* meta 가 오기 전에도 상태 줄 높이(좁으면 두 줄)를 잡아 두어 아래가 밀리지 않게 한다 */}
       {updatedAt === null ? (
         <p aria-hidden="true" className="m-0 min-h-[42px] sm:min-h-[19px]" />

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import { cvePageHtml, siteMetaBlock } from './src/lib/site-meta.ts'
+import { cvePageHtml, newPageHtml, siteMetaBlock } from './src/lib/site-meta.ts'
 import type { CveDetail } from './src/types/cve.ts'
 
 // GitHub Pages 프로젝트 사이트 기본 경로. 도메인을 연결하면 VITE_BASE=/ 로 빌드한다 (기획서 8장 프론트 기술, P8)
@@ -74,7 +74,10 @@ const cveStaticPages = (siteUrl: string | undefined): Plugin => {
         mkdirSync(pageDir, { recursive: true })
         writeFileSync(join(pageDir, 'index.html'), cvePageHtml(shell, detail, siteUrl))
       })
-      this.info(`CVE static pages: ${files.length}`)
+      // 최근 7일 새 CVE 화면(/new)도 200 + 미리보기로 응답하게 한다
+      mkdirSync(join(outDir, 'new'), { recursive: true })
+      writeFileSync(join(outDir, 'new', 'index.html'), newPageHtml(shell, siteUrl))
+      this.info(`CVE static pages: ${files.length} (+ /new)`)
     },
   }
 }

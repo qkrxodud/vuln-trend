@@ -1,6 +1,6 @@
 // index.json 의 행 — 기획서 7장, WBS 4.2 index.json 필드와 1:1.
 // recent.json 도 같은 모양으로 배치가 계속 내보내지만, v6 화면은 읽지 않는다 (사용자 결정 Q4)
-import type { CvssVersion, IsoDate, Severity } from './common.ts'
+import type { CvssVersion, IsoDate, IsoDateTime, Severity } from './common.ts'
 
 /**
  * 트렌드 점수 항별 기여도. 소수 1자리(R6).
@@ -38,6 +38,8 @@ export interface TrendRow {
    * v6 계약(G1, 2026-11-01)에서 더한 필드라 배치가 내보내기 전 JSON 에는 없다 → 화면은 "등재일 정보 없음"
    */
   kev_added_at?: IsoDate | null
+  /** NVD 공개 시각(KST). 최근 7일 새 CVE 의 날짜 필터·최신순. 모르면 `null`, 배치가 내보내기 전에는 없음 (2026-11-01) */
+  published_at?: IsoDateTime | null
   /** MVP 에서는 항상 0 (PoC 탐지는 2단계) */
   poc_count: number
   /** EPSS 확률 0~1. 아직 점수가 없으면 `null` */
@@ -60,3 +62,6 @@ export interface TrendRow {
 
 /** index.json: 트렌드 점수 내림차순 상위 100건 */
 export type TrendIndex = TrendRow[]
+
+/** recent.json: 최근 7개 한국 달력일 공개 전부(약 3,400건), 공개 시각 내림차순. 행 모양은 index 와 같음 (사용자 결정 2026-11-01) */
+export type RecentList = TrendRow[]

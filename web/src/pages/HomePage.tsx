@@ -4,6 +4,7 @@ import { KpiCards } from '../components/kpi/KpiCards.tsx'
 import { ProductBars } from '../components/products/ProductBars.tsx'
 import { QuadrantCard } from '../components/quadrants/QuadrantCard.tsx'
 import { TrendCard } from '../components/trend-card/TrendCard.tsx'
+import { NewCvesEntry } from '../components/trend/NewCvesEntry.tsx'
 import { TrendSection } from '../components/trend/TrendSection.tsx'
 import { MainReady } from '../components/state/MainReady.tsx'
 import { ListFilterProvider } from '../hooks/ListFilterProvider.tsx'
@@ -24,6 +25,7 @@ export const HomePage = ({ selectedId }: { selectedId: string | null }) => (
           </div>
           <ProductBars />
           <TrendSection selectedId={selectedId} />
+          <NewCvesEntry />
         </MainReady>
       </main>
     </ListFilterProvider>

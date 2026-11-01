@@ -4,7 +4,7 @@ import type { CveDetail } from '../types/cve.ts'
 import type { Meta } from '../types/meta.ts'
 import type { SearchIndex } from '../types/search.ts'
 import type { Stats } from '../types/stats.ts'
-import type { TrendIndex } from '../types/trend.ts'
+import type { RecentList, TrendIndex } from '../types/trend.ts'
 import { DataContext, type DataContextValue } from './data-context.ts'
 import type { Loadable } from './loadable.ts'
 import { useLoadable } from './use-loadable.ts'
@@ -37,6 +37,7 @@ const useVersioned = <T>(
 
 const loadStats = (client: DataClient, version: string) => client.stats(version)
 const loadTrendIndex = (client: DataClient, version: string) => client.trendIndex(version)
+const loadRecent = (client: DataClient, version: string) => client.recent(version)
 const loadSearchIndex = (client: DataClient, version: string) => client.searchIndex(version)
 
 export const useMeta = (): Loadable<Meta> => useDataContext().meta
@@ -44,6 +45,9 @@ export const useMeta = (): Loadable<Meta> => useDataContext().meta
 export const useStats = (): Loadable<Stats> => useVersioned('stats', loadStats)
 
 export const useTrendIndex = (): Loadable<TrendIndex> => useVersioned('index', loadTrendIndex)
+
+/** 최근 7일 새 CVE(약 3,400건). /new 화면만 부르므로 메인 첫 로드에는 받지 않는다 */
+export const useRecent = (): Loadable<RecentList> => useVersioned('recent', loadRecent)
 
 /** 1년치 수 MB 라 검색창을 쓰기 시작할 때(enabled)만 받는다 (P19) */
 export const useSearchIndex = (enabled: boolean): Loadable<SearchIndex> =>

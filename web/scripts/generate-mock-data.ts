@@ -543,6 +543,7 @@ const rowOf = (s: Seed): TrendRow => {
     kev_ransomware: s.kev?.ransomware ?? false,
     kev_due_date: s.kev ? toKstDate(new Date(NOW.getTime() + s.kev.dueInDays * DAY_MS)) : null,
     kev_added_at: s.kev ? toKstDate(daysAgo(s.kev.addedDaysAgo)) : null,
+    published_at: toKstDateTime(daysAgo(s.publishedDaysAgo)),
     poc_count: 0,
     epss: s.epss,
     epss_percentile: s.percentile,
@@ -641,6 +642,10 @@ const stats: Stats = {
 }
 
 const rows = SEEDS.map(rowOf).sort((a, b) => b.score - a.score)
+// 최근 7일 새 CVE: 7일 안 공개 전부, 공개 시각 내림차순 (/new 화면, 사용자 결정 2026-11-01)
+const recent = SEEDS.filter((s) => s.publishedDaysAgo < 7)
+  .sort((a, b) => a.publishedDaysAgo - b.publishedDaysAgo)
+  .map(rowOf)
 const search: SearchIndex = SEEDS.map((s) => ({ id: idOf(s), title: titleOf(s), product: s.product }))
 
 const writeJson = (relativePath: string, value: unknown): void => {
@@ -651,6 +656,7 @@ mkdirSync(join(OUT_DIR, 'cve'), { recursive: true })
 writeJson('meta.json', meta)
 writeJson('stats.json', stats)
 writeJson('index.json', rows)
+writeJson('recent.json', recent)
 writeJson('search-index.json', search)
 // 상세는 마지막 하나만 빼고 만든다: "상세 JSON 없는 CVE → NVD 링크" 경로(P6)를 화면에서 확인하려고
 SEEDS.slice(0, -1).forEach((s) => writeJson(`cve/${idOf(s)}.json`, detailOf(s)))

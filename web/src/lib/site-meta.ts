@@ -94,16 +94,36 @@ export const cvePageMeta = (detail: CveDetail): CvePageMeta => {
   }
 }
 
-/** 앱 셸 HTML 의 <title> 과 미리보기 묶음을 그 CVE 것으로 바꾼다 */
-export const cvePageHtml = (shell: string, detail: CveDetail, siteUrl: string | undefined): string => {
-  const page = cvePageMeta(detail)
+// 앱 셸 HTML 의 <title> 과 미리보기 묶음(표시 사이)을 그 페이지 것으로 바꾼다
+const withPageMeta = (shell: string, page: PageTags, tabTitle: string, siteUrl: string | undefined): string => {
   const start = shell.indexOf(SITE_META_START)
   const end = shell.indexOf(SITE_META_END)
   if (start < 0 || end < 0) throw new Error('site-meta markers not found in app shell')
-  const tags = pageTags({ ...page, type: 'article', canonical: true }, siteUrl)
-  const withMeta = `${shell.slice(0, start)}${SITE_META_START}\n    ${tags}\n    ${shell.slice(end)}`
-  return withMeta.replace(
-    /<title>[\s\S]*?<\/title>/,
-    () => `<title>${escapeText(`${page.title} | ${SITE_NAME}`)}</title>`,
-  )
+  const withMeta = `${shell.slice(0, start)}${SITE_META_START}\n    ${pageTags(page, siteUrl)}\n    ${shell.slice(end)}`
+  return withMeta.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${escapeText(tabTitle)}</title>`)
 }
+
+/** 앱 셸 HTML 의 <title> 과 미리보기 묶음을 그 CVE 것으로 바꾼다 */
+export const cvePageHtml = (shell: string, detail: CveDetail, siteUrl: string | undefined): string => {
+  const page = cvePageMeta(detail)
+  return withPageMeta(shell, { ...page, type: 'article', canonical: true }, `${page.title} | ${SITE_NAME}`, siteUrl)
+}
+
+const NEW_TITLE = '최근 7일 새 CVE'
+const NEW_DESCRIPTION =
+  '최근 7일 동안 새로 공개된 CVE 전부를 심각도·KEV·조치 정보·제품·공개일로 거르고 최신순·점수순으로 봅니다.'
+
+/** /new(최근 7일 새 CVE) 정적 페이지. 404.html(SPA)이 아닌 200 으로 미리보기를 주려고 만든다 */
+export const newPageHtml = (shell: string, siteUrl: string | undefined): string =>
+  withPageMeta(
+    shell,
+    {
+      title: `${NEW_TITLE} — ${SITE_NAME}`,
+      description: NEW_DESCRIPTION,
+      type: 'website',
+      path: 'new',
+      canonical: true,
+    },
+    `${NEW_TITLE} | ${SITE_NAME}`,
+    siteUrl,
+  )

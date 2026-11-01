@@ -5,7 +5,7 @@ import { createDataClient } from '../api/data-client.ts'
 import { FakeFetch } from '../test/fake/fake-fetch.ts'
 import { cveDetail, metaWithVersion, stats } from '../test/fixtures.ts'
 import { DataProvider } from './DataProvider.tsx'
-import { useCveDetail, useMeta, useSearchIndex, useStats, useTrendIndex } from './use-data.ts'
+import { useCveDetail, useMeta, useRecent, useSearchIndex, useStats, useTrendIndex } from './use-data.ts'
 
 const SITE_BASE = '/vuln-trend/'
 const META_URL = '/vuln-trend/data/meta.json'
@@ -98,6 +98,16 @@ describe('화면이 쓰는 데이터 상태', () => {
     await waitFor(() => expect(screen.queryByText('기다림')).toBeNull())
     expect(firstStatuses).toEqual(['ready'])
     expect(server.requestsTo(STATS_URL)).toHaveLength(1)
+  })
+
+  it('최근 7일 새 CVE 는 그 화면이 쓸 때 갱신 버전으로 읽는다', async () => {
+    const server = new FakeFetch()
+      .serve(META_URL, metaWithVersion('v1'))
+      .serve('/vuln-trend/data/recent.json?v=v1', [cveDetail])
+
+    const { result } = renderHook(() => useRecent(), { wrapper: providerFor(server) })
+
+    await waitFor(() => expect(result.current).toEqual({ status: 'ready', data: [cveDetail] }))
   })
 
   it('데이터 공급자 밖에서 쓰면 개발 중에 바로 알 수 있게 실패한다', () => {

@@ -71,3 +71,20 @@ export const checkSearchIndexLazy = (seen: { beforeFocus: string[]; afterFocus: 
   }
   return { item: LAZY_ITEM, status: 'pass', detail: '포커스 전 0회, 포커스 뒤 요청' }
 }
+
+const RECENT_ITEM = 'recent.json 지연 로드 (/new)'
+const RECENT_FILE = 'data/recent.json'
+
+// 최근 7일 새 CVE(약 3,400건)는 /new 에 들어올 때만, 메인과 같은 ?v=<meta.version> 규칙으로 받는다 (2026-11-01)
+export const checkRecentLazy = (seen: { onMain: string[]; onNew: string[] }, version: string): GateResult => {
+  if (seen.onMain.some((url) => url.includes(RECENT_FILE))) {
+    return { item: RECENT_ITEM, status: 'fail', detail: '메인 첫 화면에서 recent.json 을 받음' }
+  }
+  const onNew = seen.onNew.filter((url) => url.includes(RECENT_FILE))
+  if (onNew.length === 0)
+    return { item: RECENT_ITEM, status: 'fail', detail: '/new 에 들어가도 recent.json 을 받지 않음' }
+  if (onNew.some((url) => url.includes(`?v=${encodeURIComponent(version)}`)) === false) {
+    return { item: RECENT_ITEM, status: 'fail', detail: `recent.json 이 지금 version(${version})으로 요청되지 않음` }
+  }
+  return { item: RECENT_ITEM, status: 'pass', detail: `메인 0회, /new 에서 ?v=${version} 로 요청` }
+}

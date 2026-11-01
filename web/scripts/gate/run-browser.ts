@@ -3,7 +3,13 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { chromium, type Browser, type Page } from 'playwright-core'
 import type { Meta } from '../../src/types/meta.ts'
-import { checkCacheBusting, checkFooterText, checkSearchIndexLazy, checkStaleBanner } from './browser-checks.ts'
+import {
+  checkCacheBusting,
+  checkFooterText,
+  checkRecentLazy,
+  checkSearchIndexLazy,
+  checkStaleBanner,
+} from './browser-checks.ts'
 import type { GateResult } from './report.ts'
 import { startPagesServer, type PagesServer } from './run-server.ts'
 
@@ -75,6 +81,19 @@ const cacheBusting = async (browser: Browser, server: PagesServer, meta: Meta): 
   return checkCacheBusting({ before, after }, versions)
 }
 
+// 메인에서 recent.json 을 받지 않고, 머리글 링크로 /new 에 들어갈 때 지금 version 으로 받는지 본다
+const recentLazy = async (browser: Browser, server: PagesServer, meta: Meta): Promise<GateResult> => {
+  const page = await browser.newPage()
+  const requests = dataRequestsOf(page, server)
+  await open(page, server)
+  const onMain = requests.splice(0)
+  await page.getByRole('navigation', { name: '화면' }).getByRole('link', { name: '최근 7일 새 CVE' }).click()
+  await page.waitForTimeout(SETTLE_MS)
+  const onNew = [...requests]
+  await page.close()
+  return checkRecentLazy({ onMain, onNew }, meta.version)
+}
+
 const baseOf = async (distDir: string): Promise<string> => {
   const html = await readFile(join(distDir, '404.html'), 'utf8')
   const match = html.match(/var base = "([^"]+)"/)
@@ -90,6 +109,7 @@ export const runBrowserChecks = async (distDir: string): Promise<GateResult[]> =
       await staleBanner(browser, server, meta),
       ...(await footerAndLazy(browser, server)),
       await cacheBusting(browser, server, meta),
+      await recentLazy(browser, server, meta),
     ]
   } finally {
     await browser.close()

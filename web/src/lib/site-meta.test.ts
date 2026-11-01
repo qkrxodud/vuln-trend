@@ -5,6 +5,7 @@ import type { CveDetail } from '../types/cve.ts'
 import {
   cvePageHtml,
   cvePageMeta,
+  newPageHtml,
   OG_IMAGE_FILE,
   SITE_DESCRIPTION,
   SITE_META_END,
@@ -193,5 +194,30 @@ describe('CVE 상세 정적 페이지 (링크 공유 미리보기, 사용자 요
 
     expect(block.startsWith(SITE_META_START)).toBe(true)
     expect(block.endsWith(SITE_META_END)).toBe(true)
+  })
+})
+
+describe('최근 7일 새 CVE 정적 페이지 (/new 링크 공유)', () => {
+  it('앱 셸의 탭 제목과 미리보기 묶음을 그 화면 것으로 바꾼다', () => {
+    const shell = `<html><head><title>${SITE_TITLE}</title>
+    ${siteMetaBlock('https://example.github.io/vuln-trend/')}
+    <script type="module" src="/vuln-trend/assets/index.js"></script></head><body></body></html>`
+    const head = new DOMParser().parseFromString(
+      newPageHtml(shell, 'https://example.github.io/vuln-trend/'),
+      'text/html',
+    )
+    const meta = (key: string) =>
+      head.querySelector(`meta[property="${key}"], meta[name="${key}"]`)?.getAttribute('content')
+
+    expect(head.title).toBe('최근 7일 새 CVE | VulnTrend')
+    expect(meta('og:title')).toBe('최근 7일 새 CVE — VulnTrend')
+    expect(meta('og:description')).toBe(
+      '최근 7일 동안 새로 공개된 CVE 전부를 심각도·KEV·조치 정보·제품·공개일로 거르고 최신순·점수순으로 봅니다.',
+    )
+    expect(meta('og:url')).toBe('https://example.github.io/vuln-trend/new')
+    expect(head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+      'https://example.github.io/vuln-trend/new',
+    )
+    expect(meta('og:image')).toBe(`https://example.github.io/vuln-trend/${OG_IMAGE_FILE}`)
   })
 })
