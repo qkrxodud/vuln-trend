@@ -208,18 +208,60 @@ describe('영향 범위', () => {
   })
 })
 
-describe('조치 안내', () => {
-  it('AI 요약의 조치를 보이고, 실제 조치는 제조사 공지를 따르라고 한다', () => {
-    renderBody()
+describe('어떻게 조치하나', () => {
+  const withFixes: Partial<CveDetail> = {
+    affected: [
+      {
+        vendor: 'gitlab',
+        product: 'gitlab',
+        display_name: 'GitLab',
+        slug: 'gitlab',
+        ecosystem: null,
+        vulnerable_range: '>=19.2.0, <19.2.8',
+        fixed_version: null,
+        fix_versions: ['19.4.2', '19.2.8', '19.3.5'],
+      },
+    ],
+    references: [
+      { url: 'https://docs.gitlab.com/advisory', source: 'vendor', title: null, tags: ['Vendor Advisory', 'Patch'] },
+      { url: 'https://example.com/old', source: 'vendor', title: 'Old', tags: ['Patch', 'Broken Link'] },
+    ],
+    kev_required_action: 'Apply mitigations per vendor instructions or discontinue use of the product.',
+  }
 
-    expect(section('조치 안내')).toHaveTextContent('19.2.8 이상으로 업데이트하세요.')
-    expect(section('조치 안내')).toHaveTextContent('AI 요약의 조치 안내 — 실제 조치는 제조사 공지를 따르세요')
+  it('사실 칸 바로 아래, 문제 설명보다 먼저 둔다', () => {
+    renderBody(withFixes)
+    const headings = screen.getAllByRole('heading', { level: 4 }).map((heading) => heading.textContent)
+
+    expect(headings.indexOf('어떻게 조치하나')).toBeLessThan(headings.indexOf('무엇이 문제인가'))
+    expect(screen.queryByRole('region', { name: '조치 안내' })).toBeNull()
   })
 
-  it('요약이 없으면 조치 정보가 데이터에 없다고 밝힌다', () => {
-    renderBody({ summary: null })
+  it('① 제품별 업데이트 버전 ② 패치·제조사 공지 링크(깨진 링크 제외) ③ CISA 요구 조치(원문, 접힘) ④ AI 요약의 조치를 차례로 보인다', () => {
+    renderBody(withFixes)
+    const fix = section('어떻게 조치하나')
 
-    expect(section('조치 안내')).toHaveTextContent('수정 버전·조치 정보가 데이터에 없습니다.')
+    expect(fix).toHaveTextContent('GitLab 19.2.8 / 19.3.5 / 19.4.2 이상')
+    expect(
+      within(fix)
+        .getAllByRole('link')
+        .map((link) => link.textContent),
+    ).toEqual(['docs.gitlab.com (새 창) ↗'])
+    expect(within(fix).getByRole('link')).toHaveAttribute('target', '_blank')
+    expect(fix).toHaveTextContent('제조사 공지')
+    const cisa = within(fix).getByText('CISA 요구 조치(원문)').closest('details')
+    expect(cisa).not.toHaveAttribute('open')
+    expect(within(cisa as HTMLElement).getByText(/Apply mitigations/)).toHaveAttribute('lang', 'en')
+    expect(fix).toHaveTextContent('19.2.8 이상으로 업데이트하세요.')
+    expect(fix).toHaveTextContent('AI 요약의 조치 — 실제 조치는 제조사 공지를 따르세요')
+  })
+
+  it('조치 정보가 하나도 없으면 데이터에 없다고 밝힌다', () => {
+    renderBody({ summary: null, references: [], kev_required_action: null })
+
+    expect(section('어떻게 조치하나')).toHaveTextContent(
+      '수정 버전·조치 정보가 데이터에 없습니다. 아래 제조사 공지에서 패치 여부를 확인하세요.',
+    )
   })
 })
 

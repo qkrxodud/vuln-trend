@@ -1,4 +1,5 @@
 import { useListFilter } from '../../hooks/use-list-filter.ts'
+import { QUADRANT_NAME } from '../../lib/quadrants.ts'
 import { productCounts, signalOptions, SIGNALS, TOP_PRODUCTS } from '../../lib/list-model.ts'
 import type { TrendRow } from '../../types/trend.ts'
 import { Diamond } from '../signal/UrgentBadge.tsx'
@@ -95,7 +96,8 @@ export const ListSummary = ({ total, shown }: { total: number; shown: number }) 
   const { filter, clear } = useListFilter()
   const signalLabel =
     filter.signal === 'all' ? null : (SIGNALS.find((option) => option.key === filter.signal)?.label ?? null)
-  const parts = [signalLabel, filter.product].filter((part) => part !== null)
+  const quadrantLabel = filter.quadrant === null ? null : QUADRANT_NAME[filter.quadrant]
+  const parts = [signalLabel, filter.product, quadrantLabel].filter((part) => part !== null)
   return (
     <div
       role="status"

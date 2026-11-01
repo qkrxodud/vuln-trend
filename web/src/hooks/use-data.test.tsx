@@ -1,5 +1,5 @@
-import { act, renderHook, waitFor } from '@testing-library/react'
-import type { ReactNode } from 'react'
+import { act, render, renderHook, screen, waitFor } from '@testing-library/react'
+import { useState, type ReactNode } from 'react'
 import { describe, expect, it } from 'vitest'
 import { createDataClient } from '../api/data-client.ts'
 import { FakeFetch } from '../test/fake/fake-fetch.ts'
@@ -73,6 +73,31 @@ describe('화면이 쓰는 데이터 상태', () => {
     const { result } = renderHook(() => useTrendIndex(), { wrapper: providerFor(server) })
 
     await waitFor(() => expect(result.current).toEqual({ status: 'ready', data: [cveDetail] }))
+  })
+
+  it('이미 받은 데이터는 나중에 붙는 화면에서도 처음 그릴 때부터 준비된 상태다 (레이아웃 밀림 방지)', async () => {
+    const server = new FakeFetch().serve(META_URL, metaWithVersion('v1')).serve(STATS_URL, stats)
+    const firstStatuses: string[] = []
+    const Late = () => {
+      const loadable = useStats()
+      const [first] = useState(loadable.status)
+      if (firstStatuses.length === 0) firstStatuses.push(first)
+      return null
+    }
+    const Early = () => {
+      const loadable = useStats()
+      return loadable.status === 'ready' ? <Late /> : <span>기다림</span>
+    }
+    const Wrapper = providerFor(server)
+    render(
+      <Wrapper>
+        <Early />
+      </Wrapper>,
+    )
+
+    await waitFor(() => expect(screen.queryByText('기다림')).toBeNull())
+    expect(firstStatuses).toEqual(['ready'])
+    expect(server.requestsTo(STATS_URL)).toHaveLength(1)
   })
 
   it('데이터 공급자 밖에서 쓰면 개발 중에 바로 알 수 있게 실패한다', () => {

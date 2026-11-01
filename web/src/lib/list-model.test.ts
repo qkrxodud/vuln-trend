@@ -100,7 +100,7 @@ describe('묶음', () => {
   ]
 
   it('기본 보기는 기한 임박을 기한 빠른 순으로 맨 위에 고정하고, 나머지는 점수 높은 순이다', () => {
-    const tiers = listTiers(rows, { signal: 'all', product: null }, TODAY)
+    const tiers = listTiers(rows, { signal: 'all', product: null, quadrant: null }, TODAY)
 
     expect(tiers.urgent.map((row) => row.id)).toEqual(['d0', 'd2'])
     expect(tiers.rest.map((row) => row.id)).toEqual(['top', 'mid'])
@@ -108,17 +108,30 @@ describe('묶음', () => {
   })
 
   it('신호를 고르면 고정 묶음 없이 점수순 한 묶음이다', () => {
-    const tiers = listTiers(rows, { signal: 'urgent', product: null }, TODAY)
+    const tiers = listTiers(rows, { signal: 'urgent', product: null, quadrant: null }, TODAY)
 
     expect(tiers.urgent).toEqual([])
     expect(tiers.rest.map((row) => row.id)).toEqual(['d2', 'd0'])
   })
 
   it('제품을 고르면 그 제품만 남긴다', () => {
-    const tiers = listTiers(rows, { signal: 'all', product: 'GitLab' }, TODAY)
+    const tiers = listTiers(rows, { signal: 'all', product: 'GitLab', quadrant: null }, TODAY)
 
     expect(tiers.rest.map((row) => row.id)).toEqual(['mid'])
     expect(tiers.total).toBe(1)
+  })
+
+  it('4칸 건수표의 칸을 고르면 그 칸의 취약점만 점수순으로 남긴다', () => {
+    const scored = [
+      trendRow({ id: 'hot-low', score: 30, epss: 0.9, cvss: 9 }),
+      trendRow({ id: 'hot-high', score: 70, epss: 0.5, cvss: 7 }),
+      trendRow({ id: 'severe', score: 90, epss: 0.01, cvss: 9 }),
+      trendRow({ id: 'unscored', score: 95, epss: null, cvss: 9 }),
+    ]
+    const tiers = listTiers(scored, { signal: 'all', product: null, quadrant: 'hot' }, TODAY)
+
+    expect([...tiers.urgent, ...tiers.rest].map((row) => row.id)).toEqual(['hot-high', 'hot-low'])
+    expect(tiers.total).toBe(2)
   })
 
   it('순위는 필터와 상관없이 주목 목록 전체의 점수 순위다', () => {

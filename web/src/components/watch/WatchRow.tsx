@@ -1,3 +1,4 @@
+import { rowFixLine, type RowFixLine } from '../../lib/fix-actions.ts'
 import { formatEpssPercent, formatEpssRank, isNewKev } from '../../lib/list-model.ts'
 import { severityLabel } from '../../lib/severity.ts'
 import { dueInDays, kevAddedDaysAgo, productName, URGENT_WITHIN_DAYS } from '../../lib/urgency.ts'
@@ -57,52 +58,87 @@ const Facts = ({ row, today }: { row: TrendRow; today: string }) => {
 }
 
 // 목록 행 (design/v6 c-list .vtc-row): 순위·점수 | ID·배지·제품·CISA 기한 / 요약 / 사실 칩. why_now 는 상세에만 (CONSENSUS 3절)
+// 조치 한 줄: "→ 19.4.2 이상으로 업데이트 (외 2개) · 패치 공지 ↗" (사용자 피드백 2026-11-01)
+const FixLine = ({ fix }: { fix: RowFixLine }) => (
+  <p className="m-0 -mt-1.5 pr-4 pb-3 pl-[86px] text-[13px] text-ink-2">
+    →{' '}
+    {fix.highest === null ? null : (
+      <>
+        <b className="font-semibold text-ink">{fix.highest} 이상으로 업데이트</b>
+        {fix.others > 0 ? ` (외 ${fix.others}개)` : ''}
+      </>
+    )}
+    {fix.highest !== null && fix.patchUrl !== null ? ' · ' : null}
+    {fix.patchUrl === null ? null : (
+      <a
+        href={fix.patchUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold whitespace-nowrap text-ink underline underline-offset-2"
+      >
+        패치 공지<span className="sr-only"> (새 창)</span> ↗
+      </a>
+    )}
+  </p>
+)
+
 export const WatchRow = ({ row, rank, today, selected, onSelect }: WatchRowProps) => {
   const addedAgo = kevAddedDaysAgo(row, today)
+  const fix = rowFixLine(row)
   return (
-    <button
-      type="button"
-      data-id={row.id}
-      aria-current={selected}
-      aria-label={speechOf(row, rank, today)}
-      onClick={() => onSelect(row.id)}
-      className="grid w-full grid-cols-[60px_minmax(0,1fr)] items-start gap-3.5 rounded-[10px] border border-border bg-surface py-3.5 pr-4 pl-3 text-left transition-colors hover:border-axis focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink aria-[current=true]:border-2 aria-[current=true]:border-ink aria-[current=true]:py-[13px] aria-[current=true]:pr-[15px] aria-[current=true]:pl-[11px] aria-[current=true]:shadow-[0_2px_8px_rgba(22,17,58,.10)]"
+    // 카드 = 고르기 버튼 + (있으면) 조치 한 줄. 링크는 버튼 밖에 두어 눌러도 행을 고르지 않는다
+    <div
+      className={`rounded-[10px] border bg-surface transition-colors ${
+        selected
+          ? 'border-ink shadow-[inset_0_0_0_1px_var(--color-ink),0_2px_8px_rgba(22,17,58,.10)]'
+          : 'border-border hover:border-axis'
+      }`}
     >
-      <span aria-hidden="true" className="flex flex-col items-start gap-1">
-        <span className="text-xs font-semibold text-ink-3">{rank}위</span>
-        <span className="text-[26px] leading-none font-extrabold tracking-tight text-ink">
-          {row.score}
-          <small className="ml-0.5 text-xs font-semibold text-ink-3">점</small>
-        </span>
-        <span className="h-1 w-11 overflow-hidden rounded-sm bg-border">
-          <i className="block h-full bg-ink" style={{ width: `${Math.max(0, Math.min(100, row.score))}%` }} />
-        </span>
-      </span>
-      <span aria-hidden="true" className="flex min-w-0 flex-col gap-1.5">
-        <span className="flex min-w-0 flex-wrap items-center gap-1.5">
-          <span className="mr-0.5 font-mono text-sm font-semibold text-ink">{row.id}</span>
-          {row.kev_ransomware ? <RansomBadge /> : null}
-          {isNewKev(row, today) && addedAgo !== null ? (
-            <NewKevBadge daysAgo={addedAgo} />
-          ) : row.is_kev ? (
-            <KevBadge />
-          ) : null}
-          {row.poc_count > 0 ? <PocBadge count={row.poc_count} /> : null}
-          <span
-            title={productName(row)}
-            className={`max-w-[220px] truncate rounded-full bg-surface-sunk px-2 py-0.5 text-xs text-ink-2 ${row.primary_product === null ? 'italic' : ''}`}
-          >
-            {productName(row)}
+      <button
+        type="button"
+        data-id={row.id}
+        aria-current={selected}
+        aria-label={speechOf(row, rank, today)}
+        onClick={() => onSelect(row.id)}
+        className="grid w-full grid-cols-[60px_minmax(0,1fr)] items-start gap-3.5 rounded-[10px] py-3.5 pr-4 pl-3 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+      >
+        <span aria-hidden="true" className="flex flex-col items-start gap-1">
+          <span className="text-xs font-semibold text-ink-3">{rank}위</span>
+          <span className="text-[26px] leading-none font-extrabold tracking-tight text-ink">
+            {row.score}
+            <small className="ml-0.5 text-xs font-semibold text-ink-3">점</small>
           </span>
-          <span className="ml-auto">
-            <DueLabel row={row} today={today} />
+          <span className="h-1 w-11 overflow-hidden rounded-sm bg-border">
+            <i className="block h-full bg-ink" style={{ width: `${Math.max(0, Math.min(100, row.score))}%` }} />
           </span>
         </span>
-        <span className="text-sm leading-normal text-ink-2 [overflow-wrap:anywhere]">
-          {row.summary_what ?? row.title}
+        <span aria-hidden="true" className="flex min-w-0 flex-col gap-1.5">
+          <span className="flex min-w-0 flex-wrap items-center gap-1.5">
+            <span className="mr-0.5 font-mono text-sm font-semibold text-ink">{row.id}</span>
+            {row.kev_ransomware ? <RansomBadge /> : null}
+            {isNewKev(row, today) && addedAgo !== null ? (
+              <NewKevBadge daysAgo={addedAgo} />
+            ) : row.is_kev ? (
+              <KevBadge />
+            ) : null}
+            {row.poc_count > 0 ? <PocBadge count={row.poc_count} /> : null}
+            <span
+              title={productName(row)}
+              className={`max-w-[220px] truncate rounded-full bg-surface-sunk px-2 py-0.5 text-xs text-ink-2 ${row.primary_product === null ? 'italic' : ''}`}
+            >
+              {productName(row)}
+            </span>
+            <span className="ml-auto">
+              <DueLabel row={row} today={today} />
+            </span>
+          </span>
+          <span className="text-sm leading-normal text-ink-2 [overflow-wrap:anywhere]">
+            {row.summary_what ?? row.title}
+          </span>
+          <Facts row={row} today={today} />
         </span>
-        <Facts row={row} today={today} />
-      </span>
-    </button>
+      </button>
+      {fix === null ? null : <FixLine fix={fix} />}
+    </div>
   )
 }

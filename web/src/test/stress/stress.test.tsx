@@ -56,14 +56,17 @@ describe('KEV 0건 (kev0)', () => {
 })
 
 describe('기한 임박 홍수 (kevflood)', () => {
-  it('산점도 이름표는 상한 8건까지만 달고, 목록의 기한 임박 묶음은 10건 + 더 보기다', async () => {
+  it('4칸표는 칸마다 대표 3건까지만(기한 임박 먼저) 적고, 목록의 기한 임박 묶음은 10건 + 더 보기다', async () => {
     renderMain(kevflood as unknown as StressData)
     await loaded()
-    const scatter = screen.getByRole('region', { name: '어느 쪽이 더 위험한가' })
+    const grid = screen.getByRole('group', { name: '4칸 건수표' })
     const list = screen.getByRole('region', { name: '지금 주목할 취약점' })
 
-    expect(scatter.querySelectorAll('[data-label]').length).toBeLessThanOrEqual(8)
-    expect(scatter).toHaveTextContent('가장 급한 8건만 이름을 달았습니다')
+    within(grid)
+      .getAllByRole('button')
+      .forEach((cell) => expect(within(cell).queryAllByRole('listitem').length).toBeLessThanOrEqual(3))
+    const hot = within(grid).getByRole('button', { name: /^악용 가능성 높음·심각/ })
+    expect(within(hot).getAllByRole('listitem')[0].querySelector('[class*="bg-urgent"]')).not.toBeNull()
     const urgentTier = within(list).getByRole('region', { name: /^CISA 기한 임박 24건/ })
     expect(within(urgentTier).getAllByRole('button', { name: /^\d+위 / })).toHaveLength(10)
     expect(within(urgentTier).getByRole('button', { name: '기한 임박 14건 더 보기' })).toBeInTheDocument()
@@ -88,11 +91,10 @@ describe('급증·빈 값·긴 이름 (spike)', () => {
 })
 
 describe('PoC 다수 (poc)', () => {
-  it('산점도 범례에 PoC 를 더하고, 목록에는 PoC 신호와 배지를 보인다', async () => {
+  it('목록에 PoC 신호와 배지를 보인다', async () => {
     renderMain(poc as unknown as StressData)
     await loaded()
 
-    expect(screen.getByRole('list', { name: '점 모양 설명' })).toHaveTextContent('PoC 공개 19건')
     expect(screen.getByRole('button', { name: 'PoC 공개 19' })).toBeInTheDocument()
     expect(screen.getAllByText(/^PoC \d+$/).length).toBeGreaterThan(0)
   })

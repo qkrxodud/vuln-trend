@@ -551,6 +551,8 @@ const rowOf = (s: Seed): TrendRow => {
     severity: severityOf(s.cvss),
     primary_product: s.product,
     summary_what: s.what,
+    fix_versions: [],
+    patch_url: `https://example.com/advisories/${idOf(s)}`,
   }
 }
 
@@ -563,12 +565,18 @@ const affectedOf = (s: Seed): AffectedProduct[] => [
     ecosystem: null,
     vulnerable_range: '< 수정 버전 (목업)',
     fixed_version: null,
+    fix_versions: [],
   },
 ]
 
 const referencesOf = (s: Seed): ReferenceLink[] => [
-  { url: `https://example.com/advisories/${idOf(s)}`, source: 'vendor', title: null },
-  { url: `https://nvd.nist.gov/vuln/detail/${idOf(s)}`, source: 'nvd', title: null },
+  {
+    url: `https://example.com/advisories/${idOf(s)}`,
+    source: 'vendor',
+    title: null,
+    tags: ['Vendor Advisory', 'Patch'],
+  },
+  { url: `https://nvd.nist.gov/vuln/detail/${idOf(s)}`, source: 'nvd', title: null, tags: [] },
 ]
 
 const detailOf = (s: Seed): CveDetail => {
@@ -579,6 +587,9 @@ const detailOf = (s: Seed): CveDetail => {
     published_at: toKstDateTime(published),
     last_modified_at: toKstDateTime(published),
     kev_added_at: s.kev ? toKstDate(daysAgo(s.kev.addedDaysAgo)) : null,
+    kev_required_action: s.kev
+      ? 'Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.'
+      : null,
     summary: s.what
       ? {
           what: s.what,

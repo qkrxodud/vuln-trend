@@ -16,6 +16,8 @@ export interface AffectedProduct {
   vulnerable_range: string | null
   /** OSV 수집 뒤에 채움. MVP 에서는 `null` */
   fixed_version: string | null
+  /** 이 제품의 수정 버전들(가지마다 하나). 조치 피드백 계약(2026-11-01)에서 더한 필드, 배치가 내보내기 전에는 없음 */
+  fix_versions?: string[]
 }
 
 export type ReferenceSource = 'nvd' | 'vendor' | 'news' | 'poc'
@@ -26,6 +28,8 @@ export interface ReferenceLink {
   source: ReferenceSource
   /** 뉴스 제목 등. 없으면 `null` */
   title: string | null
+  /** NVD 참고 링크 태그(Patch·Vendor Advisory·Mitigation·Release Notes·Broken Link 등). 배치가 내보내기 전에는 없음 */
+  tags?: string[]
 }
 
 /** 한국어 요약. summary 테이블 한 행. AI 생성 면책을 함께 보인다 */
@@ -45,6 +49,8 @@ export interface CveDetail extends TrendRow {
   published_at: IsoDateTime
   last_modified_at: IsoDateTime
   kev_added_at: IsoDate | null
+  /** CISA KEV requiredAction 원문(영문). KEV 가 아니면 `null`, 배치가 내보내기 전에는 없음 */
+  kev_required_action?: string | null
   /** 요약이 없으면 `null` */
   summary: Summary | null
   affected: AffectedProduct[]

@@ -11,6 +11,7 @@ import {
   scoreSegment,
 } from '../../lib/detail-model.ts'
 import { AFFECTED_PREVIEW } from '../../lib/cve-detail.ts'
+import { formatVersions, patchLinks, requiredAction, updateTargets } from '../../lib/fix-actions.ts'
 import { formatKstDate } from '../../lib/kst-time.ts'
 import { formatEpssPercent, formatEpssRank, isNewKev } from '../../lib/list-model.ts'
 import { severityLabel } from '../../lib/severity.ts'
@@ -317,18 +318,75 @@ const Affected = ({ detail, level }: { detail: CveDetail; level: DetailBodyProps
   )
 }
 
-const Action = ({ detail, level }: { detail: CveDetail; level: DetailBodyProps['level'] }) => (
-  <Section id={`${level}-action`} title="조치 안내" level={level}>
-    {detail.summary === null ? (
-      <p className={NOTE}>수정 버전·조치 정보가 데이터에 없습니다. 아래 제조사 공지에서 패치 여부를 확인하세요.</p>
-    ) : (
-      <>
-        <p className="m-0 text-sm leading-relaxed text-ink-2">{detail.summary.action}</p>
-        <p className={SOURCE}>AI 요약의 조치 안내 — 실제 조치는 제조사 공지를 따르세요</p>
-      </>
-    )}
-  </Section>
-)
+const SUB = 'm-0 text-xs font-semibold text-ink-2'
+
+// 어떻게 조치하나 (사용자 피드백 2026-11-01): ① 업데이트 ② 패치·제조사 공지 ③ CISA 요구 조치(원문) ④ AI 요약의 조치.
+// 데이터에 있는 것만 보이고, 하나도 없으면 빈 상태 문구
+const FixActions = ({ detail, level }: { detail: CveDetail; level: DetailBodyProps['level'] }) => {
+  const targets = updateTargets(detail)
+  const links = patchLinks(detail)
+  const cisa = requiredAction(detail)
+  const ai = detail.summary?.action ?? null
+  const empty = targets.length === 0 && links.length === 0 && cisa === null && ai === null
+  return (
+    <Section id={`${level}-fix`} title="어떻게 조치하나" level={level}>
+      {empty ? (
+        <p className={NOTE}>수정 버전·조치 정보가 데이터에 없습니다. 아래 제조사 공지에서 패치 여부를 확인하세요.</p>
+      ) : (
+        <div className="flex flex-col gap-3 rounded-[10px] border border-border p-3.5">
+          {targets.length === 0 ? null : (
+            <div className="flex flex-col gap-1">
+              <p className={SUB}>업데이트</p>
+              <ul className="m-0 flex list-none flex-col gap-0.5 p-0 text-sm">
+                {targets.map((target) => (
+                  <li key={target.name} className="[overflow-wrap:anywhere]">
+                    <b className="font-semibold text-ink">{target.name}</b>{' '}
+                    <span className="font-mono text-[13px] text-ink">{formatVersions(target.versions)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {links.length === 0 ? null : (
+            <div className="flex flex-col gap-1">
+              <p className={SUB}>패치·제조사 공지</p>
+              <ul className="m-0 flex list-none flex-col gap-1 p-0 text-[13px]">
+                {links.map((link) => (
+                  <li key={link.url} className="flex min-w-0 items-baseline gap-2">
+                    <span className={`${SOURCE} shrink-0`}>{link.kind}</span>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="min-w-0 font-semibold text-ink underline underline-offset-2 [overflow-wrap:anywhere]"
+                    >
+                      {link.text}
+                      <span className="sr-only"> (새 창)</span> ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {cisa === null ? null : (
+            <details className="text-[13px] text-ink-2">
+              <summary className="cursor-pointer text-xs font-semibold text-ink-2">CISA 요구 조치(원문)</summary>
+              <p lang="en" className="mt-1 mb-0 leading-relaxed [overflow-wrap:anywhere]">
+                {cisa}
+              </p>
+            </details>
+          )}
+          {ai === null ? null : (
+            <div className="flex flex-col gap-0.5">
+              <p className="m-0 text-sm leading-relaxed text-ink-2">{ai}</p>
+              <p className={SOURCE}>AI 요약의 조치 — 실제 조치는 제조사 공지를 따르세요</p>
+            </div>
+          )}
+        </div>
+      )}
+    </Section>
+  )
+}
 
 const References = ({ detail, level }: { detail: CveDetail; level: DetailBodyProps['level'] }) => {
   const rows = referenceRows(detail.id, detail.references)
@@ -394,6 +452,7 @@ export const DetailBody = ({ detail, today, rank, level }: DetailBodyProps) => {
         </div>
       </header>
       <Facts detail={detail} today={today} />
+      <FixActions detail={detail} level={level} />
       <Problem detail={detail} level={level} />
       <p className={NOTE}>
         <b className="text-ink">왜 지금?</b> {detail.why_now}
@@ -402,7 +461,6 @@ export const DetailBody = ({ detail, today, rank, level }: DetailBodyProps) => {
         <ScoreTable detail={detail} />
       </Section>
       <Affected detail={detail} level={level} />
-      <Action detail={detail} level={level} />
       <References detail={detail} level={level} />
     </div>
   )

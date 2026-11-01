@@ -96,7 +96,7 @@ describe('기한 임박 고정 묶음', () => {
   })
 })
 
-describe('고른 행 펼치기 (산점도에서 고를 때)', () => {
+describe('고른 행 펼치기 (KPI 히어로·주소에서 고를 때)', () => {
   it('고른 취약점이 더 보기 뒤(21위 아래)에 있으면 그 행까지 펼쳐 보인다', async () => {
     const rows = rankedRows(45)
     renderSection(rows, rows[32].id)
@@ -263,6 +263,43 @@ describe('목록 행', () => {
     await user.click(row)
 
     expect(screen.getByLabelText('현재 주소')).toHaveTextContent('/cve/CVE-2026-1')
+  })
+})
+
+describe('목록 행의 조치 한 줄', () => {
+  it('수정 버전 중 가장 높은 것과 나머지 수, 패치 공지 링크를 한 줄로 보인다', async () => {
+    renderSection([
+      trendRow({
+        id: 'CVE-2026-97229',
+        fix_versions: ['19.2.8', '19.4.2', '19.3.5'],
+        patch_url: 'https://docs.gitlab.com/advisory',
+      }),
+    ])
+    const line = await screen.findByText('19.4.2 이상으로 업데이트')
+
+    expect(line.closest('p')).toHaveTextContent('→ 19.4.2 이상으로 업데이트 (외 2개) · 패치 공지 (새 창) ↗')
+  })
+
+  it('패치 공지 링크는 새 창으로 열고, 눌러도 그 행을 고르지 않는다', async () => {
+    const user = renderSection([
+      trendRow({ id: 'CVE-2026-1', score: 90 }),
+      trendRow({ id: 'CVE-2026-2', score: 10, fix_versions: [], patch_url: 'https://vendor.example/patch' }),
+    ])
+    const link = await screen.findByRole('link', { name: /패치 공지/ })
+
+    expect(link).toHaveAttribute('href', 'https://vendor.example/patch')
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(link.closest('p')).toHaveTextContent('→ 패치 공지 (새 창) ↗')
+    await user.click(link)
+    expect(screen.getByLabelText('현재 주소')).toHaveTextContent(/^\/$/)
+  })
+
+  it('수정 버전도 패치 링크도 없으면 줄을 숨긴다', async () => {
+    renderSection([trendRow({ id: 'CVE-2026-1' })])
+    await screen.findByRole('button', { name: /CVE-2026-1/ })
+
+    expect(screen.queryByText(/^→/)).toBeNull()
   })
 })
 

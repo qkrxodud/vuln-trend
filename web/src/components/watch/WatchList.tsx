@@ -42,7 +42,7 @@ export const WatchList = ({ tiers, allRows, signal, today, selectedId, onSelect 
     />
   )
 
-  // 고른 행(산점도·KPI 에서 고름)이 더 보기 뒤에 가려져 있으면 그 행까지 펼친다 (design/v6 c-list select)
+  // 고른 행(KPI 히어로·주소로 고름)이 더 보기 뒤에 가려져 있으면 그 행까지 펼친다 (design/v6 c-list select)
   const selectedUrgent = tiers.urgent.findIndex((item) => item.id === selectedId)
   const selectedRest = tiers.rest.findIndex((item) => item.id === selectedId)
   const urgentShown = urgentAll || selectedUrgent >= URGENT_PAGE ? tiers.urgent : tiers.urgent.slice(0, URGENT_PAGE)

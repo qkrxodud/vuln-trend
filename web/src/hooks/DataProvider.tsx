@@ -1,4 +1,4 @@
-import { useCallback, useMemo, type ReactNode } from 'react'
+import { useCallback, useMemo, useState, type ReactNode } from 'react'
 import type { DataClient } from '../api/data-client.ts'
 import { DataContext } from './data-context.ts'
 import { useLoadable } from './use-loadable.ts'
@@ -7,6 +7,8 @@ import { useLoadable } from './use-loadable.ts'
 export const DataProvider = ({ client, children }: { client: DataClient; children: ReactNode }) => {
   const loadMeta = useCallback(() => client.meta(), [client])
   const meta = useLoadable('meta', loadMeta)
-  const value = useMemo(() => ({ client, meta }), [client, meta])
+  // 공급자마다 하나(시험끼리 섞이지 않게). 클라이언트의 같은 URL 한 번만 받기와 짝을 이룬다
+  const [resolved] = useState(() => new Map<string, unknown>())
+  const value = useMemo(() => ({ client, meta, resolved }), [client, meta, resolved])
   return <DataContext value={value}>{children}</DataContext>
 }

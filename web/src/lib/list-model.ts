@@ -1,6 +1,7 @@
 // v6 목록 모델 (design/v6 c-list, CONSENSUS 3절): 신호·제품으로 거르고, 기한 임박을 맨 위에 고정, 나머지는 점수순
 import type { IsoDate } from '../types/common.ts'
 import type { TrendRow } from '../types/trend.ts'
+import { quadrantOf, type Quadrant } from './quadrants.ts'
 import { compareProducts, type RankedProduct } from './product-rank.ts'
 import { isUrgent, kevAddedDaysAgo, NEW_KEV_WITHIN_DAYS, productName, urgentRows } from './urgency.ts'
 
@@ -10,9 +11,11 @@ export interface ListFilter {
   signal: ListSignal
   /** productName(row) 값. `null` 이면 모든 제품 */
   product: string | null
+  /** 4칸 건수표에서 고른 칸. `null` 이면 모든 칸 */
+  quadrant: Quadrant | null
 }
 
-export const ALL_ROWS: ListFilter = { signal: 'all', product: null }
+export const ALL_ROWS: ListFilter = { signal: 'all', product: null, quadrant: null }
 
 export const SIGNALS: { key: ListSignal; label: string }[] = [
   { key: 'all', label: '전체' },
@@ -97,6 +100,7 @@ export const listTiers = (rows: TrendRow[], filter: ListFilter, today: IsoDate):
   const matched = rows
     .filter((row) => matchesSignal(row, filter.signal, today))
     .filter((row) => filter.product === null || productName(row) === filter.product)
+    .filter((row) => filter.quadrant === null || quadrantOf(row) === filter.quadrant)
     .sort(byScore)
   if (filter.signal !== 'all') return { urgent: [], rest: matched, total: matched.length }
   return {

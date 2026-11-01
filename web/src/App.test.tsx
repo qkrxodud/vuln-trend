@@ -35,7 +35,7 @@ const renderApp = (path: string) => {
   return userEvent.setup()
 }
 
-// 같은 CVE 가 산점도 점으로도 있으므로 목록 행은 목록 영역 안에서 찾는다
+// 같은 CVE 가 KPI 히어로에도 있으므로 목록 행은 목록 영역 안에서 찾는다
 const listRow = async (cveId: string) =>
   within(await screen.findByRole('region', { name: '지금 주목할 취약점' })).getByRole('button', {
     name: new RegExp(`^\\d+위 ${cveId}`),

@@ -52,6 +52,10 @@ export interface TrendRow {
   primary_product: string | null
   /** 한국어 요약 what. 아직 없으면 `null` (화면은 title 로 대신 보인다) */
   summary_what: string | null
+  /** 수정 버전 모음(제품·가지 합침). 목록 행의 "→ n 이상으로 업데이트". 배치가 내보내기 전에는 없음 */
+  fix_versions?: string[]
+  /** 대표 패치·제조사 공지 링크. 없으면 `null`, 배치가 내보내기 전에는 없음 */
+  patch_url?: string | null
 }
 
 /** index.json: 트렌드 점수 내림차순 상위 100건 */

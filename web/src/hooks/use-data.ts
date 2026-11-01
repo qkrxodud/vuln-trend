@@ -23,11 +23,11 @@ const useVersioned = <T>(
   name: string | null,
   load: (client: DataClient, version: string) => Promise<T>,
 ): Loadable<T> => {
-  const { client, meta } = useDataContext()
+  const { client, meta, resolved } = useDataContext()
   const version = meta.status === 'ready' ? meta.data.version : null
   const loadVersion = useCallback(() => load(client, version ?? ''), [load, client, version])
   const key = name === null || version === null ? null : `${name}@${version}`
-  const result = useLoadable(key, loadVersion)
+  const result = useLoadable(key, loadVersion, resolved)
 
   if (name === null) return { status: 'idle' }
   if (meta.status === 'error') return meta
