@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.vulntrend.batch.domain.enrichment.EpssScore;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.global.error.exception.SourceFetchException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.DisplayName;
@@ -106,5 +107,17 @@ class EpssReadingTest {
         EpssReading reading = EpssReading.keeping(known);
         lines.forEach(reading::accept);
         return reading.finish();
+    }
+
+    @Test
+    @DisplayName("첫 줄 주석에서 점수 날짜를 읽고, 적혀 있지 않으면 모른다")
+    void scoreDate() {
+        EpssReading dated = EpssReading.keeping(KNOWN);
+        FILE.forEach(dated::accept);
+        EpssReading undated = EpssReading.keeping(KNOWN);
+        FILE.subList(1, FILE.size()).forEach(undated::accept);
+
+        assertThat(dated.scoreDate()).contains(LocalDate.parse("2026-10-30"));
+        assertThat(undated.scoreDate()).isEmpty();
     }
 }

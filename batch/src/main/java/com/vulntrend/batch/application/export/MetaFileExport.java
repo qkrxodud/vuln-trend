@@ -42,6 +42,11 @@ public class MetaFileExport {
         return writer.write(PATH, meta);
     }
 
+    /** 최근 7일·그 전 7일 KEV 등재 수(파일에 싣는 값과 같다). 게시할지 정하는 화면 지문에 쓴다 */
+    public KevAddedWeeks kevAdded(Instant now) {
+        return kpiService.kevAddedWeeks(now);
+    }
+
     private static KpiCountsJson counts(KpiCounts counts) {
         return new KpiCountsJson(counts.getNewCount(), counts.getKevNewCount(), counts.getCriticalCount(),
                 counts.getHighRiskCount().orElse(null));

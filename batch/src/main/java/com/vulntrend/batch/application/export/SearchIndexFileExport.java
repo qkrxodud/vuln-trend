@@ -37,6 +37,11 @@ public class SearchIndexFileExport {
         return writer.write(PATH, entries);
     }
 
+    /** 검색 색인 파일이 아직 없는가(다시 만들지 않는 실행에서도 없으면 쓴다) */
+    public boolean missing() {
+        return writer.sizeOf(PATH).isEmpty();
+    }
+
     /** 검색 색인에 싣는 발행 시각의 시작(포함). 이번 실행의 한국 달력일에서 12개월 전 날 00:00(한국 시각) */
     public static Instant since(Instant now) {
         return since(now, MONTHS);

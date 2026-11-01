@@ -6,10 +6,14 @@ import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.global.error.exception.DomainValidationException;
 import com.vulntrend.batch.global.error.exception.SourceFetchException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * EPSS 점수 파일 한 번 읽기(실행마다 새로 만든다, 빈 아님). 줄을 하나씩 받아 취약점 목록에 있는 CVE 의 점수만 모은다.
  * 파일 모양(2026-10-31 확인): "#model_version:…,score_date:…" 주석 줄, "cve,epss,percentile" 머리글, 그 뒤 점수 줄.
+ * 주석의 score_date 는 날짜만 읽는다(같은 파일을 다시 반영하지 않는 데 쓴다).
  * 머리글이 다르거나 점수 줄이 하나도 없으면 실패다. 모양이 틀린 점수 줄은 건너뛰고 수만 남긴다.
  */
 @Slf4j
@@ -27,10 +32,12 @@ public class EpssReading {
     private static final String COMMENT = "#";
     private static final String HEADER = "cve,epss,percentile";
     private static final int COLUMNS = 3;
+    private static final Pattern SCORE_DATE = Pattern.compile("score_date:(\\d{4}-\\d{2}-\\d{2})");
 
     private final Set<CveId> wanted;
     private final List<EpssScore> scores = new ArrayList<>();
     private boolean waitingForHeader = true;
+    private LocalDate scoreDate;
     @Getter
     private int rows;
     private int skipped;
@@ -46,7 +53,11 @@ public class EpssReading {
 
     public void accept(String line) {
         String trimmed = line.trim();
-        if (trimmed.isEmpty() || trimmed.startsWith(COMMENT)) {
+        if (trimmed.startsWith(COMMENT)) {
+            readScoreDate(trimmed);
+            return;
+        }
+        if (trimmed.isEmpty()) {
             return;
         }
         if (waitingForHeader) {
@@ -57,6 +68,11 @@ public class EpssReading {
         readRow(trimmed);
     }
 
+    /** 첫 줄 주석의 score_date(날짜만). 없으면 비어 있다 */
+    public Optional<LocalDate> scoreDate() {
+        return Optional.ofNullable(scoreDate);
+    }
+
     public List<EpssScore> finish() {
         if (waitingForHeader || rows == 0) {
             throw new SourceFetchException(SOURCE, "the score file had no header or no score rows.");
@@ -65,6 +81,13 @@ public class EpssReading {
             log.warn("EPSS file had {} rows that could not be read; they were skipped.", skipped);
         }
         return List.copyOf(scores);
+    }
+
+    private void readScoreDate(String comment) {
+        Matcher matcher = SCORE_DATE.matcher(comment);
+        if (matcher.find()) {
+            scoreDate = LocalDate.parse(matcher.group(1));
+        }
     }
 
     private void readHeader(String line) {

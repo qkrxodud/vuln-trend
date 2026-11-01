@@ -5,7 +5,7 @@ import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.SiteDataWriter;
 import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.score.TrendListRepository;
-import com.vulntrend.batch.domain.score.dto.TrendListing;
+import com.vulntrend.batch.domain.vulnerability.CveId;
 import java.time.Instant;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +24,12 @@ public class IndexFileExport {
 
     /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6) */
     public Listed write(Instant now, ProductNames names) {
-        List<TrendListing> listings = repository.top(LIMIT, now);
-        List<TrendRowJson> rows = listings.stream().map(listing -> TrendRows.from(listing, names)).toList();
-        return Listed.of(writer.write(PATH, rows), listings.stream().map(TrendListing::id).toList());
+        List<TrendRowJson> rows = rows(now, names);
+        return Listed.of(writer.write(PATH, rows), rows.stream().map(row -> CveId.from(row.id())).toList());
+    }
+
+    /** 파일에 실을 줄(쓰지 않는다). 게시할지 정하는 화면 지문도 이 줄로 만든다 */
+    public List<TrendRowJson> rows(Instant now, ProductNames names) {
+        return repository.top(LIMIT, now).stream().map(listing -> TrendRows.from(listing, names)).toList();
     }
 }

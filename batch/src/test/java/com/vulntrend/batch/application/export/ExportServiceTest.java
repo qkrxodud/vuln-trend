@@ -15,6 +15,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("사이트 데이터 내보내기")
@@ -93,12 +94,83 @@ class ExportServiceTest {
         assertThat(again.hasChanges()).isFalse();
     }
 
+    @Nested
+    @DisplayName("게시할지 정하는 화면 지문은")
+    class Fingerprint {
+
+        @Test
+        @DisplayName("파일을 하나도 쓰지 않고 계산하며, 같은 데이터로 내보낸 결과의 지문과 같다")
+        void withoutWriting() {
+            String fingerprint = service().visibleFingerprint();
+
+            assertThat(writer.order()).isEmpty();
+            assertThat(service().exportAll().getFingerprint()).isEqualTo(fingerprint).matches("[0-9a-f]{64}");
+        }
+
+        @Test
+        @DisplayName("실행 시각만 다르고 화면 값이 같으면 같다 — 갱신 시각·판 이름은 넣지 않는다")
+        void sameScreenLaterRun() {
+            String earlier = service().exportAll().getFingerprint();
+
+            String later = service(Clock.fixed(NOW.plusSeconds(2 * 3600), ZoneOffset.UTC)).visibleFingerprint();
+
+            assertThat(later).isEqualTo(earlier);
+        }
+
+        @Test
+        @DisplayName("주목 목록에 새 줄이 들어오면 달라진다")
+        void newRowChangesIt() {
+            String before = service().visibleFingerprint();
+            trends.with(TrendListings.kev("CVE-2026-70001"));
+
+            assertThat(service().visibleFingerprint()).isNotEqualTo(before);
+        }
+    }
+
+    @Nested
+    @DisplayName("검색 색인은")
+    class SearchIndex {
+
+        @Test
+        @DisplayName("다시 만들지 않는 실행이면 있던 파일을 그대로 두고 그대로 둔 파일로 센다")
+        void keptWhenNotRebuilding() {
+            writer.existing("search-index.json");
+
+            ExportResult result = service().exportAll(false);
+
+            assertThat(writer.order()).doesNotContain("search-index.json");
+            assertThat(result.getUnchanged()).isEqualTo(1);
+        }
+
+        @Test
+        @DisplayName("다시 만들지 않는 실행이어도 파일이 없으면 쓴다")
+        void writtenWhenMissing() {
+            service().exportAll(false);
+
+            assertThat(writer.order()).contains("search-index.json");
+        }
+
+        @Test
+        @DisplayName("한국 날짜의 첫 게시처럼 다시 만드는 실행이면 있던 파일도 새로 쓴다")
+        void rebuilt() {
+            writer.existing("search-index.json");
+
+            service().exportAll(true);
+
+            assertThat(writer.order()).contains("search-index.json");
+        }
+    }
+
     private ExportService service() {
+        return service(Clock.fixed(NOW, ZoneOffset.UTC));
+    }
+
+    private ExportService service(Clock clock) {
         FakeCveDetailRepository repository = details;
         return new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
                 new IndexFileExport(trends, writer), new RecentFileExport(trends, writer),
                 new SearchIndexFileExport(repository, writer), new CveDetailFileExport(repository, writer),
                 new MetaFileExport(new KpiService(new FakeKpiRepository()), writer), repository,
-                Clock.fixed(NOW, ZoneOffset.UTC));
+                clock);
     }
 }

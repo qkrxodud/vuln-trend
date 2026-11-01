@@ -38,13 +38,23 @@ public class ExportService {
     private final CveDetailRepository repository;
     private final Clock clock;
 
+    /** 검색 색인까지 다시 만든다(exportAll(true)) */
     public ExportResult exportAll() {
+        return exportAll(true);
+    }
+
+    /**
+     * 모든 파일을 쓴다. rebuildSearchIndex 가 false 면 검색 색인은 기존 파일을 그대로 둔다(파일이 없으면 쓴다) —
+     * 검색 색인은 한국 날짜의 첫 게시에서만 다시 만든다(판정은 러너, 사용자 승인 2026-11-01)
+     */
+    public ExportResult exportAll(boolean rebuildSearchIndex) {
         Instant now = clock.instant();
         ProductNames names = ProductNames.of(repository.standardProductNames());
         WriteOutcome statsOutcome = stats.write(now);
         Listed indexed = index.write(now, names);
         Listed recentListed = recent.write(now, names);
-        WriteOutcome searchOutcome = searchIndex.write(now, names);
+        WriteOutcome searchOutcome = rebuildSearchIndex || searchIndex.missing()
+                ? searchIndex.write(now, names) : WriteOutcome.UNCHANGED;
         Set<CveId> scope = new LinkedHashSet<>(indexed.getIds());
         scope.addAll(recentListed.getIds());
         scope.addAll(repository.topIds(DETAIL_TOP));
@@ -55,9 +65,22 @@ public class ExportService {
         int listWritten = (int) lists.stream().filter(outcome -> outcome == WriteOutcome.WRITTEN).count();
         ExportResult result = ExportResult.of(listWritten + detailFiles.getWritten(),
                 LIST_FILES - listWritten + detailFiles.getUnchanged(), detailFiles.getRemoved(),
-                detailFiles.getWritten() + detailFiles.getUnchanged());
+                detailFiles.getWritten() + detailFiles.getUnchanged(), fingerprint(now, names));
         log.info("Site data exported: {} written, {} unchanged, {} removed, {} detail files.", result.getWritten(),
                 result.getUnchanged(), result.getRemoved(), result.getDetailFiles());
         return result;
+    }
+
+    /**
+     * 지금 데이터로 내보낸다면 보일 화면의 지문(파일은 쓰지 않는다). 러너가 마지막 게시의 지문과 비교해 게시할지 정한다.
+     * 같은 데이터·같은 화면 값이면 exportAll 결과의 지문과 같다
+     */
+    public String visibleFingerprint() {
+        Instant now = clock.instant();
+        return fingerprint(now, ProductNames.of(repository.standardProductNames()));
+    }
+
+    private String fingerprint(Instant now, ProductNames names) {
+        return VisibleSite.fingerprint(index.rows(now, names), meta.kevAdded(now));
     }
 }

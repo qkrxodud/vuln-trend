@@ -13,7 +13,7 @@ import java.util.TreeSet;
 
 /**
  * 사이트 데이터 쓰기 흉내. 경로마다 마지막으로 받은 문서와 쓴 순서를 기억한다. 이미 있는 파일을 넣어 둘 수 있고,
- * 같은 문서를 다시 받으면 그대로 둔 것으로 센다.
+ * 같은 문서를 다시 받으면 그대로 둔 것으로 센다. 크기를 정해 두지 않은 파일은 있으면 0바이트로, 없으면 모른다고 답한다.
  */
 public class FakeSiteDataWriter implements SiteDataWriter {
 
@@ -50,7 +50,8 @@ public class FakeSiteDataWriter implements SiteDataWriter {
 
     @Override
     public Optional<Long> sizeOf(DataFilePath path) {
-        return Optional.ofNullable(sizes.get(path.getValue()));
+        return Optional.ofNullable(sizes.get(path.getValue()))
+                .or(() -> files.contains(path.getValue()) ? Optional.of(0L) : Optional.empty());
     }
 
     public FakeSiteDataWriter sized(String path, long bytes) {

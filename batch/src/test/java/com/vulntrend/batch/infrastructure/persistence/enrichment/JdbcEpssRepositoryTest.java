@@ -6,6 +6,8 @@ import com.vulntrend.batch.domain.enrichment.EpssScore;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -97,5 +99,17 @@ class JdbcEpssRepositoryTest {
 
     private Map<String, Object> epss(String id) {
         return jdbc.queryForMap("select epss_score, epss_percentile from vulnerability where vuln_id = ?", id);
+    }
+
+    @Test
+    @DisplayName("반영한 점수 파일 날짜를 한 줄로 남기고 새 날짜로 바꿔 쓴다")
+    void recordsScoreDate() {
+        assertThat(repository.appliedScoreDate()).isEmpty();
+
+        repository.recordScoreDate(LocalDate.parse("2026-10-30"), Instant.parse("2026-10-30T15:00:00Z"));
+        repository.recordScoreDate(LocalDate.parse("2026-10-31"), Instant.parse("2026-10-31T15:00:00Z"));
+
+        assertThat(repository.appliedScoreDate()).contains(LocalDate.parse("2026-10-31"));
+        assertThat(jdbc.queryForObject("select count(*) from epss_file", Integer.class)).isEqualTo(1);
     }
 }

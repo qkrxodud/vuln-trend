@@ -131,7 +131,7 @@ class DailyRunEndToEndTest {
 
     @BeforeEach
     void emptyStores() {
-        jdbc.execute("truncate summary_call, summary, daily_stat, affected_product, reference_link, "
+        jdbc.execute("truncate epss_file, summary_call, summary, daily_stat, affected_product, reference_link, "
                 + "vulnerability_raw, vulnerability, sync_state cascade");
     }
 
