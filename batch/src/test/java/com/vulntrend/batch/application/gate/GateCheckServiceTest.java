@@ -7,6 +7,7 @@ import com.vulntrend.batch.domain.export.dto.SearchListing;
 import com.vulntrend.batch.domain.gate.GateItem;
 import com.vulntrend.batch.domain.gate.GateReport;
 import com.vulntrend.batch.domain.gate.GateStatus;
+import com.vulntrend.batch.domain.remedy.dto.RemedyListing;
 import com.vulntrend.batch.domain.score.ScoreBreakdown;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
 import com.vulntrend.batch.domain.vulnerability.CveId;
@@ -25,6 +26,7 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -193,6 +195,7 @@ class GateCheckServiceTest {
         return new TrendListing(CveId.from(id), "제목", breakdown, true, false, LocalDate.parse("2026-11-10"),
                 LocalDate.parse("2026-10-20"), 0, 0,
                 new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1", Severity.CRITICAL,
-                "Chrome", null, Instant.parse("2026-10-20T00:00:00Z"));
+                "Chrome", null, Instant.parse("2026-10-20T00:00:00Z"),
+                new RemedyListing(List.of(), List.of(), null));
     }
 }

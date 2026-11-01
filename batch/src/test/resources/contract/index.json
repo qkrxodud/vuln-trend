@@ -24,7 +24,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "FortiOS",
-    "summary_what": "SSL-VPN 메모리 쓰기 오류로 인증 없이 장비를 장악할 수 있습니다."
+    "summary_what": "SSL-VPN 메모리 쓰기 오류로 인증 없이 장비를 장악할 수 있습니다.",
+    "fix_versions": [
+      "7.4.5"
+    ],
+    "patch_url": "https://vendor.example/advisory/CVE-2026-40117"
   },
   {
     "id": "CVE-2026-39950",
@@ -51,7 +55,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Ivanti Connect Secure",
-    "summary_what": "스택 버퍼 오버플로로 인증 없이 원격 코드가 실행됩니다."
+    "summary_what": "스택 버퍼 오버플로로 인증 없이 원격 코드가 실행됩니다.",
+    "fix_versions": [
+      "2.4.1"
+    ],
+    "patch_url": "https://vendor.example/advisory/CVE-2026-39950"
   },
   {
     "id": "CVE-2026-41203",
@@ -78,7 +86,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Chrome",
-    "summary_what": "V8 엔진 타입 혼동으로 악성 웹페이지를 열면 원격 코드가 실행됩니다."
+    "summary_what": "V8 엔진 타입 혼동으로 악성 웹페이지를 열면 원격 코드가 실행됩니다.",
+    "fix_versions": [
+      "2.4.1"
+    ],
+    "patch_url": "https://vendor.example/advisory/CVE-2026-41203"
   },
   {
     "id": "CVE-2026-21544",
@@ -105,7 +117,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Apache Tomcat",
-    "summary_what": "partial PUT 처리 결함으로 쓰기 허용 설정에서 원격 코드가 실행됩니다."
+    "summary_what": "partial PUT 처리 결함으로 쓰기 허용 설정에서 원격 코드가 실행됩니다.",
+    "fix_versions": [
+      "2.4.1"
+    ],
+    "patch_url": "https://vendor.example/advisory/CVE-2026-21544"
   },
   {
     "id": "CVE-2026-41877",
@@ -132,7 +148,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Windows",
-    "summary_what": "CLFS 드라이버 결함으로 일반 사용자가 SYSTEM 권한을 얻습니다."
+    "summary_what": "CLFS 드라이버 결함으로 일반 사용자가 SYSTEM 권한을 얻습니다.",
+    "fix_versions": [
+      "2.4.1"
+    ],
+    "patch_url": "https://vendor.example/advisory/CVE-2026-41877"
   },
   {
     "id": "CVE-2026-42010",
@@ -159,7 +179,9 @@
     "cvss_version": "4.0",
     "severity": "CRITICAL",
     "primary_product": "PAN-OS",
-    "summary_what": "관리 웹 화면 인증 우회로 관리자 기능을 호출할 수 있습니다."
+    "summary_what": "관리 웹 화면 인증 우회로 관리자 기능을 호출할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42260",
@@ -186,7 +208,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "GitLab",
-    "summary_what": "비밀번호 재설정 요청 조작으로 계정을 탈취할 수 있습니다."
+    "summary_what": "비밀번호 재설정 요청 조작으로 계정을 탈취할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42333",
@@ -213,7 +237,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "VMware vCenter Server",
-    "summary_what": "DCERPC 처리 힙 오버플로로 네트워크 접근만으로 원격 코드가 실행됩니다."
+    "summary_what": "DCERPC 처리 힙 오버플로로 네트워크 접근만으로 원격 코드가 실행됩니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42288",
@@ -240,7 +266,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Jenkins",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42460",
@@ -267,7 +295,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Confluence",
-    "summary_what": "템플릿 주입으로 인증 없이 코드가 실행됩니다."
+    "summary_what": "템플릿 주입으로 인증 없이 코드가 실행됩니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-41990",
@@ -294,7 +324,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Linux Kernel",
-    "summary_what": "netfilter 해제 후 사용 결함으로 로컬 사용자가 root 가 됩니다."
+    "summary_what": "netfilter 해제 후 사용 결함으로 로컬 사용자가 root 가 됩니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42350",
@@ -321,7 +353,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco IOS XE",
-    "summary_what": "웹 UI 결함으로 인증 없이 최고 권한 계정을 만들 수 있습니다."
+    "summary_what": "웹 UI 결함으로 인증 없이 최고 권한 계정을 만들 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42519",
@@ -348,7 +382,9 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Redis",
-    "summary_what": "Lua 스크립트로 해제 후 사용을 유발해 코드가 실행될 수 있습니다."
+    "summary_what": "Lua 스크립트로 해제 후 사용을 유발해 코드가 실행될 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42301",
@@ -375,7 +411,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Chrome",
-    "summary_what": "Skia 힙 오버플로로 악성 웹페이지에서 메모리 쓰기가 가능합니다."
+    "summary_what": "Skia 힙 오버플로로 악성 웹페이지에서 메모리 쓰기가 가능합니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42430",
@@ -402,7 +440,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "iOS",
-    "summary_what": "WebKit 해제 후 사용으로 악성 웹 콘텐츠에서 코드가 실행됩니다."
+    "summary_what": "WebKit 해제 후 사용으로 악성 웹 콘텐츠에서 코드가 실행됩니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42444",
@@ -429,7 +469,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Microsoft Exchange Server",
-    "summary_what": "조작된 메일 처리로 서버에서 원격 코드가 실행됩니다."
+    "summary_what": "조작된 메일 처리로 서버에서 원격 코드가 실행됩니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42201",
@@ -456,7 +498,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "OpenSSL",
-    "summary_what": "조작된 인증서를 처리하면 서비스가 멈출 수 있습니다."
+    "summary_what": "조작된 인증서를 처리하면 서비스가 멈출 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42415",
@@ -483,7 +527,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "macOS",
-    "summary_what": "앱이 샌드박스를 벗어날 수 있는 논리 결함입니다."
+    "summary_what": "앱이 샌드박스를 벗어날 수 있는 논리 결함입니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42505",
@@ -510,7 +556,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Firefox",
-    "summary_what": "메모리 안전 버그로 임의 코드 실행 가능성이 있습니다."
+    "summary_what": "메모리 안전 버그로 임의 코드 실행 가능성이 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42390",
@@ -537,7 +585,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Node.js",
-    "summary_what": "권한 모델 경로 우회로 허용되지 않은 파일을 읽을 수 있습니다."
+    "summary_what": "권한 모델 경로 우회로 허용되지 않은 파일을 읽을 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42402",
@@ -564,7 +614,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Apache HTTP Server",
-    "summary_what": "mod_rewrite 입력 검증 결함으로 요청 밀반입이 가능합니다."
+    "summary_what": "mod_rewrite 입력 검증 결함으로 요청 밀반입이 가능합니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42548",
@@ -591,7 +643,9 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Android",
-    "summary_what": "권한 확인 누락으로 앱이 권한을 높일 수 있습니다."
+    "summary_what": "권한 확인 누락으로 앱이 권한을 높일 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42155",
@@ -618,7 +672,9 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "WordPress",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42574",
@@ -645,7 +701,9 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Samba",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42477",
@@ -672,7 +730,9 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "curl",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42490",
@@ -699,7 +759,9 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "MySQL",
-    "summary_what": "InnoDB 결함으로 높은 권한 사용자가 서버를 멈출 수 있습니다."
+    "summary_what": "InnoDB 결함으로 높은 권한 사용자가 서버를 멈출 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42588",
@@ -726,7 +788,9 @@
     "cvss_version": "3.1",
     "severity": "LOW",
     "primary_product": "PostgreSQL",
-    "summary_what": "행 보안 추적 누락으로 다른 행을 보거나 바꿀 수 있습니다."
+    "summary_what": "행 보안 추적 누락으로 다른 행을 보거나 바꿀 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42561",
@@ -753,7 +817,9 @@
     "cvss_version": "3.1",
     "severity": "LOW",
     "primary_product": "Drupal",
-    "summary_what": "PHP 객체 주입 가능성이 있는 core 결함입니다."
+    "summary_what": "PHP 객체 주입 가능성이 있는 core 결함입니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42371",
@@ -780,7 +846,9 @@
     "cvss_version": null,
     "severity": "UNRATED",
     "primary_product": "PHP",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-42533",
@@ -807,6 +875,8 @@
     "cvss_version": null,
     "severity": "UNRATED",
     "primary_product": "SonicOS",
-    "summary_what": null
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
   }
 ]

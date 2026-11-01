@@ -15,6 +15,8 @@ import com.vulntrend.batch.domain.export.dto.ReferenceListing;
 import com.vulntrend.batch.domain.export.dto.SearchListing;
 import com.vulntrend.batch.domain.export.dto.SummaryListing;
 import com.vulntrend.batch.domain.product.ProductNames;
+import com.vulntrend.batch.domain.remedy.dto.RemedyListing;
+import com.vulntrend.batch.domain.remedy.dto.TaggedLink;
 import com.vulntrend.batch.domain.score.ScoreBreakdown;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
 import com.vulntrend.batch.domain.stat.DailyStat;
@@ -77,7 +79,7 @@ class MockShapeTest {
     }
 
     @Test
-    @DisplayName("index.json 과 recent.json 의 줄은 같은 이름으로 점수 구성까지 싣는다")
+    @DisplayName("index.json 과 recent.json 의 줄은 같은 이름으로 점수 구성과 한 줄 조치까지 싣는다")
     void indexAndRecent() throws IOException {
         FakeTrendListRepository trends = new FakeTrendListRepository().with(listing("CVE-2026-41203", true))
                 .with(listing("CVE-2026-50001", false));
@@ -119,6 +121,8 @@ class MockShapeTest {
                 new BigDecimal("28.293"), new BigDecimal("9.8"), new BigDecimal("0.75"));
         return new TrendListing(CveId.from(id), "제목", breakdown, kev, false, kev ? LocalDate.parse("2026-11-03") : null,
                 kev ? LocalDate.parse("2026-10-29") : null, 0, 0, new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1",
-                Severity.CRITICAL, "Chrome", kev ? "요약" : null, NOW);
+                Severity.CRITICAL, "Chrome", kev ? "요약" : null, NOW,
+                new RemedyListing(List.of("< 130"), List.of(new TaggedLink("https://vendor.example/a",
+                        List.of("Vendor Advisory"))), kev ? "Apply updates per vendor instructions." : null));
     }
 }

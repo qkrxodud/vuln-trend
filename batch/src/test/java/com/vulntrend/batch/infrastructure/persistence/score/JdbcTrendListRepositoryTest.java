@@ -2,6 +2,8 @@ package com.vulntrend.batch.infrastructure.persistence.score;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.domain.remedy.dto.RemedyListing;
+import com.vulntrend.batch.domain.remedy.dto.TaggedLink;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
 import com.vulntrend.batch.domain.vulnerability.Severity;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
@@ -134,6 +136,61 @@ class JdbcTrendListRepositoryTest {
         assertThat(listing.summaryWhat()).isNull();
         assertThat(listing.epss()).isNull();
         assertThat(listing.kev()).isFalse();
+    }
+
+    @Nested
+    @DisplayName("조치 정보는")
+    class Remedy {
+
+        @Test
+        @DisplayName("대표 제품의 취약 범위, NVD 참고 링크의 주소와 태그(원본 순서), KEV 요구 조치를 원본에서 읽는다")
+        void fromStoredSources() {
+            jdbc.update("insert into vulnerability (vuln_id, trend_score, published_at, primary_product) "
+                    + "values ('CVE-2026-41203', 10, ?, 'Chrome')", time("2026-10-18T00:00:00Z"));
+            jdbc.update("insert into product_alias (cpe_vendor, cpe_product, slug, display_name) values "
+                    + "('google', 'chrome', 'chrome', 'Chrome')");
+            jdbc.update("insert into affected_product (vuln_id, vendor, product, slug, vulnerable_range) values "
+                    + "('CVE-2026-41203', 'google', 'chrome', 'chrome', '<130.0.1'), "
+                    + "('CVE-2026-41203', 'debian', 'debian_linux', null, '<12.0'), "
+                    + "('CVE-2026-41203', 'google', 'chrome_os', null, null)");
+            jdbc.update("insert into vulnerability_raw (vuln_id, source, payload) values ('CVE-2026-41203', 'nvd', "
+                    + "cast(? as jsonb)), ('CVE-2026-41203', 'kev', cast(? as jsonb))",
+                    "{\"references\": [{\"url\": \"https://b/advisory\", \"tags\": [\"Release Notes\", "
+                            + "\"Vendor Advisory\"]}, {\"url\": \"https://a/issue\"}]}",
+                    "{\"requiredAction\": \"Apply updates per vendor instructions.\"}");
+
+            RemedyListing remedy = repository.top(1, NOW).get(0).remedy();
+
+            assertThat(remedy.primaryRanges()).containsExactly("<130.0.1");
+            assertThat(remedy.nvdReferences()).containsExactly(
+                    new TaggedLink("https://b/advisory", List.of("Release Notes", "Vendor Advisory")),
+                    new TaggedLink("https://a/issue", List.of()));
+            assertThat(remedy.kevRequiredAction()).isEqualTo("Apply updates per vendor instructions.");
+        }
+
+        @Test
+        @DisplayName("대표 제품이 CPE 원문이면 같은 제품 이름의 범위를 읽는다")
+        void rawProductName() {
+            jdbc.update("insert into vulnerability (vuln_id, trend_score, published_at, primary_product) "
+                    + "values ('CVE-2026-41203', 10, ?, 'panorama')", time("2026-10-18T00:00:00Z"));
+            jdbc.update("insert into affected_product (vuln_id, vendor, product, vulnerable_range) values "
+                    + "('CVE-2026-41203', 'paloaltonetworks', 'panorama', '>=10.1, <10.1.14 || >=11.0, <11.0.6')");
+
+            assertThat(repository.top(1, NOW).get(0).remedy().primaryRanges())
+                    .containsExactly(">=10.1, <10.1.14 || >=11.0, <11.0.6");
+        }
+
+        @Test
+        @DisplayName("원본이 없으면 범위·링크는 빈 목록, 요구 조치는 비워 둔다")
+        void nothingStored() {
+            scored("CVE-2026-60001", "10", "2026-10-30T00:00:00Z");
+
+            RemedyListing remedy = repository.top(1, NOW).get(0).remedy();
+
+            assertThat(remedy.primaryRanges()).isEmpty();
+            assertThat(remedy.nvdReferences()).isEmpty();
+            assertThat(remedy.kevRequiredAction()).isNull();
+        }
     }
 
     private void scored(String id, String score, String published) {

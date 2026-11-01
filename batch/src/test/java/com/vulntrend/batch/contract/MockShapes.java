@@ -16,10 +16,12 @@ import java.util.List;
  * 프론트 계약(web/src/types/*.ts)이 바뀌면 이 사본도 같이 바꾼다.
  * 이름과 순서, 값의 종류(문자·숫자·참거짓·배열·객체)가
  * 같아야 한다. 계약상 비어 있을 수 있는 값은 어느 한쪽이 null 이면 종류를 따지지 않는다. 배열은 모든 원소를 목업 첫 원소와 대조한다.
+ * 파일 맨 위 배열은 비어 있으면 안 되고, 안쪽 배열(fix_versions·tags 등 계약상 빈 목록일 수 있는 값)은 비어 있어도 된다.
  */
 final class MockShapes {
 
     private static final String MOCK_DIR = "/contract/";
+    private static final String TOP = "$";
     private static final ObjectMapper JSON = new ObjectMapper();
 
     private MockShapes() {
@@ -32,7 +34,7 @@ final class MockShapes {
             assertThat(in).as("고정한 목업 " + mockFile).isNotNull();
             mock = JSON.readTree(in);
         }
-        compare("$", actual, mock);
+        compare(TOP, actual, mock);
     }
 
     private static void compare(String where, JsonNode actual, JsonNode mock) {
@@ -45,7 +47,9 @@ final class MockShapes {
             names(mock).forEach(name -> compare(where + "." + name, actual.get(name), mock.get(name)));
         }
         if (mock.isArray() && mock.size() > 0) {
-            assertThat(actual.size()).as(where + " 원소 수").isPositive();
+            if (TOP.equals(where)) {
+                assertThat(actual.size()).as(where + " 원소 수").isPositive();
+            }
             for (int i = 0; i < actual.size(); i++) {
                 compare(where + "[" + i + "]", actual.get(i), mock.get(0));
             }

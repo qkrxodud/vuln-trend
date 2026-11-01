@@ -12,6 +12,9 @@ import com.vulntrend.batch.domain.export.dto.CveDetailListing;
 import com.vulntrend.batch.domain.export.dto.ReferenceListing;
 import com.vulntrend.batch.domain.export.dto.SummaryListing;
 import com.vulntrend.batch.domain.product.ProductNames;
+import com.vulntrend.batch.domain.remedy.FixVersions;
+import com.vulntrend.batch.domain.remedy.PatchLinks;
+import com.vulntrend.batch.domain.remedy.dto.TaggedLink;
 import com.vulntrend.batch.domain.stat.StatDays;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import java.time.Instant;
@@ -33,6 +36,7 @@ import org.springframework.stereotype.Component;
  * - 목록 줄 필드 전부(TrendRows) + 원문 설명(없으면 빈 글)·발행/수정 시각(한국 시각)·요약·영향 제품·참고 링크
  * - 영향 제품의 product 는 사이트에 보일 이름(ProductNames), display_name·slug 는 표에 있을 때만(없으면 null — 계약 그대로).
  *   제조사는 원문 그대로
+ * - 조치 정보: KEV 요구 조치(KEV 일 때만, 원문), 영향 제품마다 업데이트할 버전(FixVersions), 참고 링크마다 같은 주소의 NVD 태그(없으면 빈 목록)
  * - 참고 링크는 벤더 어드바이저리 다음에 NVD 원문 링크를 붙이고, 그 뒤에 뉴스·PoC(저장소가 출처 순서로 준다)
  * - 상세는 500건씩 나눠 읽는다(in 목록 크기 제한)
  */
@@ -79,9 +83,11 @@ public class CveDetailFileExport {
         return new CveDetailJson(TrendRows.from(detail.row(), names),
                 Optional.ofNullable(detail.description()).orElse(""),
                 koreanTime(detail.row().publishedAt()), koreanTime(detail.lastModifiedAt()),
+                detail.row().kev() ? detail.row().remedy().kevRequiredAction() : null,
                 Optional.ofNullable(detail.summary()).map(CveDetailFileExport::summary).orElse(null),
                 detail.affected().stream().map(a -> new AffectedProductJson(a.vendor(), names.shown(a.product()), a.displayName(),
-                        a.slug(), a.ecosystem(), a.vulnerableRange(), a.fixedVersion())).toList(),
+                        a.slug(), a.ecosystem(), a.vulnerableRange(), a.fixedVersion(),
+                        FixVersions.from(a.vulnerableRange()))).toList(),
                 references(detail));
     }
 
@@ -92,18 +98,20 @@ public class CveDetailFileExport {
 
     private static List<ReferenceLinkJson> references(CveDetailListing detail) {
         List<ReferenceListing> stored = detail.references();
+        List<TaggedLink> nvd = detail.row().remedy().nvdReferences();
         List<ReferenceLinkJson> links = new ArrayList<>();
-        stored.stream().filter(link -> VENDOR.equals(link.source())).map(CveDetailFileExport::link).forEach(links::add);
+        stored.stream().filter(link -> VENDOR.equals(link.source())).map(link -> link(link, nvd)).forEach(links::add);
         if (stored.stream().noneMatch(link -> NVD.equals(link.source()))) {
-            links.add(new ReferenceLinkJson(NVD_DETAIL + detail.row().id().getValue(), NVD, null));
+            String url = NVD_DETAIL + detail.row().id().getValue();
+            links.add(new ReferenceLinkJson(url, NVD, null, PatchLinks.tagsOf(url, nvd)));
         }
-        stored.stream().filter(Predicate.not(link -> VENDOR.equals(link.source()))).map(CveDetailFileExport::link)
+        stored.stream().filter(Predicate.not(link -> VENDOR.equals(link.source()))).map(link -> link(link, nvd))
                 .forEach(links::add);
         return List.copyOf(links);
     }
 
-    private static ReferenceLinkJson link(ReferenceListing link) {
-        return new ReferenceLinkJson(link.url(), link.source(), link.title());
+    private static ReferenceLinkJson link(ReferenceListing link, List<TaggedLink> nvd) {
+        return new ReferenceLinkJson(link.url(), link.source(), link.title(), PatchLinks.tagsOf(link.url(), nvd));
     }
 
     private static OffsetDateTime koreanTime(Instant instant) {

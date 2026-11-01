@@ -56,6 +56,22 @@ class CveDetailFileExportTest {
         }
 
         @Test
+        @DisplayName("조치 정보로 CISA 요구 조치 원문과 영향 제품마다 업데이트할 버전을 싣는다")
+        void remedy() {
+            CveDetailJson detail = export(TrendListings.kevDetail("CVE-2026-41203"));
+
+            assertThat(detail.kevRequiredAction()).isEqualTo("Apply updates per vendor instructions.");
+            assertThat(detail.affected().get(0).fixVersions()).containsExactly("130.0.6723.58");
+            assertThat(detail.affected().get(0).fixedVersion()).isNull();
+        }
+
+        @Test
+        @DisplayName("KEV 가 아니면 CISA 요구 조치가 남아 있어도 싣지 않는다")
+        void noRequiredActionWithoutKev() {
+            assertThat(export(TrendListings.bareDetail("CVE-2026-50001")).kevRequiredAction()).isNull();
+        }
+
+        @Test
         @DisplayName("표에 없는 영향 제품은 사람이 읽는 이름으로 싣고 표시 이름은 비워 둔다 — 제조사는 원문 그대로")
         void unmappedAffectedReadable() {
             CveDetailListing stored = TrendListings.kevDetail("CVE-2026-41203");
@@ -73,13 +89,14 @@ class CveDetailFileExportTest {
         }
 
         @Test
-        @DisplayName("참고 링크는 벤더 어드바이저리 다음에 NVD 원문 링크를 붙인다")
+        @DisplayName("참고 링크는 벤더 어드바이저리 다음에 NVD 원문 링크를 붙이고, 같은 주소의 NVD 태그를 원문 그대로 붙인다")
         void vendorThenNvd() {
             CveDetailJson detail = export(TrendListings.kevDetail("CVE-2026-41203"));
 
             assertThat(detail.references()).containsExactly(
-                    new ReferenceLinkJson("https://chromereleases.googleblog.com/x", "vendor", null),
-                    new ReferenceLinkJson("https://nvd.nist.gov/vuln/detail/CVE-2026-41203", "nvd", null));
+                    new ReferenceLinkJson("https://chromereleases.googleblog.com/x", "vendor", null,
+                            List.of("Release Notes", "Vendor Advisory")),
+                    new ReferenceLinkJson("https://nvd.nist.gov/vuln/detail/CVE-2026-41203", "nvd", null, List.of()));
         }
 
         @Test

@@ -99,4 +99,22 @@ class TrendRowsTest {
     void noProduct() {
         assertThat(TrendRows.from(TrendListings.unrated("CVE-2026-50001"), NAMES).primaryProduct()).isNull();
     }
+
+    @Test
+    @DisplayName("한 줄 조치로 대표 제품의 업데이트할 버전과 끊기지 않은 첫 패치·제조사 공지 링크를 싣는다")
+    void oneLineRemedy() {
+        TrendRowJson row = TrendRows.from(TrendListings.kev("CVE-2026-41203"), NAMES);
+
+        assertThat(row.fixVersions()).containsExactly("130.0.6723.58");
+        assertThat(row.patchUrl()).isEqualTo("https://chromereleases.googleblog.com/x");
+    }
+
+    @Test
+    @DisplayName("업데이트할 버전과 패치 링크를 모르면 버전은 빈 목록, 링크는 비워 둔다")
+    void unknownRemedy() {
+        TrendRowJson row = TrendRows.from(TrendListings.unrated("CVE-2026-50001"), NAMES);
+
+        assertThat(row.fixVersions()).isEmpty();
+        assertThat(row.patchUrl()).isNull();
+    }
 }
