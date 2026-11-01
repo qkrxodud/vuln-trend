@@ -37,6 +37,15 @@
 #     - enterprise_linux (redhat): 배포판이 CPE 첫 항목으로 나온 경우, 실제 제품은 libuser(KEV). CVE-2015-3246
 #     - fedora (fedoraproject): 같은 경우, 실제 제품은 ProFTPD(KEV). CVE-2015-3306
 #     - cisco:asyncos 의 KEV 표기 "Secure Email Gateway" 는 넣지 않았다(장비 이름 ≠ 운영체제 이름). CPE 별칭만 넣음
+#
+# 추가 2026-11-01 (조치 정보 튜닝, 오케스트레이터 지시 (나), 백엔드 B)
+#   근거: 상위 100건 중 fix_versions 가 빈 14건. 대표 제품은 KEV 표기로 정해졌는데 미만 상한이 있는 CPE 줄이 표에 없어
+#   대표 제품 줄로 이어지지 않던 2건만 별칭으로 이었다(제품 묶음 수는 그대로 90, CPE 별칭 3개 추가).
+#     - microsoft:sql_server_2016 · sql_server_2017 → Microsoft SQL Server (CVE-2019-1068)
+#     - michaelschwarz:ajax.net_professional → Ajax.NET Professional (CVE-2021-23758)
+#   넣지 않은 것: 대표 제품과 미만 상한이 있는 줄이 다른 제품인 경우(enterprise_linux 의 libuser CVE-2015-3246,
+#     Adobe Commerce 의 i/o_events CVE-2026-48356). 나머지 10건은 대표 제품 줄 자체에 미만 상한이 없다("<=", "=" 만 있거나 범위 없음).
+#   다음 튜닝 후보(상위 100건 밖에서 관찰, 아직 넣지 않음): sql_server_2019·2022·2025, ajax.net_professional_project:ajax.net_professional
 
 products:
 
@@ -646,6 +655,7 @@ products:
     display_name: Ajax.NET Professional
     cpe:
       - { vendor: "ajaxpro.2_project", product: "ajaxpro.2" }
+      - { vendor: "michaelschwarz", product: "ajax.net_professional" }   # 2026-11-01 조치 튜닝, CVE-2021-23758
     kev:
       - { vendor: "Ajax.NET Professional", product: "Ajax.NET Professional" }
 
@@ -830,6 +840,8 @@ products:
     display_name: Microsoft SQL Server
     cpe:
       - { vendor: "microsoft", product: "sql_server" }
+      - { vendor: "microsoft", product: "sql_server_2016" }   # 2026-11-01 조치 튜닝, CVE-2019-1068
+      - { vendor: "microsoft", product: "sql_server_2017" }   # 2026-11-01 조치 튜닝, CVE-2019-1068
     kev:
       - { vendor: "Microsoft", product: "SQL Server" }
 

@@ -50,6 +50,9 @@ class YamlProductAliasCatalogTest {
                 "oracle             | http_server     | oracle-http-server | Oracle HTTP Server",
                 "apache             | http_server     | apache-http-server | Apache HTTP Server",
                 "microsoft          | sql_server      | sql-server     | Microsoft SQL Server",
+                "microsoft          | sql_server_2016 | sql-server     | Microsoft SQL Server",
+                "microsoft          | sql_server_2017 | sql-server     | Microsoft SQL Server",
+                "michaelschwarz     | ajax.net_professional | ajax-net-professional | Ajax.NET Professional",
                 "f5                 | nginx           | nginx          | nginx",
                 "WordPress          | Core            | wordpress      | WordPress"})
         @DisplayName("CPE 표기와 KEV 표기가 같은 표준 이름으로 이어진다")
