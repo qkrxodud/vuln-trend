@@ -82,13 +82,40 @@ class GitPusherTest {
         }
     }
 
-    @Test
-    @DisplayName("데이터 파일이 그대로면 커밋하지도 올리지도 않는다")
-    void unchanged() throws IOException {
-        PublishResult result = pusher(repo.dataDir()).publish();
+    @Nested
+    @DisplayName("데이터 파일이 그대로면")
+    class Unchanged {
 
-        assertThat(result).isEqualTo(PublishResult.UNCHANGED);
-        assertThat(repo.remoteSubjects()).containsExactly("init");
+        @Test
+        @DisplayName("새 커밋을 만들지 않는다")
+        void noNewCommit() throws IOException {
+            PublishResult result = pusher(repo.dataDir()).publish();
+
+            assertThat(result).isEqualTo(PublishResult.UNCHANGED);
+            assertThat(repo.remoteSubjects()).containsExactly("init");
+        }
+
+        @Test
+        @DisplayName("앞선 실행이 커밋만 하고 올리지 못한 데이터는 이번에 올린다")
+        void pushesEarlierCommit() throws IOException {
+            repo.write(GitRepoFixture.DATA + "/meta.json", "{\"version\": 2}\n");
+            repo.commitWithoutPush("data: 2026-10-31 07:00 KST");
+
+            PublishResult result = pusher(repo.dataDir()).publish();
+
+            assertThat(result).isEqualTo(PublishResult.UNCHANGED);
+            assertThat(repo.remoteSubjects()).containsExactly("data: 2026-10-31 07:00 KST", "init");
+        }
+
+        @Test
+        @DisplayName("원격에 닿지 못하면 게시 실패로 알린다 — 올렸다고 기록하지 않게")
+        void pushFails() throws IOException {
+            repo.setRemoteUrl(root.resolve("missing.git").toString());
+
+            assertThatThrownBy(() -> pusher(repo.dataDir()).publish())
+                    .isInstanceOf(PublishException.class)
+                    .hasMessageContaining("push");
+        }
     }
 
     @Nested

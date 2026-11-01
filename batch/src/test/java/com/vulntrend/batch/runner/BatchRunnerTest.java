@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
+import com.vulntrend.batch.application.publish.SitePublishService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
@@ -14,6 +15,7 @@ import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.domain.publish.PublishRecord;
 import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCollector;
@@ -21,6 +23,7 @@ import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakePublishRecordRepository;
 import com.vulntrend.batch.fake.FakePublisher;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSummaryRepository;
@@ -34,6 +37,7 @@ import com.vulntrend.batch.global.error.exception.PublishException;
 import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.time.Clock;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
@@ -45,11 +49,12 @@ import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
-@DisplayName("하루 한 번 실행")
+@DisplayName("정기 실행")
 @ExtendWith(OutputCaptureExtension.class)
 class BatchRunnerTest {
 
     private static final Instant NOW = Instant.parse("2026-10-30T00:00:00Z");
+    private static final String SEARCH_INDEX = "search-index.json";
 
     private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
     private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
@@ -57,6 +62,7 @@ class BatchRunnerTest {
     private LegacyTitleService legacyTitles = new LegacyTitleService(new FakeLegacyTitleRepository(List.of()));
     private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
     private FakePublisher publisher = FakePublisher.working();
+    private final FakePublishRecordRepository records = new FakePublishRecordRepository();
     private GateCheckService gate = GateChecks.passing(clock, "2026-10-30T09:00", "2026-10-29T09:00",
             "2026-10-28T09:00");
     private SummaryService summary = new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
@@ -100,26 +106,55 @@ class BatchRunnerTest {
     }
 
     @Test
-    @DisplayName("한국어 요약 다음에 사이트 데이터 파일을 쓰고, 바뀐 파일이 있으면 게시한다")
+    @DisplayName("그날 첫 실행은 한국어 요약 다음에 검색 색인까지 사이트 데이터 파일을 쓰고 게시한 뒤 마지막 게시로 남긴다")
     void exportsThenPublishes(CapturedOutput output) {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
 
-        assertThat(siteData.files()).contains("meta.json", "index.json");
+        assertThat(siteData.files()).contains("meta.json", "index.json", SEARCH_INDEX);
         assertThat(publisher.published()).isEqualTo(1);
+        assertThat(records.findLast()).hasValueSatisfying(last -> assertThat(last.getPublishedAt()).isEqualTo(NOW));
         assertThat(output.toString().indexOf("Korean summary is skipped"))
                 .isLessThan(output.toString().indexOf("Site data exported"));
     }
 
     @Test
-    @DisplayName("바뀐 데이터 파일이 하나도 없으면 게시하지 않는다")
-    void noChangesNoPublish(CapturedOutput output) {
+    @DisplayName("같은 날 보이는 화면이 마지막 게시와 같으면 데이터 파일을 쓰지도 게시하지도 않고 정상으로 끝난다")
+    void sameViewIsSkipped(CapturedOutput output) {
         // 같은 사이트 데이터 폴더·같은 게시 창구에 두 번 돌린다(수집 진행 기록은 새로 — 고정 시계에서 같은 구간을 다시 받게)
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+        int writesAfterFirst = siteData.order().size();
 
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
 
+        assertThat(siteData.order()).hasSize(writesAfterFirst);
         assertThat(publisher.published()).isEqualTo(1);
-        assertThat(output).contains("Site data is unchanged; nothing to publish");
+        assertThat(output).contains("No visible change since the last publish today");
+    }
+
+    @Test
+    @DisplayName("같은 날 보이는 화면이 바뀌었으면 게시하되 검색 색인은 다시 쓰지 않는다")
+    void changedViewIsPublishedWithoutSearchIndex() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+        records.save(PublishRecord.published(NOW, "0".repeat(64)));
+
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(publisher.published()).isEqualTo(2);
+        assertThat(siteData.order()).containsOnlyOnce(SEARCH_INDEX);
+        assertThat(siteData.order().stream().filter("meta.json"::equals)).hasSize(2);
+    }
+
+    @Test
+    @DisplayName("한국 날짜가 바뀐 첫 실행은 화면이 그대로여도 게시하고 검색 색인을 다시 쓴다")
+    void nextDayIsPublishedWithSearchIndex() {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+        String view = records.findLast().orElseThrow().getFingerprint();
+        records.save(PublishRecord.published(NOW.minus(Duration.ofDays(1)), view));
+
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(publisher.published()).isEqualTo(2);
+        assertThat(siteData.order().stream().filter(SEARCH_INDEX::equals)).hasSize(2);
     }
 
     @Test
@@ -148,6 +183,7 @@ class BatchRunnerTest {
 
         assertThat(failure).isInstanceOf(PublishException.class);
         assertThat(((ExitCodeGenerator) failure).getExitCode()).isEqualTo(1);
+        assertThat(records.findLast()).isEmpty();
     }
 
     @Test
@@ -360,6 +396,6 @@ class BatchRunnerTest {
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
                 assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
-                SiteExports.writingTo(siteData, clock), publisher, gate);
+                SiteExports.writingTo(siteData, clock), new SitePublishService(publisher, records, clock), gate);
     }
 }

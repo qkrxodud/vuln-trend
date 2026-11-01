@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.product.ProductAssignService;
+import com.vulntrend.batch.application.publish.SitePublishService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
@@ -17,6 +18,7 @@ import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
+import com.vulntrend.batch.fake.FakePublishRecordRepository;
 import com.vulntrend.batch.fake.FakePublisher;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSummaryRepository;
@@ -190,7 +192,8 @@ class CollectionFailureRuleRunTest {
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
-                SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working(),
+                SiteExports.writingTo(new FakeSiteDataWriter(), clock),
+                new SitePublishService(FakePublisher.working(), new FakePublishRecordRepository(), clock),
                 GateChecks.failing(clock));
     }
 

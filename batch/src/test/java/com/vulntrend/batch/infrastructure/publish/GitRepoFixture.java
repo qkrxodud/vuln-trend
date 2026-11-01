@@ -82,6 +82,12 @@ public class GitRepoFixture {
         git(work, "config", "core.fsmonitor", helper.toString());
     }
 
+    /** 작업 저장소의 바뀐 파일을 모두 커밋하되 원격에는 올리지 않는다(앞선 실행의 push 가 실패한 상태) */
+    public void commitWithoutPush(String message) throws IOException {
+        git(work, "add", "-A");
+        git(work, "commit", "-q", "-m", message);
+    }
+
     public void setRemoteUrl(String url) throws IOException {
         git(work, "remote", "set-url", "origin", url);
     }

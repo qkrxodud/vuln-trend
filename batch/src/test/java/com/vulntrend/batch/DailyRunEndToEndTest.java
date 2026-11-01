@@ -7,11 +7,11 @@ import com.vulntrend.batch.application.collect.CollectService;
 import com.vulntrend.batch.application.export.ExportService;
 import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
+import com.vulntrend.batch.application.publish.SitePublishService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
 import com.vulntrend.batch.application.vulnerability.LegacyTitleService;
-import com.vulntrend.batch.domain.publish.Publisher;
 import com.vulntrend.batch.domain.summary.KoreanSummary;
 import com.vulntrend.batch.domain.summary.Summarizer;
 import com.vulntrend.batch.domain.summary.SummaryResult;
@@ -52,7 +52,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 
 /**
- * WBS 4.4 끝에서 끝까지: 실제 설정·실제 저장 구조(Postgres)·실제 수집기로 하루 한 번 실행을 돌린다.
+ * WBS 4.4 끝에서 끝까지: 실제 설정·실제 저장 구조(Postgres)·실제 수집기로 정기 실행을 돌린다.
  * NVD·KEV·EPSS 는 흉내 서버, 요약 모델은 가짜 Summarizer, git 원격은 임시 폴더의 bare 저장소다(실제 레포·원격은 건드리지 않는다).
  * 수집 → 대표 제품 → 점수 → 일별 통계 → 요약 → 사이트 데이터 파일 → git push 까지 한 번에 확인한다.
  * 시험끼리 같은 원격을 쓰므로 원격 확인은 "실행 전보다 몇 개 늘었나"로 한다. "5분 이내"는 실데이터 실측이라 NVD 키 뒤로 미룬다.
@@ -60,7 +60,7 @@ import org.springframework.test.context.DynamicPropertySource;
 @SpringBootTest
 @ActiveProfiles("test")
 @Import({PostgresTestConfig.class, DailyRunEndToEndTest.SummarizerStandIn.class})
-@DisplayName("하루 한 번 실행 — 끝에서 끝까지")
+@DisplayName("정기 실행 — 끝에서 끝까지")
 class DailyRunEndToEndTest {
 
     @TempDir
@@ -86,7 +86,7 @@ class DailyRunEndToEndTest {
     @Autowired
     private ExportService export;
     @Autowired
-    private Publisher publisher;
+    private SitePublishService publishing;
     @Autowired
     private GateCheckService gate;
     @Autowired
@@ -131,7 +131,7 @@ class DailyRunEndToEndTest {
 
     @BeforeEach
     void emptyStores() {
-        jdbc.execute("truncate epss_file, summary_call, summary, daily_stat, affected_product, reference_link, "
+        jdbc.execute("truncate epss_file, publish_state, summary_call, summary, daily_stat, affected_product, reference_link, "
                 + "vulnerability_raw, vulnerability, sync_state cascade");
     }
 
@@ -179,9 +179,24 @@ class DailyRunEndToEndTest {
     }
 
     @Test
-    @DisplayName("두 번째 실행에서 내용이 그대로인 파일은 다시 쓰지 않아 데이터 커밋에 들어가지 않는다")
-    void secondRunLeavesUnchangedFilesAlone() throws IOException {
+    @DisplayName("같은 날 보이는 화면이 그대로인 두 번째 실행은 데이터 파일을 쓰지도 올리지도 않는다")
+    void sameViewIsNotPublishedAgain() throws IOException {
         runner().run();
+        String metaBefore = Files.readString(site.dataDir().resolve("meta.json"));
+        int before = site.remoteSubjects().size();
+
+        runner().run();
+
+        assertThat(Files.readString(site.dataDir().resolve("meta.json"))).isEqualTo(metaBefore);
+        assertThat(site.remoteSubjects()).hasSize(before);
+        assertThat(site.uncommittedData()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("다음 날 첫 실행에서 내용이 그대로인 파일은 다시 쓰지 않아 데이터 커밋에 들어가지 않는다")
+    void nextDayLeavesUnchangedFilesAlone() throws IOException {
+        runner().run();
+        newKoreanDay();
         String detailBefore = Files.readString(site.dataDir().resolve("cve/CVE-2021-44228.json"));
         int before = site.remoteSubjects().size();
 
@@ -200,6 +215,7 @@ class DailyRunEndToEndTest {
     @DisplayName("데이터 파일을 쓰지 못하면 아무것도 올리지 않고 종료 코드 1 로 끝난다")
     void outputFailureStopsPush() throws IOException {
         runner().run();
+        newKoreanDay();
         int before = site.remoteSubjects().size();
         Path blocked = site.dataDir().resolve("stats.json");
         Files.delete(blocked);
@@ -241,6 +257,11 @@ class DailyRunEndToEndTest {
         assertThat(jdbc.queryForObject("select count(*) from summary", Integer.class)).isEqualTo(2);
     }
 
+    // 마지막 게시 기록을 지워 다음 실행을 그날 첫 게시로 만든다(시험은 실제 시계로 돈다)
+    private void newKoreanDay() {
+        jdbc.execute("truncate publish_state");
+    }
+
     // 테스트 프로필은 러너 빈을 등록하지 않는다(시작하자마자 돌지 않게). 같은 빈들로 직접 만든다
     private BatchRunner runner() throws IOException {
         answerSources(200);
@@ -248,7 +269,7 @@ class DailyRunEndToEndTest {
     }
 
     private BatchRunner assemble() {
-        return new BatchRunner(collect, productAssignment, score, dailyStat, legacyTitles, summary, export, publisher,
+        return new BatchRunner(collect, productAssignment, score, dailyStat, legacyTitles, summary, export, publishing,
                 gate);
     }
 

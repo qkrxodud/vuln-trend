@@ -31,14 +31,14 @@ class SchemaStartupTest {
     private List<Collector> collectors;
 
     @Test
-    @DisplayName("빈 저장소에서 처음 실행하면 기획서 5장의 저장 구조 8개와 요약 호출 기록·EPSS 점수 파일 날짜를 먼저 만들고 시작한다")
+    @DisplayName("빈 저장소에서 처음 실행하면 기획서 5장의 저장 구조 8개와 요약 호출 기록·EPSS 점수 파일 날짜·마지막 게시 기록을 먼저 만들고 시작한다")
     void createsStores() {
         List<String> names = jdbc.queryForList(
                 "select table_name from information_schema.tables where table_schema = 'public' "
                         + "and table_name <> 'flyway_schema_history' order by table_name", String.class);
 
         assertThat(names).containsExactly(
-                "affected_product", "daily_stat", "epss_file", "product_alias", "reference_link",
+                "affected_product", "daily_stat", "epss_file", "product_alias", "publish_state", "reference_link",
                 "summary", "summary_call", "sync_state", "vulnerability", "vulnerability_raw");
     }
 

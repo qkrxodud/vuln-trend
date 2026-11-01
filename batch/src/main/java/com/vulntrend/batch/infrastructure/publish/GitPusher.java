@@ -22,7 +22,8 @@ import org.springframework.stereotype.Component;
  * 사이트 데이터를 git 으로 게시한다(기획서 6장 9번, WBS 4.3).
  * - 대상은 데이터 폴더(output.dir)뿐이다: add·commit 모두 그 경로로만 한정한다. 저장소 전체 git add -A 는 쓰지 않는다 —
  *   같은 작업 폴더에서 고치던 코드(이미 올려 둔 것 포함)가 데이터 커밋에 섞이면 안 된다.
- * - 데이터가 그대로면 커밋도 push 도 하지 않는다.
+ * - 데이터가 그대로면 새 커밋은 만들지 않고 push 만 한다 — 게시하기로 정한 실행만 부르므로(SitePublishService),
+ *   앞선 실행이 push 에 실패해 남은 데이터 커밋을 올리고, 원격에 닿지 못하면 실패로 알린다(2시간마다 실행, 2026-11-01).
  * - 성공은 종료 코드로만 판정한다. git 출력은 읽지도 로그에 남기지도 않는다(원격 주소·인증 정보가 들어 있을 수 있음).
  * - 자격 증명을 묻느라 멈추지 않게 GIT_TERMINAL_PROMPT=0 으로 돌리고, 명령마다 시간 한도를 둔다.
  * - 기다릴 이유가 생기면 멈추지 말고 곧바로 실패해 종료 코드로 드러나게 한다(launchd 실행 push 2분 초과, 2026-11-01):
@@ -53,14 +54,21 @@ public class GitPusher implements Publisher {
         requireSuccess("add", git(repository, "add", "-A", "--", data));
         int difference = git(repository, "diff", "--cached", "--quiet", "--", data);
         if (difference == UNCHANGED) {
-            log.info("Site data is unchanged; nothing to commit or push.");
+            push(repository);
+            log.info("Site data is unchanged; no new commit, and any earlier data commit is pushed to {}.",
+                    properties.getRemote());
             return PublishResult.UNCHANGED;
         }
         requireExit("diff", difference, CHANGED);
         requireSuccess("commit", git(repository, "commit", "-q", "-m", commitMessage(), "--", data));
-        requireSuccess("push", git(repository, "push", "-q", properties.getRemote(), "HEAD"));
+        push(repository);
         log.info("Site data committed and pushed to {}.", properties.getRemote());
         return PublishResult.PUBLISHED;
+    }
+
+    // 데이터가 그대로여도 올린다 — 앞선 실행이 커밋만 하고 push 에 실패했으면 그 커밋이 이번에 올라간다(원격이 같으면 아무 일 없음)
+    private void push(Path repository) {
+        requireSuccess("push", git(repository, "push", "-q", properties.getRemote(), "HEAD"));
     }
 
     // 저장소 기준 데이터 폴더 경로. 저장소 밖이면 게시하지 않는다
