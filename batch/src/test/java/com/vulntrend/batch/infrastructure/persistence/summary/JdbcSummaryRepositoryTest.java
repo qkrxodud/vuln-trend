@@ -65,14 +65,42 @@ class JdbcSummaryRepositoryTest {
         }
 
         @Test
-        @DisplayName("요약을 버렸거나 거절된 CVE 는 다시 부르지 않는다")
-        void skipsDiscardedAndRefused() {
+        @DisplayName("거절된 CVE 는 다시 부르지 않는다")
+        void skipsRefused() {
             vulnerability("CVE-2026-0001", "30.00", false);
-            vulnerability("CVE-2026-0002", "20.00", false);
-            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
-            repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.REFUSED, "gpt-6-luna-2026-05-18", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.REFUSED, "gpt-6-luna-2026-05-18", NOW);
 
             assertThat(repository.findTopWithoutSummary(20)).isEmpty();
+        }
+
+        @Test
+        @DisplayName("요약을 한 번 버린 CVE 는 다음 실행에서 한 번 더 고른다")
+        void retriesOnceAfterDiscard() {
+            vulnerability("CVE-2026-0001", "30.00", false);
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
+
+            assertThat(ids(repository.findTopWithoutSummary(20))).containsExactly("CVE-2026-0001");
+        }
+
+        @Test
+        @DisplayName("요약을 두 번 버린 CVE 는 더 부르지 않는다")
+        void stopsAfterSecondDiscard() {
+            vulnerability("CVE-2026-0001", "30.00", false);
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna",
+                    NOW.minusSeconds(86400));
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
+
+            assertThat(repository.findTopWithoutSummary(20)).isEmpty();
+        }
+
+        @Test
+        @DisplayName("실패는 버린 횟수에 들어가지 않는다")
+        void failuresAreNotDiscards() {
+            vulnerability("CVE-2026-0001", "30.00", false);
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.FAILED, null, NOW.minusSeconds(86400));
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
+
+            assertThat(ids(repository.findTopWithoutSummary(20))).containsExactly("CVE-2026-0001");
         }
 
         @Test

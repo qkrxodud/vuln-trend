@@ -119,6 +119,18 @@ class SummaryServiceTest {
         }
 
         @Test
+        @DisplayName("요약을 버리면 CVE·걸린 규칙·걸린 값을 실행 기록 한 줄로 남기고 요약 문장은 남기지 않는다")
+        void logsDiscardReason(CapturedOutput output) {
+            FakeSummarizer summarizer = new FakeSummarizer(source -> SummaryResult.from(
+                    KoreanSummary.of("남기면 안 되는 첫 문장이다.", "Foo 9.9.9 사용자가 영향받는다.", "원문 참고"), MODEL, source));
+
+            service(summarizer, new FakeSummaryRepository(targets(1), 0)).summarizeTop();
+
+            assertThat(output).contains("Korean summary for CVE-2026-0001 was discarded (UNKNOWN_VERSION: \"9.9.9\").");
+            assertThat(output).doesNotContain("남기면 안 되는 첫 문장");
+        }
+
+        @Test
         @DisplayName("결과를 건수로 실행 기록에 남기고 요약 열쇠 값은 남기지 않는다")
         void logsCounts(CapturedOutput output) {
             service(generating(MODEL), new FakeSummaryRepository(targets(2), 0)).summarizeTop();

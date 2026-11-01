@@ -27,7 +27,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 요약 저장소(WBS 6.3).
- * - 대상: 트렌드 점수 상위 top 건을 먼저 정하고(철회된 CVE 제외), 그중 요약이 없고 버리거나 거절된 기록도 없는 것만.
+ * - 대상: 트렌드 점수 상위 top 건을 먼저 정하고(철회된 CVE 제외), 그중 요약이 없고 다시 부르지 않을 만큼의 기록도 없는 것만.
+ *   몇 번이면 그만 부르는지는 SummaryOutcome.finalAfter(만든 것·거절 1번, 버림 2번, 실패는 제한 없음).
  *   "요약 없는 것 중 상위 20건"이 아니다 — 사이트 상위 목록에 요약이 붙는 것이 목적이다(기획서 6장).
  * - 오늘 호출은 답을 받은 것(하루 상한)과 실패한 것(실패 안전 상한)을 따로 센다.
  * - 요약은 처음 한 번만 남긴다(on conflict do nothing). 제목은 아직 설명에서 만든 임시 제목일 때만 요약 제목으로 바꾼다.
@@ -49,9 +50,13 @@ public class JdbcSummaryRepository implements SummaryRepository {
             from top
             where description is not null
               and not exists (select 1 from summary s where s.vuln_id = top.vuln_id)
-              and not exists (select 1 from summary_call c where c.vuln_id = top.vuln_id and c.outcome in (:final))
+              and not exists (
+                  select 1 from summary_call c where c.vuln_id = top.vuln_id
+                  group by c.outcome
+                  having count(*) >= %s
+              )
             %s
-            """.formatted(TrendOrder.LISTED, TrendOrder.ORDER_BY, TrendOrder.ORDER_BY);
+            """.formatted(TrendOrder.LISTED, TrendOrder.ORDER_BY, finalAfterByOutcome(), TrendOrder.ORDER_BY);
     private static final String PRODUCTS = """
             select vuln_id, vendor, product, vulnerable_range, fixed_version
             from affected_product where vuln_id in (:ids) order by vuln_id, vendor, product
@@ -77,9 +82,7 @@ public class JdbcSummaryRepository implements SummaryRepository {
 
     @Override
     public List<SummarySource> findTopWithoutSummary(int top) {
-        MapSqlParameterSource params = new MapSqlParameterSource()
-                .addValue("top", top)
-                .addValue("final", finalOutcomes());
+        MapSqlParameterSource params = new MapSqlParameterSource().addValue("top", top);
         List<Row> rows = jdbc.query(TOP_WITHOUT_SUMMARY, params, (rs, i) -> Row.of(rs));
         if (rows.isEmpty()) {
             return List.of();
@@ -93,12 +96,12 @@ public class JdbcSummaryRepository implements SummaryRepository {
 
     @Override
     public int countAnsweredSince(Instant since) {
-        return countCallsSince(since, finalOutcomes());
+        return countCallsSince(since, answeredOutcomes());
     }
 
     @Override
     public int countFailedSince(Instant since) {
-        return countCallsSince(since, retryableOutcomes());
+        return countCallsSince(since, failedOutcomes());
     }
 
     @Override
@@ -145,18 +148,29 @@ public class JdbcSummaryRepository implements SummaryRepository {
                         Collectors.mapping(Map.Entry::getValue, Collectors.toList())));
     }
 
-    private static List<String> finalOutcomes() {
+    private static List<String> answeredOutcomes() {
         return Arrays.stream(SummaryOutcome.values())
-                .filter(Predicate.not(SummaryOutcome::isRetryable))
+                .filter(Predicate.not(SummaryOutcome::isFailed))
                 .map(SummaryOutcome::name)
                 .toList();
     }
 
-    private static List<String> retryableOutcomes() {
+    private static List<String> failedOutcomes() {
         return Arrays.stream(SummaryOutcome.values())
-                .filter(SummaryOutcome::isRetryable)
+                .filter(SummaryOutcome::isFailed)
                 .map(SummaryOutcome::name)
                 .toList();
+    }
+
+    /**
+     * 결과별로 몇 번이면 그만 부르나를 SQL case 로(예: case c.outcome when 'GENERATED' then 1 … end).
+     * 값은 enum 이름과 숫자뿐이라 바깥 글이 SQL 에 섞이지 않는다. 제한 없는 결과(실패)는 case 에 없어 null 이 되고, 걸리지 않는다
+     */
+    private static String finalAfterByOutcome() {
+        return Arrays.stream(SummaryOutcome.values())
+                .filter(outcome -> outcome.finalAfter().isPresent())
+                .map(outcome -> "when '%s' then %d".formatted(outcome.name(), outcome.finalAfter().getAsInt()))
+                .collect(Collectors.joining(" ", "case c.outcome ", " end"));
     }
 
     // timestamptz 는 OffsetDateTime 으로 주고받는다(pgjdbc 는 Instant 를 직접 받지 않는다)

@@ -39,6 +39,10 @@ class SummaryResultTest {
 
         assertThat(result.isDiscarded()).isTrue();
         assertThat(result.getSummary()).isEmpty();
+        assertThat(result.getDiscardReason()).hasValueSatisfying(reason -> {
+            assertThat(reason.getRule()).isEqualTo(DiscardRule.COMMAND);
+            assertThat(reason.getFragment()).startsWith("log4j2.formatMsgNoLookups=true");
+        });
     }
 
     @Test
@@ -50,6 +54,30 @@ class SummaryResultTest {
         SummaryResult result = SummaryResult.from(summary, MODEL, LOG4SHELL);
 
         assertThat(result.isDiscarded()).isTrue();
+        assertThat(result.getDiscardReason()).hasValueSatisfying(reason -> {
+            assertThat(reason.getRule()).isEqualTo(DiscardRule.UNKNOWN_VERSION);
+            assertThat(reason.getFragment()).isEqualTo("2.17.1");
+        });
+    }
+
+    @Test
+    @DisplayName("명령어와 지어낸 버전이 함께 있으면 명령어를 이유로 남긴다")
+    void commandComesFirst() {
+        KoreanSummary summary = KoreanSummary.of("원격 코드 실행 취약점이다.", "Log4j 2.99.9 사용자가 영향받는다.",
+                "sudo 로 다시 설치한다.");
+
+        SummaryResult result = SummaryResult.from(summary, MODEL, LOG4SHELL);
+
+        assertThat(result.getDiscardReason()).map(DiscardReason::getRule).contains(DiscardRule.COMMAND);
+    }
+
+    @Test
+    @DisplayName("쓸 수 있는 요약에는 버린 이유가 없다")
+    void generatedHasNoReason() {
+        KoreanSummary summary = KoreanSummary.of("원격 코드 실행 취약점이다.", "Log4j 사용자가 영향받는다.", "원문 참고");
+
+        assertThat(SummaryResult.from(summary, MODEL, LOG4SHELL).getDiscardReason()).isEmpty();
+        assertThat(SummaryResult.refused(MODEL).getDiscardReason()).isEmpty();
     }
 
     @Test
@@ -72,10 +100,19 @@ class SummaryResultTest {
     }
 
     @Test
-    @DisplayName("만든 것·버린 것·거절된 것은 다시 부르지 않고 실패한 것만 다음 실행에서 다시 부른다")
-    void onlyFailuresAreRetried() {
-        assertThat(SummaryOutcome.FAILED.isRetryable()).isTrue();
+    @DisplayName("만든 것·거절된 것은 한 번, 버린 것은 두 번 받으면 다시 부르지 않고 실패한 것은 몇 번이든 다시 부른다")
+    void whenToStopCalling() {
+        assertThat(SummaryOutcome.GENERATED.finalAfter()).hasValue(1);
+        assertThat(SummaryOutcome.REFUSED.finalAfter()).hasValue(1);
+        assertThat(SummaryOutcome.DISCARDED.finalAfter()).hasValue(2);
+        assertThat(SummaryOutcome.FAILED.finalAfter()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("답을 받지 못한 호출은 실패뿐이다")
+    void onlyFailuresAreUnanswered() {
+        assertThat(SummaryOutcome.FAILED.isFailed()).isTrue();
         assertThat(List.of(SummaryOutcome.GENERATED, SummaryOutcome.DISCARDED, SummaryOutcome.REFUSED))
-                .noneMatch(SummaryOutcome::isRetryable);
+                .noneMatch(SummaryOutcome::isFailed);
     }
 }

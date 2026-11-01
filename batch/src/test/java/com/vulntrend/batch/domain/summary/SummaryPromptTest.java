@@ -27,6 +27,26 @@ class SummaryPromptTest {
         }
 
         @Test
+        @DisplayName("버전은 원문 숫자를 글자 그대로 옮기고 계산하거나 짐작하지 말라고 한다")
+        void copiesVersionsVerbatim() {
+            assertThat(SummaryPrompt.instructions())
+                    .contains("원문에 적힌 숫자를 글자 그대로 옮긴다")
+                    .contains("계산하거나 짐작하지 않는다");
+        }
+
+        @Test
+        @DisplayName("버전 범위는 기호 대신 이상·미만 같은 말로 쓰라고 한다")
+        void rangesInWords() {
+            assertThat(SummaryPrompt.instructions()).contains("기호 대신 \"이상\", \"미만\", \"또는\" 같은 말로 쓴다");
+        }
+
+        @Test
+        @DisplayName("원문에 버전이 없는 제품에 배경지식으로 버전을 보태지 말라고 한다")
+        void noBackgroundVersions() {
+            assertThat(SummaryPrompt.instructions()).contains("배경지식으로 버전을 보태지 않는다");
+        }
+
+        @Test
         @DisplayName("명령어·스크립트·설정값을 쓰지 말라고 적는다")
         void noCommands() {
             assertThat(SummaryPrompt.instructions()).contains("명령어·스크립트·설정값을 쓰지 않는다");

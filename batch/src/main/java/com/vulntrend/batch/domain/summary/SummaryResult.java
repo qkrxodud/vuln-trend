@@ -9,6 +9,7 @@ import lombok.Getter;
  * 요약 한 건의 결과. 만들었거나(GENERATED), 명령어나 원문에 없는 버전이 섞여 버렸거나(DISCARDED),
  * 요약 모델이 거절했거나(REFUSED), 실패했다(FAILED).
  * 버린 것·거절된 것·실패한 것 모두 비치명이다 — 그 CVE 는 요약 없이 사이트에 실린다(기획서 6장).
+ * 버렸으면 걸린 규칙과 값(DiscardReason)을 함께 든다 — 실행 기록에 남겨 원인을 알 수 있게(사용자 결정 2026-11-01).
  * model 은 요청한 모델 이름이 아니라 응답에 적힌 실제 모델 이름이다(예: 날짜가 붙은 판).
  */
 public class SummaryResult {
@@ -17,12 +18,14 @@ public class SummaryResult {
     private final SummaryOutcome outcome;
     private final KoreanSummary summary;
     private final String model;
+    private final DiscardReason discardReason;
 
     @Builder(access = AccessLevel.PRIVATE)
-    private SummaryResult(SummaryOutcome outcome, KoreanSummary summary, String model) {
+    private SummaryResult(SummaryOutcome outcome, KoreanSummary summary, String model, DiscardReason discardReason) {
         this.outcome = outcome;
         this.summary = summary;
         this.model = model;
+        this.discardReason = discardReason;
     }
 
     /** 세 문장이 다 있어야 하고, 명령어도 원문에 없는 버전도 없어야 요약으로 쓴다 */
@@ -30,8 +33,10 @@ public class SummaryResult {
         if (summary.isIncomplete()) {
             return answered(SummaryOutcome.FAILED, model);
         }
-        if (summary.hasCommand() || summary.hasUnknownVersion(source)) {
-            return answered(SummaryOutcome.DISCARDED, model);
+        Optional<DiscardReason> reason = summary.discardReason(source);
+        if (reason.isPresent()) {
+            return SummaryResult.builder().outcome(SummaryOutcome.DISCARDED).model(model).discardReason(reason.get())
+                    .build();
         }
         return SummaryResult.builder().outcome(SummaryOutcome.GENERATED).summary(summary).model(model).build();
     }
@@ -62,6 +67,10 @@ public class SummaryResult {
 
     public Optional<KoreanSummary> getSummary() {
         return Optional.ofNullable(summary);
+    }
+
+    public Optional<DiscardReason> getDiscardReason() {
+        return Optional.ofNullable(discardReason);
     }
 
     public Optional<String> getModel() {

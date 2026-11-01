@@ -37,7 +37,7 @@ public class SummaryCallBudget {
     }
 
     public void spend(SummaryOutcome outcome) {
-        if (outcome.isRetryable()) {
+        if (outcome.isFailed()) {
             failed++;
             return;
         }

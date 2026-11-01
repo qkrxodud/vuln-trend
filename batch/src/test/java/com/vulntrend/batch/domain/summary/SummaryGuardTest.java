@@ -63,6 +63,66 @@ class SummaryGuardTest {
     }
 
     @Nested
+    @DisplayName("걸린 값")
+    class Found {
+
+        @Test
+        @DisplayName("명령어가 걸리면 걸린 자리부터 그 낱말 끝까지를 돌려준다")
+        void commandFragment() {
+            assertThat(SummaryGuard.commandIn("먼저 log4j2.formatMsgNoLookups=true 로 설정한 뒤 다시 시작한다."))
+                    .hasValue("log4j2.formatMsgNoLookups=true");
+            assertThat(SummaryGuard.commandIn("curl -sSL https://example.com/fix.sh 로 고친다.")).hasValue("curl -sSL");
+        }
+
+        @Test
+        @DisplayName("원문에 없는 버전이 걸리면 그 버전을 돌려준다")
+        void unknownVersion() {
+            assertThat(SummaryGuard.unknownVersionIn("Log4j 2.15.0 미만이며 2.17.1 이상으로 올린다.", LOG4SHELL))
+                    .hasValue("2.17.1");
+        }
+
+        @Test
+        @DisplayName("걸린 것이 없으면 아무것도 돌려주지 않는다")
+        void nothing() {
+            assertThat(SummaryGuard.commandIn("원문 참고")).isEmpty();
+            assertThat(SummaryGuard.unknownVersionIn("Log4j 2.15.0 이상으로 올린다.", LOG4SHELL)).isEmpty();
+        }
+    }
+
+    @Nested
+    @DisplayName("원문 버전을 줄여 쓴 모양")
+    class ShortenedVersions {
+
+        private final SummarySource php = SummarySource.of(CveId.from("CVE-2026-109618"), "PHP uses longjmp().",
+                List.of(SummaryProduct.of("php", "php", ">=7.3.0, <8.2.35 || >=8.3.0, <8.3.36", null)),
+                new BigDecimal("9.8"));
+
+        @Test
+        @DisplayName("원문 7.3.0 을 7.3 으로 줄여 쓰면 지어낸 버전으로 보지 않는다")
+        void shortenedVersion() {
+            assertThat(SummaryGuard.hasUnknownVersion("PHP 7.3 이상 8.2.35 미만이 영향받는다.", php)).isFalse();
+        }
+
+        @Test
+        @DisplayName("8.x 같은 계열 표기는 버전 숫자로 보지 않는다")
+        void seriesNotation() {
+            assertThat(SummaryGuard.hasUnknownVersion("PHP 8.x 계열 사용자가 영향받는다.", php)).isFalse();
+        }
+
+        @Test
+        @DisplayName("범위 끝에서 하나를 뺀 버전처럼 원문 숫자로 계산한 버전은 지어낸 것으로 본다")
+        void derivedVersionIsUnknown() {
+            assertThat(SummaryGuard.unknownVersionIn("PHP 8.2.34 이하가 영향받는다.", php)).hasValue("8.2.34");
+        }
+
+        @Test
+        @DisplayName("원문 범위의 = 기호를 제품 이름 뒤에 그대로 옮기면 설정값으로 보고 버린다(프론트 점검과 같은 기준)")
+        void copiedEqualsSignIsCommand() {
+            assertThat(SummaryGuard.commandIn("Ivanti Connect Secure =22.8-r2 가 영향받는다.")).isPresent();
+        }
+    }
+
+    @Nested
     @DisplayName("원문에 없는 버전")
     class Versions {
 

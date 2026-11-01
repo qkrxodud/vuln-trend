@@ -103,6 +103,9 @@ public class SummaryService {
         SummaryResult result = summaryModel.summarize(source);
         Instant calledAt = clock.instant();
         repository.recordCall(source.getCveId(), result.getOutcome(), result.getModel().orElse(null), calledAt);
+        // 버린 이유는 규칙과 걸린 값만 남긴다 — 요약 문장 전체는 남기지 않는다
+        result.getDiscardReason().ifPresent(reason -> log.info("Korean summary for {} was discarded ({}: \"{}\").",
+                source.getCveId().getValue(), reason.getRule(), reason.getFragment()));
         result.getSummary().ifPresent(summary -> save(source, summary, result.getModel().orElseThrow(), calledAt));
         return result.getOutcome();
     }

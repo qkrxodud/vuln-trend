@@ -1,6 +1,7 @@
 package com.vulntrend.batch.domain.summary;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
  * 요약에 명령어·스크립트·설정값이 섞였는지 본다(기획서 6장 요약 가드). 섞였으면 그 요약은 버리고 다시 만들지 않는다.
  * 사이트에 그대로 실리는 글이라 따라 하면 위험한 문장을 막는 마지막 관문이다. 놓친 모양이 나오면 여기에 더하고 테스트에 예시를 넣는다.
  * 원문에 없는 버전(WBS 6.3): "2.17.1" 처럼 마침표로 이은 숫자가 원문(설명·제품·범위·고친 버전)에 없으면 지어낸 것으로 본다.
+ * 버린 요약은 걸린 값을 실행 기록에 남긴다(commandIn·unknownVersionIn, 사용자 결정 2026-11-01).
  * 판정 기준은 프론트 gate:check(web/scripts/gate/static-checks.ts 의 VERSION·sourceTextOf·scoreTexts)와 같다.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -36,22 +38,45 @@ public final class SummaryGuard {
     // 앞에 숫자·마침표가 없고, 뒤에 숫자가 이어지지 않는 "숫자.숫자(.숫자…)". 앞의 v 는 떼고 본다
     private static final Pattern VERSION = Pattern.compile("(?<![\\d.])v?(\\d+(?:\\.\\d+)+)(?!\\d)");
 
+    // 걸린 자리에서 낱말 끝(다음 빈칸)까지
+    private static final Pattern REST_OF_WORD = Pattern.compile("\\S*");
+
     public static boolean hasCommand(String text) {
-        return COMMAND_PATTERNS.stream().anyMatch(pattern -> pattern.matcher(text).find());
+        return commandIn(text).isPresent();
+    }
+
+    /** 처음 걸린 명령어 조각: 걸린 자리부터 그 낱말 끝까지 */
+    public static Optional<String> commandIn(String text) {
+        return COMMAND_PATTERNS.stream()
+                .map(pattern -> pattern.matcher(text))
+                .filter(Matcher::find)
+                .findFirst()
+                .map(matcher -> fragmentFrom(text, matcher));
     }
 
     /** 원문에 없는 버전 숫자가 있는가. CVSS 점수(9.8)는 버전으로 보지 않는다 */
     public static boolean hasUnknownVersion(String text, SummarySource source) {
+        return unknownVersionIn(text, source).isPresent();
+    }
+
+    /** 처음 걸린 원문에 없는 버전 숫자 */
+    public static Optional<String> unknownVersionIn(String text, SummarySource source) {
         String sourceText = source.sourceText();
         List<String> scores = source.scoreTexts();
         Matcher matcher = VERSION.matcher(text);
         while (matcher.find()) {
             String version = matcher.group(1);
             if (isUnknown(version, sourceText, scores)) {
-                return true;
+                return Optional.of(version);
             }
         }
-        return false;
+        return Optional.empty();
+    }
+
+    private static String fragmentFrom(String text, Matcher matcher) {
+        Matcher rest = REST_OF_WORD.matcher(text).region(matcher.end(), text.length());
+        rest.lookingAt();
+        return text.substring(matcher.start(), rest.end()).strip();
     }
 
     private static boolean isUnknown(String version, String sourceText, List<String> scores) {

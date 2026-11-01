@@ -1,6 +1,8 @@
 package com.vulntrend.batch.domain.summary;
 
 import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Stream;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -27,16 +29,23 @@ public class KoreanSummary {
         return KoreanSummary.builder().what(what).who(who).action(action).build();
     }
 
-    public boolean hasCommand() {
-        return sentences().filter(Objects::nonNull).anyMatch(SummaryGuard::hasCommand);
-    }
-
-    public boolean hasUnknownVersion(SummarySource source) {
-        return sentences().filter(Objects::nonNull).anyMatch(sentence -> SummaryGuard.hasUnknownVersion(sentence, source));
+    /** 버려야 하는 이유. 명령어를 먼저 보고(따라 하면 위험), 그다음 원문에 없는 버전을 본다 */
+    public Optional<DiscardReason> discardReason(SummarySource source) {
+        Optional<DiscardReason> command = firstIn(SummaryGuard::commandIn)
+                .map(fragment -> DiscardReason.of(DiscardRule.COMMAND, fragment));
+        if (command.isPresent()) {
+            return command;
+        }
+        return firstIn(sentence -> SummaryGuard.unknownVersionIn(sentence, source))
+                .map(version -> DiscardReason.of(DiscardRule.UNKNOWN_VERSION, version));
     }
 
     public boolean isIncomplete() {
         return sentences().anyMatch(sentence -> Objects.isNull(sentence) || sentence.isBlank());
+    }
+
+    private Optional<String> firstIn(Function<String, Optional<String>> finder) {
+        return sentences().filter(Objects::nonNull).map(finder).flatMap(Optional::stream).findFirst();
     }
 
     private Stream<String> sentences() {
