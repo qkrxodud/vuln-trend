@@ -50,7 +50,10 @@ notify() {
     sleep 2
   done
 
-  cd "$REPO/batch" && ./gradlew --no-daemon -q bootRun
+  # push 진단(R11): git 명령 흐름만 파일로 남긴다(통신 내용·토큰은 남기지 않음 — GIT_TRACE_CURL 은 쓰지 않음)
+  export GIT_TRACE="$LOG_DIR/git-trace-$(date +%Y%m%d-%H%M).log"
+  # push 시간 한도를 2분에서 10분으로(launchd 아래에서 2분 초과가 두 번 남)
+  cd "$REPO/batch" && ./gradlew --no-daemon -q bootRun --args='--publish.command-timeout=10m'
   status=$?
   echo "== $(date '+%Y-%m-%d %H:%M:%S %Z') end, exit code $status"
   exit $status

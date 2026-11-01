@@ -88,7 +88,8 @@ spring.datasource.url=jdbc:postgresql://localhost:${DB_PORT:5432}/vuln   # 5432 
 spring.flyway.enabled=true
 nvd.api-key=${NVD_API_KEY}
 output.dir=../web/public/data
-summary.daily-limit=20
+summary.daily-limit=20            # 답을 받은 호출(생성·버림·거절)만 셈
+summary.daily-failure-limit=40    # 실패 호출만 셈(사용자 결정 2026-11-01)
 ```
 
 ## 5. DB 스키마 (Flyway V1)
