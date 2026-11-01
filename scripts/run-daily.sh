@@ -18,7 +18,8 @@ notify() {
   /usr/bin/osascript -e "display notification \"$1\" with title \"VulnTrend 하루 실행\"" >/dev/null 2>&1 || true
 }
 
-{
+# 하위 셸로 묶는다 — 안의 exit 가 스크립트 전체를 끝내면 아래 알림·정리가 안 돈다
+(
   echo "== $(date '+%Y-%m-%d %H:%M:%S %Z') start"
 
   # 승인·커밋되지 않은 코드로 돌지 않는다(공유 작업 폴더라 개발 중인 파일이 섞일 수 있음, 2026-11-01 사고)
@@ -57,7 +58,7 @@ notify() {
   status=$?
   echo "== $(date '+%Y-%m-%d %H:%M:%S %Z') end, exit code $status"
   exit $status
-} >>"$LOG" 2>&1
+) >>"$LOG" 2>&1
 status=$?
 
 # 오래된 기록 정리(최근 30개)
