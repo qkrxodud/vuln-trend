@@ -34,7 +34,7 @@ const WatchSection = ({ meta, rows, selectedId }: { meta: Meta; rows: TrendRow[]
         <p className={EMPTY}>
           이번 수집에서 주목할 취약점이 없습니다.
           <br />
-          다음 갱신(매일 09:00)을 기다려 주세요.
+          2시간마다 다시 확인합니다.
         </p>
       )
     }

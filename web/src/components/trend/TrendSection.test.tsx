@@ -304,10 +304,13 @@ describe('목록 행의 조치 한 줄', () => {
 })
 
 describe('빈 상태', () => {
-  it('주목 목록이 비어 있으면 다음 갱신을 기다리라고 알린다', async () => {
+  it('주목 목록이 비어 있으면 2시간마다 다시 확인한다고 알린다', async () => {
     renderSection([])
 
-    expect(await screen.findByText(/이번 수집에서 주목할 취약점이 없습니다/)).toBeInTheDocument()
+    expect(await screen.findByText(/이번 수집에서 주목할 취약점이 없습니다/)).toHaveTextContent(
+      '2시간마다 다시 확인합니다.',
+    )
+    expect(screen.queryByText(/매일 09:00/)).toBeNull()
   })
 
   it('필터에 맞는 취약점이 없으면 필터 해제를 권한다', async () => {

@@ -61,10 +61,11 @@ describe('사이트 머리글', () => {
     expect(screen.queryByText('수집 완료')).toBeNull()
   })
 
-  it('갱신 주기와 출처를 적고, 머리글에는 목록 필터를 두지 않는다', async () => {
+  it('확인 주기(2시간마다, 바뀌면 갱신)와 출처를 적고, 머리글에는 목록 필터를 두지 않는다', async () => {
     renderHeaderAt('2026-10-30T12:00:00+09:00')
 
-    expect(await screen.findByText(/하루 1회 갱신 · 출처 NVD · CISA KEV · EPSS/)).toBeInTheDocument()
+    expect(await screen.findByText(/2시간마다 확인 · 바뀌면 갱신 · 출처 NVD · CISA KEV · EPSS/)).toBeInTheDocument()
+    expect(screen.queryByText(/하루 1회/)).toBeNull()
     expect(screen.queryByRole('group', { name: '취약점 필터' })).toBeNull()
   })
 
