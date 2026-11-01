@@ -30,6 +30,7 @@ import org.springframework.stereotype.Repository;
  * 상세·검색 파일용 조회(WBS 4.2). 목록 줄은 JdbcTrendListRepository 와 같은 열·같은 점수식으로 읽는다.
  * - 검색 색인: 철회 제외 전체, 최근 발행 순(발행일 없으면 맨 뒤) → 번호
  * - 영향 제품: 제조사·제품 순. 표시 이름은 product_alias 에서 같은 slug 의 이름
+ * - 제품 이름은 저장 원문 그대로 읽는다. 사이트에 보일 이름은 출력이 정한다(ProductNames)
  * - 참고 링크: 출처 순(vendor → nvd → news → poc) → 주소 순
  */
 @Repository
@@ -40,6 +41,7 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
             + TrendOrder.LISTED + " order by published_at desc nulls last, vuln_id";
     private static final String SEARCH_ENTRIES_SINCE = "select vuln_id, title, primary_product from vulnerability where "
             + TrendOrder.LISTED + " and published_at >= :from order by published_at desc, vuln_id";
+    private static final String STANDARD_NAMES = "select distinct display_name from product_alias order by display_name";
     private static final String TOP_IDS = "select vuln_id from vulnerability where " + TrendOrder.LISTED + " "
             + TrendOrder.ORDER_BY + " limit :limit";
     private static final String DETAILS = "select " + JdbcTrendListRepository.COLUMNS
@@ -76,6 +78,11 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
         return jdbc.query(SEARCH_ENTRIES_SINCE, new MapSqlParameterSource("from", from.atOffset(ZoneOffset.UTC)),
                 (rs, rowNum) -> new SearchListing(CveId.from(rs.getString("vuln_id")), rs.getString("title"),
                         rs.getString("primary_product")));
+    }
+
+    @Override
+    public List<String> standardProductNames() {
+        return jdbc.query(STANDARD_NAMES, (rs, rowNum) -> rs.getString("display_name"));
     }
 
     @Override

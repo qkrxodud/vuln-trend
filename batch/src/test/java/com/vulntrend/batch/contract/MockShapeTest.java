@@ -14,6 +14,7 @@ import com.vulntrend.batch.domain.export.dto.CveDetailListing;
 import com.vulntrend.batch.domain.export.dto.ReferenceListing;
 import com.vulntrend.batch.domain.export.dto.SearchListing;
 import com.vulntrend.batch.domain.export.dto.SummaryListing;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.score.ScoreBreakdown;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
 import com.vulntrend.batch.domain.stat.DailyStat;
@@ -38,6 +39,8 @@ import org.junit.jupiter.api.io.TempDir;
 
 @DisplayName("사이트 데이터 파일 모양 — 프론트 목업과 같다")
 class MockShapeTest {
+
+    private static final ProductNames NAMES = ProductNames.of(List.of());
 
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
 
@@ -79,8 +82,8 @@ class MockShapeTest {
         FakeTrendListRepository trends = new FakeTrendListRepository().with(listing("CVE-2026-41203", true))
                 .with(listing("CVE-2026-50001", false));
 
-        new IndexFileExport(trends, writer).write(NOW);
-        new RecentFileExport(trends, writer).write(NOW);
+        new IndexFileExport(trends, writer).write(NOW, NAMES);
+        new RecentFileExport(trends, writer).write(NOW, NAMES);
 
         assertSameShape(dataDir.resolve("index.json"), "index.json");
         assertSameShape(dataDir.resolve("recent.json"), "recent.json");
@@ -92,7 +95,7 @@ class MockShapeTest {
         FakeCveDetailRepository repository = new FakeCveDetailRepository()
                 .search(new SearchListing(CveId.from("CVE-2026-41203"), "제목", "Chrome"), NOW);
 
-        new SearchIndexFileExport(repository, writer).write(NOW);
+        new SearchIndexFileExport(repository, writer).write(NOW, NAMES);
 
         assertSameShape(dataDir.resolve("search-index.json"), "search-index.json");
     }
@@ -107,7 +110,7 @@ class MockShapeTest {
                 List.of(new ReferenceListing("https://vendor.example/a", "vendor", null)));
 
         new CveDetailFileExport(new FakeCveDetailRepository().detail(detail), writer)
-                .write(List.of(CveId.from("CVE-2026-41203")), NOW);
+                .write(List.of(CveId.from("CVE-2026-41203")), NOW, NAMES);
 
         assertSameShape(dataDir.resolve("cve/CVE-2026-41203.json"), "cve/CVE-2026-41203.json");
     }

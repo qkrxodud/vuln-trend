@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.export.dto.SearchEntryJson;
 import com.vulntrend.batch.domain.export.dto.SearchListing;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
@@ -15,6 +16,8 @@ import org.junit.jupiter.api.Test;
 
 @DisplayName("search-index.json")
 class SearchIndexFileExportTest {
+
+    private static final ProductNames NAMES = ProductNames.of(List.of());
 
     /** 한국 시각 2026-11-01 00:30 실행. 12개월 전 날은 2025-11-01 00:00(한국) = 2025-10-31T15:00Z */
     private static final Instant NOW = Instant.parse("2026-10-31T15:30:00Z");
@@ -32,6 +35,16 @@ class SearchIndexFileExportTest {
 
         assertThat(export(repository)).containsExactly(new SearchEntryJson("CVE-2026-41203", "V8 타입 혼동", "Chrome"),
                 new SearchEntryJson("CVE-2026-50001", "CVE-2026-50001", null));
+    }
+
+    @Test
+    @DisplayName("표에 없는 대표 제품은 사람이 읽는 이름으로 싣는다")
+    void unmappedProductReadable() {
+        FakeCveDetailRepository repository = new FakeCveDetailRepository()
+                .search(new SearchListing(CveId.from("CVE-2026-41203"), "제목", "experience_manager"),
+                        Instant.parse("2026-10-20T00:00:00Z"));
+
+        assertThat(export(repository)).extracting(SearchEntryJson::product).containsExactly("Experience Manager");
     }
 
     @Nested
@@ -79,7 +92,7 @@ class SearchIndexFileExportTest {
 
     @SuppressWarnings("unchecked")
     private List<SearchEntryJson> export(FakeCveDetailRepository repository) {
-        new SearchIndexFileExport(repository, writer).write(NOW);
+        new SearchIndexFileExport(repository, writer).write(NOW, NAMES);
         return writer.document("search-index.json", List.class).orElseThrow();
     }
 }

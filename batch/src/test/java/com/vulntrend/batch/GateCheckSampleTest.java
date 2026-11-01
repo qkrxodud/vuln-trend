@@ -8,6 +8,7 @@ import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.gate.GateItem;
 import com.vulntrend.batch.domain.gate.GateReport;
 import com.vulntrend.batch.domain.gate.GateStatus;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeRepositoryHistory;
@@ -113,7 +114,7 @@ class GateCheckSampleTest {
     @Test
     @DisplayName("search-index 를 쓰면 실제 파일의 gzip 크기로 판정하고 기간별 예상을 함께 남긴다")
     void writtenSearchIndexMeasured() {
-        new SearchIndexFileExport(details, files).write(NOW);
+        new SearchIndexFileExport(details, files).write(NOW, ProductNames.of(details.standardProductNames()));
 
         GateItem size = service().check().getItems().get(3);
 

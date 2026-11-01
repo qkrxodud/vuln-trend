@@ -21,6 +21,7 @@ import com.vulntrend.batch.domain.gate.SearchIndexSizeCheck;
 import com.vulntrend.batch.domain.gate.dto.DataCommit;
 import com.vulntrend.batch.domain.gate.dto.SizeEstimate;
 import com.vulntrend.batch.domain.gate.dto.StoredFileSize;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.score.TrendListRepository;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStateRepository;
@@ -62,6 +63,7 @@ public class GateCheckService {
 
     public GateReport check() {
         Instant now = clock.instant();
+        ProductNames names = ProductNames.of(details.standardProductNames());
         Optional<List<DataCommit>> commits = readCommits();
         List<SyncState> states = DailyRunCheck.MVP_SOURCES.stream().map(syncStates::findBySource).toList();
         return GateReport.of(List.of(
@@ -71,8 +73,8 @@ public class GateCheckService {
                         gateQueries.withoutProduct(UNMAPPED_TOP), UNMAPPED_TOP),
                 repoGrowth(commits),
                 SearchIndexSizeCheck.judge(files.sizeOf(SEARCH_INDEX).map(bytes -> new StoredFileSize(bytes,
-                        files.gzipSizeOf(SEARCH_INDEX).orElse(bytes))), estimates(now)),
-                topTen(now)));
+                        files.gzipSizeOf(SEARCH_INDEX).orElse(bytes))), estimates(now, names)),
+                topTen(now, names)));
     }
 
     private Optional<List<DataCommit>> readCommits() {
@@ -92,22 +94,22 @@ public class GateCheckService {
         }
     }
 
-    private List<SizeEstimate> estimates(Instant now) {
-        List<SizeEstimate> estimates = new ArrayList<>(List.of(estimate("전체", details.searchEntries())));
+    private List<SizeEstimate> estimates(Instant now, ProductNames names) {
+        List<SizeEstimate> estimates = new ArrayList<>(List.of(estimate("전체", details.searchEntries(), names)));
         MONTHS.forEach(months -> estimates.add(estimate("최근 " + months + "개월",
-                details.searchEntriesSince(SearchIndexFileExport.since(now, months)))));
+                details.searchEntriesSince(SearchIndexFileExport.since(now, months)), names)));
         return estimates;
     }
 
     /** 실제로 쓰는 문서 모양(SearchIndexFileExport 와 같은 줄)으로 잰다 */
-    private SizeEstimate estimate(String scope, List<SearchListing> entries) {
-        List<?> document = entries.stream().map(SearchIndexFileExport::entry).toList();
+    private SizeEstimate estimate(String scope, List<SearchListing> entries, ProductNames names) {
+        List<?> document = entries.stream().map(entry -> SearchIndexFileExport.entry(entry, names)).toList();
         return new SizeEstimate(scope, entries.size(), sizer.prettyBytes(document), sizer.compactBytes(document),
                 sizer.gzipBytes(document));
     }
 
-    private GateItem topTen(Instant now) {
-        List<TrendRowJson> rows = trends.top(TOP_TEN, now).stream().map(TrendRows::from).toList();
+    private GateItem topTen(Instant now, ProductNames names) {
+        List<TrendRowJson> rows = trends.top(TOP_TEN, now).stream().map(row -> TrendRows.from(row, names)).toList();
         List<String> lines = IntStream.range(0, rows.size()).mapToObj(i -> line(i + 1, rows.get(i))).toList();
         return GateItem.of("상위 10건 점수 구성", GateStatus.REVIEW, "가중치 조정 판단용 — " + rows.size() + "건", lines);
     }

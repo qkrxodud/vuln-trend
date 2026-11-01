@@ -3,6 +3,7 @@ package com.vulntrend.batch.application.export;
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.SiteDataWriter;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.score.TrendListRepository;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
 import java.time.Instant;
@@ -22,9 +23,9 @@ public class IndexFileExport {
     private final SiteDataWriter writer;
 
     /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6) */
-    public Listed write(Instant now) {
+    public Listed write(Instant now, ProductNames names) {
         List<TrendListing> listings = repository.top(LIMIT, now);
-        List<TrendRowJson> rows = listings.stream().map(TrendRows::from).toList();
+        List<TrendRowJson> rows = listings.stream().map(listing -> TrendRows.from(listing, names)).toList();
         return Listed.of(writer.write(PATH, rows), listings.stream().map(TrendListing::id).toList());
     }
 }

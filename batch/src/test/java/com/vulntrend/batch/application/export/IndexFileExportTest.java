@@ -3,6 +3,7 @@ package com.vulntrend.batch.application.export;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeTrendListRepository;
@@ -14,6 +15,8 @@ import org.junit.jupiter.api.Test;
 @DisplayName("index.json")
 class IndexFileExportTest {
 
+    private static final ProductNames NAMES = ProductNames.of(List.of());
+
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
 
     @Test
@@ -24,7 +27,7 @@ class IndexFileExportTest {
                 .with(TrendListings.unrated("CVE-2026-50001"));
         FakeSiteDataWriter writer = new FakeSiteDataWriter();
 
-        Listed listed = new IndexFileExport(repository, writer).write(NOW);
+        Listed listed = new IndexFileExport(repository, writer).write(NOW, NAMES);
 
         assertThat(repository.askedLimit()).isEqualTo(100);
         assertThat(repository.askedNow()).isEqualTo(NOW);

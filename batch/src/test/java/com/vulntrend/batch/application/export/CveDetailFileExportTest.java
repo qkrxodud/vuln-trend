@@ -2,10 +2,13 @@ package com.vulntrend.batch.application.export;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.application.export.dto.AffectedProductJson;
 import com.vulntrend.batch.application.export.dto.CveDetailJson;
 import com.vulntrend.batch.application.export.dto.ReferenceLinkJson;
+import com.vulntrend.batch.domain.export.dto.AffectedListing;
 import com.vulntrend.batch.domain.export.dto.CveDetailListing;
 import com.vulntrend.batch.domain.export.dto.ReferenceListing;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
@@ -21,6 +24,8 @@ import org.junit.jupiter.api.Test;
 
 @DisplayName("cve/CVE-*.json")
 class CveDetailFileExportTest {
+
+    private static final ProductNames NAMES = ProductNames.of(List.of());
 
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
 
@@ -48,6 +53,23 @@ class CveDetailFileExportTest {
             assertThat(detail.affected()).hasSize(1);
             assertThat(detail.affected().get(0).displayName()).isEqualTo("Chrome");
             assertThat(detail.affected().get(0).vulnerableRange()).isEqualTo("< 130.0.6723.58");
+        }
+
+        @Test
+        @DisplayName("표에 없는 영향 제품은 사람이 읽는 이름으로 싣고 표시 이름은 비워 둔다 — 제조사는 원문 그대로")
+        void unmappedAffectedReadable() {
+            CveDetailListing stored = TrendListings.kevDetail("CVE-2026-41203");
+            CveDetailListing unmapped = new CveDetailListing(stored.row(), stored.description(),
+                    stored.lastModifiedAt(), stored.kevAddedAt(), stored.summary(),
+                    List.of(new AffectedListing("siemens", "ruggedcom_ape1808_firmware", null, null, null, null, null)),
+                    stored.references());
+
+            AffectedProductJson affected = export(unmapped).affected().get(0);
+
+            assertThat(affected.product()).isEqualTo("Ruggedcom APE1808 Firmware");
+            assertThat(affected.displayName()).isNull();
+            assertThat(affected.slug()).isNull();
+            assertThat(affected.vendor()).isEqualTo("siemens");
         }
 
         @Test
@@ -88,7 +110,7 @@ class CveDetailFileExportTest {
 
         private CveDetailJson export(CveDetailListing listing) {
             new CveDetailFileExport(new FakeCveDetailRepository().detail(listing), writer)
-                    .write(List.of(listing.row().id()), NOW);
+                    .write(List.of(listing.row().id()), NOW, NAMES);
             return writer.document("cve/" + listing.row().id().getValue() + ".json", CveDetailJson.class)
                     .orElseThrow();
         }
@@ -107,7 +129,7 @@ class CveDetailFileExportTest {
                     .detail(TrendListings.kevDetail("CVE-2026-41203"));
 
             DetailFiles files = new CveDetailFileExport(repository, writer)
-                    .write(List.of(CveId.from("CVE-2026-41203")), NOW);
+                    .write(List.of(CveId.from("CVE-2026-41203")), NOW, NAMES);
 
             assertThat(writer.removed()).containsExactly("cve/CVE-2021-44228.json", "cve/CVE-2026-99999.json");
             assertThat(writer.files()).containsExactly("cve/CVE-2026-41203.json", "index.json");
@@ -121,7 +143,7 @@ class CveDetailFileExportTest {
             writer.existing("cve/CVE-2026-50001.json");
 
             DetailFiles files = new CveDetailFileExport(new FakeCveDetailRepository(), writer)
-                    .write(List.of(CveId.from("CVE-2026-50001")), NOW);
+                    .write(List.of(CveId.from("CVE-2026-50001")), NOW, NAMES);
 
             assertThat(writer.files()).isEmpty();
             assertThat(files.getRemoved()).isEqualTo(1);
@@ -133,7 +155,7 @@ class CveDetailFileExportTest {
             FakeCveDetailRepository repository = new FakeCveDetailRepository();
             List<CveId> scope = IntStream.range(0, 1201).mapToObj(i -> CveId.from("CVE-2026-" + (10000 + i))).toList();
 
-            new CveDetailFileExport(repository, writer).write(scope, NOW);
+            new CveDetailFileExport(repository, writer).write(scope, NOW, NAMES);
 
             assertThat(repository.askedDetails()).containsExactlyElementsOf(scope);
         }
@@ -144,9 +166,9 @@ class CveDetailFileExportTest {
             FakeCveDetailRepository repository = new FakeCveDetailRepository()
                     .detail(TrendListings.kevDetail("CVE-2026-41203"));
             CveDetailFileExport export = new CveDetailFileExport(repository, writer);
-            export.write(List.of(CveId.from("CVE-2026-41203")), NOW);
+            export.write(List.of(CveId.from("CVE-2026-41203")), NOW, NAMES);
 
-            DetailFiles again = export.write(List.of(CveId.from("CVE-2026-41203")), NOW);
+            DetailFiles again = export.write(List.of(CveId.from("CVE-2026-41203")), NOW, NAMES);
 
             assertThat(again.getUnchanged()).isEqualTo(1);
             assertThat(again.getWritten()).isZero();

@@ -2,6 +2,7 @@ package com.vulntrend.batch.application.export;
 
 import com.vulntrend.batch.domain.export.CveDetailRepository;
 import com.vulntrend.batch.domain.export.WriteOutcome;
+import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import java.time.Clock;
 import java.time.Instant;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  * - 순서: stats → index → recent → search-index → cve/*.json → meta. meta 의 판 이름이 바뀌어야 프론트가 새 파일을 읽으므로
  *   meta 를 마지막에 쓴다(중간에 실패하면 프론트는 옛 판을 계속 본다)
  * - 상세 파일 생성 범위(P6): index·recent 에 실린 CVE + 점수 상위 1000건. 범위 밖 상세 파일은 지운다(R5 철회 건 포함)
+ * - 제품 이름은 모든 파일이 같은 규칙(ProductNames)과 같은 표를 본다 — 실행마다 표의 표시 이름을 한 번 읽는다(B2)
  * - 파일 쓰기 실패는 OutputWriteException 으로 올라간다 — 그 실행은 push 하지 않는다
  */
 @Slf4j
@@ -38,14 +40,15 @@ public class ExportService {
 
     public ExportResult exportAll() {
         Instant now = clock.instant();
+        ProductNames names = ProductNames.of(repository.standardProductNames());
         WriteOutcome statsOutcome = stats.write(now);
-        Listed indexed = index.write(now);
-        Listed recentListed = recent.write(now);
-        WriteOutcome searchOutcome = searchIndex.write(now);
+        Listed indexed = index.write(now, names);
+        Listed recentListed = recent.write(now, names);
+        WriteOutcome searchOutcome = searchIndex.write(now, names);
         Set<CveId> scope = new LinkedHashSet<>(indexed.getIds());
         scope.addAll(recentListed.getIds());
         scope.addAll(repository.topIds(DETAIL_TOP));
-        DetailFiles detailFiles = details.write(scope, now);
+        DetailFiles detailFiles = details.write(scope, now, names);
         WriteOutcome metaOutcome = meta.write(now);
         List<WriteOutcome> lists = List.of(statsOutcome, indexed.getOutcome(), recentListed.getOutcome(), searchOutcome,
                 metaOutcome);

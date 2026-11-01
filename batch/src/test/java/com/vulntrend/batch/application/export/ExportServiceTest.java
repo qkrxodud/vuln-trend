@@ -2,6 +2,7 @@ package com.vulntrend.batch.application.export;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.application.export.dto.TrendRowJson;
 import com.vulntrend.batch.application.stat.KpiService;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
@@ -12,6 +13,7 @@ import com.vulntrend.batch.fake.FakeTrendListRepository;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneOffset;
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -49,6 +51,19 @@ class ExportServiceTest {
         assertThat(writer.order()).endsWith("meta.json");
         assertThat(writer.order()).contains("cve/CVE-2026-41203.json", "cve/CVE-2026-50001.json",
                 "cve/CVE-2026-60001.json");
+    }
+
+    @Test
+    @DisplayName("모든 파일이 제품 표의 표시 이름을 보고 같은 규칙으로 제품 이름을 쓴다")
+    void productNamesFromTable() {
+        trends.with(TrendListings.kevWithProduct("CVE-2026-70001", "curl"))
+                .with(TrendListings.kevWithProduct("CVE-2026-70002", "sql_server"));
+        details.standardNames("curl");
+
+        service().exportAll();
+
+        assertThat((List<?>) writer.documents().get("index.json")).map(TrendRowJson.class::cast)
+                .extracting(TrendRowJson::primaryProduct).contains("curl", "SQL Server");
     }
 
     @Test

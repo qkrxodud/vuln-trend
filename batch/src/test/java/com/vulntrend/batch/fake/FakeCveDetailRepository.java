@@ -11,12 +11,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** 상세·검색 조회 흉내. 넣어 둔 검색 줄·상세·상위 번호를 돌려주고, 상세를 물은 번호와 상위 몇 건을 물었는지 기억한다 */
+/** 상세·검색 조회 흉내. 넣어 둔 검색 줄·상세·상위 번호·제품 표 이름(기본은 없음)을 돌려주고, 상세를 물은 번호와 상위 몇 건을 물었는지 기억한다 */
 public class FakeCveDetailRepository implements CveDetailRepository {
 
     private final List<SearchListing> searchEntries = new ArrayList<>();
     private final Map<CveId, CveDetailListing> details = new LinkedHashMap<>();
     private final List<CveId> topIds = new ArrayList<>();
+    private final List<String> standardNames = new ArrayList<>();
     private final List<CveId> askedDetails = new ArrayList<>();
     private final Map<CveId, Instant> published = new LinkedHashMap<>();
     private int askedTop;
@@ -36,6 +37,16 @@ public class FakeCveDetailRepository implements CveDetailRepository {
             topIds.add(CveId.from(id));
         }
         return this;
+    }
+
+    public FakeCveDetailRepository standardNames(String... names) {
+        standardNames.addAll(List.of(names));
+        return this;
+    }
+
+    @Override
+    public List<String> standardProductNames() {
+        return List.copyOf(standardNames);
     }
 
     @Override

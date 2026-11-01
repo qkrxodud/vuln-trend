@@ -71,6 +71,16 @@ class JdbcCveDetailRepositoryTest {
     }
 
     @Test
+    @DisplayName("제품 표의 표시 이름을 겹치지 않게 모두 읽는다")
+    void standardProductNames() {
+        jdbc.update("insert into product_alias (cpe_vendor, cpe_product, slug, display_name) values "
+                + "('google', 'chrome', 'chrome', 'Chrome'), ('google', 'google_chrome', 'chrome', 'Chrome'), "
+                + "('haxx', 'curl', 'curl', 'curl')");
+
+        assertThat(repository.standardProductNames()).containsExactly("Chrome", "curl");
+    }
+
+    @Test
     @DisplayName("점수 상위 번호는 트렌드 순서를 따르고 철회 건을 뺀다")
     void topIdsInTrendOrder() {
         vulnerability("CVE-2026-70001", "10", "2026-10-29T00:00:00Z", null, null);
