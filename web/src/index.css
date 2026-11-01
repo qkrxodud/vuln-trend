@@ -1,38 +1,49 @@
 @import 'tailwindcss';
 
-/* 디자인 원본(design/VulnTrend Dashboard.dc.html) 색. 심각도·KEV 색은 기획서 8장 색상 규칙으로 5.5·5.12 에서 더한다 */
+/* v6 토큰 — 단일 출처 design/v6/parts/tokens.css (사용자 결정 2026-11-01).
+   빨강(urgent) = "CISA 조치 기한이 0~3일 안에 끝남" 하나. KEV 는 색 없음(회색 테두리). 심각도 = 남색 램프 */
 @theme {
-  --font-sans: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: Pretendard, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --color-ink: #24231f;
-  --color-ink-soft: #4a4a4d;
-  --color-ink-muted: #616164;
-  --color-ink-faint: #69696c;
-  --color-brand: #2f4f45;
-  --color-accent: #4a7363;
-  --color-accent-soft: #eef4f0;
-  --color-paper: #f6f4ef;
-  --color-line: #e4e0d6;
-  --color-chip: #eeeae2;
+  /* 면 */
+  --color-page: #f6f6f8;
+  --color-surface: #ffffff;
+  --color-surface-sunk: #f1f1f4;
+  --color-border: #e4e3ea;
+  --color-grid: #ecebf0;
+  --color-axis: #c9c8d2;
+
+  /* 글자 (데이터 색을 글자에 입히지 않는다) */
+  --color-ink: #16113a;
+  --color-ink-2: #4a4660;
+  --color-ink-3: #6b6880;
+
+  /* 의미색 — 마크(점·막대·배지)에만 */
+  --color-urgent: #b42318;
+  --color-urgent-wash: #fbeaea;
+  --color-urgent-ink: #b42318;
+  --color-kev-badge: #6b6880;
+  --color-ransom: #16113a;
+  --color-sev-crit: #2b2a6e;
+  --color-sev-high: #4f4c9e;
+  --color-sev-med: #7c79c0;
+  --color-sev-low: #a9a7d8;
+  --color-poc-ring: #16113a;
+  --color-neutral-mark: #8e8ba0;
+  --color-neutral-wash: #e4e3ea;
+  --color-ok: #1f8a3b;
+  --color-ok-wash: #e7f5ea;
+  --color-decay: #a2a0b0;
+
+  /* stale 배너 (v6 에 없음, 빨강과 겹치지 않는 호박색 유지) */
   --color-warn-bg: #fbf3e4;
   --color-warn-line: #e9d4a3;
   --color-warn-ink: #6b4e12;
-
-  /* 심각도 5색 고정: Critical 빨강 / High 주황 / Medium 노랑 / Low 회색 / 미평가 연회색 (기획서 8장 색상 규칙) */
-  --color-sev-critical: #b85c4a;
-  --color-sev-high: #d9925f;
-  --color-sev-medium: #d8bb72;
-  --color-sev-low: #a9a69c;
-  --color-sev-unrated: #dedbd3;
-
-  /* KEV: 빨강 하나만 (기획서 8장 색상 규칙) */
-  --color-kev: #8a3a2a;
-  --color-kev-bg: #f5e6e1;
 }
 
 body {
-  @apply bg-white font-sans text-ink antialiased;
+  @apply bg-page font-sans text-ink antialiased;
   /* 한국어는 낱말 중간에서 줄을 바꾸지 않는다. 긴 영어 토큰·URL 은 넘치지 않게 끊는다 */
   word-break: keep-all;
   overflow-wrap: break-word;

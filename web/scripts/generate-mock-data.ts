@@ -542,6 +542,7 @@ const rowOf = (s: Seed): TrendRow => {
     is_kev: s.kev !== undefined,
     kev_ransomware: s.kev?.ransomware ?? false,
     kev_due_date: s.kev ? toKstDate(new Date(NOW.getTime() + s.kev.dueInDays * DAY_MS)) : null,
+    kev_added_at: s.kev ? toKstDate(daysAgo(s.kev.addedDaysAgo)) : null,
     poc_count: 0,
     epss: s.epss,
     epss_percentile: s.percentile,
@@ -609,6 +610,9 @@ const meta: Meta = {
   today: sumKpi(SEEDS, 0, 1),
   // MOCK_NO_YESTERDAY_HIGH_RISK=1 이면 어제 고위험 스냅샷이 없는 경우(첫 실행)를 흉내 낸다 → 고위험 카드 증감 숨김
   yesterday: { ...sumKpi(SEEDS, 1, 2), high_risk: process.env.MOCK_NO_YESTERDAY_HIGH_RISK === '1' ? null : 313 },
+  kev_added_7d: SEEDS.filter((s) => s.kev !== undefined && s.kev.addedDaysAgo < 7).length,
+  kev_added_prev_7d: SEEDS.filter((s) => s.kev !== undefined && s.kev.addedDaysAgo >= 7 && s.kev.addedDaysAgo < 14)
+    .length,
 }
 
 // 14일 막대: 평일 120~160, 주말 60~80 정도로 흉내

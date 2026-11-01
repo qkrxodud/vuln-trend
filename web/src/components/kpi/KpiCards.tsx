@@ -1,56 +1,38 @@
-import { useMeta } from '../../hooks/use-data.ts'
-import { useTrendFilter } from '../../hooks/use-trend-filter.ts'
-import type { TrendFilter } from '../../lib/trend-filter.ts'
-import type { KpiCounts } from '../../types/meta.ts'
+import { useMeta, useStats, useTrendIndex } from '../../hooks/use-data.ts'
+import { referenceDate } from '../../lib/urgency.ts'
 import { LoadableView } from '../state/LoadableView.tsx'
-import { KpiCard } from './KpiCard.tsx'
+import { KevAddedCard } from './KevAddedCard.tsx'
+import { TodayNewCard } from './TodayNewCard.tsx'
+import { UrgentHeroCard } from './UrgentHeroCard.tsx'
 
-interface KpiDefinition {
-  key: keyof KpiCounts
-  label: string
-  description: string
-  tone?: 'kev'
-  /** 이 카드를 누르면 걸리는 목록 필터 */
-  filter?: Exclude<TrendFilter, 'all'>
-}
-
-// 기획서 8장 KPI 표. 1~3 은 24시간 롤링, 4 는 전체 스냅샷. 4번은 2단계에서 "PoC 공개"로 교체 (D12)
-const KPI_DEFINITIONS: KpiDefinition[] = [
-  { key: 'new', label: '24시간 신규', description: '최근 24시간 공개된 CVE' },
-  { key: 'kev_new', label: 'KEV 신규', description: '24시간 내 CISA 악용 목록 등재', tone: 'kev', filter: 'kev' },
-  { key: 'critical', label: 'Critical', description: '24시간 신규 중 CVSS 9.0 이상', filter: 'critical' },
-  { key: 'high_risk', label: '고위험 (EPSS 0.5+)', description: '전체 CVE 중 30일 내 악용 확률 50% 이상' },
-]
-
-export const KpiCards = () => {
+// 오늘 요약 (design/v6 a-top): 히어로 "CISA 조치 기한 임박" + 오늘 새 CVE + 최근 7일 KEV 등재.
+// 기준일은 meta.updated_at 의 KST 날짜. 넓은 화면 1.7:1:1, 900px 이하 2칸(히어로 한 줄), 520px 이하 1칸
+export const KpiCards = ({ selectedId = null }: { selectedId?: string | null }) => {
   const meta = useMeta()
-  const { filter, setFilter } = useTrendFilter()
-
-  const toggleFor = (definition: KpiDefinition) => {
-    const cardFilter = definition.filter
-    if (cardFilter === undefined) return undefined
-    const pressed = filter === cardFilter
-    return { pressed, onToggle: () => setFilter(pressed ? 'all' : cardFilter) }
-  }
-
+  const index = useTrendIndex()
+  const stats = useStats()
   return (
-    <section aria-label="오늘 현황">
-      <LoadableView loadable={meta} label="오늘 현황">
-        {(data) => (
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {KPI_DEFINITIONS.map((definition) => (
-              <KpiCard
-                key={definition.key}
-                label={definition.label}
-                description={definition.description}
-                today={data.today[definition.key]}
-                yesterday={data.yesterday[definition.key]}
-                tone={definition.tone}
-                toggle={toggleFor(definition)}
-              />
-            ))}
-          </div>
-        )}
+    <section
+      aria-label="오늘 요약"
+      className="grid grid-cols-1 gap-4 min-[521px]:grid-cols-2 min-[901px]:grid-cols-[minmax(0,1.7fr)_repeat(2,minmax(0,1fr))]"
+    >
+      <LoadableView loadable={meta} label="오늘 요약">
+        {(metaData) => {
+          const today = referenceDate(metaData.updated_at)
+          return (
+            <>
+              <LoadableView loadable={index} label="기한 임박">
+                {(rows) => <UrgentHeroCard rows={rows} today={today} selectedId={selectedId} />}
+              </LoadableView>
+              <LoadableView loadable={stats} label="오늘 새 CVE">
+                {(data) => <TodayNewCard meta={metaData} daily={data.daily} />}
+              </LoadableView>
+              <LoadableView loadable={index} label="KEV 등재">
+                {(rows) => <KevAddedCard meta={metaData} rows={rows} today={today} />}
+              </LoadableView>
+            </>
+          )
+        }}
       </LoadableView>
     </section>
   )

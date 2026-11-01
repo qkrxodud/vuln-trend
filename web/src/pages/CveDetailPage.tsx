@@ -8,7 +8,7 @@ export const CveDetailPage = () => {
   const { cveId } = useParams()
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-7 px-4 pt-5 pb-10 sm:px-7 sm:pt-7">
-      <SiteHeader showFilter={false} />
+      <SiteHeader />
       <main>{cveId === undefined ? null : <CveDetailView cveId={cveId} />}</main>
       <SiteFooter />
     </div>

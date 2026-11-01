@@ -32,6 +32,11 @@ export interface TrendRow {
   kev_ransomware: boolean
   /** KEV `dueDate`. KEV 가 아니면 `null` */
   kev_due_date: IsoDate | null
+  /**
+   * KEV 등재일(`dateAdded`). KEV 가 아니면 `null`.
+   * v6 계약(G1, 2026-11-01)에서 더한 필드라 배치가 내보내기 전 JSON 에는 없다 → 화면은 "등재일 정보 없음"
+   */
+  kev_added_at?: IsoDate | null
   /** MVP 에서는 항상 0 (PoC 탐지는 2단계) */
   poc_count: number
   /** EPSS 확률 0~1. 아직 점수가 없으면 `null` */

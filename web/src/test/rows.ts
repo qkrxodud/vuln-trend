@@ -14,6 +14,7 @@ export const trendRow = (overrides: Partial<TrendRow> = {}): TrendRow => {
     is_kev: false,
     kev_ransomware: false,
     kev_due_date: null,
+    kev_added_at: null,
     poc_count: 0,
     epss: 0.12,
     epss_percentile: 0.95,

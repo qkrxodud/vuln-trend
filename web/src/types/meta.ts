@@ -28,4 +28,10 @@ export interface Meta {
   today: KpiCounts
   /** 48~24시간 전 창 (어제 대비 증감용) */
   yesterday: YesterdayKpiCounts
+  /**
+   * 기준일 포함 최근 7일 / 그 전 7일 KEV 등재 수 (전체 KEV 기준).
+   * v6 계약(G1, 2026-11-01)에서 더한 필드라 배치가 내보내기 전 JSON 에는 없다 → 화면은 주목 목록 행으로 센다
+   */
+  kev_added_7d?: number | null
+  kev_added_prev_7d?: number | null
 }

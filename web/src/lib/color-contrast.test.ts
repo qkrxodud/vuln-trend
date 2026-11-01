@@ -5,6 +5,8 @@ import { SEVERITY_BADGE } from './severity.ts'
 
 // 본문 크기 글자의 WCAG AA 기준
 const AA_TEXT = 4.5
+// 글자가 아닌 표시(아이콘·마크)의 WCAG 1.4.11 기준
+const AA_GRAPHIC = 3
 
 const token = (name: string): string => {
   const match = css.match(new RegExp(`--color-${name}:\\s*(#[0-9a-fA-F]{6})`))
@@ -20,16 +22,18 @@ describe('대비 계산', () => {
   })
 })
 
-describe('글자색 대비 (기획서 8장 색상·접근성, 5.12)', () => {
+describe('글자색 대비 (기획서 8장 색상·접근성, v6 토큰)', () => {
+  // v6 토큰 (design/v6/parts/tokens.css, 사용자 결정 2026-11-01)
   const pairs: [string, string, string][] = [
-    ['흐린 글자 / 흰 바탕', 'ink-faint', 'white'],
-    ['흐린 글자 / 종이 바탕', 'ink-faint', 'paper'],
-    ['흐린 글자 / 칩', 'ink-faint', 'chip'],
-    ['옅은 글자 / 흰 바탕', 'ink-muted', 'white'],
-    ['옅은 글자 / 종이 바탕', 'ink-muted', 'paper'],
-    ['강조 글자 / 흰 바탕', 'accent', 'white'],
-    ['강조 글자 / 선택한 행 바탕', 'accent', 'accent-soft'],
-    ['KEV 글자 / KEV 바탕', 'kev', 'kev-bg'],
+    ['본문 글자 / 페이지 바탕', 'ink', 'page'],
+    ['보조 글자 / 페이지 바탕', 'ink-2', 'page'],
+    ['보조 글자 / 들어간 면', 'ink-2', 'surface-sunk'],
+    ['축·캡션 글자 / 카드 면', 'ink-3', 'surface'],
+    ['축·캡션 글자 / 페이지 바탕', 'ink-3', 'page'],
+    ['축·캡션 글자 / 들어간 면', 'ink-3', 'surface-sunk'],
+    ['기한 임박 글자 / 기한 임박 배지 바탕', 'urgent-ink', 'urgent-wash'],
+    ['기한 임박 글자 / 카드 면', 'urgent', 'surface'],
+    ['KEV 배지 글자 / 카드 면', 'kev-badge', 'surface'],
     ['경고 글자 / 경고 바탕', 'warn-ink', 'warn-bg'],
   ]
   const color = (name: string) => (name === 'white' ? '#ffffff' : token(name))
@@ -40,5 +44,17 @@ describe('글자색 대비 (기획서 8장 색상·접근성, 5.12)', () => {
 
   it.each(Object.values(SEVERITY_BADGE))('$label 심각도 배지 글자는 배지 바탕 위에서 4.5:1 이상이다', (badge) => {
     expect(contrastRatio(badge.color, badge.background)).toBeGreaterThanOrEqual(AA_TEXT)
+  })
+})
+
+describe('표시 마크 대비 (글자가 아닌 그림, v6 토큰)', () => {
+  const marks: [string, string, string][] = [
+    ['수집 완료 ✓ / 페이지 바탕', 'ok', 'page'],
+    ['기한 임박 ◆ / 카드 면', 'urgent', 'surface'],
+    ['랜섬웨어 ● / 카드 면', 'ransom', 'surface'],
+  ]
+
+  it.each(marks)('%s — 그림 기준 3:1 이상이다', (_name, foreground, background) => {
+    expect(contrastRatio(token(foreground), token(background))).toBeGreaterThanOrEqual(AA_GRAPHIC)
   })
 })

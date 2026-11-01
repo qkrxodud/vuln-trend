@@ -38,6 +38,9 @@ export const formatKstTime = (iso: string): string => {
   return `${parts.hour}:${parts.minute}`
 }
 
+/** `2026-11-01 18:49 KST` (헤더 마지막 갱신) */
+export const formatKstDateTime = (iso: string): string => `${formatKstDate(iso)} ${formatKstTime(iso)} KST`
+
 /** `방금 전` / `30분 전` / `3시간 전` / `3일 전`. 초 단위는 보이지 않는다 */
 export const formatTimeAgo = (iso: string, now: Date): string => {
   const elapsed = now.getTime() - Date.parse(iso)

@@ -77,8 +77,8 @@ export const SearchBox = () => {
 
   return (
     <div className="relative max-w-[520px] flex-[1_1_320px]">
-      <div className="flex items-center gap-2 rounded-xl border border-line bg-paper px-3 py-2 focus-within:border-accent focus-within:bg-white">
-        <span className="text-sm text-ink-faint" aria-hidden="true">
+      <div className="flex items-center gap-2 rounded-xl border border-border bg-surface-sunk px-3 py-2 focus-within:border-ink-2 focus-within:bg-white">
+        <span className="text-sm text-ink-3" aria-hidden="true">
           ⌕
         </span>
         <input
@@ -109,7 +109,7 @@ export const SearchBox = () => {
             type="button"
             onClick={() => setQuery('')}
             aria-label="검색 지우기"
-            className="rounded-full bg-chip px-2 py-0.5 text-xs text-ink-soft"
+            className="rounded-full bg-surface-sunk px-2 py-0.5 text-xs text-ink-2"
           >
             지우기
           </button>
@@ -119,16 +119,16 @@ export const SearchBox = () => {
         // 누르는 동안 입력창 포커스를 지켜 결과 목록이 먼저 닫히지 않게 한다
         <div
           onMouseDown={(event) => event.preventDefault()}
-          className="absolute top-full right-0 left-0 z-20 mt-1 max-h-96 overflow-auto rounded-xl border border-line bg-white p-1.5 text-sm shadow-[0_6px_24px_rgba(20,20,30,.08)]"
+          className="absolute top-full right-0 left-0 z-20 mt-1 max-h-96 overflow-auto rounded-xl border border-border bg-white p-1.5 text-sm shadow-[0_6px_24px_rgba(20,20,30,.08)]"
         >
           {searchIndex.status === 'loading' || searchIndex.status === 'idle' ? (
-            <p role="status" className="px-3 py-2 text-ink-muted">
+            <p role="status" className="px-3 py-2 text-ink-3">
               검색 색인 불러오는 중…
             </p>
           ) : null}
           {searchIndex.status === 'error' ? <ErrorState label="검색 색인" onRetry={searchIndex.retry} /> : null}
           {searchIndex.status === 'ready' && options.length === 0 ? (
-            <p role="status" className="px-3 py-2 text-ink-muted">
+            <p role="status" className="px-3 py-2 text-ink-3">
               "{query.trim()}"에 맞는 취약점이 없습니다.
             </p>
           ) : null}
@@ -143,7 +143,7 @@ export const SearchBox = () => {
                   data-cve-id={option.id}
                   onClick={() => choose(option)}
                   className={`flex cursor-pointer flex-col gap-0.5 rounded-lg px-3 py-2 ${
-                    index === activeIndex ? 'bg-accent-soft' : 'hover:bg-paper'
+                    index === activeIndex ? 'bg-surface-sunk' : 'hover:bg-surface-sunk'
                   }`}
                 >
                   {option.direct ? (
@@ -154,11 +154,9 @@ export const SearchBox = () => {
                     <>
                       <span className="flex items-center gap-2">
                         <span className="font-mono font-semibold">{option.id}</span>
-                        {option.product === null ? null : (
-                          <span className="text-xs text-ink-faint">{option.product}</span>
-                        )}
+                        {option.product === null ? null : <span className="text-xs text-ink-3">{option.product}</span>}
                       </span>
-                      <span className="truncate text-ink-soft">{option.title}</span>
+                      <span className="truncate text-ink-2">{option.title}</span>
                     </>
                   )}
                 </li>
@@ -166,9 +164,7 @@ export const SearchBox = () => {
             </ul>
           ) : null}
           {hiddenCount > 0 ? (
-            <p className="px-3 py-1.5 text-xs text-ink-faint">
-              외 {hiddenCount}건 — 검색어를 더 구체적으로 적어 보세요
-            </p>
+            <p className="px-3 py-1.5 text-xs text-ink-3">외 {hiddenCount}건 — 검색어를 더 구체적으로 적어 보세요</p>
           ) : null}
         </div>
       ) : null}
