@@ -107,6 +107,7 @@ class JdbcTrendListRepositoryTest {
         assertThat(listing.kev()).isTrue();
         assertThat(listing.kevRansomware()).isTrue();
         assertThat(listing.kevDueDate()).isEqualTo(LocalDate.parse("2026-11-09"));
+        assertThat(listing.kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
         assertThat(listing.mentionCount()).isEqualTo(2);
         assertThat(listing.epss()).isEqualByComparingTo("0.94310");
         assertThat(listing.epssPercentile()).isEqualByComparingTo("0.99900");

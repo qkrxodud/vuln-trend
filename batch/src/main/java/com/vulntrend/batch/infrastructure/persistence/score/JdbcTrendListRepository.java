@@ -26,7 +26,7 @@ import org.springframework.stereotype.Repository;
 public class JdbcTrendListRepository implements TrendListRepository {
 
     /** 목록 줄 하나의 열들(listing(rs) 와 짝). 상세 조회도 같은 열을 읽는다 */
-    static final String COLUMNS = "v.vuln_id, v.title, v.is_kev, v.kev_ransomware, v.kev_due_date, "
+    static final String COLUMNS = "v.vuln_id, v.title, v.is_kev, v.kev_ransomware, v.kev_due_date, v.kev_added_at, "
             + "v.poc_count, v.mention_count, v.epss_score, v.epss_percentile, v.cvss_score, v.cvss_version, "
             + "v.cvss_severity, v.primary_product, v.published_at, s.what as summary_what, "
             + TrendScoreSql.BREAKDOWN_COLUMNS;
@@ -59,7 +59,8 @@ public class JdbcTrendListRepository implements TrendListRepository {
     static TrendListing listing(ResultSet rs, int rowNum) throws SQLException {
         return new TrendListing(CveId.from(rs.getString("vuln_id")), rs.getString("title"),
                 TrendScoreSql.breakdown(rs), rs.getBoolean("is_kev"), rs.getBoolean("kev_ransomware"),
-                rs.getObject("kev_due_date", LocalDate.class), rs.getInt("poc_count"), rs.getInt("mention_count"),
+                rs.getObject("kev_due_date", LocalDate.class), rs.getObject("kev_added_at", LocalDate.class),
+                rs.getInt("poc_count"), rs.getInt("mention_count"),
                 rs.getBigDecimal("epss_score"), rs.getBigDecimal("epss_percentile"), rs.getBigDecimal("cvss_score"),
                 rs.getString("cvss_version"), severity(rs.getString("cvss_severity")), rs.getString("primary_product"),
                 rs.getString("summary_what"),

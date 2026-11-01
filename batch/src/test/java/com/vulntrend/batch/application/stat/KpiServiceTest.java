@@ -2,11 +2,13 @@ package com.vulntrend.batch.application.stat;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.domain.stat.KevAddedWeeks;
 import com.vulntrend.batch.domain.stat.KpiSummary;
 import com.vulntrend.batch.fake.FakeKpiRepository;
 import java.time.Instant;
 import java.time.LocalDate;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("KPI 집계")
@@ -51,5 +53,35 @@ class KpiServiceTest {
         KpiSummary summary = new KpiService(repository).summarize(NOW);
 
         assertThat(summary.getYesterday().getHighRiskCount()).isEmpty();
+    }
+
+    @Nested
+    @DisplayName("최근 두 주 KEV 등재 수는")
+    class KevAddedWeeksCount {
+
+        private final FakeKpiRepository repository = new FakeKpiRepository()
+                .kevAddedOn(LocalDate.parse("2026-10-31"), 1)
+                .kevAddedOn(LocalDate.parse("2026-10-25"), 2)
+                .kevAddedOn(LocalDate.parse("2026-10-24"), 4)
+                .kevAddedOn(LocalDate.parse("2026-10-18"), 8)
+                .kevAddedOn(LocalDate.parse("2026-10-17"), 16);
+
+        @Test
+        @DisplayName("최근 7일은 오늘(한국 달력일)을 넣은 7개 날짜, 그 전 7일은 그 앞 7개 날짜에 등재된 수다")
+        void sevenDaysIncludingToday() {
+            KevAddedWeeks weeks = new KpiService(repository).kevAddedWeeks(NOW);
+
+            assertThat(weeks.getThisWeek()).isEqualTo(1 + 2);
+            assertThat(weeks.getPreviousWeek()).isEqualTo(4 + 8);
+        }
+
+        @Test
+        @DisplayName("한국 자정을 넘긴 직후 실행이면 한국 날짜로 오늘을 정한다")
+        void koreanCalendarDay() {
+            KevAddedWeeks weeks = new KpiService(repository).kevAddedWeeks(Instant.parse("2026-10-31T15:30:00Z"));
+
+            assertThat(weeks.getThisWeek()).isEqualTo(1);
+            assertThat(weeks.getPreviousWeek()).isEqualTo(2 + 4);
+        }
     }
 }

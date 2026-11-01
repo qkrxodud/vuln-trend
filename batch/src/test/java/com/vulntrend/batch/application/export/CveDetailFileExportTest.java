@@ -46,7 +46,7 @@ class CveDetailFileExportTest {
             assertThat(detail.publishedAt()).isEqualTo(OffsetDateTime.of(2026, 10, 19, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
             assertThat(detail.lastModifiedAt())
                     .isEqualTo(OffsetDateTime.of(2026, 10, 20, 12, 0, 0, 0, ZoneOffset.ofHours(9)));
-            assertThat(detail.kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
+            assertThat(detail.row().kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
             assertThat(detail.summary().model()).isEqualTo("claude-haiku-5-5");
             assertThat(detail.summary().generatedAt())
                     .isEqualTo(OffsetDateTime.of(2026, 10, 30, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
@@ -60,7 +60,7 @@ class CveDetailFileExportTest {
         void unmappedAffectedReadable() {
             CveDetailListing stored = TrendListings.kevDetail("CVE-2026-41203");
             CveDetailListing unmapped = new CveDetailListing(stored.row(), stored.description(),
-                    stored.lastModifiedAt(), stored.kevAddedAt(), stored.summary(),
+                    stored.lastModifiedAt(), stored.summary(),
                     List.of(new AffectedListing("siemens", "ruggedcom_ape1808_firmware", null, null, null, null, null)),
                     stored.references());
 
@@ -87,7 +87,7 @@ class CveDetailFileExportTest {
         void storedNvdLinkOnce() {
             CveDetailListing stored = TrendListings.kevDetail("CVE-2026-41203");
             CveDetailListing withNvd = new CveDetailListing(stored.row(), stored.description(),
-                    stored.lastModifiedAt(), stored.kevAddedAt(), stored.summary(), stored.affected(),
+                    stored.lastModifiedAt(), stored.summary(), stored.affected(),
                     List.of(new ReferenceListing("https://nvd.nist.gov/vuln/detail/CVE-2026-41203", "nvd", null)));
 
             CveDetailJson detail = export(withNvd);
@@ -103,7 +103,7 @@ class CveDetailFileExportTest {
             assertThat(detail.description()).isEmpty();
             assertThat(detail.summary()).isNull();
             assertThat(detail.lastModifiedAt()).isNull();
-            assertThat(detail.kevAddedAt()).isNull();
+            assertThat(detail.row().kevAddedAt()).isNull();
             assertThat(detail.affected()).isEmpty();
             assertThat(detail.references()).extracting(ReferenceLinkJson::source).containsExactly("nvd");
         }

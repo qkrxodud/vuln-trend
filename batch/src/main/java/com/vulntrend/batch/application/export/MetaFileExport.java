@@ -6,6 +6,7 @@ import com.vulntrend.batch.application.stat.KpiService;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.SiteDataWriter;
 import com.vulntrend.batch.domain.export.WriteOutcome;
+import com.vulntrend.batch.domain.stat.KevAddedWeeks;
 import com.vulntrend.batch.domain.stat.KpiCounts;
 import com.vulntrend.batch.domain.stat.KpiSummary;
 import com.vulntrend.batch.domain.stat.StatDays;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
  * meta.json (기획서 7장, WBS 4.2, D11·P16). 갱신 시각은 이번 실행 시각을 한국 시각(+09:00) 초 단위로,
  * 판(version)은 한국 시각 yyyyMMdd-HHmm — 프론트가 나머지 파일을 ?v= 로 읽는 캐시 버스팅 값이다.
  * KPI 는 3.4 집계 그대로이고, 어제 고위험을 모르면 비운다(화면은 증감을 숨김).
+ * kev_added_7d·kev_added_prev_7d 는 전체 KEV 의 최근 7일·그 전 7일 등재 수(v6 화면용, 사용자 승인 2026-11-01, 경계는 KpiService)
  */
 @Component
 @RequiredArgsConstructor
@@ -34,8 +36,9 @@ public class MetaFileExport {
     public WriteOutcome write(Instant now) {
         OffsetDateTime updatedAt = now.truncatedTo(ChronoUnit.SECONDS).atZone(StatDays.CALENDAR).toOffsetDateTime();
         KpiSummary summary = kpiService.summarize(now);
+        KevAddedWeeks kevAdded = kpiService.kevAddedWeeks(now);
         MetaJson meta = new MetaJson(updatedAt, VERSION.format(updatedAt), counts(summary.getToday()),
-                counts(summary.getYesterday()));
+                counts(summary.getYesterday()), kevAdded.getThisWeek(), kevAdded.getPreviousWeek());
         return writer.write(PATH, meta);
     }
 

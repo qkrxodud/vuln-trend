@@ -11,7 +11,6 @@ import com.vulntrend.batch.domain.vulnerability.CveId;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
     private static final String TOP_IDS = "select vuln_id from vulnerability where " + TrendOrder.LISTED + " "
             + TrendOrder.ORDER_BY + " limit :limit";
     private static final String DETAILS = "select " + JdbcTrendListRepository.COLUMNS
-            + ", v.description, v.last_modified_at, v.kev_added_at, s.vuln_id as summary_id, s.who as summary_who, "
+            + ", v.description, v.last_modified_at, s.vuln_id as summary_id, s.who as summary_who, "
             + "s.action as summary_action, s.model as summary_model, s.generated_at as summary_generated_at"
             + JdbcTrendListRepository.FROM + " and v.vuln_id in (:ids)";
     private static final String AFFECTED = """
@@ -107,8 +106,7 @@ public class JdbcCveDetailRepository implements CveDetailRepository {
         return jdbc.query(DETAILS, params, (rs, rowNum) -> {
             TrendListing row = JdbcTrendListRepository.listing(rs, rowNum);
             String id = row.id().getValue();
-            return new CveDetailListing(row, rs.getString("description"), instant(rs, "last_modified_at"),
-                    rs.getObject("kev_added_at", LocalDate.class), summary(rs),
+            return new CveDetailListing(row, rs.getString("description"), instant(rs, "last_modified_at"), summary(rs),
                     affected.getOrDefault(id, List.of()), references.getOrDefault(id, List.of()));
         });
     }

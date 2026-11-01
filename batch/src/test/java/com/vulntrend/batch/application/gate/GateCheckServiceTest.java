@@ -190,7 +190,8 @@ class GateCheckServiceTest {
     private static TrendListing listing(String id) {
         ScoreBreakdown breakdown = ScoreBreakdown.of(new BigDecimal("50"), BigDecimal.ZERO, new BigDecimal("28.293"),
                 new BigDecimal("9.8"), new BigDecimal("0.757858283255199"));
-        return new TrendListing(CveId.from(id), "제목", breakdown, true, false, LocalDate.parse("2026-11-10"), 0, 0,
+        return new TrendListing(CveId.from(id), "제목", breakdown, true, false, LocalDate.parse("2026-11-10"),
+                LocalDate.parse("2026-10-20"), 0, 0,
                 new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1", Severity.CRITICAL,
                 "Chrome", null, Instant.parse("2026-10-20T00:00:00Z"));
     }

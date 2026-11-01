@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 /**
  * KPI 집계(기획서 8장 KPI 표, WBS 3.4). 창은 [from, to). 철회된 CVE 는 세지 않는다.
  * - KEV 신규: KEV 에 올라 있는 CVE 의 kev_added_at 을 세계 표준시 자정으로 보고 창 안에 든 것(트렌드 점수와 같은 기준)
+ * - 기간 안 KEV 등재 수(meta 최근 두 주): 등재일(날짜)이 첫날~끝날 안인 KEV, 양 끝 포함
  * - Critical: 창 안 신규 중 cvss_severity = CRITICAL(= CVSS 9.0 이상)
  * - 고위험: 지금은 전체 중 EPSS 0.5 이상, 지난 날은 daily_stat 에 남은 수(일별 통계와 같은 기준)
  */
@@ -31,6 +32,11 @@ public class JdbcKpiRepository implements KpiRepository {
             from vulnerability
             where coalesce(rejected, false) = false
             """;
+    private static final String KEV_ADDED_BETWEEN = """
+            select count(*) from vulnerability
+            where coalesce(rejected, false) = false and coalesce(is_kev, false)
+              and kev_added_at >= :first and kev_added_at <= :last
+            """;
     private static final String HIGH_RISK_NOW = """
             select count(*) from vulnerability where coalesce(rejected, false) = false and epss_score >= 0.5
             """;
@@ -47,6 +53,12 @@ public class JdbcKpiRepository implements KpiRepository {
                 .addValue("to", window.getTo().atOffset(ZoneOffset.UTC));
         return jdbc.queryForObject(NEW_ARRIVALS, params, (rs, rowNum) -> NewArrivals.of(
                 rs.getInt("new_count"), rs.getInt("kev_new_count"), rs.getInt("critical_count")));
+    }
+
+    @Override
+    public int kevAddedBetween(LocalDate first, LocalDate last) {
+        MapSqlParameterSource params = new MapSqlParameterSource().addValue("first", first).addValue("last", last);
+        return jdbc.queryForObject(KEV_ADDED_BETWEEN, params, Integer.class);
     }
 
     @Override

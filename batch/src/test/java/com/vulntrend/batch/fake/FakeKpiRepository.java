@@ -9,11 +9,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-/** KPI 저장소 흉내. 창 시작 시각마다 정해 둔 수와 날마다 남긴 고위험 수를 돌려준다 */
+/** KPI 저장소 흉내. 창 시작 시각마다 정해 둔 수, 날마다 남긴 고위험 수, 날마다 등재된 KEV 수(물은 날짜 범위를 합한다)를 돌려준다 */
 public class FakeKpiRepository implements KpiRepository {
 
     private final Map<Instant, NewArrivals> arrivals = new HashMap<>();
     private final Map<LocalDate, Integer> recorded = new HashMap<>();
+    private final Map<LocalDate, Integer> kevAdded = new HashMap<>();
     private int highRiskNow;
 
     public FakeKpiRepository arrivals(Instant from, int newCount, int kevNewCount, int criticalCount) {
@@ -31,9 +32,22 @@ public class FakeKpiRepository implements KpiRepository {
         return this;
     }
 
+    public FakeKpiRepository kevAddedOn(LocalDate day, int count) {
+        kevAdded.put(day, count);
+        return this;
+    }
+
     @Override
     public NewArrivals newArrivals(KpiWindow window) {
         return arrivals.getOrDefault(window.getFrom(), NewArrivals.of(0, 0, 0));
+    }
+
+    @Override
+    public int kevAddedBetween(LocalDate first, LocalDate last) {
+        return kevAdded.entrySet().stream()
+                .filter(entry -> entry.getKey().compareTo(first) >= 0 && entry.getKey().compareTo(last) <= 0)
+                .mapToInt(Map.Entry::getValue)
+                .sum();
     }
 
     @Override

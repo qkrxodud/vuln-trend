@@ -9,6 +9,9 @@ public interface KpiRepository {
     /** 창 안에 새로 들어온 수 */
     NewArrivals newArrivals(KpiWindow window);
 
+    /** 등재일이 first~last(둘 다 포함) 안인 KEV 수. 철회 건은 세지 않는다 */
+    int kevAddedBetween(LocalDate first, LocalDate last);
+
     /** 지금 전체 중 고위험 수 */
     int highRiskNow();
 

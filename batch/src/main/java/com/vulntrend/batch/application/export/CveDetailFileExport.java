@@ -30,7 +30,7 @@ import org.springframework.stereotype.Component;
 /**
  * cve/CVE-*.json (기획서 7장 P6·R5, WBS 4.2). 생성 범위 안의 CVE 마다 한 파일을 쓰고, 범위 밖 파일(철회되거나 순위에서 밀려난 CVE)은
  * 지운다 — 남겨 두면 옛 점수가 그대로 보인다.
- * - 목록 줄 필드 전부(TrendRows) + 원문 설명(없으면 빈 글)·발행/수정 시각(한국 시각)·KEV 등재일(KEV 일 때만)·요약·영향 제품·참고 링크
+ * - 목록 줄 필드 전부(TrendRows) + 원문 설명(없으면 빈 글)·발행/수정 시각(한국 시각)·요약·영향 제품·참고 링크
  * - 영향 제품의 product 는 사이트에 보일 이름(ProductNames), display_name·slug 는 표에 있을 때만(없으면 null — 계약 그대로).
  *   제조사는 원문 그대로
  * - 참고 링크는 벤더 어드바이저리 다음에 NVD 원문 링크를 붙이고, 그 뒤에 뉴스·PoC(저장소가 출처 순서로 준다)
@@ -79,7 +79,6 @@ public class CveDetailFileExport {
         return new CveDetailJson(TrendRows.from(detail.row(), names),
                 Optional.ofNullable(detail.description()).orElse(""),
                 koreanTime(detail.row().publishedAt()), koreanTime(detail.lastModifiedAt()),
-                detail.row().kev() ? detail.kevAddedAt() : null,
                 Optional.ofNullable(detail.summary()).map(CveDetailFileExport::summary).orElse(null),
                 detail.affected().stream().map(a -> new AffectedProductJson(a.vendor(), names.shown(a.product()), a.displayName(),
                         a.slug(), a.ecosystem(), a.vulnerableRange(), a.fixedVersion())).toList(),

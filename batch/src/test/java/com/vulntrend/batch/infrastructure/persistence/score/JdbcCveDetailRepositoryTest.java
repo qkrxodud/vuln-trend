@@ -112,7 +112,7 @@ class JdbcCveDetailRepositoryTest {
             assertThat(detail.row().breakdown().getKev()).isEqualByComparingTo("50");
             assertThat(detail.description()).isEqualTo("Type confusion in V8.");
             assertThat(detail.lastModifiedAt()).isEqualTo(Instant.parse("2026-10-20T03:00:00Z"));
-            assertThat(detail.kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
+            assertThat(detail.row().kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
             assertThat(detail.summary().what()).isEqualTo("원격 코드 실행");
             assertThat(detail.summary().model()).isEqualTo("claude-haiku-5-5");
             assertThat(detail.summary().generatedAt()).isEqualTo(Instant.parse("2026-10-30T00:00:00Z"));

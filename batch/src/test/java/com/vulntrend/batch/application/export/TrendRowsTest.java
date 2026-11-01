@@ -41,6 +41,7 @@ class TrendRowsTest {
         assertThat(row.title()).isEqualTo("Chrome V8 타입 혼동");
         assertThat(row.isKev()).isTrue();
         assertThat(row.kevDueDate()).isEqualTo(LocalDate.parse("2026-11-03"));
+        assertThat(row.kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
         assertThat(row.epss()).isEqualTo(new BigDecimal("0.94310"));
         assertThat(row.epssPercentile()).isEqualTo(new BigDecimal("0.99900"));
         assertThat(row.cvss()).isEqualTo(new BigDecimal("9.8"));
@@ -60,12 +61,13 @@ class TrendRowsTest {
     }
 
     @Test
-    @DisplayName("KEV 가 아니면 랜섬웨어는 아니고 조치 기한도 없다")
+    @DisplayName("KEV 가 아니면 랜섬웨어는 아니고 조치 기한도 등재일도 없다")
     void notKev() {
         TrendRowJson row = TrendRows.from(TrendListings.unrated("CVE-2026-50001"), NAMES);
 
         assertThat(row.kevRansomware()).isFalse();
         assertThat(row.kevDueDate()).isNull();
+        assertThat(row.kevAddedAt()).isNull();
     }
 
     @Test

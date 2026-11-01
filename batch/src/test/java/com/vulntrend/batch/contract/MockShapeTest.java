@@ -55,7 +55,7 @@ class MockShapeTest {
     }
 
     @Test
-    @DisplayName("meta.json 은 갱신 시각·판·지금 창·어제 창 KPI 4개를 같은 이름으로 싣는다")
+    @DisplayName("meta.json 은 갱신 시각·판·지금 창·어제 창 KPI 4개·최근 두 주 KEV 등재 수를 같은 이름으로 싣는다")
     void meta() throws IOException {
         FakeKpiRepository kpi = new FakeKpiRepository().highRiskNow(318)
                 .highRiskRecorded(LocalDate.parse("2026-10-30"), 313);
@@ -104,8 +104,7 @@ class MockShapeTest {
     @DisplayName("상세 파일은 목록 줄 필드 전부와 상세 전용 필드를 목업과 같은 이름·순서로 싣는다")
     void cveDetail() throws IOException {
         CveDetailListing detail = new CveDetailListing(listing("CVE-2026-41203", true), "Type confusion in V8.",
-                NOW, LocalDate.parse("2026-10-29"),
-                new SummaryListing("무엇", "누가", "조치", "claude-haiku-5-5", NOW),
+                NOW, new SummaryListing("무엇", "누가", "조치", "claude-haiku-5-5", NOW),
                 List.of(new AffectedListing("google", "chrome", "Chrome", "chrome", null, "< 130", null)),
                 List.of(new ReferenceListing("https://vendor.example/a", "vendor", null)));
 
@@ -119,7 +118,7 @@ class MockShapeTest {
         ScoreBreakdown breakdown = ScoreBreakdown.of(new BigDecimal(kev ? "50" : "0"), BigDecimal.ZERO,
                 new BigDecimal("28.293"), new BigDecimal("9.8"), new BigDecimal("0.75"));
         return new TrendListing(CveId.from(id), "제목", breakdown, kev, false, kev ? LocalDate.parse("2026-11-03") : null,
-                0, 0, new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1",
+                kev ? LocalDate.parse("2026-10-29") : null, 0, 0, new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1",
                 Severity.CRITICAL, "Chrome", kev ? "요약" : null, NOW);
     }
 }

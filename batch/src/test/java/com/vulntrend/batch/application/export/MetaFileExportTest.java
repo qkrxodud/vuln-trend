@@ -50,6 +50,17 @@ class MetaFileExportTest {
     }
 
     @Test
+    @DisplayName("전체 KEV 중 최근 7일과 그 전 7일에 등재된 수를 싣는다")
+    void kevAddedTwoWeeks() {
+        MetaJson meta = export(new FakeKpiRepository()
+                .kevAddedOn(LocalDate.parse("2026-10-31"), 3)
+                .kevAddedOn(LocalDate.parse("2026-10-24"), 5));
+
+        assertThat(meta.kevAdded7d()).isEqualTo(3);
+        assertThat(meta.kevAddedPrev7d()).isEqualTo(5);
+    }
+
+    @Test
     @DisplayName("어제 고위험을 모르면 비워서 화면이 증감을 숨기게 한다")
     void unknownYesterdayHighRisk() {
         MetaJson meta = export(new FakeKpiRepository().highRiskNow(318));

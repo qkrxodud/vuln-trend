@@ -101,6 +101,41 @@ class JdbcKpiRepositoryTest {
     }
 
     @Nested
+    @DisplayName("기간 안 KEV 등재 수는")
+    class KevAddedBetween {
+
+        @Test
+        @DisplayName("첫날과 끝날을 모두 넣고 그 바깥 날은 뺀다")
+        void bothEndsIncluded() {
+            vulnerability("CVE-2026-40001", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40001", "2026-10-25");
+            vulnerability("CVE-2026-40002", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40002", "2026-10-31");
+            vulnerability("CVE-2026-40003", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40003", "2026-10-24");
+            vulnerability("CVE-2026-40004", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40004", "2026-11-01");
+
+            assertThat(repository.kevAddedBetween(LocalDate.parse("2026-10-25"), LocalDate.parse("2026-10-31")))
+                    .isEqualTo(2);
+        }
+
+        @Test
+        @DisplayName("KEV 에서 빠졌거나 철회된 CVE 는 세지 않는다")
+        void skipsNotKevAndRejected() {
+            vulnerability("CVE-2026-40001", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40001", "2026-10-28");
+            jdbc.update("update vulnerability set is_kev = false where vuln_id = 'CVE-2026-40001'");
+            vulnerability("CVE-2026-40002", "2026-10-01T00:00:00Z", "HIGH");
+            kev("CVE-2026-40002", "2026-10-28");
+            jdbc.update("update vulnerability set rejected = true where vuln_id = 'CVE-2026-40002'");
+
+            assertThat(repository.kevAddedBetween(LocalDate.parse("2026-10-25"), LocalDate.parse("2026-10-31")))
+                    .isZero();
+        }
+    }
+
+    @Nested
     @DisplayName("고위험은")
     class HighRisk {
 
