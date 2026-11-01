@@ -1,8 +1,8 @@
 #!/bin/bash
-# 하루 한 번 실행(launchd 가 부름). 수집 → 점수 → 통계 → 요약 → 출력 → 게시를 한 번 돈다.
+# launchd 가 2시간마다 부른다. 수집 → 점수 → 통계 → 요약을 돌고, 화면이 바뀌었거나 그날 첫 게시면 출력·게시한다.
 # 비밀 값은 이 파일에 두지 않는다. 배치는 저장소 루트의 .env 를 읽는다.
-# 기록: ~/Library/Logs/vuln-trend/daily-YYYYMMDD-HHMM.log (최근 30개만 남김)
-# 실패하면 macOS 알림을 띄우고 종료 코드 1 로 끝난다.
+# 기록: ~/Library/Logs/vuln-trend/daily-YYYYMMDD-HHMM.log (최근 120개 ≈ 10일만 남김)
+# 실패하거나 건너뛰면 macOS 알림을 띄운다. 성공은 알리지 않는다(2시간마다라 시끄러움).
 set -uo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
@@ -61,14 +61,12 @@ notify() {
 ) >>"$LOG" 2>&1
 status=$?
 
-# 오래된 기록 정리(최근 30개)
-ls -1t "$LOG_DIR"/daily-*.log 2>/dev/null | tail -n +31 | while read -r old; do rm -f "$old"; done
+# 오래된 기록 정리(최근 120개, git 동작 기록도 같이)
+for kind in daily git-trace; do ls -1t "$LOG_DIR"/$kind-*.log 2>/dev/null | tail -n +121 | while read -r old; do rm -f "$old"; done; done
 
 if [ $status -eq 2 ]; then
   notify "커밋 안 된 batch 변경이 있어 건너뛰었습니다. 기록: $LOG"
 elif [ $status -ne 0 ]; then
   notify "실패했습니다(종료 코드 $status). 기록: $LOG"
-else
-  notify "완료했습니다."
 fi
 exit $status
