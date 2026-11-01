@@ -41,6 +41,18 @@ class ProductAliasesTest {
         }
 
         @Test
+        @DisplayName("한 제품을 두 제품군으로 적어 두었으면 표를 받지 않는다")
+        void oneSlugTwoFamiliesIsRefused() {
+            ProductAlias asBrowser = ProductAlias.of(ProductKey.of("google", "chrome"), "chrome", "Chrome",
+                    ProductFamily.BROWSER);
+            ProductAlias asDesktop = ProductAlias.of(ProductKey.of("Google", "Chromium"), "chrome", "Chrome",
+                    ProductFamily.DESKTOP);
+
+            assertThatThrownBy(() -> ProductAliases.of(List.of(asBrowser, asDesktop)))
+                    .isInstanceOf(DomainValidationException.class);
+        }
+
+        @Test
         @DisplayName("한 제품이 두 가지 이름으로 보이게 적혀 있으면 표를 받지 않는다")
         void oneSlugTwoDisplayNamesIsRefused() {
             ProductAlias chromeOtherName =

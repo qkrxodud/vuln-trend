@@ -127,4 +127,16 @@ class TrendRowsTest {
                 .isEqualTo(OffsetDateTime.of(2026, 10, 19, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
         assertThat(TrendRows.from(TrendListings.kevPublishedAt("CVE-2026-41203", null), NAMES).publishedAt()).isNull();
     }
+
+    @Test
+    @DisplayName("제품군과 공격 유형 키를 싣고, 분류 전이면 제품군은 비우고 공격 유형은 빈 목록이다")
+    void categories() {
+        TrendRowJson classified = TrendRows.from(TrendListings.kev("CVE-2026-41203"), NAMES);
+        TrendRowJson unclassified = TrendRows.from(TrendListings.unrated("CVE-2026-50001"), NAMES);
+
+        assertThat(classified.productFamily()).isEqualTo("browser");
+        assertThat(classified.attackTypes()).containsExactly("rce", "memory");
+        assertThat(unclassified.productFamily()).isNull();
+        assertThat(unclassified.attackTypes()).isEmpty();
+    }
 }

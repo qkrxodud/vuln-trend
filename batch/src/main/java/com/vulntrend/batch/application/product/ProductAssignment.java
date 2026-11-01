@@ -10,14 +10,17 @@ public class ProductAssignment {
 
     private final int primaryChanged;
     private final int slugChanged;
+    private final int familyChanged;
 
     @Builder(access = AccessLevel.PRIVATE)
-    private ProductAssignment(int primaryChanged, int slugChanged) {
+    private ProductAssignment(int primaryChanged, int slugChanged, int familyChanged) {
         this.primaryChanged = primaryChanged;
         this.slugChanged = slugChanged;
+        this.familyChanged = familyChanged;
     }
 
-    public static ProductAssignment of(int primaryChanged, int slugChanged) {
-        return ProductAssignment.builder().primaryChanged(primaryChanged).slugChanged(slugChanged).build();
+    public static ProductAssignment of(int primaryChanged, int slugChanged, int familyChanged) {
+        return ProductAssignment.builder().primaryChanged(primaryChanged).slugChanged(slugChanged)
+                .familyChanged(familyChanged).build();
     }
 }

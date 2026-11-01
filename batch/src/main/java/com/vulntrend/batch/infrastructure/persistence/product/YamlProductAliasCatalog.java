@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.domain.product.ProductAlias;
 import com.vulntrend.batch.domain.product.ProductAliasCatalog;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.domain.product.ProductFamily;
 import com.vulntrend.batch.domain.product.ProductKey;
 import com.vulntrend.batch.global.error.exception.DomainValidationException;
 import com.vulntrend.batch.infrastructure.persistence.product.dto.ProductAliasEntry;
@@ -72,7 +73,12 @@ public class YamlProductAliasCatalog implements ProductAliasCatalog {
         if (names.isEmpty()) {
             throw new DomainValidationException("Product " + entry.slug() + " in " + FILE + " has no cpe or kev names.");
         }
+        ProductFamily family = Optional.ofNullable(entry.family())
+                .map(key -> ProductFamily.fromKey(key).orElseThrow(() -> new DomainValidationException(
+                        "Product " + entry.slug() + " in " + FILE + " has an unknown family " + key + ".")))
+                .orElse(null);
         return names.stream()
-                .map(name -> ProductAlias.of(ProductKey.of(name.vendor(), name.product()), entry.slug(), entry.displayName()));
+                .map(name -> ProductAlias.of(ProductKey.of(name.vendor(), name.product()), entry.slug(), entry.displayName(),
+                        family));
     }
 }

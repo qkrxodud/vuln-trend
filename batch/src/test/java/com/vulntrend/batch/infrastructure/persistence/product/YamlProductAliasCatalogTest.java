@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vulntrend.batch.domain.product.ProductAlias;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.domain.product.ProductFamily;
 import com.vulntrend.batch.domain.product.ProductKey;
 import com.vulntrend.batch.global.error.exception.DomainValidationException;
 import org.junit.jupiter.api.DisplayName;
@@ -30,6 +31,30 @@ class YamlProductAliasCatalogTest {
         @DisplayName("초기 제품 50개와 Gate G 에서 더한 40개, 제품 90개가 모두 들어 있다")
         void hasNinetyProducts() {
             assertThat(aliases.productCount()).isEqualTo(90);
+        }
+
+        @Test
+        @DisplayName("애매한 두 제품(SiteGuard, Sangoma Switchvox)만 빼고 모든 제품에 제품군이 있다")
+        void everyProductHasFamilyButTwo() {
+            assertThat(aliases.getAliases().stream().filter(alias -> alias.getFamily().isEmpty())
+                    .map(ProductAlias::getDisplayName).distinct())
+                    .containsExactlyInAnyOrder("SiteGuard", "Sangoma Switchvox");
+        }
+
+        @ParameterizedTest(name = "{0} / {1} → {2}")
+        @CsvSource(delimiter = '|', value = {
+                "microsoft      | windows_10_1607 | OS",
+                "google         | chrome          | BROWSER",
+                "Fortinet       | FortiOS         | NETWORK",
+                "wordpress      | wordpress       | WEB_CMS",
+                "apache         | tomcat          | SERVER",
+                "apache         | log4j           | DEV",
+                "vmware         | esxi            | CLOUD",
+                "google         | android         | MOBILE",
+                "rarlab         | winrar          | DESKTOP"})
+        @DisplayName("제품마다 정한 제품군을 읽는다")
+        void familyIsRead(String vendor, String product, ProductFamily family) {
+            assertThat(aliases.find(ProductKey.of(vendor, product)).flatMap(ProductAlias::getFamily)).contains(family);
         }
 
         @ParameterizedTest(name = "{0} / {1} → {3}")
@@ -79,6 +104,14 @@ class YamlProductAliasCatalogTest {
     @Nested
     @DisplayName("원본이 잘못 적혀 있으면")
     class BrokenFile {
+
+        @Test
+        @DisplayName("모르는 제품군 키를 적으면 표를 받지 않는다")
+        void unknownFamilyIsRefused() {
+            assertThatThrownBy(() -> catalog.read(new ClassPathResource("product-alias/unknown-family.yml")))
+                    .isInstanceOf(DomainValidationException.class)
+                    .hasMessageContaining("browsers");
+        }
 
         @Test
         @DisplayName("모르는 항목 이름(오타)이 있으면 읽지 않는다")

@@ -3,9 +3,11 @@ package com.vulntrend.batch.application.product;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.domain.product.AffectedProductName;
+import com.vulntrend.batch.domain.product.CpeCriteria;
 import com.vulntrend.batch.domain.product.PrimaryProductCandidate;
 import com.vulntrend.batch.domain.product.ProductAlias;
 import com.vulntrend.batch.domain.product.ProductAliases;
+import com.vulntrend.batch.domain.product.ProductFamily;
 import com.vulntrend.batch.domain.product.ProductKey;
 import com.vulntrend.batch.domain.product.ProductMention;
 import com.vulntrend.batch.domain.vulnerability.CveId;
@@ -15,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("대표 제품과 묶음 이름 매기기")
@@ -96,6 +99,51 @@ class ProductAssignServiceTest {
 
         assertThat(assignment.getPrimaryChanged()).isZero();
         assertThat(assignment.getSlugChanged()).isZero();
+        assertThat(assignment.getFamilyChanged()).isZero();
+    }
+
+    @Nested
+    @DisplayName("제품군은")
+    class Families {
+
+        private final FakeProductAliasCatalog catalog = new FakeProductAliasCatalog(ProductAliases.of(List.of(
+                ProductAlias.of(ProductKey.of("google", "chrome"), "chrome", "Chrome", ProductFamily.BROWSER))));
+
+        private PrimaryProductCandidate candidate(String id, ProductMention cpe, String criteria, String cna,
+                ProductFamily current) {
+            return PrimaryProductCandidate.of(CveId.from(id), null, null, cpe, CpeCriteria.parse(criteria).orElse(null),
+                    cna, current);
+        }
+
+        @Test
+        @DisplayName("표·CPE·발행 기관 규칙으로 정하고, 지금 값과 다른 CVE 만 바꾼다")
+        void changesOnlyDifferentFamily() {
+            FakeProductAssignmentRepository repository = new FakeProductAssignmentRepository(List.of(
+                    candidate("CVE-2026-20001", CHROME, "cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*", null, null),
+                    candidate("CVE-2026-20002", null, null, "security@wordfence.com", null),
+                    candidate("CVE-2026-20003", null, null, "security@wordfence.com", ProductFamily.WEB_CMS)),
+                    List.of());
+
+            ProductAssignment assignment = new ProductAssignService(catalog, repository).assignAll();
+
+            assertThat(repository.familyChanges()).containsExactlyInAnyOrderEntriesOf(Map.of(
+                    CveId.from("CVE-2026-20001"), Optional.of(ProductFamily.BROWSER),
+                    CveId.from("CVE-2026-20002"), Optional.of(ProductFamily.WEB_CMS)));
+            assertThat(assignment.getFamilyChanged()).isEqualTo(2);
+        }
+
+        @Test
+        @DisplayName("근거가 사라지면 분류 전으로 비운다")
+        void clearsWhenNoEvidenceLeft() {
+            FakeProductAssignmentRepository repository = new FakeProductAssignmentRepository(List.of(
+                    candidate("CVE-2026-20004", GIMP, "cpe:2.3:a:gimp:gimp:*:*:*:*:*:*:*:*", null, ProductFamily.DESKTOP)),
+                    List.of());
+
+            new ProductAssignService(catalog, repository).assignAll();
+
+            assertThat(repository.familyChanges()).containsExactlyEntriesOf(Map.of(
+                    CveId.from("CVE-2026-20004"), Optional.empty()));
+        }
     }
 
     private static ProductMention mention(String vendor, String product) {

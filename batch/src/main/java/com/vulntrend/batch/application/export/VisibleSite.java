@@ -5,8 +5,10 @@ import com.vulntrend.batch.domain.export.VisibleFingerprint;
 import com.vulntrend.batch.domain.stat.KevAddedWeeks;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.AccessLevel;
@@ -18,6 +20,7 @@ import lombok.NoArgsConstructor;
  *   랜섬웨어·등재일·요약 유무·업데이트할 버전·패치 링크(제목·제품 이름은 오케스트레이터 지시 2026-11-01 로 더함)
  * - 상세의 요약 유무는 같은 CVE 의 summary_what 유무와 같아 행 값으로 대신한다
  * - meta.json 의 최근 7일·그 전 7일 KEV 등재 수
+ * - categories.json 의 분류마다 상위의 번호 순서(분류 이름 순으로 정렬해 넣는다). 분류 건수는 넣지 않는다
  * 계속 바뀌는 값(갱신 시각·판 이름·24시간 KPI)과 요약 글 자체·악용 확률은 넣지 않는다
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -26,9 +29,11 @@ public final class VisibleSite {
     private static final String SEPARATOR = "\t";
     private static final String NONE = "-";
 
-    public static String fingerprint(List<TrendRowJson> rows, KevAddedWeeks kevAdded) {
+    public static String fingerprint(List<TrendRowJson> rows, KevAddedWeeks kevAdded,
+            Map<String, List<String>> categoryTops) {
         List<String> lines = new ArrayList<>(rows.stream().map(VisibleSite::line).toList());
         lines.add("kev_added_7d" + SEPARATOR + kevAdded.getThisWeek() + SEPARATOR + kevAdded.getPreviousWeek());
+        new TreeMap<>(categoryTops).forEach((category, ids) -> lines.add(category + SEPARATOR + String.join(",", ids)));
         return VisibleFingerprint.of(lines);
     }
 

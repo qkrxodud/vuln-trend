@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
 import com.vulntrend.batch.application.stat.KpiService;
 import com.vulntrend.batch.domain.vulnerability.CveId;
+import com.vulntrend.batch.fake.FakeCategoryRepository;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeKpiRepository;
@@ -27,6 +28,7 @@ class ExportServiceTest {
 
     private final FakeSiteDataWriter writer = new FakeSiteDataWriter();
     private final FakeKpiRepository kpi = new FakeKpiRepository();
+    private final FakeCategoryRepository categoryCounts = new FakeCategoryRepository();
     private final FakeTrendListRepository trends = new FakeTrendListRepository()
             .with(TrendListings.kev("CVE-2026-41203"))
             .with(TrendListings.unrated("CVE-2026-50001"));
@@ -44,6 +46,26 @@ class ExportServiceTest {
         assertThat(details.askedTop()).isEqualTo(1000);
         assertThat(details.askedDetails()).containsExactly(CveId.from("CVE-2026-41203"), CveId.from("CVE-2026-50001"),
                 CveId.from("CVE-2026-60001"));
+    }
+
+    @Test
+    @DisplayName("분류 파일을 쓰고, 분류 상위에 든 CVE 도 상세 파일을 만든다")
+    void categoriesAndTheirDetails() {
+        FakeTrendListRepository listed = new FakeTrendListRepository()
+                .with(TrendListings.kevClassified("CVE-2026-41203", "browser", List.of("rce")))
+                .withRecent(TrendListings.unrated("CVE-2026-50001"));
+        FakeTrendListRepository categorized = new FakeTrendListRepository()
+                .with(TrendListings.kevClassified("CVE-2026-41203", "browser", List.of("rce")))
+                .with(TrendListings.kevClassified("CVE-2026-80001", "os", List.of()));
+
+        new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
+                new IndexFileExport(listed, writer), new RecentFileExport(listed, writer),
+                new SearchIndexFileExport(details, writer), new CategoriesFileExport(categorized, categoryCounts, writer),
+                new CveDetailFileExport(details, writer), new MetaFileExport(new KpiService(kpi), writer), details,
+                Clock.fixed(NOW, ZoneOffset.UTC)).exportAll();
+
+        assertThat(writer.order()).contains("categories.json");
+        assertThat(details.askedDetails()).contains(CveId.from("CVE-2026-80001"));
     }
 
     @Test
@@ -89,7 +111,7 @@ class ExportServiceTest {
 
         ExportResult result = service().exportAll();
 
-        assertThat(result.getWritten()).isEqualTo(8);
+        assertThat(result.getWritten()).isEqualTo(9);
         assertThat(result.getUnchanged()).isZero();
         assertThat(result.getRemoved()).isEqualTo(1);
         assertThat(result.getDetailFiles()).isEqualTo(3);
@@ -105,7 +127,7 @@ class ExportServiceTest {
         ExportResult again = service.exportAll();
 
         assertThat(again.getWritten()).isZero();
-        assertThat(again.getUnchanged()).isEqualTo(8);
+        assertThat(again.getUnchanged()).isEqualTo(9);
         assertThat(again.hasChanges()).isFalse();
     }
 
@@ -142,6 +164,26 @@ class ExportServiceTest {
             listed.withRecent(TrendListings.unrated("CVE-2026-50002"));
 
             assertThat(service(listed).visibleFingerprint()).isEqualTo(before);
+        }
+
+        @Test
+        @DisplayName("분류 상위의 순서가 바뀌면 달라진다 — 주목 목록 줄의 화면 값이 같아도")
+        void categoryTopChangesIt() {
+            FakeTrendListRepository asBrowser = new FakeTrendListRepository()
+                    .with(TrendListings.kevClassified("CVE-2026-41203", "browser", List.of()));
+            FakeTrendListRepository asOs = new FakeTrendListRepository()
+                    .with(TrendListings.kevClassified("CVE-2026-41203", "os", List.of()));
+
+            assertThat(service(asOs).visibleFingerprint()).isNotEqualTo(service(asBrowser).visibleFingerprint());
+        }
+
+        @Test
+        @DisplayName("분류 건수만 바뀌면 그대로다")
+        void categoryCountsKeepIt() {
+            String before = service().visibleFingerprint();
+            categoryCounts.family("browser", 99, 99, 9);
+
+            assertThat(service().visibleFingerprint()).isEqualTo(before);
         }
 
         @Test
@@ -233,7 +275,8 @@ class ExportServiceTest {
         FakeCveDetailRepository repository = details;
         return new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
                 new IndexFileExport(listed, writer), new RecentFileExport(listed, writer),
-                new SearchIndexFileExport(repository, writer), new CveDetailFileExport(repository, writer),
+                new SearchIndexFileExport(repository, writer), new CategoriesFileExport(listed, categoryCounts, writer),
+                new CveDetailFileExport(repository, writer),
                 new MetaFileExport(new KpiService(kpi), writer), repository,
                 clock);
     }

@@ -113,4 +113,34 @@ class PrimaryProductRuleTest {
     private static Optional<ProductMention> mention(String vendor, String product) {
         return ProductMention.from(vendor, product);
     }
+
+    @Nested
+    @DisplayName("표의 제품군은")
+    class TableFamily {
+
+        private final PrimaryProductRule rule = PrimaryProductRule.of(ProductAliases.of(List.of(
+                ProductAlias.of(ProductKey.of("google", "chrome"), "chrome", "Chrome", ProductFamily.BROWSER),
+                ProductAlias.of(ProductKey.of("Google", "Chromium V8"), "chrome", "Chrome", ProductFamily.BROWSER),
+                ProductAlias.of(ProductKey.of("apple", "iphone_os"), "ios", "iOS·iPadOS", ProductFamily.MOBILE),
+                ProductAlias.of(ProductKey.of("Langflow", "Langflow"), "langflow", "Langflow"))));
+
+        @Test
+        @DisplayName("대표 제품을 고른 표 줄의 제품군이다 — KEV 표기가 먼저, 그다음 CPE 첫 항목")
+        void sameRankingAsPrimary() {
+            assertThat(rule.familyOf(KEV_CHROMIUM, CPE_IPHONE)).contains(ProductFamily.BROWSER);
+            assertThat(rule.familyOf(NONE, CPE_IPHONE)).contains(ProductFamily.MOBILE);
+        }
+
+        @Test
+        @DisplayName("대표 제품의 표 줄이 제품군을 비워 두었으면 다른 표 줄로 넘어가지 않고 없다")
+        void emptyFamilyIsNotFilledFromOtherName() {
+            assertThat(rule.familyOf(KEV_LANGFLOW, CPE_IPHONE)).isEmpty();
+        }
+
+        @Test
+        @DisplayName("표에 없는 제품이면 없다")
+        void notInTable() {
+            assertThat(rule.familyOf(KEV_APPLE_MANY, CPE_LANGFLOW)).isEmpty();
+        }
+    }
 }

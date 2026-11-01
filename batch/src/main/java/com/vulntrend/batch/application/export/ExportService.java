@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 
 /**
  * 사이트 데이터 내보내기(기획서 6장 8번·7장, WBS 4.2). 러너가 요약 단계 다음에 한 번 부른다. 모든 파일이 같은 실행 시각을 본다.
- * - 순서: stats → index → recent → search-index → cve/*.json → meta. meta 의 판 이름이 바뀌어야 프론트가 새 파일을 읽으므로
+ * - 순서: stats → index → recent → search-index → categories → cve/*.json → meta. meta 의 판 이름이 바뀌어야 프론트가 새 파일을 읽으므로
  *   meta 를 마지막에 쓴다(중간에 실패하면 프론트는 옛 판을 계속 본다)
- * - 상세 파일 생성 범위(P6): index·recent 에 실린 CVE + 점수 상위 1000건. 범위 밖 상세 파일은 지운다(R5 철회 건 포함)
+ * - 상세 파일 생성 범위(P6): index·recent·categories 상위에 실린 CVE + 점수 상위 1000건. 범위 밖 상세 파일은 지운다(R5 철회 건 포함)
  * - 제품 이름은 모든 파일이 같은 규칙(ProductNames)과 같은 표를 본다 — 실행마다 표의 표시 이름을 한 번 읽는다(B2)
  * - 파일 쓰기 실패는 OutputWriteException 으로 올라간다 — 그 실행은 push 하지 않는다
  */
@@ -27,12 +27,13 @@ import org.springframework.stereotype.Service;
 public class ExportService {
 
     private static final int DETAIL_TOP = 1000;
-    private static final int LIST_FILES = 5;
+    private static final int LIST_FILES = 6;
 
     private final StatsFileExport stats;
     private final IndexFileExport index;
     private final RecentFileExport recent;
     private final SearchIndexFileExport searchIndex;
+    private final CategoriesFileExport categories;
     private final CveDetailFileExport details;
     private final MetaFileExport meta;
     private final CveDetailRepository repository;
@@ -55,13 +56,15 @@ public class ExportService {
         Listed recentListed = recent.write(now, names);
         WriteOutcome searchOutcome = rebuildSearchIndex || searchIndex.missing()
                 ? searchIndex.write(now, names) : WriteOutcome.UNCHANGED;
+        Listed categorized = categories.write(now, names);
         Set<CveId> scope = new LinkedHashSet<>(indexed.getIds());
         scope.addAll(recentListed.getIds());
+        scope.addAll(categorized.getIds());
         scope.addAll(repository.topIds(DETAIL_TOP));
         DetailFiles detailFiles = details.write(scope, now, names);
         WriteOutcome metaOutcome = meta.write(now);
         List<WriteOutcome> lists = List.of(statsOutcome, indexed.getOutcome(), recentListed.getOutcome(), searchOutcome,
-                metaOutcome);
+                categorized.getOutcome(), metaOutcome);
         int listWritten = (int) lists.stream().filter(outcome -> outcome == WriteOutcome.WRITTEN).count();
         ExportResult result = ExportResult.of(listWritten + detailFiles.getWritten(),
                 LIST_FILES - listWritten + detailFiles.getUnchanged(), detailFiles.getRemoved(),
@@ -81,6 +84,6 @@ public class ExportService {
     }
 
     private String fingerprint(Instant now, ProductNames names) {
-        return VisibleSite.fingerprint(index.rows(now, names), meta.kevAdded(now));
+        return VisibleSite.fingerprint(index.rows(now, names), meta.kevAdded(now), categories.topIds());
     }
 }

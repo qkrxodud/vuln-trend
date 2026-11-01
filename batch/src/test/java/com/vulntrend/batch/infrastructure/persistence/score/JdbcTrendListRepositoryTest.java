@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.vulntrend.batch.domain.remedy.dto.RemedyListing;
 import com.vulntrend.batch.domain.remedy.dto.TaggedLink;
 import com.vulntrend.batch.domain.score.dto.TrendListing;
+import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.domain.vulnerability.Severity;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -150,6 +152,70 @@ class JdbcTrendListRepositoryTest {
         assertThat(listing.summaryWhat()).isNull();
         assertThat(listing.epss()).isNull();
         assertThat(listing.kev()).isFalse();
+    }
+
+    @Nested
+    @DisplayName("분류는")
+    class Categories {
+
+        private void classified(String id, String score, String family, String attackTypes) {
+            scored(id, score, "2026-10-30T00:00:00Z");
+            jdbc.update("update vulnerability set product_family = ?, attack_types = cast(? as text[]) where vuln_id = ?",
+                    family, attackTypes, id);
+        }
+
+        @Test
+        @DisplayName("제품군과 공격 유형을 저장된 그대로 읽는다")
+        void readsStoredCategories() {
+            classified("CVE-2026-60001", "10", "browser", "{rce,memory}");
+            scored("CVE-2026-60002", "5", "2026-10-30T00:00:00Z");
+
+            List<TrendListing> listings = repository.top(2, NOW);
+
+            assertThat(listings.get(0).productFamily()).isEqualTo("browser");
+            assertThat(listings.get(0).attackTypes()).containsExactly("rce", "memory");
+            assertThat(listings.get(1).productFamily()).isNull();
+            assertThat(listings.get(1).attackTypes()).isEmpty();
+        }
+
+        @Test
+        @DisplayName("제품군마다 그 제품군 안 상위 번호를 트렌드 순서로 요청한 수만큼 준다")
+        void topInFamily() {
+            classified("CVE-2026-60001", "10", "browser", "{}");
+            classified("CVE-2026-60002", "30", "browser", "{}");
+            classified("CVE-2026-60003", "90", "os", "{}");
+            classified("CVE-2026-60004", "20", "browser", "{}");
+
+            Map<String, List<CveId>> tops = repository.topIdsByFamily(2);
+
+            assertThat(tops).containsOnlyKeys("browser", "os");
+            assertThat(tops.get("browser")).extracting(CveId::getValue).containsExactly("CVE-2026-60002", "CVE-2026-60004");
+        }
+
+        @Test
+        @DisplayName("공격 유형마다 그 유형이 붙은 것의 상위 번호를 트렌드 순서로 준다 — 여러 유형이 붙은 CVE 는 각 유형에 든다")
+        void topWithAttackType() {
+            classified("CVE-2026-60001", "10", null, "{xss}");
+            classified("CVE-2026-60002", "30", null, "{rce,xss}");
+            classified("CVE-2026-60003", "90", null, "{rce}");
+
+            Map<String, List<CveId>> tops = repository.topIdsByAttackType(20);
+
+            assertThat(tops.get("xss")).extracting(CveId::getValue).containsExactly("CVE-2026-60002", "CVE-2026-60001");
+            assertThat(tops.get("rce")).extracting(CveId::getValue).containsExactly("CVE-2026-60003", "CVE-2026-60002");
+        }
+    }
+
+    @Test
+    @DisplayName("번호로 고른 목록 줄은 철회 건을 빼고 읽는다")
+    void listingsByIds() {
+        scored("CVE-2026-60001", "10", "2026-10-30T00:00:00Z");
+        scored("CVE-2026-60002", "20", "2026-10-30T00:00:00Z");
+        jdbc.update("update vulnerability set rejected = true where vuln_id = 'CVE-2026-60002'");
+
+        assertThat(ids(repository.listings(List.of(CveId.from("CVE-2026-60001"), CveId.from("CVE-2026-60002")), NOW)))
+                .containsExactly("CVE-2026-60001");
+        assertThat(repository.listings(List.of(), NOW)).isEmpty();
     }
 
     @Nested

@@ -8,6 +8,7 @@ import com.vulntrend.batch.domain.stat.KevAddedWeeks;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,8 @@ class VisibleSiteTest {
 
     private static final ProductNames NAMES = ProductNames.of(List.of());
     private static final KevAddedWeeks WEEKS = KevAddedWeeks.of(9, 8);
+    private static final Map<String, List<String>> TOPS = Map.of("product_family:browser",
+            List.of("CVE-2026-41203", "CVE-2026-41204"));
 
     private static TrendRowJson kev() {
         return TrendRows.from(TrendListings.kev("CVE-2026-41203"), NAMES);
@@ -27,7 +30,7 @@ class VisibleSiteTest {
     }
 
     private static String fingerprint(TrendRowJson... rows) {
-        return VisibleSite.fingerprint(List.of(rows), WEEKS);
+        return VisibleSite.fingerprint(List.of(rows), WEEKS, TOPS);
     }
 
     @Nested
@@ -82,11 +85,20 @@ class VisibleSiteTest {
         }
 
         @Test
+        @DisplayName("분류 상위의 순서 — 건수는 넣지 않는다")
+        void categoryTops() {
+            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), WEEKS, Map.of("product_family:browser",
+                    List.of("CVE-2026-41204", "CVE-2026-41203")))).isNotEqualTo(base);
+            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), WEEKS, Map.of("product_family:os",
+                    List.of("CVE-2026-41203", "CVE-2026-41204")))).isNotEqualTo(base);
+        }
+
+        @Test
         @DisplayName("최근 7일·그 전 7일 KEV 등재 수")
         void kevWeeks() {
-            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), KevAddedWeeks.of(10, 8)))
+            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), KevAddedWeeks.of(10, 8), TOPS))
                     .isNotEqualTo(base);
-            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), KevAddedWeeks.of(9, 7)))
+            assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), KevAddedWeeks.of(9, 7), TOPS))
                     .isNotEqualTo(base);
         }
     }
@@ -111,7 +123,7 @@ class VisibleSiteTest {
                 "added".equals(field) ? (LocalDate) value : j.kevAddedAt(), j.publishedAt(), j.pocCount(),
                 "epss".equals(field) ? (BigDecimal) value : j.epss(), j.epssPercentile(), j.cvss(), j.cvssVersion(),
                 "severity".equals(field) ? (String) value : j.severity(),
-                "product".equals(field) ? (String) value : j.primaryProduct(),
+                "product".equals(field) ? (String) value : j.primaryProduct(), j.productFamily(), j.attackTypes(),
                 "summary".equals(field) ? (String) value : j.summaryWhat(),
                 "fix".equals(field) ? (List<String>) value : j.fixVersions(),
                 "patch".equals(field) ? (String) value : j.patchUrl());

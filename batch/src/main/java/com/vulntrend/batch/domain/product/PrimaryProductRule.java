@@ -36,6 +36,14 @@ public class PrimaryProductRule {
                 .map(PrimaryProductRule::fitToStorage);
     }
 
+    /** 대표 제품을 고른 표 줄(KEV 표기 → CPE 첫 항목 순)의 제품군. 표 줄이 아니거나 제품군을 비워 둔 제품이면 없다 */
+    public Optional<ProductFamily> familyOf(Optional<ProductMention> kev, Optional<ProductMention> firstCpe) {
+        Optional<ProductMention> singleKev = kev.filter(Predicate.not(ProductMention::isGeneric));
+        return singleKev.flatMap(this::find)
+                .or(() -> firstCpe.flatMap(this::find))
+                .flatMap(ProductAlias::getFamily);
+    }
+
     public Optional<String> slugOf(ProductMention mention) {
         return find(mention).map(ProductAlias::getSlug);
     }

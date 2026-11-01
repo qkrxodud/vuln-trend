@@ -2,8 +2,10 @@ package com.vulntrend.batch.infrastructure.persistence.product;
 
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.AffectedProductName;
+import com.vulntrend.batch.domain.product.CpeCriteria;
 import com.vulntrend.batch.domain.product.PrimaryProductCandidate;
 import com.vulntrend.batch.domain.product.ProductAssignmentRepository;
+import com.vulntrend.batch.domain.product.ProductFamily;
 import com.vulntrend.batch.domain.product.ProductMention;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.infrastructure.nvd.CpeName;
@@ -31,7 +33,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class JdbcProductAssignmentRepository implements ProductAssignmentRepository {
 
     private static final String FIND_CANDIDATES = """
-            select v.vuln_id, v.primary_product,
+            select v.vuln_id, v.primary_product, v.product_family,
+                   nvd.payload ->> 'sourceIdentifier' as cna,
                    kev.payload ->> 'vendorProject' as kev_vendor,
                    kev.payload ->> 'product'       as kev_product,
                    jsonb_path_query_first(nvd.payload,
@@ -44,6 +47,10 @@ public class JdbcProductAssignmentRepository implements ProductAssignmentReposit
 
     private static final String CHANGE_PRIMARY = """
             update vulnerability set primary_product = :primaryProduct where vuln_id = :id
+            """;
+
+    private static final String CHANGE_FAMILY = """
+            update vulnerability set product_family = :family where vuln_id = :id
             """;
 
     private static final String FIND_AFFECTED = """
@@ -77,6 +84,17 @@ public class JdbcProductAssignmentRepository implements ProductAssignmentReposit
     }
 
     @Override
+    @Transactional
+    public int changeFamilies(Map<CveId, Optional<ProductFamily>> changes) {
+        SqlParameterSource[] rows = changes.entrySet().stream()
+                .map(change -> new MapSqlParameterSource()
+                        .addValue("id", change.getKey().getValue())
+                        .addValue("family", change.getValue().map(ProductFamily::getKey).orElse(null)))
+                .toArray(SqlParameterSource[]::new);
+        return Arrays.stream(jdbc.batchUpdate(CHANGE_FAMILY, rows)).sum();
+    }
+
+    @Override
     public List<AffectedProductName> findAffectedProductNames() {
         return jdbc.query(FIND_AFFECTED, new MapSqlParameterSource(), JdbcProductAssignmentRepository::toAffectedName)
                 .stream()
@@ -103,7 +121,8 @@ public class JdbcProductAssignmentRepository implements ProductAssignmentReposit
                 .flatMap(name -> ProductMention.from(name.getVendor(), name.getProduct()))
                 .orElse(null);
         return PrimaryProductCandidate.of(CveId.from(rs.getString("vuln_id")), rs.getString("primary_product"), kev,
-                firstCpe);
+                firstCpe, CpeCriteria.parse(rs.getString("first_cpe")).orElse(null), rs.getString("cna"),
+                ProductFamily.fromKey(rs.getString("product_family")).orElse(null));
     }
 
     private static Optional<AffectedProductName> toAffectedName(ResultSet rs, int rowNum) throws SQLException {

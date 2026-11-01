@@ -196,6 +196,6 @@ class GateCheckServiceTest {
                 LocalDate.parse("2026-10-20"), 0, 0,
                 new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1", Severity.CRITICAL,
                 "Chrome", null, Instant.parse("2026-10-20T00:00:00Z"),
-                new RemedyListing(List.of(), List.of(), null));
+                new RemedyListing(List.of(), List.of(), null), null, List.of());
     }
 }

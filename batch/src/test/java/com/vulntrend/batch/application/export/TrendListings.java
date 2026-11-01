@@ -36,14 +36,23 @@ final class TrendListings {
                 LocalDate.parse("2026-11-03"), LocalDate.parse("2026-10-19"), 0, 0, new BigDecimal("0.94310"),
                 new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1", Severity.CRITICAL, "Chrome",
                 "악성 웹페이지로 원격 코드 실행", Instant.parse("2026-10-19T00:00:00Z"),
-                new RemedyListing(List.of("< 130.0.6723.58"), CHROME_NVD_LINKS, APPLY_UPDATES));
+                new RemedyListing(List.of("< 130.0.6723.58"), CHROME_NVD_LINKS, APPLY_UPDATES), "browser", List.of("rce", "memory"));
     }
 
     static TrendListing kevRansomware(String id) {
         TrendListing kev = kev(id);
         return new TrendListing(kev.id(), kev.title(), kev.breakdown(), true, true, kev.kevDueDate(),
                 kev.kevAddedAt(), 0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(),
-                kev.severity(), kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy());
+                kev.severity(), kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy(),
+                kev.productFamily(), kev.attackTypes());
+    }
+
+    /** kev 와 같고 제품군·공격 유형만 다른 줄 */
+    static TrendListing kevClassified(String id, String family, List<String> attackTypes) {
+        TrendListing kev = kev(id);
+        return new TrendListing(kev.id(), kev.title(), kev.breakdown(), true, false, kev.kevDueDate(), kev.kevAddedAt(),
+                0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(), kev.severity(),
+                kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy(), family, attackTypes);
     }
 
     /** kev 와 같고 공개 시각만 다른 줄 */
@@ -51,7 +60,7 @@ final class TrendListings {
         TrendListing kev = kev(id);
         return new TrendListing(kev.id(), kev.title(), kev.breakdown(), true, false, kev.kevDueDate(), kev.kevAddedAt(),
                 0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(), kev.severity(),
-                kev.primaryProduct(), kev.summaryWhat(), publishedAt, kev.remedy());
+                kev.primaryProduct(), kev.summaryWhat(), publishedAt, kev.remedy(), kev.productFamily(), kev.attackTypes());
     }
 
     /** kev 와 같고 제목만 다른 줄 */
@@ -59,7 +68,8 @@ final class TrendListings {
         TrendListing kev = kev(id);
         return new TrendListing(kev.id(), title, kev.breakdown(), true, false, kev.kevDueDate(), kev.kevAddedAt(),
                 0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(), kev.severity(),
-                kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy());
+                kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy(), kev.productFamily(),
+                kev.attackTypes());
     }
 
     /** kev 와 같고 대표 제품만 다른 줄(저장 원문 그대로) */
@@ -72,7 +82,8 @@ final class TrendListings {
         TrendListing kev = kev(id);
         return new TrendListing(kev.id(), kev.title(), kev.breakdown(), true, false, kev.kevDueDate(),
                 kev.kevAddedAt(), 0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(),
-                kev.severity(), product, kev.summaryWhat(), kev.publishedAt(), remedy);
+                kev.severity(), product, kev.summaryWhat(), kev.publishedAt(), remedy, kev.productFamily(),
+                kev.attackTypes());
     }
 
     /** KEV 가 아닌 미평가 CVE. 저장소에 KEV 기한·등재일·요구 조치가 남아 있어도 싣지 않아야 한다 */
@@ -80,7 +91,7 @@ final class TrendListings {
         return new TrendListing(CveId.from(id), null, ScoreBreakdown.of(BigDecimal.ZERO, BigDecimal.ZERO,
                 BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ONE), false, true, LocalDate.parse("2026-11-03"),
                 LocalDate.parse("2026-10-19"), 0, 0, null, null, null, null, Severity.UNRATED, null, null,
-                Instant.parse("2026-10-30T00:00:00Z"), noRemedy(APPLY_UPDATES));
+                Instant.parse("2026-10-30T00:00:00Z"), noRemedy(APPLY_UPDATES), null, List.of());
     }
 
     static RemedyListing noRemedy(String kevRequiredAction) {

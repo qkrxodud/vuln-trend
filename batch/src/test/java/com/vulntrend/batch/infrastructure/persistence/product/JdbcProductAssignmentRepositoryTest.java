@@ -3,7 +3,9 @@ package com.vulntrend.batch.infrastructure.persistence.product;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.domain.product.AffectedProductName;
+import com.vulntrend.batch.domain.product.CpeCriteria;
 import com.vulntrend.batch.domain.product.PrimaryProductCandidate;
+import com.vulntrend.batch.domain.product.ProductFamily;
 import com.vulntrend.batch.domain.product.ProductMention;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
@@ -28,7 +30,7 @@ class JdbcProductAssignmentRepositoryTest {
 
     /** 첫 설정의 첫 항목은 영향받지 않는 실행 환경(windows)이고, 영향받는 첫 항목은 chrome 이다 */
     private static final String CHROME_ON_WINDOWS = """
-            {"id":"CVE-2026-10001","configurations":[
+            {"id":"CVE-2026-10001","sourceIdentifier":"chrome-cve-admin@google.com","configurations":[
               {"nodes":[{"operator":"OR","cpeMatch":[
                 {"vulnerable":false,"criteria":"cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"},
                 {"vulnerable":true,"criteria":"cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*"}]}]},
@@ -103,6 +105,34 @@ class JdbcProductAssignmentRepositoryTest {
     }
 
     @Test
+    @DisplayName("제품군 근거로 영향받는 첫 CPE 원문과 NVD 발행 기관, 지금 제품군을 함께 가져온다")
+    void familyEvidence() {
+        jdbc.update("update vulnerability set product_family = 'browser' where vuln_id = 'CVE-2026-10001'");
+
+        PrimaryProductCandidate chrome = candidate("CVE-2026-10001");
+
+        assertThat(chrome.getFirstCpeCriteria()).map(CpeCriteria::getProduct).contains("chrome");
+        assertThat(chrome.getCna()).isEqualTo("chrome-cve-admin@google.com");
+        assertThat(chrome.getCurrentFamily()).contains(ProductFamily.BROWSER);
+        assertThat(candidate("CVE-2026-10003").getFirstCpeCriteria()).isEmpty();
+        assertThat(candidate("CVE-2026-10003").getCurrentFamily()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("제품군을 바꾸거나 분류 전으로 비울 수 있다")
+    void changesFamily() {
+        jdbc.update("update vulnerability set product_family = 'desktop' where vuln_id = 'CVE-2026-10003'");
+
+        int changed = repository.changeFamilies(Map.of(
+                CveId.from("CVE-2026-10001"), Optional.of(ProductFamily.BROWSER),
+                CveId.from("CVE-2026-10003"), Optional.empty()));
+
+        assertThat(changed).isEqualTo(2);
+        assertThat(family("CVE-2026-10001")).isEqualTo("browser");
+        assertThat(family("CVE-2026-10003")).isNull();
+    }
+
+    @Test
     @DisplayName("대표 제품을 바꾸거나 비울 수 있다")
     void changesPrimary() {
         int changed = repository.changePrimaryProducts(Map.of(
@@ -154,6 +184,10 @@ class JdbcProductAssignmentRepositoryTest {
                 .filter(candidate -> candidate.getCveId().getValue().equals(id))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    private String family(String id) {
+        return jdbc.queryForObject("select product_family from vulnerability where vuln_id = ?", String.class, id);
     }
 
     private String primary(String id) {

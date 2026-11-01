@@ -3,6 +3,8 @@
 # 모양: 제품(slug) 하나에 CPE 별칭과 KEV 별칭을 여럿 단다. 적재기가 별칭 하나를 product_alias 한 행으로 펼친다.
 #   slug         : 제품 묶음 키(소문자·숫자·하이픈). affected_product.slug 에 들어간다
 #   display_name : 사이트에 보이는 이름. vulnerability.primary_product 에 들어간다
+#   family       : 제품군 키(os·browser·network·web_cms·server·dev·cloud·ics_iot·mobile·desktop, 사용자 결정 2026-11-01).
+#                  애매하면 적지 않는다(분류 전) — 틀린 분류보다 낫다. 지금 비운 것: SiteGuard, Sangoma Switchvox
 #   cpe          : NVD CPE 2.3 cpe:2.3:<part>:<vendor>:<product>:... 의 vendor·product 원문
 #   kev          : CISA KEV 의 vendorProject·product 원문(대소문자·공백 그대로)
 # 키 정규화: 적재와 조회 양쪽에서 같은 규칙을 쓴다 — 소문자로 바꾸고, 영문·숫자가 아닌 글자가 이어지면 밑줄 하나로,
@@ -52,6 +54,7 @@ products:
   # --- Microsoft ---
   - slug: windows
     display_name: Windows
+    family: os
     cpe:
       - { vendor: microsoft, product: windows_10_1507 }
       - { vendor: microsoft, product: windows_10_1607 }
@@ -81,6 +84,7 @@ products:
 
   - slug: office
     display_name: Microsoft Office
+    family: desktop
     cpe:
       - { vendor: microsoft, product: 365_apps }
       - { vendor: microsoft, product: office }
@@ -95,6 +99,7 @@ products:
 
   - slug: exchange-server
     display_name: Microsoft Exchange Server
+    family: server
     cpe:
       - { vendor: microsoft, product: exchange_server }
       - { vendor: microsoft, product: exchange_server_subscription_edition }
@@ -104,6 +109,7 @@ products:
 
   - slug: sharepoint-server
     display_name: Microsoft SharePoint Server
+    family: server
     cpe:
       - { vendor: microsoft, product: sharepoint_server }
     kev:
@@ -112,6 +118,7 @@ products:
 
   - slug: edge
     display_name: Microsoft Edge
+    family: browser
     cpe:
       - { vendor: microsoft, product: edge_chromium }
       - { vendor: microsoft, product: edge }
@@ -120,6 +127,7 @@ products:
 
   - slug: dotnet
     display_name: .NET
+    family: dev
     cpe:
       - { vendor: microsoft, product: .net }
       - { vendor: microsoft, product: .net_framework }
@@ -130,6 +138,7 @@ products:
   # --- 브라우저 ---
   - slug: chrome
     display_name: Chrome
+    family: browser
     cpe:
       - { vendor: google, product: chrome }
     kev:
@@ -158,6 +167,7 @@ products:
 
   - slug: firefox
     display_name: Firefox
+    family: browser
     cpe:
       - { vendor: mozilla, product: firefox }
       - { vendor: mozilla, product: firefox_esr }   # 폐기된 옛 표기. 옛 CVE 를 위해 남긴다
@@ -168,12 +178,14 @@ products:
 
   - slug: safari
     display_name: Safari
+    family: browser
     cpe:
       - { vendor: apple, product: safari }
 
   # --- 운영체제 ---
   - slug: ios
     display_name: iOS·iPadOS
+    family: mobile
     cpe:
       - { vendor: apple, product: iphone_os }
       - { vendor: apple, product: ipados }
@@ -187,6 +199,7 @@ products:
 
   - slug: macos
     display_name: macOS
+    family: os
     cpe:
       - { vendor: apple, product: macos }
       - { vendor: apple, product: mac_os_x }
@@ -195,6 +208,7 @@ products:
 
   - slug: android
     display_name: Android
+    family: mobile
     cpe:
       - { vendor: google, product: android }
     kev:
@@ -206,6 +220,7 @@ products:
 
   - slug: linux-kernel
     display_name: Linux Kernel
+    family: os
     cpe:
       - { vendor: linux, product: linux_kernel }
     kev:
@@ -214,6 +229,7 @@ products:
   # --- 오픈소스 기반 라이브러리·도구 ---
   - slug: openssl
     display_name: OpenSSL
+    family: dev
     cpe:
       - { vendor: openssl, product: openssl }
     kev:
@@ -221,11 +237,13 @@ products:
 
   - slug: openssh
     display_name: OpenSSH
+    family: server
     cpe:
       - { vendor: openbsd, product: openssh }
 
   - slug: curl
     display_name: curl
+    family: dev
     cpe:
       - { vendor: haxx, product: curl }
       - { vendor: haxx, product: libcurl }
@@ -233,6 +251,7 @@ products:
   # --- 웹 서버·미들웨어 ---
   - slug: apache-http-server
     display_name: Apache HTTP Server
+    family: server
     cpe:
       - { vendor: apache, product: http_server }
     kev:
@@ -240,6 +259,7 @@ products:
 
   - slug: nginx
     display_name: nginx
+    family: server
     cpe:
       - { vendor: f5, product: nginx }
       - { vendor: f5, product: nginx_open_source }
@@ -248,6 +268,7 @@ products:
 
   - slug: tomcat
     display_name: Apache Tomcat
+    family: server
     cpe:
       - { vendor: apache, product: tomcat }
     kev:
@@ -255,6 +276,7 @@ products:
 
   - slug: struts
     display_name: Apache Struts
+    family: dev
     cpe:
       - { vendor: apache, product: struts }
     kev:
@@ -264,6 +286,7 @@ products:
 
   - slug: log4j
     display_name: Apache Log4j
+    family: dev
     cpe:
       - { vendor: apache, product: log4j }
     kev:
@@ -271,6 +294,7 @@ products:
 
   - slug: spring-framework
     display_name: Spring Framework
+    family: dev
     cpe:
       - { vendor: vmware, product: spring_framework }
     kev:
@@ -278,6 +302,7 @@ products:
 
   - slug: weblogic-server
     display_name: Oracle WebLogic Server
+    family: server
     cpe:
       - { vendor: oracle, product: weblogic_server }
     kev:
@@ -286,6 +311,7 @@ products:
   # --- 언어·런타임 ---
   - slug: php
     display_name: PHP
+    family: dev
     cpe:
       - { vendor: php, product: php }
     kev:
@@ -295,12 +321,14 @@ products:
 
   - slug: nodejs
     display_name: Node.js
+    family: dev
     cpe:
       - { vendor: nodejs, product: nodejs }        # 현재 표기(사전 69건, 폐기 0)
       - { vendor: nodejs, product: node.js }       # 폐기된 옛 표기. 옛 CVE 를 위해 남긴다
 
   - slug: java-se
     display_name: Java SE
+    family: dev
     cpe:
       - { vendor: oracle, product: jdk }           # 현재 표기(사전 671건 중 491건 유효, JDK 25 까지)
       - { vendor: oracle, product: jre }           # 확인 필요: 사전 조회가 응답 없이 끝나 현재 표기인지 미확인
@@ -315,12 +343,14 @@ products:
   # --- 데이터베이스 ---
   - slug: postgresql
     display_name: PostgreSQL
+    family: server
     cpe:
       - { vendor: postgresql, product: postgresql }
 
   # --- CMS·협업·개발 도구 ---
   - slug: wordpress
     display_name: WordPress
+    family: web_cms
     cpe:
       - { vendor: wordpress, product: wordpress }
     kev:
@@ -328,6 +358,7 @@ products:
 
   - slug: drupal
     display_name: Drupal
+    family: web_cms
     cpe:
       - { vendor: drupal, product: drupal }
     kev:
@@ -336,6 +367,7 @@ products:
 
   - slug: jenkins
     display_name: Jenkins
+    family: dev
     cpe:
       - { vendor: jenkins, product: jenkins }
     kev:
@@ -346,6 +378,7 @@ products:
 
   - slug: gitlab
     display_name: GitLab
+    family: dev
     cpe:
       - { vendor: gitlab, product: gitlab }
     kev:
@@ -356,6 +389,7 @@ products:
 
   - slug: confluence
     display_name: Atlassian Confluence
+    family: server
     cpe:
       - { vendor: atlassian, product: confluence_data_center }
       - { vendor: atlassian, product: confluence_server }
@@ -369,6 +403,7 @@ products:
 
   - slug: coldfusion
     display_name: Adobe ColdFusion
+    family: server
     cpe:
       - { vendor: adobe, product: coldfusion }
     kev:
@@ -376,6 +411,7 @@ products:
 
   - slug: acrobat-reader
     display_name: Adobe Acrobat·Reader
+    family: desktop
     cpe:
       - { vendor: adobe, product: acrobat_reader_dc }
       - { vendor: adobe, product: acrobat_dc }
@@ -389,6 +425,7 @@ products:
 
   - slug: winrar
     display_name: WinRAR
+    family: desktop
     cpe:
       - { vendor: rarlab, product: winrar }
     kev:
@@ -396,6 +433,7 @@ products:
 
   - slug: screenconnect
     display_name: ConnectWise ScreenConnect
+    family: server
     cpe:
       - { vendor: connectwise, product: screenconnect }
     kev:
@@ -404,6 +442,7 @@ products:
   # --- 메일 ---
   - slug: zimbra
     display_name: Zimbra Collaboration
+    family: server
     cpe:
       - { vendor: synacor, product: zimbra_collaboration_suite }
     kev:
@@ -413,6 +452,7 @@ products:
 
   - slug: roundcube
     display_name: Roundcube Webmail
+    family: server
     cpe:
       - { vendor: roundcube, product: webmail }
     kev:
@@ -422,6 +462,7 @@ products:
   # --- 가상화 ---
   - slug: vcenter-server
     display_name: VMware vCenter Server
+    family: cloud
     cpe:
       - { vendor: vmware, product: vcenter_server }
     kev:
@@ -432,6 +473,7 @@ products:
 
   - slug: esxi
     display_name: VMware ESXi
+    family: cloud
     cpe:
       - { vendor: vmware, product: esxi }
     kev:
@@ -442,6 +484,7 @@ products:
   # --- 네트워크·보안 장비 (KEV 단골) ---
   - slug: cisco-ios
     display_name: Cisco IOS·IOS XE
+    family: network
     cpe:
       - { vendor: cisco, product: ios }
       - { vendor: cisco, product: ios_xe }
@@ -458,6 +501,7 @@ products:
 
   - slug: cisco-asa
     display_name: Cisco ASA·FTD
+    family: network
     cpe:
       - { vendor: cisco, product: adaptive_security_appliance_software }
       - { vendor: cisco, product: firepower_threat_defense }   # 폐기된 옛 표기. 지금은 secure_firewall_threat_defense
@@ -470,6 +514,7 @@ products:
 
   - slug: pan-os
     display_name: Palo Alto PAN-OS
+    family: network
     cpe:
       - { vendor: paloaltonetworks, product: pan-os }
     kev:
@@ -477,6 +522,7 @@ products:
 
   - slug: fortios
     display_name: FortiOS
+    family: network
     cpe:
       - { vendor: fortinet, product: fortios }
     kev:
@@ -487,6 +533,7 @@ products:
 
   - slug: ivanti-connect-secure
     display_name: Ivanti Connect Secure
+    family: network
     cpe:
       - { vendor: ivanti, product: connect_secure }
       - { vendor: pulsesecure, product: pulse_connect_secure }   # 폐기된 옛 표기(Ivanti 인수 전)
@@ -501,6 +548,7 @@ products:
 
   - slug: ivanti-epmm
     display_name: Ivanti EPMM
+    family: server
     cpe:
       - { vendor: ivanti, product: endpoint_manager_mobile }
     kev:
@@ -509,6 +557,7 @@ products:
 
   - slug: netscaler
     display_name: Citrix NetScaler ADC·Gateway
+    family: network
     cpe:
       - { vendor: citrix, product: netscaler_application_delivery_controller }
       - { vendor: citrix, product: netscaler_gateway }
@@ -521,6 +570,7 @@ products:
 
   - slug: big-ip
     display_name: F5 BIG-IP
+    family: network
     cpe:
       - { vendor: f5, product: big-ip_access_policy_manager }
       - { vendor: f5, product: big-ip_advanced_firewall_manager }
@@ -550,6 +600,7 @@ products:
 
   - slug: junos
     display_name: Juniper Junos OS
+    family: network
     cpe:
       - { vendor: juniper, product: junos }
     kev:
@@ -558,6 +609,7 @@ products:
   # --- 업무용 서버 ---
   - slug: sap-netweaver
     display_name: SAP NetWeaver
+    family: server
     cpe:
       - { vendor: sap, product: netweaver }
     kev:
@@ -567,6 +619,7 @@ products:
   # 출처 CPE jfrog:artifactory · KEV JFrog / Artifactory · CVE-2026-42016 외 3건
   - slug: jfrog-artifactory
     display_name: JFrog Artifactory
+    family: dev
     cpe:
       - { vendor: "jfrog", product: "artifactory" }
     kev:
@@ -575,6 +628,7 @@ products:
   # 출처 CPE plex:media_server · KEV Plex / Media Server · CVE-2026-96652 외 3건
   - slug: plex-media-server
     display_name: Plex Media Server
+    family: server
     cpe:
       - { vendor: "plex", product: "media_server" }
     kev:
@@ -583,6 +637,7 @@ products:
   # 출처 CPE adobe:commerce · KEV Adobe / Commerce and Magento · CVE-2026-48356 외 2건
   - slug: adobe-commerce
     display_name: Adobe Commerce
+    family: web_cms
     cpe:
       - { vendor: "adobe", product: "commerce" }
     kev:
@@ -591,6 +646,7 @@ products:
   # 출처 CPE mikrotik:routeros · KEV MikroTik / RouterOS · CVE-2026-67277 외 2건
   - slug: routeros
     display_name: MikroTik RouterOS
+    family: network
     cpe:
       - { vendor: "mikrotik", product: "routeros" }
     kev:
@@ -599,12 +655,14 @@ products:
   # 출처 CPE cisco:asyncos · CVE-2026-76461, CVE-2026-76519
   - slug: cisco-asyncos
     display_name: Cisco AsyncOS
+    family: network
     cpe:
       - { vendor: "cisco", product: "asyncos" }
 
   # 출처 CPE ahsay:cloud_backup_suite · KEV Ahsay / AhsayCBS · CVE-2026-105133, CVE-2026-105134
   - slug: ahsaycbs
     display_name: AhsayCBS
+    family: server
     cpe:
       - { vendor: "ahsay", product: "cloud_backup_suite" }
     kev:
@@ -613,6 +671,7 @@ products:
   # 출처 CPE papercut:papercut_mf · KEV PaperCut / NG/MF · CVE-2026-81578, CVE-2026-82078
   - slug: papercut-ng-mf
     display_name: "PaperCut NG·MF"
+    family: server
     cpe:
       - { vendor: "papercut", product: "papercut_mf" }
     kev:
@@ -621,6 +680,7 @@ products:
   # 출처 CPE sonicwall:sma8200v · KEV SonicWall / SMA1000 Appliances · CVE-2026-83548, CVE-2026-83549 (CPE 는 모델 sma8200v)
   - slug: sonicwall-sma1000
     display_name: SonicWall SMA 1000
+    family: network
     cpe:
       - { vendor: "sonicwall", product: "sma8200v" }
     kev:
@@ -629,6 +689,7 @@ products:
   # 출처 CPE arista:velocloud_orchestrator · KEV Arista / VeloCloud Orchestrator · CVE-2026-114625, CVE-2026-93952
   - slug: velocloud-orchestrator
     display_name: VeloCloud Orchestrator
+    family: network
     cpe:
       - { vendor: "arista", product: "velocloud_orchestrator" }
     kev:
@@ -637,6 +698,7 @@ products:
   # 출처 CPE zammad:zammad · KEV Zammad GmbH / Zammad · CVE-2026-102489, CVE-2026-102490
   - slug: zammad
     display_name: Zammad
+    family: server
     cpe:
       - { vendor: "zammad", product: "zammad" }
     kev:
@@ -645,6 +707,7 @@ products:
   # 출처 CPE acronis:acronis_backup · KEV Acronis / Backup · CVE-2026-87886
   - slug: acronis-backup
     display_name: Acronis Backup
+    family: server
     cpe:
       - { vendor: "acronis", product: "acronis_backup" }
     kev:
@@ -653,6 +716,7 @@ products:
   # 출처 CPE ajaxpro.2_project:ajaxpro.2 · KEV Ajax.NET Professional / Ajax.NET Professional · CVE-2021-23758
   - slug: ajax-net-professional
     display_name: Ajax.NET Professional
+    family: dev
     cpe:
       - { vendor: "ajaxpro.2_project", product: "ajaxpro.2" }
       - { vendor: "michaelschwarz", product: "ajax.net_professional" }   # 2026-11-01 조치 튜닝, CVE-2021-23758
@@ -662,12 +726,14 @@ products:
   # 출처 CPE wso2:api_control_plane · CVE-2026-5430 (KEV 는 Multiple Products)
   - slug: wso2-api-control-plane
     display_name: WSO2 API Control Plane
+    family: server
     cpe:
       - { vendor: "wso2", product: "api_control_plane" }
 
   # 출처 CPE redhat:automatic_bug_reporting_tool · KEV Red Hat / Automatic Bug Reporting Tool · CVE-2015-5287
   - slug: abrt
     display_name: Red Hat ABRT
+    family: os
     cpe:
       - { vendor: "redhat", product: "automatic_bug_reporting_tool" }
     kev:
@@ -676,12 +742,14 @@ products:
   # 출처 CPE atlassian:bitbucket_data_center · CVE-2026-21589 (KEV 는 Multiple Products)
   - slug: bitbucket-data-center
     display_name: Atlassian Bitbucket Data Center
+    family: dev
     cpe:
       - { vendor: "atlassian", product: "bitbucket_data_center" }
 
   # 출처 CPE cisco:catalyst_sd-wan_manager · KEV Cisco / Catalyst SD-WAN Manager · CVE-2026-76504
   - slug: cisco-catalyst-sd-wan-manager
     display_name: Cisco Catalyst SD-WAN Manager
+    family: network
     cpe:
       - { vendor: "cisco", product: "catalyst_sd-wan_manager" }
     kev:
@@ -690,6 +758,7 @@ products:
   # 출처 CPE collabora:collabora_online_-_built-in_code_server · KEV Collabora / Collabora Online – Built-in CODE Server · CVE-2026-110447
   - slug: collabora-online
     display_name: Collabora Online
+    family: server
     cpe:
       - { vendor: "collabora", product: "collabora_online_-_built-in_code_server" }
     kev:
@@ -698,6 +767,7 @@ products:
   # 출처 CPE onlyoffice:document_server · KEV ONLYOFFICE / Docs · CVE-2021-3199
   - slug: onlyoffice-docs
     display_name: ONLYOFFICE Docs
+    family: server
     cpe:
       - { vendor: "onlyoffice", product: "document_server" }
     kev:
@@ -706,6 +776,7 @@ products:
   # 출처 CPE fortinet:fortimail · KEV Fortinet / FortiMail · CVE-2026-104286
   - slug: fortimail
     display_name: FortiMail
+    family: network
     cpe:
       - { vendor: "fortinet", product: "fortimail" }
     kev:
@@ -714,12 +785,14 @@ products:
   # 출처 CPE checkpoint:gaia_embedded · CVE-2026-85102 (KEV 는 Multiple Products)
   - slug: check-point-gaia-embedded
     display_name: Check Point Gaia Embedded
+    family: network
     cpe:
       - { vendor: "checkpoint", product: "gaia_embedded" }
 
   # 출처 CPE gitea:gitea · KEV Gitea / Gitea · CVE-2026-60004
   - slug: gitea
     display_name: Gitea
+    family: dev
     cpe:
       - { vendor: "gitea", product: "gitea" }
     kev:
@@ -728,6 +801,7 @@ products:
   # 출처 CPE zyxel:gs1900-8_firmware · KEV Zyxel / GS1900 Series Switches · CVE-2026-7273 (CPE 는 모델 gs1900-8)
   - slug: zyxel-gs1900
     display_name: Zyxel GS1900
+    family: network
     cpe:
       - { vendor: "zyxel", product: "gs1900-8_firmware" }
     kev:
@@ -736,6 +810,7 @@ products:
   # 출처 CPE oracle:http_server · KEV Oracle / HTTP Server and Oracle Weblogic Server Proxy Plug-in · CVE-2026-21962 (KEV 묶음 표기는 맨 앞 제품으로)
   - slug: oracle-http-server
     display_name: Oracle HTTP Server
+    family: server
     cpe:
       - { vendor: "oracle", product: "http_server" }
     kev:
@@ -744,6 +819,7 @@ products:
   # 출처 CPE cisco:identity_services_engine · KEV Cisco / Identity Services Engine · CVE-2026-76460
   - slug: cisco-ise
     display_name: Cisco Identity Services Engine
+    family: network
     cpe:
       - { vendor: "cisco", product: "identity_services_engine" }
     kev:
@@ -752,6 +828,7 @@ products:
   # 출처 CPE kestra:kestra · KEV Kestra / Kestra OSS · CVE-2026-49869
   - slug: kestra
     display_name: Kestra
+    family: dev
     cpe:
       - { vendor: "kestra", product: "kestra" }
     kev:
@@ -760,6 +837,7 @@ products:
   # 출처 CPE litellm:litellm · KEV BerriAI / LiteLLM · CVE-2026-59822
   - slug: litellm
     display_name: LiteLLM
+    family: dev
     cpe:
       - { vendor: "litellm", product: "litellm" }
     kev:
@@ -768,6 +846,7 @@ products:
   # 출처 CPE metabase:metabase · KEV Metabase / Metabase · CVE-2026-72898
   - slug: metabase
     display_name: Metabase
+    family: server
     cpe:
       - { vendor: "metabase", product: "metabase" }
     kev:
@@ -776,12 +855,14 @@ products:
   # 출처 CPE checkpoint:multi-domain_security_management · CVE-2026-93616 (KEV 는 Multiple Products)
   - slug: check-point-mdsm
     display_name: Check Point Multi-Domain Security Management
+    family: network
     cpe:
       - { vendor: "checkpoint", product: "multi-domain_security_management" }
 
   # 출처 CPE n-able:n-central · KEV N-able / N-central · CVE-2026-86218
   - slug: n-central
     display_name: N-able N-central
+    family: server
     cpe:
       - { vendor: "n-able", product: "n-central" }
     kev:
@@ -790,6 +871,7 @@ products:
   # 출처 CPE owncloud:owncloud_server · KEV ownCloud / ownCloud · CVE-2023-49105
   - slug: owncloud-server
     display_name: ownCloud Server
+    family: server
     cpe:
       - { vendor: "owncloud", product: "owncloud_server" }
     kev:
@@ -798,6 +880,7 @@ products:
   # 출처 CPE anyscale:ray · KEV Ray-Project / Ray · CVE-2025-62593
   - slug: ray
     display_name: Ray
+    family: dev
     cpe:
       - { vendor: "anyscale", product: "ray" }
     kev:
@@ -806,6 +889,7 @@ products:
   # 출처 CPE beyondtrust:remote_support · KEV BeyondTrust / Remote Support · CVE-2026-102764
   - slug: beyondtrust-remote-support
     display_name: BeyondTrust Remote Support
+    family: server
     cpe:
       - { vendor: "beyondtrust", product: "remote_support" }
     kev:
@@ -814,6 +898,7 @@ products:
   # 출처 CPE cisco:secure_firewall_management_center · KEV Cisco / Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management · CVE-2026-20079
   - slug: cisco-secure-fmc
     display_name: Cisco Secure Firewall Management Center
+    family: network
     cpe:
       - { vendor: "cisco", product: "secure_firewall_management_center" }
     kev:
@@ -830,6 +915,7 @@ products:
   # 출처 CPE siemens:software_center · KEV Siemens / Software Center · CVE-2026-110936
   - slug: siemens-software-center
     display_name: Siemens Software Center
+    family: desktop
     cpe:
       - { vendor: "siemens", product: "software_center" }
     kev:
@@ -838,6 +924,7 @@ products:
   # 출처 CPE microsoft:sql_server · KEV Microsoft / SQL Server · CVE-2019-1068
   - slug: sql-server
     display_name: Microsoft SQL Server
+    family: server
     cpe:
       - { vendor: "microsoft", product: "sql_server" }
       - { vendor: "microsoft", product: "sql_server_2016" }   # 2026-11-01 조치 튜닝, CVE-2019-1068
@@ -848,6 +935,7 @@ products:
   # 출처 CPE encode:starlette · KEV Kludex / Starlette · CVE-2026-48710
   - slug: starlette
     display_name: Starlette
+    family: dev
     cpe:
       - { vendor: "encode", product: "starlette" }
     kev:
@@ -856,6 +944,7 @@ products:
   # 출처 CPE strapi:strapi · KEV Strapi / Strapi · CVE-2023-22894
   - slug: strapi
     display_name: Strapi
+    family: web_cms
     cpe:
       - { vendor: "strapi", product: "strapi" }
     kev:
@@ -872,6 +961,7 @@ products:
   # 출처 CPE jetbrains:teamcity · KEV JetBrains / TeamCity · CVE-2026-63077
   - slug: teamcity
     display_name: JetBrains TeamCity
+    family: dev
     cpe:
       - { vendor: "jetbrains", product: "teamcity" }
     kev:

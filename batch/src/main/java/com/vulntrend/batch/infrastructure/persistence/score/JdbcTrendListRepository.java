@@ -13,8 +13,12 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -60,13 +64,24 @@ public class JdbcTrendListRepository implements TrendListRepository {
     /** 목록 줄 하나의 열들(listing(rs) 와 짝). 상세 조회도 같은 열을 읽는다 */
     static final String COLUMNS = "v.vuln_id, v.title, v.is_kev, v.kev_ransomware, v.kev_due_date, v.kev_added_at, "
             + "v.poc_count, v.mention_count, v.epss_score, v.epss_percentile, v.cvss_score, v.cvss_version, "
-            + "v.cvss_severity, v.primary_product, v.published_at, s.what as summary_what, "
+            + "v.cvss_severity, v.primary_product, v.product_family, v.attack_types, v.published_at, "
+            + "s.what as summary_what, "
             + TrendScoreSql.BREAKDOWN_COLUMNS + ", " + REMEDY_COLUMNS;
     static final String FROM = " from vulnerability v left join summary s on s.vuln_id = v.vuln_id where "
             + TrendOrder.LISTED;
     private static final String SELECT = "select " + COLUMNS + FROM;
     private static final String TOP = SELECT + " " + TrendOrder.ORDER_BY + " limit :limit";
     /** 최근 발행 목록(recent.json): 구간 안 전부, 최근 발행 순 → 번호 순. 트렌드 순서가 아니다 */
+    /** 분류마다 상위: 한 번 훑어 분류별 순번을 매긴다(분류마다 따로 묻는 것보다 2026-11-01 실측 약 열 배 빠르다) */
+    private static final String RANKED = " order by trend_score desc nulls last, published_at desc nulls last, vuln_id) as rank ";
+    private static final String TOP_IDS_BY_FAMILY = "select key, vuln_id from (select product_family as key, vuln_id, "
+            + "row_number() over (partition by product_family" + RANKED + "from vulnerability where " + TrendOrder.LISTED
+            + " and product_family is not null) ranked where rank <= :limit order by key, rank";
+    private static final String TOP_IDS_BY_ATTACK_TYPE = "select key, vuln_id from (select attack_type as key, vuln_id, "
+            + "row_number() over (partition by attack_type" + RANKED + "from vulnerability cross join lateral "
+            + "unnest(attack_types) as attack_type where " + TrendOrder.LISTED + ") ranked where rank <= :limit "
+            + "order by key, rank";
+    private static final String LISTINGS = SELECT + " and v.vuln_id in (:ids)";
     private static final String PUBLISHED_BETWEEN = SELECT + " and published_at >= :from and published_at < :to "
             + "order by v.published_at desc, v.vuln_id";
 
@@ -75,6 +90,33 @@ public class JdbcTrendListRepository implements TrendListRepository {
     @Override
     public List<TrendListing> top(int limit, Instant now) {
         return jdbc.query(TOP, params(limit, now), JdbcTrendListRepository::listing);
+    }
+
+    @Override
+    public Map<String, List<CveId>> topIdsByFamily(int limit) {
+        return topIds(TOP_IDS_BY_FAMILY, limit);
+    }
+
+    @Override
+    public Map<String, List<CveId>> topIdsByAttackType(int limit) {
+        return topIds(TOP_IDS_BY_ATTACK_TYPE, limit);
+    }
+
+    @Override
+    public List<TrendListing> listings(Collection<CveId> ids, Instant now) {
+        if (ids.isEmpty()) {
+            return List.of();
+        }
+        return jdbc.query(LISTINGS, params(ids.size(), now).addValue("ids", ids.stream().map(CveId::getValue).toList()),
+                JdbcTrendListRepository::listing);
+    }
+
+    private Map<String, List<CveId>> topIds(String sql, int limit) {
+        Map<String, List<CveId>> tops = new LinkedHashMap<>();
+        jdbc.query(sql, new MapSqlParameterSource("limit", limit), rs -> {
+            tops.computeIfAbsent(rs.getString("key"), key -> new ArrayList<>()).add(CveId.from(rs.getString("vuln_id")));
+        });
+        return tops;
     }
 
     @Override
@@ -98,7 +140,8 @@ public class JdbcTrendListRepository implements TrendListRepository {
                 rs.getString("cvss_version"), severity(rs.getString("cvss_severity")), rs.getString("primary_product"),
                 rs.getString("summary_what"),
                 Optional.ofNullable(rs.getObject("published_at", OffsetDateTime.class))
-                        .map(OffsetDateTime::toInstant).orElse(null), remedy(rs));
+                        .map(OffsetDateTime::toInstant).orElse(null), remedy(rs), rs.getString("product_family"),
+                texts(rs, "attack_types"));
     }
 
     private static RemedyListing remedy(ResultSet rs) throws SQLException {

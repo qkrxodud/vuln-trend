@@ -2,6 +2,7 @@ package com.vulntrend.batch.contract;
 
 import static com.vulntrend.batch.contract.MockShapes.assertSameShape;
 
+import com.vulntrend.batch.application.export.CategoriesFileExport;
 import com.vulntrend.batch.application.export.CveDetailFileExport;
 import com.vulntrend.batch.application.export.IndexFileExport;
 import com.vulntrend.batch.application.export.MetaFileExport;
@@ -22,6 +23,7 @@ import com.vulntrend.batch.domain.score.dto.TrendListing;
 import com.vulntrend.batch.domain.stat.DailyStat;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.domain.vulnerability.Severity;
+import com.vulntrend.batch.fake.FakeCategoryRepository;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeKpiRepository;
@@ -92,6 +94,18 @@ class MockShapeTest {
     }
 
     @Test
+    @DisplayName("categories.json 은 공격 유형·제품군마다 키·이름·건수·트렌드 상위 줄을 같은 이름으로 싣는다")
+    void categories() throws IOException {
+        FakeTrendListRepository trends = new FakeTrendListRepository().with(listing("CVE-2026-41203", true));
+        FakeCategoryRepository counts = new FakeCategoryRepository().family("browser", 12, 40, 3)
+                .attackType("rce", 30, 90, 7);
+
+        new CategoriesFileExport(trends, counts, writer).write(NOW, NAMES);
+
+        assertSameShape(dataDir.resolve("categories.json"), "categories.json");
+    }
+
+    @Test
     @DisplayName("search-index.json 은 번호·제목·제품을 같은 이름으로 싣는다")
     void searchIndex() throws IOException {
         FakeCveDetailRepository repository = new FakeCveDetailRepository()
@@ -123,6 +137,7 @@ class MockShapeTest {
                 kev ? LocalDate.parse("2026-10-29") : null, 0, 0, new BigDecimal("0.94310"), new BigDecimal("0.99900"), new BigDecimal("9.8"), "3.1",
                 Severity.CRITICAL, "Chrome", kev ? "요약" : null, NOW,
                 new RemedyListing(List.of("< 130"), List.of(new TaggedLink("https://vendor.example/a",
-                        List.of("Vendor Advisory"))), kev ? "Apply updates per vendor instructions." : null));
+                        List.of("Vendor Advisory"))), kev ? "Apply updates per vendor instructions." : null),
+                "browser", List.of("rce"));
     }
 }

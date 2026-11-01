@@ -1,5 +1,6 @@
 package com.vulntrend.batch.support;
 
+import com.vulntrend.batch.application.export.CategoriesFileExport;
 import com.vulntrend.batch.application.export.CveDetailFileExport;
 import com.vulntrend.batch.application.export.ExportService;
 import com.vulntrend.batch.application.export.IndexFileExport;
@@ -8,6 +9,7 @@ import com.vulntrend.batch.application.export.RecentFileExport;
 import com.vulntrend.batch.application.export.SearchIndexFileExport;
 import com.vulntrend.batch.application.export.StatsFileExport;
 import com.vulntrend.batch.application.stat.KpiService;
+import com.vulntrend.batch.fake.FakeCategoryRepository;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeKpiRepository;
@@ -26,7 +28,9 @@ public final class SiteExports {
         FakeCveDetailRepository details = new FakeCveDetailRepository();
         return new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
                 new IndexFileExport(trends, writer), new RecentFileExport(trends, writer),
-                new SearchIndexFileExport(details, writer), new CveDetailFileExport(details, writer),
+                new SearchIndexFileExport(details, writer),
+                new CategoriesFileExport(trends, new FakeCategoryRepository(), writer),
+                new CveDetailFileExport(details, writer),
                 new MetaFileExport(new KpiService(new FakeKpiRepository()), writer), details, clock);
     }
 }
