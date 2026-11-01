@@ -10,7 +10,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -3.9
+      "decay": -4.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -26,6 +26,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-120189",
+    "title": "A vulnerability was identified in D-Link DIR-505 1.10B02",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-93680",
     "title": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to bypass…",
     "score": 10,
@@ -36,7 +62,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -62,7 +88,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.1
+      "decay": -0.2
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -71,6 +97,32 @@
     "poc_count": 0,
     "epss": 0.00740,
     "epss_percentile": 0.54613,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2025-31704",
+    "title": "A vulnerability has been found in the Dahua Intelligent Connection Center",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.01364,
+    "epss_percentile": 0.71807,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -104,32 +156,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2025-31704",
-    "title": "A vulnerability has been found in the Dahua Intelligent Connection Center",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.4,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.4
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.01364,
-    "epss_percentile": 0.71807,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-116512",
     "title": "The Project Manager – AI Powered Project Management, Task Management, Kanban…",
     "score": 10,
@@ -156,6 +182,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-119706",
+    "title": "InternLM LMDeploy 0.9.0 through 0.18.0 contains an unauthenticated remote code…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.3
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.01030,
+    "epss_percentile": 0.63716,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-90868",
     "title": "An OS command injection vulnerability in Progress Software WS_FTP Server…",
     "score": 10,
@@ -166,7 +218,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -234,32 +286,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-119706",
-    "title": "InternLM LMDeploy 0.9.0 through 0.18.0 contains an unauthenticated remote code…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.3,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.01030,
-    "epss_percentile": 0.63716,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-119096",
     "title": "The Uncanny Toolkit for LearnDash plugin for WordPress is vulnerable to…",
     "score": 10,
@@ -322,7 +348,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -530,7 +556,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -556,7 +582,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -650,32 +676,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-119660",
-    "title": "MuseBot before 2.0.0 contains an authentication bypass vulnerability that…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00520,
-    "epss_percentile": 0.44179,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-61737",
     "title": "ng-antd-admin is an Angular and NestJS administration system template",
     "score": 10,
@@ -702,6 +702,58 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-119660",
+    "title": "MuseBot before 2.0.0 contains an authentication bypass vulnerability that…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.3
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00520,
+    "epss_percentile": 0.44179,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-116386",
+    "title": "Unauthenticated Privilege Escalation in SMS Alert Order Notifications <= 4.0.2…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.3
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00349,
+    "epss_percentile": 0.28574,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-84295",
     "title": "Improper authentication in Progress Software WS_FTP Server versions prior to…",
     "score": 10,
@@ -712,7 +764,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -780,58 +832,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-116386",
-    "title": "Unauthenticated Privilege Escalation in SMS Alert Order Notifications <= 4.0.2…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00349,
-    "epss_percentile": 0.28574,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-119145",
-    "title": "Frappe before 15.121.0 and 16.x before 16.34.0 contains a path traversal…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.9,
-      "decay": -0.5
-    },
-    "why_now": "CVSS 9.9, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00761,
-    "epss_percentile": 0.55340,
-    "cvss": 9.9,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-119597",
     "title": "OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability…",
     "score": 10,
@@ -852,6 +852,32 @@
     "epss": 0.00371,
     "epss_percentile": 0.31046,
     "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-119145",
+    "title": "Frappe before 15.121.0 and 16.x before 16.34.0 contains a path traversal…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.9,
+      "decay": -0.6
+    },
+    "why_now": "CVSS 9.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00761,
+    "epss_percentile": 0.55340,
+    "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
@@ -912,6 +938,32 @@
   {
     "id": "CVE-2026-104339",
     "title": "IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker to execute…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.6
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00748,
+    "epss_percentile": 0.54893,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "langflow",
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-110186",
+    "title": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute…",
     "score": 10,
     "score_breakdown": {
       "kev": 0.0,
@@ -927,8 +979,8 @@
     "kev_ransomware": false,
     "kev_due_date": null,
     "poc_count": 0,
-    "epss": 0.00748,
-    "epss_percentile": 0.54893,
+    "epss": 0.00622,
+    "epss_percentile": 0.49829,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -959,32 +1011,6 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-110186",
-    "title": "IBM Langflow OSS 1.0.0 through 1.12.8 could allow a remote attacker to execute…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.5
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00622,
-    "epss_percentile": 0.49829,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "langflow",
     "summary_what": null
   },
   {
@@ -1042,7 +1068,7 @@
   {
     "id": "CVE-2026-62863",
     "title": "MoLing is a computer-use and browser-use based MCP server",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -1050,7 +1076,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -1085,32 +1111,6 @@
     "poc_count": 0,
     "epss": 0.00487,
     "epss_percentile": 0.41936,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-54859",
-    "title": "Unauthenticated PHP Object Injection in Preservation <= 1.15 versions",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.5
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00526,
-    "epss_percentile": 0.44596,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1163,6 +1163,84 @@
     "poc_count": 0,
     "epss": 0.00511,
     "epss_percentile": 0.43602,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-54859",
+    "title": "Unauthenticated PHP Object Injection in Preservation <= 1.15 versions",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.5
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00526,
+    "epss_percentile": 0.44596,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-62001",
+    "title": "Unauthenticated PHP Object Injection in Marcell <= 1.2.14 versions",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.5
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00476,
+    "epss_percentile": 0.41154,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-61998",
+    "title": "Unauthenticated PHP Object Injection in Le Truffe <= 1.1.7 versions",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.5
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00476,
+    "epss_percentile": 0.41155,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1345,58 +1423,6 @@
     "poc_count": 0,
     "epss": 0.00449,
     "epss_percentile": 0.39069,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-62001",
-    "title": "Unauthenticated PHP Object Injection in Marcell <= 1.2.14 versions",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.5
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00476,
-    "epss_percentile": 0.41154,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-61998",
-    "title": "Unauthenticated PHP Object Injection in Le Truffe <= 1.1.7 versions",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.5
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00476,
-    "epss_percentile": 0.41155,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1856,7 +1882,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -1866,6 +1892,32 @@
     "epss": 0.00690,
     "epss_percentile": 0.52826,
     "cvss": 9.9,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-109516",
+    "title": "The Bot for Telegram on WooCommerce plugin for WordPress is vulnerable to…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.7
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00575,
+    "epss_percentile": 0.47483,
+    "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
@@ -1891,32 +1943,6 @@
     "poc_count": 0,
     "epss": 0.01111,
     "epss_percentile": 0.65953,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-109516",
-    "title": "The Bot for Telegram on WooCommerce plugin for WordPress is vulnerable to…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.6
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00575,
-    "epss_percentile": 0.47483,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1960,7 +1986,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2106,6 +2132,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-116366",
+    "title": "An issue has been discovered in ClickHouse Server that, under certain…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.5,
+      "decay": -0.4
+    },
+    "why_now": "CVSS 9.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00395,
+    "epss_percentile": 0.33779,
+    "cvss": 9.5,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-114278",
     "title": "The che-machine-exec service constructs a shell command by concatenating…",
     "score": 9,
@@ -2127,32 +2179,6 @@
     "epss_percentile": 0.59637,
     "cvss": 9.8,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-116366",
-    "title": "An issue has been discovered in ClickHouse Server that, under certain…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.5,
-      "decay": -0.3
-    },
-    "why_now": "CVSS 9.5, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00395,
-    "epss_percentile": 0.33779,
-    "cvss": 9.5,
-    "cvss_version": "4.0",
     "severity": "CRITICAL",
     "primary_product": null,
     "summary_what": null
@@ -2194,7 +2220,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -2220,7 +2246,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -2246,7 +2272,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -2314,32 +2340,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-103406",
-    "title": "An Improper Neutralization of Special Elements used in an OS Command…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.7
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00516,
-    "epss_percentile": 0.43930,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-93327",
     "title": "A Deserialization of Untrusted Data vulnerability in the SubWorkflow task in…",
     "score": 9,
@@ -2361,6 +2361,32 @@
     "epss_percentile": 0.33610,
     "cvss": 9.4,
     "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-103406",
+    "title": "An Improper Neutralization of Special Elements used in an OS Command…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.8
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00516,
+    "epss_percentile": 0.43930,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
     "summary_what": null
@@ -2392,6 +2418,32 @@
     "summary_what": null
   },
   {
+    "id": "CVE-2026-103882",
+    "title": "The Acadlix LMS – AI Quiz Maker, Online Exam & Course Plugin for WordPress…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.1,
+      "decay": -0.2
+    },
+    "why_now": "CVSS 9.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00787,
+    "epss_percentile": 0.56156,
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
     "id": "CVE-2026-116504",
     "title": "A vulnerability has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104",
     "score": 9,
@@ -2412,32 +2464,6 @@
     "epss": 0.01547,
     "epss_percentile": 0.75013,
     "cvss": 9.9,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-103882",
-    "title": "The Acadlix LMS – AI Quiz Maker, Online Exam & Course Plugin for WordPress…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.1,
-      "decay": -0.1
-    },
-    "why_now": "CVSS 9.1, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00787,
-    "epss_percentile": 0.56156,
-    "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
@@ -2496,32 +2522,6 @@
     "summary_what": null
   },
   {
-    "id": "CVE-2026-115968",
-    "title": "Deserialization of Untrusted Data vulnerability in Ultimate Member Ultimate…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.8
-    },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00408,
-    "epss_percentile": 0.35079,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
     "id": "CVE-2026-109218",
     "title": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload…",
     "score": 9,
@@ -2541,6 +2541,32 @@
     "poc_count": 0,
     "epss": 0.00643,
     "epss_percentile": 0.50851,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "summary_what": null
+  },
+  {
+    "id": "CVE-2026-115968",
+    "title": "Deserialization of Untrusted Data vulnerability in Ultimate Member Ultimate…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -0.8
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "poc_count": 0,
+    "epss": 0.00408,
+    "epss_percentile": 0.35079,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2569,32 +2595,6 @@
     "epss_percentile": 0.44615,
     "cvss": 10.0,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "summary_what": null
-  },
-  {
-    "id": "CVE-2026-117656",
-    "title": "Acceptance of Extraneous Untrusted Data With Trusted Data vulnerability in the…",
-    "score": 9,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.3,
-      "decay": -0.2
-    },
-    "why_now": "CVSS 9.3, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "poc_count": 0,
-    "epss": 0.00228,
-    "epss_percentile": 0.13631,
-    "cvss": 9.3,
-    "cvss_version": "4.0",
     "severity": "CRITICAL",
     "primary_product": null,
     "summary_what": null
