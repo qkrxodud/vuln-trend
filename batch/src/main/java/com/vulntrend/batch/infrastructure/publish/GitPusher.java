@@ -5,6 +5,7 @@ import com.vulntrend.batch.domain.publish.Publisher;
 import com.vulntrend.batch.global.config.OutputProperties;
 import com.vulntrend.batch.global.config.PublishProperties;
 import com.vulntrend.batch.global.error.exception.PublishException;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.time.Clock;
@@ -24,6 +25,8 @@ import org.springframework.stereotype.Component;
  * - 데이터가 그대로면 커밋도 push 도 하지 않는다.
  * - 성공은 종료 코드로만 판정한다. git 출력은 읽지도 로그에 남기지도 않는다(원격 주소·인증 정보가 들어 있을 수 있음).
  * - 자격 증명을 묻느라 멈추지 않게 GIT_TERMINAL_PROMPT=0 으로 돌리고, 명령마다 시간 한도를 둔다.
+ * - 기다릴 이유가 생기면 멈추지 말고 곧바로 실패해 종료 코드로 드러나게 한다(launchd 실행 push 2분 초과, 2026-11-01):
+ *   표준 입력은 /dev/null(git 과 git 이 띄운 도우미가 물려받는다), GIT_ASKPASS·SSH_ASKPASS 는 묻지 않고 실패하는 /usr/bin/false.
  */
 @Slf4j
 @Component
@@ -36,6 +39,8 @@ public class GitPusher implements Publisher {
     // git diff --quiet: 0 = 같음, 1 = 다름, 그 밖 = 오류
     private static final int UNCHANGED = 0;
     private static final int CHANGED = 1;
+    private static final File NO_INPUT = new File("/dev/null");
+    private static final String FAIL_AT_ONCE = "/usr/bin/false";
 
     private final PublishProperties properties;
     private final OutputProperties output;
@@ -77,9 +82,12 @@ public class GitPusher implements Publisher {
         command.addAll(List.of(args));
         ProcessBuilder builder = new ProcessBuilder(command)
                 .directory(repository.toFile())
+                .redirectInput(ProcessBuilder.Redirect.from(NO_INPUT))
                 .redirectErrorStream(true)
                 .redirectOutput(ProcessBuilder.Redirect.DISCARD);
         builder.environment().put("GIT_TERMINAL_PROMPT", "0");
+        builder.environment().put("GIT_ASKPASS", FAIL_AT_ONCE);
+        builder.environment().put("SSH_ASKPASS", FAIL_AT_ONCE);
         return run(builder, args[0]);
     }
 

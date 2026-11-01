@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -61,6 +62,24 @@ public class GitRepoFixture {
 
     public void stage(String relative) throws IOException {
         git(work, "add", "--", relative);
+    }
+
+    /**
+     * git 이 띄우는 도우미 프로그램 하나(core.fsmonitor)를 표준 입력을 끝까지 읽는 가짜로 바꾼다.
+     * 이 도우미는 git 의 표준 입력을 그대로 물려받는다 — 입력이 닫히지 않으면 영원히 기다린다.
+     * 읽기를 마치면 물려받은 GIT_ASKPASS·SSH_ASKPASS 를 seen 파일에 "값|값" 으로 남기고 실패로 끝난다(git 은 전체 검사로 넘어간다).
+     * 설치한 뒤에는 작업 저장소에서 이 시험 도구의 git 명령을 부르지 않는다(이 도구는 입력을 닫지 않는다).
+     */
+    public void installInputReadingHelper(Path seen) throws IOException {
+        Path helper = work.getParent().resolve("input-reading-helper.sh");
+        Files.writeString(helper, """
+                #!/bin/sh
+                cat > /dev/null
+                printf '%%s|%%s\\n' "$GIT_ASKPASS" "$SSH_ASKPASS" > '%s'
+                exit 1
+                """.formatted(seen), StandardCharsets.UTF_8);
+        Files.setPosixFilePermissions(helper, PosixFilePermissions.fromString("rwxr-xr-x"));
+        git(work, "config", "core.fsmonitor", helper.toString());
     }
 
     public void setRemoteUrl(String url) throws IOException {

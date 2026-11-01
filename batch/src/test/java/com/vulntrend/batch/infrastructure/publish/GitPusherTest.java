@@ -8,6 +8,7 @@ import com.vulntrend.batch.global.config.OutputProperties;
 import com.vulntrend.batch.global.config.PublishProperties;
 import com.vulntrend.batch.global.error.exception.PublishException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Clock;
 import java.time.Duration;
@@ -118,6 +119,35 @@ class GitPusherTest {
         }
     }
 
+    @Nested
+    @DisplayName("git 이 띄운 도우미가 사람의 입력을 기다리면")
+    class WaitingHelper {
+
+        @Test
+        @DisplayName("입력이 곧바로 끝나 시간 한도까지 기다리지 않고 게시를 마친다")
+        void doesNotWaitForInput() throws IOException {
+            repo.installInputReadingHelper(root.resolve("seen.txt"));
+            repo.write(GitRepoFixture.DATA + "/meta.json", "{\"version\": 2}\n");
+
+            PublishResult result = pusher(repo.dataDir(), Duration.ofSeconds(5)).publish();
+
+            assertThat(result).isEqualTo(PublishResult.PUBLISHED);
+            assertThat(repo.remoteSubjects()).containsExactly("data: 2026-10-31 09:00 KST", "init");
+        }
+
+        @Test
+        @DisplayName("비밀번호를 묻는 프로그램은 묻지 않고 곧바로 실패하는 것으로 바뀌어 있다")
+        void askPassFailsAtOnce() throws IOException {
+            Path seen = root.resolve("seen.txt");
+            repo.installInputReadingHelper(seen);
+            repo.write(GitRepoFixture.DATA + "/meta.json", "{\"version\": 2}\n");
+
+            pusher(repo.dataDir(), Duration.ofSeconds(5)).publish();
+
+            assertThat(Files.readString(seen)).isEqualTo("/usr/bin/false|/usr/bin/false\n");
+        }
+    }
+
     @Test
     @DisplayName("git 명령이 시간 한도 안에 끝나지 않으면 기다리지 않고 게시 실패로 알린다")
     void timesOut() throws IOException {
@@ -140,7 +170,11 @@ class GitPusherTest {
     }
 
     private GitPusher pusher(Path dataDir) {
-        PublishProperties properties = new PublishProperties(repo.work().toString(), "origin", Duration.ofSeconds(30));
+        return pusher(dataDir, Duration.ofSeconds(30));
+    }
+
+    private GitPusher pusher(Path dataDir, Duration commandTimeout) {
+        PublishProperties properties = new PublishProperties(repo.work().toString(), "origin", commandTimeout);
         return new GitPusher(properties, new OutputProperties(dataDir.toString()), Clock.fixed(NOW, ZoneOffset.UTC));
     }
 }
