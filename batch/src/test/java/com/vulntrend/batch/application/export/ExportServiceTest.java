@@ -12,6 +12,7 @@ import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeTrendListRepository;
 import java.time.Clock;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
@@ -24,6 +25,7 @@ class ExportServiceTest {
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
 
     private final FakeSiteDataWriter writer = new FakeSiteDataWriter();
+    private final FakeKpiRepository kpi = new FakeKpiRepository();
     private final FakeTrendListRepository trends = new FakeTrendListRepository()
             .with(TrendListings.kev("CVE-2026-41203"))
             .with(TrendListings.unrated("CVE-2026-50001"));
@@ -118,6 +120,35 @@ class ExportServiceTest {
         }
 
         @Test
+        @DisplayName("주목 목록 줄의 제목이 바뀌면 달라진다")
+        void titleChangesIt() {
+            FakeTrendListRepository titled = new FakeTrendListRepository()
+                    .with(TrendListings.kevTitled("CVE-2026-41203", "Chrome V8 타입 혼동으로 원격 코드 실행"))
+                    .with(TrendListings.unrated("CVE-2026-50001"));
+
+            assertThat(service(titled).visibleFingerprint()).isNotEqualTo(service().visibleFingerprint());
+        }
+
+        @Test
+        @DisplayName("보이는 제품 이름이 바뀌면 달라진다 — 표에 이름이 생겨 원문 대신 표의 이름이 보일 때")
+        void shownProductNameChangesIt() {
+            trends.with(TrendListings.kevWithProduct("CVE-2026-70001", "curl"));
+            String readable = service().visibleFingerprint();
+            details.standardNames("curl");
+
+            assertThat(service().visibleFingerprint()).isNotEqualTo(readable);
+        }
+
+        @Test
+        @DisplayName("최근 7일·그 전 7일 KEV 등재 수가 바뀌면 달라진다")
+        void kevWeeksChangeIt() {
+            String before = service().visibleFingerprint();
+            kpi.kevAddedOn(LocalDate.parse("2026-10-31"), 1);
+
+            assertThat(service().visibleFingerprint()).isNotEqualTo(before);
+        }
+
+        @Test
         @DisplayName("주목 목록에 새 줄이 들어오면 달라진다")
         void newRowChangesIt() {
             String before = service().visibleFingerprint();
@@ -166,11 +197,19 @@ class ExportServiceTest {
     }
 
     private ExportService service(Clock clock) {
+        return service(clock, trends);
+    }
+
+    private ExportService service(FakeTrendListRepository listed) {
+        return service(Clock.fixed(NOW, ZoneOffset.UTC), listed);
+    }
+
+    private ExportService service(Clock clock, FakeTrendListRepository listed) {
         FakeCveDetailRepository repository = details;
         return new ExportService(new StatsFileExport(new FakeDailyStatRepository(), writer),
-                new IndexFileExport(trends, writer), new RecentFileExport(trends, writer),
+                new IndexFileExport(listed, writer), new RecentFileExport(listed, writer),
                 new SearchIndexFileExport(repository, writer), new CveDetailFileExport(repository, writer),
-                new MetaFileExport(new KpiService(new FakeKpiRepository()), writer), repository,
+                new MetaFileExport(new KpiService(kpi), writer), repository,
                 clock);
     }
 }

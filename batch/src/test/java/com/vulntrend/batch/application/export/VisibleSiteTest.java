@@ -75,6 +75,13 @@ class VisibleSiteTest {
         }
 
         @Test
+        @DisplayName("행의 제목과 보이는 제품 이름")
+        void titleAndProduct() {
+            assertThat(fingerprint(kevWith("title", "다른 제목"), unrated())).isNotEqualTo(base);
+            assertThat(fingerprint(kevWith("product", "Chromium"), unrated())).isNotEqualTo(base);
+        }
+
+        @Test
         @DisplayName("최근 7일·그 전 7일 KEV 등재 수")
         void kevWeeks() {
             assertThat(VisibleSite.fingerprint(List.of(kev(), unrated()), KevAddedWeeks.of(10, 8)))
@@ -97,13 +104,14 @@ class VisibleSiteTest {
     @SuppressWarnings("unchecked")
     private static TrendRowJson kevWith(String field, Object value) {
         TrendRowJson j = kev();
-        return new TrendRowJson(j.id(), j.title(), "score".equals(field) ? (Integer) value : j.score(),
+        return new TrendRowJson(j.id(), "title".equals(field) ? (String) value : j.title(), "score".equals(field) ? (Integer) value : j.score(),
                 j.scoreBreakdown(), j.whyNow(), "kev".equals(field) ? (Boolean) value : j.isKev(),
                 "ransomware".equals(field) ? (Boolean) value : j.kevRansomware(),
                 "due".equals(field) ? (LocalDate) value : j.kevDueDate(),
                 "added".equals(field) ? (LocalDate) value : j.kevAddedAt(), j.pocCount(),
                 "epss".equals(field) ? (BigDecimal) value : j.epss(), j.epssPercentile(), j.cvss(), j.cvssVersion(),
-                "severity".equals(field) ? (String) value : j.severity(), j.primaryProduct(),
+                "severity".equals(field) ? (String) value : j.severity(),
+                "product".equals(field) ? (String) value : j.primaryProduct(),
                 "summary".equals(field) ? (String) value : j.summaryWhat(),
                 "fix".equals(field) ? (List<String>) value : j.fixVersions(),
                 "patch".equals(field) ? (String) value : j.patchUrl());
