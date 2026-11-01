@@ -1,4 +1,5 @@
-// index.json · recent.json 의 행 — 기획서 7장, WBS 4.2 index.json 필드와 1:1
+// index.json 의 행 — 기획서 7장, WBS 4.2 index.json 필드와 1:1.
+// recent.json 도 같은 모양으로 배치가 계속 내보내지만, v6 화면은 읽지 않는다 (사용자 결정 Q4)
 import type { CvssVersion, IsoDate, Severity } from './common.ts'
 
 /**
@@ -55,6 +56,3 @@ export interface TrendRow {
 
 /** index.json: 트렌드 점수 내림차순 상위 100건 */
 export type TrendIndex = TrendRow[]
-
-/** recent.json: 최근 7일 신규, 행 모양은 index 와 같음 */
-export type RecentList = TrendRow[]

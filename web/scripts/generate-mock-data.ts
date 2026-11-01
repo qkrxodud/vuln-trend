@@ -630,9 +630,6 @@ const stats: Stats = {
 }
 
 const rows = SEEDS.map(rowOf).sort((a, b) => b.score - a.score)
-const recent = SEEDS.filter((s) => s.publishedDaysAgo < 7)
-  .sort((a, b) => a.publishedDaysAgo - b.publishedDaysAgo)
-  .map(rowOf)
 const search: SearchIndex = SEEDS.map((s) => ({ id: idOf(s), title: titleOf(s), product: s.product }))
 
 const writeJson = (relativePath: string, value: unknown): void => {
@@ -643,7 +640,6 @@ mkdirSync(join(OUT_DIR, 'cve'), { recursive: true })
 writeJson('meta.json', meta)
 writeJson('stats.json', stats)
 writeJson('index.json', rows)
-writeJson('recent.json', recent)
 writeJson('search-index.json', search)
 // 상세는 마지막 하나만 빼고 만든다: "상세 JSON 없는 CVE → NVD 링크" 경로(P6)를 화면에서 확인하려고
 SEEDS.slice(0, -1).forEach((s) => writeJson(`cve/${idOf(s)}.json`, detailOf(s)))

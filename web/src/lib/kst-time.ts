@@ -13,12 +13,6 @@ const HOUR_MS = 60 * MINUTE_MS
 const STALE_AFTER_MS = 36 * HOUR_MS
 const DAYS_FROM_HOURS = 48
 
-/** `10-30 09:00` */
-export const formatKstShort = (iso: string): string => {
-  const parts = kstParts(iso)
-  return `${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`
-}
-
 const KST_DATE = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Seoul',
   year: 'numeric',

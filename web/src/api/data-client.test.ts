@@ -36,19 +36,14 @@ describe('사이트 데이터 파일 읽기', () => {
       expect(server.requestsTo(STATS_URL)).toHaveLength(1)
     })
 
-    it('트렌드 목록·최근 신규·검색 색인도 같은 버전 규칙으로 받는다', async () => {
-      server
-        .serve('/vuln-trend/data/index.json?v=v1', [])
-        .serve('/vuln-trend/data/recent.json?v=v1', [])
-        .serve('/vuln-trend/data/search-index.json?v=v1', [])
+    it('트렌드 목록·검색 색인도 같은 버전 규칙으로 받는다', async () => {
+      server.serve('/vuln-trend/data/index.json?v=v1', []).serve('/vuln-trend/data/search-index.json?v=v1', [])
 
       await client.trendIndex('v1')
-      await client.recent('v1')
       await client.searchIndex('v1')
 
       expect(server.requests.map((request) => request.url)).toEqual([
         '/vuln-trend/data/index.json?v=v1',
-        '/vuln-trend/data/recent.json?v=v1',
         '/vuln-trend/data/search-index.json?v=v1',
       ])
     })

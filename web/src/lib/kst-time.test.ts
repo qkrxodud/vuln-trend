@@ -1,18 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { formatKstDate, formatKstDateTime, formatKstShort, formatKstTime, formatTimeAgo, isStale } from './kst-time.ts'
+import { formatKstDate, formatKstDateTime, formatKstTime, formatTimeAgo, isStale } from './kst-time.ts'
 
 const UPDATED = '2026-10-30T09:00:00+09:00'
 const hoursAfter = (hours: number): Date => new Date(Date.parse(UPDATED) + hours * 3_600_000)
-
-describe('마지막 갱신 시각 표기', () => {
-  it('방문자의 시간대와 상관없이 한국 시각 "월-일 시:분"으로 적는다', () => {
-    expect(formatKstShort('2026-10-30T00:00:00Z')).toBe('10-30 09:00')
-  })
-
-  it('한국 날짜로는 다음 날이 되는 시각도 한국 날짜로 적는다', () => {
-    expect(formatKstShort('2026-10-30T15:30:00Z')).toBe('10-31 00:30')
-  })
-})
 
 describe('갱신 뒤 지난 시간', () => {
   it('1분이 안 됐으면 "방금 전"', () => {
