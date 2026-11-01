@@ -5,6 +5,7 @@ import type { CveDetail, Summary } from '../../src/types/cve.ts'
 import {
   auditSummary,
   checkSearchIndexSize,
+  checkSelfHostedFonts,
   checkSummaries,
   measureSizes,
   SEARCH_INDEX_GZIP_LEVEL,
@@ -194,5 +195,56 @@ describe('한국어 요약 20건 검수 결과', () => {
 
     expect(result.status).toBe('review')
     expect(result.detail).toContain('요약 0건')
+  })
+})
+
+describe('글꼴 자체 호스팅 (외부 글꼴 요청 0, 첫 화면 글꼴 미리 받기)', () => {
+  const SCRIPT = '<script type="module" crossorigin src="/vuln-trend/assets/index-abc.js"></script>'
+  const PRELOADS = [
+    '<link rel="preload" as="font" type="font/woff2" crossorigin href="/vuln-trend/fonts/vulntrend-sans.woff2">',
+    '<link rel="preload" as="font" type="font/woff2" crossorigin href="/vuln-trend/fonts/jetbrains-mono.woff2">',
+  ].join('\n')
+  const page = (name: string, head: string) => ({ name, html: `<html><head>${head}${SCRIPT}</head></html>` })
+
+  it('모든 페이지가 두 글꼴을 사이트 경로 아래에서 미리 받고 외부 글꼴 주소가 없으면 통과한다', () => {
+    const result = checkSelfHostedFonts(
+      [page('index.html', PRELOADS), page('cve/CVE-1/index.html', PRELOADS)],
+      ["@font-face{font-family:'VulnTrend Sans';src:url(/vuln-trend/fonts/vulntrend-sans.woff2)}"],
+    )
+
+    expect(result.status).toBe('pass')
+    expect(result.detail).toContain('2쪽')
+  })
+
+  it('미리 받기가 빠진 페이지를 근거로 대고 실패한다', () => {
+    const result = checkSelfHostedFonts([page('index.html', PRELOADS), page('new/index.html', '')], [])
+
+    expect(result.status).toBe('fail')
+    expect(result.evidence).toEqual(['new/index.html: 미리 받기 없음 vulntrend-sans.woff2, jetbrains-mono.woff2'])
+  })
+
+  it('미리 받는 주소가 사이트 경로(base)와 다르면 실패한다', () => {
+    const wrongBase = PRELOADS.replaceAll('/vuln-trend/fonts/', '/fonts/')
+
+    const result = checkSelfHostedFonts([page('index.html', wrongBase)], [])
+
+    expect(result.status).toBe('fail')
+  })
+
+  it('페이지나 스타일이 외부 글꼴 서버를 부르면 그 주소를 대고 실패한다', () => {
+    const google = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono">'
+    const jsdelivr = '@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css);'
+
+    const result = checkSelfHostedFonts([page('index.html', PRELOADS + google)], [jsdelivr])
+
+    expect(result.status).toBe('fail')
+    expect(result.evidence).toEqual([
+      'index.html: 외부 글꼴 fonts.googleapis.com',
+      '스타일 1: 외부 글꼴 cdn.jsdelivr.net',
+    ])
+  })
+
+  it('살펴볼 페이지가 없으면 실패한다', () => {
+    expect(checkSelfHostedFonts([], []).status).toBe('fail')
   })
 })

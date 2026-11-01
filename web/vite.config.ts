@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { fontPreloadTags } from './src/lib/fonts.ts'
 import { categoryPageHtml, cvePageHtml, minePageHtml, newPageHtml, siteMetaBlock } from './src/lib/site-meta.ts'
 import type { Categories } from './src/types/categories.ts'
 import type { CveDetail } from './src/types/cve.ts'
@@ -54,6 +55,20 @@ const siteMeta = (siteUrl: string | undefined): Plugin => ({
     return html.replace('</title>', `</title>\n    ${siteMetaBlock(siteUrl)}`)
   },
 })
+
+// 첫 화면 글꼴 미리 받기를 <head> 맨 앞에 넣는다. 정적 페이지는 이 셸을 복사하므로 함께 들어간다
+const fontPreload = (): Plugin => {
+  let base = DEFAULT_BASE
+  return {
+    name: 'vuln-trend-font-preload',
+    configResolved(config) {
+      base = config.base
+    },
+    transformIndexHtml() {
+      return fontPreloadTags(base)
+    },
+  }
+}
 
 // CVE 상세 정적 페이지: 빌드 뒤 dist/data/cve/*.json 마다 dist/cve/<ID>/index.html 을 쓴다.
 // /cve/<ID> 가 404.html 대신 200 + 그 CVE 의 미리보기 태그로 응답한다(링크드인·슬랙 미리보기). 앱은 같은 셸이라 그대로 상세를 그린다
@@ -111,6 +126,13 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     base: env.VITE_BASE || DEFAULT_BASE,
-    plugins: [react(), tailwindcss(), spaFallback404(), siteMeta(env.VITE_SITE_URL), cveStaticPages(env.VITE_SITE_URL)],
+    plugins: [
+      react(),
+      tailwindcss(),
+      spaFallback404(),
+      fontPreload(),
+      siteMeta(env.VITE_SITE_URL),
+      cveStaticPages(env.VITE_SITE_URL),
+    ],
   }
 })

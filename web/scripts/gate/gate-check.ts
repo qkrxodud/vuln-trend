@@ -5,7 +5,14 @@ import { join, resolve } from 'node:path'
 import type { CveDetail } from '../../src/types/cve.ts'
 import { formatGateTable, gateExitCode, type GateResult } from './report.ts'
 import { runBrowserChecks } from './run-browser.ts'
-import { checkSearchIndexSize, checkSummaries, type FileSizes, measureSizes } from './static-checks.ts'
+import {
+  type BuiltPage,
+  checkSearchIndexSize,
+  checkSelfHostedFonts,
+  checkSummaries,
+  type FileSizes,
+  measureSizes,
+} from './static-checks.ts'
 
 const distArg = process.argv.indexOf('--dist')
 const distDir = resolve(distArg === -1 ? 'dist' : process.argv[distArg + 1])
@@ -26,6 +33,19 @@ const readDetails = async (): Promise<CveDetail[]> => {
   )
 }
 
+// 404.html 은 주소만 돌려보내는 페이지라 글꼴을 쓰지 않는다
+const readPages = async (): Promise<BuiltPage[]> => {
+  const files = (await readdir(distDir, { recursive: true })).filter(
+    (file) => file.endsWith('.html') && file.startsWith('data') === false && file !== '404.html',
+  )
+  return Promise.all(files.map(async (name) => ({ name, html: await readFile(join(distDir, name), 'utf8') })))
+}
+
+const readStyles = async (): Promise<string[]> => {
+  const files = (await readdir(join(distDir, 'assets'))).filter((file) => file.endsWith('.css'))
+  return Promise.all(files.map((file) => readFile(join(distDir, 'assets', file), 'utf8')))
+}
+
 const browserResults = async (): Promise<GateResult[]> => {
   try {
     return await runBrowserChecks(distDir)
@@ -39,6 +59,7 @@ const results: GateResult[] = [
   ...(await browserResults()),
   checkSearchIndexSize(await sizesOrNull(join(dataDir, 'search-index.json'))),
   checkSummaries(await readDetails()),
+  checkSelfHostedFonts(await readPages(), await readStyles()),
 ]
 
 console.log(`Gate G 화면 점검 — ${distDir}\n`)

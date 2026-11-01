@@ -1,5 +1,6 @@
 // 데이터 파일만 보고 판정하는 Gate G 항목 (WBS 9장): search-index.json 크기, 한국어 요약 검수 보조
 import { gzipSync } from 'node:zlib'
+import { SITE_FONTS } from '../../src/lib/fonts.ts'
 import type { CveDetail, Summary } from '../../src/types/cve.ts'
 import type { GateResult } from './report.ts'
 
@@ -119,4 +120,52 @@ export const checkSummaries = (details: CveDetail[]): GateResult => {
     detail,
     evidence: suspects.map((suspect) => `${suspect.id} ${suspect.field}: ${suspect.reason} — ${suspect.excerpt}`),
   }
+}
+
+export interface BuiltPage {
+  /** dist 기준 경로 (예: cve/CVE-2026-1/index.html) */
+  name: string
+  html: string
+}
+
+const FONTS_ITEM = '글꼴 자체 호스팅 (외부 글꼴 요청 0·미리 받기)'
+const EXTERNAL_FONT_HOSTS = [
+  'fonts.googleapis.com',
+  'fonts.gstatic.com',
+  'cdn.jsdelivr.net',
+  'unpkg.com',
+  'cdnjs.cloudflare.com',
+  'use.typekit.net',
+]
+// 사이트 경로(base)는 빌드가 붙인 앱 스크립트 주소에서 읽는다
+const MODULE_SCRIPT = /<script[^>]*type="module"[^>]*src="([^"]*\/)assets\//
+
+const externalHosts = (label: string, text: string): string[] =>
+  EXTERNAL_FONT_HOSTS.filter((host) => text.includes(host)).map((host) => `${label}: 외부 글꼴 ${host}`)
+
+const hasPreload = (html: string, href: string): boolean =>
+  [...html.matchAll(/<link\b[^>]*>/g)].some(
+    ([tag]) =>
+      tag.includes('rel="preload"') &&
+      tag.includes('as="font"') &&
+      tag.includes('crossorigin') &&
+      tag.includes(`href="${href}"`),
+  )
+
+const missingPreloads = (page: BuiltPage): string[] => {
+  const base = MODULE_SCRIPT.exec(page.html)?.[1] ?? '/'
+  const missing = SITE_FONTS.filter((font) => hasPreload(page.html, `${base}fonts/${font.file}`) === false)
+  if (missing.length === 0) return []
+  return [`${page.name}: 미리 받기 없음 ${missing.map((font) => font.file).join(', ')}`]
+}
+
+export const checkSelfHostedFonts = (pages: BuiltPage[], styles: string[]): GateResult => {
+  if (pages.length === 0) return { item: FONTS_ITEM, status: 'fail', detail: '살펴볼 페이지 없음' }
+  const evidence = [
+    ...pages.flatMap((page) => [...missingPreloads(page), ...externalHosts(page.name, page.html)]),
+    ...styles.flatMap((style, index) => externalHosts(`스타일 ${index + 1}`, style)),
+  ]
+  const detail = `${pages.length}쪽·스타일 ${styles.length}개 훑음, 글꼴 ${SITE_FONTS.length}개`
+  if (evidence.length === 0) return { item: FONTS_ITEM, status: 'pass', detail }
+  return { item: FONTS_ITEM, status: 'fail', detail: `${detail}, 문제 ${evidence.length}건`, evidence }
 }

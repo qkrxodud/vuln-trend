@@ -1,9 +1,26 @@
 @import 'tailwindcss';
 
+/* 글꼴은 사이트가 직접 보낸다(src/lib/fonts.ts). 주소는 public/ 기준이고 빌드가 사이트 경로(base)를 붙인다 */
+@font-face {
+  font-family: 'VulnTrend Sans';
+  src: url('/fonts/vulntrend-sans.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* v6 토큰 — 단일 출처 design/v6/parts/tokens.css (사용자 결정 2026-11-01).
    빨강(urgent) = "CISA 조치 기한이 0~3일 안에 끝남" 하나. KEV 는 색 없음(회색 테두리). 심각도 = 남색 램프 */
 @theme {
-  --font-sans: Pretendard, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'VulnTrend Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* 면 */
