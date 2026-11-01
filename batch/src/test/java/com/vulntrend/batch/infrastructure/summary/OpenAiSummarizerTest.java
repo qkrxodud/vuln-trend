@@ -234,7 +234,7 @@ class OpenAiSummarizerTest {
     }
 
     private OpenAiSummarizer summarizer() {
-        SummaryProperties properties = new SummaryProperties(20, MODEL, KEY);
+        SummaryProperties properties = new SummaryProperties(20, 40, MODEL, KEY);
         return new OpenAiSummarizer(
                 OpenAIOkHttpClient.builder().apiKey(KEY).baseUrl(openAi.baseUrl()).maxRetries(0).build(),
                 properties, objectMapper);

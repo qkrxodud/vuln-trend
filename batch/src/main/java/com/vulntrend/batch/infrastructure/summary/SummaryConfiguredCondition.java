@@ -13,7 +13,7 @@ public class SummaryConfiguredCondition implements Condition {
 
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-        SummaryProperties properties = new SummaryProperties(0,
+        SummaryProperties properties = new SummaryProperties(0, 0,
                 context.getEnvironment().getProperty("summary.model"),
                 context.getEnvironment().getProperty("summary.api-key"));
         return properties.isConfigured();

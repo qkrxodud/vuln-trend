@@ -3,6 +3,7 @@ package com.vulntrend.batch.application.summary;
 import com.vulntrend.batch.domain.stat.StatDays;
 import com.vulntrend.batch.domain.summary.KoreanSummary;
 import com.vulntrend.batch.domain.summary.Summarizer;
+import com.vulntrend.batch.domain.summary.SummaryCallBudget;
 import com.vulntrend.batch.domain.summary.SummaryOutcome;
 import com.vulntrend.batch.domain.summary.SummaryRepository;
 import com.vulntrend.batch.domain.summary.SummaryResult;
@@ -23,7 +24,8 @@ import org.springframework.stereotype.Service;
 /**
  * 한국어 요약(기획서 6장 7단계, WBS 6.3). 비치명 단계 — 열쇠가 없거나, 하루 상한을 다 썼거나, 도중에 실패해도
  * 경고만 남기고 끝내 다음 단계(출력·게시)가 이어진다.
- * 대상: 트렌드 상위 20건 중 요약이 없는 것(버리거나 거절된 것은 다시 부르지 않는다). 하루 상한은 한국 시각 자정부터 센다.
+ * 대상: 트렌드 상위 20건 중 요약이 없는 것(버리거나 거절된 것은 다시 부르지 않는다).
+ * 상한 두 개를 한국 시각 자정부터 센다 — 하루 상한(답을 받은 호출만)과 실패 안전 상한(실패만, SummaryCallBudget).
  * 요약을 만들면 무엇이 문제인가 문장의 첫 문장을 제목으로 올린다(P3, 설명에서 만든 임시 제목일 때만).
  */
 @Slf4j
@@ -56,25 +58,45 @@ public class SummaryService {
     }
 
     private int summarizeWith(Summarizer summaryModel) {
-        Instant now = clock.instant();
-        int limit = properties.getDailyLimit();
-        int left = limit - repository.countCallsSince(startOfKoreanDay(now));
-        if (left <= 0) {
-            log.warn("Korean summary daily limit of {} calls is used up; new summaries wait for tomorrow.", limit);
+        Instant startOfDay = startOfKoreanDay(clock.instant());
+        SummaryCallBudget budget = SummaryCallBudget.of(properties.getDailyLimit(),
+                properties.getDailyFailureLimit(), repository.countAnsweredSince(startOfDay),
+                repository.countFailedSince(startOfDay));
+        if (budget.isUsedUp()) {
+            warnUsedUp(budget);
             return 0;
         }
         List<SummarySource> targets = repository.findTopWithoutSummary(TOP);
-        List<SummarySource> thisRun = targets.stream().limit(left).toList();
         Map<SummaryOutcome, Integer> counts = new EnumMap<>(SummaryOutcome.class);
-        for (SummarySource source : thisRun) {
+        int called = 0;
+        for (SummarySource source : targets) {
+            if (budget.isUsedUp()) {
+                break;
+            }
             SummaryOutcome outcome = summarizeOne(summaryModel, source);
+            budget.spend(outcome);
             counts.merge(outcome, 1, Integer::sum);
+            called++;
         }
         log.info("Korean summary for {} of the top {} CVEs: {} generated, {} discarded, {} refused, {} failed; "
-                        + "{} wait for tomorrow.", thisRun.size(), TOP, count(counts, SummaryOutcome.GENERATED),
+                        + "{} wait for tomorrow.", called, TOP, count(counts, SummaryOutcome.GENERATED),
                 count(counts, SummaryOutcome.DISCARDED), count(counts, SummaryOutcome.REFUSED),
-                count(counts, SummaryOutcome.FAILED), targets.size() - thisRun.size());
+                count(counts, SummaryOutcome.FAILED), targets.size() - called);
+        if (budget.isFailureLimitReached() || called < targets.size()) {
+            warnUsedUp(budget);
+        }
         return count(counts, SummaryOutcome.GENERATED);
+    }
+
+    // 실패 안전 상한이 먼저다 — 닿았다면 열쇠·모델 이름·연결을 사람이 확인해야 한다
+    private static void warnUsedUp(SummaryCallBudget budget) {
+        if (budget.isFailureLimitReached()) {
+            log.warn("Korean summary failure limit of {} calls is reached today; summaries stop until tomorrow. "
+                    + "Check SUMMARY_API_KEY, SUMMARY_MODEL and the network.", budget.getFailureLimit());
+            return;
+        }
+        log.warn("Korean summary daily limit of {} answered calls is used up; new summaries wait for tomorrow.",
+                budget.getAnsweredLimit());
     }
 
     private SummaryOutcome summarizeOne(Summarizer summaryModel, SummarySource source) {

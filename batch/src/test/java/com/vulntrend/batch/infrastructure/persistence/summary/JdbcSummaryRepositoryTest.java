@@ -139,15 +139,39 @@ class JdbcSummaryRepositoryTest {
         }
     }
 
-    @Test
-    @DisplayName("오늘 요약 모델을 부른 횟수는 하루가 시작된 뒤의 호출만 센다")
-    void countsCallsSinceStartOfDay() {
-        vulnerability("CVE-2026-0001", "30.00", false);
-        vulnerability("CVE-2026-0002", "20.00", false);
-        repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.FAILED, null, NOW.minusSeconds(1));
-        repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.GENERATED, "gpt-6-luna", NOW);
+    @Nested
+    @DisplayName("오늘 호출 세기")
+    class CountingCalls {
 
-        assertThat(repository.countCallsSince(NOW)).isEqualTo(1);
+        @Test
+        @DisplayName("답을 받은 호출은 하루가 시작된 뒤에 만들고 버리고 거절된 것만 센다")
+        void countsAnsweredCallsSinceStartOfDay() {
+            callsOfEveryOutcome();
+
+            assertThat(repository.countAnsweredSince(NOW)).isEqualTo(3);
+        }
+
+        @Test
+        @DisplayName("실패한 호출은 하루가 시작된 뒤의 실패만 따로 센다")
+        void countsFailedCallsSinceStartOfDay() {
+            callsOfEveryOutcome();
+
+            assertThat(repository.countFailedSince(NOW)).isEqualTo(1);
+        }
+
+        // 하루 시작 전 실패 1건·생성 1건, 시작 뒤 생성·버림·거절·실패 1건씩
+        private void callsOfEveryOutcome() {
+            for (int i = 1; i <= 6; i++) {
+                vulnerability("CVE-2026-000" + i, "%d.00".formatted(i), false);
+            }
+            repository.recordCall(CveId.from("CVE-2026-0001"), SummaryOutcome.FAILED, null, NOW.minusSeconds(1));
+            repository.recordCall(CveId.from("CVE-2026-0002"), SummaryOutcome.GENERATED, "gpt-6-luna",
+                    NOW.minusSeconds(1));
+            repository.recordCall(CveId.from("CVE-2026-0003"), SummaryOutcome.GENERATED, "gpt-6-luna", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0004"), SummaryOutcome.DISCARDED, "gpt-6-luna", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0005"), SummaryOutcome.REFUSED, "gpt-6-luna", NOW);
+            repository.recordCall(CveId.from("CVE-2026-0006"), SummaryOutcome.FAILED, null, NOW);
+        }
     }
 
     @Nested

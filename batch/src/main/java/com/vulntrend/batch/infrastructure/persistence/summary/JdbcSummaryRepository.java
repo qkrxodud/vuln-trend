@@ -29,6 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 요약 저장소(WBS 6.3).
  * - 대상: 트렌드 점수 상위 top 건을 먼저 정하고(철회된 CVE 제외), 그중 요약이 없고 버리거나 거절된 기록도 없는 것만.
  *   "요약 없는 것 중 상위 20건"이 아니다 — 사이트 상위 목록에 요약이 붙는 것이 목적이다(기획서 6장).
+ * - 오늘 호출은 답을 받은 것(하루 상한)과 실패한 것(실패 안전 상한)을 따로 센다.
  * - 요약은 처음 한 번만 남긴다(on conflict do nothing). 제목은 아직 설명에서 만든 임시 제목일 때만 요약 제목으로 바꾼다.
  */
 @Repository
@@ -55,7 +56,9 @@ public class JdbcSummaryRepository implements SummaryRepository {
             select vuln_id, vendor, product, vulnerable_range, fixed_version
             from affected_product where vuln_id in (:ids) order by vuln_id, vendor, product
             """;
-    private static final String COUNT_CALLS = "select count(*) from summary_call where called_at >= :since";
+    private static final String COUNT_CALLS = """
+            select count(*) from summary_call where called_at >= :since and outcome in (:outcomes)
+            """;
     private static final String RECORD_CALL = """
             insert into summary_call (vuln_id, called_at, outcome, model) values (:id, :calledAt, :outcome, :model)
             on conflict do nothing
@@ -89,8 +92,13 @@ public class JdbcSummaryRepository implements SummaryRepository {
     }
 
     @Override
-    public int countCallsSince(Instant since) {
-        return jdbc.queryForObject(COUNT_CALLS, Map.of("since", toTimestamp(since)), Integer.class);
+    public int countAnsweredSince(Instant since) {
+        return countCallsSince(since, finalOutcomes());
+    }
+
+    @Override
+    public int countFailedSince(Instant since) {
+        return countCallsSince(since, retryableOutcomes());
     }
 
     @Override
@@ -122,6 +130,11 @@ public class JdbcSummaryRepository implements SummaryRepository {
                 .addValue("descriptionTitle", descriptionTitle));
     }
 
+    private int countCallsSince(Instant since, List<String> outcomes) {
+        return jdbc.queryForObject(COUNT_CALLS, Map.of("since", toTimestamp(since), "outcomes", outcomes),
+                Integer.class);
+    }
+
     private Map<String, List<SummaryProduct>> productsOf(List<Row> rows) {
         List<String> ids = rows.stream().map(row -> row.id).toList();
         return jdbc.query(PRODUCTS, Map.of("ids", ids), (rs, i) -> Map.entry(rs.getString("vuln_id"),
@@ -135,6 +148,13 @@ public class JdbcSummaryRepository implements SummaryRepository {
     private static List<String> finalOutcomes() {
         return Arrays.stream(SummaryOutcome.values())
                 .filter(Predicate.not(SummaryOutcome::isRetryable))
+                .map(SummaryOutcome::name)
+                .toList();
+    }
+
+    private static List<String> retryableOutcomes() {
+        return Arrays.stream(SummaryOutcome.values())
+                .filter(SummaryOutcome::isRetryable)
                 .map(SummaryOutcome::name)
                 .toList();
     }

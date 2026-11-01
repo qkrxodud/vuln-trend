@@ -188,7 +188,7 @@ class CollectionFailureRuleRunTest {
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
-                new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+                new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
                 SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working(),
                 GateChecks.failing(clock));

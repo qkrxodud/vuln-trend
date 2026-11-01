@@ -81,7 +81,7 @@ class TitleRenewalBeforeSummaryTest {
     private SummaryService summaryService() {
         FakeSummarizer summarizer = new FakeSummarizer(source -> SummaryResult.from(
                 KoreanSummary.of(SUMMARY_WHAT, "Brotli 를 쓰는 서비스가 영향받는다.", "원문 참고"), "gpt-6-luna", source));
-        return new SummaryService(new SummaryProperties(20, "gpt-6-luna", "summary-key-41c9e7"),
+        return new SummaryService(new SummaryProperties(20, 40, "gpt-6-luna", "summary-key-41c9e7"),
                 Optional.of(summarizer), summaries, clock);
     }
 

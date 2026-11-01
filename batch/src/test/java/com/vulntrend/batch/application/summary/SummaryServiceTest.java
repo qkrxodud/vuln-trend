@@ -33,7 +33,7 @@ class SummaryServiceTest {
     private static final Instant KOREAN_MIDNIGHT = Instant.parse("2026-10-30T15:00:00Z");
     private static final String KEY = "summary-key-41c9e7";
     private static final String MODEL = "gpt-6-luna";
-    private static final SummaryProperties CONFIGURED = new SummaryProperties(20, MODEL, KEY);
+    private static final SummaryProperties CONFIGURED = new SummaryProperties(20, 40, MODEL, KEY);
     private static final KoreanSummary GOOD = KoreanSummary.of("원격 코드 실행 취약점이다. 쉽게 악용된다.",
             "Foo 사용자가 영향받는다.", "원문 참고");
 
@@ -48,7 +48,7 @@ class SummaryServiceTest {
         void skipsWithoutKey(CapturedOutput output) {
             FakeSummaryRepository repository = new FakeSummaryRepository(targets(3), 0);
 
-            int generated = new SummaryService(new SummaryProperties(20, MODEL, ""), Optional.empty(), repository,
+            int generated = new SummaryService(new SummaryProperties(20, 40, MODEL, ""), Optional.empty(), repository,
                     clock).summarizeTop();
 
             assertThat(generated).isZero();
@@ -129,7 +129,7 @@ class SummaryServiceTest {
     }
 
     @Nested
-    @DisplayName("하루 상한 20콜")
+    @DisplayName("하루 상한 — 답을 받은 호출 20콜")
     class DailyLimit {
 
         @Test
@@ -139,11 +139,12 @@ class SummaryServiceTest {
 
             service(generating(MODEL), repository).summarizeTop();
 
-            assertThat(repository.countedSince()).isEqualTo(KOREAN_MIDNIGHT);
+            assertThat(repository.answeredSince()).isEqualTo(KOREAN_MIDNIGHT);
+            assertThat(repository.failedSince()).isEqualTo(KOREAN_MIDNIGHT);
         }
 
         @Test
-        @DisplayName("오늘 이미 18번 불렀으면 남은 2번만 부른다")
+        @DisplayName("오늘 이미 18번 답을 받았으면 남은 2번만 부른다")
         void callsOnlyWhatIsLeft(CapturedOutput output) {
             FakeSummarizer summarizer = generating(MODEL);
 
@@ -154,7 +155,7 @@ class SummaryServiceTest {
         }
 
         @Test
-        @DisplayName("오늘 20번을 다 불렀으면 더 부르지 않고 이번 실행은 요약 없이 넘어간다")
+        @DisplayName("오늘 20번 답을 받았으면 더 부르지 않고 이번 실행은 요약 없이 넘어간다")
         void limitUsedUp(CapturedOutput output) {
             FakeSummarizer summarizer = generating(MODEL);
 
@@ -162,7 +163,60 @@ class SummaryServiceTest {
 
             assertThat(generated).isZero();
             assertThat(summarizer.asked()).isEmpty();
-            assertThat(output).contains("daily limit of 20 calls is used up");
+            assertThat(output).contains("daily limit of 20 answered calls is used up");
+        }
+
+        @Test
+        @DisplayName("오늘 실패한 호출이 20번 있어도 새 요약 20건을 만든다")
+        void failuresDoNotUseTheLimit() {
+            FakeSummarizer summarizer = generating(MODEL);
+
+            int generated = service(summarizer, new FakeSummaryRepository(targets(20), 0, 20)).summarizeTop();
+
+            assertThat(generated).isEqualTo(20);
+            assertThat(summarizer.asked()).hasSize(20);
+        }
+
+        @Test
+        @DisplayName("실행 도중 실패한 호출은 상한을 쓰지 않아 남은 대상을 이어서 부른다")
+        void failuresDuringRunDoNotUseTheLimit() {
+            FakeSummarizer summarizer = new FakeSummarizer(source -> source.getCveId().getValue()
+                    .compareTo("CVE-2026-0003") <= 0 ? SummaryResult.failed() : SummaryResult.from(GOOD, MODEL, source));
+
+            int generated = service(summarizer, new FakeSummaryRepository(targets(5), 18)).summarizeTop();
+
+            assertThat(summarizer.asked()).hasSize(5);
+            assertThat(generated).isEqualTo(2);
+        }
+    }
+
+    @Nested
+    @DisplayName("실패 호출 안전 상한 40콜")
+    class FailureLimit {
+
+        @Test
+        @DisplayName("오늘 실패가 40번 쌓였으면 더 부르지 않고 열쇠·모델을 확인하라고 경고한다")
+        void failureLimitReached(CapturedOutput output) {
+            FakeSummarizer summarizer = generating(MODEL);
+
+            int generated = service(summarizer, new FakeSummaryRepository(targets(3), 0, 40)).summarizeTop();
+
+            assertThat(generated).isZero();
+            assertThat(summarizer.asked()).isEmpty();
+            assertThat(output).contains("failure limit of 40 calls is reached");
+            assertThat(output).doesNotContain(KEY);
+        }
+
+        @Test
+        @DisplayName("실행 도중 실패가 40번에 닿으면 그 자리에서 멈춘다")
+        void stopsWhenFailuresReachTheLimit(CapturedOutput output) {
+            FakeSummarizer summarizer = new FakeSummarizer(source -> SummaryResult.failed());
+
+            service(summarizer, new FakeSummaryRepository(targets(5), 0, 38)).summarizeTop();
+
+            assertThat(summarizer.asked()).extracting(SummarySource::getCveId).containsExactly(id(1), id(2));
+            assertThat(output).contains("failure limit of 40 calls is reached");
+            assertThat(output).contains("3 wait for tomorrow");
         }
     }
 
@@ -171,7 +225,7 @@ class SummaryServiceTest {
     void failureIsNotFatal(CapturedOutput output) {
         SummaryRepository broken = new FakeSummaryRepository(targets(1), 0) {
             @Override
-            public int countCallsSince(Instant since) {
+            public int countAnsweredSince(Instant since) {
                 throw new IllegalStateException("store is down");
             }
         };

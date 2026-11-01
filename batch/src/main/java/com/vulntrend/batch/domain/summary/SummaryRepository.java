@@ -10,8 +10,11 @@ public interface SummaryRepository {
     /** 트렌드 점수 상위 top 건 중 요약이 없고, 버리거나 거절된 적도 없는 CVE */
     List<SummarySource> findTopWithoutSummary(int top);
 
-    /** since 이후 요약 모델을 부른 횟수(하루 상한 세기) */
-    int countCallsSince(Instant since);
+    /** since 이후 답을 받은 호출 수 — 만들고·버리고·거절된 것(하루 상한 세기) */
+    int countAnsweredSince(Instant since);
+
+    /** since 이후 실패한 호출 수(실패 안전 상한 세기) */
+    int countFailedSince(Instant since);
 
     void recordCall(CveId cveId, SummaryOutcome outcome, String model, Instant calledAt);
 

@@ -11,19 +11,26 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** 요약 저장소 흉내. 정해 둔 대상과 오늘 이미 부른 횟수로 답하고, 기록·저장한 것을 기억한다 */
+/** 요약 저장소 흉내. 정해 둔 대상과 오늘 답을 받은·실패한 호출 수로 답하고, 기록·저장한 것을 기억한다 */
 public class FakeSummaryRepository implements SummaryRepository {
 
     private final List<SummarySource> targets;
-    private final int callsToday;
+    private final int answeredToday;
+    private final int failedToday;
     private final Map<CveId, SummaryOutcome> calls = new LinkedHashMap<>();
     private final Map<CveId, Saved> saved = new LinkedHashMap<>();
-    private Instant countedSince;
+    private Instant answeredSince;
+    private Instant failedSince;
     private int requestedTop;
 
-    public FakeSummaryRepository(List<SummarySource> targets, int callsToday) {
+    public FakeSummaryRepository(List<SummarySource> targets, int answeredToday) {
+        this(targets, answeredToday, 0);
+    }
+
+    public FakeSummaryRepository(List<SummarySource> targets, int answeredToday, int failedToday) {
         this.targets = List.copyOf(targets);
-        this.callsToday = callsToday;
+        this.answeredToday = answeredToday;
+        this.failedToday = failedToday;
     }
 
     @Override
@@ -33,9 +40,15 @@ public class FakeSummaryRepository implements SummaryRepository {
     }
 
     @Override
-    public int countCallsSince(Instant since) {
-        this.countedSince = since;
-        return callsToday;
+    public int countAnsweredSince(Instant since) {
+        this.answeredSince = since;
+        return answeredToday;
+    }
+
+    @Override
+    public int countFailedSince(Instant since) {
+        this.failedSince = since;
+        return failedToday;
     }
 
     @Override
@@ -57,8 +70,12 @@ public class FakeSummaryRepository implements SummaryRepository {
         return Map.copyOf(saved);
     }
 
-    public Instant countedSince() {
-        return countedSince;
+    public Instant answeredSince() {
+        return answeredSince;
+    }
+
+    public Instant failedSince() {
+        return failedSince;
     }
 
     public int requestedTop() {

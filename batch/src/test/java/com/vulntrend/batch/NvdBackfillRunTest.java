@@ -136,7 +136,7 @@ class NvdBackfillRunTest {
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
-                new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+                new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
                 SiteExports.writingTo(new FakeSiteDataWriter(), clock), FakePublisher.working(),
                 GateChecks.failing(clock));

@@ -59,7 +59,7 @@ class BatchRunnerTest {
     private FakePublisher publisher = FakePublisher.working();
     private GateCheckService gate = GateChecks.passing(clock, "2026-10-30T09:00", "2026-10-29T09:00",
             "2026-10-28T09:00");
-    private SummaryService summary = new SummaryService(new SummaryProperties(20, "", ""), Optional.empty(),
+    private SummaryService summary = new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
             new FakeSummaryRepository(List.of(), 0), clock);
 
     @Test
@@ -153,7 +153,7 @@ class BatchRunnerTest {
     @Test
     @DisplayName("한국어 요약 단계가 실패해도 데이터 파일을 쓰고 게시한다")
     void summaryFailureIsNotFatal() {
-        summary = new SummaryService(new SummaryProperties(20, "gpt-6-luna", "key"),
+        summary = new SummaryService(new SummaryProperties(20, 40, "gpt-6-luna", "key"),
                 Optional.of(source -> { throw new IllegalStateException("down"); }),
                 new FakeSummaryRepository(List.of(SummarySource.of(CveId.from("CVE-2026-0001"), "A flaw.", List.of(),
                         null)), 0), clock);
