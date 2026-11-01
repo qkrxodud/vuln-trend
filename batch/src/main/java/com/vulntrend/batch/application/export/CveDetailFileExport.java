@@ -15,15 +15,12 @@ import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.remedy.FixVersions;
 import com.vulntrend.batch.domain.remedy.PatchLinks;
 import com.vulntrend.batch.domain.remedy.dto.TaggedLink;
-import com.vulntrend.batch.domain.stat.StatDays;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import java.time.Instant;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -33,7 +30,7 @@ import org.springframework.stereotype.Component;
 /**
  * cve/CVE-*.json (기획서 7장 P6·R5, WBS 4.2). 생성 범위 안의 CVE 마다 한 파일을 쓰고, 범위 밖 파일(철회되거나 순위에서 밀려난 CVE)은
  * 지운다 — 남겨 두면 옛 점수가 그대로 보인다.
- * - 목록 줄 필드 전부(TrendRows) + 원문 설명(없으면 빈 글)·발행/수정 시각(한국 시각)·요약·영향 제품·참고 링크
+ * - 목록 줄 필드 전부(TrendRows) + 원문 설명(없으면 빈 글)·수정 시각(한국 시각, 발행 시각은 목록 줄)·요약·영향 제품·참고 링크
  * - 영향 제품의 product 는 사이트에 보일 이름(ProductNames), display_name·slug 는 표에 있을 때만(없으면 null — 계약 그대로).
  *   제조사는 원문 그대로
  * - 조치 정보: KEV 요구 조치(KEV 일 때만, 원문), 영향 제품마다 업데이트할 버전(FixVersions), 참고 링크마다 같은 주소의 NVD 태그(없으면 빈 목록)
@@ -82,7 +79,7 @@ public class CveDetailFileExport {
     private static CveDetailJson json(CveDetailListing detail, ProductNames names) {
         return new CveDetailJson(TrendRows.from(detail.row(), names),
                 Optional.ofNullable(detail.description()).orElse(""),
-                koreanTime(detail.row().publishedAt()), koreanTime(detail.lastModifiedAt()),
+                TrendRows.koreanTime(detail.lastModifiedAt()),
                 detail.row().kev() ? detail.row().remedy().kevRequiredAction() : null,
                 Optional.ofNullable(detail.summary()).map(CveDetailFileExport::summary).orElse(null),
                 detail.affected().stream().map(a -> new AffectedProductJson(a.vendor(), names.shown(a.product()), a.displayName(),
@@ -93,7 +90,7 @@ public class CveDetailFileExport {
 
     private static SummaryJson summary(SummaryListing summary) {
         return new SummaryJson(summary.what(), summary.who(), summary.action(), summary.model(),
-                koreanTime(summary.generatedAt()));
+                TrendRows.koreanTime(summary.generatedAt()));
     }
 
     private static List<ReferenceLinkJson> references(CveDetailListing detail) {
@@ -112,9 +109,5 @@ public class CveDetailFileExport {
 
     private static ReferenceLinkJson link(ReferenceListing link, List<TaggedLink> nvd) {
         return new ReferenceLinkJson(link.url(), link.source(), link.title(), PatchLinks.tagsOf(link.url(), nvd));
-    }
-
-    private static OffsetDateTime koreanTime(Instant instant) {
-        return Objects.isNull(instant) ? null : instant.atZone(StatDays.CALENDAR).toOffsetDateTime();
     }
 }

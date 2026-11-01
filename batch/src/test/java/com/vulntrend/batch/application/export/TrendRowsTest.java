@@ -6,6 +6,8 @@ import com.vulntrend.batch.application.export.dto.TrendRowJson;
 import com.vulntrend.batch.domain.product.ProductNames;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -116,5 +118,13 @@ class TrendRowsTest {
 
         assertThat(row.fixVersions()).isEmpty();
         assertThat(row.patchUrl()).isNull();
+    }
+
+    @Test
+    @DisplayName("공개 시각을 한국 시각으로 싣고, 아직 없으면 비워 둔다")
+    void publishedAtInKoreanTime() {
+        assertThat(TrendRows.from(TrendListings.kev("CVE-2026-41203"), NAMES).publishedAt())
+                .isEqualTo(OffsetDateTime.of(2026, 10, 19, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
+        assertThat(TrendRows.from(TrendListings.kevPublishedAt("CVE-2026-41203", null), NAMES).publishedAt()).isNull();
     }
 }

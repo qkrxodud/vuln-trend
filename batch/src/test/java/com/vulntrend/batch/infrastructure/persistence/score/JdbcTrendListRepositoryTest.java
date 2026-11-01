@@ -87,9 +87,23 @@ class JdbcTrendListRepositoryTest {
         scored("CVE-2026-60003", "30", "2026-10-31T00:00:00Z");
         scored("CVE-2026-60004", "40", "2026-10-30T23:59:59Z");
 
-        List<TrendListing> recent = repository.publishedBetween(Instant.parse("2026-10-24T15:00:00Z"), NOW, 10, NOW);
+        List<TrendListing> recent = repository.publishedBetween(Instant.parse("2026-10-24T15:00:00Z"), NOW, NOW);
 
         assertThat(ids(recent)).containsExactly("CVE-2026-60004", "CVE-2026-60001");
+    }
+
+    @Test
+    @DisplayName("발행 구간의 CVE 는 점수와 상관없이 최근 발행 순(같으면 번호 순)으로 모두 준다")
+    void publishedBetweenNewestFirst() {
+        scored("CVE-2026-60001", "90", "2026-10-28T00:00:00Z");
+        scored("CVE-2026-60002", "10", "2026-10-30T00:00:00Z");
+        scored("CVE-2026-60004", "50", "2026-10-29T00:00:00Z");
+        scored("CVE-2026-60003", "50", "2026-10-29T00:00:00Z");
+
+        List<TrendListing> recent = repository.publishedBetween(Instant.parse("2026-10-24T15:00:00Z"), NOW, NOW);
+
+        assertThat(ids(recent)).containsExactly("CVE-2026-60002", "CVE-2026-60003", "CVE-2026-60004",
+                "CVE-2026-60001");
     }
 
     @Test

@@ -108,7 +108,7 @@ class VisibleSiteTest {
                 j.scoreBreakdown(), j.whyNow(), "kev".equals(field) ? (Boolean) value : j.isKev(),
                 "ransomware".equals(field) ? (Boolean) value : j.kevRansomware(),
                 "due".equals(field) ? (LocalDate) value : j.kevDueDate(),
-                "added".equals(field) ? (LocalDate) value : j.kevAddedAt(), j.pocCount(),
+                "added".equals(field) ? (LocalDate) value : j.kevAddedAt(), j.publishedAt(), j.pocCount(),
                 "epss".equals(field) ? (BigDecimal) value : j.epss(), j.epssPercentile(), j.cvss(), j.cvssVersion(),
                 "severity".equals(field) ? (String) value : j.severity(),
                 "product".equals(field) ? (String) value : j.primaryProduct(),

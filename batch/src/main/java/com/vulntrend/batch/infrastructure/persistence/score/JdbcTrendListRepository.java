@@ -66,8 +66,9 @@ public class JdbcTrendListRepository implements TrendListRepository {
             + TrendOrder.LISTED;
     private static final String SELECT = "select " + COLUMNS + FROM;
     private static final String TOP = SELECT + " " + TrendOrder.ORDER_BY + " limit :limit";
+    /** 최근 발행 목록(recent.json): 구간 안 전부, 최근 발행 순 → 번호 순. 트렌드 순서가 아니다 */
     private static final String PUBLISHED_BETWEEN = SELECT + " and published_at >= :from and published_at < :to "
-            + TrendOrder.ORDER_BY + " limit :limit";
+            + "order by v.published_at desc, v.vuln_id";
 
     private final NamedParameterJdbcTemplate jdbc;
 
@@ -77,8 +78,8 @@ public class JdbcTrendListRepository implements TrendListRepository {
     }
 
     @Override
-    public List<TrendListing> publishedBetween(Instant from, Instant to, int limit, Instant now) {
-        MapSqlParameterSource params = params(limit, now)
+    public List<TrendListing> publishedBetween(Instant from, Instant to, Instant now) {
+        MapSqlParameterSource params = new MapSqlParameterSource().addValue("now", now.atOffset(ZoneOffset.UTC))
                 .addValue("from", from.atOffset(ZoneOffset.UTC))
                 .addValue("to", to.atOffset(ZoneOffset.UTC));
         return jdbc.query(PUBLISHED_BETWEEN, params, JdbcTrendListRepository::listing);

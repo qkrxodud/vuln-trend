@@ -10,6 +10,6 @@ public interface TrendListRepository {
     /** 점수 상위 limit 건 */
     List<TrendListing> top(int limit, Instant now);
 
-    /** 발행 시각이 [from, to) 안인 건 중 상위 limit 건 */
-    List<TrendListing> publishedBetween(Instant from, Instant to, int limit, Instant now);
+    /** 발행 시각이 [from, to) 안인 건 전부, 최근 발행 순(같으면 번호 순). 점수 구성은 now 기준 */
+    List<TrendListing> publishedBetween(Instant from, Instant to, Instant now);
 }

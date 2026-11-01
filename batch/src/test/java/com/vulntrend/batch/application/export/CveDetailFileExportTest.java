@@ -43,7 +43,7 @@ class CveDetailFileExportTest {
             assertThat(detail.row().score()).isEqualTo(67);
             assertThat(detail.row().whyNow()).isEqualTo("CISA 악용 목록 등재");
             assertThat(detail.description()).isEqualTo("Type confusion in V8 in Google Chrome.");
-            assertThat(detail.publishedAt()).isEqualTo(OffsetDateTime.of(2026, 10, 19, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
+            assertThat(detail.row().publishedAt()).isEqualTo(OffsetDateTime.of(2026, 10, 19, 9, 0, 0, 0, ZoneOffset.ofHours(9)));
             assertThat(detail.lastModifiedAt())
                     .isEqualTo(OffsetDateTime.of(2026, 10, 20, 12, 0, 0, 0, ZoneOffset.ofHours(9)));
             assertThat(detail.row().kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));

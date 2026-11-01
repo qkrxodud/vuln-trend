@@ -15,6 +15,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.stream.IntStream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -43,6 +44,18 @@ class ExportServiceTest {
         assertThat(details.askedTop()).isEqualTo(1000);
         assertThat(details.askedDetails()).containsExactly(CveId.from("CVE-2026-41203"), CveId.from("CVE-2026-50001"),
                 CveId.from("CVE-2026-60001"));
+    }
+
+    @Test
+    @DisplayName("최근 7일 목록의 CVE 는 몇 건이든 모두 상세 파일을 만든다")
+    void detailForEveryRecentCve() {
+        FakeTrendListRepository listed = new FakeTrendListRepository().with(TrendListings.kev("CVE-2026-41203"));
+        IntStream.rangeClosed(1, 150).forEach(i -> listed.withRecent(
+                TrendListings.unrated("CVE-2026-%05d".formatted(50000 + i))));
+
+        service(listed).exportAll();
+
+        assertThat(details.askedDetails()).hasSize(1 + 150 + 1).contains(CveId.from("CVE-2026-50150"));
     }
 
     @Test
@@ -117,6 +130,18 @@ class ExportServiceTest {
             String later = service(Clock.fixed(NOW.plusSeconds(2 * 3600), ZoneOffset.UTC)).visibleFingerprint();
 
             assertThat(later).isEqualTo(earlier);
+        }
+
+        @Test
+        @DisplayName("최근 7일 목록에만 새 CVE 가 들어오면 그대로다 — 새 CVE 는 계속 들어오므로 최근 목록은 지문에 넣지 않는다")
+        void recentOnlyKeepsIt() {
+            FakeTrendListRepository listed = new FakeTrendListRepository()
+                    .with(TrendListings.kev("CVE-2026-41203"))
+                    .withRecent(TrendListings.unrated("CVE-2026-50001"));
+            String before = service(listed).visibleFingerprint();
+            listed.withRecent(TrendListings.unrated("CVE-2026-50002"));
+
+            assertThat(service(listed).visibleFingerprint()).isEqualTo(before);
         }
 
         @Test

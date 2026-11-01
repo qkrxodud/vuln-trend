@@ -46,6 +46,14 @@ final class TrendListings {
                 kev.severity(), kev.primaryProduct(), kev.summaryWhat(), kev.publishedAt(), kev.remedy());
     }
 
+    /** kev 와 같고 공개 시각만 다른 줄 */
+    static TrendListing kevPublishedAt(String id, Instant publishedAt) {
+        TrendListing kev = kev(id);
+        return new TrendListing(kev.id(), kev.title(), kev.breakdown(), true, false, kev.kevDueDate(), kev.kevAddedAt(),
+                0, 0, kev.epss(), kev.epssPercentile(), kev.cvss(), kev.cvssVersion(), kev.severity(),
+                kev.primaryProduct(), kev.summaryWhat(), publishedAt, kev.remedy());
+    }
+
     /** kev 와 같고 제목만 다른 줄 */
     static TrendListing kevTitled(String id, String title) {
         TrendListing kev = kev(id);
