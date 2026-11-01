@@ -9,6 +9,7 @@ import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
+import com.vulntrend.batch.application.vulnerability.LegacyTitleService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.WriteOutcome;
@@ -17,6 +18,7 @@ import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
+import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
 import com.vulntrend.batch.fake.FakePublisher;
@@ -52,6 +54,7 @@ class BatchRunnerTest {
     private final Clock clock = Clock.fixed(NOW, ZoneOffset.UTC);
     private final FakeTrendScoreRepository scores = new FakeTrendScoreRepository(3);
     private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
+    private LegacyTitleService legacyTitles = new LegacyTitleService(new FakeLegacyTitleRepository(List.of()));
     private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
     private FakePublisher publisher = FakePublisher.working();
     private GateCheckService gate = GateChecks.passing(clock, "2026-10-30T09:00", "2026-10-29T09:00",
@@ -274,6 +277,26 @@ class BatchRunnerTest {
     }
 
     @Test
+    @DisplayName("일별 통계 다음, 한국어 요약 앞에서 옛 규칙으로 잘린 제목을 다시 계산한다")
+    void renewsLegacyTitlesBeforeSummary(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        String log = output.toString();
+        assertThat(log.indexOf("Daily statistics recalculated")).isLessThan(log.indexOf("Legacy cut titles renewed"));
+        assertThat(log.indexOf("Legacy cut titles renewed")).isLessThan(log.indexOf("Korean summary is skipped"));
+    }
+
+    @Test
+    @DisplayName("지난 기간을 한 번 가져오는 실행과 수집이 실패한 실행에서는 제목을 다시 계산하지 않는다")
+    void noRenewalInBackfillOrFailure(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3),
+                FakeCollector.failing(SourceName.KEV)).run());
+
+        assertThat(output).doesNotContain("Legacy cut titles renewed");
+    }
+
+    @Test
     @DisplayName("일별 통계를 다시 센 뒤 한국어 요약 단계로 넘어간다")
     void summarizesAfterStats(CapturedOutput output) {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
@@ -336,7 +359,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), summary,
+                assignment, new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
                 SiteExports.writingTo(siteData, clock), publisher, gate);
     }
 }

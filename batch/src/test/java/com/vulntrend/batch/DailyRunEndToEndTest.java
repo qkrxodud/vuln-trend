@@ -10,6 +10,7 @@ import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
+import com.vulntrend.batch.application.vulnerability.LegacyTitleService;
 import com.vulntrend.batch.domain.publish.Publisher;
 import com.vulntrend.batch.domain.summary.KoreanSummary;
 import com.vulntrend.batch.domain.summary.Summarizer;
@@ -78,6 +79,8 @@ class DailyRunEndToEndTest {
     private ScoreService score;
     @Autowired
     private DailyStatService dailyStat;
+    @Autowired
+    private LegacyTitleService legacyTitles;
     @Autowired
     private SummaryService summary;
     @Autowired
@@ -245,7 +248,8 @@ class DailyRunEndToEndTest {
     }
 
     private BatchRunner assemble() {
-        return new BatchRunner(collect, productAssignment, score, dailyStat, summary, export, publisher, gate);
+        return new BatchRunner(collect, productAssignment, score, dailyStat, legacyTitles, summary, export, publisher,
+                gate);
     }
 
     // 흉내 서버는 준비한 답을 한 번씩만 쓰므로 실행마다 세 소스의 답을 새로 넣는다. kevStatus 가 200 이 아니면 KEV 만 실패

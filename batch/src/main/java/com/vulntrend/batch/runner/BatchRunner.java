@@ -9,6 +9,7 @@ import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.DailyStatService;
 import com.vulntrend.batch.application.summary.SummaryService;
+import com.vulntrend.batch.application.vulnerability.LegacyTitleService;
 import com.vulntrend.batch.domain.collect.CollectResult;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.gate.GateReport;
@@ -26,7 +27,8 @@ import org.springframework.stereotype.Component;
 /**
  * 하루 한 번 실행의 진입점. 단계 순서와 실패 규칙(기획서 6장)을 적용한다.
  * 수집(1~4) → 하나라도 실패하면 여기서 멈추고 실패한 실행으로 끝낸다(CollectionFailedException)
- *   → 대표 제품(백엔드 B 2.3) → 점수(5) → 일별 통계(6, 최근 14일) → 한국어 요약(7, 비치명 — 실패해도 다음 단계로 간다)
+ *   → 대표 제품(백엔드 B 2.3) → 점수(5) → 일별 통계(6, 최근 14일) → 옛 규칙 제목 다시 계산(B1, 바뀔 것이 없으면 바로 끝)
+ *   → 한국어 요약(7, 비치명 — 실패해도 다음 단계로 간다. 제목 재계산 뒤라야 요약 제목이 올라간다)
  *   → 사이트 데이터 파일(8, 백엔드 B 4.2) → 바뀐 파일이 있으면 게시(9, git push).
  * 데이터 파일을 쓰지 못하면(OutputWriteException) 게시하지 않는다 — 반쪽 데이터를 올리지 않는다.
  * 실패한 실행은 배치 예외를 밖으로 던지고, Spring 이 종료 코드 1 로 프로세스를 끝낸다(VulnTrendException 이 종료 코드를 정함, WBS 4.3).
@@ -46,6 +48,7 @@ public class BatchRunner implements CommandLineRunner {
     private final ProductAssignService productAssignment;
     private final ScoreService score;
     private final DailyStatService dailyStat;
+    private final LegacyTitleService legacyTitles;
     private final SummaryService summary;
     private final ExportService export;
     private final Publisher publisher;
@@ -75,6 +78,7 @@ public class BatchRunner implements CommandLineRunner {
     private void scoreAndPublish() {
         score.rescoreAll();
         dailyStat.recalculateRecent();
+        legacyTitles.renewAll();
         summary.summarizeTop();
         ExportResult exported = exportSiteData();
         if (exported.hasChanges()) {
