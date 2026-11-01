@@ -21,6 +21,14 @@ notify() {
 {
   echo "== $(date '+%Y-%m-%d %H:%M:%S %Z') start"
 
+  # 승인·커밋되지 않은 코드로 돌지 않는다(공유 작업 폴더라 개발 중인 파일이 섞일 수 있음, 2026-11-01 사고)
+  dirty="$(git -C "$REPO" status --porcelain -- batch scripts/run-daily.sh)"
+  if [ -n "$dirty" ]; then
+    echo "Uncommitted changes under batch/; skipping this run:"
+    echo "$dirty"
+    exit 2
+  fi
+
   # Docker 가 꺼져 있으면 켜고 최대 3분 기다린다
   if ! docker info >/dev/null 2>&1; then
     echo "Docker is not running; starting Docker Desktop."
@@ -52,7 +60,9 @@ status=$?
 # 오래된 기록 정리(최근 30개)
 ls -1t "$LOG_DIR"/daily-*.log 2>/dev/null | tail -n +31 | while read -r old; do rm -f "$old"; done
 
-if [ $status -ne 0 ]; then
+if [ $status -eq 2 ]; then
+  notify "커밋 안 된 batch 변경이 있어 건너뛰었습니다. 기록: $LOG"
+elif [ $status -ne 0 ]; then
   notify "실패했습니다(종료 코드 $status). 기록: $LOG"
 else
   notify "완료했습니다."
