@@ -1,7 +1,7 @@
 [
   {
     "id": "CVE-2026-109618",
-    "title": "PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context…",
+    "title": "OOM 처리 중 초기화되지 않은 요청 메모리를 정리 과정에서 읽거나 분기해 원격 코드 실행으로 이어질 수 있습니다",
     "score": 77,
     "score_breakdown": {
       "kev": 50.0,
@@ -10,7 +10,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -12.7
+      "decay": -12.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -25,7 +25,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "PHP",
-    "summary_what": null,
+    "product_family": "dev",
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": "OOM 처리 중 초기화되지 않은 요청 메모리를 정리 과정에서 읽거나 분기해 원격 코드 실행으로 이어질 수 있습니다.",
     "fix_versions": [
       "8.2.35",
       "8.3.36",
@@ -45,7 +49,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -12.5
+      "decay": -12.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -60,6 +64,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "PHP",
+    "product_family": "dev",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": "요청 메모리가 해제된 뒤에도 초기화되지 않은 전역 상태를 이용해 공격자가 원격 코드 실행을 유발할 수 있습니다.",
     "fix_versions": [
       "8.2.35",
@@ -80,7 +88,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -10.3
+      "decay": -10.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -95,6 +103,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Brotli",
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": "Brotli 디코더의 버퍼 오버플로 취약점으로 원격 비인증 공격자가 메모리를 손상·노출하거나 서비스 거부 및 임의 코드 실행을 유발할 수 있습니다.",
     "fix_versions": [
       "1.2.7",
@@ -107,7 +119,7 @@
   {
     "id": "CVE-2026-110447",
     "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
-    "score": 66,
+    "score": 65,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -115,7 +127,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -16.3
+      "decay": -16.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -130,6 +142,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Collabora Online",
+    "product_family": "server",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다.",
     "fix_versions": [
       "26.4.303"
@@ -147,7 +164,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.3,
-      "decay": -8.8
+      "decay": -8.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -162,6 +179,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Adobe Commerce",
+    "product_family": "web_cms",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": "위험한 파일 형식의 무제한 업로드 취약점으로, 사용자가 악성 URL이나 손상된 웹페이지와 상호작용하면 공격자가 임의 코드를 실행하고 피해자의 계정 또는 세션을 장악할 수 있습니다.",
     "fix_versions": [],
     "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-73.html"
@@ -192,6 +213,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "GitLab",
+    "product_family": "dev",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": "정규식 검증 미흡으로 인증되지 않은 공격자가 조작된 CI/CD 정규식을 이용해 GitLab 서버에서 임의 코드를 실행할 수 있습니다.",
     "fix_versions": [
       "19.2.8",
@@ -211,7 +236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -29.2
+      "decay": -29.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -226,6 +251,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Atlassian Bitbucket Data Center",
+    "product_family": "dev",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며, 디렉터리 내용 열거는 불가능합니다.",
     "fix_versions": [
       "9.4.26",
@@ -245,7 +274,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -6.3
+      "decay": -6.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -260,6 +289,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": "skb 병합 과정에서 공유 프래그먼트 표시가 사라져 ESP가 페이지 캐시 데이터를 제자리에서 복호화할 수 있는 커널 취약점입니다.",
     "fix_versions": [
       "5.15.208",
@@ -297,6 +330,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "AhsayCBS",
+    "product_family": "server",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": "Replication Receiver의 취약점으로 원격 공격자가 OS 명령을 실행할 수 있습니다.",
     "fix_versions": [
       "9.15.2.70",
@@ -306,7 +344,7 @@
   },
   {
     "id": "CVE-2026-104935",
-    "title": "Authentication bypass by spoofing in ICS before version 25.1.3.0 allows a…",
+    "title": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다",
     "score": 55,
     "score_breakdown": {
       "kev": 50.0,
@@ -315,7 +353,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -30.0
+      "decay": -30.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -330,7 +368,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Ivanti Connect Secure",
-    "summary_what": null,
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다.",
     "fix_versions": [
       "25.1.1.2",
       "25.1.3.0"
@@ -348,7 +390,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -4.7
+      "decay": -4.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -363,6 +405,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Cisco ASA·FTD",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게 재시작시켜 서비스 거부를 일으킬 수 있습니다.",
     "fix_versions": [
       "9.16.4.104",
@@ -405,6 +451,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Ivanti Connect Secure",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": "dsinvoked 브로커가 DSCache 설정 데이터를 신뢰하는 방식의 취약점으로 공격자가 루트 권한을 획득할 수 있습니다.",
     "fix_versions": [
       "25.1.1.3"
@@ -437,6 +487,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "AhsayCBS",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": "API의 인증 처리 취약점으로 원격 공격자가 인증을 우회할 수 있으며, 공개된 공격 방법이 있습니다.",
     "fix_versions": [
       "9.15.2.70",
@@ -470,6 +524,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Fedora",
+    "product_family": "os",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": "ProFTPD의 mod_copy 모듈 취약점으로 원격 공격자가 임의 파일을 읽거나 쓸 수 있습니다.",
     "fix_versions": [],
     "patch_url": null
@@ -477,7 +535,7 @@
   {
     "id": "CVE-2015-5477",
     "title": "TKEY 질의 처리 중 REQUIRE 어설션 실패로 BIND 데몬이 종료되어 원격 서비스 거부가 발생할 수 있습니다",
-    "score": 50,
+    "score": 49,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -485,7 +543,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -37.9
+      "decay": -38.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -500,6 +558,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Juniper Junos OS",
+    "product_family": "network",
+    "attack_types": [
+      "dos"
+    ],
     "summary_what": "TKEY 질의 처리 중 REQUIRE 어설션 실패로 BIND 데몬이 종료되어 원격 서비스 거부가 발생할 수 있습니다.",
     "fix_versions": [
       "12.1",
@@ -509,7 +571,7 @@
   },
   {
     "id": "CVE-2016-3081",
-    "title": "Apache Struts 2.3.19 to 2.3.20.2, 2.3.21 to 2.3.24.1, and 2.3.25 to 2.3.28…",
+    "title": "동적 메서드 호출이 활성화된 Apache Struts에서 연쇄 표현식 관련 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
     "score": 49,
     "score_breakdown": {
       "kev": 50.0,
@@ -533,7 +595,12 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Apache Struts",
-    "summary_what": null,
+    "product_family": "dev",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": "동적 메서드 호출이 활성화된 Apache Struts에서 연쇄 표현식 관련 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
     "fix_versions": [
       "2.3.20.3",
       "2.3.24.3",
@@ -552,7 +619,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -12.0
+      "decay": -12.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -567,6 +634,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "VeloCloud Orchestrator",
+    "product_family": "network",
+    "attack_types": [
+      "injection"
+    ],
     "summary_what": "인증된 사용자가 운영자 권한을 얻어 내부 전용 기능에 접근하고 VCO 호스트와 관리 데이터의 기밀성·무결성·가용성을 침해할 수 있습니다.",
     "fix_versions": [
       "5.2.3.18",
@@ -601,6 +672,10 @@
     "cvss_version": "3.1",
     "severity": "LOW",
     "primary_product": "VMware ESXi",
+    "product_family": "cloud",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": "VMware ESX의 로깅 미흡 취약점으로, 악의적인 관리자가 일부 작업을 로그에 남기지 않고 수행할 수 있습니다.",
     "fix_versions": [
       "9.0.2.0100"
@@ -633,6 +708,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "BeyondTrust Remote Support",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": "메시지 발신 출처 검증이 미흡해 공격자가 조건에 따라 어플라이언스에서 파일 작업을 수행할 수 있습니다.",
     "fix_versions": [],
     "patch_url": "https://www.beyondtrust.com/blog/entry/bt26-05"
@@ -648,7 +727,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -14.8
+      "decay": -14.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -663,6 +742,11 @@
     "cvss_version": "3.0",
     "severity": "HIGH",
     "primary_product": "SiteGuard",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": "OS 명령 삽입 취약점으로 공격자가 영향을 받는 시스템에서 root 또는 SYSTEM 권한으로 임의의 OS 명령을 실행할 수 있습니다.",
     "fix_versions": [
       "8.00",
@@ -682,7 +766,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -14.6
+      "decay": -14.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -697,6 +781,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Plex Media Server",
+    "product_family": "server",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.43.3.10861"
@@ -714,7 +802,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -14.4
+      "decay": -14.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -729,6 +817,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Plex Media Server",
+    "product_family": "server",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.43.3.10861"
@@ -746,7 +838,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.7,
-      "decay": -14.4
+      "decay": -14.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -761,6 +853,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Siemens Software Center",
+    "product_family": "desktop",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "4.0.9.8"
@@ -793,6 +889,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Plex Media Server",
+    "product_family": "server",
+    "attack_types": [
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.43.3.10861"
@@ -825,6 +925,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Plex Media Server",
+    "product_family": "server",
+    "attack_types": [
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.43.3.10861"
@@ -857,6 +961,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco AsyncOS",
+    "product_family": "network",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "15.5.5-014",
@@ -890,6 +998,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Windows",
+    "product_family": "os",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.0.14393.9612",
@@ -931,6 +1044,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "ONLYOFFICE Docs",
+    "product_family": "server",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "5.6.3"
@@ -948,7 +1065,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -18.1
+      "decay": -18.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -963,6 +1080,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "FortiOS",
+    "product_family": "network",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.4.10",
@@ -981,7 +1102,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -19.5
+      "decay": -19.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -996,6 +1117,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Palo Alto PAN-OS",
+    "product_family": "network",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.2.0",
@@ -1014,7 +1140,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -46.7
+      "decay": -46.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1029,6 +1155,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Citrix NetScaler ADC·Gateway",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.1-64.23",
@@ -1048,7 +1178,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -45.1
+      "decay": -45.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1063,6 +1193,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Citrix NetScaler ADC·Gateway",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.1-64.23",
@@ -1082,7 +1216,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -50.4
+      "decay": -50.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1097,6 +1231,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "WordPress",
+    "product_family": "web_cms",
+    "attack_types": [
+      "rce"
+    ],
     "summary_what": null,
     "fix_versions": [
       "4.7.37",
@@ -1138,7 +1276,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -50.9
+      "decay": -51.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1153,6 +1291,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Adobe Commerce",
+    "product_family": "web_cms",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2.4.4"
@@ -1185,6 +1327,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Check Point Multi-Domain Security Management",
+    "product_family": "network",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "r81.10"
@@ -1217,6 +1363,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco Catalyst SD-WAN Manager",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "20.9.10.1",
@@ -1238,7 +1388,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -33.7
+      "decay": -33.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1253,6 +1403,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Zammad",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2"
@@ -1283,6 +1437,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Strapi",
+    "product_family": "web_cms",
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [
       "4.8.0"
@@ -1300,7 +1458,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -29.3
+      "decay": -29.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1315,6 +1473,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Citrix NetScaler ADC·Gateway",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.1-37.282",
@@ -1349,6 +1511,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "iOS·iPadOS",
+    "product_family": "mobile",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "18.7.11",
@@ -1382,6 +1548,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Zammad",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.2.2"
@@ -1399,7 +1569,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -31.1
+      "decay": -31.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1414,6 +1584,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "FortiMail",
+    "product_family": "network",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.4.9",
@@ -1448,6 +1622,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Check Point Gaia Embedded",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "r81.10.17",
@@ -1466,7 +1644,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -53.9
+      "decay": -54.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1481,6 +1659,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco Identity Services Engine",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5"
@@ -1496,7 +1678,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -61.4
+      "decay": -61.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1511,6 +1693,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "GitLab",
+    "product_family": "dev",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "18.11.12",
@@ -1547,6 +1733,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "WSO2 API Control Plane",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "4.5.0.58",
@@ -1580,6 +1770,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "F5 BIG-IP",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://my.f5.com/manage/s/article/K000162605"
@@ -1610,6 +1804,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Microsoft SharePoint Server",
+    "product_family": "server",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "16.0.19725.20522"
@@ -1642,6 +1841,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco Secure Firewall Management Center",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2"
@@ -1672,6 +1875,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "MikroTik RouterOS",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "6.49.21",
@@ -1706,6 +1913,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "VeloCloud Orchestrator",
+    "product_family": "network",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "5.2.3.16",
@@ -1724,7 +1935,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -36.8
+      "decay": -36.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1739,6 +1950,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Zyxel GS1900",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2.90\\(aahh.2\\)c0"
@@ -1771,6 +1986,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Cisco AsyncOS",
+    "product_family": "network",
+    "attack_types": [
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "15.5.5-014",
@@ -1805,6 +2024,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "6.1.149",
@@ -1840,6 +2063,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "5.5",
@@ -1865,7 +2092,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -37.2
+      "decay": -37.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1880,6 +2107,10 @@
     "cvss_version": "3.0",
     "severity": "HIGH",
     "primary_product": "Acronis Backup",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.2.3",
@@ -1899,7 +2130,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -49.4
+      "decay": -49.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1914,6 +2145,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Citrix NetScaler ADC·Gateway",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.1-37.277",
@@ -1948,6 +2183,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Android",
+    "product_family": "mobile",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://source.android.com/docs/security/bulletin/pixel/2026/2026-09-01"
@@ -1978,6 +2217,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "PaperCut NG·MF",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "24.1.9",
@@ -2012,6 +2255,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "5.10.245",
@@ -2049,6 +2296,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "Starlette",
+    "product_family": "dev",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.0.1"
@@ -2081,6 +2332,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "JFrog Artifactory",
+    "product_family": "dev",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.133.11"
@@ -2113,6 +2368,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "PaperCut NG·MF",
+    "product_family": "server",
+    "attack_types": [
+      "rce"
+    ],
     "summary_what": null,
     "fix_versions": [
       "24.1.9",
@@ -2147,6 +2406,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "JFrog Artifactory",
+    "product_family": "dev",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.111.20",
@@ -2183,6 +2446,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "MikroTik RouterOS",
+    "product_family": "network",
+    "attack_types": [
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "6.49.21",
@@ -2217,6 +2484,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "ConnectWise ScreenConnect",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "26.6.5.9742"
@@ -2249,6 +2520,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "N-able N-central",
+    "product_family": "server",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2026.3"
@@ -2266,7 +2541,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -66.8
+      "decay": -66.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2281,6 +2556,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Ajax.NET Professional",
+    "product_family": "dev",
+    "attack_types": [
+      "rce"
+    ],
     "summary_what": null,
     "fix_versions": [
       "21.10.30.1"
@@ -2313,6 +2592,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "FortiOS",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.0.18",
@@ -2348,6 +2631,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "MikroTik RouterOS",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "6.49.21",
@@ -2382,6 +2669,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Chrome",
+    "product_family": "browser",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "153.0.8010.36"
@@ -2414,6 +2705,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Adobe Commerce",
+    "product_family": "web_cms",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2.4.4"
@@ -2446,6 +2742,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Windows",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.0.14393.9512",
@@ -2482,6 +2782,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Windows",
+    "product_family": "os",
+    "attack_types": [
+      "auth",
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.0.22631.7582",
@@ -2518,6 +2823,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Oracle HTTP Server",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://www.oracle.com/security-alerts/cpujan2026.html"
@@ -2548,6 +2857,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Sangoma Switchvox",
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "8.4.0.2"
@@ -2580,6 +2893,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Microsoft SQL Server",
+    "product_family": "server",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.0.4259.0",
@@ -2617,6 +2934,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "JFrog Artifactory",
+    "product_family": "dev",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.111.21",
@@ -2639,7 +2960,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -57.1
+      "decay": -57.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2654,6 +2975,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "ownCloud Server",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.13.1"
@@ -2686,6 +3011,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "SonicWall SMA 1000",
+    "product_family": "network",
+    "attack_types": [
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [
       "12.4.3-03526",
@@ -2719,6 +3048,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Chrome",
+    "product_family": "browser",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "152.0.7977.82"
@@ -2751,6 +3084,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Zimbra Collaboration",
+    "product_family": "server",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.1.20"
@@ -2783,6 +3121,11 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "SonicWall SMA 1000",
+    "product_family": "network",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "12.4.3-03526",
@@ -2816,6 +3159,13 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Kestra",
+    "product_family": "dev",
+    "attack_types": [
+      "rce",
+      "injection",
+      "auth",
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.0.45",
@@ -2849,6 +3199,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Windows",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "10.0.14393.9060",
@@ -2868,7 +3222,7 @@
   {
     "id": "CVE-2026-59822",
     "title": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native)…",
-    "score": 15,
+    "score": 14,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2876,7 +3230,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -44.0
+      "decay": -44.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2891,6 +3245,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "LiteLLM",
+    "product_family": "dev",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.84.0"
@@ -2923,6 +3281,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Gitea",
+    "product_family": "dev",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "1.27.1"
@@ -2955,6 +3318,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Microsoft SharePoint Server",
+    "product_family": "server",
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [
       "16.0.19725.20434"
@@ -2987,6 +3354,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Metabase",
+    "product_family": "server",
+    "attack_types": [
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "0.58.24",
@@ -3030,6 +3401,12 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Ray",
+    "product_family": "dev",
+    "attack_types": [
+      "rce",
+      "injection",
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2.52.0"
@@ -3062,6 +3439,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "5.10.106",
@@ -3081,7 +3462,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -85.2
+      "decay": -85.3
     },
     "why_now": "랜섬웨어 캠페인에 사용 중",
     "is_kev": true,
@@ -3096,6 +3477,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "JetBrains TeamCity",
+    "product_family": "dev",
+    "attack_types": [
+      "rce"
+    ],
     "summary_what": null,
     "fix_versions": [
       "2025.11.7",
@@ -3129,6 +3514,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Citrix NetScaler ADC·Gateway",
+    "product_family": "network",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "13.1-37.272",
@@ -3163,6 +3552,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Enterprise Linux",
+    "product_family": "os",
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "http://rhn.redhat.com/errata/RHSA-2015-1482.html"
@@ -3193,6 +3586,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Linux Kernel",
+    "product_family": "os",
+    "attack_types": [
+      "memory"
+    ],
     "summary_what": null,
     "fix_versions": [
       "6.1.177",
@@ -3229,6 +3626,10 @@
     "cvss_version": "3.1",
     "severity": "HIGH",
     "primary_product": "Red Hat ABRT",
+    "product_family": "os",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://github.com/abrt/abrt/commit/3c1b60cfa62d39e5fff5a53a5bc53dae189e740e"
@@ -3259,6 +3660,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "VMware vCenter Server",
+    "product_family": "cloud",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "8.0",
@@ -3293,6 +3698,11 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": "Connection Manager for Objectscale",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.2.63.2"
@@ -3325,6 +3735,10 @@
     "cvss_version": "3.1",
     "severity": "CRITICAL",
     "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -3355,6 +3769,10 @@
     "cvss_version": "3.1",
     "severity": "MEDIUM",
     "primary_product": "JFrog Artifactory",
+    "product_family": "dev",
+    "attack_types": [
+      "path"
+    ],
     "summary_what": null,
     "fix_versions": [
       "7.146.35",
