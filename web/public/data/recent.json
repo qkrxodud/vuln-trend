@@ -1,5 +1,516 @@
 [
   {
+    "id": "CVE-2026-8923",
+    "title": "Zohocorp ManageEngine Eventlog Analyzer and ManageEngine Log360 versions before…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:33.38+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-2613",
+    "title": "The Admin REST API accepts user-supplied input without adequately sanitizing…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:31.963+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-120216",
+    "title": "fastify is a web framework for Node.js",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:31.553+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-120215",
+    "title": "@fastify/cors is the CORS plugin for the Fastify web framework",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:31.413+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.7,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-120214",
+    "title": "@fastify/http-proxy is a Fastify plugin that proxies HTTP requests to an…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:31.277+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-120213",
+    "title": "@fastify/http-proxy is a Fastify plugin that proxies HTTP requests to an…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:31.137+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-117549",
+    "title": "@fastify/secure-session is a session plugin for Fastify that stores an…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.2,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.2, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:30.997+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.2,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-117531",
+    "title": "@fastify/multipart is the multipart form-data and file upload plugin for the…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:30.853+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-117518",
+    "title": "@fastify/reply-from is a Fastify plugin that forwards requests to an upstream…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.2,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.2, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:30.66+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.2,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2025-12544",
+    "title": "The Publisher portal fails to enforce proper validation on uploaded SVG files…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:30.477+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2024-2372",
+    "title": "The affected components accept user-supplied input for constructing redirection…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T20:17:28.46+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-18800",
+    "title": "When an Event Publisher output adapter is configured with properties that are…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T19:17:11.293+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-118871",
+    "title": "SQL injection vulnerability classified as an internal threat level.Attackers…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T19:17:11.123+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2025-13647",
+    "title": "The affected component fails to enforce expected validation constraints on the…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T19:17:10.707+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.8,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2024-7075",
+    "title": "The user search function within the management console fails to properly encode…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-02T19:17:10.47+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.6,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-107457",
     "title": "A memory corruption vulnerability in the QMqttClient class of the Qt MQTT…",
     "score": 2,
@@ -793,7 +1304,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -828,7 +1339,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.4,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 9.4, 최근 공개",
     "is_kev": false,
@@ -896,7 +1407,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -1105,7 +1616,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -1139,7 +1650,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -3145,7 +3656,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 6.3, 최근 공개",
     "is_kev": false,
@@ -3315,7 +3826,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -3341,7 +3852,7 @@
   {
     "id": "CVE-2026-120313",
     "title": "Network-AI before 5.15.5 contains a path traversal vulnerability in…",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -3349,7 +3860,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -3622,7 +4133,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 6.3, 최근 공개",
     "is_kev": false,
@@ -3829,7 +4340,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": 0.0
+      "decay": -0.1
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -4719,7 +5230,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.1
+      "decay": -0.2
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -4754,7 +5265,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.1
+      "decay": -0.2
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -4789,7 +5300,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.1
+      "decay": -0.2
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -6498,7 +7009,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.1
+      "decay": -0.2
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -7352,7 +7863,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -7658,7 +8169,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -7693,7 +8204,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -7829,7 +8340,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 8.4, 최근 공개",
     "is_kev": false,
@@ -8135,7 +8646,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -8203,7 +8714,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 5.5, 최근 공개",
     "is_kev": false,
@@ -8339,7 +8850,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -8749,7 +9260,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -8783,7 +9294,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -8851,7 +9362,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -8953,7 +9464,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9157,7 +9668,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9429,7 +9940,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -9701,7 +10212,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9735,7 +10246,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9769,7 +10280,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9803,7 +10314,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9837,7 +10348,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -9871,7 +10382,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9939,7 +10450,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -9973,7 +10484,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -10007,7 +10518,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -10245,7 +10756,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -10279,7 +10790,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -11439,7 +11950,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -12122,7 +12633,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -13659,7 +14170,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.3, 최근 공개",
     "is_kev": false,
@@ -14309,7 +14820,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.2,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 4.2, 최근 공개",
     "is_kev": false,
@@ -14581,7 +15092,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -15262,7 +15773,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -16045,7 +16556,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -16181,7 +16692,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -16691,7 +17202,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -16725,7 +17236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -16827,7 +17338,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -16998,7 +17509,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -17780,7 +18291,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -17815,7 +18326,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -17951,7 +18462,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.0,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 9.0, 최근 공개",
     "is_kev": false,
@@ -18054,7 +18565,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.4,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
@@ -18224,7 +18735,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -18667,7 +19178,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -19926,7 +20437,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -20028,7 +20539,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -20470,7 +20981,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -21214,7 +21725,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -21385,7 +21896,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.5, 최근 공개",
     "is_kev": false,
@@ -21964,7 +22475,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -22236,7 +22747,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -22270,7 +22781,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -22304,7 +22815,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -22474,7 +22985,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -23593,7 +24104,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -23927,7 +24438,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -23961,7 +24472,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.5, 최근 공개",
     "is_kev": false,
@@ -24131,7 +24642,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.5, 최근 공개",
     "is_kev": false,
@@ -24437,7 +24948,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.4,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.4, 최근 공개",
     "is_kev": false,
@@ -24846,7 +25357,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -25085,7 +25596,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -25179,7 +25690,7 @@
   {
     "id": "CVE-2026-119561",
     "title": "phpMyAdmin through 5.2.3 contains an authentication bypass vulnerability in…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -25187,7 +25698,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.8,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 6.8, 최근 공개",
     "is_kev": false,
@@ -25799,7 +26310,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -25927,7 +26438,7 @@
   {
     "id": "CVE-2026-119424",
     "title": "OPNsense core before 26.7.8 contains a configuration line injection…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -25935,7 +26446,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.8,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 6.8, 최근 공개",
     "is_kev": false,
@@ -26139,7 +26650,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
@@ -26173,7 +26684,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -26241,7 +26752,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -27195,7 +27706,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.4,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.4, 최근 공개",
     "is_kev": false,
@@ -27229,7 +27740,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.4,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 8.4, 최근 공개",
     "is_kev": false,
@@ -27297,7 +27808,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -27501,7 +28012,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 9.5, 최근 공개",
     "is_kev": false,
@@ -27740,7 +28251,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -27808,7 +28319,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -28930,7 +29441,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -28998,7 +29509,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -29032,7 +29543,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -32935,7 +33446,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.3,
-      "decay": -0.2
+      "decay": -0.3
     },
     "why_now": "CVSS 3.3, 최근 공개",
     "is_kev": false,
@@ -34362,7 +34873,7 @@
   {
     "id": "CVE-2026-119284",
     "title": "joserfc is a Python library that provides an implementation of several JSON…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -34370,7 +34881,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.9,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.9, 최근 공개",
     "is_kev": false,
@@ -35973,7 +36484,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.7,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.7, 최근 공개",
     "is_kev": false,
@@ -37255,7 +37766,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -37358,7 +37869,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -38019,7 +38530,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38053,7 +38564,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38087,7 +38598,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38121,7 +38632,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38155,7 +38666,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38329,7 +38840,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -38400,7 +38911,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -38434,7 +38945,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -38845,7 +39356,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38913,7 +39424,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -38947,7 +39458,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -39051,7 +39562,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -39085,7 +39596,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.7,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.7, 최근 공개",
     "is_kev": false,
@@ -39119,7 +39630,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -39155,7 +39666,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -40075,7 +40586,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -40212,7 +40723,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -40450,7 +40961,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -40725,7 +41236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -40759,7 +41270,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -40862,7 +41373,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -40998,7 +41509,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -41202,7 +41713,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -41510,7 +42021,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -41647,7 +42158,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -41749,7 +42260,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -41817,7 +42328,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -41851,7 +42362,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -41885,7 +42396,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42021,7 +42532,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42055,7 +42566,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42123,7 +42634,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42191,7 +42702,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42225,7 +42736,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42259,7 +42770,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -42361,7 +42872,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -42395,7 +42906,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -42905,7 +43416,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43014,7 +43525,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -43050,7 +43561,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43086,7 +43597,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43123,7 +43634,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -43159,7 +43670,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -43300,7 +43811,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43337,7 +43848,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43374,7 +43885,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -43410,7 +43921,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -44112,7 +44623,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -44149,7 +44660,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -44221,7 +44732,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -44293,7 +44804,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -44474,7 +44985,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -44510,7 +45021,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.7,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.7, 최근 공개",
     "is_kev": false,
@@ -44546,7 +45057,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -44617,7 +45128,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -44753,7 +45264,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -44787,7 +45298,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -44923,7 +45434,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -44957,7 +45468,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -44991,7 +45502,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45059,7 +45570,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45127,7 +45638,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45161,7 +45672,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45229,7 +45740,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45263,7 +45774,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45297,7 +45808,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45331,7 +45842,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45365,7 +45876,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45467,7 +45978,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45574,7 +46085,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.4,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.4, 최근 공개",
     "is_kev": false,
@@ -45759,7 +46270,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45827,7 +46338,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45861,7 +46372,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -45895,7 +46406,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -45929,7 +46440,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -46061,7 +46572,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -46697,7 +47208,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -46969,7 +47480,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -47207,7 +47718,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.1, 최근 공개",
     "is_kev": false,
@@ -47241,7 +47752,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -47853,7 +48364,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.1,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 5.1, 최근 공개",
     "is_kev": false,
@@ -48776,7 +49287,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 8.5, 최근 공개",
     "is_kev": false,
@@ -49252,7 +49763,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -49626,7 +50137,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -49932,7 +50443,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.3,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 9.3, 최근 공개",
     "is_kev": false,
@@ -50510,7 +51021,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.0,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 7.0, 최근 공개",
     "is_kev": false,
@@ -51116,7 +51627,7 @@
   {
     "id": "CVE-2026-108686",
     "title": "The WP Post Author  WordPress plugin before 4.2.0 does not restrict the…",
-    "score": 4,
+    "score": 3,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -51124,7 +51635,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -51150,7 +51661,7 @@
   {
     "id": "CVE-2026-108685",
     "title": "The WP Post Author  WordPress plugin before 4.2.0 does not check that the…",
-    "score": 4,
+    "score": 3,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -51158,7 +51669,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -51226,7 +51737,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.0,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 9.0, 최근 공개",
     "is_kev": false,
@@ -52177,7 +52688,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.5,
-      "decay": -0.3
+      "decay": -0.4
     },
     "why_now": "CVSS 3.5, 최근 공개",
     "is_kev": false,
@@ -52279,7 +52790,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -52655,7 +53166,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -52896,7 +53407,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -52930,7 +53441,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -52965,7 +53476,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -52999,7 +53510,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 5.5, 최근 공개",
     "is_kev": false,
@@ -53375,7 +53886,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -53409,7 +53920,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.4,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.4, 최근 공개",
     "is_kev": false,
@@ -54022,7 +54533,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -5.7
+      "decay": -5.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -54068,7 +54579,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.4,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
@@ -54411,7 +54922,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -54681,7 +55192,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.3,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.3, 최근 공개",
     "is_kev": false,
@@ -55158,7 +55669,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.3,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.3, 최근 공개",
     "is_kev": false,
@@ -55192,7 +55703,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -55218,7 +55729,7 @@
   {
     "id": "CVE-2026-118647",
     "title": "n8n before 1.123.85, 2.x before 2.43.5, and 2.44.x before 2.44.1 saves the…",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55226,7 +55737,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -55354,7 +55865,7 @@
   {
     "id": "CVE-2026-118643",
     "title": "n8n before 1.123.85, 2.x before 2.43.5, and 2.44.x before 2.44.1 stores…",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55362,7 +55873,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -55490,7 +56001,7 @@
   {
     "id": "CVE-2026-118633",
     "title": "A path traversal vulnerability allows a remote unauthenticated attacker to…",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55498,7 +56009,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
@@ -55600,7 +56111,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.3,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 6.3, 최근 공개",
     "is_kev": false,
@@ -55626,7 +56137,7 @@
   {
     "id": "CVE-2026-118262",
     "title": "Echo is a Go web framework",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55634,7 +56145,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -55660,7 +56171,7 @@
   {
     "id": "CVE-2026-118261",
     "title": "Echo is a Go web framework",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55668,7 +56179,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -55694,7 +56205,7 @@
   {
     "id": "CVE-2026-118260",
     "title": "Echo is a Go web framework",
-    "score": 8,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -55702,7 +56213,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -56042,7 +56553,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.4,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 4.4, 최근 공개",
     "is_kev": false,
@@ -56076,7 +56587,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
@@ -56178,7 +56689,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -56212,7 +56723,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -56382,7 +56893,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -56586,7 +57097,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -57266,7 +57777,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -57300,7 +57811,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -59481,7 +59992,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -59824,7 +60335,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -59995,7 +60506,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -60225,7 +60736,7 @@
   {
     "id": "CVE-2026-67187",
     "title": "Ninja Forms plugin for WordPress before 3.15.4 contains an incomplete…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -60233,7 +60744,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -60471,7 +60982,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -60644,7 +61155,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -61254,7 +61765,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -61322,7 +61833,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -62074,7 +62585,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -62142,7 +62653,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -62820,7 +63331,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -63140,7 +63651,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -63876,7 +64387,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -63972,7 +64483,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -64100,7 +64611,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -64292,7 +64803,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -64388,7 +64899,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -64420,7 +64931,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -64644,7 +65155,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -65060,7 +65571,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -65892,7 +66403,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -65924,7 +66435,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -66148,7 +66659,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -66212,7 +66723,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
@@ -66436,7 +66947,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.8, 최근 공개",
     "is_kev": false,
@@ -66470,7 +66981,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.9,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 5.9, 최근 공개",
     "is_kev": false,
@@ -66870,7 +67381,7 @@
   {
     "id": "CVE-2026-115223",
     "title": "The Smart Popup by Supsystic WordPress plugin before 2.0.2 does not prevent…",
-    "score": 5,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -66878,7 +67389,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.9,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.9, 최근 공개",
     "is_kev": false,
@@ -67118,7 +67629,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -67152,7 +67663,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -67547,7 +68058,7 @@
   {
     "id": "CVE-2026-86392",
     "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
-    "score": 5,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -67555,7 +68066,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.9,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.9, 최근 공개",
     "is_kev": false,
@@ -68365,7 +68876,7 @@
   {
     "id": "CVE-2026-86396",
     "title": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8…",
-    "score": 9,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -68373,7 +68884,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -70755,7 +71266,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -71808,7 +72319,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -71978,7 +72489,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
@@ -72556,7 +73067,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.4,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.4, 최근 공개",
     "is_kev": false,
@@ -72624,7 +73135,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.4,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.4, 최근 공개",
     "is_kev": false,
@@ -72692,7 +73203,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.4,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.4, 최근 공개",
     "is_kev": false,
@@ -73686,7 +74197,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -74154,7 +74665,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -74226,7 +74737,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -74512,7 +75023,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -74764,7 +75275,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -74944,7 +75455,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75088,7 +75599,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75160,7 +75671,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75196,7 +75707,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75232,7 +75743,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75304,7 +75815,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -75340,7 +75851,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.6,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.6, 최근 공개",
     "is_kev": false,
@@ -76021,7 +76532,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -76464,7 +76975,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -76533,7 +77044,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -77973,7 +78484,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.6,
-      "decay": -0.4
+      "decay": -0.5
     },
     "why_now": "CVSS 3.6, 최근 공개",
     "is_kev": false,
@@ -78553,7 +79064,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.0,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 6.0, 최근 공개",
     "is_kev": false,
@@ -78725,7 +79236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.9,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.9, 최근 공개",
     "is_kev": false,
@@ -79167,7 +79678,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.9,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.9, 최근 공개",
     "is_kev": false,
@@ -79951,7 +80462,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -79985,7 +80496,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.9,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.9, 최근 공개",
     "is_kev": false,
@@ -80019,7 +80530,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.9,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.9, 최근 공개",
     "is_kev": false,
@@ -80291,7 +80802,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -80359,7 +80870,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -80427,7 +80938,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
@@ -80496,7 +81007,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 9.9, 최근 공개",
     "is_kev": false,
@@ -81798,7 +82309,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -81935,7 +82446,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
@@ -82003,7 +82514,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -82037,7 +82548,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -82071,7 +82582,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.1,
-      "decay": -0.6
+      "decay": -0.7
     },
     "why_now": "CVSS 5.1, 최근 공개",
     "is_kev": false,
@@ -82309,7 +82820,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -87721,7 +88232,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
@@ -89191,7 +89702,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.8,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.8, 최근 공개",
     "is_kev": false,
@@ -90247,7 +90758,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -90315,7 +90826,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -90417,7 +90928,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.2,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 4.2, 최근 공개",
     "is_kev": false,
@@ -90549,7 +91060,7 @@
   {
     "id": "CVE-2026-116890",
     "title": "Semantic MediaWiki from 3.0.0 before 7.3.0 contains a missing authorization…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -90557,7 +91068,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -91005,7 +91516,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -91137,7 +91648,7 @@
   {
     "id": "CVE-2026-116873",
     "title": "Semantic MediaWiki from 7.3.0 before 7.3.1 contains a missing authorization…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -91145,7 +91656,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -92371,7 +92882,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
@@ -92747,7 +93258,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.4,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.4, 최근 공개",
     "is_kev": false,
@@ -93873,7 +94384,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.4,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
@@ -93975,7 +94486,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -94077,7 +94588,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.8, 최근 공개",
     "is_kev": false,
@@ -94111,7 +94622,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.8,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.8, 최근 공개",
     "is_kev": false,
@@ -94179,7 +94690,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -94213,7 +94724,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -94383,7 +94894,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 8.2, 최근 공개",
     "is_kev": false,
@@ -94826,7 +95337,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -94860,7 +95371,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -94894,7 +95405,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.1,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
@@ -95065,7 +95576,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -1.2
+      "decay": -1.3
     },
     "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
@@ -95378,7 +95889,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -99085,7 +99596,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.9,
-      "decay": -0.8
+      "decay": -0.9
     },
     "why_now": "CVSS 5.9, 최근 공개",
     "is_kev": false,
@@ -100538,7 +101049,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -0.7
+      "decay": -0.8
     },
     "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
@@ -107850,7 +108361,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.4,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
@@ -108492,7 +109003,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
@@ -109034,7 +109545,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.8,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 3.8, 최근 공개",
     "is_kev": false,
@@ -109648,7 +110159,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -109818,7 +110329,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -109890,7 +110401,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -109962,7 +110473,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -110304,7 +110815,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -110846,7 +111357,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -110918,7 +111429,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -0.9
+      "decay": -1.0
     },
     "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
@@ -111124,7 +111635,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -1.4
+      "decay": -1.5
     },
     "why_now": "CVSS 10.0, 최근 공개",
     "is_kev": false,
@@ -111496,7 +112007,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 3.7,
-      "decay": -0.5
+      "decay": -0.6
     },
     "why_now": "CVSS 3.7, 최근 공개",
     "is_kev": false,
@@ -113102,7 +113613,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.1,
-      "decay": -1.0
+      "decay": -1.1
     },
     "why_now": "CVSS 7.1, 최근 공개",
     "is_kev": false,
@@ -113264,7 +113775,7 @@
   {
     "id": "CVE-2026-65184",
     "title": "The root-privileged `wsserver` terminal-bridge daemon builds a shell command…",
-    "score": 9,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
@@ -113272,7 +113783,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -1.4
+      "decay": -1.5
     },
     "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
@@ -113680,7 +114191,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -1.1
+      "decay": -1.2
     },
     "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
