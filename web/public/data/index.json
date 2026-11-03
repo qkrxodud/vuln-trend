@@ -226,6 +226,40 @@
     "patch_url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
   },
   {
+    "id": "CVE-2026-119977",
+    "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
+    "score": 58,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.1,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-06",
+    "kev_added_at": "2026-11-03",
+    "published_at": "2026-10-31T15:16:34.55+09:00",
+    "poc_count": 0,
+    "epss": 0.0060,
+    "epss_percentile": 0.48,
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "WordPress Core",
+    "product_family": "web_cms",
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를 실행할 수 있는 원격 코드 실행 취약점입니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-21589",
     "title": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며…",
     "score": 56,
@@ -3744,39 +3778,5 @@
       "7.2.63.2"
     ],
     "patch_url": "https://community.progress.com/s/article/LoadMaster-Critical-Security-Bulletin-June-2026-CVE-2026-8037-CVE-2026-33691"
-  },
-  {
-    "id": "CVE-2026-59774",
-    "title": "Gitea's Org-mode markup renderer processes INCLUDE directives supplied to the…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 8.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -6.6
-    },
-    "why_now": "30일 내 악용 확률 상위 2%",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-10-15T00:17:20.677+09:00",
-    "poc_count": 0,
-    "epss": 0.28,
-    "epss_percentile": 0.98,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "path"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
   }
 ]

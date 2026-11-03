@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 228,
-      "count_30d": 1067,
+      "count_7d": 236,
+      "count_30d": 1075,
       "kev_count": 321,
       "top": [
         {
@@ -798,8 +798,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 232,
-      "count_30d": 1395,
+      "count_7d": 246,
+      "count_30d": 1409,
       "kev_count": 302,
       "top": [
         {
@@ -1577,8 +1577,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 286,
-      "count_30d": 1305,
+      "count_7d": 292,
+      "count_30d": 1311,
       "kev_count": 32,
       "top": [
         {
@@ -1642,6 +1642,74 @@
           "cvss": 9.9,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-82158",
+          "title": "Dell Wyse Management Suite, versions prior to 2609.0.0.155, contain an Improper…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:43.823+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-82159",
+          "title": "Dell Wyse Management Suite, versions prior to 2609.0.0.155, contain an Improper…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:43.963+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -2198,84 +2266,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-67073",
-          "title": "HCL BigFix AEX is affected by an Unrestricted File Upload and Improper Access…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-28T22:17:08.283+09:00",
-          "poc_count": 0,
-          "epss": 0.0022,
-          "epss_percentile": 0.13,
-          "cvss": 8.6,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss",
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116797",
-          "title": "Highcharts JS is a JavaScript charting library based on SVG",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T03:17:14.607+09:00",
-          "poc_count": 0,
-          "epss": 0.0032,
-          "epss_percentile": 0.24,
-          "cvss": 8.5,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 619,
-      "count_30d": 4292,
+      "count_7d": 683,
+      "count_30d": 4374,
       "kev_count": 261,
       "top": [
         {
@@ -3012,8 +3010,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 91,
-      "count_30d": 812,
+      "count_7d": 113,
+      "count_30d": 837,
       "kev_count": 27,
       "top": [
         {
@@ -3709,8 +3707,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 300,
-      "count_30d": 3042,
+      "count_7d": 389,
+      "count_30d": 3158,
       "kev_count": 462,
       "top": [
         {
@@ -4488,8 +4486,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 192,
-      "count_30d": 1112,
+      "count_7d": 201,
+      "count_30d": 1123,
       "kev_count": 14,
       "top": [
         {
@@ -4688,6 +4686,74 @@
           "epss": 0.0035,
           "epss_percentile": 0.28,
           "cvss": 8.3,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-111752",
+          "title": "Angular is a development platform for building mobile and desktop web…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:16:57.993+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-111751",
+          "title": "Angular is a development platform for building mobile and desktop web…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:16:57.8+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
           "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
@@ -5106,82 +5172,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120596",
-          "title": "A remotely exploitable denial-of-service vulnerability exists in the TCP…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T02:17:40.003+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.31,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116588",
-          "title": "Datadog dd-trace-py is the Datadog Python APM client",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T07:16:55.34+09:00",
-          "poc_count": 0,
-          "epss": 0.0047,
-          "epss_percentile": 0.40,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 144,
-      "count_30d": 772,
+      "count_7d": 152,
+      "count_30d": 786,
       "kev_count": 161,
       "top": [
         {
@@ -5905,8 +5903,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 91,
-      "count_30d": 470,
+      "count_7d": 101,
+      "count_30d": 480,
       "kev_count": 32,
       "top": [
         {
@@ -6615,10 +6613,44 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 329,
-      "count_30d": 1906,
-      "kev_count": 226,
+      "count_7d": 407,
+      "count_30d": 1991,
+      "kev_count": 227,
       "top": [
+        {
+          "id": "CVE-2026-119977",
+          "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-06",
+          "kev_added_at": "2026-11-03",
+          "published_at": "2026-10-31T15:16:34.55+09:00",
+          "poc_count": 0,
+          "epss": 0.0060,
+          "epss_percentile": 0.48,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "WordPress Core",
+          "product_family": "web_cms",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를 실행할 수 있는 원격 코드 실행 취약점입니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-21589",
           "title": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며…",
@@ -7330,40 +7362,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120442",
-          "title": "ape-volo-admin before 3.6.1 contains an authentication bypass vulnerability…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T00:17:26.49+09:00",
-          "poc_count": 0,
-          "epss": 0.0048,
-          "epss_percentile": 0.41,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     }
@@ -7372,8 +7370,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 54,
-      "count_30d": 2282,
+      "count_7d": 53,
+      "count_30d": 2307,
       "kev_count": 286,
       "top": [
         {
@@ -8042,6 +8040,70 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68820"
         },
         {
+          "id": "CVE-2026-99270",
+          "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp: Fix…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T22:17:24.097+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "os",
+          "attack_types": [],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-99246",
+          "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ntipc…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T21:17:31.03+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "os",
+          "attack_types": [],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-98959",
           "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nbtrfs: fix…",
           "score": 8,
@@ -8072,78 +8134,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-99079",
-          "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/mlx5e…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -2.1
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-23T22:17:32.04+09:00",
-          "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.39,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "os",
-          "attack_types": [],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-99078",
-          "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/mlx5e…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -2.1
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-23T22:17:31.91+09:00",
-          "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.39,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "os",
-          "attack_types": [],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "browser",
       "label": "브라우저",
-      "count_7d": 37,
-      "count_30d": 760,
+      "count_7d": 250,
+      "count_30d": 978,
       "kev_count": 110,
       "top": [
         {
@@ -9627,7 +9625,7 @@
       "label": "웹 CMS·플러그인",
       "count_7d": 529,
       "count_30d": 2234,
-      "kev_count": 23,
+      "kev_count": 24,
       "top": [
         {
           "id": "CVE-2026-48356",
@@ -9662,6 +9660,40 @@
           "summary_what": "위험한 파일 형식의 무제한 업로드 취약점으로, 사용자가 악성 URL이나 손상된 웹페이지와 상호작용하면 공격자가 임의 코드를 실행하고 피해자의 계정 또는 세션을 장악할 수 있습니다.",
           "fix_versions": [],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-73.html"
+        },
+        {
+          "id": "CVE-2026-119977",
+          "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-06",
+          "kev_added_at": "2026-11-03",
+          "published_at": "2026-10-31T15:16:34.55+09:00",
+          "poc_count": 0,
+          "epss": 0.0060,
+          "epss_percentile": 0.48,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "WordPress Core",
+          "product_family": "web_cms",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를 실행할 수 있는 원격 코드 실행 취약점입니다.",
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-87902",
@@ -10305,40 +10337,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-62048",
-          "title": "Improper Neutralization of Special Elements used in an SQL Command ('SQL…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-02T01:18:15.17+09:00",
-          "poc_count": 0,
-          "epss": 0.0034,
-          "epss_percentile": 0.27,
-          "cvss": 9.3,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "injection"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -13258,7 +13256,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 99,
+      "count_30d": 114,
       "kev_count": 98,
       "top": [
         {
@@ -13359,7 +13357,9 @@
           "severity": "CRITICAL",
           "primary_product": "iOS·iPadOS",
           "product_family": "mobile",
-          "attack_types": [],
+          "attack_types": [
+            "path"
+          ],
           "summary_what": null,
           "fix_versions": [
             "26.7.2",
@@ -13731,6 +13731,80 @@
           "patch_url": "https://support.apple.com/en-us/149230"
         },
         {
+          "id": "CVE-2026-112464",
+          "title": "An out-of-bounds write issue was addressed with improved input validation",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-27T06:17:36.393+09:00",
+          "poc_count": 0,
+          "epss": 0.0022,
+          "epss_percentile": 0.13,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "iOS·iPadOS",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "26.7.2",
+            "27.2"
+          ],
+          "patch_url": "https://support.apple.com/en-us/149227"
+        },
+        {
+          "id": "CVE-2026-112461",
+          "title": "An out-of-bounds write issue was addressed with improved bounds checking",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-27T06:17:36.077+09:00",
+          "poc_count": 0,
+          "epss": 0.0022,
+          "epss_percentile": 0.13,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "iOS·iPadOS",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "26.7.2",
+            "27.2"
+          ],
+          "patch_url": "https://support.apple.com/en-us/149227"
+        },
+        {
           "id": "CVE-2026-84599",
           "title": "The issue was addressed with improved memory handling",
           "score": 7,
@@ -13765,6 +13839,43 @@
             "26.7.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149034"
+        },
+        {
+          "id": "CVE-2026-112671",
+          "title": "A resource exhaustion issue was addressed with improved input validation",
+          "score": 6,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-27T06:18:00.613+09:00",
+          "poc_count": 0,
+          "epss": 0.0035,
+          "epss_percentile": 0.28,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "iOS·iPadOS",
+          "product_family": "mobile",
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "26.7.2",
+            "27.2"
+          ],
+          "patch_url": "https://support.apple.com/en-us/149227"
         },
         {
           "id": "CVE-2026-113912",
@@ -13840,8 +13951,8 @@
           "patch_url": "https://support.apple.com/en-us/149227"
         },
         {
-          "id": "CVE-2026-84494",
-          "title": "An out-of-bounds write issue was addressed with improved bounds checking",
+          "id": "CVE-2026-112466",
+          "title": "An out-of-bounds read was addressed with improved input validation",
           "score": 6,
           "score_breakdown": {
             "kev": 0.0,
@@ -13857,123 +13968,13 @@
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-10-27T06:19:59.083+09:00",
+          "published_at": "2026-10-27T06:17:36.567+09:00",
           "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
+          "epss": 0.0023,
+          "epss_percentile": 0.13,
           "cvss": 7.1,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149230"
-        },
-        {
-          "id": "CVE-2026-113913",
-          "title": "An input validation issue was addressed with improved input validation",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:18:08.553+09:00",
-          "poc_count": 0,
-          "epss": 0.0061,
-          "epss_percentile": 0.49,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-112629",
-          "title": "An out-of-bounds read was addressed with improved bounds checking",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:56.477+09:00",
-          "poc_count": 0,
-          "epss": 0.0060,
-          "epss_percentile": 0.48,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-112414",
-          "title": "A stack overflow was addressed with improved input validation",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:31.1+09:00",
-          "poc_count": 0,
-          "epss": 0.0061,
-          "epss_percentile": 0.49,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
           "primary_product": "iOS·iPadOS",
           "product_family": "mobile",
           "attack_types": [
