@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 224,
-      "count_30d": 1063,
+      "count_7d": 228,
+      "count_30d": 1067,
       "kev_count": 321,
       "top": [
         {
@@ -798,8 +798,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 227,
-      "count_30d": 1390,
+      "count_7d": 232,
+      "count_30d": 1395,
       "kev_count": 302,
       "top": [
         {
@@ -1577,10 +1577,46 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 280,
-      "count_30d": 1299,
+      "count_7d": 286,
+      "count_30d": 1305,
       "kev_count": 32,
       "top": [
+        {
+          "id": "CVE-2026-44267",
+          "title": "Elo is a purely functional expression language for no-code tools",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T03:18:03.13+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection",
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-61728",
           "title": "SOCFortress CoPilot focuses on providing a single pane of glass for all your…",
@@ -2232,48 +2268,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118242",
-          "title": "Highcharts JS is a JavaScript charting library based on SVG",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T03:17:14.963+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.23,
-          "cvss": 8.5,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 611,
-      "count_30d": 4277,
+      "count_7d": 619,
+      "count_30d": 4292,
       "kev_count": 261,
       "top": [
         {
@@ -3010,8 +3012,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 88,
-      "count_30d": 806,
+      "count_7d": 91,
+      "count_30d": 812,
       "kev_count": 27,
       "top": [
         {
@@ -3151,6 +3153,40 @@
             "auth",
             "info",
             "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-63417",
+          "title": "Logging Redactor is a Python library designed to redact sensitive data in logs…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T04:18:09.243+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -3667,48 +3703,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-87347",
-          "title": "Vulnerability in the Oracle HTTP Server product of Oracle Fusion Middleware…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-21T07:20:12.357+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.31,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 289,
-      "count_30d": 3021,
+      "count_7d": 300,
+      "count_30d": 3042,
       "kev_count": 462,
       "top": [
         {
@@ -4486,8 +4488,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 188,
-      "count_30d": 1108,
+      "count_7d": 192,
+      "count_30d": 1112,
       "kev_count": 14,
       "top": [
         {
@@ -5178,8 +5180,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 141,
-      "count_30d": 767,
+      "count_7d": 144,
+      "count_30d": 772,
       "kev_count": 161,
       "top": [
         {
@@ -6613,8 +6615,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 321,
-      "count_30d": 1896,
+      "count_7d": 329,
+      "count_30d": 1906,
       "kev_count": 226,
       "top": [
         {
@@ -7371,7 +7373,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 54,
-      "count_30d": 2280,
+      "count_30d": 2282,
       "kev_count": 286,
       "top": [
         {
@@ -11776,6 +11778,43 @@
           "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4188"
         },
         {
+          "id": "CVE-2026-117614",
+          "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier converts the launch commands…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-29T02:18:20.737+09:00",
+          "poc_count": 0,
+          "epss": 0.0044,
+          "epss_percentile": 0.38,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Jenkins",
+          "product_family": "dev",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "2.580.2",
+            "2.588"
+          ],
+          "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4123"
+        },
+        {
           "id": "CVE-2026-117612",
           "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier does not apply its…",
           "score": 8,
@@ -11811,47 +11850,6 @@
             "2.588"
           ],
           "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4125"
-        },
-        {
-          "id": "CVE-2026-110264",
-          "title": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.4,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-22T10:16:57.603+09:00",
-          "poc_count": 0,
-          "epss": 0.013,
-          "epss_percentile": 0.71,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "GitLab",
-          "product_family": "dev",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "18.11.13",
-            "19.0.10",
-            "19.1.9",
-            "19.2.9",
-            "19.3.6",
-            "19.4.3"
-          ],
-          "patch_url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
         }
       ]
     },
@@ -13260,7 +13258,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 97,
+      "count_30d": 99,
       "kev_count": 98,
       "top": [
         {
@@ -13506,7 +13504,9 @@
           "severity": "HIGH",
           "primary_product": "iOS·iPadOS",
           "product_family": "mobile",
-          "attack_types": [],
+          "attack_types": [
+            "auth"
+          ],
           "summary_what": null,
           "fix_versions": [
             "26.7.2"
