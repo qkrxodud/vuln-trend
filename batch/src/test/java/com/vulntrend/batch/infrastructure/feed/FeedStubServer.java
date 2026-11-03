@@ -8,7 +8,9 @@ import java.io.UncheckedIOException;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 
 /**
  * 파일 하나를 내려주는 외부 소스(CISA KEV, FIRST EPSS) 흉내 HTTP 서버. 외부 시스템이라 테스트 안에서 띄운다.
@@ -19,6 +21,7 @@ public class FeedStubServer implements AutoCloseable {
     private final HttpServer server;
     private final Deque<Integer> statuses = new ArrayDeque<>();
     private final Deque<byte[]> bodies = new ArrayDeque<>();
+    private final List<String> paths = new ArrayList<>();
     private int requests;
 
     public FeedStubServer() {
@@ -49,8 +52,14 @@ public class FeedStubServer implements AutoCloseable {
         return requests;
     }
 
+    /** 받은 요청 경로(CVE.org 처럼 주소 끝에 번호를 붙여 부르는 소스) */
+    public List<String> paths() {
+        return List.copyOf(paths);
+    }
+
     private void handle(HttpExchange exchange) throws IOException {
         requests++;
+        paths.add(exchange.getRequestURI().getPath());
         int status = statuses.isEmpty() ? 500 : statuses.poll();
         byte[] body = bodies.isEmpty() ? "no answer prepared".getBytes(StandardCharsets.UTF_8) : bodies.poll();
         exchange.sendResponseHeaders(status, body.length);

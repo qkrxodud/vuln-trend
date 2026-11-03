@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.cvelist.CvelistEnrichService;
 import com.vulntrend.batch.application.export.ExportService;
 import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
@@ -39,11 +40,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.system.CapturedOutput;
+import org.springframework.boot.test.system.OutputCaptureExtension;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -62,6 +66,7 @@ import org.springframework.test.context.DynamicPropertySource;
 @ActiveProfiles("test")
 @Import({PostgresTestConfig.class, DailyRunEndToEndTest.SummarizerStandIn.class})
 @DisplayName("정기 실행 — 끝에서 끝까지")
+@ExtendWith(OutputCaptureExtension.class)
 class DailyRunEndToEndTest {
 
     @TempDir
@@ -70,10 +75,13 @@ class DailyRunEndToEndTest {
     private static NvdStubServer nvd;
     private static NvdStubServer kev;
     private static FeedStubServer epss;
+    private static FeedStubServer cveOrg;
     private static GitRepoFixture site;
 
     @Autowired
     private CollectService collect;
+    @Autowired
+    private CvelistEnrichService cvelist;
     @Autowired
     private ProductAssignService productAssignment;
     @Autowired
@@ -106,6 +114,7 @@ class DailyRunEndToEndTest {
         nvd = new NvdStubServer();
         kev = new NvdStubServer();
         epss = new FeedStubServer();
+        cveOrg = new FeedStubServer();
         site = GitRepoFixture.create(root);
     }
 
@@ -114,6 +123,7 @@ class DailyRunEndToEndTest {
         nvd.close();
         kev.close();
         epss.close();
+        cveOrg.close();
     }
 
     @DynamicPropertySource
@@ -125,6 +135,11 @@ class DailyRunEndToEndTest {
         registry.add("kev.max-attempts", () -> "1");
         registry.add("epss.url", () -> epss.url());
         registry.add("epss.max-attempts", () -> "1");
+        // CVE.org 도 흉내 서버. 답을 넣지 않은 실행은 500 을 받아 보강만 실패하고 게시는 이어진다. 기간은 시험 표본이 늘 들어가게 넓힌다
+        registry.add("cvelist.base-url", () -> cveOrg.url());
+        registry.add("cvelist.lookback", () -> "36500d");
+        registry.add("cvelist.request-interval", () -> "0ms");
+        registry.add("cvelist.max-attempts", () -> "1");
         registry.add("output.dir", () -> site.dataDir().toString());
         registry.add("publish.repo-dir", () -> site.work().toString());
         // 이중 안전장치: .env 가 어떻게 읽히든 원격은 임시 저장소의 origin, 요약은 아래 가짜뿐이다
@@ -164,6 +179,26 @@ class DailyRunEndToEndTest {
                 String.class)).isEqualTo("CVE-2021-44228 은 원격 코드 실행 취약점이다");
         assertThat(jdbc.queryForObject("select array_to_string(attack_types, ',') from vulnerability "
                 + "where vuln_id = 'CVE-2021-44228'", String.class)).isEqualTo("rce,injection,dos");
+    }
+
+    @Test
+    @DisplayName("대표 제품 없는 CVE 의 CNA 제품을 CVE.org 에서 받아 남기고, 받지 못한 CVE 가 있어도 게시는 이어진다")
+    void cvelistEnrichmentIsNotFatal(CapturedOutput output) throws IOException {
+        int before = site.remoteSubjects().size();
+        // 최근 발행 순으로 부른다: Chrome 표본(2026-10-29) → Log4Shell(2021) 은 레코드 없음
+        cveOrg.answer(200, """
+                {"containers": {"cna": {"affected": [{"vendor": "Google", "product": "Chrome",
+                  "defaultStatus": "unaffected", "versions": [{"version": "0", "lessThan": "141.0", "status": "affected",
+                  "versionType": "custom"}]}]}}}""").answer(404, "{}");
+
+        runner().run();
+
+        assertThat(jdbc.queryForList("select vendor || '/' || product from cna_affected where vuln_id = 'CVE-2026-30001'",
+                String.class)).containsExactly("Google/Chrome");
+        assertThat(jdbc.queryForObject("select failures from cvelist_fetch where vuln_id = 'CVE-2021-44228'",
+                Integer.class)).isEqualTo(1);
+        assertThat(output).contains("Cvelist enrichment: 1 fetched, 1 stored, 1 failed");
+        assertThat(site.remoteSubjects()).hasSize(before + 1);
     }
 
     @Test
@@ -274,7 +309,7 @@ class DailyRunEndToEndTest {
     }
 
     private BatchRunner assemble() {
-        return new BatchRunner(collect, productAssignment, attackTypes, score, dailyStat, legacyTitles, summary, export, publishing,
+        return new BatchRunner(collect, cvelist, productAssignment, attackTypes, score, dailyStat, legacyTitles, summary, export, publishing,
                 gate);
     }
 

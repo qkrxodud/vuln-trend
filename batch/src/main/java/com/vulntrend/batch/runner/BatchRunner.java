@@ -3,6 +3,7 @@ package com.vulntrend.batch.runner;
 import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectOutcome;
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.cvelist.CvelistEnrichService;
 import com.vulntrend.batch.application.export.ExportResult;
 import com.vulntrend.batch.application.export.ExportService;
 import com.vulntrend.batch.application.gate.GateCheckService;
@@ -29,6 +30,7 @@ import org.springframework.stereotype.Component;
 /**
  * 정기 실행(launchd 가 2시간마다 부름)의 진입점. 단계 순서와 실패 규칙(기획서 6장)을 적용한다.
  * 수집(1~4) → 하나라도 실패하면 여기서 멈추고 실패한 실행으로 끝낸다(CollectionFailedException)
+ *   → CVE.org 제품 보강(S3a, 비치명 — 실패해도 다음 단계로 간다. 같은 실행의 대표 제품 고르기가 쓰도록 그 앞에 둔다)
  *   → 대표 제품(백엔드 B 2.3) → 공격 유형(약점 번호로, 사이트 분류) → 점수(5) → 일별 통계(6, 최근 14일) → 옛 규칙 제목 다시 계산(B1, 바뀔 것이 없으면 바로 끝)
  *   → 한국어 요약(7, 비치명 — 실패해도 다음 단계로 간다. 제목 재계산 뒤라야 요약 제목이 올라간다)
  *   → 게시 판정(보이는 지문·마지막 게시, 사용자 승인 2026-11-01) → 사이트 데이터 파일(8, 백엔드 B 4.2) → 게시(9, git push).
@@ -49,6 +51,7 @@ import org.springframework.stereotype.Component;
 public class BatchRunner implements CommandLineRunner {
 
     private final CollectService collect;
+    private final CvelistEnrichService cvelist;
     private final ProductAssignService productAssignment;
     private final AttackTypeAssignService attackTypes;
     private final ScoreService score;
@@ -76,6 +79,7 @@ public class BatchRunner implements CommandLineRunner {
             throw new CollectionFailedException("Failed sources: " + collected.failedSources() + ".");
         }
         log.info("Collection finished for {} sources.", collected.getResults().size());
+        cvelist.enrichRecent();
         productAssignment.assignAll();
         attackTypes.assignAll();
         scoreAndPublish();

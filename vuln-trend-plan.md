@@ -198,6 +198,7 @@ create table sync_state (
 
 - 추가 표(V2, 사용자 승인 2026-10-31): `summary_call(vuln_id → vulnerability, called_at timestamptz, outcome GENERATED|DISCARDED|REFUSED|FAILED, model, PK(vuln_id, called_at))` — 하루 요약 상한을 호출 수로 세고, 버리거나 거절된 CVE 를 다시 부르지 않기 위해. FAILED 만 다음 실행에서 다시 고른다. 상위 20건 정렬은 index 와 같은 `trend_score desc nulls last, published_at desc nulls last, vuln_id`, 철회 제외
 - 요약을 남길 때 제목이 "설명에서 만든 임시 제목"이면 what 첫 문장으로 바꾼다(GHSA 등 앞선 출처 제목은 덮지 않음, P3)
+- 추가 표(V6, 사용자 승인 2026-11-02, WBS §11a S3a): `cna_affected(vuln_id → vulnerability, position, vendor, product, package_name, default_status, versions jsonb[{version,status,lessThan,lessThanOrEqual,versionType}], cpes text[], package_url, PK(vuln_id, position))` — CVE.org CVE Services API(`cveawg.mitre.org/api/cve/{id}`)의 containers.cna.affected[] 를 받은 순서대로. `cvelist_fetch(vuln_id PK, attempted_at, answered_at, failures)` — 채운 CVE 는 다시 부르지 않고 못 채운 것은 하루 뒤 재시도. 대상은 대표 제품 없는 최근 30일 CVE, 한 실행 최대 2,000건. 대표 제품 선정에 쓰는 규칙은 S3b
 
 ## 6. 배치 실행 흐름
 
@@ -245,6 +246,8 @@ where rejected = false;
 구현 메모(사용자 확정 2026-10-31, WBS 3.1): ① `kev_added_at` 은 `::timestamp at time zone 'UTC'`(UTC 자정) — `::timestamptz` 는 DB 세션 시간대를 타서 KST 면 9시간 어긋남 ② `now()` 대신 실행 시각(Clock)을 넘김 ③ 기준 시각을 하나도 모르면 감쇠 없이(비율 1) ④ 랜섬웨어 10점은 `is_kev` 일 때만 ⑤ 정렬은 저장된 `trend_score`(numeric(8,2)), 화면 숫자는 소수 1자리로 반올림한 7항의 합(드물게 1점 차이 가능)
 
 - 시간 감쇠: 기준 시각은 `max(published_at, kev_added_at, last_mention_at)` 중 최신. 30일마다 절반. 없으면 Log4Shell류(KEV, EPSS 0.9+, CVSS 10)가 영원히 1위
+- 감쇠 계산 시각(2026-11-02, WBS §11a S4): 실행 시각이 아니라 **하루 기준 시각** = 적용된 EPSS 의 score_date 00:00 UTC. EPSS 가 이틀 넘게 끊기면 KST 오늘 00:00 으로 대체(로그 남김). 같은 날 실행끼리 점수·순위·상세가 같아 전체 재작성은 EPSS 적용 실행 하루 1회
+- JSON 의 `epss` 는 화면 표시 자릿수로 반올림(0.1 이상 2자리·0.01 이상 3자리·그 아래 4자리, HALF_UP), `epss_percentile` 은 0.99 이하 2자리 내림·초과 3자리 올림(표시 결과 불변). 점수 계산은 원래 값
 - KEV에 새로 등재된 오래된 CVE는 `kev_added_at` 때문에 다시 상위로 떠오름 (의도된 동작)
 
 **2단계 점수식 (뉴스 RSS + PoC 추가)**

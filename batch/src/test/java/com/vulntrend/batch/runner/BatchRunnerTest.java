@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 
 import com.vulntrend.batch.application.category.AttackTypeAssignService;
 import com.vulntrend.batch.application.collect.CollectService;
+import com.vulntrend.batch.application.cvelist.CvelistEnrichService;
 import com.vulntrend.batch.application.gate.GateCheckService;
 import com.vulntrend.batch.application.product.ProductAssignService;
 import com.vulntrend.batch.application.publish.SitePublishService;
@@ -20,7 +21,10 @@ import com.vulntrend.batch.domain.publish.PublishRecord;
 import com.vulntrend.batch.domain.summary.SummarySource;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
+import com.vulntrend.batch.fake.FakeCnaAffectedRepository;
 import com.vulntrend.batch.fake.FakeCollector;
+import com.vulntrend.batch.fake.FakeCvelistFetchRepository;
+import com.vulntrend.batch.fake.FakeCvelistSource;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
@@ -36,6 +40,7 @@ import com.vulntrend.batch.global.error.exception.CollectionFailedException;
 import com.vulntrend.batch.global.error.exception.GateCheckFailedException;
 import com.vulntrend.batch.global.error.exception.OutputWriteException;
 import com.vulntrend.batch.global.error.exception.PublishException;
+import com.vulntrend.batch.support.Cvelists;
 import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.time.Clock;
@@ -63,6 +68,10 @@ class BatchRunnerTest {
     private final FakeDailyStatRepository stats = new FakeDailyStatRepository();
     private final FakeAttackTypeAssignmentRepository attackTypes = new FakeAttackTypeAssignmentRepository()
             .with(CveId.from("CVE-2026-0001"), List.of("CWE-79"), List.of());
+    private final FakeCnaAffectedRepository cnaAffected = new FakeCnaAffectedRepository();
+    private FakeCvelistFetchRepository cvelistFetches = new FakeCvelistFetchRepository(cnaAffected)
+            .targeting(CveId.from("CVE-2026-0001"));
+    private final FakeCvelistSource cveOrg = new FakeCvelistSource();
     private LegacyTitleService legacyTitles = new LegacyTitleService(new FakeLegacyTitleRepository(List.of()));
     private FakeSiteDataWriter siteData = new FakeSiteDataWriter();
     private FakePublisher publisher = FakePublisher.working();
@@ -302,6 +311,38 @@ class BatchRunnerTest {
     }
 
     @Test
+    @DisplayName("수집이 끝나면 대표 제품을 고르기 전에 CVE.org 에서 CNA 제품을 받아 둔다")
+    void enrichesBeforeProductAssignment(CapturedOutput output) {
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        String log = output.toString();
+        assertThat(cveOrg.asked()).containsExactly(CveId.from("CVE-2026-0001"));
+        assertThat(log.indexOf("Collection finished")).isLessThan(log.indexOf("Cvelist enrichment:"));
+        assertThat(log.indexOf("Cvelist enrichment:")).isLessThan(log.indexOf("Primary product changed"));
+    }
+
+    @Test
+    @DisplayName("CVE.org 보강이 통째로 실패해도 점수·출력·게시는 이어진다")
+    void enrichmentFailureStillPublishes(CapturedOutput output) {
+        cvelistFetches = new FakeCvelistFetchRepository(cnaAffected).broken();
+
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
+
+        assertThat(output).contains("Cvelist enrichment failed");
+        assertThat(publisher.published()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("수집이 실패한 실행과 지난 기간을 한 번 가져오는 실행에서는 CVE.org 를 부르지 않는다")
+    void noEnrichmentInFailureOrBackfill() {
+        catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3),
+                FakeCollector.failing(SourceName.KEV)).run());
+        runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run("--backfill-days=30");
+
+        assertThat(cveOrg.asked()).isEmpty();
+    }
+
+    @Test
     @DisplayName("수집이 실패한 실행과 지난 기간을 한 번 가져오는 실행에서는 공격 유형을 매기지 않는다")
     void noAttackTypesInFailureOrBackfill() {
         catchThrowable(() -> runnerWith(FakeCollector.loading(SourceName.NVD, 3),
@@ -420,7 +461,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                assignment, new AttackTypeAssignService(attackTypes), new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
+                new CvelistEnrichService(Cvelists.properties(), cveOrg, cvelistFetches, cnaAffected, clock), assignment, new AttackTypeAssignService(attackTypes), new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
                 SiteExports.writingTo(siteData, clock), new SitePublishService(publisher, records, clock), gate);
     }
 }

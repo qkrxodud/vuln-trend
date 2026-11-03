@@ -34,6 +34,7 @@ import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.Cvelists;
 import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
@@ -137,7 +138,8 @@ class NvdBackfillRunTest {
         ProductAssignService assignment = new ProductAssignService(
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
-        return new BatchRunner(new CollectService(List.of(collector), syncStates, clock), assignment,
+        return new BatchRunner(new CollectService(List.of(collector), syncStates, clock),
+                Cvelists.enrichingNothing(clock), assignment,
                 new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
                 new ScoreService(new FakeTrendScoreRepository(0), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),

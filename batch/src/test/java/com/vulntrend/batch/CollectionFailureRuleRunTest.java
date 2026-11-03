@@ -42,6 +42,7 @@ import com.vulntrend.batch.infrastructure.persistence.stat.JdbcDailyStatReposito
 import com.vulntrend.batch.infrastructure.persistence.syncstate.JdbcSyncStateRepository;
 import com.vulntrend.batch.infrastructure.persistence.vulnerability.JdbcVulnerabilityRepository;
 import com.vulntrend.batch.runner.BatchRunner;
+import com.vulntrend.batch.support.Cvelists;
 import com.vulntrend.batch.support.GateChecks;
 import com.vulntrend.batch.support.SiteExports;
 import java.io.IOException;
@@ -190,7 +191,8 @@ class CollectionFailureRuleRunTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         // 일부러 KEV 를 먼저 등록한다 — 실행 순서는 소스 순서(NVD → KEV)를 따라야 한다
-        return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock), assignment,
+        return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock),
+                Cvelists.enrichingNothing(clock), assignment,
                 new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
                 new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
