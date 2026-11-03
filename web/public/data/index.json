@@ -2,7 +2,7 @@
   {
     "id": "CVE-2026-109618",
     "title": "OOM 처리 중 초기화되지 않은 요청 메모리를 정리 과정에서 읽거나 분기해 원격 코드 실행으로 이어질 수 있습니다",
-    "score": 74,
+    "score": 75,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -10,7 +10,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -16.0
+      "decay": -15.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -19,8 +19,8 @@
     "kev_added_at": "2026-10-26",
     "published_at": "2026-10-21T23:17:09.357+09:00",
     "poc_count": 0,
-    "epss": 0.99999,
-    "epss_percentile": 0.99998,
+    "epss": 1.00,
+    "epss_percentile": 1.000,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -41,7 +41,7 @@
   {
     "id": "CVE-2026-109619",
     "title": "요청 메모리가 해제된 뒤에도 초기화되지 않은 전역 상태를 이용해 공격자가 원격 코드 실행을 유발할 수 있습니다",
-    "score": 72,
+    "score": 73,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -49,7 +49,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -15.7
+      "decay": -14.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -58,8 +58,8 @@
     "kev_added_at": "2026-10-26",
     "published_at": "2026-10-21T23:17:09.823+09:00",
     "poc_count": 0,
-    "epss": 0.99999,
-    "epss_percentile": 0.99999,
+    "epss": 1.00,
+    "epss_percentile": 1.000,
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -80,7 +80,7 @@
   {
     "id": "CVE-2026-111497",
     "title": "Brotli 디코더의 버퍼 오버플로 취약점으로 원격 비인증 공격자가 메모리를 손상·노출하거나 서비스 거부 및 임의 코드 실행을 유발할 수…",
-    "score": 71,
+    "score": 72,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -88,7 +88,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -13.5
+      "decay": -12.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -97,8 +97,8 @@
     "kev_added_at": "2026-10-27",
     "published_at": "2026-10-22T23:17:37.19+09:00",
     "poc_count": 0,
-    "epss": 0.82641,
-    "epss_percentile": 0.99667,
+    "epss": 0.83,
+    "epss_percentile": 0.997,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -127,7 +127,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -19.1
+      "decay": -18.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -136,8 +136,8 @@
     "kev_added_at": "2026-10-23",
     "published_at": "2026-10-14T12:17:20.683+09:00",
     "poc_count": 0,
-    "epss": 0.73307,
-    "epss_percentile": 0.99461,
+    "epss": 0.73,
+    "epss_percentile": 0.995,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -156,7 +156,7 @@
   {
     "id": "CVE-2026-48356",
     "title": "위험한 파일 형식의 무제한 업로드 취약점으로, 사용자가 악성 URL이나 손상된 웹페이지와 상호작용하면 공격자가 임의 코드를 실행하고 피해자의…",
-    "score": 61,
+    "score": 62,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -164,7 +164,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.3,
-      "decay": -11.6
+      "decay": -10.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -173,8 +173,8 @@
     "kev_added_at": "2026-10-27",
     "published_at": "2026-07-15T05:17:08.437+09:00",
     "poc_count": 0,
-    "epss": 0.44579,
-    "epss_percentile": 0.98769,
+    "epss": 0.45,
+    "epss_percentile": 0.98,
     "cvss": 9.3,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -190,15 +190,15 @@
   {
     "id": "CVE-2026-97229",
     "title": "정규식 검증 미흡으로 인증되지 않은 공격자가 조작된 CI/CD 정규식을 이용해 GitLab 서버에서 임의 코드를 실행할 수 있습니다",
-    "score": 60,
+    "score": 61,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
-      "epss": 8.2,
+      "epss": 8.3,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -8.1
+      "decay": -7.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -207,8 +207,8 @@
     "kev_added_at": "2026-10-29",
     "published_at": "2026-10-13T11:17:00.84+09:00",
     "poc_count": 0,
-    "epss": 0.27300,
-    "epss_percentile": 0.98060,
+    "epss": 0.28,
+    "epss_percentile": 0.98,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -236,7 +236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -31.7
+      "decay": -31.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -245,8 +245,8 @@
     "kev_added_at": "2026-10-15",
     "published_at": "2026-10-06T07:16:58.423+09:00",
     "poc_count": 0,
-    "epss": 0.99477,
-    "epss_percentile": 0.99943,
+    "epss": 0.99,
+    "epss_percentile": 1.000,
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -266,7 +266,7 @@
   {
     "id": "CVE-2026-46300",
     "title": "skb 병합 과정에서 공유 프래그먼트 표시가 사라져 ESP가 페이지 캐시 데이터를 제자리에서 복호화할 수 있는 커널 취약점입니다",
-    "score": 54,
+    "score": 55,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -274,7 +274,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -8.7
+      "decay": -8.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -283,8 +283,8 @@
     "kev_added_at": "2026-10-28",
     "published_at": "2026-05-23T21:17:02.66+09:00",
     "poc_count": 0,
-    "epss": 0.16130,
-    "epss_percentile": 0.96928,
+    "epss": 0.16,
+    "epss_percentile": 0.96,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -305,6 +305,43 @@
     "patch_url": "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c"
   },
   {
+    "id": "CVE-2026-104935",
+    "title": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다",
+    "score": 53,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 26.7,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.6,
+      "decay": -32.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-10-16",
+    "kev_added_at": "2026-10-13",
+    "published_at": "2026-10-14T01:17:11.64+09:00",
+    "poc_count": 0,
+    "epss": 0.89,
+    "epss_percentile": 0.998,
+    "cvss": 8.6,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "Ivanti Connect Secure",
+    "product_family": "network",
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다.",
+    "fix_versions": [
+      "25.1.1.2",
+      "25.1.3.0"
+    ],
+    "patch_url": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
+  },
+  {
     "id": "CVE-2026-105134",
     "title": "Replication Receiver의 취약점으로 원격 공격자가 OS 명령을 실행할 수 있습니다",
     "score": 53,
@@ -315,7 +352,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -31.9
+      "decay": -31.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -324,8 +361,8 @@
     "kev_added_at": "2026-10-14",
     "published_at": "2026-10-04T16:16:33.48+09:00",
     "poc_count": 0,
-    "epss": 0.81763,
-    "epss_percentile": 0.99645,
+    "epss": 0.82,
+    "epss_percentile": 0.997,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -343,43 +380,6 @@
     "patch_url": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
   },
   {
-    "id": "CVE-2026-104935",
-    "title": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다",
-    "score": 52,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 26.0,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 8.6,
-      "decay": -32.3
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-10-16",
-    "kev_added_at": "2026-10-13",
-    "published_at": "2026-10-14T01:17:11.64+09:00",
-    "poc_count": 0,
-    "epss": 0.86766,
-    "epss_percentile": 0.99742,
-    "cvss": 8.6,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Ivanti Connect Secure",
-    "product_family": "network",
-    "attack_types": [
-      "auth"
-    ],
-    "summary_what": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다.",
-    "fix_versions": [
-      "25.1.1.2",
-      "25.1.3.0"
-    ],
-    "patch_url": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
-  },
-  {
     "id": "CVE-2026-76418",
     "title": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게…",
     "score": 52,
@@ -390,7 +390,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -7.0
+      "decay": -6.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -399,8 +399,8 @@
     "kev_added_at": "2026-10-29",
     "published_at": "2026-10-29T05:18:47.063+09:00",
     "poc_count": 0,
-    "epss": 0.00821,
-    "epss_percentile": 0.57299,
+    "epss": 0.0082,
+    "epss_percentile": 0.57,
     "cvss": 8.6,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -436,7 +436,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.0,
-      "decay": -5.6
+      "decay": -5.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -445,8 +445,8 @@
     "kev_added_at": "2026-10-30",
     "published_at": "2026-10-16T06:17:13.19+09:00",
     "poc_count": 0,
-    "epss": 0.00533,
-    "epss_percentile": 0.45014,
+    "epss": 0.0053,
+    "epss_percentile": 0.45,
     "cvss": 7.0,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -472,7 +472,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -30.6
+      "decay": -30.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -481,8 +481,8 @@
     "kev_added_at": "2026-10-14",
     "published_at": "2026-10-04T16:16:33.087+09:00",
     "poc_count": 0,
-    "epss": 0.79470,
-    "epss_percentile": 0.99603,
+    "epss": 0.79,
+    "epss_percentile": 0.997,
     "cvss": 7.3,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -509,7 +509,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -41.1
+      "decay": -40.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -518,8 +518,8 @@
     "kev_added_at": "2026-10-08",
     "published_at": "2015-05-19T00:59:10.743+09:00",
     "poc_count": 0,
-    "epss": 0.99497,
-    "epss_percentile": 0.99945,
+    "epss": 0.99,
+    "epss_percentile": 1.000,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -535,7 +535,7 @@
   {
     "id": "CVE-2015-5477",
     "title": "TKEY 질의 처리 중 REQUIRE 어설션 실패로 BIND 데몬이 종료되어 원격 서비스 거부가 발생할 수 있습니다",
-    "score": 47,
+    "score": 48,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -543,7 +543,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -40.0
+      "decay": -39.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -552,8 +552,8 @@
     "kev_added_at": "2026-10-08",
     "published_at": "2015-07-29T23:59:05.397+09:00",
     "poc_count": 0,
-    "epss": 0.99584,
-    "epss_percentile": 0.99947,
+    "epss": 1.00,
+    "epss_percentile": 1.000,
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -572,7 +572,7 @@
   {
     "id": "CVE-2016-3081",
     "title": "동적 메서드 호출이 활성화된 Apache Struts에서 연쇄 표현식 관련 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
-    "score": 47,
+    "score": 48,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -580,7 +580,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -39.9
+      "decay": -39.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -589,8 +589,8 @@
     "kev_added_at": "2026-10-08",
     "published_at": "2016-04-26T23:59:02.207+09:00",
     "poc_count": 0,
-    "epss": 0.96525,
-    "epss_percentile": 0.99882,
+    "epss": 0.97,
+    "epss_percentile": 0.999,
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -611,7 +611,7 @@
   {
     "id": "CVE-2026-114625",
     "title": "인증된 사용자가 운영자 권한을 얻어 내부 전용 기능에 접근하고 VCO 호스트와 관리 데이터의 기밀성·무결성·가용성을 침해할 수 있습니다",
-    "score": 46,
+    "score": 47,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -619,7 +619,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -14.0
+      "decay": -13.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -628,8 +628,8 @@
     "kev_added_at": "2026-10-23",
     "published_at": "2026-10-23T06:17:16.87+09:00",
     "poc_count": 0,
-    "epss": 0.01025,
-    "epss_percentile": 0.63573,
+    "epss": 0.010,
+    "epss_percentile": 0.63,
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -657,7 +657,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 2.7,
-      "decay": -7.4
+      "decay": -6.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -666,8 +666,8 @@
     "kev_added_at": "2026-10-28",
     "published_at": "2026-07-30T23:16:57.42+09:00",
     "poc_count": 0,
-    "epss": 0.00689,
-    "epss_percentile": 0.52738,
+    "epss": 0.0069,
+    "epss_percentile": 0.52,
     "cvss": 2.7,
     "cvss_version": "3.1",
     "severity": "LOW",
@@ -693,7 +693,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -22.8
+      "decay": -22.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -702,8 +702,8 @@
     "kev_added_at": "2026-10-16",
     "published_at": "2026-10-16T06:17:00.117+09:00",
     "poc_count": 0,
-    "epss": 0.18950,
-    "epss_percentile": 0.97299,
+    "epss": 0.19,
+    "epss_percentile": 0.97,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -727,7 +727,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -16.7
+      "decay": -16.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -736,8 +736,8 @@
     "kev_added_at": "2026-10-20",
     "published_at": "2026-10-14T14:16:42.633+09:00",
     "poc_count": 0,
-    "epss": 0.02528,
-    "epss_percentile": 0.84897,
+    "epss": 0.025,
+    "epss_percentile": 0.84,
     "cvss": 7.8,
     "cvss_version": "3.0",
     "severity": "HIGH",
@@ -756,9 +756,45 @@
     "patch_url": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
   },
   {
+    "id": "CVE-2026-96652",
+    "title": "Plex Media Server before 1.43.3.10861 allows SSRF via '/player/timeline'",
+    "score": 42,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 3.6,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.3,
+      "decay": -16.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-03",
+    "kev_added_at": "2026-10-20",
+    "published_at": "2026-09-24T02:17:23.363+09:00",
+    "poc_count": 0,
+    "epss": 0.12,
+    "epss_percentile": 0.96,
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": "Plex Media Server",
+    "product_family": "server",
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [
+      "1.43.3.10861"
+    ],
+    "patch_url": "https://forums.plex.tv/t/plex-media-server/30447/711"
+  },
+  {
     "id": "CVE-2026-96656",
     "title": "Plex Media Server before 1.43.3.10861 allows an admin user to write arbitrary…",
-    "score": 41,
+    "score": 42,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -766,7 +802,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -16.4
+      "decay": -16.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -775,8 +811,8 @@
     "kev_added_at": "2026-10-20",
     "published_at": "2026-09-24T02:17:23.84+09:00",
     "poc_count": 0,
-    "epss": 0.01785,
-    "epss_percentile": 0.78303,
+    "epss": 0.018,
+    "epss_percentile": 0.78,
     "cvss": 7.2,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -802,7 +838,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -16.3
+      "decay": -15.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -811,8 +847,8 @@
     "kev_added_at": "2026-10-20",
     "published_at": "2026-09-24T02:17:23.517+09:00",
     "poc_count": 0,
-    "epss": 0.01949,
-    "epss_percentile": 0.80218,
+    "epss": 0.019,
+    "epss_percentile": 0.80,
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -838,7 +874,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.7,
-      "decay": -16.2
+      "decay": -15.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -847,8 +883,8 @@
     "kev_added_at": "2026-10-20",
     "published_at": "2026-10-16T00:17:30.383+09:00",
     "poc_count": 0,
-    "epss": 0.00967,
-    "epss_percentile": 0.61749,
+    "epss": 0.0097,
+    "epss_percentile": 0.61,
     "cvss": 6.7,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -864,45 +900,9 @@
     "patch_url": "https://cert-portal.siemens.com/productcert/html/ssa-580366.html"
   },
   {
-    "id": "CVE-2026-96652",
-    "title": "Plex Media Server before 1.43.3.10861 allows SSRF via '/player/timeline'",
-    "score": 39,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 4.3,
-      "decay": -15.6
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-11-03",
-    "kev_added_at": "2026-10-20",
-    "published_at": "2026-09-24T02:17:23.363+09:00",
-    "poc_count": 0,
-    "epss": 0.01821,
-    "epss_percentile": 0.78759,
-    "cvss": 4.3,
-    "cvss_version": "3.1",
-    "severity": "MEDIUM",
-    "primary_product": "Plex Media Server",
-    "product_family": "server",
-    "attack_types": [
-      "request_forgery"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "1.43.3.10861"
-    ],
-    "patch_url": "https://forums.plex.tv/t/plex-media-server/30447/711"
-  },
-  {
     "id": "CVE-2026-96655",
     "title": "Plex Media Server before 1.43.3.10861 allows an authenticated user to request…",
-    "score": 39,
+    "score": 40,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -910,7 +910,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -15.6
+      "decay": -15.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -919,8 +919,8 @@
     "kev_added_at": "2026-10-20",
     "published_at": "2026-09-24T02:17:23.677+09:00",
     "poc_count": 0,
-    "epss": 0.01637,
-    "epss_percentile": 0.76337,
+    "epss": 0.016,
+    "epss_percentile": 0.76,
     "cvss": 4.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -936,9 +936,46 @@
     "patch_url": "https://forums.plex.tv/t/plex-media-server/30447/711"
   },
   {
+    "id": "CVE-2026-76519",
+    "title": "A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco…",
+    "score": 39,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.6,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": -21.7
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-10-17",
+    "kev_added_at": "2026-10-14",
+    "published_at": "2026-10-15T02:19:10.747+09:00",
+    "poc_count": 0,
+    "epss": 0.022,
+    "epss_percentile": 0.82,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Cisco AsyncOS",
+    "product_family": "network",
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [
+      "15.5.5-014",
+      "16.5.0-780"
+    ],
+    "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp"
+  },
+  {
     "id": "CVE-2026-96951",
     "title": "Improper neutralization of special elements used in a command ('command…",
-    "score": 38,
+    "score": 39,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -946,7 +983,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -23.5
+      "decay": -23.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -955,8 +992,8 @@
     "kev_added_at": "2026-10-13",
     "published_at": "2026-10-14T04:22:07.76+09:00",
     "poc_count": 0,
-    "epss": 0.09813,
-    "epss_percentile": 0.95551,
+    "epss": 0.098,
+    "epss_percentile": 0.95,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -982,46 +1019,9 @@
     "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-96951"
   },
   {
-    "id": "CVE-2026-76519",
-    "title": "A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco…",
-    "score": 38,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.6,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -22.2
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-10-17",
-    "kev_added_at": "2026-10-14",
-    "published_at": "2026-10-15T02:19:10.747+09:00",
-    "poc_count": 0,
-    "epss": 0.02152,
-    "epss_percentile": 0.82149,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "Cisco AsyncOS",
-    "product_family": "network",
-    "attack_types": [
-      "path"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "15.5.5-014",
-      "16.5.0-780"
-    ],
-    "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp"
-  },
-  {
     "id": "CVE-2021-3199",
     "title": "Directory traversal with remote code execution can occur in /upload in…",
-    "score": 37,
+    "score": 38,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1029,7 +1029,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -31.5
+      "decay": -31.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1038,8 +1038,8 @@
     "kev_added_at": "2026-10-08",
     "published_at": "2021-01-27T03:16:28.507+09:00",
     "poc_count": 0,
-    "epss": 0.30244,
-    "epss_percentile": 0.98222,
+    "epss": 0.30,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1057,7 +1057,7 @@
   {
     "id": "CVE-2025-61624",
     "title": "An Improper Limitation of a Pathname to a Restricted Directory ('Path…",
-    "score": 37,
+    "score": 38,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1065,7 +1065,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -19.8
+      "decay": -19.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1074,8 +1074,8 @@
     "kev_added_at": "2026-10-16",
     "published_at": "2026-04-15T01:16:31.3+09:00",
     "poc_count": 0,
-    "epss": 0.01343,
-    "epss_percentile": 0.71359,
+    "epss": 0.013,
+    "epss_percentile": 0.71,
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -1102,7 +1102,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -21.1
+      "decay": -20.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1111,8 +1111,8 @@
     "kev_added_at": "2026-10-14",
     "published_at": "2026-10-15T03:17:07.743+09:00",
     "poc_count": 0,
-    "epss": 0.01740,
-    "epss_percentile": 0.77728,
+    "epss": 0.017,
+    "epss_percentile": 0.77,
     "cvss": 7.2,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1132,7 +1132,7 @@
   {
     "id": "CVE-2026-88771",
     "title": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix…",
-    "score": 36,
+    "score": 37,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1140,7 +1140,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -48.3
+      "decay": -47.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1149,8 +1149,8 @@
     "kev_added_at": "2026-09-27",
     "published_at": "2026-09-28T02:16:56.26+09:00",
     "poc_count": 0,
-    "epss": 0.82160,
-    "epss_percentile": 0.99655,
+    "epss": 0.82,
+    "epss_percentile": 0.997,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1178,7 +1178,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -46.7
+      "decay": -46.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1187,8 +1187,8 @@
     "kev_added_at": "2026-09-27",
     "published_at": "2026-09-28T02:16:56.39+09:00",
     "poc_count": 0,
-    "epss": 0.78162,
-    "epss_percentile": 0.99578,
+    "epss": 0.78,
+    "epss_percentile": 0.996,
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1216,7 +1216,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -52.0
+      "decay": -51.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1225,8 +1225,8 @@
     "kev_added_at": "2026-09-25",
     "published_at": "2026-09-23T02:17:28.31+09:00",
     "poc_count": 0,
-    "epss": 0.95769,
-    "epss_percentile": 0.99872,
+    "epss": 0.96,
+    "epss_percentile": 0.999,
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1276,7 +1276,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -52.4
+      "decay": -52.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1285,8 +1285,8 @@
     "kev_added_at": "2026-09-24",
     "published_at": "2026-08-12T03:18:21.61+09:00",
     "poc_count": 0,
-    "epss": 0.90491,
-    "epss_percentile": 0.99801,
+    "epss": 0.90,
+    "epss_percentile": 0.999,
     "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1304,7 +1304,7 @@
   {
     "id": "CVE-2026-93616",
     "title": "A directory traversal and file upload vulnerability allows an unauthenticated…",
-    "score": 33,
+    "score": 34,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1312,7 +1312,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -54.2
+      "decay": -53.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1321,8 +1321,8 @@
     "kev_added_at": "2026-09-22",
     "published_at": "2026-09-22T22:17:11.963+09:00",
     "poc_count": 0,
-    "epss": 0.91605,
-    "epss_percentile": 0.99813,
+    "epss": 0.92,
+    "epss_percentile": 0.999,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1348,7 +1348,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -38.9
+      "decay": -38.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1357,8 +1357,8 @@
     "kev_added_at": "2026-09-30",
     "published_at": "2026-09-30T22:17:20.247+09:00",
     "poc_count": 0,
-    "epss": 0.38928,
-    "epss_percentile": 0.98589,
+    "epss": 0.39,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1380,7 +1380,7 @@
   {
     "id": "CVE-2026-102489",
     "title": "Zammad versions 6.3.0 to 6.5.4 are vulnerable a session hijack vulnerability…",
-    "score": 31,
+    "score": 32,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1388,7 +1388,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -35.1
+      "decay": -34.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1397,8 +1397,8 @@
     "kev_added_at": "2026-10-02",
     "published_at": "2026-10-01T02:16:40.55+09:00",
     "poc_count": 0,
-    "epss": 0.22478,
-    "epss_percentile": 0.97706,
+    "epss": 0.22,
+    "epss_percentile": 0.97,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1414,7 +1414,7 @@
   {
     "id": "CVE-2023-22894",
     "title": "Strapi through 4.5.5 allows attackers (with access to the admin panel) to…",
-    "score": 30,
+    "score": 31,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1422,7 +1422,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.9,
-      "decay": -25.7
+      "decay": -25.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1431,8 +1431,8 @@
     "kev_added_at": "2026-10-08",
     "published_at": "2023-04-20T01:15:07.303+09:00",
     "poc_count": 0,
-    "epss": 0.04114,
-    "epss_percentile": 0.90780,
+    "epss": 0.041,
+    "epss_percentile": 0.90,
     "cvss": 4.9,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -1450,7 +1450,7 @@
   {
     "id": "CVE-2026-88779",
     "title": "Vulnerability in NetScaler ADC and NetScaler Gateway",
-    "score": 30,
+    "score": 31,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1458,7 +1458,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -30.7
+      "decay": -30.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1467,8 +1467,8 @@
     "kev_added_at": "2026-10-04",
     "published_at": "2026-10-04T13:16:43.68+09:00",
     "poc_count": 0,
-    "epss": 0.11388,
-    "epss_percentile": 0.95995,
+    "epss": 0.11,
+    "epss_percentile": 0.96,
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1488,7 +1488,7 @@
   {
     "id": "CVE-2026-86950",
     "title": "An out-of-bounds write issue was addressed with improved bounds checking",
-    "score": 29,
+    "score": 30,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1496,7 +1496,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -37.3
+      "decay": -37.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1505,8 +1505,8 @@
     "kev_added_at": "2026-09-29",
     "published_at": "2026-09-29T05:17:11.193+09:00",
     "poc_count": 0,
-    "epss": 0.26166,
-    "epss_percentile": 0.97995,
+    "epss": 0.26,
+    "epss_percentile": 0.97,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1533,7 +1533,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -32.3
+      "decay": -31.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1542,8 +1542,8 @@
     "kev_added_at": "2026-10-02",
     "published_at": "2026-10-01T02:16:40.707+09:00",
     "poc_count": 0,
-    "epss": 0.10936,
-    "epss_percentile": 0.95885,
+    "epss": 0.11,
+    "epss_percentile": 0.95,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1569,7 +1569,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -32.4
+      "decay": -32.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1578,8 +1578,8 @@
     "kev_added_at": "2026-10-01",
     "published_at": "2026-10-02T05:17:24.01+09:00",
     "poc_count": 0,
-    "epss": 0.04573,
-    "epss_percentile": 0.91620,
+    "epss": 0.046,
+    "epss_percentile": 0.91,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1599,7 +1599,7 @@
   {
     "id": "CVE-2026-85102",
     "title": "Improper certificate trust validation during VPN negotiation in Check Point…",
-    "score": 28,
+    "score": 29,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1607,7 +1607,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -47.6
+      "decay": -47.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1616,8 +1616,8 @@
     "kev_added_at": "2026-09-22",
     "published_at": "2026-09-09T22:20:43.793+09:00",
     "poc_count": 0,
-    "epss": 0.54140,
-    "epss_percentile": 0.99008,
+    "epss": 0.54,
+    "epss_percentile": 0.991,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1644,7 +1644,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -55.2
+      "decay": -54.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1653,8 +1653,8 @@
     "kev_added_at": "2026-09-16",
     "published_at": "2026-09-17T06:17:21.43+09:00",
     "poc_count": 0,
-    "epss": 0.75599,
-    "epss_percentile": 0.99520,
+    "epss": 0.76,
+    "epss_percentile": 0.996,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1678,7 +1678,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -62.6
+      "decay": -62.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1687,8 +1687,8 @@
     "kev_added_at": "2026-09-11",
     "published_at": "2026-09-12T12:16:30.473+09:00",
     "poc_count": 0,
-    "epss": 0.97355,
-    "epss_percentile": 0.99898,
+    "epss": 0.97,
+    "epss_percentile": 0.999,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1710,7 +1710,7 @@
   {
     "id": "CVE-2026-5430",
     "title": "The JWT authentication mechanism accepts tokens signed with algorithms other…",
-    "score": 26,
+    "score": 27,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1718,7 +1718,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -40.5
+      "decay": -40.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1727,8 +1727,8 @@
     "kev_added_at": "2026-09-24",
     "published_at": "2026-08-06T17:16:33.24+09:00",
     "poc_count": 0,
-    "epss": 0.22390,
-    "epss_percentile": 0.97695,
+    "epss": 0.22,
+    "epss_percentile": 0.97,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1755,7 +1755,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -42.0
+      "decay": -41.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1764,8 +1764,8 @@
     "kev_added_at": "2026-09-22",
     "published_at": "2026-09-23T00:17:24.313+09:00",
     "poc_count": 0,
-    "epss": 0.26550,
-    "epss_percentile": 0.98016,
+    "epss": 0.27,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1789,7 +1789,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -36.7
+      "decay": -36.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1798,8 +1798,8 @@
     "kev_added_at": "2026-09-25",
     "published_at": "2026-08-12T02:18:54.08+09:00",
     "poc_count": 0,
-    "epss": 0.08189,
-    "epss_percentile": 0.94870,
+    "epss": 0.082,
+    "epss_percentile": 0.94,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1826,7 +1826,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -62.6
+      "decay": -62.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1835,8 +1835,8 @@
     "kev_added_at": "2026-09-09",
     "published_at": "2026-03-05T03:16:24.23+09:00",
     "poc_count": 0,
-    "epss": 0.88658,
-    "epss_percentile": 0.99774,
+    "epss": 0.89,
+    "epss_percentile": 0.998,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1860,7 +1860,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -34.2
+      "decay": -34.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1869,8 +1869,8 @@
     "kev_added_at": "2026-09-25",
     "published_at": "2026-09-06T05:17:18.39+09:00",
     "poc_count": 0,
-    "epss": 0.02277,
-    "epss_percentile": 0.83113,
+    "epss": 0.023,
+    "epss_percentile": 0.83,
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -1898,7 +1898,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -37.6
+      "decay": -37.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1907,8 +1907,8 @@
     "kev_added_at": "2026-09-22",
     "published_at": "2026-09-22T17:16:43.047+09:00",
     "poc_count": 0,
-    "epss": 0.01384,
-    "epss_percentile": 0.72201,
+    "epss": 0.014,
+    "epss_percentile": 0.72,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -1935,7 +1935,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -37.8
+      "decay": -37.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1944,8 +1944,8 @@
     "kev_added_at": "2026-09-21",
     "published_at": "2026-06-16T12:16:13.557+09:00",
     "poc_count": 0,
-    "epss": 0.02778,
-    "epss_percentile": 0.86369,
+    "epss": 0.028,
+    "epss_percentile": 0.86,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -1971,7 +1971,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -46.9
+      "decay": -46.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1980,8 +1980,8 @@
     "kev_added_at": "2026-09-14",
     "published_at": "2026-09-15T02:17:51.113+09:00",
     "poc_count": 0,
-    "epss": 0.29543,
-    "epss_percentile": 0.98188,
+    "epss": 0.30,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2009,7 +2009,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -40.0
+      "decay": -39.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2018,8 +2018,8 @@
     "kev_added_at": "2026-09-18",
     "published_at": "2025-09-06T03:15:44.67+09:00",
     "poc_count": 0,
-    "epss": 0.03252,
-    "epss_percentile": 0.88342,
+    "epss": 0.033,
+    "epss_percentile": 0.88,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2048,7 +2048,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -38.9
+      "decay": -38.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2057,8 +2057,8 @@
     "kev_added_at": "2026-09-18",
     "published_at": "2026-06-25T18:16:44.643+09:00",
     "poc_count": 0,
-    "epss": 0.00934,
-    "epss_percentile": 0.60768,
+    "epss": 0.0093,
+    "epss_percentile": 0.60,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2092,7 +2092,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -38.1
+      "decay": -37.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2101,8 +2101,8 @@
     "kev_added_at": "2026-09-16",
     "published_at": "2026-09-18T08:18:53.763+09:00",
     "poc_count": 0,
-    "epss": 0.00233,
-    "epss_percentile": 0.14224,
+    "epss": 0.0023,
+    "epss_percentile": 0.14,
     "cvss": 7.8,
     "cvss_version": "3.0",
     "severity": "HIGH",
@@ -2122,7 +2122,7 @@
   {
     "id": "CVE-2026-19490",
     "title": "Vulnerability in NetScaler ADC and NetScaler Gateway",
-    "score": 19,
+    "score": 20,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2130,7 +2130,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -50.3
+      "decay": -50.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2139,8 +2139,8 @@
     "kev_added_at": "2026-09-09",
     "published_at": "2026-08-19T22:17:45+09:00",
     "poc_count": 0,
-    "epss": 0.32653,
-    "epss_percentile": 0.98343,
+    "epss": 0.33,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2160,7 +2160,7 @@
   {
     "id": "CVE-2026-58704",
     "title": "In Cellular Modem, there is a possible permission bypass due to a logic error…",
-    "score": 19,
+    "score": 20,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2168,7 +2168,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -39.8
+      "decay": -39.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2177,8 +2177,8 @@
     "kev_added_at": "2026-09-16",
     "published_at": "2026-09-16T04:17:32.297+09:00",
     "poc_count": 0,
-    "epss": 0.00625,
-    "epss_percentile": 0.49967,
+    "epss": 0.0063,
+    "epss_percentile": 0.50,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2202,7 +2202,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -66.0
+      "decay": -65.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2211,8 +2211,8 @@
     "kev_added_at": "2026-08-31",
     "published_at": "2026-08-29T01:18:29.6+09:00",
     "poc_count": 0,
-    "epss": 0.84734,
-    "epss_percentile": 0.99707,
+    "epss": 0.85,
+    "epss_percentile": 0.998,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2240,7 +2240,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -36.9
+      "decay": -36.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2249,8 +2249,8 @@
     "kev_added_at": "2026-09-18",
     "published_at": "2025-10-13T23:15:34.737+09:00",
     "poc_count": 0,
-    "epss": 0.01607,
-    "epss_percentile": 0.75894,
+    "epss": 0.016,
+    "epss_percentile": 0.75,
     "cvss": 5.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -2273,7 +2273,7 @@
   {
     "id": "CVE-2026-48710",
     "title": "Starlette is a lightweight ASGI framework/toolkit",
-    "score": 18,
+    "score": 19,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2281,7 +2281,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -59.3
+      "decay": -59.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2290,8 +2290,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-05-27T07:16:44.02+09:00",
     "poc_count": 0,
-    "epss": 0.70288,
-    "epss_percentile": 0.99383,
+    "epss": 0.70,
+    "epss_percentile": 0.994,
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
@@ -2317,7 +2317,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -43.6
+      "decay": -43.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2326,8 +2326,8 @@
     "kev_added_at": "2026-09-11",
     "published_at": "2026-07-28T05:16:39.613+09:00",
     "poc_count": 0,
-    "epss": 0.08643,
-    "epss_percentile": 0.95111,
+    "epss": 0.086,
+    "epss_percentile": 0.95,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2353,7 +2353,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -60.4
+      "decay": -60.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2362,8 +2362,8 @@
     "kev_added_at": "2026-08-31",
     "published_at": "2026-08-29T01:18:31.24+09:00",
     "poc_count": 0,
-    "epss": 0.63047,
-    "epss_percentile": 0.99201,
+    "epss": 0.63,
+    "epss_percentile": 0.993,
     "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2391,7 +2391,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -42.9
+      "decay": -42.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2400,8 +2400,8 @@
     "kev_added_at": "2026-09-11",
     "published_at": "2026-08-13T03:17:29.473+09:00",
     "poc_count": 0,
-    "epss": 0.09805,
-    "epss_percentile": 0.95549,
+    "epss": 0.098,
+    "epss_percentile": 0.95,
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2431,7 +2431,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -44.2
+      "decay": -44.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2440,8 +2440,8 @@
     "kev_added_at": "2026-09-10",
     "published_at": "2026-09-06T05:17:18.703+09:00",
     "poc_count": 0,
-    "epss": 0.06392,
-    "epss_percentile": 0.93671,
+    "epss": 0.064,
+    "epss_percentile": 0.93,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2469,7 +2469,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -42.7
+      "decay": -42.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2478,8 +2478,8 @@
     "kev_added_at": "2026-09-11",
     "published_at": "2026-09-09T05:18:51.147+09:00",
     "poc_count": 0,
-    "epss": 0.00924,
-    "epss_percentile": 0.60428,
+    "epss": 0.0092,
+    "epss_percentile": 0.60,
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2497,7 +2497,7 @@
   {
     "id": "CVE-2026-86218",
     "title": "N-central is vulnerable to a pre-auth remote code execution This issue affects…",
-    "score": 17,
+    "score": 18,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2505,7 +2505,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -47.0
+      "decay": -46.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2514,8 +2514,8 @@
     "kev_added_at": "2026-09-08",
     "published_at": "2026-09-06T12:17:17.373+09:00",
     "poc_count": 0,
-    "epss": 0.15385,
-    "epss_percentile": 0.96785,
+    "epss": 0.15,
+    "epss_percentile": 0.96,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2541,7 +2541,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -67.6
+      "decay": -67.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2550,8 +2550,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2021-12-04T05:15:07.557+09:00",
     "poc_count": 0,
-    "epss": 0.82578,
-    "epss_percentile": 0.99665,
+    "epss": 0.83,
+    "epss_percentile": 0.997,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2577,7 +2577,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -44.0
+      "decay": -43.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2586,8 +2586,8 @@
     "kev_added_at": "2026-09-09",
     "published_at": "2026-01-14T02:15:56.91+09:00",
     "poc_count": 0,
-    "epss": 0.03742,
-    "epss_percentile": 0.89857,
+    "epss": 0.037,
+    "epss_percentile": 0.89,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2616,7 +2616,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -42.0
+      "decay": -41.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2625,8 +2625,8 @@
     "kev_added_at": "2026-09-10",
     "published_at": "2026-09-06T05:17:18.12+09:00",
     "poc_count": 0,
-    "epss": 0.01560,
-    "epss_percentile": 0.75236,
+    "epss": 0.016,
+    "epss_percentile": 0.75,
     "cvss": 8.2,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2654,7 +2654,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -43.2
+      "decay": -43.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2663,8 +2663,8 @@
     "kev_added_at": "2026-09-09",
     "published_at": "2026-09-09T10:17:05.887+09:00",
     "poc_count": 0,
-    "epss": 0.03507,
-    "epss_percentile": 0.89191,
+    "epss": 0.035,
+    "epss_percentile": 0.89,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2690,7 +2690,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -44.6
+      "decay": -44.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2699,8 +2699,8 @@
     "kev_added_at": "2026-09-08",
     "published_at": "2026-09-08T06:17:30.863+09:00",
     "poc_count": 0,
-    "epss": 0.03949,
-    "epss_percentile": 0.90416,
+    "epss": 0.039,
+    "epss_percentile": 0.90,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2727,7 +2727,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -41.9
+      "decay": -41.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2736,8 +2736,8 @@
     "kev_added_at": "2026-09-08",
     "published_at": "2026-09-09T03:21:14.087+09:00",
     "poc_count": 0,
-    "epss": 0.00387,
-    "epss_percentile": 0.32821,
+    "epss": 0.0039,
+    "epss_percentile": 0.32,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2767,7 +2767,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -41.9
+      "decay": -41.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2776,8 +2776,8 @@
     "kev_added_at": "2026-09-08",
     "published_at": "2026-09-09T03:21:00.09+09:00",
     "poc_count": 0,
-    "epss": 0.00393,
-    "epss_percentile": 0.33530,
+    "epss": 0.0039,
+    "epss_percentile": 0.33,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2808,7 +2808,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -66.2
+      "decay": -66.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2817,8 +2817,8 @@
     "kev_added_at": "2026-08-24",
     "published_at": "2026-01-21T07:15:59.11+09:00",
     "poc_count": 0,
-    "epss": 0.73192,
-    "epss_percentile": 0.99457,
+    "epss": 0.73,
+    "epss_percentile": 0.995,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2842,7 +2842,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -50.0
+      "decay": -49.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2851,8 +2851,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-07-18T02:17:18.15+09:00",
     "poc_count": 0,
-    "epss": 0.18979,
-    "epss_percentile": 0.97301,
+    "epss": 0.19,
+    "epss_percentile": 0.97,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2878,7 +2878,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -60.7
+      "decay": -60.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2887,8 +2887,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2019-07-16T04:15:16.983+09:00",
     "poc_count": 0,
-    "epss": 0.57273,
-    "epss_percentile": 0.99074,
+    "epss": 0.57,
+    "epss_percentile": 0.991,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -2919,7 +2919,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -49.0
+      "decay": -48.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2928,8 +2928,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-08-29T05:20:21.293+09:00",
     "poc_count": 0,
-    "epss": 0.14372,
-    "epss_percentile": 0.96617,
+    "epss": 0.14,
+    "epss_percentile": 0.96,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2960,7 +2960,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -57.8
+      "decay": -57.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2969,8 +2969,8 @@
     "kev_added_at": "2026-08-27",
     "published_at": "2023-11-22T07:15:08.613+09:00",
     "poc_count": 0,
-    "epss": 0.43190,
-    "epss_percentile": 0.98725,
+    "epss": 0.43,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -2996,7 +2996,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -47.7
+      "decay": -47.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3005,8 +3005,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-09-02T07:17:13.17+09:00",
     "poc_count": 0,
-    "epss": 0.08043,
-    "epss_percentile": 0.94788,
+    "epss": 0.080,
+    "epss_percentile": 0.94,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3033,7 +3033,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -44.7
+      "decay": -44.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3042,8 +3042,8 @@
     "kev_added_at": "2026-09-04",
     "published_at": "2026-09-04T05:17:24.21+09:00",
     "poc_count": 0,
-    "epss": 0.01806,
-    "epss_percentile": 0.78568,
+    "epss": 0.018,
+    "epss_percentile": 0.78,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3061,7 +3061,7 @@
   {
     "id": "CVE-2026-73570",
     "title": "A remote code execution vulnerability exists in Zimbra Collaboration (ZCS)…",
-    "score": 14,
+    "score": 15,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3069,7 +3069,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.9,
-      "decay": -66.0
+      "decay": -65.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3078,8 +3078,8 @@
     "kev_added_at": "2026-08-21",
     "published_at": "2026-08-14T01:19:06.003+09:00",
     "poc_count": 0,
-    "epss": 0.71663,
-    "epss_percentile": 0.99420,
+    "epss": 0.72,
+    "epss_percentile": 0.995,
     "cvss": 8.9,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3098,7 +3098,7 @@
   {
     "id": "CVE-2026-83549",
     "title": "Post-authentication Improper Neutralization of Special Elements used in an OS…",
-    "score": 14,
+    "score": 15,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3106,7 +3106,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -46.4
+      "decay": -46.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3115,8 +3115,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-09-02T07:17:13.29+09:00",
     "poc_count": 0,
-    "epss": 0.09889,
-    "epss_percentile": 0.95575,
+    "epss": 0.099,
+    "epss_percentile": 0.95,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3144,7 +3144,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -46.3
+      "decay": -46.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3153,8 +3153,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-06-27T07:16:32.113+09:00",
     "poc_count": 0,
-    "epss": 0.02095,
-    "epss_percentile": 0.81662,
+    "epss": 0.021,
+    "epss_percentile": 0.81,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3184,7 +3184,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -69.1
+      "decay": -68.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3193,8 +3193,8 @@
     "kev_added_at": "2026-08-18",
     "published_at": "2026-04-15T03:17:34.767+09:00",
     "poc_count": 0,
-    "epss": 0.77054,
-    "epss_percentile": 0.99551,
+    "epss": 0.77,
+    "epss_percentile": 0.996,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3230,7 +3230,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -44.7
+      "decay": -44.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3239,8 +3239,8 @@
     "kev_added_at": "2026-09-02",
     "published_at": "2026-07-09T05:16:57.683+09:00",
     "poc_count": 0,
-    "epss": 0.00836,
-    "epss_percentile": 0.57722,
+    "epss": 0.0084,
+    "epss_percentile": 0.57,
     "cvss": 8.2,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3266,7 +3266,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -53.3
+      "decay": -53.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3275,8 +3275,8 @@
     "kev_added_at": "2026-08-25",
     "published_at": "2026-08-27T05:17:56.01+09:00",
     "poc_count": 0,
-    "epss": 0.23988,
-    "epss_percentile": 0.97841,
+    "epss": 0.24,
+    "epss_percentile": 0.97,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3295,7 +3295,7 @@
   {
     "id": "CVE-2026-55040",
     "title": "Weak authentication in Microsoft Office SharePoint allows an unauthorized…",
-    "score": 13,
+    "score": 14,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3303,7 +3303,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -66.6
+      "decay": -66.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3312,8 +3312,8 @@
     "kev_added_at": "2026-08-18",
     "published_at": "2026-07-15T03:18:15.413+09:00",
     "poc_count": 0,
-    "epss": 0.69536,
-    "epss_percentile": 0.99363,
+    "epss": 0.70,
+    "epss_percentile": 0.994,
     "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3339,7 +3339,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -76.9
+      "decay": -76.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3348,8 +3348,8 @@
     "kev_added_at": "2026-08-11",
     "published_at": "2026-08-11T03:18:53.3+09:00",
     "poc_count": 0,
-    "epss": 0.98809,
-    "epss_percentile": 0.99927,
+    "epss": 0.99,
+    "epss_percentile": 1.000,
     "cvss": 10.0,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3386,7 +3386,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -64.3
+      "decay": -64.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3395,8 +3395,8 @@
     "kev_added_at": "2026-08-17",
     "published_at": "2025-11-27T08:15:47.927+09:00",
     "poc_count": 0,
-    "epss": 0.60150,
-    "epss_percentile": 0.99136,
+    "epss": 0.60,
+    "epss_percentile": 0.992,
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3424,7 +3424,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -48.3
+      "decay": -48.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3433,8 +3433,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2022-03-26T04:15:10.52+09:00",
     "poc_count": 0,
-    "epss": 0.08859,
-    "epss_percentile": 0.95210,
+    "epss": 0.089,
+    "epss_percentile": 0.95,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3462,7 +3462,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -85.8
+      "decay": -85.6
     },
     "why_now": "랜섬웨어 캠페인에 사용 중",
     "is_kev": true,
@@ -3471,8 +3471,8 @@
     "kev_added_at": "2026-08-05",
     "published_at": "2026-07-28T02:16:38.83+09:00",
     "poc_count": 0,
-    "epss": 0.93558,
-    "epss_percentile": 0.99841,
+    "epss": 0.94,
+    "epss_percentile": 0.999,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3499,7 +3499,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -48.0
+      "decay": -47.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3508,8 +3508,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2026-06-30T22:19:33.45+09:00",
     "poc_count": 0,
-    "epss": 0.01011,
-    "epss_percentile": 0.63179,
+    "epss": 0.010,
+    "epss_percentile": 0.63,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3537,7 +3537,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.4,
-      "decay": -47.9
+      "decay": -47.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3546,8 +3546,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2015-08-11T23:59:07.04+09:00",
     "poc_count": 0,
-    "epss": 0.08503,
-    "epss_percentile": 0.95039,
+    "epss": 0.085,
+    "epss_percentile": 0.95,
     "cvss": 7.4,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3571,7 +3571,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -46.1
+      "decay": -46.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3580,8 +3580,8 @@
     "kev_added_at": "2026-08-27",
     "published_at": "2026-07-04T21:17:02.113+09:00",
     "poc_count": 0,
-    "epss": 0.00709,
-    "epss_percentile": 0.53516,
+    "epss": 0.0071,
+    "epss_percentile": 0.53,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3611,7 +3611,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -47.4
+      "decay": -47.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3620,8 +3620,8 @@
     "kev_added_at": "2026-08-26",
     "published_at": "2015-12-08T03:59:02.23+09:00",
     "poc_count": 0,
-    "epss": 0.05003,
-    "epss_percentile": 0.92237,
+    "epss": 0.050,
+    "epss_percentile": 0.92,
     "cvss": 7.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -3645,7 +3645,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -58.8
+      "decay": -58.7
     },
     "why_now": "랜섬웨어 캠페인에 사용 중",
     "is_kev": true,
@@ -3654,8 +3654,8 @@
     "kev_added_at": "2026-08-18",
     "published_at": "2026-07-30T22:16:53.993+09:00",
     "poc_count": 0,
-    "epss": 0.02565,
-    "epss_percentile": 0.85124,
+    "epss": 0.026,
+    "epss_percentile": 0.85,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3683,7 +3683,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -78.1
+      "decay": -78.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3692,8 +3692,8 @@
     "kev_added_at": "2026-08-07",
     "published_at": "2026-06-04T23:16:45.177+09:00",
     "poc_count": 0,
-    "epss": 0.99794,
-    "epss_percentile": 0.99957,
+    "epss": 1.00,
+    "epss_percentile": 1.000,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3720,7 +3720,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -6.7
+      "decay": -6.6
     },
     "why_now": "30일 내 악용 확률 상위 2%",
     "is_kev": false,
@@ -3729,8 +3729,8 @@
     "kev_added_at": null,
     "published_at": "2026-10-15T00:17:20.677+09:00",
     "poc_count": 0,
-    "epss": 0.28308,
-    "epss_percentile": 0.98120,
+    "epss": 0.28,
+    "epss_percentile": 0.98,
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
@@ -3746,7 +3746,7 @@
   {
     "id": "CVE-2026-66384",
     "title": "An authenticated user may write data outside the intended Docker cache path…",
-    "score": 11,
+    "score": 12,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3754,7 +3754,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.3,
-      "decay": -44.1
+      "decay": -44.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3763,8 +3763,8 @@
     "kev_added_at": "2026-08-27",
     "published_at": "2026-08-13T01:17:14.52+09:00",
     "poc_count": 0,
-    "epss": 0.00665,
-    "epss_percentile": 0.51784,
+    "epss": 0.0067,
+    "epss_percentile": 0.51,
     "cvss": 5.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
