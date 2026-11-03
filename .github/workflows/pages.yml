@@ -1,5 +1,7 @@
 # web/ 를 빌드해 GitHub Pages 로 배포한다 (WBS 5.13, P17). Pages 설정의 Source 는 "GitHub Actions"
-# 배치가 web/public/data/*.json 을 커밋해 push 해도 경로 필터(web/**)에 걸려 다시 배포된다
+# 배치가 web/public/data/*.json 을 커밋해 push 해도 경로 필터(web/**)에 걸려 다시 배포된다.
+# 데이터만 바뀐 push 는 시험 없이 빌드·배포만 한다(WBS §11a S1). 코드가 섞이거나 바뀐 파일을 모르면 지금처럼 시험한다.
+# actions: read 는 마지막 배포 성공 커밋을 찾는 데 쓴다
 name: Deploy web to GitHub Pages
 
 on:
@@ -12,6 +14,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -29,6 +32,23 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # 바뀐 파일 판정: 마지막으로 배포에 성공한 커밋과 비교한다(push 직전 커밋이 아니라).
+      # 대기 중이던 코드 push 가 뒤이은 데이터 push 에 밀려 취소되거나 시험에 실패했어도, 그 코드는 다음 배포에서 시험을 거친다.
+      # 성공 기록이 없거나·수동 실행·그 커밋을 받을 수 없으면 빈 목록 → 시험
+      - name: Changed files since last successful deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          BASE=$(gh run list --workflow pages.yml --branch main --status success --limit 1 --json headSha --jq '.[0].headSha // ""' || true)
+          if [ "$EVENT" = push ] && [ -n "$BASE" ] && git fetch -q --depth=1 origin "$BASE"; then
+            git diff --name-only "$BASE" "$GITHUB_SHA" > "$RUNNER_TEMP/changed.txt"
+          else
+            : > "$RUNNER_TEMP/changed.txt"
+          fi
+          echo "base=${BASE:-none}, $(wc -l < "$RUNNER_TEMP/changed.txt") changed files"
+
       - uses: actions/setup-node@v7
         with:
           node-version: 24
@@ -39,10 +59,16 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v6
 
+      - run: node scripts/ci/run-data-only.ts < "$RUNNER_TEMP/changed.txt"
+        id: scope
+
       - run: npm ci
-      - run: npm run lint
-      - run: npm run format:check
-      - run: npm test
+      - if: steps.scope.outputs.data_only != 'true'
+        run: npm run lint
+      - if: steps.scope.outputs.data_only != 'true'
+        run: npm run format:check
+      - if: steps.scope.outputs.data_only != 'true'
+        run: npm test
 
       - run: npm run build
         env:

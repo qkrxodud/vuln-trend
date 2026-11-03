@@ -153,7 +153,10 @@ describe('/mine 내 제품 화면', () => {
     renderAt('/mine', { products: ['GitLab'], seenAt: null })
     await minePage()
 
-    expect(JSON.parse(localStorage.getItem(MINE_STORAGE_KEY) ?? '{}').seenAt).toBe('2026-11-01T18:49:00+09:00')
+    // 본 때는 화면이 그려진 뒤 효과(useEffect)에서 남긴다. 제목이 보인 순간에는 아직일 수 있어 기다린다 (6f27a19 CI 실패)
+    await waitFor(() =>
+      expect(JSON.parse(localStorage.getItem(MINE_STORAGE_KEY) ?? '{}').seenAt).toBe('2026-11-01T18:49:00+09:00'),
+    )
     await waitFor(() => expect(mineTab()).toHaveAccessibleName('내 제품'))
   })
 

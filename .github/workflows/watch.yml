@@ -1,0 +1,50 @@
+# 외부 생존 감시 (WBS §11a S1). 매시 공개 사이트 meta.json 나이(경고 6시간·위험 26시간)와 Pages 배포 결과를 보고,
+# 기준을 넘으면 라벨 site-watch 이슈를 하나 열고(이미 열려 있으면 상황이 바뀔 때만 댓글), 회복되면 닫는다.
+# 판정은 web/scripts/watch/ 의 함수가 하고(시험 있음), 이 파일은 부르기만 한다
+name: Site watch
+
+on:
+  schedule:
+    # 데이터 커밋(매 홀수 시 :01)과 그 배포가 끝난 뒤를 본다
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '이슈를 쓰지 않고 판정만 보기'
+        type: boolean
+        default: false
+
+# 코드 읽기(checkout)·배포 실행 읽기·이슈 쓰기만
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: site-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            web/package.json
+            web/scripts/watch/
+            web/src/lib/kst-time.ts
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # 도메인을 붙이면 저장소 변수 SITE_URL 을 둔다(끝에 /). 없으면 <owner>.github.io/<repo>/
+      - run: node scripts/watch/run-watch.ts
+        working-directory: web
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          WATCH_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}

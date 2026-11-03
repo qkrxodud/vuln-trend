@@ -11,9 +11,17 @@ export default defineConfig({
     include: ['src/**/*.test.{ts,tsx}', 'scripts/**/*.test.ts'],
     coverage: {
       provider: 'v8',
-      include: ['src/api/**', 'src/hooks/**', 'src/components/**', 'src/lib/**', 'scripts/gate/**'],
+      include: [
+        'src/api/**',
+        'src/hooks/**',
+        'src/components/**',
+        'src/lib/**',
+        'scripts/gate/**',
+        'scripts/watch/**',
+        'scripts/ci/**',
+      ],
       // 브라우저·파일을 다루는 실행 껍데기는 npm run gate:check 로 직접 확인한다
-      exclude: ['scripts/gate/run-*.ts', 'scripts/gate/gate-check.ts'],
+      exclude: ['scripts/*/run-*.ts', 'scripts/gate/gate-check.ts'],
       thresholds: { lines: 90, branches: 90, functions: 90, statements: 90 },
     },
   },
