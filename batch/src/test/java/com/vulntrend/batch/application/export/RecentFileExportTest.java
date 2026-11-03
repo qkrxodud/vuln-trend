@@ -28,7 +28,7 @@ class RecentFileExportTest {
                 TrendListings.unrated("CVE-2026-%05d".formatted(50000 + i))));
         FakeSiteDataWriter writer = new FakeSiteDataWriter();
 
-        Listed listed = new RecentFileExport(repository, writer).write(NOW, NAMES);
+        Listed listed = new RecentFileExport(repository, writer).write(NOW, NOW, NAMES);
 
         assertThat(repository.askedFrom()).isEqualTo(Instant.parse("2026-10-24T15:00:00Z"));
         assertThat(repository.askedTo()).isEqualTo(NOW);

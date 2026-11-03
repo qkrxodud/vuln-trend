@@ -7,9 +7,11 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /** 트렌드 목록 흉내. 넣어 둔 줄을 그대로(순서 유지) 돌려주고, 받은 조건을 기억한다. 최근 발행 목록은 따로 넣을 수 있다(없으면 같은 줄) */
 public class FakeTrendListRepository implements TrendListRepository {
@@ -20,6 +22,7 @@ public class FakeTrendListRepository implements TrendListRepository {
     private Instant askedFrom;
     private Instant askedTo;
     private Instant askedNow;
+    private final Set<Instant> decayTimes = new LinkedHashSet<>();
 
     public FakeTrendListRepository with(TrendListing listing) {
         listings.add(listing);
@@ -30,6 +33,7 @@ public class FakeTrendListRepository implements TrendListRepository {
     public List<TrendListing> top(int limit, Instant now) {
         this.askedLimit = limit;
         this.askedNow = now;
+        decayTimes.add(now);
         return listings.stream().limit(limit).toList();
     }
 
@@ -55,6 +59,7 @@ public class FakeTrendListRepository implements TrendListRepository {
 
     @Override
     public List<TrendListing> listings(Collection<CveId> ids, Instant now) {
+        decayTimes.add(now);
         return listings.stream().filter(listing -> ids.contains(listing.id())).toList();
     }
 
@@ -63,6 +68,7 @@ public class FakeTrendListRepository implements TrendListRepository {
         this.askedFrom = from;
         this.askedTo = to;
         this.askedNow = now;
+        decayTimes.add(now);
         return recent.isEmpty() ? List.copyOf(listings) : List.copyOf(recent);
     }
 
@@ -86,5 +92,10 @@ public class FakeTrendListRepository implements TrendListRepository {
 
     public Instant askedNow() {
         return askedNow;
+    }
+
+    /** 목록·분류·최근 목록을 물을 때 받은 감쇠 기준 시각들(같은 시각이면 하나) */
+    public Set<Instant> decayTimes() {
+        return Set.copyOf(decayTimes);
     }
 }

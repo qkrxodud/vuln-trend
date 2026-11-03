@@ -1,18 +1,22 @@
 package com.vulntrend.batch.support;
 
 import com.vulntrend.batch.application.gate.GateCheckService;
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDocumentSizer;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeGateQueryRepository;
 import com.vulntrend.batch.fake.FakeRepositoryHistory;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendListRepository;
+import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import java.time.Clock;
 import java.time.Instant;
+import java.util.Set;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -43,6 +47,7 @@ public final class GateChecks {
             Clock clock) {
         return new GateCheckService(history, syncStates, new FakeGateQueryRepository(),
                 new FakeSiteDataWriter().sized("search-index.json", 1024L * 1024), new FakeDocumentSizer(),
-                new FakeCveDetailRepository(), new FakeTrendListRepository(), clock);
+                new FakeCveDetailRepository(), new FakeTrendListRepository(),
+                new ScoreService(new FakeTrendScoreRepository(0), new FakeEpssRepository(Set.of()), clock), clock);
     }
 }

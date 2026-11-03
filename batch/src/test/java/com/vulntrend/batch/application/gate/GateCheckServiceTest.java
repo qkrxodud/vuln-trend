@@ -2,6 +2,7 @@ package com.vulntrend.batch.application.gate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.export.dto.SearchListing;
 import com.vulntrend.batch.domain.gate.GateItem;
@@ -16,17 +17,20 @@ import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDocumentSizer;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeGateQueryRepository;
 import com.vulntrend.batch.fake.FakeRepositoryHistory;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
 import com.vulntrend.batch.fake.FakeTrendListRepository;
+import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import java.math.BigDecimal;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -37,6 +41,8 @@ class GateCheckServiceTest {
 
     /** 한국 시각 2026-11-03 10:00 */
     private static final Instant NOW = Instant.parse("2026-11-03T01:00:00Z");
+    /** 마지막 EPSS 날짜 — 감쇠 기준 시각은 2026-11-02T00:00Z 로 실행 시각과 다르다 */
+    private static final LocalDate EPSS_DATE = LocalDate.parse("2026-11-02");
     private static final Instant RAN = Instant.parse("2026-11-03T00:00:00Z");
 
     private final FakeRepositoryHistory history = new FakeRepositoryHistory()
@@ -53,6 +59,7 @@ class GateCheckServiceTest {
             .search(new SearchListing(CveId.from("CVE-2025-90001"), "열 달 전", null),
                     Instant.parse("2026-01-01T00:00:00Z"));
     private final FakeTrendListRepository trends = new FakeTrendListRepository();
+    private final FakeEpssRepository epss = new FakeEpssRepository(Set.of()).appliedOn(EPSS_DATE);
 
     @BeforeEach
     void sources() {
@@ -117,8 +124,8 @@ class GateCheckServiceTest {
 
         assertThat(item.getEvidence()).hasSize(10);
         assertThat(item.getEvidence().get(0)).isEqualTo("1. CVE-2026-41201 67점 = KEV 50.0 · 랜섬 0.0 · EPSS 28.3 · "
-                + "뉴스 0.0 · PoC 0.0 · CVSS 9.8 · 감쇠 -21.3 — CISA 악용 목록 등재 — KEV(랜섬 아님) · EPSS 0.94310 "
-                + "(백분위 0.99900) · CVSS 9.8");
+                + "뉴스 0.0 · PoC 0.0 · CVSS 9.8 · 감쇠 -21.3 — CISA 악용 목록 등재 — KEV(랜섬 아님) · EPSS 0.94 "
+                + "(백분위 0.999) · CVSS 9.8");
     }
 
     @Nested
@@ -180,13 +187,22 @@ class GateCheckServiceTest {
         }
     }
 
+    @Test
+    @DisplayName("점수 상위 10건 점검은 사이트 파일과 같은 감쇠 기준 시각으로 센다")
+    void topTenUsesDecayBase() {
+        service().check();
+
+        assertThat(trends.decayTimes()).containsExactly(Instant.parse("2026-11-02T00:00:00Z"));
+    }
+
     private GateCheckService service() {
         return service(history, files);
     }
 
     private GateCheckService service(FakeRepositoryHistory repositoryHistory, FakeSiteDataWriter siteFiles) {
         return new GateCheckService(repositoryHistory, syncStates, gateQueries, siteFiles, new FakeDocumentSizer(),
-                details, trends, Clock.fixed(NOW, ZoneOffset.UTC));
+                details, trends, new ScoreService(new FakeTrendScoreRepository(0), epss, Clock.fixed(NOW, ZoneOffset.UTC)),
+                Clock.fixed(NOW, ZoneOffset.UTC));
     }
 
     private static TrendListing listing(String id) {

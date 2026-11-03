@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.export.SearchIndexFileExport;
 import com.vulntrend.batch.application.gate.GateCheckService;
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.gate.GateItem;
 import com.vulntrend.batch.domain.gate.GateReport;
@@ -11,8 +12,10 @@ import com.vulntrend.batch.domain.gate.GateStatus;
 import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeRepositoryHistory;
 import com.vulntrend.batch.fake.FakeSyncStateRepository;
+import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import com.vulntrend.batch.global.config.OutputProperties;
 import com.vulntrend.batch.infrastructure.export.JsonFileWriter;
 import com.vulntrend.batch.infrastructure.persistence.PostgresTestConfig;
@@ -27,9 +30,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.time.Clock;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Predicate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -52,6 +57,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 class GateCheckSampleTest {
 
     private static final Instant NOW = Instant.parse("2026-10-31T00:00:00Z");
+    /** 표본을 뜬 시각에 반영돼 있던 EPSS 날짜 — 감쇠 기준 시각이 표본 시각(NOW)과 같다 */
+    private static final FakeEpssRepository SAMPLE_EPSS = new FakeEpssRepository(Set.of())
+            .appliedOn(LocalDate.parse("2026-10-31"));
 
     @Autowired
     private JdbcTrendScoreRepository scores;
@@ -132,6 +140,7 @@ class GateCheckSampleTest {
         FakeRepositoryHistory history = new FakeRepositoryHistory().commit("2026-10-31T09:00", 1200)
                 .commit("2026-10-30T09:00", 900).commit("2026-10-29T09:00", 950).size(80L * 1024 * 1024, 0);
         return new GateCheckService(history, syncStates, gateQueries, files, files, details, trends,
+                new ScoreService(new FakeTrendScoreRepository(0), SAMPLE_EPSS, Clock.fixed(NOW, ZoneOffset.UTC)),
                 Clock.fixed(NOW, ZoneOffset.UTC));
     }
 

@@ -3,19 +3,23 @@ package com.vulntrend.batch.application.export;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.application.stat.KpiService;
 import com.vulntrend.batch.domain.vulnerability.CveId;
 import com.vulntrend.batch.fake.FakeCategoryRepository;
 import com.vulntrend.batch.fake.FakeCveDetailRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeKpiRepository;
 import com.vulntrend.batch.fake.FakeSiteDataWriter;
 import com.vulntrend.batch.fake.FakeTrendListRepository;
+import com.vulntrend.batch.fake.FakeTrendScoreRepository;
 import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -29,6 +33,8 @@ class ExportServiceTest {
     private final FakeSiteDataWriter writer = new FakeSiteDataWriter();
     private final FakeKpiRepository kpi = new FakeKpiRepository();
     private final FakeCategoryRepository categoryCounts = new FakeCategoryRepository();
+    /** 마지막 EPSS 는 하루 전 날짜 — 감쇠 기준 시각은 2026-10-30T00:00Z 로 실행 시각(NOW)과 다르다 */
+    private final FakeEpssRepository epss = new FakeEpssRepository(Set.of()).appliedOn(LocalDate.parse("2026-10-30"));
     private final FakeTrendListRepository trends = new FakeTrendListRepository()
             .with(TrendListings.kev("CVE-2026-41203"))
             .with(TrendListings.unrated("CVE-2026-50001"));
@@ -62,6 +68,7 @@ class ExportServiceTest {
                 new IndexFileExport(listed, writer), new RecentFileExport(listed, writer),
                 new SearchIndexFileExport(details, writer), new CategoriesFileExport(categorized, categoryCounts, writer),
                 new CveDetailFileExport(details, writer), new MetaFileExport(new KpiService(kpi), writer), details,
+                new ScoreService(new FakeTrendScoreRepository(0), epss, Clock.fixed(NOW, ZoneOffset.UTC)),
                 Clock.fixed(NOW, ZoneOffset.UTC)).exportAll();
 
         assertThat(writer.order()).contains("categories.json");
@@ -259,6 +266,45 @@ class ExportServiceTest {
         }
     }
 
+    @Nested
+    @DisplayName("점수의 시간 감쇠는")
+    class DecayBaseOfSiteFiles {
+
+        private static final Instant DECAY_BASE = Instant.parse("2026-10-30T00:00:00Z");
+
+        @Test
+        @DisplayName("주목 목록·최근 7일 목록·분류 상위가 모두 하루 한 번 바뀌는 감쇠 기준 시각으로 센다")
+        void listsUseDecayBase() {
+            service().exportAll();
+
+            assertThat(trends.decayTimes()).containsExactly(DECAY_BASE);
+        }
+
+        @Test
+        @DisplayName("상세 파일도 목록과 같은 감쇠 기준 시각으로 센다")
+        void detailsUseDecayBase() {
+            service().exportAll();
+
+            assertThat(details.decayTimes()).containsExactly(DECAY_BASE);
+        }
+
+        @Test
+        @DisplayName("최근 7일 목록의 구간 끝은 감쇠 기준이 아니라 이번 실행 시각이다")
+        void recentWindowEndsNow() {
+            service().exportAll();
+
+            assertThat(trends.askedTo()).isEqualTo(NOW);
+        }
+
+        @Test
+        @DisplayName("게시 판정에 쓰는 보이는 화면 지문도 같은 감쇠 기준 시각으로 센다")
+        void fingerprintUsesDecayBase() {
+            service().visibleFingerprint();
+
+            assertThat(trends.decayTimes()).containsExactly(DECAY_BASE);
+        }
+    }
+
     private ExportService service() {
         return service(Clock.fixed(NOW, ZoneOffset.UTC));
     }
@@ -278,6 +324,6 @@ class ExportServiceTest {
                 new SearchIndexFileExport(repository, writer), new CategoriesFileExport(listed, categoryCounts, writer),
                 new CveDetailFileExport(repository, writer),
                 new MetaFileExport(new KpiService(kpi), writer), repository,
-                clock);
+                new ScoreService(new FakeTrendScoreRepository(0), epss, clock), clock);
     }
 }

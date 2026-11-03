@@ -8,8 +8,10 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /** 상세·검색 조회 흉내. 넣어 둔 검색 줄·상세·상위 번호·제품 표 이름(기본은 없음)을 돌려주고, 상세를 물은 번호와 상위 몇 건을 물었는지 기억한다 */
 public class FakeCveDetailRepository implements CveDetailRepository {
@@ -21,6 +23,7 @@ public class FakeCveDetailRepository implements CveDetailRepository {
     private final List<CveId> askedDetails = new ArrayList<>();
     private final Map<CveId, Instant> published = new LinkedHashMap<>();
     private int askedTop;
+    private final Set<Instant> decayTimes = new LinkedHashSet<>();
 
     public FakeCveDetailRepository search(SearchListing entry) {
         searchEntries.add(entry);
@@ -76,6 +79,7 @@ public class FakeCveDetailRepository implements CveDetailRepository {
     @Override
     public List<CveDetailListing> details(Collection<CveId> ids, Instant now) {
         askedDetails.addAll(ids);
+        decayTimes.add(now);
         return ids.stream().filter(details::containsKey).map(details::get).toList();
     }
 
@@ -85,5 +89,10 @@ public class FakeCveDetailRepository implements CveDetailRepository {
 
     public int askedTop() {
         return askedTop;
+    }
+
+    /** 상세를 물을 때 받은 감쇠 기준 시각들 */
+    public Set<Instant> decayTimes() {
+        return Set.copyOf(decayTimes);
     }
 }

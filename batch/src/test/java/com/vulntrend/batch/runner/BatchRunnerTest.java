@@ -26,6 +26,7 @@ import com.vulntrend.batch.fake.FakeCollector;
 import com.vulntrend.batch.fake.FakeCvelistFetchRepository;
 import com.vulntrend.batch.fake.FakeCvelistSource;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
@@ -49,6 +50,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -353,11 +355,12 @@ class BatchRunnerTest {
     }
 
     @Test
-    @DisplayName("수집이 모두 끝나면 이번 실행 시각을 기준으로 점수를 다시 매긴다")
+    @DisplayName("수집이 모두 끝나면 하루 한 번 바뀌는 감쇠 기준 시각으로 점수를 다시 매긴다")
     void rescoresAfterCollection() {
         runnerWith(FakeCollector.loading(SourceName.NVD, 3)).run();
 
-        assertThat(scores.rescoredAt()).isEqualTo(NOW);
+        // then: 반영한 EPSS 가 없어 한국 오늘(10-30) 자정
+        assertThat(scores.rescoredAt()).isEqualTo(Instant.parse("2026-10-29T15:00:00Z"));
     }
 
     @Test
@@ -461,7 +464,7 @@ class BatchRunnerTest {
                 new FakeProductAliasCatalog(ProductAliases.of(List.of())),
                 new FakeProductAssignmentRepository(List.of(), List.of()));
         return new BatchRunner(new CollectService(List.of(collectors), new FakeSyncStateRepository(), clock),
-                new CvelistEnrichService(Cvelists.properties(), cveOrg, cvelistFetches, cnaAffected, clock), assignment, new AttackTypeAssignService(attackTypes), new ScoreService(scores, clock), new DailyStatService(stats, clock), legacyTitles, summary,
+                new CvelistEnrichService(Cvelists.properties(), cveOrg, cvelistFetches, cnaAffected, clock), assignment, new AttackTypeAssignService(attackTypes), new ScoreService(scores, new FakeEpssRepository(Set.of()), clock), new DailyStatService(stats, clock), legacyTitles, summary,
                 SiteExports.writingTo(siteData, clock), new SitePublishService(publisher, records, clock), gate);
     }
 }

@@ -17,6 +17,7 @@ import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.domain.vulnerability.SyncState;
 import com.vulntrend.batch.domain.vulnerability.SyncStatus;
 import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
@@ -56,6 +57,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -194,7 +196,7 @@ class CollectionFailureRuleRunTest {
         return new BatchRunner(new CollectService(List.of(kevCollector, nvdCollector), syncStates, clock),
                 Cvelists.enrichingNothing(clock), assignment,
                 new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
-                new ScoreService(trendScores, clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
+                new ScoreService(trendScores, new FakeEpssRepository(Set.of()), clock), new DailyStatService(dailyStats, clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),
                 SiteExports.writingTo(new FakeSiteDataWriter(), clock),

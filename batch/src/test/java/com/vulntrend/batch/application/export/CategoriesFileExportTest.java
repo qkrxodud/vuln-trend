@@ -31,7 +31,7 @@ class CategoriesFileExportTest {
     private final FakeSiteDataWriter writer = new FakeSiteDataWriter();
 
     private CategoriesJson written() {
-        new CategoriesFileExport(trends, counts, writer).write(NOW, NAMES);
+        new CategoriesFileExport(trends, counts, writer).write(NOW, NOW, NAMES);
         return writer.document("categories.json", CategoriesJson.class).orElseThrow();
     }
 
@@ -85,7 +85,7 @@ class CategoriesFileExportTest {
     @Test
     @DisplayName("분류 상위에 든 CVE 를 겹치지 않게 알린다(상세 파일 범위)")
     void listedIds() {
-        Listed listed = new CategoriesFileExport(trends, counts, writer).write(NOW, NAMES);
+        Listed listed = new CategoriesFileExport(trends, counts, writer).write(NOW, NOW, NAMES);
 
         assertThat(listed.getIds()).containsExactlyInAnyOrder(CveId.from("CVE-2026-41203"), CveId.from("CVE-2026-41204"));
     }

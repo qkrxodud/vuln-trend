@@ -48,9 +48,9 @@ public class CategoriesFileExport {
     private final CategoryRepository categories;
     private final SiteDataWriter writer;
 
-    /** 파일을 쓰고, 분류 상위에 든 CVE 를 겹치지 않게 알린다(상세 파일 범위) */
-    public Listed write(Instant now, ProductNames names) {
-        CategoriesJson document = document(now, names);
+    /** 파일을 쓰고, 분류 상위에 든 CVE 를 겹치지 않게 알린다(상세 파일 범위). 건수 구간은 이번 실행 시각, 점수 감쇠는 decayAt(S4) 으로 센다 */
+    public Listed write(Instant now, Instant decayAt, ProductNames names) {
+        CategoriesJson document = document(now, decayAt, names);
         List<CveId> ids = Stream.concat(document.attackTypes().stream(), document.productFamilies().stream())
                 .flatMap(category -> category.top().stream())
                 .map(row -> CveId.from(row.id()))
@@ -71,7 +71,7 @@ public class CategoriesFileExport {
         return tops;
     }
 
-    private CategoriesJson document(Instant now, ProductNames names) {
+    private CategoriesJson document(Instant now, Instant decayAt, ProductNames names) {
         LocalDate today = StatDays.recent(now).getToday();
         Instant weekFrom = today.minusDays(WEEK_DAYS - 1).atStartOfDay(StatDays.CALENDAR).toInstant();
         Instant monthFrom = today.minusDays(MONTH_DAYS - 1).atStartOfDay(StatDays.CALENDAR).toInstant();
@@ -81,7 +81,7 @@ public class CategoriesFileExport {
         Map<String, List<CveId>> byFamily = trends.topIdsByFamily(TOP);
         Set<CveId> listed = Stream.concat(byAttackType.values().stream(), byFamily.values().stream())
                 .flatMap(List::stream).collect(Collectors.toCollection(LinkedHashSet::new));
-        Map<CveId, TrendRowJson> rows = trends.listings(listed, now).stream()
+        Map<CveId, TrendRowJson> rows = trends.listings(listed, decayAt).stream()
                 .collect(Collectors.toMap(TrendListing::id, listing -> TrendRows.from(listing, names)));
         List<CategoryJson> attackTypes = Arrays.stream(AttackType.values())
                 .map(type -> category(type.getKey(), type.getKoreanName(), attackCounts,

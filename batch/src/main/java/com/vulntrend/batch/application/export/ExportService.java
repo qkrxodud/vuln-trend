@@ -1,5 +1,6 @@
 package com.vulntrend.batch.application.export;
 
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.export.CveDetailRepository;
 import com.vulntrend.batch.domain.export.WriteOutcome;
 import com.vulntrend.batch.domain.product.ProductNames;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * 사이트 데이터 내보내기(기획서 6장 8번·7장, WBS 4.2). 러너가 요약 단계 다음에 한 번 부른다. 모든 파일이 같은 실행 시각을 본다.
+ * - 점수 감쇠만은 실행 시각이 아니라 점수 다시 매기기와 같은 감쇠 기준 시각(ScoreService.decayBase, S4)으로 센다 — 같은 날 실행끼리
+ *   목록·상세·보이는 지문의 점수가 같다. 날짜 구간(최근 7일·분류 건수·통계)은 그대로 실행 시각이다
  * - 순서: stats → index → recent → search-index → categories → cve/*.json → meta. meta 의 판 이름이 바뀌어야 프론트가 새 파일을 읽으므로
  *   meta 를 마지막에 쓴다(중간에 실패하면 프론트는 옛 판을 계속 본다)
  * - 상세 파일 생성 범위(P6): index·recent·categories 상위에 실린 CVE + 점수 상위 1000건. 범위 밖 상세 파일은 지운다(R5 철회 건 포함)
@@ -37,6 +40,7 @@ public class ExportService {
     private final CveDetailFileExport details;
     private final MetaFileExport meta;
     private final CveDetailRepository repository;
+    private final ScoreService scores;
     private final Clock clock;
 
     /** 검색 색인까지 다시 만든다(exportAll(true)) */
@@ -50,25 +54,26 @@ public class ExportService {
      */
     public ExportResult exportAll(boolean rebuildSearchIndex) {
         Instant now = clock.instant();
+        Instant decayAt = scores.decayBase().getAt();
         ProductNames names = ProductNames.of(repository.standardProductNames());
         WriteOutcome statsOutcome = stats.write(now);
-        Listed indexed = index.write(now, names);
-        Listed recentListed = recent.write(now, names);
+        Listed indexed = index.write(decayAt, names);
+        Listed recentListed = recent.write(now, decayAt, names);
         WriteOutcome searchOutcome = rebuildSearchIndex || searchIndex.missing()
                 ? searchIndex.write(now, names) : WriteOutcome.UNCHANGED;
-        Listed categorized = categories.write(now, names);
+        Listed categorized = categories.write(now, decayAt, names);
         Set<CveId> scope = new LinkedHashSet<>(indexed.getIds());
         scope.addAll(recentListed.getIds());
         scope.addAll(categorized.getIds());
         scope.addAll(repository.topIds(DETAIL_TOP));
-        DetailFiles detailFiles = details.write(scope, now, names);
+        DetailFiles detailFiles = details.write(scope, decayAt, names);
         WriteOutcome metaOutcome = meta.write(now);
         List<WriteOutcome> lists = List.of(statsOutcome, indexed.getOutcome(), recentListed.getOutcome(), searchOutcome,
                 categorized.getOutcome(), metaOutcome);
         int listWritten = (int) lists.stream().filter(outcome -> outcome == WriteOutcome.WRITTEN).count();
         ExportResult result = ExportResult.of(listWritten + detailFiles.getWritten(),
                 LIST_FILES - listWritten + detailFiles.getUnchanged(), detailFiles.getRemoved(),
-                detailFiles.getWritten() + detailFiles.getUnchanged(), fingerprint(now, names));
+                detailFiles.getWritten() + detailFiles.getUnchanged(), fingerprint(now, decayAt, names));
         log.info("Site data exported: {} written, {} unchanged, {} removed, {} detail files.", result.getWritten(),
                 result.getUnchanged(), result.getRemoved(), result.getDetailFiles());
         return result;
@@ -80,10 +85,10 @@ public class ExportService {
      */
     public String visibleFingerprint() {
         Instant now = clock.instant();
-        return fingerprint(now, ProductNames.of(repository.standardProductNames()));
+        return fingerprint(now, scores.decayBase().getAt(), ProductNames.of(repository.standardProductNames()));
     }
 
-    private String fingerprint(Instant now, ProductNames names) {
-        return VisibleSite.fingerprint(index.rows(now, names), meta.kevAdded(now), categories.topIds());
+    private String fingerprint(Instant now, Instant decayAt, ProductNames names) {
+        return VisibleSite.fingerprint(index.rows(decayAt, names), meta.kevAdded(now), categories.topIds());
     }
 }

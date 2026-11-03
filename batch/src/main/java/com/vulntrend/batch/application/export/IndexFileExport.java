@@ -22,14 +22,14 @@ public class IndexFileExport {
     private final TrendListRepository repository;
     private final SiteDataWriter writer;
 
-    /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6) */
-    public Listed write(Instant now, ProductNames names) {
-        List<TrendRowJson> rows = rows(now, names);
+    /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6). 점수 감쇠는 decayAt(S4) 으로 센다 */
+    public Listed write(Instant decayAt, ProductNames names) {
+        List<TrendRowJson> rows = rows(decayAt, names);
         return Listed.of(writer.write(PATH, rows), rows.stream().map(row -> CveId.from(row.id())).toList());
     }
 
     /** 파일에 실을 줄(쓰지 않는다). 게시할지 정하는 화면 지문도 이 줄로 만든다 */
-    public List<TrendRowJson> rows(Instant now, ProductNames names) {
-        return repository.top(LIMIT, now).stream().map(listing -> TrendRows.from(listing, names)).toList();
+    public List<TrendRowJson> rows(Instant decayAt, ProductNames names) {
+        return repository.top(LIMIT, decayAt).stream().map(listing -> TrendRows.from(listing, names)).toList();
     }
 }

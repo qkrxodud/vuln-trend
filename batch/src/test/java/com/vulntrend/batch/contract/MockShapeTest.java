@@ -87,7 +87,7 @@ class MockShapeTest {
                 .with(listing("CVE-2026-50001", false));
 
         new IndexFileExport(trends, writer).write(NOW, NAMES);
-        new RecentFileExport(trends, writer).write(NOW, NAMES);
+        new RecentFileExport(trends, writer).write(NOW, NOW, NAMES);
 
         assertSameShape(dataDir.resolve("index.json"), "index.json");
         assertSameShape(dataDir.resolve("recent.json"), "recent.json");
@@ -100,7 +100,7 @@ class MockShapeTest {
         FakeCategoryRepository counts = new FakeCategoryRepository().family("browser", 12, 40, 3)
                 .attackType("rce", 30, 90, 7);
 
-        new CategoriesFileExport(trends, counts, writer).write(NOW, NAMES);
+        new CategoriesFileExport(trends, counts, writer).write(NOW, NOW, NAMES);
 
         assertSameShape(dataDir.resolve("categories.json"), "categories.json");
     }

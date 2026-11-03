@@ -44,13 +44,29 @@ class TrendRowsTest {
         assertThat(row.isKev()).isTrue();
         assertThat(row.kevDueDate()).isEqualTo(LocalDate.parse("2026-11-03"));
         assertThat(row.kevAddedAt()).isEqualTo(LocalDate.parse("2026-10-19"));
-        assertThat(row.epss()).isEqualTo(new BigDecimal("0.94310"));
-        assertThat(row.epssPercentile()).isEqualTo(new BigDecimal("0.99900"));
         assertThat(row.cvss()).isEqualTo(new BigDecimal("9.8"));
         assertThat(row.cvssVersion()).isEqualTo("3.1");
         assertThat(row.severity()).isEqualTo("CRITICAL");
         assertThat(row.primaryProduct()).isEqualTo("Chrome");
         assertThat(row.summaryWhat()).isEqualTo("악성 웹페이지로 원격 코드 실행");
+    }
+
+    @Test
+    @DisplayName("악용 확률과 순위는 화면에 보이는 자리까지만 싣는다")
+    void epssInShownDigits() {
+        TrendRowJson row = TrendRows.from(TrendListings.kev("CVE-2026-41203"), NAMES);
+
+        assertThat(row.epss()).isEqualTo(new BigDecimal("0.94"));
+        assertThat(row.epssPercentile()).isEqualTo(new BigDecimal("0.999"));
+    }
+
+    @Test
+    @DisplayName("악용 확률이 아직 없으면 확률과 순위를 비워 둔다")
+    void noEpss() {
+        TrendRowJson row = TrendRows.from(TrendListings.unrated("CVE-2026-50001"), NAMES);
+
+        assertThat(row.epss()).isNull();
+        assertThat(row.epssPercentile()).isNull();
     }
 
     @Test

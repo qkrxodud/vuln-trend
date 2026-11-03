@@ -15,6 +15,7 @@ import com.vulntrend.batch.domain.collect.SourceName;
 import com.vulntrend.batch.domain.product.ProductAliases;
 import com.vulntrend.batch.fake.FakeAttackTypeAssignmentRepository;
 import com.vulntrend.batch.fake.FakeDailyStatRepository;
+import com.vulntrend.batch.fake.FakeEpssRepository;
 import com.vulntrend.batch.fake.FakeLegacyTitleRepository;
 import com.vulntrend.batch.fake.FakeProductAliasCatalog;
 import com.vulntrend.batch.fake.FakeProductAssignmentRepository;
@@ -45,6 +46,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -141,7 +143,7 @@ class NvdBackfillRunTest {
         return new BatchRunner(new CollectService(List.of(collector), syncStates, clock),
                 Cvelists.enrichingNothing(clock), assignment,
                 new AttackTypeAssignService(new FakeAttackTypeAssignmentRepository()),
-                new ScoreService(new FakeTrendScoreRepository(0), clock),
+                new ScoreService(new FakeTrendScoreRepository(0), new FakeEpssRepository(Set.of()), clock),
                 new DailyStatService(new FakeDailyStatRepository(), clock), new LegacyTitleService(new FakeLegacyTitleRepository(List.of())),
                 new SummaryService(new SummaryProperties(20, 40, "", ""), Optional.empty(),
                         new FakeSummaryRepository(List.of(), 0), clock),

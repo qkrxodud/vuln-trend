@@ -26,10 +26,10 @@ public class RecentFileExport {
     private final TrendListRepository repository;
     private final SiteDataWriter writer;
 
-    /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6) */
-    public Listed write(Instant now, ProductNames names) {
+    /** 파일을 쓰고, 실린 CVE 를 순서대로 알린다(상세 파일 생성 범위, P6). 구간은 이번 실행 시각, 점수 감쇠는 decayAt(S4) 으로 센다 */
+    public Listed write(Instant now, Instant decayAt, ProductNames names) {
         Instant from = StatDays.recent(now).getToday().minusDays(DAYS - 1).atStartOfDay(StatDays.CALENDAR).toInstant();
-        List<TrendListing> listings = repository.publishedBetween(from, now, now);
+        List<TrendListing> listings = repository.publishedBetween(from, now, decayAt);
         List<TrendRowJson> rows = listings.stream().map(listing -> TrendRows.from(listing, names)).toList();
         return Listed.of(writer.write(PATH, rows), listings.stream().map(TrendListing::id).toList());
     }

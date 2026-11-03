@@ -4,6 +4,7 @@ import com.vulntrend.batch.application.export.SearchIndexFileExport;
 import com.vulntrend.batch.application.export.TrendRows;
 import com.vulntrend.batch.application.export.dto.ScoreBreakdownJson;
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
+import com.vulntrend.batch.application.score.ScoreService;
 import com.vulntrend.batch.domain.export.CveDetailRepository;
 import com.vulntrend.batch.domain.export.DataFilePath;
 import com.vulntrend.batch.domain.export.DocumentSizer;
@@ -59,6 +60,7 @@ public class GateCheckService {
     private final DocumentSizer sizer;
     private final CveDetailRepository details;
     private final TrendListRepository trends;
+    private final ScoreService scores;
     private final Clock clock;
 
     public GateReport check() {
@@ -74,7 +76,7 @@ public class GateCheckService {
                 repoGrowth(commits),
                 SearchIndexSizeCheck.judge(files.sizeOf(SEARCH_INDEX).map(bytes -> new StoredFileSize(bytes,
                         files.gzipSizeOf(SEARCH_INDEX).orElse(bytes))), estimates(now, names)),
-                topTen(now, names)));
+                topTen(scores.decayBase().getAt(), names)));
     }
 
     private Optional<List<DataCommit>> readCommits() {
@@ -108,8 +110,9 @@ public class GateCheckService {
                 sizer.gzipBytes(document));
     }
 
-    private GateItem topTen(Instant now, ProductNames names) {
-        List<TrendRowJson> rows = trends.top(TOP_TEN, now).stream().map(row -> TrendRows.from(row, names)).toList();
+    /** 사이트 파일과 같은 감쇠 기준 시각(S4)으로 센 상위 10건 */
+    private GateItem topTen(Instant decayAt, ProductNames names) {
+        List<TrendRowJson> rows = trends.top(TOP_TEN, decayAt).stream().map(row -> TrendRows.from(row, names)).toList();
         List<String> lines = IntStream.range(0, rows.size()).mapToObj(i -> line(i + 1, rows.get(i))).toList();
         return GateItem.of("상위 10건 점수 구성", GateStatus.REVIEW, "가중치 조정 판단용 — " + rows.size() + "건", lines);
     }

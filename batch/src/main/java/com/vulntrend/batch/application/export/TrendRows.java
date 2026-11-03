@@ -2,6 +2,7 @@ package com.vulntrend.batch.application.export;
 
 import com.vulntrend.batch.application.export.dto.ScoreBreakdownJson;
 import com.vulntrend.batch.application.export.dto.TrendRowJson;
+import com.vulntrend.batch.domain.enrichment.EpssShown;
 import com.vulntrend.batch.domain.product.ProductNames;
 import com.vulntrend.batch.domain.remedy.FixVersions;
 import com.vulntrend.batch.domain.remedy.PatchLinks;
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
  * - 대표 제품은 사이트에 보일 이름(ProductNames — 표의 이름, 없으면 사람이 읽는 CPE 이름). 저장 원문은 그대로 둔다(B2)
  * - 한 줄 조치: fix_versions 는 대표 제품 범위의 미만 상한(FixVersions), patch_url 은 NVD 태그로 고른 첫 링크(PatchLinks, 없으면 null)
  * - product_family·attack_types 는 분류 키(사용자 결정 2026-11-01). 분류 전이면 null·빈 목록. 이름은 categories.json 에만
+ * - epss·epss_percentile 은 화면이 보이는 자리까지만(EpssShown, S4). 점수 구성의 EPSS 항과 why_now 는 원래 값으로 센다
  * - published_at 은 공개 시각(한국 시각), 상세와 같은 값(사용자 결정 2026-11-01 공개일 필터·최신순)
  * - KEV 가 아니면 kev_ransomware 는 false, kev_due_date·kev_added_at 은 null(계약). kev_added_at 은 v6 화면용(사용자 승인 2026-11-01) 제목이 아직 없으면 CVE 번호
  */
@@ -39,8 +41,9 @@ public final class TrendRows {
                 ScoreBreakdownJson.scoreOf(listing.breakdown()), ScoreBreakdownJson.from(listing.breakdown()),
                 WhyNowTemplate.phraseOf(facts), listing.kev(), ransomware,
                 listing.kev() ? listing.kevDueDate() : null,
-                listing.kev() ? listing.kevAddedAt() : null, koreanTime(listing.publishedAt()), listing.pocCount(), listing.epss(),
-                listing.epssPercentile(), listing.cvss(), listing.cvssVersion(), listing.severity().name(),
+                listing.kev() ? listing.kevAddedAt() : null, koreanTime(listing.publishedAt()), listing.pocCount(),
+                Optional.ofNullable(listing.epss()).map(EpssShown::probability).orElse(null),
+                Optional.ofNullable(listing.epssPercentile()).map(EpssShown::percentile).orElse(null), listing.cvss(), listing.cvssVersion(), listing.severity().name(),
                 Optional.ofNullable(listing.primaryProduct()).map(names::shown).orElse(null), listing.productFamily(),
                 List.copyOf(listing.attackTypes()),
                 listing.summaryWhat(),

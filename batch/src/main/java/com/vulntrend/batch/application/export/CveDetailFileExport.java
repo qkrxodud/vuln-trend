@@ -50,14 +50,14 @@ public class CveDetailFileExport {
     private final CveDetailRepository repository;
     private final SiteDataWriter writer;
 
-    public DetailFiles write(Collection<CveId> scope, Instant now, ProductNames names) {
+    public DetailFiles write(Collection<CveId> scope, Instant decayAt, ProductNames names) {
         List<CveId> ids = List.copyOf(scope);
         Set<DataFilePath> kept = new HashSet<>();
         int written = 0;
         int unchanged = 0;
         for (int from = 0; from < ids.size(); from += CHUNK) {
             List<CveId> chunk = ids.subList(from, Math.min(from + CHUNK, ids.size()));
-            for (CveDetailListing detail : repository.details(chunk, now)) {
+            for (CveDetailListing detail : repository.details(chunk, decayAt)) {
                 DataFilePath path = pathOf(detail.row().id());
                 kept.add(path);
                 WriteOutcome outcome = writer.write(path, json(detail, names));
