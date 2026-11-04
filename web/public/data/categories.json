@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 245,
-      "count_30d": 1084,
+      "count_7d": 248,
+      "count_30d": 1087,
       "kev_count": 321,
       "top": [
         {
@@ -798,8 +798,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 257,
-      "count_30d": 1421,
+      "count_7d": 261,
+      "count_30d": 1425,
       "kev_count": 302,
       "top": [
         {
@@ -1577,8 +1577,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 296,
-      "count_30d": 1316,
+      "count_7d": 297,
+      "count_30d": 1317,
       "kev_count": 32,
       "top": [
         {
@@ -2272,8 +2272,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 721,
-      "count_30d": 4528,
+      "count_7d": 731,
+      "count_30d": 4538,
       "kev_count": 261,
       "top": [
         {
@@ -3010,8 +3010,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 116,
-      "count_30d": 865,
+      "count_7d": 117,
+      "count_30d": 866,
       "kev_count": 27,
       "top": [
         {
@@ -3711,8 +3711,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 393,
-      "count_30d": 2954,
+      "count_7d": 402,
+      "count_30d": 2963,
       "kev_count": 462,
       "top": [
         {
@@ -4490,8 +4490,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 209,
-      "count_30d": 1132,
+      "count_7d": 211,
+      "count_30d": 1133,
       "kev_count": 14,
       "top": [
         {
@@ -5907,8 +5907,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 105,
-      "count_30d": 493,
+      "count_7d": 106,
+      "count_30d": 494,
       "kev_count": 32,
       "top": [
         {
@@ -6617,8 +6617,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 429,
-      "count_30d": 2100,
+      "count_7d": 437,
+      "count_30d": 2108,
       "kev_count": 227,
       "top": [
         {
@@ -9593,8 +9593,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 529,
-      "count_30d": 2234,
+      "count_7d": 563,
+      "count_30d": 2268,
       "kev_count": 24,
       "top": [
         {
@@ -12533,8 +12533,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 8,
-      "count_30d": 133,
+      "count_7d": 16,
+      "count_30d": 141,
       "kev_count": 136,
       "top": [
         {
@@ -12566,6 +12566,41 @@
           "product_family": "ics_iot",
           "attack_types": [
             "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-16511",
+          "title": "Two RTIO syscall verifiers, in subsys/rtio/rtio_syscalls.c…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T15:17:04.14+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth",
+            "memory"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -12630,6 +12665,108 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-87040",
+          "title": "The nRF link-layer receive paths of the open-source Bluetooth LE Controller did…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T15:17:06.773+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-87041",
+          "title": "The RTIO submission-queue verifier rtio_vrfy_sqe() in…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T15:17:06.943+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-87039",
+          "title": "The user-mode syscall verifier z_vrfy_i2s_configure() in…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T15:17:06.623+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
@@ -12847,6 +12984,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-87038",
+          "title": "The user-mode verification handler for the i3c_transfer() system call…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T15:17:06.42+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.0,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-82961",
           "title": "The GPIO syscall handlers in drivers/gpio/gpio_handlers.c did not validate the…",
           "score": 7,
@@ -13041,176 +13212,6 @@
           "cvss": 8.2,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-76788",
-          "title": "The OSDP Control Panel reply parser cp_decode_response() in…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-20T06:18:01.38+09:00",
-          "poc_count": 0,
-          "epss": 0.0025,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-111594",
-          "title": "InterSystems IRIS for Health has TLS/SSL encryption turned off by default…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": -1.8
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-23T07:18:01.06+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-79979",
-          "title": "The arm64 MMU backend invalidates a single virtual address from the TLB with…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.6
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-24T05:17:27.783+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-97851",
-          "title": "The storage status-change REST service allows location records still associated…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -3.0
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-17T00:17:38.49+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.28,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-105279",
-          "title": "In the default configuration, the archive accepts DICOM associations from an…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -3.0
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-17T00:17:04.13+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.19,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
