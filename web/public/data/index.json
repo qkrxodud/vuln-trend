@@ -286,6 +286,42 @@
     "patch_url": "https://core.trac.wordpress.org/browser/tags/7.1.4/src/wp-admin/includes/class-wp-upgrader.php#L346"
   },
   {
+    "id": "CVE-2024-27834",
+    "title": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다",
+    "score": 56,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-18",
+    "kev_added_at": "2026-11-04",
+    "published_at": "2024-05-15T00:13:06.953+09:00",
+    "poc_count": 0,
+    "epss": 0.0060,
+    "epss_percentile": 0.48,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": "Safari",
+    "product_family": "browser",
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다.",
+    "fix_versions": [
+      "17.5"
+    ],
+    "patch_url": "https://support.apple.com/en-us/HT214101"
+  },
+  {
     "id": "CVE-2026-21589",
     "title": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며…",
     "score": 55,
@@ -3764,43 +3800,5 @@
     "summary_what": null,
     "fix_versions": [],
     "patch_url": "https://github.com/abrt/abrt/commit/3c1b60cfa62d39e5fff5a53a5bc53dae189e740e"
-  },
-  {
-    "id": "CVE-2026-59310",
-    "title": "VMware vCenter contains a directory traversal vulnerability in the Syslog…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 10.0,
-      "epss": 0.8,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -58.9
-    },
-    "why_now": "랜섬웨어 캠페인에 사용 중",
-    "is_kev": true,
-    "kev_ransomware": true,
-    "kev_due_date": "2026-08-21",
-    "kev_added_at": "2026-08-18",
-    "published_at": "2026-07-30T22:16:53.993+09:00",
-    "poc_count": 0,
-    "epss": 0.026,
-    "epss_percentile": 0.85,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "VMware vCenter Server",
-    "product_family": "cloud",
-    "attack_types": [
-      "path"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "8.0",
-      "9.0.2.0100",
-      "9.1.0.0300"
-    ],
-    "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
   }
 ]

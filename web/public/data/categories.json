@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 215,
-      "count_30d": 1048,
+      "count_7d": 222,
+      "count_30d": 1055,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 221,
-      "count_30d": 1359,
+      "count_7d": 235,
+      "count_30d": 1373,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 248,
-      "count_30d": 1278,
+      "count_7d": 255,
+      "count_30d": 1285,
       "kev_count": 32,
       "top": [
         {
@@ -1706,6 +1706,42 @@
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-57853",
+          "title": "DataGerry before 3.3.0 contains a server-side template injection vulnerability…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T03:17:44.877+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection",
             "xss"
           ],
           "summary_what": null,
@@ -2225,50 +2261,52 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120205",
-          "title": "Thelia before 3.1.0 contains a stored cross-site scripting vulnerability in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.0,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-01T03:17:08.57+09:00",
-          "poc_count": 0,
-          "epss": 0.0026,
-          "epss_percentile": 0.18,
-          "cvss": 8.0,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 678,
-      "count_30d": 4446,
-      "kev_count": 261,
+      "count_7d": 699,
+      "count_30d": 4468,
+      "kev_count": 262,
       "top": [
+        {
+          "id": "CVE-2024-27834",
+          "title": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다",
+          "score": 56,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 5.5,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-18",
+          "kev_added_at": "2026-11-04",
+          "published_at": "2024-05-15T00:13:06.953+09:00",
+          "poc_count": 0,
+          "epss": 0.0060,
+          "epss_percentile": 0.48,
+          "cvss": 5.5,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Safari",
+          "product_family": "browser",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다.",
+          "fix_versions": [
+            "17.5"
+          ],
+          "patch_url": "https://support.apple.com/en-us/HT214101"
+        },
         {
           "id": "CVE-2026-102764",
           "title": "메시지 발신 출처 검증이 미흡해 공격자가 조건에 따라 어플라이언스에서 파일 작업을 수행할 수 있습니다",
@@ -2956,55 +2994,14 @@
             "7.24.2"
           ],
           "patch_url": "https://mikrotik.com/supportsec/september-2026-vulnerability/"
-        },
-        {
-          "id": "CVE-2026-81963",
-          "title": "Improper link resolution before file access ('link following') in Windows…",
-          "score": 16,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -42.1
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-22",
-          "kev_added_at": "2026-09-08",
-          "published_at": "2026-09-09T03:21:00.09+09:00",
-          "poc_count": 0,
-          "epss": 0.0039,
-          "epss_percentile": 0.33,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Windows",
-          "product_family": "os",
-          "attack_types": [
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.22631.7582",
-            "10.0.26100.9445",
-            "10.0.26200.9445",
-            "10.0.28000.2954",
-            "10.0.26100.33438"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963"
         }
       ]
     },
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 111,
-      "count_30d": 864,
+      "count_7d": 117,
+      "count_30d": 870,
       "kev_count": 27,
       "top": [
         {
@@ -3218,6 +3215,41 @@
             "156.0.8078.73"
           ],
           "patch_url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
+        },
+        {
+          "id": "CVE-2026-121971",
+          "title": "The component ScopingHttpClient in Symfony HttpClient merges the options of its…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T03:17:43.077+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-114217",
@@ -3461,6 +3493,41 @@
           "patch_url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
         },
         {
+          "id": "CVE-2026-104203",
+          "title": "Traccar is an open source GPS tracking system",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T06:17:42.327+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-45049",
           "title": "Open Access Management (OpenAM) is an access management solution",
           "score": 8,
@@ -3630,82 +3697,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121436",
-          "title": "Froxlor from 2.3.8 before 2.3.15 contains an information disclosure…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.2,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T00:17:34.96+09:00",
-          "poc_count": 0,
-          "epss": 0.0045,
-          "epss_percentile": 0.38,
-          "cvss": 7.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118647",
-          "title": "n8n before 1.123.85, 2.x before 2.43.5, and 2.44.x before 2.44.1 saves the…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T04:17:32.927+09:00",
-          "poc_count": 0,
-          "epss": 0.0026,
-          "epss_percentile": 0.17,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 388,
-      "count_30d": 2981,
+      "count_7d": 409,
+      "count_30d": 3065,
       "kev_count": 462,
       "top": [
         {
@@ -4483,8 +4482,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 186,
-      "count_30d": 1121,
+      "count_7d": 191,
+      "count_30d": 1126,
       "kev_count": 14,
       "top": [
         {
@@ -5177,8 +5176,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 156,
-      "count_30d": 781,
+      "count_7d": 162,
+      "count_30d": 788,
       "kev_count": 161,
       "top": [
         {
@@ -5660,6 +5659,40 @@
           "patch_url": "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
         },
         {
+          "id": "CVE-2026-122013",
+          "title": "A vulnerability was detected in Comfast CF-WR632AX 2.6.0.1",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T06:18:07.54+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-92189",
           "title": "Quest Foglight for Databases writeTopologySectionToFile External Control of…",
           "score": 10,
@@ -5862,48 +5895,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-105606",
-          "title": "Joomla Extension - joomlaboat.com - Unauthenticated arbitrary file upload in…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.5,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T04:17:50.33+09:00",
-          "poc_count": 0,
-          "epss": 0.0036,
-          "epss_percentile": 0.30,
-          "cvss": 9.5,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 91,
-      "count_30d": 474,
+      "count_7d": 96,
+      "count_30d": 479,
       "kev_count": 32,
       "top": [
         {
@@ -6200,6 +6199,108 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-121171",
+          "title": "Confused deputy in DevTools in Google Chrome prior to 157.0.8103.38 allowed a…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:25.317+09:00",
+          "poc_count": 0,
+          "epss": 0.0020,
+          "epss_percentile": 0.09,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121108",
+          "title": "Confused deputy in BackgroundFetch in Google Chrome prior to 157.0.8103.38…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:17.247+09:00",
+          "poc_count": 0,
+          "epss": 0.0020,
+          "epss_percentile": 0.09,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121198",
+          "title": "Confused deputy in WebUI in Google Chrome prior to 157.0.8103.38 allowed a…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:28.61+09:00",
+          "poc_count": 0,
+          "epss": 0.0019,
+          "epss_percentile": 0.08,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-121451",
           "title": "AB Download Manager before 1.11.2 contains a cross-site request forgery…",
           "score": 9,
@@ -6429,14 +6530,14 @@
           "cvss": 8.4,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
+          "primary_product": "Android",
+          "product_family": "mobile",
           "attack_types": [
             "request_forgery"
           ],
           "summary_what": null,
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
         },
         {
           "id": "CVE-2026-59000",
@@ -6505,116 +6606,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-58965",
-          "title": "In handleAudioEffectBroadcast of MusicFxHelper.java, there is a possible…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:52.807+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-58957",
-          "title": "In resolveToHeavyWeightSwitcherIfNeeded of ActivityStarter.java, there is a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:52.28+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-58944",
-          "title": "In moveTaskToFrontLocked of ActivityTaskManagerService.java, there is a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:51.393+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 407,
-      "count_30d": 2118,
+      "count_7d": 435,
+      "count_30d": 2155,
       "kev_count": 227,
       "top": [
         {
@@ -7396,8 +7395,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 52,
-      "count_30d": 2125,
+      "count_7d": 44,
+      "count_30d": 2121,
       "kev_count": 286,
       "top": [
         {
@@ -8171,9 +8170,45 @@
       "key": "browser",
       "label": "브라우저",
       "count_7d": 251,
-      "count_30d": 984,
-      "kev_count": 110,
+      "count_30d": 986,
+      "kev_count": 111,
       "top": [
+        {
+          "id": "CVE-2024-27834",
+          "title": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다",
+          "score": 56,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 5.5,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-18",
+          "kev_added_at": "2026-11-04",
+          "published_at": "2024-05-15T00:13:06.953+09:00",
+          "poc_count": 0,
+          "epss": 0.0060,
+          "epss_percentile": 0.48,
+          "cvss": 5.5,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Safari",
+          "product_family": "browser",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다.",
+          "fix_versions": [
+            "17.5"
+          ],
+          "patch_url": "https://support.apple.com/en-us/HT214101"
+        },
         {
           "id": "CVE-2026-87491",
           "title": "Out of bounds write in V8 in Google Chrome prior to 153.0.8010.36 allowed a…",
@@ -8837,42 +8872,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-04T06:17:14.543+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.30,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121074",
-          "title": "Memory corruption in GPU in Google Chrome on on Android prior to 157.0.8103.38…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:12.463+09:00",
           "poc_count": 0,
           "epss": 0.0037,
           "epss_percentile": 0.30,
@@ -13310,8 +13309,8 @@
     {
       "key": "mobile",
       "label": "모바일",
-      "count_7d": 0,
-      "count_30d": 128,
+      "count_7d": 13,
+      "count_30d": 145,
       "kev_count": 98,
       "top": [
         {
@@ -13423,6 +13422,176 @@
           "patch_url": "https://support.apple.com/en-us/149227"
         },
         {
+          "id": "CVE-2026-59044",
+          "title": "In multiple locations, there is a possible use-after-free due to a logic error…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:57.703+09:00",
+          "poc_count": 0,
+          "epss": 0.0011,
+          "epss_percentile": 0.01,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://android.googlesource.com/kernel/common/+/a4e59da7cad6b445229ae67c0ebed83a7b18dcb5"
+        },
+        {
+          "id": "CVE-2026-59028",
+          "title": "In resolveAidConflictLocked of RegisteredAidCache.java, there is a possible…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:57.257+09:00",
+          "poc_count": 0,
+          "epss": 0.0010,
+          "epss_percentile": 0.00,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-59016",
+          "title": "In sendAnomalyProfile of ProfilingService.java, there is a possible path…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:56.797+09:00",
+          "poc_count": 0,
+          "epss": 0.0009,
+          "epss_percentile": 0.00,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-59014",
+          "title": "In multiple locations, there is a possible out-of-bounds write due to an…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:56.56+09:00",
+          "poc_count": 0,
+          "epss": 0.0008,
+          "epss_percentile": 0.00,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-58925",
+          "title": "The report details a heap Use-After-Free (UAF) vulnerability within the…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T06:17:36.04+09:00",
+          "poc_count": 0,
+          "epss": 0.0015,
+          "epss_percentile": 0.04,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/aaos/2026/2026-11-01"
+        },
+        {
           "id": "CVE-2026-112688",
           "title": "A memory corruption issue was addressed with improved memory handling",
           "score": 8,
@@ -13494,6 +13663,108 @@
             "26.7.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149034"
+        },
+        {
+          "id": "CVE-2026-58924",
+          "title": "The vulnerability is a heap out-of-bounds read in the EVS HAL's…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T06:17:35.937+09:00",
+          "poc_count": 0,
+          "epss": 0.0013,
+          "epss_percentile": 0.02,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/aaos/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-59043",
+          "title": "In arm_lpae_split_blk_unmap of io-pgtable-arm-common.c, there is a possible…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:57.593+09:00",
+          "poc_count": 0,
+          "epss": 0.0008,
+          "epss_percentile": 0.00,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://android.googlesource.com/kernel/common/+/82cd807f41d89d5cf2b4c3ac7affdb91188baea7"
+        },
+        {
+          "id": "CVE-2026-59042",
+          "title": "In __pkvm_pages_to_ppages of mmu.c, there is a possible out-of-bounds write due…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:57.477+09:00",
+          "poc_count": 0,
+          "epss": 0.0009,
+          "epss_percentile": 0.00,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://android.googlesource.com/kernel/common/+/1569a00286640e452ce917ee8b3cec04c5cc3715"
         },
         {
           "id": "CVE-2026-112689",
@@ -13746,298 +14017,6 @@
           "summary_what": null,
           "fix_versions": [
             "26.7.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-112683",
-          "title": "An out-of-bounds write issue was addressed with improved bounds checking",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:18:02.38+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.10,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-112485",
-          "title": "The issue was addressed with improved memory handling",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:39.44+09:00",
-          "poc_count": 0,
-          "epss": 0.0022,
-          "epss_percentile": 0.13,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149230"
-        },
-        {
-          "id": "CVE-2026-112474",
-          "title": "A use-after-free issue was addressed with improved memory management",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:37.663+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.10,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149230"
-        },
-        {
-          "id": "CVE-2026-112470",
-          "title": "An out-of-bounds write issue was addressed with improved bounds checking",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:37.197+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-86972",
-          "title": "A buffer overflow was addressed with improved size validation",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:20:35.437+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.09,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-84495",
-          "title": "A use-after-free issue was addressed with improved memory management",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:19:59.25+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-112696",
-          "title": "An out-of-bounds write issue was addressed with improved bounds checking",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:18:04.38+09:00",
-          "poc_count": 0,
-          "epss": 0.0016,
-          "epss_percentile": 0.05,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149230"
-        },
-        {
-          "id": "CVE-2026-112464",
-          "title": "An out-of-bounds write issue was addressed with improved input validation",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:17:36.393+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.09,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149227"
         }
