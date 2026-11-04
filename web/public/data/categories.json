@@ -1577,8 +1577,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 303,
-      "count_30d": 1323,
+      "count_7d": 307,
+      "count_30d": 1327,
       "kev_count": 32,
       "top": [
         {
@@ -2272,8 +2272,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 733,
-      "count_30d": 4540,
+      "count_7d": 737,
+      "count_30d": 4544,
       "kev_count": 261,
       "top": [
         {
@@ -3711,8 +3711,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 402,
-      "count_30d": 2963,
+      "count_7d": 408,
+      "count_30d": 2969,
       "kev_count": 462,
       "top": [
         {
@@ -4490,8 +4490,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 214,
-      "count_30d": 1136,
+      "count_7d": 218,
+      "count_30d": 1140,
       "kev_count": 14,
       "top": [
         {
@@ -4621,6 +4621,40 @@
           "poc_count": 0,
           "epss": 0.0036,
           "epss_percentile": 0.30,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-115448",
+          "title": "Uncontrolled recursion in Apache ZooKeeper",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T20:17:14.017+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.7,
           "cvss_version": "4.0",
           "severity": "HIGH",
@@ -5142,48 +5176,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-61854",
-          "title": "VoiceSentinel is a real-time voice moderation system for Minecraft servers",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-31T04:18:28.887+09:00",
-          "poc_count": 0,
-          "epss": 0.0024,
-          "epss_percentile": 0.15,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 170,
-      "count_30d": 804,
+      "count_7d": 171,
+      "count_30d": 805,
       "kev_count": 161,
       "top": [
         {
@@ -5907,8 +5907,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 106,
-      "count_30d": 494,
+      "count_7d": 107,
+      "count_30d": 495,
       "kev_count": 32,
       "top": [
         {
@@ -6273,6 +6273,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-111036",
+          "title": "Server-side request forgery (SSRF) vulnerability in the Coupa Supplier Portal…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T19:17:24.77+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.4,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-59028",
           "title": "In resolveAidConflictLocked of RegisteredAidCache.java, there is a possible…",
           "score": 8,
@@ -6577,48 +6611,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-55289",
-          "title": "In multiple functions in multiple locations, there is a possible execution of…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:45.293+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 437,
-      "count_30d": 2108,
+      "count_7d": 451,
+      "count_30d": 2122,
       "kev_count": 227,
       "top": [
         {
@@ -9593,8 +9593,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 572,
-      "count_30d": 2277,
+      "count_7d": 575,
+      "count_30d": 2280,
       "kev_count": 24,
       "top": [
         {
