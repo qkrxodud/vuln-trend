@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 248,
-      "count_30d": 1087,
+      "count_7d": 249,
+      "count_30d": 1088,
       "kev_count": 321,
       "top": [
         {
@@ -798,8 +798,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 261,
-      "count_30d": 1425,
+      "count_7d": 264,
+      "count_30d": 1428,
       "kev_count": 302,
       "top": [
         {
@@ -1577,8 +1577,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 297,
-      "count_30d": 1317,
+      "count_7d": 303,
+      "count_30d": 1323,
       "kev_count": 32,
       "top": [
         {
@@ -2272,8 +2272,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 731,
-      "count_30d": 4538,
+      "count_7d": 733,
+      "count_30d": 4540,
       "kev_count": 261,
       "top": [
         {
@@ -3010,8 +3010,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 117,
-      "count_30d": 866,
+      "count_7d": 118,
+      "count_30d": 867,
       "kev_count": 27,
       "top": [
         {
@@ -3503,6 +3503,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-56065",
+          "title": "Insertion of Sensitive Information into Externally-Accessible File or Directory…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T17:17:17.093+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-118489",
           "title": "In Eclipse Vert.x versions [4.0.0,4.5.35] or [5.0.0,5.2.2], when…",
           "score": 8,
@@ -3661,40 +3695,6 @@
           "epss": 0.0026,
           "epss_percentile": 0.17,
           "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116819",
-          "title": "OpenPanel before 3.0.0 contains an information disclosure vulnerability that…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.5,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 8.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T09:17:16.293+09:00",
-          "poc_count": 0,
-          "epss": 0.0030,
-          "epss_percentile": 0.23,
-          "cvss": 8.5,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -4490,8 +4490,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 211,
-      "count_30d": 1133,
+      "count_7d": 214,
+      "count_30d": 1136,
       "kev_count": 14,
       "top": [
         {
@@ -4621,6 +4621,40 @@
           "poc_count": 0,
           "epss": 0.0036,
           "epss_percentile": 0.30,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-114426",
+          "title": "SEPPmail Secure Email Gateway before 15.1.1 processes and writes v1…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T18:17:41.97+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.7,
           "cvss_version": "4.0",
           "severity": "HIGH",
@@ -5142,48 +5176,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116693",
-          "title": "dd-trace is the Datadog APM client for Node.js",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-28T06:18:05.167+09:00",
-          "poc_count": 0,
-          "epss": 0.0045,
-          "epss_percentile": 0.39,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 168,
-      "count_30d": 802,
+      "count_7d": 170,
+      "count_30d": 804,
       "kev_count": 161,
       "top": [
         {
@@ -9593,8 +9593,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 563,
-      "count_30d": 2268,
+      "count_7d": 572,
+      "count_30d": 2277,
       "kev_count": 24,
       "top": [
         {
