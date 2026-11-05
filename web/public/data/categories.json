@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 160,
-      "count_30d": 1033,
+      "count_7d": 164,
+      "count_30d": 1037,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 215,
-      "count_30d": 1343,
+      "count_7d": 234,
+      "count_30d": 1362,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 203,
-      "count_30d": 1264,
+      "count_7d": 206,
+      "count_30d": 1267,
       "kev_count": 32,
       "top": [
         {
@@ -1772,6 +1772,74 @@
           "epss_percentile": 0.38,
           "cvss": 8.8,
           "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-107903",
+          "title": "Joomla Extension - balbooa.com - Stored XSS in reviews via inconsistent…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T03:17:00.547+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-105607",
+          "title": "Joomla Extension - balbooa.com - Unauthenticated stored XSS in the \"Recent…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T03:16:59.843+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -2193,82 +2261,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-119680",
-          "title": "A stored cross-site scripting (XSS) vulnerability exists in the chart feature…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-31T00:16:51.187+09:00",
-          "poc_count": 0,
-          "epss": 0.0024,
-          "epss_percentile": 0.15,
-          "cvss": 8.5,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-105413",
-          "title": "The Form Maker by 10Web  WordPress plugin before 1.15.51 does not consistently…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T15:16:57.46+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.18,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 606,
-      "count_30d": 4379,
+      "count_7d": 631,
+      "count_30d": 4427,
       "kev_count": 262,
       "top": [
         {
@@ -3000,8 +3000,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 116,
-      "count_30d": 840,
+      "count_7d": 118,
+      "count_30d": 844,
       "kev_count": 27,
       "top": [
         {
@@ -3274,6 +3274,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-118494",
+          "title": "Joomla Extension - jreviews.com - Secret configs cached in a web-accessible in…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T04:17:12.14+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "info"
           ],
           "summary_what": null,
@@ -3662,48 +3696,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118489",
-          "title": "In Eclipse Vert.x versions [4.0.0,4.5.35] or [5.0.0,5.2.2], when…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T00:17:24.78+09:00",
-          "poc_count": 0,
-          "epss": 0.0034,
-          "epss_percentile": 0.27,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 381,
-      "count_30d": 3071,
+      "count_7d": 395,
+      "count_30d": 3085,
       "kev_count": 462,
       "top": [
         {
@@ -4481,8 +4481,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 159,
-      "count_30d": 1142,
+      "count_7d": 161,
+      "count_30d": 1144,
       "kev_count": 14,
       "top": [
         {
@@ -5176,8 +5176,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 144,
-      "count_30d": 766,
+      "count_7d": 147,
+      "count_30d": 769,
       "kev_count": 161,
       "top": [
         {
@@ -5903,8 +5903,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 82,
-      "count_30d": 462,
+      "count_7d": 87,
+      "count_30d": 467,
       "kev_count": 32,
       "top": [
         {
@@ -6618,8 +6618,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 383,
-      "count_30d": 2068,
+      "count_7d": 393,
+      "count_30d": 2077,
       "kev_count": 227,
       "top": [
         {
@@ -7402,7 +7402,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 44,
-      "count_30d": 2135,
+      "count_30d": 2144,
       "kev_count": 286,
       "top": [
         {
@@ -10415,7 +10415,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 107,
+      "count_30d": 110,
       "kev_count": 164,
       "top": [
         {
@@ -13323,8 +13323,8 @@
     {
       "key": "mobile",
       "label": "모바일",
-      "count_7d": 18,
-      "count_30d": 163,
+      "count_7d": 28,
+      "count_30d": 179,
       "kev_count": 98,
       "top": [
         {
@@ -13538,6 +13538,40 @@
           "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
         },
         {
+          "id": "CVE-2026-59004",
+          "title": "In multiple locations, there is a possible permission bypass due to an uncaught…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:55.59+09:00",
+          "poc_count": 0,
+          "epss": 0.0008,
+          "epss_percentile": 0.00,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
           "id": "CVE-2026-59014",
           "title": "In multiple locations, there is a possible out-of-bounds write due to an…",
           "score": 8,
@@ -13566,6 +13600,40 @@
           "product_family": "mobile",
           "attack_types": [
             "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-59005",
+          "title": "In insertInternal of MmsProvider.java, there is a possible multiuser isolation…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:55.72+09:00",
+          "poc_count": 0,
+          "epss": 0.0008,
+          "epss_percentile": 0.00,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -13959,80 +14027,6 @@
             "27.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149230"
-        },
-        {
-          "id": "CVE-2026-113909",
-          "title": "A memory corruption issue was addressed with improved input validation",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.0,
-            "decay": -1.5
-          },
-          "why_now": "CVSS 8.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:18:08.063+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.32,
-          "cvss": 8.0,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-86972",
-          "title": "A buffer overflow was addressed with improved size validation",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.5
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:20:35.437+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.09,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7.2",
-            "27.2"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149227"
         }
       ]
     },
