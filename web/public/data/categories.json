@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 230,
-      "count_30d": 1063,
+      "count_7d": 232,
+      "count_30d": 1065,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 249,
-      "count_30d": 1387,
+      "count_7d": 253,
+      "count_30d": 1391,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 260,
-      "count_30d": 1290,
+      "count_7d": 261,
+      "count_30d": 1291,
       "kev_count": 32,
       "top": [
         {
@@ -2267,8 +2267,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 744,
-      "count_30d": 4513,
+      "count_7d": 747,
+      "count_30d": 4516,
       "kev_count": 262,
       "top": [
         {
@@ -4482,8 +4482,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 204,
-      "count_30d": 1139,
+      "count_7d": 205,
+      "count_30d": 1140,
       "kev_count": 14,
       "top": [
         {
@@ -9652,8 +9652,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 498,
-      "count_30d": 2121,
+      "count_7d": 527,
+      "count_30d": 2150,
       "kev_count": 24,
       "top": [
         {
@@ -9950,6 +9950,38 @@
             "rce",
             "injection"
           ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-100109",
+          "title": "The Security For WooCommerce WordPress plugin from 1.0.10 to 1.0.16 does not…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T17:17:01.87+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [],
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
@@ -10358,40 +10390,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116386",
-          "title": "Unauthenticated Privilege Escalation in SMS Alert Order Notifications <= 4.0.2…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-31T04:18:13.64+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.28,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
