@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 235,
-      "count_30d": 1068,
+      "count_7d": 155,
+      "count_30d": 1028,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 256,
-      "count_30d": 1394,
+      "count_7d": 210,
+      "count_30d": 1338,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 263,
-      "count_30d": 1293,
+      "count_7d": 200,
+      "count_30d": 1261,
       "kev_count": 32,
       "top": [
         {
@@ -2267,8 +2267,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 750,
-      "count_30d": 4526,
+      "count_7d": 585,
+      "count_30d": 4354,
       "kev_count": 262,
       "top": [
         {
@@ -3000,8 +3000,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 128,
-      "count_30d": 881,
+      "count_7d": 112,
+      "count_30d": 832,
       "kev_count": 27,
       "top": [
         {
@@ -3457,6 +3457,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-123059",
+          "title": "In Eclipse BaSyx Helm Charts version 2.2.0 of the `aas-basyx-v2-full` chart…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-05T23:17:04.94+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-123047",
           "title": "In Eclipse BaSyx Helm Charts versions 3.0.0-rc.1 to 3.12.1 of the `basyx`…",
           "score": 8,
@@ -3663,48 +3698,14 @@
             "156.0.8078.73"
           ],
           "patch_url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
-        },
-        {
-          "id": "CVE-2026-45049",
-          "title": "Open Access Management (OpenAM) is an access management solution",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-30T07:17:02.4+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 8.3,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 430,
-      "count_30d": 3086,
+      "count_7d": 367,
+      "count_30d": 3007,
       "kev_count": 462,
       "top": [
         {
@@ -4482,8 +4483,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 206,
-      "count_30d": 1141,
+      "count_7d": 149,
+      "count_30d": 1110,
       "kev_count": 14,
       "top": [
         {
@@ -5176,8 +5177,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 175,
-      "count_30d": 801,
+      "count_7d": 142,
+      "count_30d": 764,
       "kev_count": 161,
       "top": [
         {
@@ -5903,8 +5904,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 102,
-      "count_30d": 487,
+      "count_7d": 80,
+      "count_30d": 460,
       "kev_count": 32,
       "top": [
         {
@@ -6327,14 +6328,16 @@
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "request_forgery"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.38"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
         },
         {
           "id": "CVE-2026-121198",
@@ -6614,8 +6617,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 471,
-      "count_30d": 2191,
+      "count_7d": 373,
+      "count_30d": 2045,
       "kev_count": 227,
       "top": [
         {
@@ -7398,7 +7401,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 44,
-      "count_30d": 2128,
+      "count_30d": 2131,
       "kev_count": 286,
       "top": [
         {
@@ -8177,8 +8180,8 @@
     {
       "key": "browser",
       "label": "브라우저",
-      "count_7d": 251,
-      "count_30d": 986,
+      "count_7d": 216,
+      "count_30d": 739,
       "kev_count": 111,
       "top": [
         {
@@ -9662,8 +9665,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 527,
-      "count_30d": 2150,
+      "count_7d": 305,
+      "count_30d": 2106,
       "kev_count": 24,
       "top": [
         {
@@ -10411,7 +10414,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 116,
+      "count_30d": 107,
       "kev_count": 164,
       "top": [
         {
@@ -11151,7 +11154,7 @@
       "key": "dev",
       "label": "개발 라이브러리·도구",
       "count_7d": 0,
-      "count_30d": 219,
+      "count_30d": 146,
       "kev_count": 71,
       "top": [
         {
@@ -12627,7 +12630,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 14,
-      "count_30d": 126,
+      "count_30d": 124,
       "kev_count": 136,
       "top": [
         {
@@ -13320,7 +13323,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 18,
-      "count_30d": 152,
+      "count_30d": 162,
       "kev_count": 98,
       "top": [
         {
@@ -13566,6 +13569,43 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-112514",
+          "title": "A use-after-free issue was addressed with improved memory management",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": -1.8
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-27T06:17:43.067+09:00",
+          "poc_count": 0,
+          "epss": 0.0068,
+          "epss_percentile": 0.52,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "iOS·iPadOS",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "26.7.2",
+            "27.2"
+          ],
+          "patch_url": "https://support.apple.com/en-us/149227"
         },
         {
           "id": "CVE-2026-58925",
@@ -13992,42 +14032,6 @@
             "27.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149227"
-        },
-        {
-          "id": "CVE-2026-86916",
-          "title": "A use after free issue was addressed with improved memory management",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.5
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-27T06:20:28.087+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.10,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "iOS·iPadOS",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.7"
-          ],
-          "patch_url": "https://support.apple.com/en-us/149034"
         }
       ]
     },
