@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 166,
-      "count_30d": 1040,
+      "count_7d": 167,
+      "count_30d": 1041,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 238,
-      "count_30d": 1367,
+      "count_7d": 242,
+      "count_30d": 1371,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 209,
-      "count_30d": 1270,
+      "count_7d": 210,
+      "count_30d": 1271,
       "kev_count": 32,
       "top": [
         {
@@ -2267,8 +2267,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 650,
-      "count_30d": 4449,
+      "count_7d": 664,
+      "count_30d": 4463,
       "kev_count": 262,
       "top": [
         {
@@ -3000,8 +3000,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 124,
-      "count_30d": 850,
+      "count_7d": 126,
+      "count_30d": 852,
       "kev_count": 27,
       "top": [
         {
@@ -3702,8 +3702,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 412,
-      "count_30d": 3102,
+      "count_7d": 417,
+      "count_30d": 3107,
       "kev_count": 462,
       "top": [
         {
@@ -4481,8 +4481,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 166,
-      "count_30d": 1149,
+      "count_7d": 167,
+      "count_30d": 1150,
       "kev_count": 14,
       "top": [
         {
@@ -4693,6 +4693,40 @@
             "157.0.8103.38"
           ],
           "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
+        },
+        {
+          "id": "CVE-2026-105042",
+          "title": "A message body that is deeply nested and decoded by pn_message_body() could…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.4
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-10-29T20:17:24.41+09:00",
+          "poc_count": 0,
+          "epss": 0.0023,
+          "epss_percentile": 0.13,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-115215",
@@ -5135,49 +5169,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-111496",
-          "title": "Kafka Streams derives its stream-time clock from record timestamps",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -1.4
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T02:17:39.693+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.10,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "memory",
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 151,
-      "count_30d": 774,
+      "count_7d": 154,
+      "count_30d": 777,
       "kev_count": 161,
       "top": [
         {
@@ -5903,8 +5902,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 90,
-      "count_30d": 470,
+      "count_7d": 94,
+      "count_30d": 474,
       "kev_count": 32,
       "top": [
         {
@@ -6409,6 +6408,74 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-88981",
+          "title": "Kubeflow Pipelines enables users to build and deploy portable, scalable machine…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T08:17:01.433+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-88980",
+          "title": "Kubeflow Pipelines enables users to build and deploy portable, scalable machine…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T08:17:01.277+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-111036",
           "title": "Server-side request forgery (SSRF) vulnerability in the Coupa Supplier Portal…",
           "score": 8,
@@ -6544,82 +6611,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118628",
-          "title": "MLflow get-artifacts Server-Side Request Forgery Information Disclosure…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T09:17:24.037+09:00",
-          "poc_count": 0,
-          "epss": 0.0034,
-          "epss_percentile": 0.26,
-          "cvss": 8.2,
-          "cvss_version": "3.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-59028",
-          "title": "In resolveAidConflictLocked of RegisteredAidCache.java, there is a possible…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:57.257+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 404,
-      "count_30d": 2088,
+      "count_7d": 411,
+      "count_30d": 2095,
       "kev_count": 227,
       "top": [
         {
