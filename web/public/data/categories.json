@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 167,
-      "count_30d": 1041,
+      "count_7d": 168,
+      "count_30d": 1042,
       "kev_count": 321,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 211,
-      "count_30d": 1272,
+      "count_7d": 220,
+      "count_30d": 1281,
       "kev_count": 32,
       "top": [
         {
@@ -2267,8 +2267,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 665,
-      "count_30d": 4464,
+      "count_7d": 677,
+      "count_30d": 4476,
       "kev_count": 262,
       "top": [
         {
@@ -3000,8 +3000,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 126,
-      "count_30d": 852,
+      "count_7d": 128,
+      "count_30d": 854,
       "kev_count": 27,
       "top": [
         {
@@ -3525,6 +3525,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-119499",
+          "title": "Insertion of Sensitive Information Into Sent Data vulnerability in BAKKBONE…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T17:17:19.063+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-65983",
           "title": "OpenEMR is a free and open source electronic health records and medical…",
           "score": 8,
@@ -3661,49 +3695,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-57116",
-          "title": "PraisonAI is a multi-agent teams system",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-23T22:17:10.69+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.36,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 420,
-      "count_30d": 3110,
+      "count_7d": 422,
+      "count_30d": 3112,
       "kev_count": 462,
       "top": [
         {
@@ -4481,8 +4480,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 168,
-      "count_30d": 1151,
+      "count_7d": 172,
+      "count_30d": 1155,
       "kev_count": 14,
       "top": [
         {
@@ -5175,8 +5174,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 154,
-      "count_30d": 777,
+      "count_7d": 155,
+      "count_30d": 778,
       "kev_count": 161,
       "top": [
         {
@@ -6617,8 +6616,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 412,
-      "count_30d": 2096,
+      "count_7d": 418,
+      "count_30d": 2102,
       "kev_count": 227,
       "top": [
         {
@@ -9665,8 +9664,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 305,
-      "count_30d": 2106,
+      "count_7d": 346,
+      "count_30d": 2147,
       "kev_count": 24,
       "top": [
         {
@@ -9933,6 +9932,38 @@
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
         },
         {
+          "id": "CVE-2026-118423",
+          "title": "The WP Libre Form WordPress plugin 1.5.0.1 does not validate the type of files…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T17:17:18.55+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-100109",
           "title": "The Security For WooCommerce WordPress plugin from 1.0.10 to 1.0.16 does not…",
           "score": 10,
@@ -10029,6 +10060,74 @@
           "product_family": "web_cms",
           "attack_types": [
             "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-120844",
+          "title": "Incorrect Privilege Assignment vulnerability in miniOrange OAuth Single Sign On…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T17:17:19.657+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-119516",
+          "title": "Deserialization of Untrusted Data vulnerability in Mamunur Rashid Radius…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T17:17:19.227+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -10133,6 +10232,38 @@
           "attack_types": [
             "rce"
           ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-88800",
+          "title": "The MDJM Event Management and Mobile Events Manager WordPress plugins through…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T17:17:38.283+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [],
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
@@ -10268,143 +10399,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-109220",
-          "title": "The PDF Invoice for WooCommerce + Drag and Drop Template Builder plugin for…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-31T16:16:34.367+09:00",
-          "poc_count": 0,
-          "epss": 0.0052,
-          "epss_percentile": 0.44,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118193",
-          "title": "The GiveWP – Donation Plugin and Fundraising Platform plugin for WordPress is…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T14:18:19.427+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.34,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120554",
-          "title": "The Import and export users and customers plugin for WordPress is vulnerable to…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T19:17:26.3+09:00",
-          "poc_count": 0,
-          "epss": 0.0055,
-          "epss_percentile": 0.46,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-61991",
-          "title": "Unauthenticated Remote Code Execution (RCE) in AjaxLoadMore Cache <= 3.1.1…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -1.4
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-30T01:18:11.463+09:00",
-          "poc_count": 0,
-          "epss": 0.0075,
-          "epss_percentile": 0.55,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce",
-            "injection"
           ],
           "summary_what": null,
           "fix_versions": [],
