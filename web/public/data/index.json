@@ -226,6 +226,40 @@
     "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-73.html"
   },
   {
+    "id": "CVE-2026-19868",
+    "title": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML…",
+    "score": 58,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.5,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-20",
+    "kev_added_at": "2026-11-06",
+    "published_at": "2026-11-07T04:17:48.437+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "SonicOS SSLVPN",
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML 적용 다중 인증을 우회할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-119977",
     "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
     "score": 55,
@@ -3766,39 +3800,5 @@
       "7.1.3"
     ],
     "patch_url": "https://git.kernel.org/stable/c/14200d435af9a9eeb444f529fc2f689a236b7962"
-  },
-  {
-    "id": "CVE-2015-5287",
-    "title": "The abrt-hook-ccpp help program in Automatic Bug Reporting Tool (ABRT) before…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 1.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 7.8,
-      "decay": -48.1
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-09",
-    "kev_added_at": "2026-08-26",
-    "published_at": "2015-12-08T03:59:02.23+09:00",
-    "poc_count": 0,
-    "epss": 0.050,
-    "epss_percentile": 0.92,
-    "cvss": 7.8,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Red Hat ABRT",
-    "product_family": "os",
-    "attack_types": [
-      "path"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": "https://github.com/abrt/abrt/commit/3c1b60cfa62d39e5fff5a53a5bc53dae189e740e"
   }
 ]
