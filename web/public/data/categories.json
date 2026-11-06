@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 210,
-      "count_30d": 1271,
+      "count_7d": 211,
+      "count_30d": 1272,
       "kev_count": 32,
       "top": [
         {
@@ -1771,6 +1771,40 @@
           "epss": 0.0045,
           "epss_percentile": 0.38,
           "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-119432",
+          "title": "A stored cross-site scripting (XSS) vulnerability exists in the Foxit…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-06T14:18:20.83+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -2221,40 +2255,6 @@
           "severity": "HIGH",
           "primary_product": null,
           "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-102615",
-          "title": "HeyForm is an open-source form builder",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.6,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T01:17:23.937+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 7.6,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
           "attack_types": [
             "xss"
           ],
@@ -3702,8 +3702,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 419,
-      "count_30d": 3109,
+      "count_7d": 420,
+      "count_30d": 3110,
       "kev_count": 462,
       "top": [
         {
@@ -4481,8 +4481,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 167,
-      "count_30d": 1150,
+      "count_7d": 168,
+      "count_30d": 1151,
       "kev_count": 14,
       "top": [
         {
@@ -5902,8 +5902,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 94,
-      "count_30d": 474,
+      "count_7d": 96,
+      "count_30d": 476,
       "kev_count": 32,
       "top": [
         {
@@ -6617,8 +6617,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 411,
-      "count_30d": 2095,
+      "count_7d": 412,
+      "count_30d": 2096,
       "kev_count": 227,
       "top": [
         {
