@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 147,
-      "count_30d": 1031,
+      "count_7d": 148,
+      "count_30d": 1032,
       "kev_count": 321,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 184,
-      "count_30d": 1308,
+      "count_7d": 203,
+      "count_30d": 1327,
       "kev_count": 32,
       "top": [
         {
@@ -2268,8 +2268,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 679,
-      "count_30d": 4541,
+      "count_7d": 682,
+      "count_30d": 4544,
       "kev_count": 262,
       "top": [
         {
@@ -3001,8 +3001,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 130,
-      "count_30d": 880,
+      "count_7d": 131,
+      "count_30d": 881,
       "kev_count": 27,
       "top": [
         {
@@ -5178,8 +5178,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 158,
-      "count_30d": 790,
+      "count_7d": 160,
+      "count_30d": 792,
       "kev_count": 161,
       "top": [
         {
@@ -5797,6 +5797,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-93754",
+          "title": "The payever – WooCommerce Gateway plugin for WordPress is vulnerable to…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-07T12:17:08.41+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-92189",
           "title": "Quest Foglight for Databases writeTopologySectionToFile External Control of…",
           "score": 10,
@@ -5858,42 +5892,6 @@
           "primary_product": null,
           "product_family": null,
           "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-38595",
-          "title": "An issue in im3x Scriptables through v2-dev branch allows attackers to inject…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T02:18:12.917+09:00",
-          "poc_count": 0,
-          "epss": 0.0048,
-          "epss_percentile": 0.41,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection",
             "path"
           ],
           "summary_what": null,
@@ -9671,8 +9669,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 212,
-      "count_30d": 2120,
+      "count_7d": 237,
+      "count_30d": 2145,
       "kev_count": 24,
       "top": [
         {
@@ -10212,6 +10210,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-93754",
+          "title": "The payever – WooCommerce Gateway plugin for WordPress is vulnerable to…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-07T12:17:08.41+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-107622",
           "title": "The BuddyForms plugin for WordPress is vulnerable to Privilege Escalation in…",
           "score": 10,
@@ -10376,41 +10408,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-86596",
-          "title": "The s2Member plugin for WordPress is vulnerable to Remote Code Execution in all…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.4,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T07:17:23.49+09:00",
-          "poc_count": 0,
-          "epss": 0.015,
-          "epss_percentile": 0.74,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce",
-            "injection"
           ],
           "summary_what": null,
           "fix_versions": [],
