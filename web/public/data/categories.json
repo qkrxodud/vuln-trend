@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 152,
-      "count_30d": 1022,
+      "count_7d": 154,
+      "count_30d": 1024,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 276,
-      "count_30d": 1375,
+      "count_7d": 280,
+      "count_30d": 1379,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 283,
-      "count_30d": 1352,
+      "count_7d": 289,
+      "count_30d": 1358,
       "kev_count": 32,
       "top": [
         {
@@ -2265,8 +2265,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 787,
-      "count_30d": 4560,
+      "count_7d": 803,
+      "count_30d": 4576,
       "kev_count": 262,
       "top": [
         {
@@ -2998,8 +2998,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 138,
-      "count_30d": 877,
+      "count_7d": 140,
+      "count_30d": 879,
       "kev_count": 27,
       "top": [
         {
@@ -3701,8 +3701,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 425,
-      "count_30d": 3026,
+      "count_7d": 428,
+      "count_30d": 3029,
       "kev_count": 462,
       "top": [
         {
@@ -5174,8 +5174,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 175,
-      "count_30d": 792,
+      "count_7d": 178,
+      "count_30d": 795,
       "kev_count": 161,
       "top": [
         {
@@ -5899,8 +5899,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 167,
-      "count_30d": 531,
+      "count_7d": 169,
+      "count_30d": 533,
       "kev_count": 32,
       "top": [
         {
@@ -9661,8 +9661,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 417,
-      "count_30d": 2232,
+      "count_7d": 422,
+      "count_30d": 2237,
       "kev_count": 24,
       "top": [
         {
@@ -10373,34 +10373,34 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-100109",
-          "title": "The Security For WooCommerce WordPress plugin from 1.0.10 to 1.0.16 does not…",
+          "id": "CVE-2026-121379",
+          "title": "The Tournamatch WordPress plugin before 4.7.1 does not validate or restrict the…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
+            "cvss": 9.6,
+            "decay": 0.0
           },
-          "why_now": "CVSS 9.8, 최근 공개",
+          "why_now": "CVSS 9.6, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-05T17:17:01.87+09:00",
+          "published_at": "2026-11-07T15:16:58.04+09:00",
           "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.30,
-          "cvss": 9.8,
-          "cvss_version": "3.0",
+          "epss": 0.0015,
+          "epss_percentile": 0.04,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": "web_cms",
           "attack_types": [
-            "auth"
+            "path"
           ],
           "summary_what": null,
           "fix_versions": [],
