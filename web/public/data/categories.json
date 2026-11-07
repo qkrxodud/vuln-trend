@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 251,
-      "count_30d": 1379,
+      "count_7d": 252,
+      "count_30d": 1380,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 182,
-      "count_30d": 1306,
+      "count_7d": 184,
+      "count_30d": 1308,
       "kev_count": 32,
       "top": [
         {
@@ -2268,8 +2268,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 666,
-      "count_30d": 4524,
+      "count_7d": 679,
+      "count_30d": 4541,
       "kev_count": 262,
       "top": [
         {
@@ -3001,8 +3001,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 129,
-      "count_30d": 874,
+      "count_7d": 130,
+      "count_30d": 880,
       "kev_count": 27,
       "top": [
         {
@@ -3630,6 +3630,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-68933",
+          "title": "Chartbrew is an open-source web application that can connect directly to…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-07T07:17:59.22+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-123059",
           "title": "In Eclipse BaSyx Helm Charts version 2.2.0 of the `aas-basyx-v2-full` chart…",
           "score": 8,
@@ -3663,49 +3698,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123047",
-          "title": "In Eclipse BaSyx Helm Charts versions 3.0.0-rc.1 to 3.12.1 of the `basyx`…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T22:17:07.493+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.11,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 414,
-      "count_30d": 3069,
+      "count_7d": 417,
+      "count_30d": 3072,
       "kev_count": 462,
       "top": [
         {
@@ -5178,8 +5178,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 157,
-      "count_30d": 789,
+      "count_7d": 158,
+      "count_30d": 790,
       "kev_count": 161,
       "top": [
         {
@@ -5905,8 +5905,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 104,
-      "count_30d": 483,
+      "count_7d": 105,
+      "count_30d": 485,
       "kev_count": 32,
       "top": [
         {
@@ -6223,6 +6223,40 @@
           "epss": 0.0058,
           "epss_percentile": 0.47,
           "cvss": 9.3,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-68935",
+          "title": "Chartbrew is an open-source web application for creating charts from databases…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-07T07:17:59.39+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -6577,50 +6611,14 @@
             "157.0.8103.38"
           ],
           "patch_url": "https://issues.chromium.org/issues/562238690"
-        },
-        {
-          "id": "CVE-2026-121108",
-          "title": "Confused deputy in BackgroundFetch in Google Chrome prior to 157.0.8103.38…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:17.247+09:00",
-          "poc_count": 0,
-          "epss": 0.0026,
-          "epss_percentile": 0.17,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 473,
-      "count_30d": 2130,
+      "count_7d": 478,
+      "count_30d": 2135,
       "kev_count": 228,
       "top": [
         {
@@ -9673,8 +9671,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 206,
-      "count_30d": 2114,
+      "count_7d": 212,
+      "count_30d": 2120,
       "kev_count": 24,
       "top": [
         {
