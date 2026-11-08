@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 156,
-      "count_30d": 1026,
+      "count_7d": 130,
+      "count_30d": 989,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 282,
-      "count_30d": 1381,
+      "count_7d": 253,
+      "count_30d": 1361,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 293,
-      "count_30d": 1362,
+      "count_7d": 288,
+      "count_30d": 1299,
       "kev_count": 32,
       "top": [
         {
@@ -1631,6 +1631,74 @@
           "epss": 0.0044,
           "epss_percentile": 0.38,
           "cvss": 10.0,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124494",
+          "title": "SunEditor before 3.4.0 contains a stored cross-site scripting vulnerability…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:19.277+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124493",
+          "title": "SunEditor before 3.4.0 contains a stored cross-site scripting vulnerability in…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:19.13+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
           "cvss_version": "4.0",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -1708,6 +1776,40 @@
           "attack_types": [
             "rce",
             "injection",
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124463",
+          "title": "OpenEMR before 8.3.0 contains a stored cross-site scripting vulnerability that…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:14.167+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "xss"
           ],
           "summary_what": null,
@@ -2157,116 +2259,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-103935",
-          "title": "OpenEMR is a free and open source electronic health records and medical…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T05:17:38.19+09:00",
-          "poc_count": 0,
-          "epss": 0.0034,
-          "epss_percentile": 0.27,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-88801",
-          "title": "The MDJM Event Management and Mobile Events Manager WordPress plugins through…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.0,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T17:17:38.41+09:00",
-          "poc_count": 0,
-          "epss": 0.0028,
-          "epss_percentile": 0.20,
-          "cvss": 8.0,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120408",
-          "title": "The All-in-One Video Gallery  WordPress plugin before 5.1.0 does not escape a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.0,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T15:16:41.79+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 8.0,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 834,
-      "count_30d": 4607,
+      "count_7d": 844,
+      "count_30d": 4572,
       "kev_count": 262,
       "top": [
         {
@@ -2998,8 +2998,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 148,
-      "count_30d": 887,
+      "count_7d": 144,
+      "count_30d": 876,
       "kev_count": 27,
       "top": [
         {
@@ -3524,6 +3524,40 @@
           "patch_url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
         },
         {
+          "id": "CVE-2026-124438",
+          "title": "Scriban before 7.5.2 contains an information disclosure and object manipulation…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:10.32+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-68933",
           "title": "Chartbrew is an open-source web application that can connect directly to…",
           "score": 7,
@@ -3552,6 +3586,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124432",
+          "title": "phpMyFAQ 4.1.9 before 4.1.11 and 4.2.0 pre-releases before 4.2.0-beta.3 contain…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:09.297+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "info"
           ],
           "summary_what": null,
@@ -3625,83 +3693,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-104203",
-          "title": "Traccar is an open source GPS tracking system",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T06:17:42.327+09:00",
-          "poc_count": 0,
-          "epss": 0.0080,
-          "epss_percentile": 0.56,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-65983",
-          "title": "OpenEMR is a free and open source electronic health records and medical…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T05:17:59.507+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 432,
-      "count_30d": 3033,
+      "count_7d": 374,
+      "count_30d": 3008,
       "kev_count": 462,
       "top": [
         {
@@ -4479,8 +4478,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 194,
-      "count_30d": 1109,
+      "count_7d": 187,
+      "count_30d": 1092,
       "kev_count": 14,
       "top": [
         {
@@ -5173,8 +5172,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 184,
-      "count_30d": 801,
+      "count_7d": 175,
+      "count_30d": 790,
       "kev_count": 161,
       "top": [
         {
@@ -5792,6 +5791,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-124450",
+          "title": "OpenEMR before 8.3.0 contains a broken access control and path traversal…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:12.26+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-17340",
           "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to…",
           "score": 10,
@@ -5858,47 +5891,13 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118423",
-          "title": "The WP Libre Form WordPress plugin 1.5.0.1 does not validate the type of files…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T17:17:18.55+09:00",
-          "poc_count": 0,
-          "epss": 0.0057,
-          "epss_percentile": 0.47,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 176,
+      "count_7d": 177,
       "count_30d": 540,
       "kev_count": 32,
       "top": [
@@ -6088,6 +6087,40 @@
             "2.52.0"
           ],
           "patch_url": "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
+        },
+        {
+          "id": "CVE-2026-124440",
+          "title": "Kyverno from 1.19.1 before 1.19.2 contains an authorization bypass…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T23:18:10.633+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-17298",
@@ -6566,48 +6599,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-57566",
-          "title": "Readest is a modern, feature-rich ebook reader designed for seamless…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T07:18:06.85+09:00",
-          "poc_count": 0,
-          "epss": 0.0058,
-          "epss_percentile": 0.48,
-          "cvss": 9.3,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 522,
-      "count_30d": 2128,
+      "count_7d": 491,
+      "count_30d": 2106,
       "kev_count": 228,
       "top": [
         {
@@ -9660,8 +9659,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 445,
-      "count_30d": 2260,
+      "count_7d": 441,
+      "count_30d": 2109,
       "kev_count": 24,
       "top": [
         {
@@ -12628,7 +12627,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 17,
-      "count_30d": 106,
+      "count_30d": 97,
       "kev_count": 136,
       "top": [
         {
