@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 154,
-      "count_30d": 1024,
+      "count_7d": 155,
+      "count_30d": 1025,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 280,
-      "count_30d": 1379,
+      "count_7d": 281,
+      "count_30d": 1380,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 289,
-      "count_30d": 1358,
+      "count_7d": 293,
+      "count_30d": 1362,
       "kev_count": 32,
       "top": [
         {
@@ -2265,8 +2265,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 803,
-      "count_30d": 4576,
+      "count_7d": 834,
+      "count_30d": 4607,
       "kev_count": 262,
       "top": [
         {
@@ -2998,8 +2998,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 140,
-      "count_30d": 879,
+      "count_7d": 148,
+      "count_30d": 887,
       "kev_count": 27,
       "top": [
         {
@@ -3037,6 +3037,40 @@
             "4.8.0"
           ],
           "patch_url": "https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve"
+        },
+        {
+          "id": "CVE-2026-123551",
+          "title": "OpenAM from 14.0.0 before 16.1.4 contains an information disclosure…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T11:16:46.603+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-73101",
@@ -3660,49 +3694,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123059",
-          "title": "In Eclipse BaSyx Helm Charts version 2.2.0 of the `aas-basyx-v2-full` chart…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T23:17:04.94+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.11,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 428,
-      "count_30d": 3029,
+      "count_7d": 432,
+      "count_30d": 3033,
       "kev_count": 462,
       "top": [
         {
@@ -4480,8 +4479,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 163,
-      "count_30d": 1078,
+      "count_7d": 194,
+      "count_30d": 1109,
       "kev_count": 14,
       "top": [
         {
@@ -4546,6 +4545,40 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-123531",
+          "title": "Vikunja from 1.0.0 before 2.7.1 contains an uncontrolled resource consumption…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-08T11:16:43.19+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -5134,48 +5167,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-111751",
-          "title": "Angular is a development platform for building mobile and desktop web…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:16:57.8+09:00",
-          "poc_count": 0,
-          "epss": 0.0066,
-          "epss_percentile": 0.51,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 178,
-      "count_30d": 795,
+      "count_7d": 181,
+      "count_30d": 798,
       "kev_count": 161,
       "top": [
         {
@@ -5899,8 +5898,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 169,
-      "count_30d": 533,
+      "count_7d": 176,
+      "count_30d": 540,
       "kev_count": 32,
       "top": [
         {
@@ -6607,8 +6606,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 486,
-      "count_30d": 2092,
+      "count_7d": 522,
+      "count_30d": 2128,
       "kev_count": 228,
       "top": [
         {
@@ -7390,8 +7389,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 59,
-      "count_30d": 2175,
+      "count_7d": 61,
+      "count_30d": 2177,
       "kev_count": 286,
       "top": [
         {
@@ -9661,8 +9660,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 422,
-      "count_30d": 2237,
+      "count_7d": 445,
+      "count_30d": 2260,
       "kev_count": 24,
       "top": [
         {
