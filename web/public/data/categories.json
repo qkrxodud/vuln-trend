@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 262,
-      "count_30d": 1362,
+      "count_7d": 263,
+      "count_30d": 1363,
       "kev_count": 303,
       "top": [
         {
@@ -2265,10 +2265,44 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 897,
-      "count_30d": 4544,
-      "kev_count": 263,
+      "count_7d": 899,
+      "count_30d": 4546,
+      "kev_count": 264,
       "top": [
+        {
+          "id": "CVE-2026-123218",
+          "title": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-07T13:17:28.9+09:00",
+          "poc_count": 0,
+          "epss": 0.0040,
+          "epss_percentile": 0.34,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Aspera Faspex",
+          "product_family": null,
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-102895",
           "title": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수…",
@@ -2954,50 +2988,14 @@
             "7.146.8"
           ],
           "patch_url": "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
-        },
-        {
-          "id": "CVE-2026-84869",
-          "title": "A condition in the ScreenConnect client may allow files to be transferred and…",
-          "score": 15,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -44.8
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-14",
-          "kev_added_at": "2026-09-11",
-          "published_at": "2026-09-09T05:18:51.147+09:00",
-          "poc_count": 0,
-          "epss": 0.0092,
-          "epss_percentile": 0.60,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "ConnectWise ScreenConnect",
-          "product_family": "server",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "26.6.5.9742"
-          ],
-          "patch_url": "https://www.connectwise.com/company/trust/advisories"
         }
       ]
     },
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 174,
-      "count_30d": 908,
+      "count_7d": 175,
+      "count_30d": 909,
       "kev_count": 27,
       "top": [
         {
@@ -3695,8 +3693,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 343,
-      "count_30d": 3062,
+      "count_7d": 355,
+      "count_30d": 3074,
       "kev_count": 462,
       "top": [
         {
@@ -4474,8 +4472,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 223,
-      "count_30d": 1137,
+      "count_7d": 227,
+      "count_30d": 1141,
       "kev_count": 14,
       "top": [
         {
@@ -6601,8 +6599,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 494,
-      "count_30d": 2177,
+      "count_7d": 500,
+      "count_30d": 2183,
       "kev_count": 229,
       "top": [
         {
@@ -7390,7 +7388,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 17,
-      "count_30d": 2179,
+      "count_30d": 2203,
       "kev_count": 286,
       "top": [
         {

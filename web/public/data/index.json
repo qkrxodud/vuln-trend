@@ -192,6 +192,40 @@
     "patch_url": "https://github.com/signalwire/freeswitch/commit/7015f6a73ab3d67fed5fbfc277ecfb88a74c2a86"
   },
   {
+    "id": "CVE-2026-123218",
+    "title": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-12",
+    "kev_added_at": "2026-11-09",
+    "published_at": "2026-11-07T13:17:28.9+09:00",
+    "poc_count": 0,
+    "epss": 0.0040,
+    "epss_percentile": 0.34,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Aspera Faspex",
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-102895",
     "title": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수…",
     "score": 60,
@@ -3763,40 +3797,5 @@
       "2.52.0"
     ],
     "patch_url": "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
-  },
-  {
-    "id": "CVE-2026-124580",
-    "title": "A vulnerability was found in Chengdu Feiyuxing Technology VW2100 and VEC10GP…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 0.8,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 10.0,
-      "decay": 0.0
-    },
-    "why_now": "CVSS 10.0, 최근 공개",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-11-09T17:17:02.923+09:00",
-    "poc_count": 0,
-    "epss": 0.028,
-    "epss_percentile": 0.86,
-    "cvss": 10.0,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "rce",
-      "injection"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
   }
 ]

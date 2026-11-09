@@ -1,5 +1,856 @@
 [
   {
+    "id": "CVE-2026-87857",
+    "title": "Temporal Server does not bind a workflow-history pagination token to the…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:14.997+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125270",
+    "title": "FFmpeg through 9.0.2 contains a heap out-of-bounds read vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.843+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125269",
+    "title": "FFmpeg through 9.0.2 contains a double free vulnerability in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.69+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125268",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "score": 3,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.54+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.3,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125267",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains a heap out-of-bounds write…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.383+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125266",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized stack memory disclosure…",
+    "score": 3,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.233+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.3,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125265",
+    "title": "FFmpeg through 9.0.2 contains a use-after-free vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:13.09+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125264",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled resource consumption…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.943+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125263",
+    "title": "FFmpeg 9.0 through 9.0.2 built with liblcevc_dec fails to validate LCEVC…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.803+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125262",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.657+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125261",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in the SGI…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.513+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.1,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125260",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.367+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125259",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.22+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125258",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:12.08+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125257",
+    "title": "FFmpeg through 9.0.2 contains an off-by-one heap overflow vulnerability in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.93+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125256",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.79+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125255",
+    "title": "FFmpeg through 9.0.2 contains a use after free vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.633+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125254",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in the VVC…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.47+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125253",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow in cbs_vp9_split_fragment()…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.293+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125252",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:11.13+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124987",
+    "title": "A vulnerability has been found in mikefarah yq up to 4.53.3",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:10.927+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124834",
+    "title": "A security vulnerability has been detected in iomad up to…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:10.72+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.7,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth",
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124077",
+    "title": "The GitIdentifiers class in Apache Commons Codec did not reject NUL bytes in…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:10.34+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123805",
+    "title": "SIPSorcery is a WebRTC, SIP, and VoIP library for C# and .NET",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:10.173+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-119078",
+    "title": "Apache Commons Codec's Blake3 class documented the output of its doFinalize…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-10T05:18:04.697+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-70555",
     "title": "rConfig Core 8.2.3 before 8.2.13 contains an information disclosure…",
     "score": 7,
@@ -38474,22 +39325,22 @@
   },
   {
     "id": "CVE-2026-123218",
-    "title": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft…",
-    "score": 10,
+    "title": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다",
+    "score": 60,
     "score_breakdown": {
-      "kev": 0.0,
+      "kev": 50.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.4
+      "decay": 0.0
     },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
     "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
+    "kev_due_date": "2026-11-12",
+    "kev_added_at": "2026-11-09",
     "published_at": "2026-11-07T13:17:28.9+09:00",
     "poc_count": 0,
     "epss": 0.0040,
@@ -38497,12 +39348,12 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "Aspera Faspex",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
-    "summary_what": null,
+    "summary_what": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다.",
     "fix_versions": [],
     "patch_url": null
   },
@@ -83367,17 +84218,17 @@
   {
     "id": "CVE-2026-120647",
     "title": "CGI versions before 5.00 for Perl allow Content-Disposition parameter injection…",
-    "score": 0,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.8,
+      "decay": -1.1
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83386,9 +84237,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83401,17 +84252,17 @@
   {
     "id": "CVE-2026-120646",
     "title": "CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83420,9 +84271,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83435,17 +84286,17 @@
   {
     "id": "CVE-2026-120645",
     "title": "CGI versions before 5.00 for Perl allow denial of service via submitted values…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83454,9 +84305,9 @@
     "poc_count": 0,
     "epss": 0.0039,
     "epss_percentile": 0.33,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83469,17 +84320,17 @@
   {
     "id": "CVE-2026-120644",
     "title": "CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via…",
-    "score": 0,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.1,
+      "decay": -1.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83488,9 +84339,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83503,17 +84354,17 @@
   {
     "id": "CVE-2026-120643",
     "title": "CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.1,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83522,9 +84373,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.11,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.1,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83537,17 +84388,17 @@
   {
     "id": "CVE-2026-120642",
     "title": "CGI versions before 5.00 for Perl return request-derived values untainted under…",
-    "score": 0,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.1,
+      "decay": -1.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83556,9 +84407,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83571,17 +84422,17 @@
   {
     "id": "CVE-2026-120641",
     "title": "CGI versions before 5.00 for Perl return upload filenames with any…",
-    "score": 0,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 8.8,
+      "decay": -1.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83590,9 +84441,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 8.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83605,17 +84456,17 @@
   {
     "id": "CVE-2026-120640",
     "title": "CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83624,9 +84475,9 @@
     "poc_count": 0,
     "epss": 0.0013,
     "epss_percentile": 0.02,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83639,17 +84490,17 @@
   {
     "id": "CVE-2026-120639",
     "title": "CGI versions before 5.00 for Perl allow HTTP header injection via entity…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.2,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.2, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83658,9 +84509,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.13,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.2,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -83707,17 +84558,17 @@
   {
     "id": "CVE-2026-120637",
     "title": "CGI versions before 5.00 for Perl take request parameters from the process…",
-    "score": 0,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.8,
+      "decay": -1.1
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -83726,9 +84577,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -87328,14 +88179,16 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "157.0.8103.38"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
   },
   {
     "id": "CVE-2026-121241",
@@ -87376,17 +88229,17 @@
   {
     "id": "CVE-2026-121240",
     "title": "Improper input validation in Variations in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 4.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -87395,9 +88248,9 @@
     "poc_count": 0,
     "epss": 0.0017,
     "epss_percentile": 0.06,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -87482,17 +88335,17 @@
   {
     "id": "CVE-2026-121237",
     "title": "Improper state validation in FileSystem in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -87501,9 +88354,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -87838,17 +88691,17 @@
   {
     "id": "CVE-2026-121227",
     "title": "Uninitialized resource in Skia in Google Chrome prior to 157.0.8103.38 allowed…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.4,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -87857,9 +88710,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -87908,17 +88761,17 @@
   {
     "id": "CVE-2026-121225",
     "title": "Incorrect authorization in Permissions in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -87927,9 +88780,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -88940,17 +89793,17 @@
   {
     "id": "CVE-2026-121196",
     "title": "Privilege elevation in Mobile in Google Chrome on on iOS prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 8.1,
+      "decay": -0.9
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -88959,9 +89812,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -89618,17 +90471,17 @@
   {
     "id": "CVE-2026-121175",
     "title": "Improper resource exposure in ORB in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 4.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -89637,9 +90490,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -89710,14 +90563,16 @@
     "cvss": 7.4,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "157.0.8103.38"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
   },
   {
     "id": "CVE-2026-121172",
@@ -89830,17 +90685,17 @@
   {
     "id": "CVE-2026-121169",
     "title": "Missing authorization in DevTools in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -89849,9 +90704,9 @@
     "poc_count": 0,
     "epss": 0.0017,
     "epss_percentile": 0.06,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -90170,14 +91025,16 @@
     "cvss": 7.4,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "memory"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "157.0.8103.38"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
   },
   {
     "id": "CVE-2026-121159",
@@ -90358,17 +91215,17 @@
   {
     "id": "CVE-2026-121143",
     "title": "Uninitialized resource in GPU in Google Chrome prior to 157.0.8103.38 allowed a…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.4,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -90377,9 +91234,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -90392,17 +91249,17 @@
   {
     "id": "CVE-2026-121142",
     "title": "Incorrect authorization in Network in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -90411,9 +91268,9 @@
     "poc_count": 0,
     "epss": 0.0017,
     "epss_percentile": 0.06,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -91466,17 +92323,17 @@
   {
     "id": "CVE-2026-121111",
     "title": "Incorrect authorization in HID in Google Chrome prior to 157.0.8103.38 allowed…",
-    "score": 0,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 4.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -91485,9 +92342,9 @@
     "poc_count": 0,
     "epss": 0.0027,
     "epss_percentile": 0.18,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -92054,14 +92911,16 @@
     "cvss": 7.4,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "157.0.8103.38"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
   },
   {
     "id": "CVE-2026-121094",
@@ -92102,17 +92961,17 @@
   {
     "id": "CVE-2026-121093",
     "title": "Out of bounds read in Animation in Google Chrome prior to 157.0.8103.38 allowed…",
-    "score": 0,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 5.7,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 5.7, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -92121,17 +92980,19 @@
     "poc_count": 0,
     "epss": 0.0017,
     "epss_percentile": 0.06,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
-    "primary_product": null,
+    "cvss": 5.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "memory"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "157.0.8103.38"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
   },
   {
     "id": "CVE-2026-121092",
@@ -93174,17 +94035,17 @@
   {
     "id": "CVE-2026-121063",
     "title": "Incorrect authorization in CacheStorage in Google Chrome prior to 157.0.8103.38…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 8.1,
+      "decay": -0.9
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -93193,9 +94054,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.13,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -93208,17 +94069,17 @@
   {
     "id": "CVE-2026-121062",
     "title": "Incorrect authorization in API in Google Chrome prior to 157.0.8103.38 allowed…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.4,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -93227,9 +94088,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -94200,17 +95061,17 @@
   {
     "id": "CVE-2026-121032",
     "title": "Out of bounds read in Skia in Google Chrome prior to 157.0.8103.38 allowed a…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.4,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -94219,9 +95080,9 @@
     "poc_count": 0,
     "epss": 0.0022,
     "epss_percentile": 0.12,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -94234,17 +95095,17 @@
   {
     "id": "CVE-2026-121031",
     "title": "Missing authorization in PDF in Google Chrome prior to 157.0.8103.38 allowed a…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -94253,9 +95114,9 @@
     "poc_count": 0,
     "epss": 0.0022,
     "epss_percentile": 0.12,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
@@ -94304,17 +95165,17 @@
   {
     "id": "CVE-2026-121029",
     "title": "Incorrect authorization in ORB in Google Chrome prior to 157.0.8103.38 allowed…",
-    "score": 0,
+    "score": 4,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 4.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 4.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -94323,9 +95184,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.11,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": "browser",
     "attack_types": [
