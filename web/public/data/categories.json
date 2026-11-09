@@ -3,10 +3,45 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 137,
-      "count_30d": 949,
-      "kev_count": 321,
+      "count_7d": 138,
+      "count_30d": 950,
+      "kev_count": 322,
       "top": [
+        {
+          "id": "CVE-2026-116779",
+          "title": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고…",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.4,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-06T05:17:44.79+09:00",
+          "poc_count": 0,
+          "epss": 0.013,
+          "epss_percentile": 0.70,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "FreeSwitch",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고 운영체제 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-110447",
           "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
@@ -748,41 +783,6 @@
             "2026.1.3"
           ],
           "patch_url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
-        },
-        {
-          "id": "CVE-2026-124585",
-          "title": "A vulnerability was found in Chengdu Feiyuxing Technology VW2100 and VEC10GP…",
-          "score": 11,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.7,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T18:16:59.517+09:00",
-          "poc_count": 0,
-          "epss": 0.022,
-          "epss_percentile": 0.82,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -791,8 +791,43 @@
       "label": "주입(SQL·명령)",
       "count_7d": 260,
       "count_30d": 1360,
-      "kev_count": 302,
+      "kev_count": 303,
       "top": [
+        {
+          "id": "CVE-2026-116779",
+          "title": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고…",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.4,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-06T05:17:44.79+09:00",
+          "poc_count": 0,
+          "epss": 0.013,
+          "epss_percentile": 0.70,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "FreeSwitch",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고 운영체제 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-110447",
           "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
@@ -1525,49 +1560,14 @@
             "2.52.0"
           ],
           "patch_url": "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
-        },
-        {
-          "id": "CVE-2026-124580",
-          "title": "A vulnerability was found in Chengdu Feiyuxing Technology VW2100 and VEC10GP…",
-          "score": 11,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.8,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T17:17:02.923+09:00",
-          "poc_count": 0,
-          "epss": 0.028,
-          "epss_percentile": 0.86,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 301,
-      "count_30d": 1288,
+      "count_7d": 307,
+      "count_30d": 1294,
       "kev_count": 32,
       "top": [
         {
@@ -2261,10 +2261,44 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 865,
-      "count_30d": 4511,
-      "kev_count": 262,
+      "count_7d": 879,
+      "count_30d": 4526,
+      "kev_count": 263,
       "top": [
+        {
+          "id": "CVE-2026-102895",
+          "title": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수…",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-05T07:17:44.613+09:00",
+          "poc_count": 0,
+          "epss": 0.0033,
+          "epss_percentile": 0.26,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "GPUStack",
+          "product_family": null,
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2024-27834",
           "title": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다",
@@ -2950,52 +2984,14 @@
             "26.6.5.9742"
           ],
           "patch_url": "https://www.connectwise.com/company/trust/advisories"
-        },
-        {
-          "id": "CVE-2026-67277",
-          "title": "RouterOS accepts a \"related\" btest connection before the corresponding primary…",
-          "score": 15,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -44.0
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-13",
-          "kev_added_at": "2026-09-10",
-          "published_at": "2026-09-06T05:17:18.12+09:00",
-          "poc_count": 0,
-          "epss": 0.016,
-          "epss_percentile": 0.75,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "MikroTik RouterOS",
-          "product_family": "network",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "6.49.21",
-            "7.23.4",
-            "7.24.2"
-          ],
-          "patch_url": "https://mikrotik.com/supportsec/september-2026-vulnerability/"
         }
       ]
     },
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 164,
-      "count_30d": 898,
+      "count_7d": 168,
+      "count_30d": 902,
       "kev_count": 27,
       "top": [
         {
@@ -3137,6 +3133,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-95779",
+          "title": "An exposure of the appliance’s confidential certificate  information …",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-09T23:17:25.01+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-106019",
           "title": "Insertion of sensitive information into log file vulnerability in Johnson…",
           "score": 8,
@@ -3198,6 +3228,41 @@
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-115338",
+          "title": "Insufficient protection of communications in Progress WS_FTP Server versions…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T02:17:11.24+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
             "info"
           ],
           "summary_what": null,
@@ -3618,76 +3683,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124432",
-          "title": "phpMyFAQ 4.1.9 before 4.1.11 and 4.2.0 pre-releases before 4.2.0-beta.3 contain…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.3,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-08T23:18:09.297+09:00",
-          "poc_count": 0,
-          "epss": 0.0032,
-          "epss_percentile": 0.24,
-          "cvss": 7.3,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118312",
-          "title": "Memory corruption in Paint in Google Chrome prior to 156.0.8078.73 allowed a…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -2.3
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-28T08:16:59.757+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "156.0.8078.73"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
         }
       ]
     },
@@ -4473,8 +4468,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 179,
-      "count_30d": 1093,
+      "count_7d": 181,
+      "count_30d": 1095,
       "kev_count": 14,
       "top": [
         {
@@ -4572,6 +4567,40 @@
           "epss_percentile": 0.31,
           "cvss": 8.8,
           "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124683",
+          "title": "Eclipse Langium versions 3.2.0 through 4.4.0 contain an inefficient algorithmic…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T02:17:27.69+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -5127,48 +5156,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-96146",
-          "title": "IBM SevOne Network Performance Management 7.0.0 through 8.2.2 could allow a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T05:17:25.193+09:00",
-          "poc_count": 0,
-          "epss": 0.0032,
-          "epss_percentile": 0.25,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 187,
-      "count_30d": 798,
+      "count_7d": 189,
+      "count_30d": 800,
       "kev_count": 161,
       "top": [
         {
@@ -6600,10 +6595,44 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 452,
-      "count_30d": 2135,
-      "kev_count": 228,
+      "count_7d": 455,
+      "count_30d": 2138,
+      "kev_count": 229,
       "top": [
+        {
+          "id": "CVE-2026-123158",
+          "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-06T01:17:47.11+09:00",
+          "poc_count": 0,
+          "epss": 0.010,
+          "epss_percentile": 0.63,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "OpenSSH",
+          "product_family": "server",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상 1024자 이하의 비밀번호가 인증에 성공할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-19868",
           "title": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML…",
@@ -7341,40 +7370,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "http://rhn.redhat.com/errata/RHSA-2015-1482.html"
-        },
-        {
-          "id": "CVE-2026-17150",
-          "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T14:18:28.23+09:00",
-          "poc_count": 0,
-          "epss": 0.0079,
-          "epss_percentile": 0.56,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     }
@@ -9654,8 +9649,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 476,
-      "count_30d": 1978,
+      "count_7d": 480,
+      "count_30d": 1982,
       "kev_count": 24,
       "top": [
         {
@@ -10405,10 +10400,44 @@
     {
       "key": "server",
       "label": "서버·DB·미들웨어",
-      "count_7d": 0,
-      "count_30d": 110,
-      "kev_count": 164,
+      "count_7d": 1,
+      "count_30d": 111,
+      "kev_count": 165,
       "top": [
+        {
+          "id": "CVE-2026-123158",
+          "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-12",
+          "kev_added_at": "2026-11-09",
+          "published_at": "2026-11-06T01:17:47.11+09:00",
+          "poc_count": 0,
+          "epss": 0.010,
+          "epss_percentile": 0.63,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "OpenSSH",
+          "product_family": "server",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상 1024자 이하의 비밀번호가 인증에 성공할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-110447",
           "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
@@ -11098,47 +11127,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://www.oracle.com/security-alerts/cpujan2026.html"
-        },
-        {
-          "id": "CVE-2019-1068",
-          "title": "A remote code execution vulnerability exists in Microsoft SQL Server when it…",
-          "score": 13,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 17.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -62.6
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-08-29",
-          "kev_added_at": "2026-08-26",
-          "published_at": "2019-07-16T04:15:16.983+09:00",
-          "poc_count": 0,
-          "epss": 0.57,
-          "epss_percentile": 0.991,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft SQL Server",
-          "product_family": "server",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "13.0.4259.0",
-            "13.0.4604.0",
-            "13.0.5101.9",
-            "13.0.5366.0",
-            "14.0.2027.2",
-            "14.0.3192.2"
-          ],
-          "patch_url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-1068"
         }
       ]
     },
@@ -13316,7 +13304,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 236,
+      "count_30d": 240,
       "kev_count": 98,
       "top": [
         {
@@ -13528,6 +13516,74 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://android.googlesource.com/kernel/common/+/009c5006c969826d37a2c5fc2721a7bb20d72555"
+        },
+        {
+          "id": "CVE-2026-55283",
+          "title": "In multiple locations, there is a possible memory safety issue due to a…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -1.1
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:44.9+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
+        },
+        {
+          "id": "CVE-2026-55275",
+          "title": "In multiple locations, there is a possible use-after-free due to a race…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -1.1
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:44.783+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
         },
         {
           "id": "CVE-2026-58942",
@@ -13922,74 +13978,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-03T05:17:55.59+09:00",
-          "poc_count": 0,
-          "epss": 0.0008,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
-        },
-        {
-          "id": "CVE-2026-55289",
-          "title": "In multiple functions in multiple locations, there is a possible execution of…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:45.293+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
-        },
-        {
-          "id": "CVE-2026-55288",
-          "title": "In validEfCfis of SIMRecords.java, there is a possible way to cause a denial of…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:45.15+09:00",
           "poc_count": 0,
           "epss": 0.0008,
           "epss_percentile": 0.00,

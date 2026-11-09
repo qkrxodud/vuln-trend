@@ -155,6 +155,109 @@
     "patch_url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
   },
   {
+    "id": "CVE-2026-116779",
+    "title": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-12",
+    "kev_added_at": "2026-11-09",
+    "published_at": "2026-11-06T05:17:44.79+09:00",
+    "poc_count": 0,
+    "epss": 0.013,
+    "epss_percentile": 0.70,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "FreeSwitch",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고 운영체제 명령을 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-102895",
+    "title": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-12",
+    "kev_added_at": "2026-11-09",
+    "published_at": "2026-11-05T07:17:44.613+09:00",
+    "poc_count": 0,
+    "epss": 0.0033,
+    "epss_percentile": 0.26,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "GPUStack",
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123158",
+    "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
+    "score": 58,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.1,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-12",
+    "kev_added_at": "2026-11-09",
+    "published_at": "2026-11-06T01:17:47.11+09:00",
+    "poc_count": 0,
+    "epss": 0.010,
+    "epss_percentile": 0.63,
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "OpenSSH",
+    "product_family": "server",
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상 1024자 이하의 비밀번호가 인증에 성공할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-110447",
     "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
     "score": 55,
@@ -3686,118 +3789,5 @@
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
-  },
-  {
-    "id": "CVE-2026-63077",
-    "title": "In JetBrains TeamCity before 2026.1.3, 2025.11.7 unauthenticated remote code…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 10.0,
-      "epss": 28.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -87.6
-    },
-    "why_now": "랜섬웨어 캠페인에 사용 중",
-    "is_kev": true,
-    "kev_ransomware": true,
-    "kev_due_date": "2026-08-08",
-    "kev_added_at": "2026-08-05",
-    "published_at": "2026-07-28T02:16:38.83+09:00",
-    "poc_count": 0,
-    "epss": 0.95,
-    "epss_percentile": 0.999,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "JetBrains TeamCity",
-    "product_family": "dev",
-    "attack_types": [
-      "rce"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "2025.11.7",
-      "2026.1.3"
-    ],
-    "patch_url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
-  },
-  {
-    "id": "CVE-2022-0995",
-    "title": "An out-of-bounds (OOB) memory write flaw was found in the Linux kernel’s…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 2.7,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 7.8,
-      "decay": -49.8
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-08-29",
-    "kev_added_at": "2026-08-26",
-    "published_at": "2022-03-26T04:15:10.52+09:00",
-    "poc_count": 0,
-    "epss": 0.089,
-    "epss_percentile": 0.95,
-    "cvss": 7.8,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Linux Kernel",
-    "product_family": "os",
-    "attack_types": [
-      "memory"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "5.10.106",
-      "5.15.29",
-      "5.16.5"
-    ],
-    "patch_url": "https://bugzilla.redhat.com/show_bug.cgi?id=2063786"
-  },
-  {
-    "id": "CVE-2026-8452",
-    "title": "Memory overflow vulnerability NetScaler ADC and NetScaler Gateway leading to…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.3,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -49.5
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-08-29",
-    "kev_added_at": "2026-08-26",
-    "published_at": "2026-06-30T22:19:33.45+09:00",
-    "poc_count": 0,
-    "epss": 0.010,
-    "epss_percentile": 0.63,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "Citrix NetScaler ADC·Gateway",
-    "product_family": "network",
-    "attack_types": [
-      "memory"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "13.1-37.272",
-      "13.1-63.18",
-      "14.1-72.61"
-    ],
-    "patch_url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
   }
 ]
