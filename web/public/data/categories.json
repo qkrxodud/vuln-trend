@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 138,
-      "count_30d": 997,
+      "count_7d": 154,
+      "count_30d": 1013,
       "kev_count": 321,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 264,
-      "count_30d": 1372,
+      "count_7d": 281,
+      "count_30d": 1390,
       "kev_count": 302,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 297,
-      "count_30d": 1308,
+      "count_7d": 325,
+      "count_30d": 1336,
       "kev_count": 32,
       "top": [
         {
@@ -2265,8 +2265,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 879,
-      "count_30d": 4609,
+      "count_7d": 912,
+      "count_30d": 4654,
       "kev_count": 262,
       "top": [
         {
@@ -2998,8 +2998,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 154,
-      "count_30d": 887,
+      "count_7d": 160,
+      "count_30d": 898,
       "kev_count": 27,
       "top": [
         {
@@ -3488,6 +3488,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-123465",
+          "title": "Exposure of Sensitive System Information to an Unauthorized Control Sphere…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-09T19:17:08.18+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-118312",
           "title": "Memory corruption in Paint in Google Chrome prior to 156.0.8078.73 allowed a…",
           "score": 8,
@@ -3659,48 +3693,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114217",
-          "title": "A flaw was found in konflux-ci",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -1.4
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-31T18:16:33.077+09:00",
-          "poc_count": 0,
-          "epss": 0.0009,
-          "epss_percentile": 0.00,
-          "cvss": 8.6,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 376,
-      "count_30d": 3010,
+      "count_7d": 383,
+      "count_30d": 3017,
       "kev_count": 462,
       "top": [
         {
@@ -4478,8 +4478,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 189,
-      "count_30d": 1094,
+      "count_7d": 195,
+      "count_30d": 1100,
       "kev_count": 14,
       "top": [
         {
@@ -5172,8 +5172,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 187,
-      "count_30d": 802,
+      "count_7d": 196,
+      "count_30d": 811,
       "kev_count": 161,
       "top": [
         {
@@ -5897,8 +5897,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 183,
-      "count_30d": 546,
+      "count_7d": 188,
+      "count_30d": 552,
       "kev_count": 32,
       "top": [
         {
@@ -6605,8 +6605,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 507,
-      "count_30d": 2122,
+      "count_7d": 520,
+      "count_30d": 2136,
       "kev_count": 228,
       "top": [
         {
@@ -9659,8 +9659,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 448,
-      "count_30d": 2116,
+      "count_7d": 501,
+      "count_30d": 2169,
       "kev_count": 24,
       "top": [
         {
@@ -9925,6 +9925,38 @@
             "2.4.4"
           ],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+        },
+        {
+          "id": "CVE-2026-115252",
+          "title": "The Confection WordPress Cable WordPress plugin from 0.4.0 to 0.4.7 does not…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-09T20:17:21.143+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-104014",
@@ -10358,40 +10390,6 @@
           "poc_count": 0,
           "epss": 0.0042,
           "epss_percentile": 0.36,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-113584",
-          "title": "The placester WordPress plugin through 1.4.3 does not perform any capability…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T15:16:39.943+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
