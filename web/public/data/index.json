@@ -2,7 +2,7 @@
   {
     "id": "CVE-2026-109618",
     "title": "OOM 처리 중 초기화되지 않은 요청 메모리를 정리 과정에서 읽거나 분기해 원격 코드 실행으로 이어질 수 있습니다",
-    "score": 67,
+    "score": 65,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -10,7 +10,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -23.3
+      "decay": -24.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -41,7 +41,7 @@
   {
     "id": "CVE-2026-109619",
     "title": "요청 메모리가 해제된 뒤에도 초기화되지 않은 전역 상태를 이용해 공격자가 원격 코드 실행을 유발할 수 있습니다",
-    "score": 65,
+    "score": 64,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -49,7 +49,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -22.9
+      "decay": -24.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -80,7 +80,7 @@
   {
     "id": "CVE-2026-111497",
     "title": "Brotli 디코더의 버퍼 오버플로 취약점으로 원격 비인증 공격자가 메모리를 손상·노출하거나 서비스 거부 및 임의 코드 실행을 유발할 수…",
-    "score": 64,
+    "score": 63,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -88,7 +88,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -20.5
+      "decay": -21.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -119,7 +119,7 @@
   {
     "id": "CVE-2026-97229",
     "title": "정규식 검증 미흡으로 인증되지 않은 공격자가 조작된 CI/CD 정규식을 이용해 GitLab 서버에서 임의 코드를 실행할 수 있습니다",
-    "score": 63,
+    "score": 62,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -127,7 +127,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -16.4
+      "decay": -17.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -157,7 +157,7 @@
   {
     "id": "CVE-2026-110447",
     "title": "CODE 서버가 실행 중이지 않을 때 proxy.php의 OS 명령 주입 취약점으로 원격 코드 실행이 가능하며, 실제 악용 사례가 보고되었습니다",
-    "score": 57,
+    "score": 55,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -165,7 +165,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -25.3
+      "decay": -26.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -194,7 +194,7 @@
   {
     "id": "CVE-2026-19868",
     "title": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML…",
-    "score": 56,
+    "score": 55,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -202,7 +202,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -1.6
+      "decay": -2.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -228,7 +228,7 @@
   {
     "id": "CVE-2026-48356",
     "title": "위험한 파일 형식의 무제한 업로드 취약점으로, 사용자가 악성 URL이나 손상된 웹페이지와 상호작용하면 공격자가 임의 코드를 실행하고 피해자의…",
-    "score": 56,
+    "score": 54,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -236,7 +236,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.3,
-      "decay": -17.8
+      "decay": -19.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -262,15 +262,15 @@
   {
     "id": "CVE-2026-119977",
     "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
-    "score": 52,
+    "score": 51,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
-      "epss": 0.3,
+      "epss": 0.4,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -6.4
+      "decay": -7.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -280,7 +280,7 @@
     "published_at": "2026-10-31T15:16:34.55+09:00",
     "poc_count": 0,
     "epss": 0.012,
-    "epss_percentile": 0.67,
+    "epss_percentile": 0.68,
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
@@ -322,7 +322,7 @@
   {
     "id": "CVE-2024-27834",
     "title": "임의의 읽기·쓰기 권한을 가진 공격자가 포인터 인증을 우회할 수 있습니다",
-    "score": 51,
+    "score": 50,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -330,7 +330,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -4.9
+      "decay": -6.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -358,7 +358,7 @@
   {
     "id": "CVE-2026-21589",
     "title": "인증되지 않은 원격 공격자가 파일명과 경로를 미리 알아야 웹 애플리케이션 루트의 특정 파일에 접근할 수 있는 임의 파일 접근 취약점이며…",
-    "score": 50,
+    "score": 49,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -366,7 +366,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -37.2
+      "decay": -38.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -396,7 +396,7 @@
   {
     "id": "CVE-2026-118527",
     "title": "예측 가능한 파일명 사용으로 인증된 원격 공격자가 디스크의 알려진 위치에 공격자 제어 콘텐츠를 업로드할 수 있습니다",
-    "score": 49,
+    "score": 48,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -404,7 +404,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -5.2
+      "decay": -6.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -432,7 +432,7 @@
   {
     "id": "CVE-2026-102764",
     "title": "메시지 발신 출처 검증이 미흡해 공격자가 조건에 따라 어플라이언스에서 파일 작업을 수행할 수 있습니다",
-    "score": 49,
+    "score": 48,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -440,7 +440,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -34.3
+      "decay": -35.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -466,7 +466,7 @@
   {
     "id": "CVE-2026-46300",
     "title": "skb 병합 과정에서 공유 프래그먼트 표시가 사라져 ESP가 페이지 캐시 데이터를 제자리에서 복호화할 수 있는 커널 취약점입니다",
-    "score": 49,
+    "score": 47,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -474,7 +474,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -14.1
+      "decay": -15.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -507,7 +507,7 @@
   {
     "id": "CVE-2026-104935",
     "title": "인증 우회 취약점으로 원격 비인증 공격자가 임의 명령을 실행할 수 있습니다",
-    "score": 48,
+    "score": 46,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -515,7 +515,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -37.8
+      "decay": -38.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -544,7 +544,7 @@
   {
     "id": "CVE-2026-105134",
     "title": "Replication Receiver의 취약점으로 원격 공격자가 OS 명령을 실행할 수 있습니다",
-    "score": 47,
+    "score": 46,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -552,7 +552,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -37.1
+      "decay": -38.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -582,7 +582,7 @@
   {
     "id": "CVE-2026-76418",
     "title": "Cisco Secure Firewall의 SSL 원격 접속 VPN에서 인증되지 않은 원격 공격자가 조작된 요청을 보내 장비를 예기치 않게…",
-    "score": 47,
+    "score": 46,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -590,7 +590,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.6,
-      "decay": -12.1
+      "decay": -13.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -628,7 +628,7 @@
   {
     "id": "CVE-2026-111357",
     "title": "dsinvoked 브로커가 DSCache 설정 데이터를 신뢰하는 방식의 취약점으로 공격자가 루트 권한을 획득할 수 있습니다",
-    "score": 47,
+    "score": 45,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -636,7 +636,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.0,
-      "decay": -10.7
+      "decay": -11.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -664,7 +664,7 @@
   {
     "id": "CVE-2026-105133",
     "title": "API의 인증 처리 취약점으로 원격 공격자가 인증을 우회할 수 있으며, 공개된 공격 방법이 있습니다",
-    "score": 46,
+    "score": 45,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -672,7 +672,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.3,
-      "decay": -36.3
+      "decay": -37.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -701,7 +701,7 @@
   {
     "id": "CVE-2015-3306",
     "title": "ProFTPD의 mod_copy 모듈 취약점으로 원격 공격자가 임의 파일을 읽거나 쓸 수 있습니다",
-    "score": 44,
+    "score": 43,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -709,7 +709,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -46.0
+      "decay": -47.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -735,7 +735,7 @@
   {
     "id": "CVE-2015-5477",
     "title": "TKEY 질의 처리 중 REQUIRE 어설션 실패로 BIND 데몬이 종료되어 원격 서비스 거부가 발생할 수 있습니다",
-    "score": 43,
+    "score": 42,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -743,7 +743,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -44.7
+      "decay": -45.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -772,7 +772,7 @@
   {
     "id": "CVE-2016-3081",
     "title": "동적 메서드 호출이 활성화된 Apache Struts에서 연쇄 표현식 관련 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
-    "score": 43,
+    "score": 42,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -780,7 +780,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -44.5
+      "decay": -45.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -811,7 +811,7 @@
   {
     "id": "CVE-2026-114625",
     "title": "인증된 사용자가 운영자 권한을 얻어 내부 전용 기능에 접근하고 VCO 호스트와 관리 데이터의 기밀성·무결성·가용성을 침해할 수 있습니다",
-    "score": 42,
+    "score": 41,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -819,7 +819,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -18.6
+      "decay": -19.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -849,7 +849,7 @@
   {
     "id": "CVE-2026-41709",
     "title": "VMware ESX의 로깅 미흡 취약점으로, 악의적인 관리자가 일부 작업을 로그에 남기지 않고 수행할 수 있습니다",
-    "score": 41,
+    "score": 40,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -857,7 +857,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 2.7,
-      "decay": -11.9
+      "decay": -12.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -867,7 +867,7 @@
     "published_at": "2026-07-30T23:16:57.42+09:00",
     "poc_count": 0,
     "epss": 0.0069,
-    "epss_percentile": 0.52,
+    "epss_percentile": 0.53,
     "cvss": 2.7,
     "cvss_version": "3.1",
     "severity": "LOW",
@@ -885,7 +885,7 @@
   {
     "id": "CVE-2026-106931",
     "title": "OS 명령 삽입 취약점으로 공격자가 영향을 받는 시스템에서 root 또는 SYSTEM 권한으로 임의의 OS 명령을 실행할 수 있습니다",
-    "score": 38,
+    "score": 37,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -893,7 +893,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -20.8
+      "decay": -21.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -932,7 +932,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -20.6
+      "decay": -21.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -960,7 +960,7 @@
   {
     "id": "CVE-2026-96656",
     "title": "Plex Media Server before 1.43.3.10861 allows an admin user to write arbitrary…",
-    "score": 37,
+    "score": 36,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -968,7 +968,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -20.5
+      "decay": -21.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -996,7 +996,7 @@
   {
     "id": "CVE-2026-96655",
     "title": "Plex Media Server before 1.43.3.10861 allows an authenticated user to request…",
-    "score": 37,
+    "score": 36,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1004,7 +1004,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.3,
-      "decay": -20.4
+      "decay": -21.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1032,7 +1032,7 @@
   {
     "id": "CVE-2026-96654",
     "title": "Plex Media Server before 1.43.3.10861 does not correctly neutralize URL values…",
-    "score": 37,
+    "score": 36,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1040,7 +1040,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -20.3
+      "decay": -21.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1068,7 +1068,7 @@
   {
     "id": "CVE-2026-110936",
     "title": "A vulnerability has been identified in Siemens Software Center (All versions <…",
-    "score": 37,
+    "score": 36,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1076,7 +1076,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.7,
-      "decay": -20.2
+      "decay": -21.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1104,7 +1104,7 @@
   {
     "id": "CVE-2026-76519",
     "title": "A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco…",
-    "score": 35,
+    "score": 34,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1112,7 +1112,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -26.5
+      "decay": -27.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1141,7 +1141,7 @@
   {
     "id": "CVE-2026-96951",
     "title": "Improper neutralization of special elements used in a command ('command…",
-    "score": 35,
+    "score": 34,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1149,7 +1149,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -27.2
+      "decay": -28.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1187,7 +1187,7 @@
   {
     "id": "CVE-2021-3199",
     "title": "Directory traversal with remote code execution can occur in /upload in…",
-    "score": 34,
+    "score": 33,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1195,7 +1195,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -35.2
+      "decay": -36.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1231,7 +1231,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -23.5
+      "decay": -24.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1260,7 +1260,7 @@
   {
     "id": "CVE-2026-0322",
     "title": "A remote code execution (RCE) vulnerability in the management interface of Palo…",
-    "score": 33,
+    "score": 32,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1268,7 +1268,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.2,
-      "decay": -24.8
+      "decay": -25.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1298,7 +1298,7 @@
   {
     "id": "CVE-2026-88771",
     "title": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix…",
-    "score": 33,
+    "score": 32,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1306,7 +1306,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -51.9
+      "decay": -52.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1336,7 +1336,7 @@
   {
     "id": "CVE-2026-102489",
     "title": "Zammad versions 6.3.0 to 6.5.4 are vulnerable a session hijack vulnerability…",
-    "score": 32,
+    "score": 31,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1344,7 +1344,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -43.0
+      "decay": -43.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1378,7 +1378,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -55.4
+      "decay": -56.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1438,7 +1438,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.1,
-      "decay": -49.8
+      "decay": -50.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1472,11 +1472,11 @@
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
-      "epss": 27.1,
+      "epss": 27.5,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -55.8
+      "decay": -56.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1485,7 +1485,7 @@
     "kev_added_at": "2026-09-24",
     "published_at": "2026-08-12T03:18:21.61+09:00",
     "poc_count": 0,
-    "epss": 0.90,
+    "epss": 0.92,
     "epss_percentile": 0.999,
     "cvss": 9.1,
     "cvss_version": "3.1",
@@ -1504,7 +1504,7 @@
   {
     "id": "CVE-2026-93616",
     "title": "A directory traversal and file upload vulnerability allows an unauthenticated…",
-    "score": 30,
+    "score": 29,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1512,7 +1512,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -57.4
+      "decay": -58.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1548,7 +1548,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -42.1
+      "decay": -42.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1588,7 +1588,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 4.9,
-      "decay": -28.7
+      "decay": -29.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1624,7 +1624,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -33.7
+      "decay": -34.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1662,7 +1662,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -40.2
+      "decay": -40.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1691,7 +1691,7 @@
   {
     "id": "CVE-2026-102490",
     "title": "Zammad packages built with packager.io (DEB and RPM) could have allowed a local…",
-    "score": 26,
+    "score": 25,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1699,7 +1699,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -35.1
+      "decay": -35.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1727,7 +1727,7 @@
   {
     "id": "CVE-2026-104286",
     "title": "An improper limitation of a pathname to a restricted directory ('path…",
-    "score": 26,
+    "score": 25,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1735,7 +1735,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -35.2
+      "decay": -35.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1765,7 +1765,7 @@
   {
     "id": "CVE-2026-85102",
     "title": "Improper certificate trust validation during VPN negotiation in Check Point…",
-    "score": 26,
+    "score": 25,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1773,7 +1773,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -50.4
+      "decay": -51.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1802,7 +1802,7 @@
   {
     "id": "CVE-2026-76460",
     "title": "A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow…",
-    "score": 25,
+    "score": 24,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1810,7 +1810,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -57.9
+      "decay": -58.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1836,7 +1836,7 @@
   {
     "id": "CVE-2026-85706",
     "title": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 18.7…",
-    "score": 24,
+    "score": 23,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1844,7 +1844,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -65.2
+      "decay": -65.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1876,7 +1876,7 @@
   {
     "id": "CVE-2026-5430",
     "title": "The JWT authentication mechanism accepts tokens signed with algorithms other…",
-    "score": 24,
+    "score": 23,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1884,7 +1884,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -43.1
+      "decay": -43.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1921,7 +1921,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -44.5
+      "decay": -45.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1955,7 +1955,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -39.4
+      "decay": -39.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -1984,7 +1984,7 @@
   {
     "id": "CVE-2026-75650",
     "title": "Adobe Commerce is affected by an Improper Neutralization of Special Elements…",
-    "score": 22,
+    "score": 21,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -1992,7 +1992,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -67.9
+      "decay": -68.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2021,7 +2021,7 @@
   {
     "id": "CVE-2026-20079",
     "title": "A vulnerability in the web interface of Cisco Secure Firewall Management Center…",
-    "score": 22,
+    "score": 21,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2029,7 +2029,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -64.9
+      "decay": -65.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2055,7 +2055,7 @@
   {
     "id": "CVE-2026-67279",
     "title": "RouterOS SSH enters the connection protocol after a client-requested rekey even…",
-    "score": 21,
+    "score": 20,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2063,7 +2063,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -36.5
+      "decay": -37.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2093,7 +2093,7 @@
   {
     "id": "CVE-2026-93952",
     "title": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may…",
-    "score": 21,
+    "score": 20,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2101,7 +2101,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -39.9
+      "decay": -40.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2130,7 +2130,7 @@
   {
     "id": "CVE-2026-76461",
     "title": "A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure…",
-    "score": 21,
+    "score": 20,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2138,7 +2138,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -51.3
+      "decay": -51.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2168,7 +2168,7 @@
   {
     "id": "CVE-2026-7273",
     "title": "A stack-based buffer overflow vulnerability in the CGI program of Zyxel…",
-    "score": 20,
+    "score": 19,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2176,7 +2176,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -40.0
+      "decay": -40.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2204,7 +2204,7 @@
   {
     "id": "CVE-2025-39682",
     "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ntls: fix…",
-    "score": 19,
+    "score": 18,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2212,7 +2212,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -42.1
+      "decay": -42.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2251,7 +2251,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -40.9
+      "decay": -41.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2287,7 +2287,7 @@
   {
     "id": "CVE-2026-87886",
     "title": "Local privilege escalation due to insecure file permissions",
-    "score": 18,
+    "score": 17,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2295,7 +2295,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -40.1
+      "decay": -40.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2325,7 +2325,7 @@
   {
     "id": "CVE-2026-19490",
     "title": "Vulnerability in NetScaler ADC and NetScaler Gateway",
-    "score": 18,
+    "score": 17,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2333,7 +2333,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -52.3
+      "decay": -52.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2371,7 +2371,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -41.7
+      "decay": -42.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2405,7 +2405,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -67.9
+      "decay": -68.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2443,7 +2443,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 5.5,
-      "decay": -38.8
+      "decay": -39.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2476,7 +2476,7 @@
   {
     "id": "CVE-2026-48710",
     "title": "Starlette is a lightweight ASGI framework/toolkit",
-    "score": 17,
+    "score": 16,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2484,7 +2484,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 6.5,
-      "decay": -61.1
+      "decay": -61.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2520,7 +2520,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -45.3
+      "decay": -45.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2556,7 +2556,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -62.2
+      "decay": -62.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2594,7 +2594,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.5,
-      "decay": -44.7
+      "decay": -45.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2626,7 +2626,7 @@
   {
     "id": "CVE-2026-86060",
     "title": "RouterOS contains an argument-handling flaw in the SSH login\npath involving…",
-    "score": 16,
+    "score": 15,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2634,7 +2634,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -45.9
+      "decay": -46.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2664,7 +2664,7 @@
   {
     "id": "CVE-2026-84869",
     "title": "A condition in the ScreenConnect client may allow files to be transferred and…",
-    "score": 16,
+    "score": 15,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2672,7 +2672,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.9,
-      "decay": -44.4
+      "decay": -44.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2700,7 +2700,7 @@
   {
     "id": "CVE-2026-86218",
     "title": "N-central is vulnerable to a pre-auth remote code execution This issue affects…",
-    "score": 16,
+    "score": 15,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -2708,7 +2708,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -48.7
+      "decay": -49.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2744,7 +2744,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -69.3
+      "decay": -69.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2780,7 +2780,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -45.7
+      "decay": -46.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2819,7 +2819,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -43.7
+      "decay": -44.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2857,7 +2857,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -44.9
+      "decay": -45.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2893,7 +2893,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -43.5
+      "decay": -43.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2933,7 +2933,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -43.5
+      "decay": -43.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -2974,7 +2974,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -67.8
+      "decay": -68.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3008,7 +3008,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -51.6
+      "decay": -51.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3036,7 +3036,7 @@
   {
     "id": "CVE-2019-1068",
     "title": "A remote code execution vulnerability exists in Microsoft SQL Server when it…",
-    "score": 14,
+    "score": 13,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3044,7 +3044,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -62.2
+      "decay": -62.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3077,7 +3077,7 @@
   {
     "id": "CVE-2026-82329",
     "title": "JFrog Artifactory contains an authentication weakness that, under default…",
-    "score": 14,
+    "score": 13,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3085,7 +3085,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -50.5
+      "decay": -50.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3118,7 +3118,7 @@
   {
     "id": "CVE-2023-49105",
     "title": "An issue was discovered in ownCloud owncloud/core before 10.13.1",
-    "score": 14,
+    "score": 13,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3126,7 +3126,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -59.3
+      "decay": -59.6
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3162,7 +3162,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -75.0
+      "decay": -75.3
     },
     "why_now": "랜섬웨어 캠페인에 사용 중",
     "is_kev": true,
@@ -3200,7 +3200,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -49.1
+      "decay": -49.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3237,7 +3237,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -46.1
+      "decay": -46.4
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3273,7 +3273,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.9,
-      "decay": -68.7
+      "decay": -69.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3310,7 +3310,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -47.8
+      "decay": -48.1
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3348,7 +3348,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -47.7
+      "decay": -48.0
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3380,7 +3380,7 @@
   {
     "id": "CVE-2026-33824",
     "title": "Double free in Windows IKE Extension allows an unauthorized attacker to execute…",
-    "score": 13,
+    "score": 12,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3388,7 +3388,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -70.4
+      "decay": -70.7
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3426,7 +3426,7 @@
   {
     "id": "CVE-2026-59822",
     "title": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native)…",
-    "score": 13,
+    "score": 12,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3434,7 +3434,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.2,
-      "decay": -46.0
+      "decay": -46.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3470,7 +3470,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -1.1
+      "decay": -1.4
     },
     "why_now": "30일 내 악용 확률 상위 3%",
     "is_kev": false,
@@ -3505,7 +3505,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -54.6
+      "decay": -54.9
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3542,7 +3542,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.1,
-      "decay": -67.9
+      "decay": -68.2
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3570,7 +3570,7 @@
   {
     "id": "CVE-2026-72898",
     "title": "Metabase allows a remote, unauthenticated attacker to inject arbitrary SQL via…",
-    "score": 12,
+    "score": 11,
     "score_breakdown": {
       "kev": 50.0,
       "ransomware": 0.0,
@@ -3578,7 +3578,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 10.0,
-      "decay": -78.0
+      "decay": -78.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3625,7 +3625,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 8.8,
-      "decay": -65.6
+      "decay": -65.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3653,6 +3653,41 @@
     "patch_url": "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
   },
   {
+    "id": "CVE-2026-124580",
+    "title": "A vulnerability was found in Chengdu Feiyuxing Technology VW2100 and VEC10GP…",
+    "score": 11,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.8,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 10.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 10.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-09T17:17:02.923+09:00",
+    "poc_count": 0,
+    "epss": 0.028,
+    "epss_percentile": 0.86,
+    "cvss": 10.0,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-63077",
     "title": "In JetBrains TeamCity before 2026.1.3, 2025.11.7 unauthenticated remote code…",
     "score": 11,
@@ -3663,7 +3698,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -87.3
+      "decay": -87.6
     },
     "why_now": "랜섬웨어 캠페인에 사용 중",
     "is_kev": true,
@@ -3700,7 +3735,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 7.8,
-      "decay": -49.5
+      "decay": -49.8
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3738,7 +3773,7 @@
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -49.2
+      "decay": -49.5
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -3764,39 +3799,5 @@
       "14.1-72.61"
     ],
     "patch_url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
-  },
-  {
-    "id": "CVE-2015-3246",
-    "title": "libuser before 0.56.13-8 and 0.60 before 0.60-7, as used in the userhelper…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 2.6,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 7.4,
-      "decay": -49.1
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-09",
-    "kev_added_at": "2026-08-26",
-    "published_at": "2015-08-11T23:59:07.04+09:00",
-    "poc_count": 0,
-    "epss": 0.085,
-    "epss_percentile": 0.95,
-    "cvss": 7.4,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Enterprise Linux",
-    "product_family": "os",
-    "attack_types": [
-      "other"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": "http://rhn.redhat.com/errata/RHSA-2015-1482.html"
   }
 ]
