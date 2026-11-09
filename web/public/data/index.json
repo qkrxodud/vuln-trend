@@ -179,15 +179,17 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": "FreeSwitch",
+    "primary_product": "Freeswitch",
     "product_family": null,
     "attack_types": [
       "rce",
       "injection"
     ],
     "summary_what": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고 운영체제 명령을 실행할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "1.11.3"
+    ],
+    "patch_url": "https://github.com/signalwire/freeswitch/commit/7015f6a73ab3d67fed5fbfc277ecfb88a74c2a86"
   },
   {
     "id": "CVE-2026-102895",
@@ -214,14 +216,16 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": "GPUStack",
+    "primary_product": "Gpustack",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "2.2.0"
+    ],
+    "patch_url": "https://github.com/gpustack/gpustack/commit/53f42a6a553542974396d16a4ff6b12bcbedb48d"
   },
   {
     "id": "CVE-2026-123158",
@@ -254,8 +258,10 @@
       "other"
     ],
     "summary_what": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상 1024자 이하의 비밀번호가 인증에 성공할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.6"
+    ],
+    "patch_url": "https://github.com/openssh/openssh-portable/commit/4353fdc43ef646c43a8dda7025cc1a898caf1482"
   },
   {
     "id": "CVE-2026-110447",
@@ -319,14 +325,17 @@
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": "SonicOS SSLVPN",
+    "primary_product": "Sonicos",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML 적용 다중 인증을 우회할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "7.3.4-7015",
+      "8.2.2-8015"
+    ],
+    "patch_url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014"
   },
   {
     "id": "CVE-2026-48356",
