@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 291,
-      "count_30d": 1402,
+      "count_7d": 295,
+      "count_30d": 1406,
       "kev_count": 305,
       "top": [
         {
@@ -890,14 +890,16 @@
           "cvss": 7.5,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": "BroadWorks",
+          "primary_product": "Broadworks Application Delivery Platform",
           "product_family": null,
           "attack_types": [
             "injection"
           ],
           "summary_what": "Cisco BroadWorks의 OCI XML 파서가 외부 엔티티를 기본 허용해 발생하는 취약점으로, 비인증 원격 공격자가 민감한 파일과 설정 정보를 읽을 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "ri.2026.07"
+          ],
+          "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-bworks-xxe-uwUd7CEt"
         },
         {
           "id": "CVE-2026-110447",
@@ -1552,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 292,
-      "count_30d": 1311,
+      "count_7d": 302,
+      "count_30d": 1321,
       "kev_count": 32,
       "top": [
         {
@@ -1824,6 +1826,40 @@
           "attack_types": [
             "rce",
             "injection",
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-26248",
+          "title": "A improper neutralization of input during web page generation ('cross-site…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T05:19:11.28+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "xss"
           ],
           "summary_what": null,
@@ -2211,48 +2247,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-119432",
-          "title": "A stored cross-site scripting (XSS) vulnerability exists in the Foxit…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T14:18:20.83+09:00",
-          "poc_count": 0,
-          "epss": 0.0032,
-          "epss_percentile": 0.25,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 914,
-      "count_30d": 4680,
+      "count_7d": 940,
+      "count_30d": 4706,
       "kev_count": 265,
       "top": [
         {
@@ -2976,8 +2978,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 164,
-      "count_30d": 946,
+      "count_7d": 166,
+      "count_30d": 948,
       "kev_count": 27,
       "top": [
         {
@@ -3671,8 +3673,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1115,
-      "count_30d": 3967,
+      "count_7d": 1167,
+      "count_30d": 4019,
       "kev_count": 463,
       "top": [
         {
@@ -3833,14 +3835,14 @@
         {
           "id": "CVE-2026-125350",
           "title": "XML의 사용 후 해제 취약점으로 원격 공격자가 조작된 HTML 페이지를 통해 샌드박스 내부에서 임의 코드를 실행할 수 있습니다",
-          "score": 50,
+          "score": 59,
           "score_breakdown": {
             "kev": 50.0,
             "ransomware": 0.0,
             "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 0.0,
+            "cvss": 8.8,
             "decay": 0.0
           },
           "why_now": "CISA 악용 목록 등재",
@@ -3852,17 +3854,19 @@
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
-          "cvss": null,
-          "cvss_version": null,
-          "severity": "UNRATED",
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": "XML의 사용 후 해제 취약점으로 원격 공격자가 조작된 HTML 페이지를 통해 샌드박스 내부에서 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.50"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html"
         },
         {
           "id": "CVE-2026-46300",
@@ -4450,8 +4454,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 226,
-      "count_30d": 1194,
+      "count_7d": 250,
+      "count_30d": 1218,
       "kev_count": 14,
       "top": [
         {
@@ -4798,6 +4802,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-121370",
+          "title": "On affected platforms running Arista EOS with Precision Time Protocol (PTP)…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T05:18:56.507+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-123531",
           "title": "Vikunja from 1.0.0 before 2.7.1 contains an uncontrolled resource consumption…",
           "score": 9,
@@ -5102,48 +5140,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-105543",
-          "title": "Null pointer dereference in Windows Installer allows an authorized attacker to…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:17:56.13+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 203,
-      "count_30d": 847,
+      "count_7d": 209,
+      "count_30d": 853,
       "kev_count": 161,
       "top": [
         {
@@ -5867,8 +5871,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 175,
-      "count_30d": 562,
+      "count_7d": 179,
+      "count_30d": 566,
       "kev_count": 32,
       "top": [
         {
@@ -6583,8 +6587,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 592,
-      "count_30d": 2399,
+      "count_7d": 623,
+      "count_30d": 2430,
       "kev_count": 231,
       "top": [
         {
@@ -6655,7 +6659,7 @@
           ],
           "summary_what": "Microsoft Office Outlook UI가 안전하지 않은 작업을 경고하지 않아, 인증되지 않은 공격자가 네트워크를 통해 스푸핑 공격을 할 수 있습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194"
         },
         {
           "id": "CVE-2026-111793",
@@ -6688,7 +6692,9 @@
             "other"
           ],
           "summary_what": "Openwave Webtop Media Transcoder가 관리자가 정한 파일 형식 제한을 적용하지 않아, 인증된 사용자가 Webmail 경험을 우회해 의도하지 않은 문서 형식을 처리·변환할 수 있습니다.",
-          "fix_versions": [],
+          "fix_versions": [
+            "1.1.22.0"
+          ],
           "patch_url": null
         },
         {
@@ -8147,14 +8153,14 @@
         {
           "id": "CVE-2026-125350",
           "title": "XML의 사용 후 해제 취약점으로 원격 공격자가 조작된 HTML 페이지를 통해 샌드박스 내부에서 임의 코드를 실행할 수 있습니다",
-          "score": 50,
+          "score": 59,
           "score_breakdown": {
             "kev": 50.0,
             "ransomware": 0.0,
             "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 0.0,
+            "cvss": 8.8,
             "decay": 0.0
           },
           "why_now": "CISA 악용 목록 등재",
@@ -8166,17 +8172,19 @@
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
-          "cvss": null,
-          "cvss_version": null,
-          "severity": "UNRATED",
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": "XML의 사용 후 해제 취약점으로 원격 공격자가 조작된 HTML 페이지를 통해 샌드박스 내부에서 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.50"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html"
         },
         {
           "id": "CVE-2024-27834",
@@ -8287,6 +8295,142 @@
           "patch_url": "https://github.com/v8/v8/commit/e0562d87ad9c17042b581582c99237d798572e67"
         },
         {
+          "id": "CVE-2026-125347",
+          "title": "Incorrect authorization in FileSystem in Google Chrome prior to 157.0.8103.50…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T03:17:34.843+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125348",
+          "title": "Out of bounds write in GPU in Google Chrome prior to 157.0.8103.50 allowed a…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T03:17:34.98+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125346",
+          "title": "Use after free in XML in Google Chrome prior to 157.0.8103.50 allowed a remote…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T03:17:34.707+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125344",
+          "title": "Type confusion in V8 in Google Chrome prior to 157.0.8103.50 allowed a remote…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T03:17:34.443+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-121157",
           "title": "Incorrect authorization in Chromoting in Google Chrome prior to 157.0.8103.38…",
           "score": 9,
@@ -8311,14 +8455,16 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "auth"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.38"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
         },
         {
           "id": "CVE-2026-121156",
@@ -8699,150 +8845,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-04T06:17:30.847+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121189",
-          "title": "Use after free in Browser in Google Chrome prior to 157.0.8103.38 allowed a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:27.693+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121185",
-          "title": "Use after free in PictureInPicture in Google Chrome prior to 157.0.8103.38…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:27.177+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121148",
-          "title": "Use after free in ANGLE in Google Chrome prior to 157.0.8103.38 allowed a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:23.15+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121126",
-          "title": "Use after free in Core in Google Chrome prior to 157.0.8103.38 allowed a remote…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:20.86+09:00",
           "poc_count": 0,
           "epss": 0.0041,
           "epss_percentile": 0.35,
@@ -9621,8 +9623,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 428,
-      "count_30d": 1987,
+      "count_7d": 429,
+      "count_30d": 1988,
       "kev_count": 24,
       "top": [
         {
@@ -13277,7 +13279,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 298,
+      "count_30d": 306,
       "kev_count": 98,
       "top": [
         {
@@ -13591,6 +13593,40 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://android.googlesource.com/kernel/common/+/009c5006c969826d37a2c5fc2721a7bb20d72555"
+        },
+        {
+          "id": "CVE-2026-58844",
+          "title": "In multiple locations, there is a possible out of bounds read/write due to an…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": -1.3
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-03T05:17:48.403+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.04,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://android.googlesource.com/kernel/common/+/2f86c81dc9453ed385c4f0703d6bd664d0997567"
         },
         {
           "id": "CVE-2026-55283",
@@ -13931,40 +13967,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
-        },
-        {
-          "id": "CVE-2026-58884",
-          "title": "In startTetheredHotspotRequest of WifiServiceImpl.java, there is a possible…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:50.28+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
         }
       ]
     },
@@ -14007,7 +14009,7 @@
           ],
           "summary_what": "Microsoft Office Outlook UI가 안전하지 않은 작업을 경고하지 않아, 인증되지 않은 공격자가 네트워크를 통해 스푸핑 공격을 할 수 있습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194"
         },
         {
           "id": "CVE-2026-110936",
