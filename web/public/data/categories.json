@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 148,
-      "count_30d": 960,
+      "count_7d": 158,
+      "count_30d": 970,
       "kev_count": 322,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 282,
-      "count_30d": 1383,
+      "count_7d": 292,
+      "count_30d": 1393,
       "kev_count": 303,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 315,
-      "count_30d": 1302,
+      "count_7d": 319,
+      "count_30d": 1306,
       "kev_count": 32,
       "top": [
         {
@@ -1700,6 +1700,40 @@
           "epss_percentile": 0.28,
           "cvss": 9.3,
           "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-60043",
+          "title": "An unauthenticated remote attacker can perform a XSS attack on a logged in…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T18:17:24.11+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
@@ -2225,48 +2259,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123301",
-          "title": "In JetBrains IntelliJ IDEA before 2026.3 dOM-based XSS in the OpenAPI preview…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T20:17:09.067+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.18,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 956,
-      "count_30d": 4603,
+      "count_7d": 967,
+      "count_30d": 4614,
       "kev_count": 264,
       "top": [
         {
@@ -2994,8 +2994,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 179,
-      "count_30d": 913,
+      "count_7d": 181,
+      "count_30d": 915,
       "kev_count": 27,
       "top": [
         {
@@ -3513,6 +3513,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-120012",
+          "title": "SAP Cloud SDK for AI (Node.js) could inadvertently include sensitive…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T18:17:22.14+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-63644",
           "title": "bird-lg-go is a BIRD looking glass in Go",
           "score": 8,
@@ -3649,51 +3683,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-63190",
-          "title": "FearlessCMS is a flat-file `content` management system centered on simplicity…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.4,
-            "decay": -2.2
-          },
-          "why_now": "CVSS 9.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T05:18:37.47+09:00",
-          "poc_count": 0,
-          "epss": 0.0054,
-          "epss_percentile": 0.45,
-          "cvss": 9.4,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss",
-            "auth",
-            "info",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 383,
-      "count_30d": 3102,
+      "count_7d": 392,
+      "count_30d": 3111,
       "kev_count": 462,
       "top": [
         {
@@ -4471,8 +4468,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 237,
-      "count_30d": 1151,
+      "count_7d": 238,
+      "count_30d": 1152,
       "kev_count": 14,
       "top": [
         {
@@ -5165,8 +5162,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 207,
-      "count_30d": 818,
+      "count_7d": 217,
+      "count_30d": 828,
       "kev_count": 161,
       "top": [
         {
@@ -5890,8 +5887,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 178,
-      "count_30d": 552,
+      "count_7d": 180,
+      "count_30d": 554,
       "kev_count": 32,
       "top": [
         {
@@ -6598,8 +6595,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 537,
-      "count_30d": 2220,
+      "count_7d": 545,
+      "count_30d": 2228,
       "kev_count": 229,
       "top": [
         {
@@ -9655,8 +9652,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 483,
-      "count_30d": 1986,
+      "count_7d": 494,
+      "count_30d": 1997,
       "kev_count": 24,
       "top": [
         {
