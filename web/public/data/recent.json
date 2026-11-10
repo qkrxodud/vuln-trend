@@ -1,5 +1,4664 @@
 [
   {
+    "id": "CVE-2026-97891",
+    "title": "In Eclipse Kura version 5.0.0 to 5.6.2, the Web Console allocates a new HTTP…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:57.597+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.8,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97401",
+    "title": "In Kura versions <= 5.6.2, `CommandCloudApp.execute()` extracts a…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:55.45+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.4,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth",
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-92684",
+    "title": "Missing Authentication for Critical Function in aggregation queries in Neo4j…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:50.15+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-83528",
+    "title": "Exposure of PII in Ivanti EPMM before version 12.10.0.1, 12.9.0.3, and 12.8.0.5…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:49.13+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-82518",
+    "title": "Akamai CLI before 2.0.6 contains a path traversal vulnerability that allows…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:48.77+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-66335",
+    "title": "AMI APTIOV contains vulnerabilities in BIOS where\nprivileged users may cause…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.873+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-66334",
+    "title": "AMI APTIOV contains vulnerabilities in BIOS where\nprivileged users may cause…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.733+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-66333",
+    "title": "AMI APTIOV contains vulnerabilities in BIOS where\nprivileged users may cause…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.603+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-66332",
+    "title": "AMI APTIOV contains a vulnerability in BIOS\nwhere a privileged\nuser may cause…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.453+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.6,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-63653",
+    "title": "Group-Office is an enterprise customer relationship management and groupware…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.307+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.0,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-63651",
+    "title": "LiveDocs is a primary-source-first documentation for AI agents",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:46.143+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-63011",
+    "title": "Group-Office is an enterprise customer relationship management and groupware…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:45.98+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.4,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-63010",
+    "title": "Group-Office is an enterprise customer relationship management and groupware…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:45.8+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-61547",
+    "title": "rabbitmq-c is a C-language AMQP client library for RabbitMQ",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:45.65+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.8,
+    "cvss_version": "3.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-59986",
+    "title": "rabbitmq-c is a C-language AMQP client library for RabbitMQ",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:45.043+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-57907",
+    "title": "A privilege escalation vulnerability in WatchGuard Endpoint Protection's…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.877+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.5,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-57884",
+    "title": "Uncontrolled search path for some Intel(R) Graphics Software before version…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.727+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-56438",
+    "title": "Uncontrolled search path for the libva software for all versions within Ring 3…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.543+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-50177",
+    "title": "Deserialization of untrusted data for some Intel(R) Neural Compressor software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.407+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-50109",
+    "title": "Out-of-bounds write for some Intel(R) Performance Counter Monitor (Intel(R)…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.267+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.3,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-49028",
+    "title": "Deserialization of untrusted data for some Intel(R) Neural Compressor software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:44.12+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-46632",
+    "title": "Uncontrolled search path for some Intel(R) Application Optimization User…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.987+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-44627",
+    "title": "Integer overflow to buffer overflow for some Intel(R) oneAPI Deep Neural…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.857+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-42966",
+    "title": "Uncaught exception for some Intel(R) Neural Compressor software before version…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.73+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-42917",
+    "title": "Deserialization of untrusted data for some Intel(R) Neural Compressor software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.587+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-42067",
+    "title": "Improper certificate validation for some Intel(R) TDX Workload Attestation…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.447+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-41214",
+    "title": "Improper input validation for some Intel(R) Neural Compressor software before…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.313+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40705",
+    "title": "Improper resource locking for the Intel(R) NPU Drivers before version…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.187+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40704",
+    "title": "Protection mechanism failure for some Intel Neural Compressor software before…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:43.063+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40693",
+    "title": "Improper input validation for some Intel(R) TDX Workload Attestation software…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.93+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.7,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40427",
+    "title": "Use after free for some Intel(R) QuickAssist Technology Driver for Windows…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.803+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40426",
+    "title": "Integer underflow (wrap or wraparound) for the Intel(R) NPU Driver software…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.663+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-40065",
+    "title": "Improper input validation for some Intel(R) Neural Compressor software before…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.513+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-39456",
+    "title": "Improper input validation for some Media Transcode Accelerator before version…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.387+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.6,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-35683",
+    "title": "Out-of-bounds write for some Intel(R) Multi-Buffer Crypto for IPSec within Ring…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.227+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-35060",
+    "title": "Missing authentication for critical function for some AI Playground software…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:42.03+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.0,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-34016",
+    "title": "Time-of-check time-of-use race condition for the Intel(R) VTune(TM) Profiler…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.88+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.5,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33571",
+    "title": "Out-of-bounds read for the Intel(R) VTune(TM) Profiler software before version…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.76+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33567",
+    "title": "Improper input validation for the Intel(R) VTune(TM) Profiler software within…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.623+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33563",
+    "title": "Exposure of sensitive information to an unauthorized actor for some Intel(R)…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.49+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33279",
+    "title": "Out-of-bounds write for the Intel(R) VTune(TM) Profiler software before version…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.36+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33270",
+    "title": "Improper input validation for some Intel(R) Graphics Software within Ring 3…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.227+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-33089",
+    "title": "Improper input validation for some Intel(R) CIP software within Ring 2…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:41.083+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-32672",
+    "title": "Null pointer dereference for the Intel(R) NPU Drivers before version…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.957+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-32670",
+    "title": "Time-of-check time-of-use race condition for the Intel(R) VTune(TM) Profiler…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.83+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.5,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-32667",
+    "title": "Out-of-bounds write for the Intel(R) VTune(TM) Profiler software within Ring 1…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.7+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.5,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-28765",
+    "title": "Improper input validation for the Intel(R) VTune(TM) Profiler software before…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.563+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-28743",
+    "title": "Out-of-bounds write for the Intel(R) VTune(TM) Profiler software before version…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.423+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.9,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-28702",
+    "title": "Incorrect default permissions for the Intel(R) VTune(TM) Profiler software…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:40.28+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.3,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-26052",
+    "title": "Insecure inherited permissions for some Intel(R) Graphics Driver software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:39.007+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-21407",
+    "title": "Deadlock for some Intel(R) Arc(TM) B-series graphics cards within Ring 1…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:34.193+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-20880",
+    "title": "Incorrect default permissions for some Intel(R) Graphics Driver software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:34.047+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-20798",
+    "title": "Uncontrolled search path for some Intel(R) Graphics Driver software installers…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:33.917+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-20756",
+    "title": "Incorrect default permissions for some Intel(R) Graphics Driver software…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:33.77+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-126050",
+    "title": "apitrace 2.0 through 14.0 contains a heap-based buffer overflow in…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:32.107+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-126049",
+    "title": "Gwenhywfar 5.14.2 contains a heap use-after-free vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:31.803+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.6,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-126048",
+    "title": "Gwenhywfar 4.99.8beta before 5.14.2 contains a stack-based buffer overflow in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:31.473+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.6,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-126042",
+    "title": "VNote 3.11.0 before 4.12.0 contains an OS command injection vulnerability in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:31.303+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125271",
+    "title": "Incorrect normalization of operation names in the custom security policy…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:28.497+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125125",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:27.053+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125124",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:26.91+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125123",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:26.757+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125122",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:26.603+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125121",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:26.41+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124251",
+    "title": "Cross-Site Request Forgery (CSRF) vulnerability in XplodedThemes WPIDE – File…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:25.06+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": "web_cms",
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123180",
+    "title": "A missing authentication vulnerability in the listed NETGEAR RAX models allows…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:23.703+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123178",
+    "title": "An insufficient input validation vulnerability in the listed NETGEAR Orbi…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:23.463+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-115791",
+    "title": "When tarfile or zipfile command line interface (CLI) is used to\n\ndecompress an…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:22.853+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-112186",
+    "title": "In Eclipse Kura versions 5.4.0 through 5.6.2, the Service Listing V1 REST API…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:20.85+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.7,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-112185",
+    "title": "In Eclipse Kura versions 5.1.0 through 5.6.2, the Configuration REST API v2…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:20.693+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.6,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111729",
+    "title": "In Kura versions <= 5.6.2, the \"Command\" file-upload handler at `POST…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:20.353+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.0,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-107405",
+    "title": "An exposed dangerous function in Ivanti EPMM before version 12.10.0.1…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:19.177+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-102803",
+    "title": "Joomla Extension - j2commerce.com - Gift voucher and single-use coupon could…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T02:17:18.35+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.0,
+    "cvss_version": "4.0",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97890",
+    "title": "The embedded HTTP server does not invalidate the previous session identifier…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:27.153+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97888",
+    "title": "The embedded HTTP server does not clear the security identity established…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:27.037+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97881",
+    "title": "The embedded OpenEJB HTTP server does not restrict static resource paths to the…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:26.87+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97880",
+    "title": "The embedded OpenEJB HTTP server dispatches some requests to REST endpoints…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:26.71+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97874",
+    "title": "When Hessian remoting is configured with BASIC authentication, the…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:26.56+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97872",
+    "title": "When an EJB is exposed over the optional Hessian protocol inside an existing…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:26.413+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97870",
+    "title": "When Hessian remoting endpoints are served by the embedded HTTP server…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:26.18+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97867",
+    "title": "The EJBd remote protocol returns datasource connection details, including…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:25.34+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97849",
+    "title": "The embedded Derby network service ignores its configured bind address and…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:25.2+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-97402",
+    "title": "In Eclipse Kura versions 3.1.0 to 5.6.2, the iBeacon and Eddystone…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:25.05+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-87758",
+    "title": "The remote EJB client does not verify that the hostname of the server it…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:24.93+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-86531",
+    "title": "The embedded OpenEJB HTTP server does not limit the size of incoming request…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:24.817+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-86336",
+    "title": "Apache TomEE running on JDK 21 or later skips EJB method authorization checks…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:24.697+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-18128",
+    "title": "Cleartext transmission of sensitive information in the Agent of Ivanti Endpoint…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:24.05+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125759",
+    "title": "Nango before 0.71.3 contains an sql injection vulnerability that allows…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:23.43+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125758",
+    "title": "Aptabase before commit 61d4c01 contains an authentication bypass vulnerability…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:23.267+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125757",
+    "title": "mailcow: dockerized before 2026-11 contains a server-side template injection…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:23.107+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125756",
+    "title": "postal-mime before 4.2.1 contains a parser differential vulnerability in its…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:22.937+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125755",
+    "title": "Nodemailer 3.0.0 before 10.4.1 contains an address parsing flaw in…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:22.767+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125754",
+    "title": "Dolibarr 20.0.0 through 23.0.4 and 24.x before 24.0.2 contains an insecure…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:22.493+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125753",
+    "title": "ABP Framework 2.9.0 before 10.6.2 and 10.7.0 pre-releases before 10.7.0 contain…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:22.307+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125752",
+    "title": "Meteroid before 2.2.0 contains a cross-tenant authorization bypass…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:21.903+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.0,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125751",
+    "title": "Meteroid before 2.2.0 contains an authorization bypass vulnerability in the…",
+    "score": 3,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:21.26+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.1,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125750",
+    "title": "Firekylin through 2.18.1 contains an improper authorization vulnerability that…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:21.07+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125749",
+    "title": "TaxHacker through 0.8.5 contains an insecure direct object reference…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.2,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.2, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:20.893+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.2,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125748",
+    "title": "Parabol before 15.21.2 contains a missing authorization vulnerability in the…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:20.73+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-125747",
+    "title": "ZenTao PMS through 22.7 contains a missing object-level authorization…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:20.563+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124038",
+    "title": "An uncontrolled XML entity expansion vulnerability in the Flock Installer app…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:18.957+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124037",
+    "title": "An information exposure flaw in the public access-list sign-up feature of the…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:18.8+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-124036",
+    "title": "Missing authorization checks in the visual alert feature of FlockOS, Flock's…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:18.63+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123181",
+    "title": "A path traversal vulnerability in Ivanti Sentry before versions 10.7.4 and…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:18.503+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123179",
+    "title": "An insecure default initialization of resource in the Tomcat shutdown listener…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:18.37+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-121683",
+    "title": "Missing authentication in Ivanti Cloud Services Application version 5.0.8…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:17.9+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.4,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-121653",
+    "title": "SQL injection in the Core of Ivanti Endpoint Manager before version 2024 SU8…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:17.58+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-11316",
+    "title": "A out-of-bounds write vulnerability exists in the dr_wav…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:17.453+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-11315",
+    "title": "A out-of-bounds read vulnerability exists in the dr_mp3 drmp3_init_internal…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:17.31+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "memory"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-112191",
+    "title": "In Eclipse Kura versions 5.4.0 through 5.6.2, the Identity REST APIs…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.947+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.6,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111261",
+    "title": "The Jakarta Security LDAP identity store accepts an empty password as valid if…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.82+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111260",
+    "title": "The Jakarta Security OpenID Connect authentication mechanism generates the…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.707+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111259",
+    "title": "The embedded server generates HTTP session identifiers with a non-cryptographic…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.59+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111258",
+    "title": "The optional request routing feature forwards requests to their configured…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.46+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111257",
+    "title": "With the default configuration and no users defined in the default user…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.343+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111256",
+    "title": "When JAX-WS or JAX-RS endpoints are published by the embedded OpenEJB HTTP…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.217+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111251",
+    "title": "The admin service of the standalone OpenEJB server accepts stop requests…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:16.1+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111250",
+    "title": "The embedded OpenEJB HTTP server reports every request as authenticated when an…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.97+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111249",
+    "title": "The development-time LiveReload support listens on all network interfaces…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.83+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111248",
+    "title": "The Jakarta Security identity store backed by the Tomcat user database compares…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.703+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111247",
+    "title": "When resolving security roles of a realm-authenticated caller, the caller's…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.577+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111246",
+    "title": "The embedded OpenEJB HTTP server does not isolate HTTP sessions between web…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.457+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111245",
+    "title": "After a successful WS-Security UsernameToken authentication, the caller…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.313+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111244",
+    "title": "When MicroProfile JWT role-based access control is used, the access constraints…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.203+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111243",
+    "title": "A negative MicroProfile JWT clock skew setting is not rejected and disables…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:15.08+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111242",
+    "title": "When MicroProfile JWT authentication is used for servlets that declare a run-as…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.967+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111241",
+    "title": "When a non-default stateful session bean passivation strategy is configured…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.84+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111240",
+    "title": "The JDBC based JAAS login module accepts a login without a password for…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.723+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-111239",
+    "title": "The optional SSH administration service grants full access to the…",
+    "score": 0,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 0.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 미평가, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.597+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": null,
+    "cvss_version": null,
+    "severity": "UNRATED",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-108187",
+    "title": "Origin Validation Error in Zoom Workplace for Windows may allow an…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.33+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-108186",
+    "title": "Improper Input Validation in Zoom Workplace for Windows may allow an…",
+    "score": 10,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.183+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.6,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-107404",
+    "title": "Argument injection in Ivanti EPMM before version 12.10.0.1, 12.9.0.3, and…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:14.063+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-105813",
+    "title": "Cleartext storage of sensitive information in Ivanti UWM before version 2026.4…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:13.93+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "info"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-105669",
+    "title": "Argument injection in Ivanti Sentry before version 10.8.3 and 10.7.4 allows a…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:13.81+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-105427",
+    "title": "Improper input validation in Ivanti EPMM before version 12.10.0.1, 12.9.0.3…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:13.683+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-105426",
+    "title": "Improper input validation in Ivanti EPMM before version 12.10.0.1, 12.9.0.3…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:13.557+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.7,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-105425",
+    "title": "OS command injection in Ivanti Sentry before versions 10.7.4, 10.8.3, and…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.2,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.2, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-11T01:17:13.41+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.2,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-87756",
     "title": "The internal system EJBs used for remote deployment and configuration did not…",
     "score": 0,
@@ -27492,14 +32151,16 @@
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Langflow",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "1.12.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7290694"
   },
   {
     "id": "CVE-2026-93879",
@@ -27730,14 +32391,14 @@
     "cvss": 3.1,
     "cvss_version": "3.1",
     "severity": "LOW",
-    "primary_product": null,
+    "primary_product": "Guardium Data Protection",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7295791"
   },
   {
     "id": "CVE-2026-84229",
@@ -27764,14 +32425,14 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Guardium Data Protection",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7295791"
   },
   {
     "id": "CVE-2026-84228",
@@ -27798,14 +32459,14 @@
     "cvss": 3.1,
     "cvss_version": "3.1",
     "severity": "LOW",
-    "primary_product": null,
+    "primary_product": "Guardium Data Protection",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7295791"
   },
   {
     "id": "CVE-2026-84030",
@@ -27832,14 +32493,14 @@
     "cvss": 5.6,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Guardium Data Protection",
     "product_family": null,
     "attack_types": [
       "injection"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7295791"
   },
   {
     "id": "CVE-2026-82830",
@@ -28549,14 +33210,17 @@
     "cvss": 5.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "App Connect Enterprise",
     "product_family": null,
     "attack_types": [
       "xss"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.0.12.31",
+      "13.0.9.0"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7293505"
   },
   {
     "id": "CVE-2026-18195",
@@ -28583,14 +33247,17 @@
     "cvss": 4.2,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "App Connect Enterprise",
     "product_family": null,
     "attack_types": [
       "xss"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.0.12.31",
+      "13.0.9.0"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7293505"
   },
   {
     "id": "CVE-2026-18194",
@@ -28617,14 +33284,16 @@
     "cvss": 2.5,
     "cvss_version": "3.1",
     "severity": "LOW",
-    "primary_product": null,
+    "primary_product": "App Connect Enterprise",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "13.0.9.0"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7291780"
   },
   {
     "id": "CVE-2026-18093",
@@ -28651,14 +33320,16 @@
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "App Connect Enterprise",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "13.0.9.0"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295806"
   },
   {
     "id": "CVE-2026-17466",
@@ -28719,14 +33390,17 @@
     "cvss": 5.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "App Connect Enterprise",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.0.12.30",
+      "13.0.9.0"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7293001"
   },
   {
     "id": "CVE-2026-16699",
@@ -28787,14 +33461,14 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Datastage on Cloud Pak for Data",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7294270"
   },
   {
     "id": "CVE-2026-16427",
@@ -28821,14 +33495,14 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Datastage on Cloud Pak for Data",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7294270"
   },
   {
     "id": "CVE-2026-16325",
@@ -28855,14 +33529,14 @@
     "cvss": 4.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Datastage on Cloud Pak for Data",
     "product_family": null,
     "attack_types": [
       "xss"
     ],
     "summary_what": null,
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://www.ibm.com/support/pages/node/7294270"
   },
   {
     "id": "CVE-2026-15266",
@@ -39029,17 +43703,17 @@
   {
     "id": "CVE-2026-99281",
     "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ntun…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.8,
+      "decay": -0.4
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -39048,9 +43722,9 @@
     "poc_count": 0,
     "epss": 0.0016,
     "epss_percentile": 0.04,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "os",
     "attack_types": [],
@@ -39157,17 +43831,17 @@
   {
     "id": "CVE-2026-99277",
     "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.4
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -39176,9 +43850,9 @@
     "poc_count": 0,
     "epss": 0.0015,
     "epss_percentile": 0.03,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "os",
     "attack_types": [],
@@ -49521,17 +54195,17 @@
   {
     "id": "CVE-2026-17306",
     "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to…",
-    "score": 6,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 5.8,
-      "decay": -0.4
+      "cvss": 8.6,
+      "decay": -0.5
     },
-    "why_now": "CVSS 5.8, 최근 공개",
+    "why_now": "CVSS 8.6, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -49540,17 +54214,19 @@
     "poc_count": 0,
     "epss": 0.0038,
     "epss_percentile": 0.32,
-    "cvss": 5.8,
+    "cvss": 8.6,
     "cvss_version": "3.1",
-    "severity": "MEDIUM",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17305",
@@ -49577,14 +54253,17 @@
     "cvss": 5.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17304",
@@ -49596,10 +54275,10 @@
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 6.4,
+      "cvss": 6.5,
       "decay": -0.4
     },
-    "why_now": "CVSS 6.4, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -49608,17 +54287,19 @@
     "poc_count": 0,
     "epss": 0.0028,
     "epss_percentile": 0.20,
-    "cvss": 6.4,
+    "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17303",
@@ -49645,14 +54326,17 @@
     "cvss": 6.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17302",
@@ -49679,14 +54363,16 @@
     "cvss": 5.0,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17301",
@@ -49713,29 +54399,32 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17299",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 9,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.6,
-      "decay": -0.6
+      "cvss": 8.1,
+      "decay": -0.5
     },
-    "why_now": "CVSS 9.6, 최근 공개",
+    "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -49744,32 +54433,35 @@
     "poc_count": 0,
     "epss": 0.0044,
     "epss_percentile": 0.38,
-    "cvss": 9.6,
+    "cvss": 8.1,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17298",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 10,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.9,
-      "decay": -0.6
+      "cvss": 7.7,
+      "decay": -0.5
     },
-    "why_now": "CVSS 9.9, 최근 공개",
+    "why_now": "CVSS 7.7, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -49778,17 +54470,20 @@
     "poc_count": 0,
     "epss": 0.0054,
     "epss_percentile": 0.45,
-    "cvss": 9.9,
+    "cvss": 7.7,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17297",
@@ -49815,14 +54510,17 @@
     "cvss": 9.6,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17296",
@@ -49849,14 +54547,17 @@
     "cvss": 9.6,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17295",
@@ -49883,14 +54584,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17294",
@@ -49917,14 +54621,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17293",
@@ -49951,14 +54658,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17292",
@@ -49985,29 +54695,32 @@
     "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17291",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 8,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 8.7,
-      "decay": -0.5
+      "cvss": 9.0,
+      "decay": -0.6
     },
-    "why_now": "CVSS 8.7, 최근 공개",
+    "why_now": "CVSS 9.0, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50016,17 +54729,20 @@
     "poc_count": 0,
     "epss": 0.0048,
     "epss_percentile": 0.41,
-    "cvss": 8.7,
+    "cvss": 9.0,
     "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": null,
+    "severity": "CRITICAL",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17290",
@@ -50053,14 +54769,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17289",
@@ -50087,14 +54806,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17288",
@@ -50121,14 +54843,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17287",
@@ -50155,14 +54880,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17285",
@@ -50189,29 +54917,32 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17284",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 7,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 7.1,
-      "decay": -0.4
+      "cvss": 8.5,
+      "decay": -0.5
     },
-    "why_now": "CVSS 7.1, 최근 공개",
+    "why_now": "CVSS 8.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50220,17 +54951,20 @@
     "poc_count": 0,
     "epss": 0.0030,
     "epss_percentile": 0.23,
-    "cvss": 7.1,
+    "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17283",
@@ -50257,14 +54991,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17282",
@@ -50291,14 +55028,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17281",
@@ -50325,14 +55065,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17280",
@@ -50344,10 +55087,10 @@
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 8.9,
+      "cvss": 9.1,
       "decay": -0.6
     },
-    "why_now": "CVSS 8.9, 최근 공개",
+    "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50356,32 +55099,35 @@
     "poc_count": 0,
     "epss": 0.0055,
     "epss_percentile": 0.46,
-    "cvss": 8.9,
+    "cvss": 9.1,
     "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": null,
+    "severity": "CRITICAL",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17279",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 7,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 7.7,
-      "decay": -0.5
+      "cvss": 6.5,
+      "decay": -0.4
     },
-    "why_now": "CVSS 7.7, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50390,32 +55136,35 @@
     "poc_count": 0,
     "epss": 0.0052,
     "epss_percentile": 0.44,
-    "cvss": 7.7,
+    "cvss": 6.5,
     "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": null,
+    "severity": "MEDIUM",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "dos"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17278",
     "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain…",
-    "score": 9,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -0.6
+      "cvss": 7.5,
+      "decay": -0.5
     },
-    "why_now": "CVSS 9.8, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50424,17 +55173,19 @@
     "poc_count": 0,
     "epss": 0.0072,
     "epss_percentile": 0.54,
-    "cvss": 9.8,
+    "cvss": 7.5,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17244",
@@ -50461,14 +55212,17 @@
     "cvss": 7.4,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17241",
@@ -50495,29 +55249,32 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17240",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 6,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 6.5,
-      "decay": -0.4
+      "cvss": 5.3,
+      "decay": -0.3
     },
-    "why_now": "CVSS 6.5, 최근 공개",
+    "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50526,32 +55283,35 @@
     "poc_count": 0,
     "epss": 0.0060,
     "epss_percentile": 0.48,
-    "cvss": 6.5,
+    "cvss": 5.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17239",
     "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated…",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.3,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.9,
+      "cvss": 8.8,
       "decay": -0.6
     },
-    "why_now": "CVSS 9.9, 최근 공개",
+    "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -50560,17 +55320,19 @@
     "poc_count": 0,
     "epss": 0.0084,
     "epss_percentile": 0.58,
-    "cvss": 9.9,
+    "cvss": 8.8,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17238",
@@ -50597,14 +55359,17 @@
     "cvss": 6.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17237",
@@ -50631,14 +55396,17 @@
     "cvss": 6.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17236",
@@ -50665,14 +55433,17 @@
     "cvss": 6.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17233",
@@ -50699,14 +55470,17 @@
     "cvss": 6.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17232",
@@ -50733,14 +55507,17 @@
     "cvss": 6.1,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17231",
@@ -50767,14 +55544,17 @@
     "cvss": 5.8,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "info"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17230",
@@ -50801,14 +55581,17 @@
     "cvss": 5.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17228",
@@ -50869,14 +55652,17 @@
     "cvss": 5.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17215",
@@ -50903,14 +55689,17 @@
     "cvss": 4.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "info"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17214",
@@ -51005,14 +55794,16 @@
     "cvss": 5.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "info"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17190",
@@ -51039,14 +55830,17 @@
     "cvss": 8.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "xss"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17188",
@@ -51073,14 +55867,16 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17187",
@@ -51311,29 +56107,32 @@
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17147",
     "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-    "score": 10,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.3,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.9,
+      "cvss": 8.8,
       "decay": -0.6
     },
-    "why_now": "CVSS 9.9, 최근 공개",
+    "why_now": "CVSS 8.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -51342,17 +56141,20 @@
     "poc_count": 0,
     "epss": 0.0090,
     "epss_percentile": 0.59,
-    "cvss": 9.9,
+    "cvss": 8.8,
     "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
+    "severity": "HIGH",
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295637"
   },
   {
     "id": "CVE-2026-17146",
@@ -51856,14 +56658,16 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17098",
@@ -51890,14 +56694,17 @@
     "cvss": 5.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "info"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17085",
@@ -51924,14 +56731,17 @@
     "cvss": 4.1,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17067",
@@ -51958,14 +56768,17 @@
     "cvss": 5.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17066",
@@ -51992,14 +56805,16 @@
     "cvss": 9.1,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17064",
@@ -52026,14 +56841,17 @@
     "cvss": 5.0,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17062",
@@ -52060,14 +56878,17 @@
     "cvss": 2.7,
     "cvss_version": "3.1",
     "severity": "LOW",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "injection"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-17049",
@@ -52094,14 +56915,16 @@
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16920",
@@ -52128,14 +56951,16 @@
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16918",
@@ -52162,14 +56987,17 @@
     "cvss": 9.3,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16912",
@@ -52196,14 +57024,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16884",
@@ -52230,14 +57061,16 @@
     "cvss": 9.9,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "injection"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16880",
@@ -52264,14 +57097,17 @@
     "cvss": 8.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16854",
@@ -52298,14 +57134,16 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "injection"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16720",
@@ -52332,14 +57170,17 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16719",
@@ -52366,14 +57207,17 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16718",
@@ -52400,14 +57244,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16717",
@@ -52434,14 +57281,16 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16716",
@@ -52468,14 +57317,17 @@
     "cvss": 8.8,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16715",
@@ -52502,14 +57354,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16714",
@@ -52536,14 +57391,17 @@
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16712",
@@ -52570,14 +57428,17 @@
     "cvss": 7.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16711",
@@ -52604,14 +57465,17 @@
     "cvss": 5.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16710",
@@ -52638,14 +57502,16 @@
     "cvss": 5.8,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16709",
@@ -52672,14 +57538,17 @@
     "cvss": 8.7,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "xss"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-16679",
@@ -52706,14 +57575,17 @@
     "cvss": 4.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-120477",
@@ -52910,14 +57782,17 @@
     "cvss": 4.2,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-105459",
@@ -52944,14 +57819,17 @@
     "cvss": 6.8,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-105002",
@@ -52978,15 +57856,18 @@
     "cvss": 7.5,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "rce",
       "injection"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "10.0.8.13",
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-19803",
@@ -53048,14 +57929,16 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "API Connect",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "12.1.1.3"
+    ],
+    "patch_url": "https://www.ibm.com/support/pages/node/7295635"
   },
   {
     "id": "CVE-2026-123218",
@@ -57420,17 +62303,17 @@
   {
     "id": "CVE-2026-100081",
     "title": "In the Linux kernel, the following vulnerability has been resolved…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.8,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -57439,9 +62322,9 @@
     "poc_count": 0,
     "epss": 0.0024,
     "epss_percentile": 0.15,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": "os",
     "attack_types": [],
@@ -77700,17 +82583,17 @@
   {
     "id": "CVE-2026-82894",
     "title": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77719,9 +82602,9 @@
     "poc_count": 0,
     "epss": 0.0046,
     "epss_percentile": 0.40,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -77734,17 +82617,17 @@
   {
     "id": "CVE-2026-81828",
     "title": "Server-Side Request Forgery in SurveyWrapper in Apache OFBiz 24.09 before…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 8.1,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77753,9 +82636,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -77870,17 +82753,17 @@
   {
     "id": "CVE-2026-81744",
     "title": "Incorrect Authorization in ContentPermissionServices in Apache OFBiz 24.09…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77889,9 +82772,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -77904,17 +82787,17 @@
   {
     "id": "CVE-2026-81734",
     "title": "Missing Authorization in ProductEvents in Apache OFBiz 24.09 before 24.09.08 on…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77923,9 +82806,9 @@
     "poc_count": 0,
     "epss": 0.0022,
     "epss_percentile": 0.12,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -77938,17 +82821,17 @@
   {
     "id": "CVE-2026-76152",
     "title": "Path traversal and missing authorization check in the imageCrop and imageRotate…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77957,9 +82840,9 @@
     "poc_count": 0,
     "epss": 0.0024,
     "epss_percentile": 0.14,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -77973,17 +82856,17 @@
   {
     "id": "CVE-2026-76150",
     "title": "Path traversal and missing authorization check in the replaceImageToExistImage…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -77992,9 +82875,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78008,17 +82891,17 @@
   {
     "id": "CVE-2026-74841",
     "title": "In multitenant deployments, ContextFilter and LoginWorker built a per-tenant…",
-    "score": 0,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.1,
+      "decay": -0.9
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78027,9 +82910,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78042,17 +82925,17 @@
   {
     "id": "CVE-2026-73580",
     "title": "Missing authorization check in the getHRChild service in Apache OFBiz through…",
-    "score": 0,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 5.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78061,9 +82944,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.13,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78077,17 +82960,17 @@
   {
     "id": "CVE-2026-73578",
     "title": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78096,9 +82979,9 @@
     "poc_count": 0,
     "epss": 0.0033,
     "epss_percentile": 0.26,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78111,17 +82994,17 @@
   {
     "id": "CVE-2026-73577",
     "title": "Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78130,9 +83013,9 @@
     "poc_count": 0,
     "epss": 0.0030,
     "epss_percentile": 0.22,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78179,17 +83062,17 @@
   {
     "id": "CVE-2026-68524",
     "title": "An unauthenticated attacker can exploit temporary-file handling, access an open…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78198,9 +83081,9 @@
     "poc_count": 0,
     "epss": 0.0022,
     "epss_percentile": 0.12,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78486,17 +83369,17 @@
   {
     "id": "CVE-2026-97356",
     "title": "External Control of File Name or Path vulnerability in the ViewFile component…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78505,9 +83388,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78520,17 +83403,17 @@
   {
     "id": "CVE-2026-97355",
     "title": "Use of Hard-coded Password vulnerability in the AdminServer component in Apache…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78539,9 +83422,9 @@
     "poc_count": 0,
     "epss": 0.0015,
     "epss_percentile": 0.04,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78554,17 +83437,17 @@
   {
     "id": "CVE-2026-92887",
     "title": "Incorrect default value in the REST API framework's .rest.xml definition parser…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.3,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78573,9 +83456,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.13,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.3,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -78727,17 +83610,17 @@
   {
     "id": "CVE-2026-83538",
     "title": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms…",
-    "score": 0,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 5.3,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 5.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -78746,9 +83629,9 @@
     "poc_count": 0,
     "epss": 0.0029,
     "epss_percentile": 0.21,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79246,17 +84129,17 @@
   {
     "id": "CVE-2026-114277",
     "title": "Authentication bypass by Assumed-Immutable data vulnerability in Apache OFBiz",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79265,9 +84148,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.14,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79280,17 +84163,17 @@
   {
     "id": "CVE-2026-114272",
     "title": "Authorization Bypass Through User-Controlled Key in the content viewing…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79299,9 +84182,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79314,17 +84197,17 @@
   {
     "id": "CVE-2026-114271",
     "title": "Authorization Bypass Through User-Controlled Key in the shopping list services…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79333,9 +84216,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79348,17 +84231,17 @@
   {
     "id": "CVE-2026-114235",
     "title": "Direct Request ('Forced Browsing') in the Order component in Apache OFBiz 24.09…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79367,9 +84250,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79382,17 +84265,17 @@
   {
     "id": "CVE-2026-114233",
     "title": "Incorrect Privilege Assignment in the Order Manager in Apache OFBiz 24.09…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 8.1,
+      "decay": -0.8
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 8.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79401,9 +84284,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79416,17 +84299,17 @@
   {
     "id": "CVE-2026-114229",
     "title": "Improper Neutralization of Input During Web Page Generation ('Cross-site…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.1,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79435,9 +84318,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.1,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79450,17 +84333,17 @@
   {
     "id": "CVE-2026-109928",
     "title": "Incorrect Implementation of Authentication Algorithm in the password-reset and…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.4,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79469,9 +84352,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.09,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79484,17 +84367,17 @@
   {
     "id": "CVE-2026-109856",
     "title": "Direct Request ('Forced Browsing') to Financial Account services in Apache…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79503,9 +84386,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79518,17 +84401,17 @@
   {
     "id": "CVE-2026-109837",
     "title": "Authorization Bypass Through User-Controlled Key in Order Returns in Apache…",
-    "score": 0,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 5.4,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79537,9 +84420,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79552,17 +84435,17 @@
   {
     "id": "CVE-2026-109129",
     "title": "Authorization Bypass Through User-Controlled Key in the Order Manager component…",
-    "score": 0,
+    "score": 5,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 5.4,
+      "decay": -0.5
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 5.4, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79571,9 +84454,9 @@
     "poc_count": 0,
     "epss": 0.0019,
     "epss_percentile": 0.08,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79620,17 +84503,17 @@
   {
     "id": "CVE-2026-105461",
     "title": "Missing check for  ORDERMGR_UPDATE in ordermgr allows user with only…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79639,9 +84522,9 @@
     "poc_count": 0,
     "epss": 0.0015,
     "epss_percentile": 0.04,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79654,17 +84537,17 @@
   {
     "id": "CVE-2026-105330",
     "title": "Use of Hard-coded Cryptographic Key in JWT token authentication in Apache OFBiz…",
-    "score": 0,
+    "score": 9,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.8,
+      "decay": -1.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79673,9 +84556,9 @@
     "poc_count": 0,
     "epss": 0.0023,
     "epss_percentile": 0.13,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79688,17 +84571,17 @@
   {
     "id": "CVE-2026-105325",
     "title": "Missing check for  ACCOUNTING_UPDATE /  ACCOUNTING_CREATE in accounting in…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79707,9 +84590,9 @@
     "poc_count": 0,
     "epss": 0.0015,
     "epss_percentile": 0.04,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79790,17 +84673,17 @@
   {
     "id": "CVE-2026-100228",
     "title": "Improper Input Validation in Order Returns in Apache OFBiz 24.09.07 on all…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79809,9 +84692,9 @@
     "poc_count": 0,
     "epss": 0.0020,
     "epss_percentile": 0.10,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79824,17 +84707,17 @@
   {
     "id": "CVE-2026-100168",
     "title": "Direct Request ('Forced Browsing') in the Content Manager component in Apache…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.5,
+      "decay": -0.6
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -79843,9 +84726,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -79996,17 +84879,17 @@
   {
     "id": "CVE-2026-103866",
     "title": "Inconsistent interpretation of HTTP requests ('HTTP Request/Response…",
-    "score": 0,
+    "score": 7,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 7.5,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 7.5, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -80015,9 +84898,9 @@
     "poc_count": 0,
     "epss": 0.0021,
     "epss_percentile": 0.11,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -82549,17 +87432,17 @@
   {
     "id": "CVE-2026-68993",
     "title": "A double free vulnerability in NPU driver due to improper pointer management…",
-    "score": 0,
+    "score": 6,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 6.3,
+      "decay": -0.7
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 6.3, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -82568,9 +87451,9 @@
     "poc_count": 0,
     "epss": 0.0014,
     "epss_percentile": 0.03,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 6.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -82719,17 +87602,17 @@
   {
     "id": "CVE-2026-48186",
     "title": "Improper handling of messages before AS security activation can cause…",
-    "score": 0,
+    "score": 8,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.0,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
-      "decay": 0.0
+      "cvss": 9.1,
+      "decay": -1.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.1, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -82738,9 +87621,9 @@
     "poc_count": 0,
     "epss": 0.0014,
     "epss_percentile": 0.03,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.1,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
