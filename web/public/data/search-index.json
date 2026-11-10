@@ -1,5 +1,3015 @@
 [
   {
+    "id": "CVE-2026-87756",
+    "title": "The internal system EJBs used for remote deployment and configuration did not…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-87755",
+    "title": "Stateful session bean identifiers are not generated from a cryptographically…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-86811",
+    "title": "The stateful session bean passivation mechanism derives the on-disk file name…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-86532",
+    "title": "The bundled JAAS login modules leak whether a username exists and compare…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123082",
+    "title": "Docker Desktop before version 4.94.0 could write the signed-in user's Docker…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121885",
+    "title": "A flaw was found in Podman",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-114359",
+    "title": "Eclipse Kura downloads deployment packages (DPs) from a remote URL without any…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113422",
+    "title": "In Eclipse Kura versions 5.0.0 through 5.6.2, the Wire Graph update…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-111264",
+    "title": "The security constraint generated for EJB JAX-WS endpoints with configured…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-111263",
+    "title": "Authentication configured for an EJB JAX-WS endpoint in the TomEE deployment…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-111262",
+    "title": "The Jakarta Security LDAP identity store does not neutralize special characters…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-82509",
+    "title": "V programming language standard library net.http through version 0.5.2 prior to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12708",
+    "title": "Summary\n\n\nCloudflare tokio-quiche was found to contain an uncontrolled resource…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124952",
+    "title": "Use-after-free in the Audio/Video component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124951",
+    "title": "Privilege escalation in the Nimbus Desktop Client component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124950",
+    "title": "Same-origin policy bypass in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124949",
+    "title": "Other issue in the SVG component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124948",
+    "title": "Incorrect boundary conditions, use-after-free in the Graphics component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124947",
+    "title": "Incorrect boundary conditions in the Graphics component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124946",
+    "title": "Invalid pointer in the JavaScript Engine: JIT component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124945",
+    "title": "Invalid pointer in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124944",
+    "title": "Information disclosure in the Marionette component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124943",
+    "title": "Use-after-free in the Layout component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124942",
+    "title": "Invalid pointer in the DOM: Streams component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124941",
+    "title": "Information disclosure in the Security: RLBox component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124940",
+    "title": "Mitigation bypass in the File Handling component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124939",
+    "title": "JIT miscompilation in the JavaScript Engine: JIT component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124938",
+    "title": "Mitigation bypass in the Add-ons Manager component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124937",
+    "title": "Other issue in the Media component in Firefox for Android",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124936",
+    "title": "Spoofing issue in the Address Bar component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124935",
+    "title": "Undefined behavior in the WebRTC: Networking component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124934",
+    "title": "Spoofing issue in the Security component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124933",
+    "title": "Sandbox escape in the Console component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124932",
+    "title": "Use-after-free in the Graphics component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124931",
+    "title": "Same-origin policy bypass in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124930",
+    "title": "Information disclosure in the Address Bar component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124929",
+    "title": "Information disclosure in the Layout: Form Controls component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124928",
+    "title": "Mitigation bypass in the SVG component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124927",
+    "title": "Site isolation issue in the Graphics: WebRender component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124926",
+    "title": "Incorrect boundary conditions in the WebRTC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124925",
+    "title": "Information disclosure in the Layout component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124924",
+    "title": "Incorrect boundary conditions in the Graphics: WebRender component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124923",
+    "title": "Sandbox escape in the Agent component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124922",
+    "title": "Use-after-free in the CSS Transitions and Animations component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124921",
+    "title": "Sandbox escape in the Graphics: WebGPU component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124920",
+    "title": "Uninitialized memory in the Graphics: WebGPU component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124919",
+    "title": "Privilege escalation due to use-after-free in the WebRTC: Networking component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124918",
+    "title": "Privilege escalation due to incorrect boundary conditions in the Graphics…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124917",
+    "title": "Sandbox escape due to use-after-free in the Widget: Gtk component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124915",
+    "title": "Incorrect boundary conditions in the Graphics: WebGPU component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124914",
+    "title": "Site isolation issue in the DOM: Navigation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124913",
+    "title": "Site isolation issue in the Networking component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124912",
+    "title": "Spoofing issue in the DOM: Security component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124911",
+    "title": "Clickjacking issue in the Autofill component in Firefox for Android",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124910",
+    "title": "Mitigation bypass in the WebExtensions component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124909",
+    "title": "Information disclosure in the Private Browsing component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124908",
+    "title": "Use-after-free in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124907",
+    "title": "Privilege escalation, sandbox escape due to use-after-free in the Graphics…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124906",
+    "title": "Use-after-free in the Graphics: WebRender component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124905",
+    "title": "Sandbox escape in the DOM: Navigation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124904",
+    "title": "Use-after-free in the SVG component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124903",
+    "title": "Sandbox escape due to use-after-free in the IPC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124902",
+    "title": "Same-origin policy bypass due to race condition in the Audio/Video component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124901",
+    "title": "Other issue in the Networking: JAR component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124900",
+    "title": "Sandbox escape due to use-after-free in the DOM: Service Workers component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124899",
+    "title": "Use-after-free in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124898",
+    "title": "Use-after-free in the DOM: Editor component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124897",
+    "title": "Use-after-free in the JavaScript: GC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124896",
+    "title": "Invalid pointer in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124895",
+    "title": "Use-after-free in the Storage: localStorage & sessionStorage component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124894",
+    "title": "Use-after-free in the Networking: Cookies component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124893",
+    "title": "Use-after-free in the DOM: Workers component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124892",
+    "title": "Use-after-free in the JavaScript: GC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124891",
+    "title": "Incorrect boundary conditions in the DOM: Selection component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124890",
+    "title": "Use-after-free in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124889",
+    "title": "Use-after-free in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124888",
+    "title": "Incorrect boundary conditions in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124887",
+    "title": "Incorrect boundary conditions in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124886",
+    "title": "Invalid pointer in the Layout: Text and Fonts component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124885",
+    "title": "Use-after-free in the Graphics: Text component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124884",
+    "title": "Use-after-free in the JavaScript: GC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124883",
+    "title": "Use-after-free in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124882",
+    "title": "Use-after-free in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124881",
+    "title": "Use-after-free in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124880",
+    "title": "Use-after-free in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124879",
+    "title": "Invalid pointer in the Networking: Cache component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124878",
+    "title": "Use-after-free in the Layout: Positioned component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124877",
+    "title": "Use-after-free in the Layout: Positioned component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124876",
+    "title": "Use-after-free in the CSS Parsing and Computation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124875",
+    "title": "Incorrect boundary conditions in the DOM: CSS Object Model component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124874",
+    "title": "Same-origin policy bypass in the Networking: HTTP component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124873",
+    "title": "Invalid pointer in the DOM: Editor component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124872",
+    "title": "Use-after-free in the Cycle Collector component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124871",
+    "title": "Use-after-free in the DOM: HTML Parser component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124870",
+    "title": "Incorrect boundary conditions in the JavaScript: GC component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124869",
+    "title": "Use-after-free in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124868",
+    "title": "Incorrect boundary conditions in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124867",
+    "title": "Use-after-free in the DOM: Editor component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124866",
+    "title": "Use-after-free in the Layout component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124865",
+    "title": "Use-after-free in the Audio/Video component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124864",
+    "title": "Sandbox escape due to use-after-free in the DOM: Service Workers component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124863",
+    "title": "Use-after-free in the DOM: HTML Parser component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124862",
+    "title": "Use-after-free in the DOM: Core & HTML component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124861",
+    "title": "Sandbox escape due to use-after-free in the Audio/Video: cubeb component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124860",
+    "title": "Use-after-free in the Audio/Video component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124859",
+    "title": "Sandbox escape due to incorrect boundary conditions in the Storage: Cache API…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124858",
+    "title": "Use-after-free in the DOM: HTML Parser component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124857",
+    "title": "Use-after-free in the Graphics: Canvas2D component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124856",
+    "title": "Incorrect boundary conditions in the Networking: HTTP component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124855",
+    "title": "Sandbox escape in the DOM: Navigation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124854",
+    "title": "Privilege escalation in the DOM: Navigation component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124853",
+    "title": "Sandbox escape due to incorrect boundary conditions in the Graphics: Text…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124852",
+    "title": "Incorrect boundary conditions in the Graphics: CanvasWebGL component",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120399",
+    "title": "A flaw was found in flightctl",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-16478",
+    "title": "Permissive list of allowed inputs vulnerability in TÜBİTAK BİLGEM Software…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125871",
+    "title": "The sourcecache expansion module in MISP Modules (misp-modules) contains a…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125745",
+    "title": "Custom Post Types and Custom Fields creator (WCK) before 2.4.1 contains a…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125744",
+    "title": "Our API endpoint for changing ticket layouts did not properly check permissions…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124747",
+    "title": "A flaw was found in BusyBox",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121267",
+    "title": "Incorrect default permissions vulnerability in TÜBİTAK BİLGEM Software…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-100962",
+    "title": "NVIDIA NeMo Export-Deploy for all platforms contains a vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-59082",
+    "title": "A vulnerability has been identified in SIMATIC WinCC V7.5 (All versions)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-58114",
+    "title": "A vulnerability has been identified in SIMATIC BATCH V9.1 (All versions)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12574",
+    "title": "Zoho Corporation ManageEngine DDI Central versions 6200 and below are…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12573",
+    "title": "Zoho Corporation ManageEngine DDI Central versions 6200 and below are…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12572",
+    "title": "Zoho Corporation ManageEngine DDI Central version below 6201 is vulnerable to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12266",
+    "title": "Zoho Corporation ManageEngine DDI Central versions 6200 and below are…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125742",
+    "title": "7-Zip before 26.06 contains a heap out-of-bounds write vulnerability in the LZX…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125715",
+    "title": "Samsung mTower lacks access control for TA sessions, allowing a Normal World…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125712",
+    "title": "A flaw was found in GStreamer's gst-plugins-base RTCP SDES packet parser",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125709",
+    "title": "A flaw was found in libstdc++",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125707",
+    "title": "A flaw was found in GStreamer's MXF demuxer",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125706",
+    "title": "A flaw was found in GStreamer's gst-plugins-bad MPEG Program Stream demuxer and…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123717",
+    "title": "OS command injection in the pass and bitwarden credential providers in Eclipse…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121191",
+    "title": "Missing Authorization vulnerability in TÜBİTAK BİLGEM Software Technologies…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120350",
+    "title": "The Vaadin Rich Text Editor exports a video embed without escaping its value…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120326",
+    "title": "DownloadEvent.setFileName(String) in Vaadin Flow writes the download file name…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112137",
+    "title": "A vulnerability has been identified in Mendix Studio Pro 11 (All versions >=…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112136",
+    "title": "A vulnerability has been identified in Mendix Studio Pro 11 (All versions >=…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109830",
+    "title": "A vulnerability has been identified in meta-iot2050 (All versions >= V01.03.01)",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109097",
+    "title": "A vulnerability has been identified in ROS# (All versions < V2.3.1)",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-101275",
+    "title": "Our payment integration with Adyen did not properly validate payment status…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-95651",
+    "title": "Zoho Corporation ManageEngine DDI Central versions 6500 and below are…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-95646",
+    "title": "Zoho Corporation ManageEngine DDI Central versions 6500 and below are…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125704",
+    "title": "A use-after-free flaw was found in GStreamer core buffer value deserialization",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125703",
+    "title": "A flaw was found in the GStreamer gst-plugins-bad MXF plugin",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125672",
+    "title": "A flaw was found in cockpit-storaged",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120999",
+    "title": "Improper Authentication vulnerability in Google sign-in and email confirmation…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120997",
+    "title": "Improper Session Invalidation vulnerability in the dashboard pages, device…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120730",
+    "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120295",
+    "title": "Incorrect Authorization vulnerability in the devices page bulk move in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120286",
+    "title": "Missing Authorization vulnerability in the device and deployment group pages in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119446",
+    "title": "Session Fixation vulnerability in the CLI login flow in nerves-hub…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124503",
+    "title": "A vulnerability was identified in sooperset mcp-atlassian up to 0.24.0",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-104619",
+    "title": "Untrusted users could roll back security updates when using the PackageKit Zypp…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60046",
+    "title": "An unauthenticated remote attacker can perform password resets for any user…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60045",
+    "title": "A high privileged remote attacker can upload arbitrary files to a guessable…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60044",
+    "title": "The backups created by the application use a weak static password allowing an…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60043",
+    "title": "An unauthenticated remote attacker can perform a XSS attack on a logged in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60042",
+    "title": "An unauthenticated remote attacker can perform an authentication bypass on the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60041",
+    "title": "An unauthenticated remote attacker can perform a CSRF attack on a logged in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60040",
+    "title": "An unauthenticated remote attacker can perform a DoS in the backends backup…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60039",
+    "title": "A high privileged remote attacker can perform a code injection in the backends…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60038",
+    "title": "A high privileged remote attacker can perform an OpenSSL code injection in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60037",
+    "title": "A high privileged remote attacker can perform an OpenSSL code injection in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60036",
+    "title": "A high privileged remote attacker can perform a code injection in the backends…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60035",
+    "title": "A high privileged remote attacker can perform a code injection in the backends…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120013",
+    "title": "The agent_memory module accepts a caller-supplied tenant parameter in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120012",
+    "title": "SAP Cloud SDK for AI (Node.js) could inadvertently include sensitive…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-106025",
+    "title": "The Cargo Shipping Location for WooCommerce WordPress plugin before 6.0 does…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-106007",
+    "title": "The FraudLabs Pro SMS Verification WordPress plugin through 1.12.1 does not…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125652",
+    "title": "A flaw was found in the keycloak-services component of Keycloak, which provides…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-93427",
+    "title": "The ARMember Premium – Membership Plugin, Content Restriction, Member Levels…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-84938",
+    "title": "The Avada (Fusion) Builder plugin for WordPress is vulnerable to Stored…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76877",
+    "title": "The WPML Multilingual CMS plugin for WordPress is vulnerable to Authentication…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120513",
+    "title": "The Everest Forms – Contact Form, Payment Form, Quiz, Survey & Custom Form…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-100386",
+    "title": "The Ultra Addons for Contact Form 7 plugin for WordPress is vulnerable to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-9063",
+    "title": "A locally authenticated user can achieve privilege escalation via an insecure…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-8372",
+    "title": "A vulnerability that could allow an attacker to gain unauthorized access",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63288",
+    "title": "A WebSocket request sent to a specific API endpoint allows unauthorized access…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63287",
+    "title": "It was possible for an authenticated non-admin user to modify certain data…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63282",
+    "title": "Improper shell quote escaping when processing user-controlled input…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-4762",
+    "title": "A vulnerability to perform a privilege escalation attack on the server as a…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-14918",
+    "title": "The Signed Video Framework contained a out-of-bounds read issue in the Signed…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-14543",
+    "title": "The VAPIX Edge storage API, enabling the escalation of user privileges by…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-14542",
+    "title": "The VAPIX SIP configuration API lacked sufficient input validation, which could…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-13409",
+    "title": "The VAPIX API dynamicoverlay.cgi which results in a Denial-of-Service of the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-13387",
+    "title": "A vulnerability related to URL redirection handling during the sign-out flow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-13312",
+    "title": "A vulnerability that could allow an attacker to compromise a system",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12964",
+    "title": "A vulnerability allowing for privileged escalation of the viewer account to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12963",
+    "title": "A vulnerability that could allow a viewer account to gain unauthorized access…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12389",
+    "title": "A vulnerability that could lead to a high privileged authenticated user…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119273",
+    "title": "The BulletProof Security WordPress plugin through 7.2 does not sufficiently…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-110516",
+    "title": "The All in One Addons For WPBakery Page Builder  (formerly Visual Composer)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-104676",
+    "title": "The Zion Builder  WordPress plugin through 3.6.17 does not sanitize uploaded…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-96769",
+    "title": "The Extend B2B - Companies and Users Management for WooCommerce plugin for…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-92864",
+    "title": "Insecure Temporary File Vulnerability in Hitachi Dynamic Link Manager for AIX…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-92863",
+    "title": "Integer Overflow Vulnerability in Hitachi Dynamic Link Manager for AIX (for the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91764",
+    "title": "Improper Link Resolution Before File Access Vulnerability in Hitachi Dynamic…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91763",
+    "title": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91762",
+    "title": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91761",
+    "title": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91760",
+    "title": "Heap-based Buffer Overflow Vulnerability in Hitachi Dynamic Link Manager for…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91759",
+    "title": "Out-of-Bounds Write Vulnerability in Hitachi Dynamic Link Manager for Linux",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91758",
+    "title": "Out-of-bounds Read and Write Vulnerability in Hitachi Dynamic Link Manager for…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91757",
+    "title": "OS Command Injection Vulnerability in Hitachi Dynamic Link Manager for VMware",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91756",
+    "title": "OS Command Injection Vulnerability in Hitachi Dynamic Link Manager for VMware",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91755",
+    "title": "Integer Overflow Vulnerability in Hitachi Dynamic Link Manager for VMware",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-91754",
+    "title": "Stack-based Buffer Overflow Vulnerability in Hitachi Dynamic Link Manager for…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-86579",
+    "title": "Binary Planting Vulnerability in Hitachi Dynamic Link Manager for Windows",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-86578",
+    "title": "Link Following Vulnerability in Hitachi Dynamic Link Manager for Windows",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115646",
+    "title": "Partial String Comparison Vulnerability in HiRDB",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115640",
+    "title": "LimeSurvey Community Edition 7.7.0 contains a stored cross-site scripting…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112125",
+    "title": "Incorrect Permission Assignment for Critical Resource Vulnerability in HA…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125612",
+    "title": "Improper neutralization of special elements used in an SQL command ('SQL…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-88710",
+    "title": "Improper\nneutralization of special elements used in an OS command in certain…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-88709",
+    "title": "Improper\nneutralization of special elements used in an OS command in certain…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-88708",
+    "title": "An\noff-by-one error in certain ASUS Router firmware\nallows\nan unauthenticated…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-88707",
+    "title": "An\nout-of-bounds write in certain ASUS Router firmware\nallows an…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89131",
+    "title": "SAP NetWeaver Enterprise Portal does not sufficiently protect certain…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89129",
+    "title": "Due to a Server-Side Request Forgery (SSRF) vulnerability in SAP NetWeaver AS…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89128",
+    "title": "Due to Broken Access Control in SAP NetWeaver AS Java, an unauthenticated…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89126",
+    "title": "SAP Web Dispatcher does not sufficiently validate certain network input…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89125",
+    "title": "Due to Insecure Storage of Sensitive Information in SAP Web Dispatcher and…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89119",
+    "title": "SAP Web Dispatcher and SAP NetWeaver Application Server ABAP (Internet…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89115",
+    "title": "SAP Start Service and SAP Management Console store sensitive credential…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89114",
+    "title": "SAP NetWeaver AS Java EDM Application does not perform an authentication check…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-89103",
+    "title": "SAP Gateway activates the default Access Control List with high privileges…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76973",
+    "title": "Due to a Memory Corruption vulnerability in Application Server ABAP of SAP…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76970",
+    "title": "Due to a Memory Corruption vulnerability in Application Server ABAP for SAP…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76966",
+    "title": "Due to improper RFC protocol validation in the SAP Kernel used by the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76965",
+    "title": "SAP NetWeaver Application Server ABAP and ABAP Platform does not perform…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-76964",
+    "title": "SAP NetWeaver Application Server ABAP does not sufficiently validate certain…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125087",
+    "title": "A vulnerability was found in Michael-A-Kuykendall Shimmy up to 2.6.4",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125086",
+    "title": "A vulnerability has been found in D-Link M60 1.12.B01",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125082",
+    "title": "A security flaw has been discovered in sunkaifei FlyCMS up to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125079",
+    "title": "A vulnerability was determined in D-Link DCS-6501LH 3.03.02",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124604",
+    "title": "The RSA cryptographic key\nmaterial, including a private key and public key, is…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124603",
+    "title": "An API key is\nhardcoded and retrievable from the GV-Cloud application package",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124602",
+    "title": "The RSA cryptographic\nkey material, including a private key and public key, is…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124601",
+    "title": "An\nAPI key is hardcoded and retrievable from the GV-Access package",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124600",
+    "title": "GV-Face transmits sensitive user credentials and\nrelated authentication data…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124599",
+    "title": "The RSA cryptographic key material, including a private key and public key, is…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124598",
+    "title": "An\nAPI key is hardcoded and retrievable from the GV-Face package",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120017",
+    "title": "SAP NetWeaver AS ABAP and ABAP Platform does not perform sufficient…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120016",
+    "title": "SAP NetWeaver Visual Composer does not perform sufficient input validation and…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120015",
+    "title": "SAP Host Agent does not sufficiently validate certain inputs",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120014",
+    "title": "SAP HANA XSA Web Dispatcher does not perform sufficient request validation in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120010",
+    "title": "SAP NetWeaver Application Server (SAP Message Server) does not properly size…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120009",
+    "title": "SAP ABAP Developer Tools (AMDP Data Preview) does not perform sufficient…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120008",
+    "title": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109811",
+    "title": "An internal ABAP HTTP component in SAP NetWeaver and ABAP Platform (Application…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109810",
+    "title": "SAP NetWeaver Application Server Java (Web Dynpro Java) does not sufficiently…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109809",
+    "title": "SAP NetWeaver Application Server Java (NWDI Cockpit) does not perform…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109808",
+    "title": "Due to a missing authorization check in certain remote-enabled functionality…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109807",
+    "title": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109806",
+    "title": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109805",
+    "title": "Due to a weak HMAC cryptography calculation when receiving an RFC callback in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109804",
+    "title": "SAP Message Server does not properly handle certain malformed requests, which…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109803",
+    "title": "SAP NetWeaver Knowledge Management (XML Forms) does not sufficiently restrict…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109802",
+    "title": "SAP NetWeaver Application Server for ABAP does not properly validate certain…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109801",
+    "title": "SAP NetWeaver Application Server Java (NWDI Cockpit)� does not perform…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109800",
+    "title": "SAP Web Dispatcher does not sufficiently validate certain inputs during…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109799",
+    "title": "The SAP Cloud SDK for Python contains an improper cryptographic signature…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109798",
+    "title": "SAP BusinessObjects Business Intelligence Platform (Web Intelligence) does not…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109797",
+    "title": "In SAP/astonish, an authenticated user could potentially identify and operate…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109796",
+    "title": "SAP NetWeaver Application Server ABAP and ABAP Platform does not properly…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109795",
+    "title": "SAP NetWeaver does not perform necessary authorization checks and lacks…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109794",
+    "title": "SAP NetWeaver Application Server ABAP, ABAP Platform, and SAP Web Dispatcher do…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-109793",
+    "title": "SAP NetWeaver Application Server ABAP and SAP Web Dispatcher do not…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107246",
+    "title": "The Plesk extension \"Site Import\" before 1.13.2 does not properly validate…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107245",
+    "title": "Versa has confirmed a buffer overflow vulnerability in the IPsec…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107244",
+    "title": "The Node.js web service on VOS (previously Versa FlexVNF) is used for URL-based…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107243",
+    "title": "The Node.js web service on VOS (previously Versa FlexVNF) is used for URL-based…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107242",
+    "title": "The Node.js web service on VOS (previously Versa FlexVNF) is used for URL-based…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107241",
+    "title": "The Node.js web service on VOS (previously Versa FlexVNF) is used for URL-based…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-107240",
+    "title": "The Node.js web service on VOS (previously Versa FlexVNF) is used for URL-based…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125406",
+    "title": "Ettercap through 0.8.4.1 contains a stack buffer underwrite vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125405",
+    "title": "Ettercap through 0.8.4.1 contains an out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125404",
+    "title": "Ettercap through 0.8.4.1 contains an integer underflow in ccmp_decrypt() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125403",
+    "title": "Ettercap through 0.8.4.1 contains an out-of-bounds read and size_t underflow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125402",
+    "title": "Ettercap through 0.8.4.1 contains a heap out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125401",
+    "title": "Ettercap through 0.8.4.1 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125400",
+    "title": "Ettercap through 0.8.4.1 contains a use-after-free vulnerability in func_pcre()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125399",
+    "title": "Fluxion before 6.39 contains an OS command injection vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125398",
+    "title": "Instatic before 0.0.21 contains an authorization bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125397",
+    "title": "NocoBase plugin-ai 2.1.0 through 2.2.41 contains an authorization bypass…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125396",
+    "title": "Ghostscript before 10.08.0 contains a -dSAFER bypass vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125395",
+    "title": "Ampache before 8.4.0 contains a stored cross-site scripting vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125394",
+    "title": "FreeRDP before 3.33.0 contains a heap use-after-free vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125393",
+    "title": "MailEnable Enterprise Premium before 10.62 contains a heap overflow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125392",
+    "title": "Webmin through 2.670 contains a stored cross-site scripting vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125391",
+    "title": "Webmin through 2.670 contains an OS command injection vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125390",
+    "title": "Group-Office before 6.8.181, 25.0.116, and 26.0.58 contains an arbitrary local…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125389",
+    "title": "Intermesh Group-Office before 6.8.181, 25.0.116, and 26.0.58 contains a stored…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125388",
+    "title": "Intermesh Group-Office before 6.8.181, 25.0.116, and 26.0.58 contains a missing…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125387",
+    "title": "Faveo Helpdesk through 2.0.3 contains an authorization bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125386",
+    "title": "langchain4j-aideepin through 3.32.0 contains an insecure direct object…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125385",
+    "title": "INDOTALENT WHMS before 10.20261109 contains a path traversal vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125384",
+    "title": "INDOTALENT WHMS before 10.20261109 contains a default credentials vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125383",
+    "title": "INDOTALENT WHMS (Asp.Net-Core-Inventory-Order-Management-System) before…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125382",
+    "title": "Map-OS 5.0.0 to before 5.2.2 contains a privilege escalation vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125381",
+    "title": "DataRoom through 3.0.0 contains an sql injection vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125380",
+    "title": "DataRoom through 3.0.0 contains an incorrect authorization vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125379",
+    "title": "Movim through 0.35.5 contains an authorization bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125378",
+    "title": "PowerDNS-Admin before 2026.11.0 contains a missing authorization vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125377",
+    "title": "Pig before 4.1.2 contains a missing authorization vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125376",
+    "title": "VanBlog through 0.54.0 contains an information disclosure vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125375",
+    "title": "MrDoc through 1.1.1 contains a missing authorization vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125374",
+    "title": "Krayin CRM before 2.2.8 contains a broken object level authorization…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125373",
+    "title": "IETF Datatracker before 12.83.0 contains an authorization bypass vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125372",
+    "title": "REBUILD before 4.5.3 contains an authorization bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125371",
+    "title": "Tinyproxy through 1.11.3 contains an access control bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125370",
+    "title": "Kubero 3.0.0 through 3.1.1 contains an authentication bypass vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125369",
+    "title": "Bitpoll through 0.11.0 contains an insecure direct object reference…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125368",
+    "title": "OmniAgent through commit 12b98c5 contains an approval bypass vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125367",
+    "title": "Pico through 4.1.2 contains a server-side request forgery vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125366",
+    "title": "Omnom through 0.9.0 contains a server-side request forgery vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125365",
+    "title": "DollarDollar through 4.4 contains a missing authorization vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125364",
+    "title": "frab through 0.9.1 contains a privilege escalation vulnerability that allows…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125363",
+    "title": "MikroDash before 0.8.79 contains a server-side request forgery vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125362",
+    "title": "Seahub through 14.0.10 contains a weak randomness vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125361",
+    "title": "Tencent BrowserSkill through 0.4.2 contains a missing authentication…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125360",
+    "title": "Storyden through 1.26.16 contains a privilege escalation vulnerability that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125359",
+    "title": "Mediary Scout before 2026.11.05 contains a server-side request forgery…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125358",
+    "title": "Universal-modder before commit e88f6876745427321eb755ebc98276063a962d8a…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125357",
+    "title": "Munin munin-httpd 2.99.1 through 2.999.18 contains a path traversal…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125078",
+    "title": "A security flaw has been discovered in SourceCodester Smart Attendance System…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125077",
+    "title": "A vulnerability was determined in SourceCodester Smart Attendance System with…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125076",
+    "title": "A vulnerability was found in SourceCodester Smart Attendance System with QR…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-117477",
+    "title": "KUSANAGI provided by GMO Prime Strategy Co., Ltd",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125120",
+    "title": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125119",
+    "title": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125118",
+    "title": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125117",
+    "title": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125116",
+    "title": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125115",
+    "title": "Novu provides an API for sending notifications through multiple channels",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125114",
+    "title": "Novu provides an API for sending notifications through multiple channels",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125113",
+    "title": "The XRootD project provides a high-performance, fault-tolerant, and secure…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125075",
+    "title": "A vulnerability has been found in SourceCodester Smart Attendance System with…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125074",
+    "title": "A flaw has been found in SourceCodester Smart Attendance System with QR Code…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124035",
+    "title": "Unsafe reflection in the error mitigation schema validation in Amazon Braket…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124034",
+    "title": "Relative path traversal in the local hybrid job input data download in Amazon…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115934",
+    "title": "An unauthenticated SQL injection can occur on the front end of any site that…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90591",
+    "title": "The NXP ENET-QOS Ethernet driver's receive work handler eth_nxp_enet_qos_rx()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90590",
+    "title": "The NXP ENET QoS Ethernet driver in drivers/ethernet/eth_nxp_enet_qos…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90589",
+    "title": "When CONFIG_THREAD_STACK_MEM_MAPPED is enabled, each thread stack is mapped…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90588",
+    "title": "The HTTP client's debug helper print_header_field() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90587",
+    "title": "usbh_device_init() in subsys/usb/host/usbh_device.c rejects a device whose…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90586",
+    "title": "The Xtensa MMU userspace port never initialized the per-thread page-table…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-90585",
+    "title": "The Renesas RA SCI UART driver's receive-error ISR, uart_ra_sci_eri_isr() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-86692",
+    "title": "In apport before 2.37.0, a path traversal vulnerability allows an attacker who…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-84410",
+    "title": "In apport before 2.37.0, an improper privilege management vulnerability allows…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-77473",
+    "title": "AsyncSSH is a Python package which provides an asynchronous client and server…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-73857",
+    "title": "ModSecurity is an open source, cross platform web application firewall (WAF)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63644",
+    "title": "bird-lg-go is a BIRD looking glass in Go",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63634",
+    "title": "pympp is a Python SDK for the Machine Payments Protocol",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63497",
+    "title": "titra is an open source time tracking project",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-63496",
+    "title": "augment-vir is a collection of helper functions",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-61812",
+    "title": "ModSecurity is an open source, cross platform web application firewall (WAF)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-56712",
+    "title": "Replicate Cog through 0.23.1 contains a server-side request forgery…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125112",
+    "title": "djust provides Phoenix LiveView-style reactive server-side rendering for Django…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125111",
+    "title": "Rack is a modular Ruby web server interface",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125110",
+    "title": "Rack is a modular Ruby web server interface",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125109",
+    "title": "Rack is a modular Ruby web server interface",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125108",
+    "title": "Rack is a modular Ruby web server interface",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125107",
+    "title": "Muhammara is a node module with c/cpp bindings to modify PDF with JavaScript…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125106",
+    "title": "Wagtail is an open source content management system built on Django",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125105",
+    "title": "Wagtail is an open source content management system built on Django",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124999",
+    "title": "A security vulnerability has been detected in braindecode up to 1.8.2",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124996",
+    "title": "A weakness has been identified in Turboderp-org ExLlamaV3 up to 1.6.3",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124994",
+    "title": "A security flaw has been discovered in Turboderp-org ExLlamaV3 up to 1.6.3",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124992",
+    "title": "A vulnerability was identified in nushell up to 0.116.1",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124033",
+    "title": "The export-cluster-logs and export-image-logs commands in the AWS…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123820",
+    "title": "Wagtail is an open source content management system built on Django",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123819",
+    "title": "Wagtail is an open source content management system built on Django",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123818",
+    "title": "LMDeploy is a toolkit for compressing, deploying, and serving large language…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123817",
+    "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123816",
+    "title": "pyLoad is a free and open-source download manager written in Python",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123815",
+    "title": "pyLoad is a free and open-source download manager written in Python",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123814",
+    "title": "pyLoad is a free and open-source download manager written in Python",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123813",
+    "title": "pyLoad is a free and open-source download manager written in Python",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123812",
+    "title": "Dynatrace MCP Server is an MCP server for Dynatrace Observability",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123811",
+    "title": "Dynatrace MCP Server is an MCP server for Dynatrace Observability",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123810",
+    "title": "Dynatrace MCP Server is an MCP server for Dynatrace Observability",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123809",
+    "title": "Dynatrace MCP Server is an MCP server for Dynatrace Observability",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123808",
+    "title": "Nuxt UI is an intuitive Vue UI library powered by Reka UI and Tailwind CSS",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123807",
+    "title": "Signal K Server is a server application that runs on a central hub in a boat",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123806",
+    "title": "python-tuf is a Python reference implementation of The Update Framework (TUF)",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-122056",
+    "title": "A flaw was found in OpenSCAP",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119759",
+    "title": "TrailBase 0.28.2 before 0.35.10 contains an insecure direct object reference…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115864",
+    "title": "Monoceros versions before 0.30 for Perl allow a request declaring a large…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-114032",
+    "title": "The OpenSSL library bundled with the Illumio VEN for Windows is affected by an…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-114031",
+    "title": "Incorrect permission assignment allows local privilege escalation to SYSTEM on…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113971",
+    "title": "This issue was addressed by restricting options offered on a locked device",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113970",
+    "title": "A use-after-free issue was addressed with improved memory management",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113969",
+    "title": "A logic issue was addressed with improved state management",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113968",
+    "title": "A logic issue was addressed with improved state management",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113965",
+    "title": "This issue was addressed with improved checks",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113964",
+    "title": "A logic issue was addressed with improved state management",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113963",
+    "title": "An authorization issue was addressed with improved state management",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113961",
+    "title": "An authorization issue was addressed with improved validation",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-113960",
+    "title": "This issue was addressed by removing the vulnerable code",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-104259",
+    "title": "ModSecurity is an open source, cross platform web application firewall (WAF)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-102643",
+    "title": "AsyncSSH is a Python package which provides an asynchronous client and server…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-102289",
+    "title": "zizmor is a static analysis tool for CI/CD systems",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-87857",
+    "title": "Temporal Server does not bind a workflow-history pagination token to the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125270",
+    "title": "FFmpeg through 9.0.2 contains a heap out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125269",
+    "title": "FFmpeg through 9.0.2 contains a double free vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125268",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125267",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains a heap out-of-bounds write…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125266",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized stack memory disclosure…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125265",
+    "title": "FFmpeg through 9.0.2 contains a use-after-free vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125264",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled resource consumption…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125263",
+    "title": "FFmpeg 9.0 through 9.0.2 built with liblcevc_dec fails to validate LCEVC…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125262",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125261",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in the SGI…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125260",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125259",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125258",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125257",
+    "title": "FFmpeg through 9.0.2 contains an off-by-one heap overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125256",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125255",
+    "title": "FFmpeg through 9.0.2 contains a use after free vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125254",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in the VVC…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125253",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow in cbs_vp9_split_fragment()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125252",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124987",
+    "title": "A vulnerability has been found in mikefarah yq up to 4.53.3",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124834",
+    "title": "A security vulnerability has been detected in iomad up to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124077",
+    "title": "The GitIdentifiers class in Apache Commons Codec did not reject NUL bytes in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123805",
+    "title": "SIPSorcery is a WebRTC, SIP, and VoIP library for C# and .NET",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119078",
+    "title": "Apache Commons Codec's Blake3 class documented the output of its doFinalize…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-70555",
+    "title": "rConfig Core 8.2.3 before 8.2.13 contains an information disclosure…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-12977",
+    "title": "A flaw was found in the deployment-operation family of WildFly Core",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125251",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in the VVC…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125250",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow in the GIF encoder's…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125249",
+    "title": "FFmpeg 7.1 through 9.0.2 contains an integer overflow in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125248",
+    "title": "FFmpeg 9.0 through 9.0.2 contains an integer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125247",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125246",
+    "title": "FFmpeg through 9.0.2 contains a denial of service vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125245",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125244",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains an out-of-bounds write…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125243",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125242",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in libavcodec/vdpau.c…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125241",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125240",
+    "title": "FFmpeg through 9.0.2 contains a resource leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125239",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125238",
+    "title": "FFmpeg through 9.0.2 contains a reachable assertion vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125237",
+    "title": "FFmpeg 8.1 through 9.0.2 contains a denial of service vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125236",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in alloc_frame() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125235",
+    "title": "FFmpeg through 9.0.2 contains a heap overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125234",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125233",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125232",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125231",
+    "title": "FFmpeg 4.4 through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125230",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125229",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds memory access vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125228",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains an out-of-bounds read…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125227",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow in cbs_jpeg_write_scan() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125226",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled memory allocation vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125225",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125224",
+    "title": "FFmpeg through 9.0.2 contains a denial of service vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125223",
+    "title": "FFmpeg 8.0 through 9.0.2 contains a memory leak vulnerability in the VP9…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125222",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125221",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled recursion vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125220",
+    "title": "FFmpeg through 9.0.2 contains a deadlock vulnerability in mimic_decode_frame()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125219",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125218",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in the APNG…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125217",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory use vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125216",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125215",
+    "title": "FFmpeg 7.1 through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125214",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125213",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in the PSD…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125212",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125211",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read and invalid free…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125210",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125209",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains a heap buffer overflow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125208",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds write vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125207",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled memory allocation vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125206",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125205",
+    "title": "FFmpeg through 9.0.2 contains an unbounded memory allocation vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125204",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow in ff_libwebp_get_frame()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125203",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains a heap buffer overflow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125202",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125201",
+    "title": "FFmpeg 7.0 before 8.1.3 and 9.x before 9.0.2 contains a heap out-of-bounds…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125200",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125199",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in vc1_decode_frame()…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125198",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125197",
+    "title": "FFmpeg through 9.0.2 contains an integer underflow in decode_frame() in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125196",
+    "title": "FFmpeg through 9.0.2 contains a heap buffer overflow vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125195",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125194",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125193",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125192",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory vulnerability in the DXA…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125191",
+    "title": "FFmpeg through 9.0.2 contains a reference count leak in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125190",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125189",
+    "title": "FFmpeg 8.1 through 9.0.2 contains a denial of service vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125188",
+    "title": "FFmpeg through 9.0.2 contains a heap out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125187",
+    "title": "FFmpeg through 9.0.2 contains a reachable assertion vulnerability in the TTA…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125186",
+    "title": "FFmpeg through 9.0.2 contains an uncontrolled resource consumption…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125185",
+    "title": "FFmpeg through 9.0.2 contains a division by zero vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125184",
+    "title": "FFmpeg 6.1 through 9.0.2 contains an information disclosure vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125183",
+    "title": "FFmpeg through 9.0.2 contains a denial of service vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125182",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in the Cook…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125181",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds write vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125180",
+    "title": "FFmpeg 8.1 through 9.0.2 contains a memory exhaustion vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125179",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory vulnerability in the VQA…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125178",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds heap read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125177",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125176",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125175",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125174",
+    "title": "FFmpeg before 8.1.3 and 9.x before 9.0.2 contains a NULL pointer dereference…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125173",
+    "title": "FFmpeg through 9.0.2 contains a memory leak vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125172",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125171",
+    "title": "FFmpeg through 9.0.2 contains an out-of-bounds read vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125170",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125104",
+    "title": "FFmpeg through 9.0.2 contains a memory exhaustion vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125103",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125102",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125101",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125100",
+    "title": "FFmpeg through 9.0.2 contains an integer overflow vulnerability in the OpenEXR…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125099",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125098",
+    "title": "FFmpeg through 9.0.2 contains an information disclosure vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125097",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125096",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory disclosure vulnerability…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125095",
+    "title": "FFmpeg through 9.0.2 contains an uninitialized memory use vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125073",
+    "title": "FFmpeg through 9.0.2 contains an infinite loop vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125072",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125071",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125070",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125069",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125068",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125067",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125066",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in the…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125065",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125064",
+    "title": "FFmpeg through 9.0.2 contains a NULL pointer dereference vulnerability in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125041",
+    "title": "A flaw was found in GStreamer's gst-plugins-good MOV/MP4 demuxer",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125040",
+    "title": "A flaw was found in the SRT and WebVTT subtitle parser in GStreamer's…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124001",
+    "title": "NASA JPL ION-DTN 2.2.1b through 4.2.0 contains an integer overflow…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124000",
+    "title": "NASA JPL ION-DTN 2.1.0 through 4.2.0 contains a heap buffer under-allocation…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123999",
+    "title": "NASA JPL ION-DTN 3.6.2 through 4.2.0 contains a heap-based buffer overflow in…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123804",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123803",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123802",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123801",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123800",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123799",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123798",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121769",
+    "title": "Improper Neutralization of Special Elements used in an SQL Command ('SQL…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121573",
+    "title": "Improper Neutralization of Input During Web Page Generation ('Cross-site…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-120834",
+    "title": "Incorrect Privilege Assignment vulnerability in Tobias WP2LEADS wp2leads allows…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119079",
+    "title": "decode_sequence_of() in lib/krb5/asn.1/asn1_encode.c in MIT Kerberos 5 (aka…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112323",
+    "title": "The AUTH_GSSAPI handler in lib/rpc/svc_auth_gssapi.c in MIT Kerberos 5 (aka…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112322",
+    "title": "clean_client() in lib/rpc/svc_auth_gssapi.c in MIT Kerberos 5 (aka krb5)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112321",
+    "title": "The AUTH_GSSAPI handler in lib/rpc/svc_auth_gssapi.c in MIT Kerberos 5 (aka…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112320",
+    "title": "The GSS-RPC transport layer in MIT Kerberos 5 (aka krb5) 1.4 and later does not…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112319",
+    "title": "The GSS-RPC layer in MIT Kerberos 5 (aka krb5) does not enforce size limits on…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112318",
+    "title": "The policy RPC stubs in kadmin/server/server_stubs.c in MIT Kerberos 5 (aka…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112317",
+    "title": "krb5_ktkdb_get_entry() in lib/kdb/keytab.c in MIT Kerberos 5 (aka krb5) 1.2.8…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112316",
+    "title": "xdr_krb5_tl_data() in lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5)…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112315",
+    "title": "The RPCSEC_GSS authentication routines in lib/rpc/authgss_prot.c in MIT…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112314",
+    "title": "clnttcp_call() in lib/rpc/clnt_tcp.c in MIT Kerberos 5 (aka krb5) does not free…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-84503",
+    "title": "A flaw was found in ansible-core's ansible.builtin.git module",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-60117",
+    "title": "The Android implementation of the Flutter/Dart receive_sharing_intent package…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-19706",
+    "title": "During ABI bootstrap, the bootstrap node's approve-csr.service approves and…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-125063",
+    "title": "A flaw was found in the rrule validation of schedules in automation controller",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123797",
+    "title": "SuperTokens Core is an open source authentication server",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123796",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123373",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123372",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123371",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123370",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123369",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123368",
+    "title": "compose-lint is a Docker Compose security linter that identifies dangerous…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123367",
+    "title": "Thor Vector Graphics (ThorVG) is a production-ready vector graphics engine",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123270",
+    "title": "Redpanda Connect versions 4.39 to 4.110 contain a missing authentication…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119756",
+    "title": "Tasmota through 16.0.0, fixed in commit e97e1e4, contains a heap out-of-bounds…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-119755",
+    "title": "Tasmota through 16.0.0, fixed in commit 1cb7ebc, contains a cross-site request…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-124683",
+    "title": "Eclipse Langium versions 3.2.0 through 4.4.0 contain an inefficient algorithmic…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123482",
+    "title": "Improper Neutralization of Input During Web Page Generation ('Cross-site…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-123364",
+    "title": "OctoPrint provides a web interface for controlling consumer 3D printers",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-122664",
+    "title": "Improper Neutralization of Input During Web Page Generation ('Cross-site…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121690",
+    "title": "FrodoBots EarthRover Mini+ firmware (version 6.2.4_6.2.5_0.614.0) executes code…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121689",
+    "title": "FrodoBots EarthRover Mini+ firmware (v6.2.4_6.2.5_0.614.0) exposes sensitive…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121688",
+    "title": "FrodoBots EarthRover Mini+ firmware (version 6.2.4_6.2.5_0.614.0) contains an…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121687",
+    "title": "FrodoBots EarthRover Mini+ firmware (version 6.2.4_6.2.5_0.614.0) contains…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121686",
+    "title": "FrodoBots EarthRover Mini+ firmware (version 6.2.4_6.2.5_0.614.0) is vulnerable…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121685",
+    "title": "FrodoBots EarthRover Mini+ firmware (version 6.2.4_6.2.5_0.614.0) contains…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121612",
+    "title": "Weak Authentication vulnerability in WPZOOM WPBruiser {no- Captcha anti-Spam}…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-121576",
+    "title": "Incorrect Privilege Assignment vulnerability in AtlasAiDev MCP Server for…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115341",
+    "title": "Improper access restrictions in the Thin Client Web Transfer component of…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115340",
+    "title": "Progress Software WS_FTP Server versions prior to 2025.0.5 on Windows may write…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115339",
+    "title": "Insufficient resource limits in Progress Software WS_FTP Server releases prior…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115338",
+    "title": "Insufficient protection of communications in Progress WS_FTP Server versions…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115337",
+    "title": "Improper access control in Progress WS_FTP Server versions prior to 2025.0.5…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-115336",
+    "title": "Incorrect quota accounting in Progress Software WS_FTP Server releases prior to…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-114594",
+    "title": "A time-of-check to time-of-use (TOCTOU) race condition in the Sandisk Dashboard…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112165",
+    "title": "The LaserGest mobile application disables TLS certificate and hostname…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-112164",
+    "title": "The LaserGest mobile application encrypts stored assistance portal credentials…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-104989",
+    "title": "Uncontrolled search path element in package upload feature in Chaos Software…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-103906",
+    "title": "Use of hard-coded MQTT credentials in the AM CLUB mobile application allows an…",
+    "product": null
+  },
+  {
+    "id": "CVE-2026-118492",
+    "title": "In Eclipse Langium versions 3.0.0 and later, the langium-sprotty package does…",
+    "product": null
+  },
+  {
+    "id": "CVE-2025-10248",
+    "title": "XSS Vulnerability in OpenText Filr Appliance versions upto 25.1.2 could allow…",
+    "product": null
+  },
+  {
     "id": "CVE-2026-19552",
     "title": "When ca_certs parameter was supplied to ssl.get_server_certificate() function…",
     "product": null
@@ -1097,12 +4107,12 @@
   {
     "id": "CVE-2026-82830",
     "title": "IBM Guardium Data Protection 12.2.4 could allow a remote authenticated attacker…",
-    "product": null
+    "product": "Guardium Data Protection"
   },
   {
     "id": "CVE-2026-81542",
     "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated…",
-    "product": null
+    "product": "Datastage on Cloud Pak for Data"
   },
   {
     "id": "CVE-2026-81209",
@@ -1112,7 +4122,7 @@
   {
     "id": "CVE-2026-80435",
     "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated…",
-    "product": null
+    "product": "Datastage on Cloud Pak for Data"
   },
   {
     "id": "CVE-2026-78636",
@@ -1192,7 +4202,7 @@
   {
     "id": "CVE-2026-18484",
     "title": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.11 could allow a remote…",
-    "product": null
+    "product": "Contextforge"
   },
   {
     "id": "CVE-2026-18196",
@@ -4806,8 +7816,8 @@
   },
   {
     "id": "CVE-2026-123218",
-    "title": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft…",
-    "product": null
+    "title": "권한이 있는 사용자가 특정 메시지를 조작해 사용자 권한 검사를 우회하고 전체 관리자 권한을 얻을 수 있습니다",
+    "product": "Aspera Faspex"
   },
   {
     "id": "CVE-2026-121516",
@@ -5362,7 +8372,7 @@
   {
     "id": "CVE-2026-19868",
     "title": "SonicOS SSLVPN 서비스의 인증 강제 취약점으로, 대체 인증 방식의 유효한 자격 증명을 가진 사용자가 SAML 인증 제어와 SAML…",
-    "product": "SonicOS SSLVPN"
+    "product": "Sonicos"
   },
   {
     "id": "CVE-2026-19703",
@@ -7586,8 +10596,8 @@
   },
   {
     "id": "CVE-2026-116779",
-    "title": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital…",
-    "product": null
+    "title": "SIP MESSAGE 처리의 취약점으로 인증된 피어가 FreeSWITCH API 명령을 실행해 설정·인증정보를 노출하거나 통화를 제어하고…",
+    "product": "Freeswitch"
   },
   {
     "id": "CVE-2026-116572",
@@ -8296,8 +11306,8 @@
   },
   {
     "id": "CVE-2026-123158",
-    "title": "sshd in OpenSSH before 10.6p2 on Linux, when musl libc is used without PAM…",
-    "product": null
+    "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
+    "product": "OpenSSH"
   },
   {
     "id": "CVE-2026-123125",
@@ -9726,8 +12736,8 @@
   },
   {
     "id": "CVE-2026-102895",
-    "title": "GPUStack is an open-source GPU cluster manager for AI model serving and GPU…",
-    "product": null
+    "title": "로컬호스트 요청을 관리자 인증으로 잘못 처리해 원격 공격자가 인증 없이 관리자 권한을 얻고, 데이터 변경·비밀정보 노출 및 코드 실행을 할 수…",
+    "product": "Gpustack"
   },
   {
     "id": "CVE-2026-102894",
@@ -11962,7 +14972,7 @@
   {
     "id": "CVE-2026-121242",
     "title": "Improper input validation in WebPackaging in Google Chrome prior to…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121241",
@@ -12212,7 +15222,7 @@
   {
     "id": "CVE-2026-121190",
     "title": "UI misrepresentation in Extensions in Google Chrome prior to 157.0.8103.38…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121189",
@@ -12287,7 +15297,7 @@
   {
     "id": "CVE-2026-121175",
     "title": "Improper resource exposure in ORB in Google Chrome prior to 157.0.8103.38…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121174",
@@ -12297,7 +15307,7 @@
   {
     "id": "CVE-2026-121173",
     "title": "Uninitialized resource in WebGL in Google Chrome prior to 157.0.8103.38 allowed…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121172",
@@ -12362,7 +15372,7 @@
   {
     "id": "CVE-2026-121160",
     "title": "Out of bounds read in Skia in Google Chrome prior to 157.0.8103.38 allowed a…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121159",
@@ -12557,7 +15567,7 @@
   {
     "id": "CVE-2026-121109",
     "title": "Inadequate encryption strength in SSL in Google Chrome prior to 157.0.8103.38…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121108",
@@ -12597,7 +15607,7 @@
   {
     "id": "CVE-2026-121101",
     "title": "Missing authorization in DevTools in Google Chrome prior to 157.0.8103.38…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121100",
@@ -12622,12 +15632,12 @@
   {
     "id": "CVE-2026-121096",
     "title": "Incomplete cleanup in V8 in Google Chrome prior to 157.0.8103.38 allowed a…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121095",
     "title": "Uninitialized resource in WebGL in Google Chrome prior to 157.0.8103.38 allowed…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121094",
@@ -12637,7 +15647,7 @@
   {
     "id": "CVE-2026-121093",
     "title": "Out of bounds read in Animation in Google Chrome prior to 157.0.8103.38 allowed…",
-    "product": null
+    "product": "Chrome"
   },
   {
     "id": "CVE-2026-121092",
@@ -15517,37 +18527,37 @@
   {
     "id": "CVE-2026-58979",
     "title": "In canPresent of PresentationController.java, there is a possible permission…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58978",
     "title": "In multiple locations, there is a possible permission bypass due to a logic…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58976",
     "title": "In getSelectionBySubIds of ProviderUtil.java, there is a possible cross-user…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58975",
     "title": "In multiple locations, there is a possible out-of-bounds write due to a missing…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58974",
     "title": "In multiple locations, there is a possible permission bypass due to a missing…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58971",
     "title": "In _mupdf_get_hdr of wprint_mupdf.c, there is a possible out-of-bounds read due…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58970",
     "title": "In deliverResult of AppTimeTracker.java, there is a possible background…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-58969",
@@ -15842,22 +18852,22 @@
   {
     "id": "CVE-2026-55287",
     "title": "In onCreate of GrantCredentialsPermissionActivity.java, there is a possible way…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-55283",
     "title": "In multiple locations, there is a possible memory safety issue due to a…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-55275",
     "title": "In multiple locations, there is a possible use-after-free due to a race…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-55272",
     "title": "In loadDescription of DeviceAdminAdd.java, there is a possible denial of…",
-    "product": null
+    "product": "Android"
   },
   {
     "id": "CVE-2026-55271",
@@ -18077,7 +21087,7 @@
   {
     "id": "CVE-2026-120201",
     "title": "Jpom 2.10.0 through 2.11.12 contains an authentication bypass vulnerability…",
-    "product": null
+    "product": "Jpom"
   },
   {
     "id": "CVE-2026-120200",
@@ -20452,17 +23462,17 @@
   {
     "id": "CVE-2026-111500",
     "title": "Dell OpenManage Enterprise, versions prior to 4.8.0, contains a Missing…",
-    "product": null
+    "product": "Openmanage Enterprise"
   },
   {
     "id": "CVE-2026-111499",
     "title": "Dell OpenManage Enterprise, versions prior to 4.8.0, contains an Incorrect…",
-    "product": null
+    "product": "Openmanage Enterprise"
   },
   {
     "id": "CVE-2026-111498",
     "title": "OpenManage Enterprise, versions prior to 4.8.0, contains an Improper Resource…",
-    "product": null
+    "product": "Openmanage Enterprise"
   },
   {
     "id": "CVE-2026-100355",
@@ -20472,7 +23482,7 @@
   {
     "id": "CVE-2026-91917",
     "title": "Dell OpenManage Enterprise, versions prior to 4.8.0, contains an Improper Input…",
-    "product": null
+    "product": "Openmanage Enterprise"
   },
   {
     "id": "CVE-2026-87768",
@@ -20582,7 +23592,7 @@
   {
     "id": "CVE-2026-111503",
     "title": "Dell OpenManage Enterprise, versions prior to 4.8.0, contains an Improper…",
-    "product": null
+    "product": "Openmanage Enterprise"
   },
   {
     "id": "CVE-2026-111502",
@@ -32452,7 +35462,7 @@
   {
     "id": "CVE-2026-112523",
     "title": "This issue was addressed with improved handling of symlinks",
-    "product": null
+    "product": "macOS"
   },
   {
     "id": "CVE-2026-112522",
@@ -43617,7 +46627,7 @@
   {
     "id": "CVE-2026-91607",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91604",
@@ -43627,17 +46637,17 @@
   {
     "id": "CVE-2026-91600",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91598",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91597",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91590",
@@ -43647,12 +46657,12 @@
   {
     "id": "CVE-2026-91588",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91582",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91579",
@@ -43662,12 +46672,12 @@
   {
     "id": "CVE-2026-91577",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91576",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91574",
@@ -43707,7 +46717,7 @@
   {
     "id": "CVE-2026-91557",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91555",
@@ -43737,7 +46747,7 @@
   {
     "id": "CVE-2026-91549",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91547",
@@ -43747,12 +46757,12 @@
   {
     "id": "CVE-2026-91546",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91545",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91542",
@@ -43767,7 +46777,7 @@
   {
     "id": "CVE-2026-91539",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91537",
@@ -43782,12 +46792,12 @@
   {
     "id": "CVE-2026-91535",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91534",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91532",
@@ -43817,12 +46827,12 @@
   {
     "id": "CVE-2026-91524",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91523",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91521",
@@ -44097,7 +47107,7 @@
   {
     "id": "CVE-2026-91455",
     "title": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD…",
-    "product": null
+    "product": "Jd Edwards Enterpriseone Tools"
   },
   {
     "id": "CVE-2026-91453",
@@ -44577,37 +47587,37 @@
   {
     "id": "CVE-2026-91354",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91353",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91352",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91351",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91350",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91349",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91348",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91347",
@@ -44617,37 +47627,37 @@
   {
     "id": "CVE-2026-91346",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91345",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91344",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91343",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91342",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91341",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91340",
     "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion…",
-    "product": null
+    "product": "Outside in Technology"
   },
   {
     "id": "CVE-2026-91339",
@@ -44667,7 +47677,7 @@
   {
     "id": "CVE-2026-91336",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91335",
@@ -44717,7 +47727,7 @@
   {
     "id": "CVE-2026-91326",
     "title": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD…",
-    "product": null
+    "product": "Jd Edwards Enterpriseone Tools"
   },
   {
     "id": "CVE-2026-91325",
@@ -44727,17 +47737,17 @@
   {
     "id": "CVE-2026-91324",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91323",
     "title": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Oracle WebLogic Server"
   },
   {
     "id": "CVE-2026-91322",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-91321",
@@ -44747,22 +47757,22 @@
   {
     "id": "CVE-2026-91320",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-91319",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-91318",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-91317",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-91316",
@@ -45062,27 +48072,27 @@
   {
     "id": "CVE-2026-91256",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91255",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91254",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91253",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91252",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91251",
@@ -45097,7 +48107,7 @@
   {
     "id": "CVE-2026-91249",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91248",
@@ -45122,7 +48132,7 @@
   {
     "id": "CVE-2026-91244",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91243",
@@ -45132,12 +48142,12 @@
   {
     "id": "CVE-2026-91242",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91241",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-91240",
@@ -45297,12 +48307,12 @@
   {
     "id": "CVE-2026-91209",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: X…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-91208",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87800",
@@ -45312,17 +48322,17 @@
   {
     "id": "CVE-2026-87423",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: X…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87422",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87421",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87420",
@@ -45342,7 +48352,7 @@
   {
     "id": "CVE-2026-87417",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87416",
@@ -45357,12 +48367,12 @@
   {
     "id": "CVE-2026-87414",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87413",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87412",
@@ -45372,7 +48382,7 @@
   {
     "id": "CVE-2026-87411",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-87410",
@@ -45962,7 +48972,7 @@
   {
     "id": "CVE-2026-87263",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-87255",
@@ -46222,7 +49232,7 @@
   {
     "id": "CVE-2026-82891",
     "title": "IBM Guardium Data Protection 12.1, and 12.2 could allow a remote attacker to…",
-    "product": null
+    "product": "Guardium Data Protection"
   },
   {
     "id": "CVE-2026-81212",
@@ -46337,7 +49347,7 @@
   {
     "id": "CVE-2026-60662",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-60500",
@@ -46347,17 +49357,17 @@
   {
     "id": "CVE-2026-60453",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: X…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-60432",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-47025",
     "title": "Vulnerability in the Oracle Solaris product of Oracle Systems (component…",
-    "product": null
+    "product": "Solaris"
   },
   {
     "id": "CVE-2026-113812",
@@ -49572,7 +52582,7 @@
   {
     "id": "CVE-2026-101568",
     "title": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component…",
-    "product": null
+    "product": "Helidon"
   },
   {
     "id": "CVE-2026-101567",
@@ -50087,22 +53097,22 @@
   {
     "id": "CVE-2026-101457",
     "title": "Vulnerability in the Siebel Apps - Life Sciences product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101456",
     "title": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101455",
     "title": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101454",
     "title": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101453",
@@ -50117,7 +53127,7 @@
   {
     "id": "CVE-2026-101451",
     "title": "Vulnerability in the Siebel Life Sciences product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101450",
@@ -50392,17 +53402,17 @@
   {
     "id": "CVE-2026-101396",
     "title": "Vulnerability in the Siebel Apps - Marketing product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101395",
     "title": "Vulnerability in the Siebel Apps - Marketing product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101394",
     "title": "Vulnerability in the Siebel Apps - Marketing product of Oracle Siebel CRM…",
-    "product": null
+    "product": "Siebel CRM"
   },
   {
     "id": "CVE-2026-101393",
@@ -52702,7 +55712,7 @@
   {
     "id": "CVE-2026-86913",
     "title": "A use after free issue was addressed with improved memory management",
-    "product": null
+    "product": "iOS·iPadOS"
   },
   {
     "id": "CVE-2026-86907",
@@ -52722,7 +55732,7 @@
   {
     "id": "CVE-2026-86872",
     "title": "A logic issue was addressed with improved state management",
-    "product": null
+    "product": "Safari"
   },
   {
     "id": "CVE-2026-86871",
@@ -52737,12 +55747,12 @@
   {
     "id": "CVE-2026-84613",
     "title": "An out-of-bounds write issue was addressed with improved bounds checking",
-    "product": null
+    "product": "iOS·iPadOS"
   },
   {
     "id": "CVE-2026-84582",
     "title": "A privacy issue was addressed with improved access restrictions",
-    "product": null
+    "product": "iOS·iPadOS"
   },
   {
     "id": "CVE-2026-84579",
@@ -52847,7 +55857,7 @@
   {
     "id": "CVE-2026-28850",
     "title": "An authorization issue was addressed with improved state management",
-    "product": null
+    "product": "macOS"
   },
   {
     "id": "CVE-2026-109444",
@@ -59237,7 +62247,7 @@
   {
     "id": "CVE-2026-111605",
     "title": "Jpom through 2.11.12 contains an authorization bypass vulnerability in…",
-    "product": null
+    "product": "Jpom"
   },
   {
     "id": "CVE-2026-111604",
@@ -68472,32 +71482,32 @@
   {
     "id": "CVE-2026-100131",
     "title": "Substance3D - Sampler is affected by an out-of-bounds read vulnerability that…",
-    "product": null
+    "product": "Substance 3D Sampler"
   },
   {
     "id": "CVE-2026-100130",
     "title": "Substance3D - Sampler is affected by an out-of-bounds read vulnerability that…",
-    "product": null
+    "product": "Substance 3D Sampler"
   },
   {
     "id": "CVE-2026-100129",
     "title": "Bridge is affected by an out-of-bounds write vulnerability that could result in…",
-    "product": null
+    "product": "Bridge"
   },
   {
     "id": "CVE-2026-100128",
     "title": "Bridge is affected by an out-of-bounds write vulnerability that could result in…",
-    "product": null
+    "product": "Bridge"
   },
   {
     "id": "CVE-2026-100127",
     "title": "Bridge is affected by an out-of-bounds write vulnerability that could result in…",
-    "product": null
+    "product": "Bridge"
   },
   {
     "id": "CVE-2026-100126",
     "title": "Bridge is affected by an out-of-bounds read vulnerability that could lead to…",
-    "product": null
+    "product": "Bridge"
   },
   {
     "id": "CVE-2026-100112",
@@ -68807,57 +71817,57 @@
   {
     "id": "CVE-2026-103855",
     "title": "Dimension is affected by a NULL Pointer Dereference vulnerability that could…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103854",
     "title": "Dimension is affected by a Stack-based Buffer Overflow vulnerability that could…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103853",
     "title": "Dimension is affected by an out-of-bounds read vulnerability that could lead to…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103852",
     "title": "Substance3D - Stager is affected by a NULL Pointer Dereference vulnerability…",
-    "product": null
+    "product": "Substance 3D Stager"
   },
   {
     "id": "CVE-2026-103851",
     "title": "Substance3D - Stager is affected by a Stack-based Buffer Overflow vulnerability…",
-    "product": null
+    "product": "Substance 3D Stager"
   },
   {
     "id": "CVE-2026-103850",
     "title": "Substance3D - Stager is affected by an out-of-bounds read vulnerability that…",
-    "product": null
+    "product": "Substance 3D Stager"
   },
   {
     "id": "CVE-2026-103848",
     "title": "Adobe Experience Manager is affected by an Improper Neutralization of Special…",
-    "product": null
+    "product": "Experience Manager"
   },
   {
     "id": "CVE-2026-103847",
     "title": "Dimension is affected by an Untrusted Search Path vulnerability that could…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103846",
     "title": "Dimension is affected by an Improper Neutralization of Input During Web Page…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103845",
     "title": "Dimension is affected by an Uncontrolled Search Path Element vulnerability that…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103844",
     "title": "Dimension is affected by an out-of-bounds write vulnerability that could result…",
-    "product": null
+    "product": "Dimension"
   },
   {
     "id": "CVE-2026-103843",
@@ -70222,12 +73232,12 @@
   {
     "id": "CVE-2026-95631",
     "title": "Adobe Commerce is affected by an Improper Input Validation vulnerability that…",
-    "product": null
+    "product": "Commerce B2B"
   },
   {
     "id": "CVE-2026-95630",
     "title": "Adobe Commerce is affected by an Improper Input Validation vulnerability that…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-94506",
@@ -70237,32 +73247,32 @@
   {
     "id": "CVE-2026-92922",
     "title": "Adobe Commerce is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92911",
     "title": "Adobe Commerce is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92910",
     "title": "Adobe Commerce is affected by an Incorrect Authorization vulnerability that…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92909",
     "title": "Adobe Commerce is affected by an Incorrect Authorization vulnerability that…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92908",
     "title": "Adobe Commerce is affected by an Incorrect Authorization vulnerability that…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92464",
     "title": "Adobe Commerce is affected by an Improper Input Validation vulnerability that…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-92088",
@@ -70272,7 +73282,7 @@
   {
     "id": "CVE-2026-91013",
     "title": "Adobe Commerce is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
-    "product": null
+    "product": "Adobe Commerce"
   },
   {
     "id": "CVE-2026-88226",
@@ -75557,7 +78567,7 @@
   {
     "id": "CVE-2026-106625",
     "title": "Adobe Framemaker is affected by an out-of-bounds write vulnerability that could…",
-    "product": null
+    "product": "Framemaker"
   },
   {
     "id": "CVE-2026-105733",
@@ -106747,7 +109757,7 @@
   {
     "id": "CVE-2026-102925",
     "title": "virtualenv is a tool for creating isolated virtual python environments",
-    "product": null
+    "product": "Virtualenv"
   },
   {
     "id": "CVE-2026-102904",
@@ -126857,7 +129867,7 @@
   {
     "id": "CVE-2026-18869",
     "title": "IBM i 7.6, 7.5, 7.4, and 7.3 could allow a remote authenticated attacker to…",
-    "product": null
+    "product": "I"
   },
   {
     "id": "CVE-2026-17619",
@@ -126867,7 +129877,7 @@
   {
     "id": "CVE-2026-17262",
     "title": "IBM i 7.6, 7.5, 7.4, and 7.3 could allow a local attacker to cause a denial of…",
-    "product": null
+    "product": "I"
   },
   {
     "id": "CVE-2026-11727",
@@ -127692,7 +130702,7 @@
   {
     "id": "CVE-2026-10841",
     "title": "IBM WebSphere Application Server 8.5 and 9.0, and IBM WebSphere Application…",
-    "product": null
+    "product": "Websphere Application Server"
   },
   {
     "id": "CVE-2026-10751",
@@ -140487,7 +143497,7 @@
   {
     "id": "CVE-2026-83283",
     "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
-    "product": null
+    "product": "Business Intelligence"
   },
   {
     "id": "CVE-2026-83282",
@@ -141557,7 +144567,7 @@
   {
     "id": "CVE-2026-83067",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-83066",
@@ -141792,7 +144802,7 @@
   {
     "id": "CVE-2026-83020",
     "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
-    "product": null
+    "product": "Platform Security for Java"
   },
   {
     "id": "CVE-2026-83019",
@@ -141837,7 +144847,7 @@
   {
     "id": "CVE-2026-83011",
     "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
-    "product": null
+    "product": "Platform Security for Java"
   },
   {
     "id": "CVE-2026-83010",
@@ -141912,17 +144922,17 @@
   {
     "id": "CVE-2026-82996",
     "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
-    "product": null
+    "product": "Platform Security for Java"
   },
   {
     "id": "CVE-2026-82995",
     "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
-    "product": null
+    "product": "Platform Security for Java"
   },
   {
     "id": "CVE-2026-82994",
     "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
-    "product": null
+    "product": "Platform Security for Java"
   },
   {
     "id": "CVE-2026-82993",
@@ -142167,7 +145177,7 @@
   {
     "id": "CVE-2026-73961",
     "title": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware…",
-    "product": null
+    "product": "Jdeveloper"
   },
   {
     "id": "CVE-2026-73960",
@@ -142322,7 +145332,7 @@
   {
     "id": "CVE-2026-70755",
     "title": "Vulnerability in the Oracle Web Applications Desktop Integrator product of…",
-    "product": null
+    "product": "Web Applications Desktop Integrator"
   },
   {
     "id": "CVE-2026-70748",
@@ -143497,7 +146507,7 @@
   {
     "id": "CVE-2026-11918",
     "title": "IBM ContextForge MCP Gateway <= v1.0.4 IBM mcp-context-forge could allow an…",
-    "product": null
+    "product": "Contextforge"
   },
   {
     "id": "CVE-2026-11864",
@@ -144832,7 +147842,7 @@
   {
     "id": "CVE-2026-91993",
     "title": "Jpom through 2.11.12 fails to validate workspace ownership when resolving…",
-    "product": null
+    "product": "Jpom"
   },
   {
     "id": "CVE-2026-91926",
@@ -191627,11 +194637,6 @@
   {
     "id": "CVE-2026-77915",
     "title": "rConfig Core 8.0.0 before 8.2.10 contains an authentication bypass…",
-    "product": null
-  },
-  {
-    "id": "CVE-2026-77914",
-    "title": "rConfig Core 8.0.0 before 8.2.13 contains a path traversal vulnerability that…",
     "product": null
   },
   {
@@ -248392,7 +251397,7 @@
   {
     "id": "CVE-2026-64510",
     "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPI…",
-    "product": null
+    "product": "Linux Kernel"
   },
   {
     "id": "CVE-2026-64509",
@@ -505258,200 +508263,5 @@
     "id": "CVE-2025-12480",
     "title": "Triofox versions prior to 16.7.10368.56560, are vulnerable to an Improper…",
     "product": "Triofox"
-  },
-  {
-    "id": "CVE-2025-64685",
-    "title": "In JetBrains YouTrack before 2025.3.104432 missing TLS certificate validation…",
-    "product": "Youtrack"
-  },
-  {
-    "id": "CVE-2025-64684",
-    "title": "In JetBrains YouTrack before 2025.3.104432 information disclosure was possible…",
-    "product": "Youtrack"
-  },
-  {
-    "id": "CVE-2025-64683",
-    "title": "In JetBrains Hub before 2025.3.104432 information disclosure was possible via…",
-    "product": "Hub"
-  },
-  {
-    "id": "CVE-2025-64682",
-    "title": "In JetBrains Hub before 2025.3.104432 a race condition allowed bypass of the…",
-    "product": "Hub"
-  },
-  {
-    "id": "CVE-2025-64681",
-    "title": "In JetBrains Hub before 2025.3.104992 a race condition allowed bypass of the…",
-    "product": "Hub"
-  },
-  {
-    "id": "CVE-2025-64457",
-    "title": "In JetBrains ReSharper, Rider and dotTrace before 2025.2.5 local privilege…",
-    "product": "Dottrace"
-  },
-  {
-    "id": "CVE-2025-64456",
-    "title": "In JetBrains ReSharper before 2025.2.4 missing signature verification in DPA…",
-    "product": "Resharper"
-  },
-  {
-    "id": "CVE-2025-12939",
-    "title": "A security flaw has been discovered in SourceCodester Interview Management…",
-    "product": "Interview Management System"
-  },
-  {
-    "id": "CVE-2025-12938",
-    "title": "A vulnerability was identified in projectworlds Online Admission System 1.0",
-    "product": "Online Admission System"
-  },
-  {
-    "id": "CVE-2025-41001",
-    "title": "Cross Site Scripting (XSS) vulnerability stored in SOPlanning v1.53.02, which…",
-    "product": "Soplanning"
-  },
-  {
-    "id": "CVE-2025-12405",
-    "title": "An improper privilege management vulnerability was found in Looker Studio. It…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-41107",
-    "title": "Stored Cross Site Scripting (XSS) vulnerability in Smart School 7.0 due to lack…",
-    "product": "Smart School"
-  },
-  {
-    "id": "CVE-2025-12409",
-    "title": "A SQL injection vulnerability was discovered in Looker Studio that allowed for…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12397",
-    "title": "A SQL injection vulnerability was found in Looker Studio",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12155",
-    "title": "A Command Injection vulnerability, resulting from improper file path…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-41731",
-    "title": "A vulnerability was identified in the password generation algorithm when…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12933",
-    "title": "A vulnerability was identified in SourceCodester Baby Care System 1.0",
-    "product": "Baby Care System"
-  },
-  {
-    "id": "CVE-2025-62689",
-    "title": "NULL pointer dereference vulnerability exists in GNU libmicrohttpd v1.0.2 and…",
-    "product": "Libmicrohttpd"
-  },
-  {
-    "id": "CVE-2025-59777",
-    "title": "NULL pointer dereference vulnerability exists in GNU libmicrohttpd v1.0.2 and…",
-    "product": "Libmicrohttpd"
-  },
-  {
-    "id": "CVE-2025-12932",
-    "title": "A vulnerability was determined in SourceCodester Baby Care System 1.0",
-    "product": "Baby Care System"
-  },
-  {
-    "id": "CVE-2025-12931",
-    "title": "A vulnerability was found in SourceCodester Food Ordering System 1.0",
-    "product": "Food Ordering System"
-  },
-  {
-    "id": "CVE-2025-12613",
-    "title": "Versions of the package cloudinary before 2.7.0 are vulnerable to Arbitrary…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12930",
-    "title": "A vulnerability has been found in SourceCodester Food Ordering System 1.0",
-    "product": "Food Ordering System"
-  },
-  {
-    "id": "CVE-2025-12929",
-    "title": "A flaw has been found in SourceCodester Survey Application System 1.0",
-    "product": "Survey Application System"
-  },
-  {
-    "id": "CVE-2025-12928",
-    "title": "A vulnerability was detected in code-projects Online Job Search Engine 1.0",
-    "product": "Online Job Search Engine"
-  },
-  {
-    "id": "CVE-2025-12868",
-    "title": "New Site Server developed by CyberTutor has a Use of Client-Side Authentication…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12867",
-    "title": "EIP Plus developed by Hundred Plus has an Arbitrary File Uplaod vulnerability…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12927",
-    "title": "A security vulnerability has been detected in DedeBIZ up to 6.3.2",
-    "product": "Dedebiz"
-  },
-  {
-    "id": "CVE-2025-12926",
-    "title": "A weakness has been identified in SourceCodester Farm Management System 1.0",
-    "product": "Farm Management System"
-  },
-  {
-    "id": "CVE-2025-12866",
-    "title": "EIP Plus developed by Hundred Plus has a Weak Password Recovery Mechanism…",
-    "product": null
-  },
-  {
-    "id": "CVE-2025-12865",
-    "title": "U-Office Force developed by e-Excellence has a SQL Injection vulnerability…",
-    "product": "U-Office Force"
-  },
-  {
-    "id": "CVE-2025-12864",
-    "title": "U-Office Force developed by e-Excellence has a SQL Injection vulnerability…",
-    "product": "U-Office Force"
-  },
-  {
-    "id": "CVE-2025-12925",
-    "title": "A security flaw has been discovered in rymcu forest up to…",
-    "product": "Forest"
-  },
-  {
-    "id": "CVE-2025-12924",
-    "title": "A vulnerability was identified in rymcu forest up to…",
-    "product": "Forest"
-  },
-  {
-    "id": "CVE-2025-12923",
-    "title": "A vulnerability was determined in liweiyi ChestnutCMS up to 1.5.8",
-    "product": "Chestnutcms"
-  },
-  {
-    "id": "CVE-2025-12922",
-    "title": "A vulnerability was found in OpenClinica Community Edition up to 3.12.2/3.13",
-    "product": "Openclinica"
-  },
-  {
-    "id": "CVE-2025-12921",
-    "title": "A vulnerability has been found in OpenClinica Community Edition up to…",
-    "product": "Openclinica"
-  },
-  {
-    "id": "CVE-2025-12920",
-    "title": "A flaw has been found in qianfox FoxCMS up to 1.2.16",
-    "product": "Foxcms"
-  },
-  {
-    "id": "CVE-2025-12919",
-    "title": "A vulnerability was detected in EverShop up to 2.0.1",
-    "product": "Evershop"
   }
 ]
