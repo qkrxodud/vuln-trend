@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 138,
-      "count_30d": 950,
+      "count_7d": 141,
+      "count_30d": 953,
       "kev_count": 322,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 263,
-      "count_30d": 1363,
+      "count_7d": 272,
+      "count_30d": 1373,
       "kev_count": 303,
       "top": [
         {
@@ -1570,8 +1570,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 308,
-      "count_30d": 1295,
+      "count_7d": 309,
+      "count_30d": 1296,
       "kev_count": 32,
       "top": [
         {
@@ -2265,8 +2265,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 899,
-      "count_30d": 4546,
+      "count_7d": 915,
+      "count_30d": 4562,
       "kev_count": 264,
       "top": [
         {
@@ -2994,8 +2994,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 175,
-      "count_30d": 909,
+      "count_7d": 178,
+      "count_30d": 912,
       "kev_count": 27,
       "top": [
         {
@@ -3479,6 +3479,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-63644",
+          "title": "bird-lg-go is a BIRD looking glass in Go",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:53.957+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "injection",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-123465",
           "title": "Exposure of Sensitive System Information to an Unauthorized Control Sphere…",
           "score": 8,
@@ -3653,48 +3688,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-63417",
-          "title": "Logging Redactor is a Python library designed to redact sensitive data in logs…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T04:18:09.243+09:00",
-          "poc_count": 0,
-          "epss": 0.0030,
-          "epss_percentile": 0.23,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 355,
-      "count_30d": 3074,
+      "count_7d": 364,
+      "count_30d": 3083,
       "kev_count": 462,
       "top": [
         {
@@ -4472,8 +4473,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 227,
-      "count_30d": 1141,
+      "count_7d": 235,
+      "count_30d": 1149,
       "kev_count": 14,
       "top": [
         {
@@ -4571,6 +4572,40 @@
           "epss_percentile": 0.31,
           "cvss": 8.8,
           "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-123817",
+          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:38.273+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -5126,48 +5161,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124553",
-          "title": "BabelDOC from 0.3.61 before 0.7.0 contains a resource exhaustion vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T00:16:51.46+09:00",
-          "poc_count": 0,
-          "epss": 0.0054,
-          "epss_percentile": 0.45,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 194,
-      "count_30d": 805,
+      "count_7d": 203,
+      "count_30d": 814,
       "kev_count": 161,
       "top": [
         {
@@ -5819,6 +5820,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-123807",
+          "title": "Signal K Server is a server application that runs on a central hub in a boat",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:36.663+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-114432",
           "title": "The Contact Form 7 WordPress plugin before 6.2.4 does not validate the type or…",
           "score": 10,
@@ -5851,48 +5886,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-17147",
-          "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T14:18:28.037+09:00",
-          "poc_count": 0,
-          "epss": 0.0090,
-          "epss_percentile": 0.59,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 163,
-      "count_30d": 537,
+      "count_7d": 168,
+      "count_30d": 542,
       "kev_count": 32,
       "top": [
         {
@@ -6599,8 +6600,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 500,
-      "count_30d": 2183,
+      "count_7d": 516,
+      "count_30d": 2199,
       "kev_count": 229,
       "top": [
         {
@@ -8286,6 +8287,40 @@
           "patch_url": "https://github.com/v8/v8/commit/e0562d87ad9c17042b581582c99237d798572e67"
         },
         {
+          "id": "CVE-2026-121157",
+          "title": "Incorrect authorization in Chromoting in Google Chrome prior to 157.0.8103.38…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.1
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-04T06:17:23.417+09:00",
+          "poc_count": 0,
+          "epss": 0.0011,
+          "epss_percentile": 0.01,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-121156",
           "title": "Buffer overflow in Dawn in Google Chrome prior to 157.0.8103.38 allowed a…",
           "score": 9,
@@ -8844,42 +8879,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-04T06:17:14.543+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "157.0.8103.38"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html"
-        },
-        {
-          "id": "CVE-2026-121074",
-          "title": "Memory corruption in GPU in Google Chrome on on Android prior to 157.0.8103.38…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T06:17:12.463+09:00",
           "poc_count": 0,
           "epss": 0.0041,
           "epss_percentile": 0.35,
@@ -9659,7 +9658,7 @@
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
       "count_7d": 483,
-      "count_30d": 1985,
+      "count_30d": 1986,
       "kev_count": 24,
       "top": [
         {
@@ -12621,8 +12620,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 13,
-      "count_30d": 97,
+      "count_7d": 20,
+      "count_30d": 104,
       "kev_count": 136,
       "top": [
         {
@@ -12797,6 +12796,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-90586",
+          "title": "The Xtensa MMU userspace port never initialized the per-thread page-table…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:56.813+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-87040",
           "title": "The nRF link-layer receive paths of the open-source Bluetooth LE Controller did…",
           "score": 8,
@@ -12819,6 +12852,40 @@
           "epss": 0.0029,
           "epss_percentile": 0.21,
           "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-90591",
+          "title": "The NXP ENET-QOS Ethernet driver's receive work handler eth_nxp_enet_qos_rx()…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:57.573+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -13071,6 +13138,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-90590",
+          "title": "The NXP ENET QoS Ethernet driver in drivers/ethernet/eth_nxp_enet_qos…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T07:18:57.417+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.5,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-87038",
           "title": "The user-mode verification handler for the i3c_transfer() system call…",
           "score": 6,
@@ -13206,108 +13307,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-82961",
-          "title": "The GPIO syscall handlers in drivers/gpio/gpio_handlers.c did not validate the…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.8
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T02:18:43.68+09:00",
-          "poc_count": 0,
-          "epss": 0.0013,
-          "epss_percentile": 0.02,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-85034",
-          "title": "The Bluetooth host's GATT client passed the value of a received Handle Value…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.7,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 6.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T23:17:39.1+09:00",
-          "poc_count": 0,
-          "epss": 0.0024,
-          "epss_percentile": 0.15,
-          "cvss": 6.7,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-87044",
-          "title": "The Mbed TLS crypto shim driver in drivers/crypto/crypto_mbedtls_shim.c drives…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T15:17:07.313+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.11,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -13315,7 +13314,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 243,
+      "count_30d": 250,
       "kev_count": 98,
       "top": [
         {
