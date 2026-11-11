@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 159,
-      "count_30d": 957,
+      "count_7d": 161,
+      "count_30d": 959,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 286,
-      "count_30d": 1344,
+      "count_7d": 289,
+      "count_30d": 1347,
       "kev_count": 305,
       "top": [
         {
@@ -1554,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 370,
-      "count_30d": 1328,
+      "count_7d": 375,
+      "count_30d": 1333,
       "kev_count": 32,
       "top": [
         {
@@ -2103,6 +2103,74 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-126806",
+          "title": "WWBN AVideo 14.3 through 29.7.1 contains a stored cross-site scripting…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-12T06:16:44.583+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-126800",
+          "title": "Hydro @hydrooj/ui-default before 4.59.1 contains a stored cross-site scripting…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-12T06:16:43.507+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-102530",
           "title": "JupyterLab Desktop is the cross-platform desktop application for JupyterLab",
           "score": 9,
@@ -2173,82 +2241,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121664",
-          "title": "Improper neutralization of input during web page generation ('cross-site…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:20:29.957+09:00",
-          "poc_count": 0,
-          "epss": 0.0064,
-          "epss_percentile": 0.51,
-          "cvss": 8.3,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-103303",
-          "title": "The Turisbook Booking System WordPress plugin through 1.3.8 does not have…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-08T15:17:02.487+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.09,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 976,
-      "count_30d": 4624,
+      "count_7d": 990,
+      "count_30d": 4638,
       "kev_count": 265,
       "top": [
         {
@@ -2972,8 +2972,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 169,
-      "count_30d": 925,
+      "count_7d": 170,
+      "count_30d": 926,
       "kev_count": 27,
       "top": [
         {
@@ -3666,8 +3666,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1152,
-      "count_30d": 3939,
+      "count_7d": 1154,
+      "count_30d": 3941,
       "kev_count": 463,
       "top": [
         {
@@ -4441,8 +4441,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 255,
-      "count_30d": 1188,
+      "count_7d": 257,
+      "count_30d": 1190,
       "kev_count": 14,
       "top": [
         {
@@ -4708,6 +4708,40 @@
           "poc_count": 0,
           "epss": 0.0036,
           "epss_percentile": 0.29,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-65982",
+          "title": "nginx-http-flv-module is a media streaming server based on nginx-rtmp-module",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-12T06:16:46.903+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.7,
           "cvss_version": "4.0",
           "severity": "HIGH",
@@ -5093,48 +5127,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-113431",
-          "title": "Allocation of Resources Without Limits or Throttling vulnerability in ninenines…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T20:17:04.41+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.36,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 214,
-      "count_30d": 827,
+      "count_7d": 216,
+      "count_30d": 829,
       "kev_count": 161,
       "top": [
         {
@@ -5855,8 +5855,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 197,
-      "count_30d": 566,
+      "count_7d": 203,
+      "count_30d": 572,
       "kev_count": 32,
       "top": [
         {
@@ -6568,8 +6568,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 635,
-      "count_30d": 2399,
+      "count_7d": 641,
+      "count_30d": 2405,
       "kev_count": 231,
       "top": [
         {
