@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 172,
-      "count_30d": 1001,
+      "count_7d": 174,
+      "count_30d": 1003,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 311,
-      "count_30d": 1422,
+      "count_7d": 313,
+      "count_30d": 1424,
       "kev_count": 305,
       "top": [
         {
@@ -1554,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 319,
-      "count_30d": 1338,
+      "count_7d": 330,
+      "count_30d": 1349,
       "kev_count": 32,
       "top": [
         {
@@ -1648,6 +1648,40 @@
           "poc_count": 0,
           "epss": 0.0038,
           "epss_percentile": 0.32,
+          "cvss": 9.3,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-64670",
+          "title": "Waline is a comment system with backend support",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T14:19:51.527+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.3,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -2210,51 +2244,14 @@
             "12.1.1.3"
           ],
           "patch_url": "https://www.ibm.com/support/pages/node/7295637"
-        },
-        {
-          "id": "CVE-2026-16709",
-          "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T14:18:19.73+09:00",
-          "poc_count": 0,
-          "epss": 0.0044,
-          "epss_percentile": 0.38,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "API Connect",
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.8.13",
-            "12.1.1.3"
-          ],
-          "patch_url": "https://www.ibm.com/support/pages/node/7295635"
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 963,
-      "count_30d": 4729,
+      "count_7d": 974,
+      "count_30d": 4739,
       "kev_count": 265,
       "top": [
         {
@@ -2978,8 +2975,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 166,
-      "count_30d": 948,
+      "count_7d": 167,
+      "count_30d": 949,
       "kev_count": 27,
       "top": [
         {
@@ -3673,8 +3670,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1174,
-      "count_30d": 4026,
+      "count_7d": 1187,
+      "count_30d": 4039,
       "kev_count": 463,
       "top": [
         {
@@ -4454,8 +4451,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 255,
-      "count_30d": 1223,
+      "count_7d": 259,
+      "count_30d": 1227,
       "kev_count": 14,
       "top": [
         {
@@ -5146,8 +5143,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 216,
-      "count_30d": 860,
+      "count_7d": 219,
+      "count_30d": 863,
       "kev_count": 161,
       "top": [
         {
@@ -5871,8 +5868,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 182,
-      "count_30d": 569,
+      "count_7d": 183,
+      "count_30d": 570,
       "kev_count": 32,
       "top": [
         {
@@ -6584,8 +6581,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 661,
-      "count_30d": 2468,
+      "count_7d": 674,
+      "count_30d": 2481,
       "kev_count": 231,
       "top": [
         {
@@ -7368,7 +7365,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 21,
-      "count_30d": 2208,
+      "count_30d": 2209,
       "kev_count": 286,
       "top": [
         {
@@ -8144,7 +8141,7 @@
       "key": "browser",
       "label": "브라우저",
       "count_7d": 9,
-      "count_30d": 750,
+      "count_30d": 749,
       "kev_count": 112,
       "top": [
         {
