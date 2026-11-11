@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 174,
-      "count_30d": 1003,
+      "count_7d": 175,
+      "count_30d": 1004,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 313,
-      "count_30d": 1424,
+      "count_7d": 319,
+      "count_30d": 1430,
       "kev_count": 305,
       "top": [
         {
@@ -1554,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 330,
-      "count_30d": 1349,
+      "count_7d": 340,
+      "count_30d": 1359,
       "kev_count": 32,
       "top": [
         {
@@ -2250,8 +2250,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 974,
-      "count_30d": 4739,
+      "count_7d": 989,
+      "count_30d": 4754,
       "kev_count": 265,
       "top": [
         {
@@ -3670,8 +3670,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1187,
-      "count_30d": 4039,
+      "count_7d": 1190,
+      "count_30d": 4042,
       "kev_count": 463,
       "top": [
         {
@@ -4451,8 +4451,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 259,
-      "count_30d": 1227,
+      "count_7d": 263,
+      "count_30d": 1231,
       "kev_count": 14,
       "top": [
         {
@@ -5143,8 +5143,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 219,
-      "count_30d": 863,
+      "count_7d": 223,
+      "count_30d": 867,
       "kev_count": 161,
       "top": [
         {
@@ -6581,8 +6581,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 674,
-      "count_30d": 2481,
+      "count_7d": 683,
+      "count_30d": 2490,
       "kev_count": 231,
       "top": [
         {
@@ -9617,8 +9617,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 431,
-      "count_30d": 1990,
+      "count_7d": 506,
+      "count_30d": 2065,
       "kev_count": 24,
       "top": [
         {
@@ -9883,6 +9883,41 @@
             "2.4.4"
           ],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+        },
+        {
+          "id": "CVE-2026-78287",
+          "title": "Improper Control of Generation of Code ('Code Injection') vulnerability in…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T20:17:21.293+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-115252",
@@ -10323,40 +10358,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-107622",
-          "title": "The BuddyForms plugin for WordPress is vulnerable to Privilege Escalation in…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T21:17:16.02+09:00",
-          "poc_count": 0,
-          "epss": 0.0074,
-          "epss_percentile": 0.54,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
