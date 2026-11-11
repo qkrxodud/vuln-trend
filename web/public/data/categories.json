@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 167,
-      "count_30d": 996,
+      "count_7d": 172,
+      "count_30d": 1001,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 295,
-      "count_30d": 1406,
+      "count_7d": 311,
+      "count_30d": 1422,
       "kev_count": 305,
       "top": [
         {
@@ -1554,10 +1554,44 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 302,
-      "count_30d": 1321,
+      "count_7d": 319,
+      "count_30d": 1338,
       "kev_count": 32,
       "top": [
+        {
+          "id": "CVE-2026-121904",
+          "title": "Adobe Connect is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:27.28+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-17146",
           "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
@@ -1901,6 +1935,74 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-125878",
+          "title": "Improper neutralization of input during web page generation ('cross-site…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:30.38+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-122102",
+          "title": "Adobe Connect is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:28.73+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-63010",
           "title": "Group-Office is an enterprise customer relationship management and groupware…",
           "score": 9,
@@ -2145,116 +2247,14 @@
             "12.1.1.3"
           ],
           "patch_url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "id": "CVE-2026-118670",
-          "title": "OHIF Viewers is a zero-footprint DICOM viewer with shared extension packages",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T03:17:57.34+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.36,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-110525",
-          "title": "The MCB  WordPress plugin through 1.0.0 does not sanitise or escape request…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T15:16:39.46+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-12574",
-          "title": "Zoho Corporation ManageEngine DDI Central versions 6200 and below are…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T21:17:19.79+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 940,
-      "count_30d": 4706,
+      "count_7d": 963,
+      "count_30d": 4729,
       "kev_count": 265,
       "top": [
         {
@@ -3673,8 +3673,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1167,
-      "count_30d": 4019,
+      "count_7d": 1174,
+      "count_30d": 4026,
       "kev_count": 463,
       "top": [
         {
@@ -4454,8 +4454,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 250,
-      "count_30d": 1218,
+      "count_7d": 255,
+      "count_30d": 1223,
       "kev_count": 14,
       "top": [
         {
@@ -5146,8 +5146,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 209,
-      "count_30d": 853,
+      "count_7d": 216,
+      "count_30d": 860,
       "kev_count": 161,
       "top": [
         {
@@ -5626,6 +5626,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-121351",
+          "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:24.91+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-59774",
           "title": "Gitea's Org-mode markup renderer processes INCLUDE directives supplied to the…",
           "score": 10,
@@ -5682,6 +5716,74 @@
           "epss": 0.0054,
           "epss_percentile": 0.45,
           "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121906",
+          "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:27.4+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121354",
+          "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:25.373+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -5763,116 +5865,14 @@
             "7.161.16"
           ],
           "patch_url": "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
-        },
-        {
-          "id": "CVE-2026-107331",
-          "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T02:16:35.55+09:00",
-          "poc_count": 0,
-          "epss": 0.0050,
-          "epss_percentile": 0.43,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124450",
-          "title": "OpenEMR before 8.3.0 contains a broken access control and path traversal…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-08T23:18:12.26+09:00",
-          "poc_count": 0,
-          "epss": 0.0049,
-          "epss_percentile": 0.42,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114432",
-          "title": "The Contact Form 7 WordPress plugin before 6.2.4 does not validate the type or…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-08T15:17:04.807+09:00",
-          "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.40,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 179,
-      "count_30d": 566,
+      "count_7d": 182,
+      "count_30d": 569,
       "kev_count": 32,
       "top": [
         {
@@ -6063,6 +6063,74 @@
           "patch_url": "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
         },
         {
+          "id": "CVE-2026-121889",
+          "title": "Adobe Connect is affected by a Server-Side Request Forgery (SSRF) vulnerability…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:26.18+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121356",
+          "title": "Adobe Connect is affected by a Server-Side Request Forgery (SSRF) vulnerability…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:25.637+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-114160",
           "title": "No cwe for this issue in Azure Managed Grafana allows an unauthorized attacker…",
           "score": 10,
@@ -6224,6 +6292,40 @@
           "epss_percentile": 0.27,
           "cvss": 10.0,
           "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125881",
+          "title": "Server-Side request forgery (SSRF) vulnerability in N-able N-central allows…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:18:30.86+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
@@ -6476,119 +6578,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-17329",
-          "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T14:18:43.273+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.36,
-          "cvss": 9.3,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-16918",
-          "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T14:18:22.803+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.37,
-          "cvss": 9.3,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "API Connect",
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.8.13",
-            "12.1.1.3"
-          ],
-          "patch_url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "id": "CVE-2026-119983",
-          "title": "Server-side request forgery (ssrf) in Visual Studio Code allows an unauthorized…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:20:23.31+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 623,
-      "count_30d": 2430,
+      "count_7d": 661,
+      "count_30d": 2468,
       "kev_count": 231,
       "top": [
         {
@@ -9623,8 +9620,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 429,
-      "count_30d": 1988,
+      "count_7d": 431,
+      "count_30d": 1990,
       "kev_count": 24,
       "top": [
         {
@@ -9954,6 +9951,40 @@
           "product_family": "web_cms",
           "attack_types": [
             "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-89324",
+          "title": "The Basel Post Types plugin for WordPress is vulnerable to Authentication…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:21:14.003+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -10323,40 +10354,6 @@
           "epss": 0.0074,
           "epss_percentile": 0.54,
           "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118066",
-          "title": "The Appointment Booking Plugin – LatePoint | Calendar & Scheduling for…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.7,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T21:17:43.717+09:00",
-          "poc_count": 0,
-          "epss": 0.023,
-          "epss_percentile": 0.83,
-          "cvss": 9.1,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -12585,10 +12582,44 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 10,
-      "count_30d": 93,
+      "count_7d": 16,
+      "count_30d": 99,
       "kev_count": 136,
       "top": [
+        {
+          "id": "CVE-2026-82391",
+          "title": "The HTTP/2 front-end of the Zephyr HTTP server aliased connection receive state…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:21:05.71+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2022-29966",
           "title": "Emerson Ovation has several protocols that have no authentication, which could…",
@@ -12618,6 +12649,40 @@
           "product_family": "ics_iot",
           "attack_types": [
             "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-77685",
+          "title": "The RFCOMM multiplexer control-channel handler in…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:20:53.717+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -12713,6 +12778,40 @@
           "poc_count": 0,
           "epss": 0.0011,
           "epss_percentile": 0.01,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-90833",
+          "title": "The simulated EEPROM driver validated access ranges in eeprom_range_is_valid()…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T07:21:14.32+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 7.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
@@ -13137,137 +13236,34 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-87038",
-          "title": "The user-mode verification handler for the i3c_transfer() system call…",
-          "score": 6,
+          "id": "CVE-2026-87042",
+          "title": "The IEEE 1588 (PTP) port implementation in subsys/net/lib/ptp/port.c adopted…",
+          "score": 7,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
             "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 7.0,
-            "decay": -0.9
+            "cvss": 6.5,
+            "decay": 0.0
           },
-          "why_now": "CVSS 7.0, 최근 공개",
+          "why_now": "CVSS 6.5, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-04T15:17:06.42+09:00",
+          "published_at": "2026-11-11T07:21:12.85+09:00",
           "poc_count": 0,
-          "epss": 0.0009,
-          "epss_percentile": 0.00,
-          "cvss": 7.0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.5,
           "cvss_version": "3.1",
-          "severity": "HIGH",
+          "severity": "MEDIUM",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-109122",
-          "title": "The network management service on affected Kiloview E3 NDI encoder firmware…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -3.2
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-23T07:17:59.93+09:00",
-          "poc_count": 0,
-          "epss": 0.0052,
-          "epss_percentile": 0.44,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114596",
-          "title": "In EPICS Base release 7.0.10 and prior, an improper validation of message…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -2.2
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-28T02:16:58.69+09:00",
-          "poc_count": 0,
-          "epss": 0.0026,
-          "epss_percentile": 0.17,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-79982",
-          "title": "The Bluetooth HCI USB transport class of the new USB device stack…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -2.9
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-24T05:17:28.167+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
+            "dos"
           ],
           "summary_what": null,
           "fix_versions": [],
