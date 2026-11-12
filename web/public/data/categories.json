@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 161,
-      "count_30d": 959,
+      "count_7d": 181,
+      "count_30d": 979,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 289,
-      "count_30d": 1347,
+      "count_7d": 327,
+      "count_30d": 1385,
       "kev_count": 305,
       "top": [
         {
@@ -2247,8 +2247,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 990,
-      "count_30d": 4638,
+      "count_7d": 1037,
+      "count_30d": 4685,
       "kev_count": 265,
       "top": [
         {
@@ -2972,8 +2972,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 170,
-      "count_30d": 926,
+      "count_7d": 177,
+      "count_30d": 933,
       "kev_count": 27,
       "top": [
         {
@@ -3666,8 +3666,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1154,
-      "count_30d": 3941,
+      "count_7d": 1217,
+      "count_30d": 4004,
       "kev_count": 463,
       "top": [
         {
@@ -4441,8 +4441,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 257,
-      "count_30d": 1190,
+      "count_7d": 265,
+      "count_30d": 1198,
       "kev_count": 14,
       "top": [
         {
@@ -5133,8 +5133,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 216,
-      "count_30d": 829,
+      "count_7d": 228,
+      "count_30d": 841,
       "kev_count": 161,
       "top": [
         {
@@ -5783,33 +5783,34 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-123807",
-          "title": "Signal K Server is a server application that runs on a central hub in a boat",
+          "id": "CVE-2026-67449",
+          "title": "Portabase is a database backup and restore tool for PostgreSQL, MySQL, MsSQL…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.2,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
             "cvss": 9.8,
-            "decay": -0.2
+            "decay": 0.0
           },
           "why_now": "CVSS 9.8, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-10T07:18:36.663+09:00",
+          "published_at": "2026-11-12T07:17:28.257+09:00",
           "poc_count": 0,
-          "epss": 0.0054,
-          "epss_percentile": 0.45,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "auth",
             "path"
           ],
           "summary_what": null,
@@ -5817,27 +5818,27 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-59774",
-          "title": "Gitea's Org-mode markup renderer processes INCLUDE directives supplied to the…",
+          "id": "CVE-2026-126147",
+          "title": "A improper limitation of a pathname to a restricted directory ('path…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 8.5,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
             "cvss": 9.8,
-            "decay": -8.6
+            "decay": 0.0
           },
-          "why_now": "30일 내 악용 확률 상위 2%",
+          "why_now": "CVSS 9.8, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-10-15T00:17:20.677+09:00",
+          "published_at": "2026-11-12T07:17:11.88+09:00",
           "poc_count": 0,
-          "epss": 0.28,
-          "epss_percentile": 0.98,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -5855,8 +5856,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 203,
-      "count_30d": 572,
+      "count_7d": 206,
+      "count_30d": 575,
       "kev_count": 32,
       "top": [
         {
@@ -6568,8 +6569,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 641,
-      "count_30d": 2405,
+      "count_7d": 676,
+      "count_30d": 2440,
       "kev_count": 231,
       "top": [
         {
@@ -8127,8 +8128,8 @@
     {
       "key": "browser",
       "label": "브라우저",
-      "count_7d": 8,
-      "count_30d": 748,
+      "count_7d": 91,
+      "count_30d": 831,
       "kev_count": 112,
       "top": [
         {
