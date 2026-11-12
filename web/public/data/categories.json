@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 181,
-      "count_30d": 979,
+      "count_7d": 185,
+      "count_30d": 983,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 327,
-      "count_30d": 1385,
+      "count_7d": 337,
+      "count_30d": 1395,
       "kev_count": 305,
       "top": [
         {
@@ -1554,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 375,
-      "count_30d": 1333,
+      "count_7d": 382,
+      "count_30d": 1340,
       "kev_count": 32,
       "top": [
         {
@@ -1616,6 +1616,40 @@
           "epss_percentile": 0.30,
           "cvss": 9.3,
           "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-8333",
+          "title": "A stored cross-site scripting vulnerability in Microchip the TimePictra…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-12T16:16:49.413+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.4,
+          "cvss_version": "4.0",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
@@ -2205,50 +2239,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-44267",
-          "title": "Elo is a purely functional expression language for no-code tools",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T03:18:03.13+09:00",
-          "poc_count": 0,
-          "epss": 0.0083,
-          "epss_percentile": 0.58,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection",
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1037,
-      "count_30d": 4685,
+      "count_7d": 1054,
+      "count_30d": 4702,
       "kev_count": 265,
       "top": [
         {
@@ -2972,8 +2970,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 177,
-      "count_30d": 933,
+      "count_7d": 179,
+      "count_30d": 935,
       "kev_count": 27,
       "top": [
         {
@@ -3666,8 +3664,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1217,
-      "count_30d": 4004,
+      "count_7d": 1239,
+      "count_30d": 4026,
       "kev_count": 463,
       "top": [
         {
@@ -4441,8 +4439,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 265,
-      "count_30d": 1198,
+      "count_7d": 267,
+      "count_30d": 1200,
       "kev_count": 14,
       "top": [
         {
@@ -5133,8 +5131,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 228,
-      "count_30d": 841,
+      "count_7d": 237,
+      "count_30d": 850,
       "kev_count": 161,
       "top": [
         {
@@ -5856,8 +5854,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 206,
-      "count_30d": 575,
+      "count_7d": 207,
+      "count_30d": 576,
       "kev_count": 32,
       "top": [
         {
@@ -6569,8 +6567,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 676,
-      "count_30d": 2440,
+      "count_7d": 681,
+      "count_30d": 2445,
       "kev_count": 231,
       "top": [
         {
@@ -9605,8 +9603,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 545,
-      "count_30d": 2095,
+      "count_7d": 569,
+      "count_30d": 2119,
       "kev_count": 24,
       "top": [
         {
@@ -12568,8 +12566,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 16,
-      "count_30d": 96,
+      "count_7d": 17,
+      "count_30d": 97,
       "kev_count": 136,
       "top": [
         {
