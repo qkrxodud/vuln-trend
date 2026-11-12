@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 186,
-      "count_30d": 984,
+      "count_7d": 191,
+      "count_30d": 989,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 339,
-      "count_30d": 1397,
+      "count_7d": 343,
+      "count_30d": 1401,
       "kev_count": 305,
       "top": [
         {
@@ -1554,8 +1554,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 383,
-      "count_30d": 1341,
+      "count_7d": 384,
+      "count_30d": 1342,
       "kev_count": 32,
       "top": [
         {
@@ -2245,8 +2245,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1056,
-      "count_30d": 4704,
+      "count_7d": 1057,
+      "count_30d": 4705,
       "kev_count": 265,
       "top": [
         {
@@ -2259,7 +2259,7 @@
             "epss": 2.7,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.3,
+            "cvss": 9.8,
             "decay": -1.4
           },
           "why_now": "CISA 악용 목록 등재",
@@ -2271,17 +2271,19 @@
           "poc_count": 0,
           "epss": 0.089,
           "epss_percentile": 0.95,
-          "cvss": 9.3,
-          "cvss_version": "4.0",
+          "cvss": 9.8,
+          "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "Barracuda Email Security Gateway (ESG)",
-          "product_family": null,
+          "primary_product": "Email Security Gateway 300 Firmware",
+          "product_family": "ics_iot",
           "attack_types": [
             "auth"
           ],
           "summary_what": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "9.4.0.030"
+          ],
+          "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
         },
         {
           "id": "CVE-2026-123218",
@@ -2970,8 +2972,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 181,
-      "count_30d": 937,
+      "count_7d": 182,
+      "count_30d": 938,
       "kev_count": 27,
       "top": [
         {
@@ -3664,8 +3666,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1239,
-      "count_30d": 4026,
+      "count_7d": 1240,
+      "count_30d": 4027,
       "kev_count": 463,
       "top": [
         {
@@ -5131,8 +5133,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 237,
-      "count_30d": 850,
+      "count_7d": 238,
+      "count_30d": 851,
       "kev_count": 161,
       "top": [
         {
@@ -6567,8 +6569,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 682,
-      "count_30d": 2446,
+      "count_7d": 683,
+      "count_30d": 2447,
       "kev_count": 231,
       "top": [
         {
@@ -12567,9 +12569,45 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 17,
-      "count_30d": 97,
-      "kev_count": 136,
+      "count_30d": 98,
+      "kev_count": 137,
       "top": [
+        {
+          "id": "CVE-2026-116606",
+          "title": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수…",
+          "score": 61,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 2.7,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.4
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-13",
+          "kev_added_at": "2026-11-10",
+          "published_at": "2026-11-02T22:17:37.017+09:00",
+          "poc_count": 0,
+          "epss": 0.089,
+          "epss_percentile": 0.95,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Email Security Gateway 300 Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수 있습니다.",
+          "fix_versions": [
+            "9.4.0.030"
+          ],
+          "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+        },
         {
           "id": "CVE-2026-82391",
           "title": "The HTTP/2 front-end of the Zephyr HTTP server aliased connection receive state…",
@@ -13214,40 +13252,6 @@
           "product_family": "ics_iot",
           "attack_types": [
             "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-90590",
-          "title": "The NXP ENET QoS Ethernet driver in drivers/ethernet/eth_nxp_enet_qos…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T07:18:57.417+09:00",
-          "poc_count": 0,
-          "epss": 0.0018,
-          "epss_percentile": 0.07,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "dos"
           ],
           "summary_what": null,
           "fix_versions": [],
