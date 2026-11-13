@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 201,
-      "count_30d": 936,
+      "count_7d": 179,
+      "count_30d": 890,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 350,
-      "count_30d": 1356,
+      "count_7d": 292,
+      "count_30d": 1276,
       "kev_count": 305,
       "top": [
         {
@@ -1553,8 +1553,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 411,
-      "count_30d": 1309,
+      "count_7d": 305,
+      "count_30d": 1288,
       "kev_count": 32,
       "top": [
         {
@@ -2242,8 +2242,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1127,
-      "count_30d": 4624,
+      "count_7d": 945,
+      "count_30d": 4475,
       "kev_count": 265,
       "top": [
         {
@@ -2969,8 +2969,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 191,
-      "count_30d": 917,
+      "count_7d": 168,
+      "count_30d": 894,
       "kev_count": 27,
       "top": [
         {
@@ -3664,8 +3664,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1304,
-      "count_30d": 2993,
+      "count_7d": 1317,
+      "count_30d": 2888,
       "kev_count": 463,
       "top": [
         {
@@ -4325,6 +4325,40 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33824"
         },
         {
+          "id": "CVE-2026-109445",
+          "title": "PLANET GS-5220-8P2T2S (hardware version 3.0) firmware versions before…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T00:17:30.29+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2022-0995",
           "title": "An out-of-bounds (OOB) memory write flaw was found in the Linux kernel’s…",
           "score": 10,
@@ -4363,84 +4397,54 @@
           "patch_url": "https://bugzilla.redhat.com/show_bug.cgi?id=2063786"
         },
         {
-          "id": "CVE-2026-8452",
-          "title": "Memory overflow vulnerability NetScaler ADC and NetScaler Gateway leading to…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -50.4
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-08-29",
-          "kev_added_at": "2026-08-26",
-          "published_at": "2026-06-30T22:19:33.45+09:00",
-          "poc_count": 0,
-          "epss": 0.010,
-          "epss_percentile": 0.63,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Citrix NetScaler ADC·Gateway",
-          "product_family": "network",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "13.1-37.272",
-            "13.1-63.18",
-            "14.1-72.61"
-          ],
-          "patch_url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
-        },
-        {
-          "id": "CVE-2026-119958",
-          "title": "Out-of-bounds write in Windows LDAP - Lightweight Directory Access Protocol…",
+          "id": "CVE-2026-118383",
+          "title": "A use-after-free in the replication component of MongoDB Server can occur when…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.4,
+            "epss": 0.2,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.8,
+            "cvss": 10.0,
             "decay": -0.5
           },
-          "why_now": "CVSS 9.8, 최근 공개",
+          "why_now": "CVSS 10.0, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-11T04:20:19.857+09:00",
+          "published_at": "2026-11-11T06:18:58.98+09:00",
           "poc_count": 0,
-          "epss": 0.013,
-          "epss_percentile": 0.70,
-          "cvss": 9.8,
+          "epss": 0.0071,
+          "epss_percentile": 0.54,
+          "cvss": 10.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Mongodb",
           "product_family": null,
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "4.4.32",
+            "5.0.35",
+            "6.0.30",
+            "7.0.48",
+            "8.0.37",
+            "8.3.16",
+            "9.0.7"
+          ],
+          "patch_url": "https://jira.mongodb.org/browse/SERVER-138119"
         }
       ]
     },
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 298,
-      "count_30d": 1184,
+      "count_7d": 284,
+      "count_30d": 1063,
       "kev_count": 14,
       "top": [
         {
@@ -5131,8 +5135,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 259,
-      "count_30d": 815,
+      "count_7d": 212,
+      "count_30d": 784,
       "kev_count": 161,
       "top": [
         {
@@ -5577,6 +5581,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-125851",
+          "title": "Unrestricted Upload of File with Dangerous Type vulnerability in themagnifico52…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T00:17:42.697+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-121351",
           "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
           "score": 10,
@@ -5814,48 +5852,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2015-5287",
-          "title": "The abrt-hook-ccpp help program in Automatic Bug Reporting Tool (ABRT) before…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 1.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -49.7
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-09",
-          "kev_added_at": "2026-08-26",
-          "published_at": "2015-12-08T03:59:02.23+09:00",
-          "poc_count": 0,
-          "epss": 0.050,
-          "epss_percentile": 0.92,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Red Hat ABRT",
-          "product_family": "os",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://github.com/abrt/abrt/commit/3c1b60cfa62d39e5fff5a53a5bc53dae189e740e"
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 209,
-      "count_30d": 570,
+      "count_7d": 130,
+      "count_30d": 555,
       "kev_count": 32,
       "top": [
         {
@@ -6318,6 +6322,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-116411",
+          "title": "Dell PowerStore contains a Server-Side Request Forgery (SSRF) vulnerability",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T23:17:48.13+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-56712",
           "title": "Replicate Cog through 0.23.1 contains a server-side request forgery…",
           "score": 9,
@@ -6522,48 +6560,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-109502",
-          "title": "Server-side request forgery (ssrf) in Microsoft Office SharePoint allows an…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:18:19.773+09:00",
-          "poc_count": 0,
-          "epss": 0.0080,
-          "epss_percentile": 0.56,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 718,
-      "count_30d": 2342,
+      "count_7d": 688,
+      "count_30d": 2243,
       "kev_count": 231,
       "top": [
         {
@@ -7345,8 +7349,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 21,
-      "count_30d": 1051,
+      "count_7d": 6,
+      "count_30d": 1039,
       "kev_count": 286,
       "top": [
         {
@@ -8330,14 +8334,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.78"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html"
         },
         {
           "id": "CVE-2026-126872",
@@ -8364,14 +8370,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "auth"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.78"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html"
         },
         {
           "id": "CVE-2026-126912",
@@ -8606,14 +8614,16 @@
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.78"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html"
         },
         {
           "id": "CVE-2026-126880",
@@ -8712,14 +8722,16 @@
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.78"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html"
         },
         {
           "id": "CVE-2026-126919",
@@ -8814,14 +8826,16 @@
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "157.0.8103.78"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01744469280.html"
         }
       ]
     },
@@ -8829,7 +8843,7 @@
       "key": "network",
       "label": "네트워크·보안 장비",
       "count_7d": 0,
-      "count_30d": 6,
+      "count_30d": 4,
       "kev_count": 175,
       "top": [
         {
@@ -9584,8 +9598,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 556,
-      "count_30d": 2044,
+      "count_7d": 387,
+      "count_30d": 2041,
       "kev_count": 24,
       "top": [
         {
@@ -9954,6 +9968,74 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-125851",
+          "title": "Unrestricted Upload of File with Dangerous Type vulnerability in themagnifico52…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T00:17:42.697+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125855",
+          "title": "Deserialization of Untrusted Data vulnerability in Elextensions ELEX WordPress…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T00:17:43.257+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-78287",
           "title": "Improper Control of Generation of Code ('Code Injection') vulnerability in…",
           "score": 10,
@@ -10260,75 +10342,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123751",
-          "title": "The WP Duplicate  WordPress plugin through 1.1.11 does not properly verify a…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T16:17:30.213+09:00",
-          "poc_count": 0,
-          "epss": 0.0061,
-          "epss_percentile": 0.49,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116615",
-          "title": "The Widget Options – Advanced Conditional Visibility for Gutenberg Blocks &…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T19:17:25.983+09:00",
-          "poc_count": 0,
-          "epss": 0.0097,
-          "epss_percentile": 0.62,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -10336,7 +10349,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 38,
+      "count_30d": 37,
       "kev_count": 165,
       "top": [
         {
@@ -11071,7 +11084,7 @@
       "key": "dev",
       "label": "개발 라이브러리·도구",
       "count_7d": 1,
-      "count_30d": 70,
+      "count_30d": 69,
       "kev_count": 71,
       "top": [
         {
@@ -12548,7 +12561,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 25,
-      "count_30d": 130,
+      "count_30d": 127,
       "kev_count": 138,
       "top": [
         {
