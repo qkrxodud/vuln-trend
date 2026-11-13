@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 185,
-      "count_30d": 896,
+      "count_7d": 188,
+      "count_30d": 899,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 304,
-      "count_30d": 1288,
+      "count_7d": 312,
+      "count_30d": 1296,
       "kev_count": 305,
       "top": [
         {
@@ -1553,8 +1553,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 306,
-      "count_30d": 1289,
+      "count_7d": 324,
+      "count_30d": 1307,
       "kev_count": 32,
       "top": [
         {
@@ -2242,9 +2242,9 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 963,
-      "count_30d": 4493,
-      "kev_count": 265,
+      "count_7d": 1001,
+      "count_30d": 4532,
+      "kev_count": 266,
       "top": [
         {
           "id": "CVE-2026-116606",
@@ -2281,6 +2281,40 @@
             "9.4.0.030"
           ],
           "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+        },
+        {
+          "id": "CVE-2026-123039",
+          "title": "인증 없이 접근 가능한 로컬 소켓을 통해 인증된 로컬 사용자가 명령을 루트 권한으로 실행할 수 있는 취약점입니다",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.4,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-16",
+          "kev_added_at": "2026-11-13",
+          "published_at": "2026-11-12T23:17:24.233+09:00",
+          "poc_count": 0,
+          "epss": 0.013,
+          "epss_percentile": 0.70,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "인증 없이 접근 가능한 로컬 소켓을 통해 인증된 로컬 사용자가 명령을 루트 권한으로 실행할 수 있는 취약점입니다.",
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-123218",
@@ -2927,50 +2961,14 @@
             "26.0.4"
           ],
           "patch_url": "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
-        },
-        {
-          "id": "CVE-2026-42016",
-          "title": "JFrog Artifactory (Self Hosted) versions before 7.133.11 are vulnerable to a…",
-          "score": 14,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 2.6,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -47.1
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-25",
-          "kev_added_at": "2026-09-11",
-          "published_at": "2026-07-28T05:16:39.613+09:00",
-          "poc_count": 0,
-          "epss": 0.086,
-          "epss_percentile": 0.95,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "JFrog Artifactory",
-          "product_family": "dev",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "7.133.11"
-          ],
-          "patch_url": "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
         }
       ]
     },
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 171,
-      "count_30d": 897,
+      "count_7d": 180,
+      "count_30d": 906,
       "kev_count": 27,
       "top": [
         {
@@ -3032,6 +3030,40 @@
           "epss": 0.0055,
           "epss_percentile": 0.46,
           "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-123965",
+          "title": "A prompt injection vulnerability in all versions of Jet Admin Cloud Platform…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T03:17:30.933+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -3623,49 +3655,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-115338",
-          "title": "Insufficient protection of communications in Progress WS_FTP Server versions…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T02:17:11.24+09:00",
-          "poc_count": 0,
-          "epss": 0.0016,
-          "epss_percentile": 0.04,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1339,
-      "count_30d": 2910,
+      "count_7d": 1347,
+      "count_30d": 2918,
       "kev_count": 463,
       "top": [
         {
@@ -4443,8 +4440,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 291,
-      "count_30d": 1070,
+      "count_7d": 310,
+      "count_30d": 1089,
       "kev_count": 14,
       "top": [
         {
@@ -4541,6 +4538,176 @@
           "epss": 0.0059,
           "epss_percentile": 0.48,
           "cvss": 8.8,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128132",
+          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T06:17:45.6+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128131",
+          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T06:17:45.087+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128127",
+          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T06:17:44.46+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128126",
+          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T06:17:44.31+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-104204",
+          "title": "BACnet Stack is a BACnet open source protocol stack C library for embedded…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T04:17:37.973+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
           "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
@@ -4927,198 +5094,28 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-33971",
-          "title": "In the LTE RRC component, improper handling of messages before authentication…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.6
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T12:17:26.673+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-48174",
-          "title": "In the NR RRC component, improper handling of messages before authentication…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.6
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T12:17:27.643+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124279",
-          "title": "Allocation of Resources Without Limits or Throttling vulnerability in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T02:17:20.593+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121809",
-          "title": "Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T02:17:19.31+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121808",
-          "title": "Improper Handling of Highly Compressed Data (Data Amplification) vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T01:17:36.76+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123817",
+          "id": "CVE-2026-128130",
           "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.6
+            "cvss": 8.3,
+            "decay": 0.0
           },
-          "why_now": "CVSS 8.7, 최근 공개",
+          "why_now": "CVSS 8.3, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-10T07:18:38.273+09:00",
+          "published_at": "2026-11-14T06:17:44.893+09:00",
           "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 8.7,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
           "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
@@ -5135,8 +5132,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 217,
-      "count_30d": 789,
+      "count_7d": 228,
+      "count_30d": 800,
       "kev_count": 161,
       "top": [
         {
@@ -5581,6 +5578,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-124822",
+          "title": "The Easy DragDrop File Uploader WordPress plugin before 1.1.10 does not…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:53.96+09:00",
+          "poc_count": 0,
+          "epss": 0.0015,
+          "epss_percentile": 0.03,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125851",
           "title": "Unrestricted Upload of File with Dangerous Type vulnerability in themagnifico52…",
           "score": 10,
@@ -5649,6 +5680,143 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-118063",
+          "title": "The Advance Guest Post WordPress plugin through 1.9 does not properly validate…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:52.807+09:00",
+          "poc_count": 0,
+          "epss": 0.0021,
+          "epss_percentile": 0.11,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124833",
+          "title": "The Ahime Image Printer WordPress plugin through 1.0.0 does not validate the…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:54.057+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-118064",
+          "title": "The Advance Guest Post WordPress plugin through 1.9 does not properly restrict…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:52.897+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-82504",
+          "title": "VITEC EZ TV Platform Server before 8.5.0 contains an unrestricted file upload…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T06:17:48.03+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-67449",
           "title": "Portabase is a database backup and restore tool for PostgreSQL, MySQL, MsSQL…",
           "score": 10,
@@ -5682,184 +5850,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124814",
-          "title": "The Ultimate Addons for Elementor Forms WordPress plugin before 1.0.8 does not…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T15:17:13.743+09:00",
-          "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.40,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121906",
-          "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:18:27.4+09:00",
-          "poc_count": 0,
-          "epss": 0.011,
-          "epss_percentile": 0.67,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121354",
-          "title": "Adobe Connect is affected by an Improper Limitation of a Pathname to a…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:18:25.373+09:00",
-          "poc_count": 0,
-          "epss": 0.011,
-          "epss_percentile": 0.67,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-126147",
-          "title": "A improper limitation of a pathname to a restricted directory ('path…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T07:17:11.88+09:00",
-          "poc_count": 0,
-          "epss": 0.0063,
-          "epss_percentile": 0.50,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121497",
-          "title": "The AskAny  WordPress plugin before 2.2.0 does not validate the extension or…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T15:17:16.57+09:00",
-          "poc_count": 0,
-          "epss": 0.0067,
-          "epss_percentile": 0.52,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 136,
-      "count_30d": 561,
+      "count_7d": 139,
+      "count_30d": 564,
       "kev_count": 32,
       "top": [
         {
@@ -6566,10 +6564,44 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 722,
-      "count_30d": 2277,
-      "kev_count": 231,
+      "count_7d": 736,
+      "count_30d": 2291,
+      "kev_count": 232,
       "top": [
+        {
+          "id": "CVE-2026-114713",
+          "title": "IRCv3 ‘label’ 메시지 태그가 응답에 반영될 때 이스케이프되지 않아, 서버가 두 대 이상 연결된 네트워크의 사용자가 서버 권한으로…",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-16",
+          "kev_added_at": "2026-11-13",
+          "published_at": "2026-11-08T12:16:33.41+09:00",
+          "poc_count": 0,
+          "epss": 0.0030,
+          "epss_percentile": 0.23,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "UnrealIRCd",
+          "product_family": null,
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "IRCv3 ‘label’ 메시지 태그가 응답에 반영될 때 이스케이프되지 않아, 서버가 두 대 이상 연결된 네트워크의 사용자가 서버 권한으로 실행되는 서버 간 명령을 주입할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-123158",
           "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
@@ -7305,42 +7337,6 @@
             "1.0.1"
           ],
           "patch_url": "https://github.com/Kludex/starlette/commit/764dab0dcfb9033d75442d7a359645c9f94648c6"
-        },
-        {
-          "id": "CVE-2026-86218",
-          "title": "N-central is vulnerable to a pre-auth remote code execution This issue affects…",
-          "score": 14,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 4.6,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -50.4
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-11",
-          "kev_added_at": "2026-09-08",
-          "published_at": "2026-09-06T12:17:17.373+09:00",
-          "poc_count": 0,
-          "epss": 0.15,
-          "epss_percentile": 0.96,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "N-able N-central",
-          "product_family": "server",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "2026.3"
-          ],
-          "patch_url": "https://me.n-able.com/s/security-advisory/aArVy0000002Ld3KAE/cve202686218-preauthentication-remote-code-execution"
         }
       ]
     }
@@ -9934,6 +9930,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-124822",
+          "title": "The Easy DragDrop File Uploader WordPress plugin before 1.1.10 does not…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:53.96+09:00",
+          "poc_count": 0,
+          "epss": 0.0015,
+          "epss_percentile": 0.03,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-124815",
           "title": "The Clockinator Lite WordPress plugin before 1.1.0 does not restrict access to…",
           "score": 10,
@@ -9990,6 +10020,143 @@
           "epss": null,
           "epss_percentile": null,
           "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-126119",
+          "title": "The Streamit WordPress plugin before 1.3.10 does not perform any authorization…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:54.35+09:00",
+          "poc_count": 0,
+          "epss": 0.0023,
+          "epss_percentile": 0.13,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-118063",
+          "title": "The Advance Guest Post WordPress plugin through 1.9 does not properly validate…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:52.807+09:00",
+          "poc_count": 0,
+          "epss": 0.0021,
+          "epss_percentile": 0.11,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-124833",
+          "title": "The Ahime Image Printer WordPress plugin through 1.0.0 does not validate the…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:54.057+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-118064",
+          "title": "The Advance Guest Post WordPress plugin through 1.9 does not properly restrict…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T15:16:52.897+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.05,
+          "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -10171,185 +10338,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-89324",
-          "title": "The Basel Post Types plugin for WordPress is vulnerable to Authentication…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:21:14.003+09:00",
-          "poc_count": 0,
-          "epss": 0.0070,
-          "epss_percentile": 0.53,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123695",
-          "title": "The Security For WooCommerce WordPress plugin through 1.0.16 does not restrict…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T15:17:18.47+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.35,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-115734",
-          "title": "The Pay with a tweet WordPress plugin through 1.0.5 does not validate a file…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T15:17:13.753+09:00",
-          "poc_count": 0,
-          "epss": 0.0048,
-          "epss_percentile": 0.42,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-115735",
-          "title": "The Somatic Framework WordPress plugin through 1.8.14 does not perform an…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T15:17:13.893+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.38,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-115252",
-          "title": "The Confection WordPress Cable WordPress plugin from 0.4.0 to 0.4.7 does not…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-09T20:17:21.143+09:00",
-          "poc_count": 0,
-          "epss": 0.0042,
-          "epss_percentile": 0.36,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "server",
       "label": "서버·DB·미들웨어",
-      "count_7d": 0,
-      "count_30d": 37,
+      "count_7d": 1,
+      "count_30d": 38,
       "kev_count": 165,
       "top": [
         {
@@ -12561,7 +12557,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 25,
-      "count_30d": 127,
+      "count_30d": 131,
       "kev_count": 138,
       "top": [
         {
@@ -13950,8 +13946,8 @@
     {
       "key": "desktop",
       "label": "업무용·데스크톱 앱",
-      "count_7d": 23,
-      "count_30d": 53,
+      "count_7d": 26,
+      "count_30d": 56,
       "kev_count": 70,
       "top": [
         {
@@ -14023,6 +14019,40 @@
             "4.0.9.8"
           ],
           "patch_url": "https://cert-portal.siemens.com/productcert/html/ssa-580366.html"
+        },
+        {
+          "id": "CVE-2026-118711",
+          "title": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -0.5
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:19:46.51+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.65,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118711"
         },
         {
           "id": "CVE-2026-118702",
@@ -14193,6 +14223,74 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118297"
+        },
+        {
+          "id": "CVE-2026-118710",
+          "title": "Use after free in Microsoft Office Excel allows an unauthorized attacker to…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:19:46.36+09:00",
+          "poc_count": 0,
+          "epss": 0.0095,
+          "epss_percentile": 0.61,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118710"
+        },
+        {
+          "id": "CVE-2026-118709",
+          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:19:46.203+09:00",
+          "poc_count": 0,
+          "epss": 0.0095,
+          "epss_percentile": 0.61,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118709"
         },
         {
           "id": "CVE-2026-118708",
@@ -14533,108 +14631,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118302"
-        },
-        {
-          "id": "CVE-2026-118299",
-          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:43.507+09:00",
-          "poc_count": 0,
-          "epss": 0.0087,
-          "epss_percentile": 0.59,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118299"
-        },
-        {
-          "id": "CVE-2026-118298",
-          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:43.37+09:00",
-          "poc_count": 0,
-          "epss": 0.0087,
-          "epss_percentile": 0.59,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118298"
-        },
-        {
-          "id": "CVE-2026-118294",
-          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:42.743+09:00",
-          "poc_count": 0,
-          "epss": 0.0087,
-          "epss_percentile": 0.59,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118294"
         }
       ]
     }

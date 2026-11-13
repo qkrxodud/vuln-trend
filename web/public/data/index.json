@@ -75,6 +75,74 @@
     "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
   },
   {
+    "id": "CVE-2026-114713",
+    "title": "IRCv3 ‘label’ 메시지 태그가 응답에 반영될 때 이스케이프되지 않아, 서버가 두 대 이상 연결된 네트워크의 사용자가 서버 권한으로…",
+    "score": 59,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.6,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-16",
+    "kev_added_at": "2026-11-13",
+    "published_at": "2026-11-08T12:16:33.41+09:00",
+    "poc_count": 0,
+    "epss": 0.0030,
+    "epss_percentile": 0.23,
+    "cvss": 8.6,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "UnrealIRCd",
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "IRCv3 ‘label’ 메시지 태그가 응답에 반영될 때 이스케이프되지 않아, 서버가 두 대 이상 연결된 네트워크의 사용자가 서버 권한으로 실행되는 서버 간 명령을 주입할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123039",
+    "title": "인증 없이 접근 가능한 로컬 소켓을 통해 인증된 로컬 사용자가 명령을 루트 권한으로 실행할 수 있는 취약점입니다",
+    "score": 58,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-16",
+    "kev_added_at": "2026-11-13",
+    "published_at": "2026-11-12T23:17:24.233+09:00",
+    "poc_count": 0,
+    "epss": 0.013,
+    "epss_percentile": 0.70,
+    "cvss": 7.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "인증 없이 접근 가능한 로컬 소켓을 통해 인증된 로컬 사용자가 명령을 루트 권한으로 실행할 수 있는 취약점입니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-123158",
     "title": "musl libc를 PAM 없이 사용하는 Linux의 OpenSSH에서 비밀번호 인증 우회 취약점으로, 일부 계정 구성에서 256자 이상…",
     "score": 58,
@@ -3696,77 +3764,5 @@
       "10.1.20"
     ],
     "patch_url": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
-  },
-  {
-    "id": "CVE-2026-12507",
-    "title": "Zohocorp ManageEngine AssetExplorer versions below 7860, ServiceDesk Plus…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 2.8,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.1,
-      "decay": -0.2
-    },
-    "why_now": "30일 내 악용 확률 상위 5%",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-11-12T16:16:46.75+09:00",
-    "poc_count": 0,
-    "epss": 0.094,
-    "epss_percentile": 0.95,
-    "cvss": 9.1,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "injection"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
-  },
-  {
-    "id": "CVE-2026-83549",
-    "title": "Post-authentication Improper Neutralization of Special Elements used in an OS…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 3.0,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 7.8,
-      "decay": -49.3
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-05",
-    "kev_added_at": "2026-09-02",
-    "published_at": "2026-09-02T07:17:13.29+09:00",
-    "poc_count": 0,
-    "epss": 0.099,
-    "epss_percentile": 0.95,
-    "cvss": 7.8,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "SonicWall SMA 1000",
-    "product_family": "network",
-    "attack_types": [
-      "rce",
-      "injection"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "12.4.3-03526",
-      "12.5.0-02952"
-    ],
-    "patch_url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016"
   }
 ]
