@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 176,
-      "count_30d": 911,
+      "count_7d": 186,
+      "count_30d": 921,
       "kev_count": 323,
       "top": [
         {
@@ -791,8 +791,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 304,
-      "count_30d": 1310,
+      "count_7d": 312,
+      "count_30d": 1318,
       "kev_count": 305,
       "top": [
         {
@@ -1555,8 +1555,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 352,
-      "count_30d": 1250,
+      "count_7d": 360,
+      "count_30d": 1258,
       "kev_count": 32,
       "top": [
         {
@@ -2246,8 +2246,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 960,
-      "count_30d": 4456,
+      "count_7d": 993,
+      "count_30d": 4490,
       "kev_count": 265,
       "top": [
         {
@@ -2973,8 +2973,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 161,
-      "count_30d": 887,
+      "count_7d": 162,
+      "count_30d": 888,
       "kev_count": 27,
       "top": [
         {
@@ -3668,8 +3668,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1232,
-      "count_30d": 2921,
+      "count_7d": 1282,
+      "count_30d": 2971,
       "kev_count": 463,
       "top": [
         {
@@ -4443,8 +4443,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 253,
-      "count_30d": 1139,
+      "count_7d": 263,
+      "count_30d": 1149,
       "kev_count": 14,
       "top": [
         {
@@ -4610,6 +4610,40 @@
           "epss_percentile": 0.51,
           "cvss": 8.6,
           "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128066",
+          "title": "Pillow is a Python imaging library",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-13T09:20:14.457+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -5095,48 +5129,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123792",
-          "title": "The Symfony Yaml components Inline and Parser, parse some YAML documents…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-07T01:17:55.463+09:00",
-          "poc_count": 0,
-          "epss": 0.0050,
-          "epss_percentile": 0.43,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 223,
-      "count_30d": 779,
+      "count_7d": 226,
+      "count_30d": 782,
       "kev_count": 161,
       "top": [
         {
@@ -5858,8 +5858,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 195,
-      "count_30d": 556,
+      "count_7d": 198,
+      "count_30d": 559,
       "kev_count": 32,
       "top": [
         {
@@ -6566,8 +6566,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 638,
-      "count_30d": 2262,
+      "count_7d": 669,
+      "count_30d": 2293,
       "kev_count": 231,
       "top": [
         {
