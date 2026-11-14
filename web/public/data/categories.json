@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 188,
-      "count_30d": 899,
+      "count_7d": 190,
+      "count_30d": 901,
       "kev_count": 323,
       "top": [
         {
@@ -789,8 +789,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 312,
-      "count_30d": 1296,
+      "count_7d": 314,
+      "count_30d": 1298,
       "kev_count": 305,
       "top": [
         {
@@ -1553,8 +1553,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 324,
-      "count_30d": 1307,
+      "count_7d": 326,
+      "count_30d": 1309,
       "kev_count": 32,
       "top": [
         {
@@ -2242,8 +2242,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1001,
-      "count_30d": 4532,
+      "count_7d": 1017,
+      "count_30d": 4548,
       "kev_count": 266,
       "top": [
         {
@@ -2967,8 +2967,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 180,
-      "count_30d": 906,
+      "count_7d": 183,
+      "count_30d": 909,
       "kev_count": 27,
       "top": [
         {
@@ -3661,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1347,
-      "count_30d": 2918,
+      "count_7d": 1348,
+      "count_30d": 2919,
       "kev_count": 463,
       "top": [
         {
@@ -4440,8 +4440,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 310,
-      "count_30d": 1089,
+      "count_7d": 311,
+      "count_30d": 1090,
       "kev_count": 14,
       "top": [
         {
@@ -5856,8 +5856,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 139,
-      "count_30d": 564,
+      "count_7d": 141,
+      "count_30d": 566,
       "kev_count": 32,
       "top": [
         {
@@ -6564,8 +6564,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 736,
-      "count_30d": 2291,
+      "count_7d": 748,
+      "count_30d": 2303,
       "kev_count": 232,
       "top": [
         {
@@ -9594,8 +9594,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 387,
-      "count_30d": 2041,
+      "count_7d": 389,
+      "count_30d": 2043,
       "kev_count": 24,
       "top": [
         {
@@ -10169,6 +10169,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-126173",
+          "title": "The AutomatorWP Pro plugin for WordPress' webhook addon is vulnerable to…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T14:18:37.75+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125855",
           "title": "Deserialization of Untrusted Data vulnerability in Elextensions ELEX WordPress…",
           "score": 10,
@@ -10300,40 +10334,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121497",
-          "title": "The AskAny  WordPress plugin before 2.2.0 does not validate the extension or…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T15:17:16.57+09:00",
-          "poc_count": 0,
-          "epss": 0.0067,
-          "epss_percentile": 0.52,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
           ],
           "summary_what": null,
           "fix_versions": [],
