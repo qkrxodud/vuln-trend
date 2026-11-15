@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 193,
-      "count_30d": 865,
+      "count_7d": 168,
+      "count_30d": 852,
       "kev_count": 323,
       "top": [
         {
@@ -788,8 +788,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 315,
-      "count_30d": 1250,
+      "count_7d": 282,
+      "count_30d": 1223,
       "kev_count": 305,
       "top": [
         {
@@ -1552,8 +1552,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 323,
-      "count_30d": 1238,
+      "count_7d": 305,
+      "count_30d": 1244,
       "kev_count": 32,
       "top": [
         {
@@ -2241,8 +2241,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 947,
-      "count_30d": 4431,
+      "count_7d": 869,
+      "count_30d": 4295,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 166,
-      "count_30d": 885,
+      "count_7d": 146,
+      "count_30d": 873,
       "kev_count": 27,
       "top": [
         {
@@ -3588,6 +3588,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-125799",
+          "title": "Insertion of Sensitive Information into Externally-Accessible File or Directory…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-16T00:16:47.317+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-109158",
           "title": "IBM App Connect Operator and IBM App Connect Enterprise Certified Containers…",
           "score": 7,
@@ -3620,48 +3654,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123628",
-          "title": "IBM webMethods Integration Server 10.15 and 11.1 could allow a remote attacker…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T07:17:21.927+09:00",
-          "poc_count": 0,
-          "epss": 0.0030,
-          "epss_percentile": 0.23,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1347,
-      "count_30d": 2821,
+      "count_7d": 1339,
+      "count_30d": 2795,
       "kev_count": 463,
       "top": [
         {
@@ -4427,8 +4427,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 279,
-      "count_30d": 1059,
+      "count_7d": 269,
+      "count_30d": 1036,
       "kev_count": 14,
       "top": [
         {
@@ -5119,8 +5119,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 218,
-      "count_30d": 778,
+      "count_7d": 193,
+      "count_30d": 769,
       "kev_count": 161,
       "top": [
         {
@@ -5842,8 +5842,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 131,
-      "count_30d": 548,
+      "count_7d": 120,
+      "count_30d": 539,
       "kev_count": 32,
       "top": [
         {
@@ -6550,8 +6550,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 717,
-      "count_30d": 2248,
+      "count_7d": 675,
+      "count_30d": 2222,
       "kev_count": 232,
       "top": [
         {
@@ -9584,8 +9584,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 400,
-      "count_30d": 1929,
+      "count_7d": 365,
+      "count_30d": 1917,
       "kev_count": 24,
       "top": [
         {
@@ -9954,6 +9954,108 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-125795",
+          "title": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-16T00:16:47.163+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125769",
+          "title": "Incorrect Privilege Assignment vulnerability in Nasir Ahmed Advanced Form…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-15T23:17:24.813+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-122662",
+          "title": "Deserialization of Untrusted Data vulnerability in Barn2 Plugins Document…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-15T23:17:20.507+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-126173",
           "title": "The AutomatorWP Pro plugin for WordPress' webhook addon is vulnerable to…",
           "score": 10,
@@ -10221,109 +10323,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118064",
-          "title": "The Advance Guest Post WordPress plugin through 1.9 does not properly restrict…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T15:16:52.897+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.31,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124815",
-          "title": "The Clockinator Lite WordPress plugin before 1.1.0 does not restrict access to…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T15:17:13.853+09:00",
-          "poc_count": 0,
-          "epss": 0.0028,
-          "epss_percentile": 0.21,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-78287",
-          "title": "Improper Control of Generation of Code ('Code Injection') vulnerability in…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T20:17:21.293+09:00",
-          "poc_count": 0,
-          "epss": 0.0048,
-          "epss_percentile": 0.41,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce",
-            "injection"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -11069,7 +11068,7 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 1,
+      "count_7d": 0,
       "count_30d": 58,
       "kev_count": 71,
       "top": [
@@ -12547,7 +12546,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 25,
-      "count_30d": 128,
+      "count_30d": 121,
       "kev_count": 138,
       "top": [
         {
