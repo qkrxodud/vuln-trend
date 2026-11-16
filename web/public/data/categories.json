@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 175,
-      "count_30d": 859,
+      "count_7d": 154,
+      "count_30d": 853,
       "kev_count": 323,
       "top": [
         {
@@ -786,8 +786,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 290,
-      "count_30d": 1231,
+      "count_7d": 258,
+      "count_30d": 1223,
       "kev_count": 305,
       "top": [
         {
@@ -1550,8 +1550,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 326,
-      "count_30d": 1265,
+      "count_7d": 314,
+      "count_30d": 1260,
       "kev_count": 32,
       "top": [
         {
@@ -2239,8 +2239,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 911,
-      "count_30d": 4337,
+      "count_7d": 827,
+      "count_30d": 4307,
       "kev_count": 266,
       "top": [
         {
@@ -2964,8 +2964,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 162,
-      "count_30d": 889,
+      "count_7d": 143,
+      "count_30d": 884,
       "kev_count": 27,
       "top": [
         {
@@ -3232,6 +3232,40 @@
           "epss": 0.0037,
           "epss_percentile": 0.31,
           "cvss": 8.8,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-129690",
+          "title": "The\nvulnerability enables any attacker with admin access to dump credentials of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-16T23:17:07.197+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
           "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
@@ -3618,48 +3652,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-126264",
-          "title": "SiYuan before 3.8.9 contains an information disclosure vulnerability that…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.7,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 7.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T19:17:28.827+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.29,
-          "cvss": 7.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1345,
-      "count_30d": 2801,
+      "count_7d": 1190,
+      "count_30d": 2786,
       "kev_count": 463,
       "top": [
         {
@@ -4425,8 +4425,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 274,
-      "count_30d": 1041,
+      "count_7d": 218,
+      "count_30d": 1036,
       "kev_count": 14,
       "top": [
         {
@@ -5117,8 +5117,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 202,
-      "count_30d": 778,
+      "count_7d": 177,
+      "count_30d": 781,
       "kev_count": 161,
       "top": [
         {
@@ -5840,8 +5840,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 123,
-      "count_30d": 542,
+      "count_7d": 109,
+      "count_30d": 546,
       "kev_count": 32,
       "top": [
         {
@@ -6548,8 +6548,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 696,
-      "count_30d": 2243,
+      "count_7d": 605,
+      "count_30d": 2248,
       "kev_count": 232,
       "top": [
         {
@@ -9584,8 +9584,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 380,
-      "count_30d": 1932,
+      "count_7d": 362,
+      "count_30d": 1902,
       "kev_count": 24,
       "top": [
         {
@@ -11069,8 +11069,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 0,
-      "count_30d": 58,
+      "count_7d": 5,
+      "count_30d": 63,
       "kev_count": 71,
       "top": [
         {
@@ -11721,6 +11721,42 @@
           "patch_url": "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
         },
         {
+          "id": "CVE-2026-125336",
+          "title": "Forge (also called node-forge) is a native implementation of Transport Layer…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": -0.8
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:21:11.393+09:00",
+          "poc_count": 0,
+          "epss": 0.0023,
+          "epss_percentile": 0.14,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Forge",
+          "product_family": "dev",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "1.4.3"
+          ],
+          "patch_url": "https://github.com/digitalbazaar/forge/commit/6b23eae8beac316b6867bdb0e7ad7c2c959a97f6"
+        },
+        {
           "id": "CVE-2026-117616",
           "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier provides an HTTP endpoint…",
           "score": 6,
@@ -11793,44 +11829,6 @@
             "2.588"
           ],
           "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4243"
-        },
-        {
-          "id": "CVE-2026-117620",
-          "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier allows attackers with…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -3.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T02:18:21.33+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Jenkins",
-          "product_family": "dev",
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "2.580.2",
-            "2.588"
-          ],
-          "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4226"
         }
       ]
     },
@@ -12546,8 +12544,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 25,
-      "count_30d": 125,
+      "count_7d": 18,
+      "count_30d": 126,
       "kev_count": 138,
       "top": [
         {
@@ -13936,8 +13934,8 @@
     {
       "key": "desktop",
       "label": "업무용·데스크톱 앱",
-      "count_7d": 26,
-      "count_30d": 26,
+      "count_7d": 32,
+      "count_30d": 32,
       "kev_count": 70,
       "top": [
         {
@@ -14589,8 +14587,8 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118293"
         },
         {
-          "id": "CVE-2026-118302",
-          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
+          "id": "CVE-2026-116923",
+          "title": "Heap-based buffer overflow in Microsoft Office Word allows an unauthorized…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
@@ -14606,10 +14604,10 @@
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:43.947+09:00",
+          "published_at": "2026-11-11T04:19:18.813+09:00",
           "poc_count": 0,
-          "epss": 0.0085,
-          "epss_percentile": 0.58,
+          "epss": 0.0087,
+          "epss_percentile": 0.59,
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
@@ -14620,7 +14618,7 @@
           ],
           "summary_what": null,
           "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118302"
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116923"
         }
       ]
     }
