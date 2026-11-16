@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 163,
-      "count_30d": 862,
+      "count_7d": 165,
+      "count_30d": 864,
       "kev_count": 323,
       "top": [
         {
@@ -786,8 +786,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 268,
-      "count_30d": 1233,
+      "count_7d": 273,
+      "count_30d": 1238,
       "kev_count": 305,
       "top": [
         {
@@ -1550,8 +1550,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 318,
-      "count_30d": 1264,
+      "count_7d": 322,
+      "count_30d": 1268,
       "kev_count": 32,
       "top": [
         {
@@ -2239,8 +2239,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 833,
-      "count_30d": 4316,
+      "count_7d": 847,
+      "count_30d": 4331,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 147,
-      "count_30d": 888,
+      "count_7d": 150,
+      "count_30d": 891,
       "kev_count": 27,
       "top": [
         {
@@ -3661,7 +3661,7 @@
       "key": "memory",
       "label": "메모리 손상",
       "count_7d": 1201,
-      "count_30d": 2797,
+      "count_30d": 2798,
       "kev_count": 463,
       "top": [
         {
@@ -4427,8 +4427,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 219,
-      "count_30d": 1037,
+      "count_7d": 222,
+      "count_30d": 1045,
       "kev_count": 14,
       "top": [
         {
@@ -5119,8 +5119,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 181,
-      "count_30d": 785,
+      "count_7d": 183,
+      "count_30d": 787,
       "kev_count": 161,
       "top": [
         {
@@ -6550,8 +6550,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 616,
-      "count_30d": 2259,
+      "count_7d": 627,
+      "count_30d": 2271,
       "kev_count": 232,
       "top": [
         {
@@ -9586,8 +9586,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 362,
-      "count_30d": 1902,
+      "count_7d": 376,
+      "count_30d": 1916,
       "kev_count": 24,
       "top": [
         {
@@ -11071,8 +11071,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 5,
-      "count_30d": 63,
+      "count_7d": 12,
+      "count_30d": 70,
       "kev_count": 71,
       "top": [
         {
@@ -11723,6 +11723,78 @@
           "patch_url": "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
         },
         {
+          "id": "CVE-2026-110279",
+          "title": "IBM ContextForge MCP Gateway 1.0.0 through 1.1.0 is vulnerable to improper…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T07:17:21.03+09:00",
+          "poc_count": 0,
+          "epss": 0.0037,
+          "epss_percentile": 0.31,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Contextforge",
+          "product_family": "dev",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "1.1.1"
+          ],
+          "patch_url": "https://www.ibm.com/support/pages/node/7296490"
+        },
+        {
+          "id": "CVE-2026-110278",
+          "title": "IBM ContextForge MCP Gateway 1.0.0 through 1.1.0 could allow an attacker to…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": -0.3
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T07:17:20.9+09:00",
+          "poc_count": 0,
+          "epss": 0.0024,
+          "epss_percentile": 0.15,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Contextforge",
+          "product_family": "dev",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "1.1.1"
+          ],
+          "patch_url": "https://www.ibm.com/support/pages/node/7296489"
+        },
+        {
           "id": "CVE-2026-125336",
           "title": "Forge (also called node-forge) is a native implementation of Transport Layer…",
           "score": 7,
@@ -11757,80 +11829,6 @@
             "1.4.3"
           ],
           "patch_url": "https://github.com/digitalbazaar/forge/commit/6b23eae8beac316b6867bdb0e7ad7c2c959a97f6"
-        },
-        {
-          "id": "CVE-2026-117616",
-          "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier provides an HTTP endpoint…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -3.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T02:18:20.937+09:00",
-          "poc_count": 0,
-          "epss": 0.0061,
-          "epss_percentile": 0.49,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Jenkins",
-          "product_family": "dev",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "2.580.2",
-            "2.588"
-          ],
-          "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4188"
-        },
-        {
-          "id": "CVE-2026-117624",
-          "title": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier does not consistently…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -3.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-29T02:18:21.74+09:00",
-          "poc_count": 0,
-          "epss": 0.0039,
-          "epss_percentile": 0.33,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Jenkins",
-          "product_family": "dev",
-          "attack_types": [
-            "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "2.580.2",
-            "2.588"
-          ],
-          "patch_url": "https://www.jenkins.io/security/advisory/2026-10-28/#SECURITY-4243"
         }
       ]
     },
@@ -13936,8 +13934,8 @@
     {
       "key": "desktop",
       "label": "업무용·데스크톱 앱",
-      "count_7d": 61,
-      "count_30d": 61,
+      "count_7d": 89,
+      "count_30d": 89,
       "kev_count": 70,
       "top": [
         {
@@ -14249,6 +14247,108 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118292"
         },
         {
+          "id": "CVE-2026-111285",
+          "title": "Heap-based buffer overflow in Microsoft Office Word allows an unauthorized…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:18:25.267+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.65,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111285"
+        },
+        {
+          "id": "CVE-2026-110047",
+          "title": "Use after free in Microsoft Office Word allows an unauthorized attacker to…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:18:21.62+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.65,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-110047"
+        },
+        {
+          "id": "CVE-2026-120788",
+          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:20:27.933+09:00",
+          "poc_count": 0,
+          "epss": 0.0095,
+          "epss_percentile": 0.61,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120788"
+        },
+        {
           "id": "CVE-2026-120786",
           "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
           "score": 8,
@@ -14519,108 +14619,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118722"
-        },
-        {
-          "id": "CVE-2026-118721",
-          "title": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:48.09+09:00",
-          "poc_count": 0,
-          "epss": 0.0095,
-          "epss_percentile": 0.61,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118721"
-        },
-        {
-          "id": "CVE-2026-118720",
-          "title": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:47.947+09:00",
-          "poc_count": 0,
-          "epss": 0.0095,
-          "epss_percentile": 0.61,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118720"
-        },
-        {
-          "id": "CVE-2026-118719",
-          "title": "Double free in Microsoft Office Excel allows an unauthorized attacker to…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:47.8+09:00",
-          "poc_count": 0,
-          "epss": 0.0095,
-          "epss_percentile": 0.61,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118719"
         }
       ]
     }
