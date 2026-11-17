@@ -1,5 +1,40 @@
 [
   {
+    "id": "CVE-2026-115731",
+    "title": "보고서 처리 코드의 신뢰할 수 없는 데이터 역직렬화 취약점으로, 공격자는 조작된 보고서를 제출해 Puppet Server에서 서비스 사용자…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.4,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-12-01",
+    "kev_added_at": "2026-11-17",
+    "published_at": "2026-11-04T06:17:01.867+09:00",
+    "poc_count": 0,
+    "epss": 0.0037,
+    "epss_percentile": 0.30,
+    "cvss": 9.4,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": "Puppet Enterprise",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": "보고서 처리 코드의 신뢰할 수 없는 데이터 역직렬화 취약점으로, 공격자는 조작된 보고서를 제출해 Puppet Server에서 서비스 사용자 권한으로 임의 코드를 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-109618",
     "title": "OOM 처리 중 초기화되지 않은 요청 메모리를 정리 과정에서 읽거나 분기해 원격 코드 실행으로 이어질 수 있습니다",
     "score": 54,
@@ -3731,42 +3766,5 @@
       "152.0.7977.82"
     ],
     "patch_url": "https://github.com/v8/v8/commit/e0562d87ad9c17042b581582c99237d798572e67"
-  },
-  {
-    "id": "CVE-2026-73570",
-    "title": "A remote code execution vulnerability exists in Zimbra Collaboration (ZCS)…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 23.0,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 8.9,
-      "decay": -71.2
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-08-24",
-    "kev_added_at": "2026-08-21",
-    "published_at": "2026-08-14T01:19:06.003+09:00",
-    "poc_count": 0,
-    "epss": 0.77,
-    "epss_percentile": 0.996,
-    "cvss": 8.9,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Zimbra Collaboration",
-    "product_family": "server",
-    "attack_types": [
-      "rce",
-      "injection"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "10.1.20"
-    ],
-    "patch_url": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
   }
 ]
