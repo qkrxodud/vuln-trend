@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 170,
-      "count_30d": 869,
+      "count_7d": 171,
+      "count_30d": 870,
       "kev_count": 323,
       "top": [
         {
@@ -786,8 +786,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 288,
-      "count_30d": 1253,
+      "count_7d": 292,
+      "count_30d": 1257,
       "kev_count": 305,
       "top": [
         {
@@ -1550,8 +1550,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 336,
-      "count_30d": 1282,
+      "count_7d": 342,
+      "count_30d": 1288,
       "kev_count": 32,
       "top": [
         {
@@ -2239,8 +2239,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 940,
-      "count_30d": 4424,
+      "count_7d": 956,
+      "count_30d": 4440,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 158,
-      "count_30d": 899,
+      "count_7d": 160,
+      "count_30d": 901,
       "kev_count": 27,
       "top": [
         {
@@ -3661,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1222,
-      "count_30d": 2819,
+      "count_7d": 1224,
+      "count_30d": 2821,
       "kev_count": 463,
       "top": [
         {
@@ -4428,8 +4428,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 232,
-      "count_30d": 1055,
+      "count_7d": 234,
+      "count_30d": 1057,
       "kev_count": 14,
       "top": [
         {
@@ -4696,6 +4696,40 @@
           "epss": 0.0038,
           "epss_percentile": 0.32,
           "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125162",
+          "title": "The cHash argument, which ensures that only URL arguments originally generated…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-17T20:17:25.33+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
           "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
@@ -5080,48 +5114,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-106137",
-          "title": "In affected versions of Progress® Telerik® UI for ASP.NET MVC `2012.2.710`…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T03:18:24.16+09:00",
-          "poc_count": 0,
-          "epss": 0.0049,
-          "epss_percentile": 0.42,
-          "cvss": 8.6,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 193,
-      "count_30d": 797,
+      "count_7d": 200,
+      "count_30d": 804,
       "kev_count": 161,
       "top": [
         {
@@ -5844,8 +5844,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 116,
-      "count_30d": 554,
+      "count_7d": 118,
+      "count_30d": 556,
       "kev_count": 32,
       "top": [
         {
@@ -6552,8 +6552,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 652,
-      "count_30d": 2296,
+      "count_7d": 657,
+      "count_30d": 2301,
       "kev_count": 232,
       "top": [
         {
@@ -9584,8 +9584,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 378,
-      "count_30d": 1918,
+      "count_7d": 384,
+      "count_30d": 1924,
       "kev_count": 24,
       "top": [
         {
