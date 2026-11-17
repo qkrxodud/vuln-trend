@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 166,
-      "count_30d": 865,
+      "count_7d": 168,
+      "count_30d": 867,
       "kev_count": 323,
       "top": [
         {
@@ -786,8 +786,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 273,
-      "count_30d": 1238,
+      "count_7d": 279,
+      "count_30d": 1244,
       "kev_count": 305,
       "top": [
         {
@@ -1550,8 +1550,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 322,
-      "count_30d": 1268,
+      "count_7d": 324,
+      "count_30d": 1270,
       "kev_count": 32,
       "top": [
         {
@@ -1613,6 +1613,40 @@
           "cvss": 9.4,
           "cvss_version": "4.0",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-120697",
+          "title": "Wiki.js is an open source wiki app built on Node.js",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-17T07:18:14.567+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -2199,48 +2233,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-122102",
-          "title": "Adobe Connect is affected by a stored Cross-Site Scripting (XSS) vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:18:28.73+09:00",
-          "poc_count": 0,
-          "epss": 0.0067,
-          "epss_percentile": 0.52,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 872,
-      "count_30d": 4356,
+      "count_7d": 887,
+      "count_30d": 4371,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 153,
-      "count_30d": 894,
+      "count_7d": 154,
+      "count_30d": 895,
       "kev_count": 27,
       "top": [
         {
@@ -3623,28 +3623,28 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-119952",
-          "title": "Observable timing discrepancy in Windows Schannel allows an unauthorized…",
+          "id": "CVE-2026-130081",
+          "title": "B3log Solo through 4.4.0 contains an information disclosure vulnerability that…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.3,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.1,
-            "decay": -0.9
+            "cvss": 7.5,
+            "decay": 0.0
           },
-          "why_now": "CVSS 8.1, 최근 공개",
+          "why_now": "CVSS 7.5, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-11T04:20:18.867+09:00",
+          "published_at": "2026-11-17T07:18:23.887+09:00",
           "poc_count": 0,
-          "epss": 0.0088,
-          "epss_percentile": 0.59,
-          "cvss": 8.1,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -3661,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 1204,
-      "count_30d": 2801,
+      "count_7d": 1213,
+      "count_30d": 2810,
       "kev_count": 463,
       "top": [
         {
@@ -4428,8 +4428,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 225,
-      "count_30d": 1048,
+      "count_7d": 230,
+      "count_30d": 1053,
       "kev_count": 14,
       "top": [
         {
@@ -5120,8 +5120,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 190,
-      "count_30d": 794,
+      "count_7d": 191,
+      "count_30d": 795,
       "kev_count": 161,
       "top": [
         {
@@ -5844,8 +5844,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 112,
-      "count_30d": 550,
+      "count_7d": 115,
+      "count_30d": 553,
       "kev_count": 32,
       "top": [
         {
@@ -6552,8 +6552,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 636,
-      "count_30d": 2280,
+      "count_7d": 645,
+      "count_30d": 2289,
       "kev_count": 232,
       "top": [
         {
@@ -12542,8 +12542,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 18,
-      "count_30d": 126,
+      "count_7d": 26,
+      "count_30d": 134,
       "kev_count": 138,
       "top": [
         {
@@ -12995,6 +12995,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-93668",
+          "title": "The Bluetooth Classic SDP server in subsys/bluetooth/host/classic/sdp.c…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-17T07:18:26.39+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.5,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-87040",
           "title": "The nRF link-layer receive paths of the open-source Bluetooth LE Controller did…",
           "score": 6,
@@ -13186,40 +13220,6 @@
           "poc_count": 0,
           "epss": 0.0011,
           "epss_percentile": 0.01,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-87039",
-          "title": "The user-mode syscall verifier z_vrfy_i2s_configure() in…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.9
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T15:17:06.623+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
           "cvss": 7.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
