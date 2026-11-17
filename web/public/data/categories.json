@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 123,
-      "count_30d": 835,
+      "count_7d": 134,
+      "count_30d": 846,
       "kev_count": 323,
       "top": [
         {
@@ -786,8 +786,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 211,
-      "count_30d": 1217,
+      "count_7d": 217,
+      "count_30d": 1223,
       "kev_count": 305,
       "top": [
         {
@@ -2239,8 +2239,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 655,
-      "count_30d": 4368,
+      "count_7d": 667,
+      "count_30d": 4383,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 111,
-      "count_30d": 883,
+      "count_7d": 113,
+      "count_30d": 885,
       "kev_count": 27,
       "top": [
         {
@@ -3171,6 +3171,41 @@
           "primary_product": null,
           "product_family": "web_cms",
           "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-126550",
+          "title": "Insertion of Sensitive Information into Log File, Insufficiently Protected…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T02:17:59.12+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
             "info"
           ],
           "summary_what": null,
@@ -3621,48 +3656,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125799",
-          "title": "Insertion of Sensitive Information into Externally-Accessible File or Directory…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-16T00:16:47.317+09:00",
-          "poc_count": 0,
-          "epss": 0.0025,
-          "epss_percentile": 0.15,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 287,
-      "count_30d": 2819,
+      "count_7d": 298,
+      "count_30d": 2830,
       "kev_count": 463,
       "top": [
         {
@@ -4428,8 +4429,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 144,
-      "count_30d": 1051,
+      "count_7d": 152,
+      "count_30d": 1060,
       "kev_count": 14,
       "top": [
         {
@@ -4468,6 +4469,40 @@
             "13.2"
           ],
           "patch_url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10718"
+        },
+        {
+          "id": "CVE-2026-124539",
+          "title": "JSON::XS versions before 4.05 for Perl leak the decoded key of an object…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": -0.5
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-14T21:17:43.56+09:00",
+          "poc_count": 0,
+          "epss": 0.0019,
+          "epss_percentile": 0.08,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-125275",
@@ -5080,48 +5115,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121809",
-          "title": "Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T02:17:19.31+09:00",
-          "poc_count": 0,
-          "epss": 0.0066,
-          "epss_percentile": 0.51,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 144,
-      "count_30d": 794,
+      "count_7d": 150,
+      "count_30d": 800,
       "kev_count": 161,
       "top": [
         {
@@ -5498,6 +5499,40 @@
           "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
         },
         {
+          "id": "CVE-2026-107904",
+          "title": "Joomla Extension - valorapps.com - Unauthenticated Remote Code Execution in…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-17T16:17:23.257+09:00",
+          "poc_count": 0,
+          "epss": 0.0026,
+          "epss_percentile": 0.17,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-129451",
           "title": "A flaw has been found in DrayTek Vigor2960 up to 1.5.1.6",
           "score": 10,
@@ -5804,48 +5839,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-117551",
-          "title": "Joomla Extension - jdownloads.com - RCE through file upload in jDownloads <…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T03:17:15.813+09:00",
-          "poc_count": 0,
-          "epss": 0.0044,
-          "epss_percentile": 0.38,
-          "cvss": 10.0,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 68,
-      "count_30d": 544,
+      "count_7d": 70,
+      "count_30d": 547,
       "kev_count": 32,
       "top": [
         {
@@ -6552,8 +6553,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 320,
-      "count_30d": 2272,
+      "count_7d": 327,
+      "count_30d": 2290,
       "kev_count": 232,
       "top": [
         {
