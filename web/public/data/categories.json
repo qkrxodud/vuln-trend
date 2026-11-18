@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 166,
-      "count_30d": 878,
+      "count_7d": 123,
+      "count_30d": 850,
       "kev_count": 324,
       "top": [
         {
@@ -749,35 +749,34 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-129449",
-          "title": "A security vulnerability has been detected in DrayTek Vigor2960 up to 1.5.1.6",
+          "id": "CVE-2026-114824",
+          "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.7,
+            "epss": 0.2,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.6
+            "cvss": 10.0,
+            "decay": 0.0
           },
-          "why_now": "CVSS 9.9, 최근 공개",
+          "why_now": "CVSS 10.0, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-15T20:17:10.62+09:00",
+          "published_at": "2026-11-18T07:18:10.373+09:00",
           "poc_count": 0,
-          "epss": 0.022,
-          "epss_percentile": 0.82,
-          "cvss": 9.9,
+          "epss": 0.0052,
+          "epss_percentile": 0.45,
+          "cvss": 10.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
-            "rce",
-            "injection"
+            "rce"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -788,8 +787,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 261,
-      "count_30d": 1267,
+      "count_7d": 189,
+      "count_30d": 1229,
       "kev_count": 306,
       "top": [
         {
@@ -1550,8 +1549,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 306,
-      "count_30d": 1335,
+      "count_7d": 285,
+      "count_30d": 1326,
       "kev_count": 32,
       "top": [
         {
@@ -2239,8 +2238,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 917,
-      "count_30d": 4633,
+      "count_7d": 786,
+      "count_30d": 4556,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2965,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 170,
-      "count_30d": 942,
+      "count_7d": 149,
+      "count_30d": 925,
       "kev_count": 27,
       "top": [
         {
@@ -3663,8 +3662,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 437,
-      "count_30d": 2969,
+      "count_7d": 344,
+      "count_30d": 2910,
       "kev_count": 463,
       "top": [
         {
@@ -4392,8 +4391,8 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-110486",
-          "title": "In Eclipse Mosquitto versions 2.1 through 2.1.2, a listener configured with…",
+          "id": "CVE-2026-116446",
+          "title": "Dell PowerStore SDNAS contains an out-of-bounds memory vulnerability in the NAS…",
           "score": 10,
           "score_breakdown": {
             "kev": 0.0,
@@ -4409,7 +4408,7 @@
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T20:17:37.963+09:00",
+          "published_at": "2026-11-19T00:17:32.78+09:00",
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
@@ -4430,8 +4429,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 203,
-      "count_30d": 1111,
+      "count_7d": 175,
+      "count_30d": 1067,
       "kev_count": 14,
       "top": [
         {
@@ -5123,8 +5122,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 192,
-      "count_30d": 842,
+      "count_7d": 162,
+      "count_30d": 825,
       "kev_count": 161,
       "top": [
         {
@@ -5847,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 94,
-      "count_30d": 571,
+      "count_7d": 77,
+      "count_30d": 558,
       "kev_count": 32,
       "top": [
         {
@@ -6553,8 +6552,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 464,
-      "count_30d": 2430,
+      "count_7d": 400,
+      "count_30d": 2352,
       "kev_count": 232,
       "top": [
         {
@@ -7337,7 +7336,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 32,
-      "count_30d": 668,
+      "count_30d": 657,
       "kev_count": 286,
       "top": [
         {
@@ -7942,6 +7941,45 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108401"
         },
         {
+          "id": "CVE-2026-105534",
+          "title": "Heap-based buffer overflow in Windows Storage allows an unauthorized attacker…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.4
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:17:54.677+09:00",
+          "poc_count": 0,
+          "epss": 0.0084,
+          "epss_percentile": 0.58,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Windows",
+          "product_family": "os",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.14393.9688",
+            "10.0.17763.9487",
+            "10.0.20348.5870",
+            "10.0.26100.33730"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105534"
+        },
+        {
           "id": "CVE-2026-115501",
           "title": "IBM i 7.3 7.4, 7.5, and 7.6 is vulnerable to a stack buffer overflow, caused by…",
           "score": 7,
@@ -8021,6 +8059,51 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105580"
         },
         {
+          "id": "CVE-2026-105532",
+          "title": "Improper link resolution before file access ('link following') in Windows…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:17:53.513+09:00",
+          "poc_count": 0,
+          "epss": 0.0038,
+          "epss_percentile": 0.32,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Windows",
+          "product_family": "os",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.14393.9688",
+            "10.0.17763.9487",
+            "10.0.19044.7846",
+            "10.0.19045.7846",
+            "10.0.22631.7711",
+            "10.0.26100.9911",
+            "10.0.26200.9911",
+            "10.0.28000.3501",
+            "10.0.20348.5870",
+            "10.0.26100.33730"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105532"
+        },
+        {
           "id": "CVE-2026-108407",
           "title": "Out-of-bounds read in Windows GDI allows an authorized attacker to elevate…",
           "score": 7,
@@ -8064,104 +8147,14 @@
             "10.0.26100.33730"
           ],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108407"
-        },
-        {
-          "id": "CVE-2026-108405",
-          "title": "Integer overflow or wraparound in Windows CD-ROM Driver allows an authorized…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:18:09.12+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Windows",
-          "product_family": "os",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.14393.9688",
-            "10.0.17763.9487",
-            "10.0.19044.7846",
-            "10.0.19045.7846",
-            "10.0.22631.7711",
-            "10.0.26100.9911",
-            "10.0.26200.9911",
-            "10.0.28000.3501",
-            "10.0.20348.5870",
-            "10.0.26100.33730"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108405"
-        },
-        {
-          "id": "CVE-2026-108403",
-          "title": "Use after free in Windows Kernel allows an authorized attacker to elevate…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:18:07.46+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.29,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Windows",
-          "product_family": "os",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.14393.9688",
-            "10.0.17763.9487",
-            "10.0.19044.7846",
-            "10.0.19045.7846",
-            "10.0.22631.7711",
-            "10.0.26100.9911",
-            "10.0.26200.9911",
-            "10.0.28000.3501",
-            "10.0.20348.5870",
-            "10.0.26100.33730"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108403"
         }
       ]
     },
     {
       "key": "browser",
       "label": "브라우저",
-      "count_7d": 286,
-      "count_30d": 987,
+      "count_7d": 203,
+      "count_30d": 985,
       "kev_count": 112,
       "top": [
         {
@@ -9613,8 +9606,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 343,
-      "count_30d": 1997,
+      "count_7d": 339,
+      "count_30d": 2016,
       "kev_count": 24,
       "top": [
         {
@@ -9879,6 +9872,74 @@
             "2.4.4"
           ],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+        },
+        {
+          "id": "CVE-2026-110811",
+          "title": "The Trust Payments Gateway for WooCommerce (JavaScript Library) plugin for…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T23:17:26.02+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-110009",
+          "title": "The Unzer Payments plugin for WordPress is vulnerable to Authentication Bypass…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T23:17:25.86+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-125795",
@@ -10288,81 +10349,13 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124822",
-          "title": "The Easy DragDrop File Uploader WordPress plugin before 1.1.10 does not…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T15:16:53.96+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.20,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125855",
-          "title": "Deserialization of Untrusted Data vulnerability in Elextensions ELEX WordPress…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T00:17:43.257+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "server",
       "label": "서버·DB·미들웨어",
-      "count_7d": 1,
+      "count_7d": 0,
       "count_30d": 36,
       "kev_count": 165,
       "top": [
@@ -11098,7 +11091,7 @@
       "key": "dev",
       "label": "개발 라이브러리·도구",
       "count_7d": 20,
-      "count_30d": 83,
+      "count_30d": 82,
       "kev_count": 71,
       "top": [
         {
@@ -12567,7 +12560,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 21,
-      "count_30d": 152,
+      "count_30d": 149,
       "kev_count": 138,
       "top": [
         {
@@ -12668,6 +12661,40 @@
           "cvss": 9.1,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-95823",
+          "title": "tcp_pkt_linearize() in subsys/net/ip/tcp.c is used by th_get() whenever a…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T00:17:44.383+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
@@ -13221,40 +13248,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://www.mediatek.com/product-security-bulletin/November-2026"
-        },
-        {
-          "id": "CVE-2026-20558",
-          "title": "In GPU pdma, there is a possible escalation of privilege due to use after free",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -2.6
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-02T12:17:32.947+09:00",
-          "poc_count": 0,
-          "epss": 0.0015,
-          "epss_percentile": 0.03,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "MT8910 Firmware",
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://www.mediatek.com/product-security-bulletin/November-2026"
         }
       ]
     },
@@ -13262,7 +13255,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 305,
+      "count_30d": 286,
       "kev_count": 98,
       "top": [
         {
@@ -13957,7 +13950,7 @@
       "key": "desktop",
       "label": "업무용·데스크톱 앱",
       "count_7d": 0,
-      "count_30d": 153,
+      "count_30d": 160,
       "kev_count": 70,
       "top": [
         {
@@ -14029,6 +14022,40 @@
             "4.0.9.8"
           ],
           "patch_url": "https://cert-portal.siemens.com/productcert/html/ssa-580366.html"
+        },
+        {
+          "id": "CVE-2026-111289",
+          "title": "Use after free in Microsoft Office allows an unauthorized attacker to execute…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.4
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:18:26.003+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.65,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Microsoft Office",
+          "product_family": "desktop",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111289"
         },
         {
           "id": "CVE-2026-118730",
@@ -14607,40 +14634,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118732"
-        },
-        {
-          "id": "CVE-2026-118731",
-          "title": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.4
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:49.687+09:00",
-          "poc_count": 0,
-          "epss": 0.0093,
-          "epss_percentile": 0.61,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft Office",
-          "product_family": "desktop",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118731"
         }
       ]
     }
