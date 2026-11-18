@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 137,
-      "count_30d": 864,
+      "count_7d": 141,
+      "count_30d": 868,
       "kev_count": 327,
       "top": [
         {
@@ -784,8 +784,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 212,
-      "count_30d": 1252,
+      "count_7d": 217,
+      "count_30d": 1257,
       "kev_count": 308,
       "top": [
         {
@@ -1545,8 +1545,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 316,
-      "count_30d": 1357,
+      "count_7d": 320,
+      "count_30d": 1361,
       "kev_count": 32,
       "top": [
         {
@@ -1843,6 +1843,40 @@
           "poc_count": 0,
           "epss": 0.0043,
           "epss_percentile": 0.37,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-73967",
+          "title": "AnsibleForms is a self-hosted web application that turns automation into…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:18:01.817+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.7,
           "cvss_version": "3.1",
           "severity": "HIGH",
@@ -2162,62 +2196,28 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-123122",
-          "title": "The Checkout Files Upload for WooCommerce WordPress plugin before 2.4.1 does…",
+          "id": "CVE-2026-30502",
+          "title": "A Cross-Site Scripting (XSS) vulnerability in OpenKM v6.3.12 allows attackers…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.7
+            "cvss": 8.2,
+            "decay": 0.0
           },
-          "why_now": "CVSS 8.8, 최근 공개",
+          "why_now": "CVSS 8.2, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-14T16:17:19.513+09:00",
+          "published_at": "2026-11-19T01:18:15.847+09:00",
           "poc_count": 0,
-          "epss": 0.0028,
-          "epss_percentile": 0.20,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-129427",
-          "title": "Stored XSS via avatar upload chained with an authentication bypass in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T21:17:44.72+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.31,
-          "cvss": 8.7,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -2234,8 +2234,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 969,
-      "count_30d": 4739,
+      "count_7d": 992,
+      "count_30d": 4762,
       "kev_count": 266,
       "top": [
         {
@@ -2961,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 161,
-      "count_30d": 937,
+      "count_7d": 172,
+      "count_30d": 948,
       "kev_count": 27,
       "top": [
         {
@@ -3242,6 +3242,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-77295",
+          "title": "MyMangaDB is a self-hosted manga collection manager with automatic metadata…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:18:03.347+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-126550",
           "title": "Insertion of Sensitive Information into Log File, Insufficiently Protected…",
           "score": 9,
@@ -3338,6 +3373,40 @@
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": "web_cms",
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-55169",
+          "title": "Open OnDemand is an open-source high-performance computing portal",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:17:59.19+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.4,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
           "attack_types": [
             "info"
           ],
@@ -3589,82 +3658,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118495",
-          "title": "Joomla / WordPress Extension - acymailing.com - Exposure of sensitive…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T03:17:16.13+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.31,
-          "cvss": 8.8,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-91879",
-          "title": "Dell Terraform for ObjectScale and Powerstore, versions prior to 1.1.1…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T03:19:53.483+09:00",
-          "poc_count": 0,
-          "epss": 0.0045,
-          "epss_percentile": 0.39,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 370,
-      "count_30d": 2937,
+      "count_7d": 373,
+      "count_30d": 2940,
       "kev_count": 463,
       "top": [
         {
@@ -4358,6 +4359,40 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33824"
         },
         {
+          "id": "CVE-2026-132139",
+          "title": "A weakness has been identified in DrayTek Vigor2960 up to 1.5.1.6",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:17:55.92+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-130020",
           "title": "Privilege escalation due to incorrect boundary conditions in the Graphics…",
           "score": 10,
@@ -4390,48 +4425,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-129353",
-          "title": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-15T09:16:51.12+09:00",
-          "poc_count": 0,
-          "epss": 0.018,
-          "epss_percentile": 0.78,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 189,
-      "count_30d": 1081,
+      "count_7d": 197,
+      "count_30d": 1089,
       "kev_count": 14,
       "top": [
         {
@@ -4561,6 +4562,40 @@
           "poc_count": 0,
           "epss": 0.0055,
           "epss_percentile": 0.46,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-130092",
+          "title": "A caller who can reach the temporal-proxy gRPC listener, with or without a…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:17:49.52+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.7,
           "cvss_version": "4.0",
           "severity": "HIGH",
@@ -5083,48 +5118,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130874",
-          "title": "Seerr before 3.5.2 contains an uncontrolled resource consumption vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T05:17:54.11+09:00",
-          "poc_count": 0,
-          "epss": 0.0066,
-          "epss_percentile": 0.52,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 188,
-      "count_30d": 851,
+      "count_7d": 193,
+      "count_30d": 856,
       "kev_count": 162,
       "top": [
         {
@@ -5849,8 +5850,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 84,
-      "count_30d": 565,
+      "count_7d": 89,
+      "count_30d": 570,
       "kev_count": 32,
       "top": [
         {
@@ -6065,6 +6066,40 @@
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-130926",
+          "title": "Confused deputy in Sync in Google Chrome prior to 158.0.8127.36 allowed a…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T06:17:47.047+09:00",
+          "poc_count": 0,
+          "epss": 0.0024,
+          "epss_percentile": 0.14,
+          "cvss": 9.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
           "attack_types": [
             "request_forgery"
           ],
@@ -6417,8 +6452,8 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-130926",
-          "title": "Confused deputy in Sync in Google Chrome prior to 158.0.8127.36 allowed a…",
+          "id": "CVE-2026-131071",
+          "title": "Confused deputy in Mobile in Google Chrome on on Android prior to 158.0.8127.36…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
@@ -6434,9 +6469,9 @@
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:47.047+09:00",
+          "published_at": "2026-11-18T06:18:06.66+09:00",
           "poc_count": 0,
-          "epss": 0.0024,
+          "epss": 0.0023,
           "epss_percentile": 0.14,
           "cvss": 8.1,
           "cvss_version": "3.1",
@@ -6451,76 +6486,8 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-128049",
-          "title": "OpenMage Magento LTS before 20.18.2 and 21.0.0-beta1 before 21.0.0-beta3…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.0,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 9.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T19:18:10.82+09:00",
-          "poc_count": 0,
-          "epss": 0.0016,
-          "epss_percentile": 0.05,
-          "cvss": 9.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123046",
-          "title": "The SEOJuice WordPress plugin before 2.12.0 does not correctly restrict a REST…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T16:17:19.35+09:00",
-          "poc_count": 0,
-          "epss": 0.0015,
-          "epss_percentile": 0.03,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-122141",
-          "title": "The wallet top-up functionality in ICRTouch ByTable and TouchTakeaway does not…",
+          "id": "CVE-2026-131018",
+          "title": "Confused deputy in DevTools in Google Chrome prior to 158.0.8127.36 allowed a…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
@@ -6529,22 +6496,56 @@
             "news": 0.0,
             "poc": 0.0,
             "cvss": 8.1,
-            "decay": -0.1
+            "decay": 0.0
           },
           "why_now": "CVSS 8.1, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T01:17:40.183+09:00",
+          "published_at": "2026-11-18T06:17:59.207+09:00",
           "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
+          "epss": 0.0023,
+          "epss_percentile": 0.14,
           "cvss": 8.1,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
-          "product_family": null,
+          "product_family": "browser",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-130964",
+          "title": "Confused deputy in DevTools in Google Chrome prior to 158.0.8127.36 allowed a…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T06:17:52.55+09:00",
+          "poc_count": 0,
+          "epss": 0.0023,
+          "epss_percentile": 0.14,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "browser",
           "attack_types": [
             "request_forgery"
           ],
@@ -6557,8 +6558,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 432,
-      "count_30d": 2384,
+      "count_7d": 444,
+      "count_30d": 2396,
       "kev_count": 233,
       "top": [
         {
@@ -8337,14 +8338,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-131088",
@@ -8407,14 +8410,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-131057",
@@ -8577,14 +8582,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130994",
@@ -8611,14 +8618,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130971",
@@ -8693,138 +8702,30 @@
           "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
-          "id": "CVE-2026-130975",
-          "title": "Use after free in WebAudio in Google Chrome prior to 158.0.8127.36 allowed a…",
-          "score": 9,
+          "id": "CVE-2026-131043",
+          "title": "Use after free in HID in Google Chrome prior to 158.0.8127.36 allowed a remote…",
+          "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
             "epss": 0.1,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.8,
+            "cvss": 9.6,
             "decay": 0.0
           },
-          "why_now": "CVSS 8.8, 최근 공개",
+          "why_now": "CVSS 9.6, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:53.913+09:00",
+          "published_at": "2026-11-18T06:18:03.227+09:00",
           "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.40,
-          "cvss": 8.8,
+          "epss": 0.0025,
+          "epss_percentile": 0.16,
+          "cvss": 9.6,
           "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "158.0.8127.36"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
-        },
-        {
-          "id": "CVE-2026-131106",
-          "title": "Buffer overflow in Partition in Google Chrome prior to 158.0.8127.36 allowed a…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:18:10.97+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.35,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "158.0.8127.36"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
-        },
-        {
-          "id": "CVE-2026-131087",
-          "title": "Type confusion in V8 in Google Chrome prior to 158.0.8127.36 allowed a remote…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:18:08.573+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.34,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "158.0.8127.36"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
-        },
-        {
-          "id": "CVE-2026-131060",
-          "title": "Buffer overflow in Media in Google Chrome prior to 158.0.8127.36 allowed a…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:18:05.31+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.35,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
+          "severity": "CRITICAL",
           "primary_product": null,
           "product_family": "browser",
           "attack_types": [
@@ -8835,8 +8736,42 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-131001",
-          "title": "Buffer overflow in Video in Google Chrome prior to 158.0.8127.36 allowed a…",
+          "id": "CVE-2026-130968",
+          "title": "Use after free in Views in Google Chrome on on Windows prior to 158.0.8127.36…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T06:17:53.033+09:00",
+          "poc_count": 0,
+          "epss": 0.0025,
+          "epss_percentile": 0.16,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-131037",
+          "title": "!MISSING CAUSE! in Chromoting in Google Chrome prior to 158.0.8127.36 allowed a…",
           "score": 9,
           "score_breakdown": {
             "kev": 0.0,
@@ -8844,21 +8779,89 @@
             "epss": 0.1,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.8,
+            "cvss": 9.0,
             "decay": 0.0
           },
-          "why_now": "CVSS 8.8, 최근 공개",
+          "why_now": "CVSS 9.0, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:57.11+09:00",
+          "published_at": "2026-11-18T06:18:01.653+09:00",
           "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.35,
-          "cvss": 8.8,
+          "epss": 0.0024,
+          "epss_percentile": 0.14,
+          "cvss": 9.0,
           "cvss_version": "3.1",
-          "severity": "HIGH",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-131020",
+          "title": "Use after free in WebView in Google Chrome on on Android prior to 158.0.8127.36…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T06:17:59.463+09:00",
+          "poc_count": 0,
+          "epss": 0.0025,
+          "epss_percentile": 0.16,
+          "cvss": 9.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-130963",
+          "title": "Use after free in WebView in Google Chrome on on Android prior to 158.0.8127.36…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T06:17:52.43+09:00",
+          "poc_count": 0,
+          "epss": 0.0025,
+          "epss_percentile": 0.16,
+          "cvss": 9.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
           "primary_product": null,
           "product_family": "browser",
           "attack_types": [
