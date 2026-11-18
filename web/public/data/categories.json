@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 123,
-      "count_30d": 850,
+      "count_7d": 130,
+      "count_30d": 857,
       "kev_count": 324,
       "top": [
         {
@@ -787,8 +787,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 189,
-      "count_30d": 1229,
+      "count_7d": 204,
+      "count_30d": 1244,
       "kev_count": 306,
       "top": [
         {
@@ -1549,8 +1549,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 285,
-      "count_30d": 1326,
+      "count_7d": 304,
+      "count_30d": 1345,
       "kev_count": 32,
       "top": [
         {
@@ -2200,30 +2200,30 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-64670",
-          "title": "Waline is a comment system with backend support",
+          "id": "CVE-2026-132244",
+          "title": "In JetBrains TeamCity before 2026.1.3, \n2025.11.7 stored XSS on the Disk Usage…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -1.4
+            "cvss": 8.1,
+            "decay": 0.0
           },
-          "why_now": "CVSS 9.3, 최근 공개",
+          "why_now": "CVSS 8.1, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-11T14:19:51.527+09:00",
+          "published_at": "2026-11-19T02:17:46.273+09:00",
           "poc_count": 0,
-          "epss": 0.0036,
-          "epss_percentile": 0.30,
-          "cvss": 9.3,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
           "cvss_version": "3.1",
-          "severity": "CRITICAL",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -2238,8 +2238,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 786,
-      "count_30d": 4556,
+      "count_7d": 830,
+      "count_30d": 4600,
       "kev_count": 266,
       "top": [
         {
@@ -2965,8 +2965,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 149,
-      "count_30d": 925,
+      "count_7d": 153,
+      "count_30d": 929,
       "kev_count": 27,
       "top": [
         {
@@ -3034,6 +3034,42 @@
           "product_family": null,
           "attack_types": [
             "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-63189",
+          "title": "Dialoqbase is an application for creating chatbots",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:18:16.52+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info",
+            "path"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -3418,6 +3454,43 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-115338",
+          "title": "Insufficient protection of communications in Progress WS_FTP Server versions…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.7
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-10T02:17:11.24+09:00",
+          "poc_count": 0,
+          "epss": 0.0016,
+          "epss_percentile": 0.04,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Ws FTP Server",
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.5"
+          ],
+          "patch_url": "https://community.progress.com/s/article/WS-FTP-Server-Service-Pack-November-2026"
+        },
+        {
           "id": "CVE-2026-123551",
           "title": "OpenAM from 14.0.0 before 16.1.4 contains an information disclosure…",
           "score": 8,
@@ -3556,98 +3629,30 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-122153",
-          "title": "The TouchOffice API `clerkList` endpoint appears to return sensitive clerk…",
+          "id": "CVE-2026-132238",
+          "title": "In JetBrains TeamCity before 2026.1.3, \n2025.11.8 disclosure of password…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.1
+            "cvss": 7.7,
+            "decay": 0.0
           },
-          "why_now": "CVSS 7.5, 최근 공개",
+          "why_now": "CVSS 7.7, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-18T01:17:41.06+09:00",
+          "published_at": "2026-11-19T02:17:45.467+09:00",
           "poc_count": 0,
-          "epss": 0.0050,
-          "epss_percentile": 0.43,
-          "cvss": 7.5,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.7,
           "cvss_version": "3.1",
           "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-73101",
-          "title": "Generation of Error Message Containing Sensitive Information vulnerability in…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T21:17:51.197+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
-          "cvss": 10.0,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-73100",
-          "title": "Insertion of Sensitive Information into Log File vulnerability in Apache Juneau",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-05T21:17:51.06+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
-          "cvss": 10.0,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -3662,8 +3667,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 344,
-      "count_30d": 2910,
+      "count_7d": 369,
+      "count_30d": 2936,
       "kev_count": 463,
       "top": [
         {
@@ -4357,6 +4362,40 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33824"
         },
         {
+          "id": "CVE-2026-130020",
+          "title": "Privilege escalation due to incorrect boundary conditions in the Graphics…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T08:17:52.08+09:00",
+          "poc_count": 0,
+          "epss": 0.0018,
+          "epss_percentile": 0.07,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-129353",
           "title": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02",
           "score": 10,
@@ -4389,48 +4428,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-116446",
-          "title": "Dell PowerStore SDNAS contains an out-of-bounds memory vulnerability in the NAS…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T00:17:32.78+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 175,
-      "count_30d": 1067,
+      "count_7d": 185,
+      "count_30d": 1077,
       "kev_count": 14,
       "top": [
         {
@@ -5122,8 +5127,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 162,
-      "count_30d": 825,
+      "count_7d": 177,
+      "count_30d": 840,
       "kev_count": 161,
       "top": [
         {
@@ -5500,6 +5505,40 @@
           "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
         },
         {
+          "id": "CVE-2026-132233",
+          "title": "In JetBrains TeamCity before 2026.1.3, \n2025.11.7 remote code execution was…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T02:17:44.853+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-107904",
           "title": "Joomla Extension - valorapps.com - Unauthenticated Remote Code Execution in…",
           "score": 10,
@@ -5521,6 +5560,144 @@
           "poc_count": 0,
           "epss": 0.0060,
           "epss_percentile": 0.49,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-63189",
+          "title": "Dialoqbase is an application for creating chatbots",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:18:16.52+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info",
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2023-54422",
+          "title": "iDocView before 13.10.1_20231115 contains an unrestricted file upload…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:17:54.023+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2021-48023",
+          "title": "Weaver E-cology 9.0 contains an unrestricted file upload vulnerability in…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:17:50.763+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2018-25443",
+          "title": "Baidu UEditor 1.4.0 through 1.4.3.3 contains an unrestricted file upload…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:17:48.5+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -5636,204 +5813,32 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-126967",
-          "title": "SmarterTools SmarterMail File Edit API Directory Traversal Remote Code…",
+          "id": "CVE-2026-130156",
+          "title": "Bazarr is a companion application to Sonarr and Radarr",
           "score": 9,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T09:18:36.993+09:00",
-          "poc_count": 0,
-          "epss": 0.018,
-          "epss_percentile": 0.79,
-          "cvss": 8.8,
-          "cvss_version": "3.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120699",
-          "title": "CubeSandbox is an instant, concurrent, secure, and lightweight sandbox for AI…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
             "cvss": 9.4,
-            "decay": -0.2
+            "decay": 0.0
           },
           "why_now": "CVSS 9.4, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-17T06:17:20.98+09:00",
+          "published_at": "2026-11-19T02:17:38.673+09:00",
           "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.4,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120522",
-          "title": "The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T22:17:20.403+09:00",
-          "poc_count": 0,
-          "epss": 0.0079,
-          "epss_percentile": 0.56,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-129286",
-          "title": "N-able N-central before 2026.4.1 HF3 does not validate version values and…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.2,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 9.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-17T20:17:27.943+09:00",
-          "poc_count": 0,
-          "epss": 0.0045,
-          "epss_percentile": 0.39,
-          "cvss": 9.2,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-82504",
-          "title": "VITEC EZ TV Platform Server before 8.5.0 contains an unrestricted file upload…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T06:17:48.03+09:00",
-          "poc_count": 0,
-          "epss": 0.0081,
-          "epss_percentile": 0.57,
-          "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
-          "attack_types": [
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125055",
-          "title": "The Chatterbug Forms – Fast, Flexible WordPress Form Builder plugin for…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T19:17:28.153+09:00",
-          "poc_count": 0,
-          "epss": 0.010,
-          "epss_percentile": 0.64,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
           "attack_types": [
             "path"
           ],
@@ -5846,8 +5851,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 77,
-      "count_30d": 558,
+      "count_7d": 78,
+      "count_30d": 559,
       "kev_count": 32,
       "top": [
         {
@@ -6310,6 +6315,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2018-25442",
+          "title": "Baidu UEditor 1.4.0 before 1.4.3.1 contains a server-side request forgery…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:17:48.317+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-128049",
           "title": "OpenMage Magento LTS before 20.18.2 and 21.0.0-beta1 before 21.0.0-beta3…",
           "score": 8,
@@ -6512,48 +6551,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125881",
-          "title": "Server-Side request forgery (SSRF) vulnerability in N-able N-central allows…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -1.4
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:18:30.86+09:00",
-          "poc_count": 0,
-          "epss": 0.0048,
-          "epss_percentile": 0.41,
-          "cvss": 9.3,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 400,
-      "count_30d": 2352,
+      "count_7d": 420,
+      "count_30d": 2372,
       "kev_count": 232,
       "top": [
         {
@@ -7336,7 +7341,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 32,
-      "count_30d": 657,
+      "count_30d": 685,
       "kev_count": 286,
       "top": [
         {
@@ -7980,6 +7985,51 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105534"
         },
         {
+          "id": "CVE-2026-105518",
+          "title": "Use after free in Windows iSCSI allows an unauthorized attacker to execute code…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": -1.4
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:17:50.957+09:00",
+          "poc_count": 0,
+          "epss": 0.0072,
+          "epss_percentile": 0.54,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Windows",
+          "product_family": "os",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.14393.9688",
+            "10.0.17763.9487",
+            "10.0.19044.7846",
+            "10.0.19045.7846",
+            "10.0.22631.7711",
+            "10.0.26100.9911",
+            "10.0.26200.9911",
+            "10.0.28000.3501",
+            "10.0.20348.5870",
+            "10.0.26100.33730"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105518"
+        },
+        {
           "id": "CVE-2026-115501",
           "title": "IBM i 7.3 7.4, 7.5, and 7.6 is vulnerable to a stack buffer overflow, caused by…",
           "score": 7,
@@ -8012,6 +8062,45 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://www.ibm.com/support/pages/node/7296188"
+        },
+        {
+          "id": "CVE-2026-96115",
+          "title": "Double free in Windows DHCP Client allows an authorized attacker to elevate…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.0,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 8.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:22:09.303+09:00",
+          "poc_count": 0,
+          "epss": 0.0044,
+          "epss_percentile": 0.38,
+          "cvss": 8.0,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Windows",
+          "product_family": "os",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.26100.9911",
+            "10.0.26200.9911",
+            "10.0.28000.3501",
+            "10.0.26100.33730"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-96115"
         },
         {
           "id": "CVE-2026-105580",
@@ -8057,96 +8146,6 @@
             "10.0.26100.33730"
           ],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105580"
-        },
-        {
-          "id": "CVE-2026-105532",
-          "title": "Improper link resolution before file access ('link following') in Windows…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:17:53.513+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.32,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Windows",
-          "product_family": "os",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.14393.9688",
-            "10.0.17763.9487",
-            "10.0.19044.7846",
-            "10.0.19045.7846",
-            "10.0.22631.7711",
-            "10.0.26100.9911",
-            "10.0.26200.9911",
-            "10.0.28000.3501",
-            "10.0.20348.5870",
-            "10.0.26100.33730"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105532"
-        },
-        {
-          "id": "CVE-2026-108407",
-          "title": "Out-of-bounds read in Windows GDI allows an authorized attacker to elevate…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:18:09.897+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.27,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Windows",
-          "product_family": "os",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "10.0.14393.9688",
-            "10.0.17763.9487",
-            "10.0.19044.7846",
-            "10.0.19045.7846",
-            "10.0.22631.7711",
-            "10.0.26100.9911",
-            "10.0.26200.9911",
-            "10.0.28000.3501",
-            "10.0.20348.5870",
-            "10.0.26100.33730"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-108407"
         }
       ]
     },
@@ -8666,14 +8665,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "other"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130975",
@@ -9606,8 +9607,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 339,
-      "count_30d": 2016,
+      "count_7d": 344,
+      "count_30d": 2021,
       "kev_count": 24,
       "top": [
         {
@@ -9872,6 +9873,40 @@
             "2.4.4"
           ],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+        },
+        {
+          "id": "CVE-2026-124990",
+          "title": "The Masteriyo LMS – LMS Course Builder, Quizzes & Certificates plugin for…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:18:05.313+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-110811",
@@ -10315,40 +10350,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125851",
-          "title": "Unrestricted Upload of File with Dangerous Type vulnerability in themagnifico52…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T00:17:42.697+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.28,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -10356,7 +10357,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 36,
+      "count_30d": 39,
       "kev_count": 165,
       "top": [
         {
@@ -13950,7 +13951,7 @@
       "key": "desktop",
       "label": "업무용·데스크톱 앱",
       "count_7d": 0,
-      "count_30d": 160,
+      "count_30d": 168,
       "kev_count": 70,
       "top": [
         {
