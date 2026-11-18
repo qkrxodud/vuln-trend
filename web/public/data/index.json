@@ -1,5 +1,144 @@
 [
   {
+    "id": "CVE-2026-40217",
+    "title": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
+    "score": 64,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 5.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-12-02",
+    "kev_added_at": "2026-11-18",
+    "published_at": "2026-04-10T23:16:36.307+09:00",
+    "poc_count": 0,
+    "epss": 0.17,
+    "epss_percentile": 0.97,
+    "cvss": 8.8,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "LiteLLM",
+    "product_family": "dev",
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": "https://www.x41-dsec.de/lab/advisories/x41-2026-001-litellm/"
+  },
+  {
+    "id": "CVE-2026-90817",
+    "title": "인증되지 않은 공격자가 공개 설문 경로와 가져오기 처리 과정의 취약점을 악용해 REDCap 서버에서 임의 코드를 원격 실행할 수 있습니다",
+    "score": 61,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 1.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-21",
+    "kev_added_at": "2026-11-18",
+    "published_at": "2026-09-20T22:17:44.973+09:00",
+    "poc_count": 0,
+    "epss": 0.037,
+    "epss_percentile": 0.90,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Research Electronic Data Capture (REDCap)",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection",
+      "path"
+    ],
+    "summary_what": "인증되지 않은 공격자가 공개 설문 경로와 가져오기 처리 과정의 취약점을 악용해 REDCap 서버에서 임의 코드를 원격 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2024-10441",
+    "title": "시스템 플러그인 데몬의 출력 인코딩·이스케이프 처리 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-21",
+    "kev_added_at": "2026-11-18",
+    "published_at": "2025-03-19T11:15:27.12+09:00",
+    "poc_count": 0,
+    "epss": 0.013,
+    "epss_percentile": 0.70,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Beestation OS",
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "시스템 플러그인 데몬의 출력 인코딩·이스케이프 처리 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20"
+  },
+  {
+    "id": "CVE-2026-90436",
+    "title": "인증되지 않은 원격 공격자가 SOAP 결함 역직렬화를 악용해 클래스 초기화 또는 인스턴스 생성을 유발하고, 조건에 따라 원격 코드 실행을 할…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-21",
+    "kev_added_at": "2026-11-18",
+    "published_at": "2026-11-07T01:18:59.763+09:00",
+    "poc_count": 0,
+    "epss": 0.011,
+    "epss_percentile": 0.67,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Axis",
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": "인증되지 않은 원격 공격자가 SOAP 결함 역직렬화를 악용해 클래스 초기화 또는 인스턴스 생성을 유발하고, 조건에 따라 원격 코드 실행을 할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-115731",
     "title": "보고서 처리 코드의 신뢰할 수 없는 데이터 역직렬화 취약점으로, 공격자는 조작된 보고서를 제출해 Puppet Server에서 서비스 사용자…",
     "score": 59,
@@ -3622,152 +3761,5 @@
       "7.161.20"
     ],
     "patch_url": "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
-  },
-  {
-    "id": "CVE-2023-49105",
-    "title": "An issue was discovered in ownCloud owncloud/core before 10.13.1",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 13.0,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -62.1
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-08-30",
-    "kev_added_at": "2026-08-27",
-    "published_at": "2023-11-22T07:15:08.613+09:00",
-    "poc_count": 0,
-    "epss": 0.43,
-    "epss_percentile": 0.98,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "ownCloud Server",
-    "product_family": "server",
-    "attack_types": [
-      "auth"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "10.13.1"
-    ],
-    "patch_url": "https://owncloud.com/security-advisories/webdav-api-authentication-bypass-using-pre-signed-urls/"
-  },
-  {
-    "id": "CVE-2026-59310",
-    "title": "VMware vCenter contains a directory traversal vulnerability in the Syslog…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 10.0,
-      "epss": 18.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -77.8
-    },
-    "why_now": "랜섬웨어 캠페인에 사용 중",
-    "is_kev": true,
-    "kev_ransomware": true,
-    "kev_due_date": "2026-08-21",
-    "kev_added_at": "2026-08-18",
-    "published_at": "2026-07-30T22:16:53.993+09:00",
-    "poc_count": 0,
-    "epss": 0.62,
-    "epss_percentile": 0.992,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "VMware vCenter Server",
-    "product_family": "cloud",
-    "attack_types": [
-      "path"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "8.0",
-      "9.0.2.0100",
-      "9.1.0.0300"
-    ],
-    "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
-  },
-  {
-    "id": "CVE-2026-83548",
-    "title": "A Pre-authentication SSRF vulnerability exists in the SMA1000 Appliance Work…",
-    "score": 11,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 2.4,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 10.0,
-      "decay": -51.9
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-05",
-    "kev_added_at": "2026-09-02",
-    "published_at": "2026-09-02T07:17:13.17+09:00",
-    "poc_count": 0,
-    "epss": 0.080,
-    "epss_percentile": 0.94,
-    "cvss": 10.0,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "SonicWall SMA 1000",
-    "product_family": "network",
-    "attack_types": [
-      "request_forgery"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "12.4.3-03526",
-      "12.5.0-02952"
-    ],
-    "patch_url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016"
-  },
-  {
-    "id": "CVE-2026-85046",
-    "title": "Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote…",
-    "score": 10,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 8.8,
-      "decay": -48.9
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-18",
-    "kev_added_at": "2026-09-04",
-    "published_at": "2026-09-04T05:17:24.21+09:00",
-    "poc_count": 0,
-    "epss": 0.018,
-    "epss_percentile": 0.79,
-    "cvss": 8.8,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": "Chrome",
-    "product_family": "browser",
-    "attack_types": [
-      "memory"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "152.0.7977.82"
-    ],
-    "patch_url": "https://github.com/v8/v8/commit/e0562d87ad9c17042b581582c99237d798572e67"
   }
 ]
