@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 145,
-      "count_30d": 863,
+      "count_7d": 155,
+      "count_30d": 873,
       "kev_count": 327,
       "top": [
         {
@@ -785,8 +785,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 216,
-      "count_30d": 1264,
+      "count_7d": 227,
+      "count_30d": 1275,
       "kev_count": 308,
       "top": [
         {
@@ -1549,8 +1549,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 367,
-      "count_30d": 1437,
+      "count_7d": 372,
+      "count_30d": 1442,
       "kev_count": 32,
       "top": [
         {
@@ -1616,6 +1616,41 @@
           "product_family": null,
           "attack_types": [
             "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-22308",
+          "title": "The preview mode of the OPC (OnPage Composer) page\nbuilder of JTL-Shop is…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T03:18:13.79+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss",
+            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -1779,6 +1814,40 @@
           "poc_count": 0,
           "epss": 0.0036,
           "epss_percentile": 0.30,
+          "cvss": 9.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-130158",
+          "title": "RepoManager is a self-hosted deb/rpm package repository",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:25.68+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -2164,82 +2233,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120697",
-          "title": "Wiki.js is an open source wiki app built on Node.js",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-17T07:18:14.567+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-21603",
-          "title": "This High severity Stored XSS vulnerability was introduced in version 10.3.26…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T03:17:57.467+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 8.4,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 967,
-      "count_30d": 3932,
+      "count_7d": 1071,
+      "count_30d": 4036,
       "kev_count": 266,
       "top": [
         {
@@ -2965,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 170,
-      "count_30d": 695,
+      "count_7d": 183,
+      "count_30d": 708,
       "kev_count": 27,
       "top": [
         {
@@ -3104,6 +3105,111 @@
           "product_family": null,
           "attack_types": [
             "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-86094",
+          "title": "WatchGuard Dimension records unredacted session identifiers for logged-in users…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:35.42+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-84322",
+          "title": "WatchGuard Dimension returns unredacted session identifiers for logged-in users…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:35.287+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-114881",
+          "title": "Vulnerability in the Document Management and Collaboration product of Oracle…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:17.107+09:00",
+          "poc_count": 0,
+          "epss": 0.0041,
+          "epss_percentile": 0.36,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info",
+            "dos"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -3309,6 +3415,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-91548",
+          "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:23.963+09:00",
+          "poc_count": 0,
+          "epss": 0.0034,
+          "epss_percentile": 0.27,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "info"
           ],
           "summary_what": null,
@@ -3523,151 +3663,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-128064",
-          "title": "Mixed-case HTTPS and FTPS URLs can expose data in plaintext",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T00:17:27.12+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124600",
-          "title": "GV-Face transmits sensitive user credentials and\nrelated authentication data…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -1.9
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T10:17:18.467+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.09,
-          "cvss": 10.0,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-80322",
-          "title": "Under specific conditions, PingAuthorize in Gateway mode can continue an…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T03:17:58.95+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.26,
-          "cvss": 8.3,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info",
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130796",
-          "title": "Flowise 3.1.3 through 3.1.4 contains an information disclosure vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T05:17:45.61+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.24,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 327,
-      "count_30d": 2829,
+      "count_7d": 328,
+      "count_30d": 2830,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4424,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 167,
-      "count_30d": 980,
+      "count_7d": 198,
+      "count_30d": 1011,
       "kev_count": 14,
       "top": [
         {
@@ -4490,6 +4493,41 @@
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-114881",
+          "title": "Vulnerability in the Document Management and Collaboration product of Oracle…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:17.107+09:00",
+          "poc_count": 0,
+          "epss": 0.0041,
+          "epss_percentile": 0.36,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info",
             "dos"
           ],
           "summary_what": null,
@@ -4633,6 +4671,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-127370",
+          "title": "Vulnerability in the Oracle Hyperion Financial Close Management product of…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:01.747+09:00",
+          "poc_count": 0,
+          "epss": 0.0036,
+          "epss_percentile": 0.30,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-124539",
           "title": "JSON::XS versions before 4.05 for Perl leak the decoded key of an object…",
           "score": 8,
@@ -4657,6 +4729,40 @@
           "cvss": 9.1,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-127357",
+          "title": "Vulnerability in the Oracle Hyperion Financial Close Management product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:00.183+09:00",
+          "poc_count": 0,
+          "epss": 0.0028,
+          "epss_percentile": 0.21,
+          "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -4702,6 +4808,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-115166",
+          "title": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:50.547+09:00",
+          "poc_count": 0,
+          "epss": 0.0034,
+          "epss_percentile": 0.27,
+          "cvss": 8.2,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info",
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125162",
           "title": "The cHash argument, which ensures that only URL arguments originally generated…",
           "score": 8,
@@ -4725,6 +4866,176 @@
           "epss_percentile": 0.39,
           "cvss": 8.2,
           "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-127416",
+          "title": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:07.117+09:00",
+          "poc_count": 0,
+          "epss": 0.0032,
+          "epss_percentile": 0.25,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-115150",
+          "title": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:48.68+09:00",
+          "poc_count": 0,
+          "epss": 0.0032,
+          "epss_percentile": 0.25,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-114813",
+          "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:09.28+09:00",
+          "poc_count": 0,
+          "epss": 0.0032,
+          "epss_percentile": 0.25,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-127415",
+          "title": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:07.003+09:00",
+          "poc_count": 0,
+          "epss": 0.0028,
+          "epss_percentile": 0.20,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-115081",
+          "title": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.2
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:40.82+09:00",
+          "poc_count": 0,
+          "epss": 0.0028,
+          "epss_percentile": 0.20,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -4802,320 +5113,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-128132",
-          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T06:17:45.6+09:00",
-          "poc_count": 0,
-          "epss": 0.0044,
-          "epss_percentile": 0.39,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-104204",
-          "title": "BACnet Stack is a BACnet open source protocol stack C library for embedded…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T04:17:37.973+09:00",
-          "poc_count": 0,
-          "epss": 0.0050,
-          "epss_percentile": 0.43,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-62974",
-          "title": "BACnet Stack is a BACnet open source protocol stack C library for embedded…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T01:19:29.11+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.20,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118899",
-          "title": "When using the listen directive with the ssl parameter in the http block with…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T01:18:00.357+09:00",
-          "poc_count": 0,
-          "epss": 0.0093,
-          "epss_percentile": 0.61,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-76088",
-          "title": "PGPainless is a simple-to-use OpenPGP API based on Bouncy Castle",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T06:18:02.723+09:00",
-          "poc_count": 0,
-          "epss": 0.0072,
-          "epss_percentile": 0.54,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-59975",
-          "title": "SharpIppNext is a .NET Standard library for building Internet Printing Protocol…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T06:18:00.5+09:00",
-          "poc_count": 0,
-          "epss": 0.0062,
-          "epss_percentile": 0.50,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-128066",
-          "title": "Pillow is a Python imaging library",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T09:20:14.457+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.32,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-132140",
-          "title": "A security vulnerability has been detected in DrayTek Vigor2960 up to 1.5.1.6",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T06:17:56.683+09:00",
-          "poc_count": 0,
-          "epss": 0.0061,
-          "epss_percentile": 0.49,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-76414",
-          "title": "A vulnerability in Microsoft Compiled HTML Help (CHM) file scanning of ClamAV…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T02:17:49.727+09:00",
-          "poc_count": 0,
-          "epss": 0.0059,
-          "epss_percentile": 0.48,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 173,
-      "count_30d": 835,
+      "count_7d": 182,
+      "count_30d": 844,
       "kev_count": 162,
       "top": [
         {
@@ -5844,8 +5849,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 86,
-      "count_30d": 543,
+      "count_7d": 103,
+      "count_30d": 560,
       "kev_count": 32,
       "top": [
         {
@@ -6068,6 +6073,42 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-86130",
+          "title": "A missing authentication vulnerability in WatchGuard Dimension's log collection…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:35.673+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "auth",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-130583",
           "title": "Rootways Authorize.net CIM Pro extension for Magento 2 before 4.1.5 contains an…",
           "score": 9,
@@ -6208,6 +6249,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-129419",
+          "title": "Joomla Extension - akeeba.com - Account takeover through missing OAuth state…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:25.013+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-75795",
           "title": "The Edwiser Bridge  WordPress plugin before 4.3.5 does not correctly scope one…",
           "score": 9,
@@ -6268,6 +6344,40 @@
           "severity": "HIGH",
           "primary_product": null,
           "product_family": "web_cms",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-86126",
+          "title": "A Cross-Site Request Forgery (CSRF) vulnerability in WatchGuard Dimension's…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:35.547+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
           "attack_types": [
             "request_forgery"
           ],
@@ -6444,119 +6554,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114160",
-          "title": "No cwe for this issue in Azure Managed Grafana allows an unauthorized attacker…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.7
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T04:19:09.527+09:00",
-          "poc_count": 0,
-          "epss": 0.0092,
-          "epss_percentile": 0.61,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2018-25442",
-          "title": "Baidu UEditor 1.4.0 before 1.4.3.1 contains a server-side request forgery…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T01:17:48.317+09:00",
-          "poc_count": 0,
-          "epss": 0.0025,
-          "epss_percentile": 0.16,
-          "cvss": 8.3,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-59988",
-          "title": "django-docutils provides reStructuredText support for Django",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T02:18:58.55+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss",
-            "info",
-            "path",
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 409,
-      "count_30d": 2248,
+      "count_7d": 418,
+      "count_30d": 2257,
       "kev_count": 233,
       "top": [
         {
@@ -8430,14 +8435,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130994",
@@ -8536,14 +8543,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130996",
@@ -8606,14 +8615,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-131043",
@@ -8780,14 +8791,16 @@
           "cvss": 9.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         }
       ]
     },
@@ -12505,8 +12518,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 10,
-      "count_30d": 144,
+      "count_7d": 17,
+      "count_30d": 151,
       "kev_count": 138,
       "top": [
         {
@@ -12581,6 +12594,74 @@
             "9.4.0.029"
           ],
           "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+        },
+        {
+          "id": "CVE-2026-126088",
+          "title": "In Autonomy Logic OpenPLC Runtime versions 4.2.4 and prior, a race condition…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T04:17:18.967+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-117659",
+          "title": "The InfoScan Electron desktop client improperly handles TLS certificate errors…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T03:18:03.313+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-82391",
@@ -13126,74 +13207,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-20565",
-          "title": "In Modem, there is a possible out of bounds write due to an incorrect bounds…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -2.7
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-02T12:17:33.83+09:00",
-          "poc_count": 0,
-          "epss": 0.0013,
-          "epss_percentile": 0.02,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "MT2716 Firmware",
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://www.mediatek.com/product-security-bulletin/November-2026"
-        },
-        {
-          "id": "CVE-2026-20558",
-          "title": "In GPU pdma, there is a possible escalation of privilege due to use after free",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -2.7
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-02T12:17:32.947+09:00",
-          "poc_count": 0,
-          "epss": 0.0015,
-          "epss_percentile": 0.03,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "MT8910 Firmware",
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://www.mediatek.com/product-security-bulletin/November-2026"
         }
       ]
     },
