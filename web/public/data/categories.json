@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 152,
-      "count_30d": 879,
+      "count_7d": 157,
+      "count_30d": 884,
       "kev_count": 327,
       "top": [
         {
@@ -784,8 +784,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 228,
-      "count_30d": 1268,
+      "count_7d": 239,
+      "count_30d": 1279,
       "kev_count": 308,
       "top": [
         {
@@ -1545,8 +1545,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 320,
-      "count_30d": 1361,
+      "count_7d": 322,
+      "count_30d": 1363,
       "kev_count": 32,
       "top": [
         {
@@ -2234,8 +2234,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1009,
-      "count_30d": 4779,
+      "count_7d": 1031,
+      "count_30d": 4801,
       "kev_count": 266,
       "top": [
         {
@@ -2961,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 177,
-      "count_30d": 953,
+      "count_7d": 190,
+      "count_30d": 966,
       "kev_count": 27,
       "top": [
         {
@@ -3230,6 +3230,40 @@
           "epss": null,
           "epss_percentile": null,
           "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-91587",
+          "title": "Vulnerability in the Oracle WebCenter Portal product of Oracle Fusion…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:19:26.013+09:00",
+          "poc_count": 0,
+          "epss": 0.0042,
+          "epss_percentile": 0.36,
+          "cvss": 8.6,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -3624,48 +3658,14 @@
             "16.1.4"
           ],
           "patch_url": "https://github.com/OpenIdentityPlatform/OpenAM/security/advisories/GHSA-5c3q-hp86-xjr8"
-        },
-        {
-          "id": "CVE-2026-129690",
-          "title": "The\nvulnerability enables any attacker with admin access to dump credentials of…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-16T23:17:07.197+09:00",
-          "poc_count": 0,
-          "epss": 0.0024,
-          "epss_percentile": 0.15,
-          "cvss": 8.2,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 377,
-      "count_30d": 2944,
+      "count_7d": 393,
+      "count_30d": 2960,
       "kev_count": 463,
       "top": [
         {
@@ -4431,8 +4431,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 197,
-      "count_30d": 1089,
+      "count_7d": 208,
+      "count_30d": 1100,
       "kev_count": 14,
       "top": [
         {
@@ -5124,8 +5124,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 196,
-      "count_30d": 859,
+      "count_7d": 199,
+      "count_30d": 862,
       "kev_count": 162,
       "top": [
         {
@@ -6558,8 +6558,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 449,
-      "count_30d": 2401,
+      "count_7d": 454,
+      "count_30d": 2406,
       "kev_count": 233,
       "top": [
         {
@@ -9632,8 +9632,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 344,
-      "count_30d": 2021,
+      "count_7d": 345,
+      "count_30d": 2022,
       "kev_count": 24,
       "top": [
         {
