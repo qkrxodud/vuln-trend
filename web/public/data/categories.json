@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 159,
-      "count_30d": 886,
+      "count_7d": 160,
+      "count_30d": 887,
       "kev_count": 327,
       "top": [
         {
@@ -784,8 +784,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 245,
-      "count_30d": 1285,
+      "count_7d": 246,
+      "count_30d": 1286,
       "kev_count": 308,
       "top": [
         {
@@ -1545,8 +1545,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 324,
-      "count_30d": 1365,
+      "count_7d": 327,
+      "count_30d": 1368,
       "kev_count": 32,
       "top": [
         {
@@ -2234,8 +2234,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1035,
-      "count_30d": 4805,
+      "count_7d": 1038,
+      "count_30d": 4808,
       "kev_count": 266,
       "top": [
         {
@@ -2961,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 191,
-      "count_30d": 967,
+      "count_7d": 192,
+      "count_30d": 968,
       "kev_count": 27,
       "top": [
         {
@@ -6557,8 +6557,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 457,
-      "count_30d": 2409,
+      "count_7d": 458,
+      "count_30d": 2410,
       "kev_count": 233,
       "top": [
         {
@@ -7338,8 +7338,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 32,
-      "count_30d": 708,
+      "count_7d": 33,
+      "count_30d": 709,
       "kev_count": 286,
       "top": [
         {
@@ -9631,8 +9631,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 350,
-      "count_30d": 2027,
+      "count_7d": 356,
+      "count_30d": 2033,
       "kev_count": 24,
       "top": [
         {
@@ -9897,6 +9897,41 @@
             "2.4.4"
           ],
           "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+        },
+        {
+          "id": "CVE-2026-129048",
+          "title": "Improper Control of Generation of Code ('Code Injection') vulnerability in…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T17:17:11.65+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-128851",
@@ -10336,40 +10371,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-126173",
-          "title": "The AutomatorWP Pro plugin for WordPress' webhook addon is vulnerable to…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T14:18:37.75+09:00",
-          "poc_count": 0,
-          "epss": 0.0054,
-          "epss_percentile": 0.45,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
