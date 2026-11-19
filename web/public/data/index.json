@@ -59,7 +59,7 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": "Research Electronic Data Capture (REDCap)",
+    "primary_product": "Redcap",
     "product_family": null,
     "attack_types": [
       "rce",
@@ -67,7 +67,11 @@
       "path"
     ],
     "summary_what": "인증되지 않은 공격자가 공개 설문 경로와 가져오기 처리 과정의 취약점을 악용해 REDCap 서버에서 임의 코드를 원격 실행할 수 있습니다.",
-    "fix_versions": [],
+    "fix_versions": [
+      "16.0.49",
+      "17.3.10",
+      "17.4.4"
+    ],
     "patch_url": null
   },
   {
@@ -136,7 +140,7 @@
     ],
     "summary_what": "인증되지 않은 원격 공격자가 SOAP 결함 역직렬화를 악용해 클래스 초기화 또는 인스턴스 생성을 유발하고, 조건에 따라 원격 코드 실행을 할 수 있습니다.",
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd"
   },
   {
     "id": "CVE-2026-115731",
