@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 158,
-      "count_30d": 885,
+      "count_7d": 159,
+      "count_30d": 886,
       "kev_count": 327,
       "top": [
         {
@@ -1545,8 +1545,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 323,
-      "count_30d": 1364,
+      "count_7d": 324,
+      "count_30d": 1365,
       "kev_count": 32,
       "top": [
         {
@@ -2026,6 +2026,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-19609",
+          "title": "Cross-site scripting in the embedded co-browsing feature in Unblu inc",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T16:17:12.243+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-120697",
           "title": "Wiki.js is an open source wiki app built on Node.js",
           "score": 9,
@@ -2194,48 +2228,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-30502",
-          "title": "A Cross-Site Scripting (XSS) vulnerability in OpenKM v6.3.12 allows attackers…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T01:18:15.847+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1034,
-      "count_30d": 4804,
+      "count_7d": 1035,
+      "count_30d": 4805,
       "kev_count": 266,
       "top": [
         {
@@ -2961,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 190,
-      "count_30d": 966,
+      "count_7d": 191,
+      "count_30d": 967,
       "kev_count": 27,
       "top": [
         {
@@ -3311,6 +3311,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-110462",
+          "title": "The Comelit 1456B Multi-User Gateway, in firmware versions up to and including…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T16:17:09.183+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-126550",
           "title": "Insertion of Sensitive Information into Log File, Insufficiently Protected…",
           "score": 9,
@@ -3622,50 +3657,14 @@
             "10.0.5"
           ],
           "patch_url": "https://community.progress.com/s/article/WS-FTP-Server-Service-Pack-November-2026"
-        },
-        {
-          "id": "CVE-2026-123551",
-          "title": "OpenAM from 14.0.0 before 16.1.4 contains an information disclosure…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -2.1
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-08T11:16:46.603+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Openam",
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "16.1.4"
-          ],
-          "patch_url": "https://github.com/OpenIdentityPlatform/OpenAM/security/advisories/GHSA-5c3q-hp86-xjr8"
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 394,
-      "count_30d": 2961,
+      "count_7d": 395,
+      "count_30d": 2962,
       "kev_count": 463,
       "top": [
         {
@@ -4431,8 +4430,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 208,
-      "count_30d": 1100,
+      "count_7d": 209,
+      "count_30d": 1101,
       "kev_count": 14,
       "top": [
         {
@@ -6558,8 +6557,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 456,
-      "count_30d": 2408,
+      "count_7d": 457,
+      "count_30d": 2409,
       "kev_count": 233,
       "top": [
         {
@@ -9632,8 +9631,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 346,
-      "count_30d": 2023,
+      "count_7d": 350,
+      "count_30d": 2027,
       "kev_count": 24,
       "top": [
         {
