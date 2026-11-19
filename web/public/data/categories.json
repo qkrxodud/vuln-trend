@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 139,
-      "count_30d": 857,
+      "count_7d": 145,
+      "count_30d": 863,
       "kev_count": 327,
       "top": [
         {
@@ -39,7 +39,9 @@
             "injection"
           ],
           "summary_what": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
+          "fix_versions": [
+            "1.83.10"
+          ],
           "patch_url": "https://www.x41-dsec.de/lab/advisories/x41-2026-001-litellm/"
         },
         {
@@ -783,8 +785,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 203,
-      "count_30d": 1251,
+      "count_7d": 216,
+      "count_30d": 1264,
       "kev_count": 308,
       "top": [
         {
@@ -819,7 +821,9 @@
             "injection"
           ],
           "summary_what": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
+          "fix_versions": [
+            "1.83.10"
+          ],
           "patch_url": "https://www.x41-dsec.de/lab/advisories/x41-2026-001-litellm/"
         },
         {
@@ -1545,8 +1549,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 357,
-      "count_30d": 1427,
+      "count_7d": 367,
+      "count_30d": 1437,
       "kev_count": 32,
       "top": [
         {
@@ -1606,6 +1610,40 @@
           "epss": 0.0039,
           "epss_percentile": 0.33,
           "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-22309",
+          "title": "The visitor tracking of JTL-Shop automatically\nregisters unknown crawler user…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T02:18:55.273+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -2194,48 +2232,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-131800",
-          "title": "A stored cross-site scripting vulnerability was identified in GitHub Enterprise…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T12:17:41.45+09:00",
-          "poc_count": 0,
-          "epss": 0.0036,
-          "epss_percentile": 0.30,
-          "cvss": 8.3,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 921,
-      "count_30d": 3886,
+      "count_7d": 967,
+      "count_30d": 3932,
       "kev_count": 266,
       "top": [
         {
@@ -2961,8 +2965,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 167,
-      "count_30d": 692,
+      "count_7d": 170,
+      "count_30d": 695,
       "kev_count": 27,
       "top": [
         {
@@ -3484,6 +3488,43 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-59988",
+          "title": "django-docutils provides reStructuredText support for Django",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T02:18:58.55+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.2,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss",
+            "info",
+            "path",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-128064",
           "title": "Mixed-case HTTPS and FTPS URLs can expose data in plaintext",
           "score": 8,
@@ -3619,49 +3660,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-127046",
-          "title": "The MISP Modules website component contains an information disclosure…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.2,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T21:18:23.13+09:00",
-          "poc_count": 0,
-          "epss": 0.0047,
-          "epss_percentile": 0.41,
-          "cvss": 9.2,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 311,
-      "count_30d": 2813,
+      "count_7d": 327,
+      "count_30d": 2829,
       "kev_count": 463,
       "top": [
         {
@@ -4415,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 158,
-      "count_30d": 971,
+      "count_7d": 167,
+      "count_30d": 980,
       "kev_count": 14,
       "top": [
         {
@@ -4798,40 +4804,6 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-128126",
-          "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T06:17:44.31+09:00",
-          "poc_count": 0,
-          "epss": 0.0052,
-          "epss_percentile": 0.44,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
           "id": "CVE-2026-128132",
           "title": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python",
           "score": 8,
@@ -5102,14 +5074,48 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
+        },
+        {
+          "id": "CVE-2026-76414",
+          "title": "A vulnerability in Microsoft Compiled HTML Help (CHM) file scanning of ClamAV…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T02:17:49.727+09:00",
+          "poc_count": 0,
+          "epss": 0.0059,
+          "epss_percentile": 0.48,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 166,
-      "count_30d": 828,
+      "count_7d": 173,
+      "count_30d": 835,
       "kev_count": 162,
       "top": [
         {
@@ -5838,8 +5844,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 79,
-      "count_30d": 536,
+      "count_7d": 86,
+      "count_30d": 543,
       "kev_count": 32,
       "top": [
         {
@@ -6508,8 +6514,8 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-133095",
-          "title": "In JetBrains TeamCity before 2026.2.2, 2026.1.6 a CSRF attack was possible on…",
+          "id": "CVE-2026-59988",
+          "title": "django-docutils provides reStructuredText support for Django",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
@@ -6517,24 +6523,27 @@
             "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.1,
+            "cvss": 8.2,
             "decay": 0.0
           },
-          "why_now": "CVSS 8.1, 최근 공개",
+          "why_now": "CVSS 8.2, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-19T22:17:30.863+09:00",
+          "published_at": "2026-11-20T02:18:58.55+09:00",
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
-          "cvss": 8.1,
+          "cvss": 8.2,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "xss",
+            "info",
+            "path",
             "request_forgery"
           ],
           "summary_what": null,
@@ -6546,8 +6555,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 388,
-      "count_30d": 2227,
+      "count_7d": 409,
+      "count_30d": 2248,
       "kev_count": 233,
       "top": [
         {
@@ -7328,7 +7337,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 278,
-      "count_30d": 927,
+      "count_30d": 992,
       "kev_count": 286,
       "top": [
         {
@@ -8631,14 +8640,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "memory"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-130968",
@@ -11060,7 +11071,9 @@
             "injection"
           ],
           "summary_what": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
+          "fix_versions": [
+            "1.83.10"
+          ],
           "patch_url": "https://www.x41-dsec.de/lab/advisories/x41-2026-001-litellm/"
         },
         {

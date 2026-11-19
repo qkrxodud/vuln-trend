@@ -31,7 +31,9 @@
       "injection"
     ],
     "summary_what": "원문에 따르면 LiteLLM의 특정 URI에서 바이트코드 재작성으로 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-    "fix_versions": [],
+    "fix_versions": [
+      "1.83.10"
+    ],
     "patch_url": "https://www.x41-dsec.de/lab/advisories/x41-2026-001-litellm/"
   },
   {
