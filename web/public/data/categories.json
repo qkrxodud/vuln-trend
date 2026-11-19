@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 157,
-      "count_30d": 884,
+      "count_7d": 158,
+      "count_30d": 885,
       "kev_count": 327,
       "top": [
         {
@@ -784,8 +784,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 239,
-      "count_30d": 1279,
+      "count_7d": 245,
+      "count_30d": 1285,
       "kev_count": 308,
       "top": [
         {
@@ -1545,8 +1545,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 322,
-      "count_30d": 1363,
+      "count_7d": 323,
+      "count_30d": 1364,
       "kev_count": 32,
       "top": [
         {
@@ -2234,8 +2234,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1031,
-      "count_30d": 4801,
+      "count_7d": 1034,
+      "count_30d": 4804,
       "kev_count": 266,
       "top": [
         {
@@ -3664,8 +3664,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 393,
-      "count_30d": 2960,
+      "count_7d": 394,
+      "count_30d": 2961,
       "kev_count": 463,
       "top": [
         {
@@ -5124,8 +5124,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 199,
-      "count_30d": 862,
+      "count_7d": 202,
+      "count_30d": 865,
       "kev_count": 162,
       "top": [
         {
@@ -5538,6 +5538,40 @@
           "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
         },
         {
+          "id": "CVE-2026-132802",
+          "title": "A malicious actor with access to the network and low privileges could exploit…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T14:18:38.507+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-130780",
           "title": "Incus before 7.6.0 contains a path traversal vulnerability that allows…",
           "score": 10,
@@ -5810,48 +5844,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2021-48023",
-          "title": "Weaver E-cology 9.0 contains an unrestricted file upload vulnerability in…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T01:17:50.763+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 91,
-      "count_30d": 572,
+      "count_7d": 93,
+      "count_30d": 574,
       "kev_count": 32,
       "top": [
         {
@@ -6033,6 +6033,40 @@
           "attack_types": [
             "rce",
             "injection",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-132804",
+          "title": "A malicious actor with access to the network and low privileges could exploit a…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.9,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.9, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T14:18:38.833+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.9,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "request_forgery"
           ],
           "summary_what": null,
@@ -6418,6 +6452,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-132805",
+          "title": "A malicious actor with access to the network could exploit a Server-Side…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T14:18:39+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2018-25442",
           "title": "Baidu UEditor 1.4.0 before 1.4.3.1 contains a server-side request forgery…",
           "score": 8,
@@ -6484,82 +6552,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-131018",
-          "title": "Confused deputy in DevTools in Google Chrome prior to 158.0.8127.36 allowed a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:59.207+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.14,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "browser",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130964",
-          "title": "Confused deputy in DevTools in Google Chrome prior to 158.0.8127.36 allowed a…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:52.55+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.14,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "browser",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 454,
-      "count_30d": 2406,
+      "count_7d": 456,
+      "count_30d": 2408,
       "kev_count": 233,
       "top": [
         {
@@ -9632,8 +9632,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 345,
-      "count_30d": 2022,
+      "count_7d": 346,
+      "count_30d": 2023,
       "kev_count": 24,
       "top": [
         {
