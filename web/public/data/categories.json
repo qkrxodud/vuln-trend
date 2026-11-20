@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 160,
-      "count_30d": 872,
+      "count_7d": 164,
+      "count_30d": 876,
       "kev_count": 328,
       "top": [
         {
@@ -779,8 +779,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 262,
-      "count_30d": 1286,
+      "count_7d": 267,
+      "count_30d": 1291,
       "kev_count": 309,
       "top": [
         {
@@ -1539,8 +1539,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 391,
-      "count_30d": 1459,
+      "count_7d": 414,
+      "count_30d": 1482,
       "kev_count": 32,
       "top": [
         {
@@ -1668,6 +1668,75 @@
           "poc_count": 0,
           "epss": 0.0037,
           "epss_percentile": 0.31,
+          "cvss": 9.3,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-94567",
+          "title": "NukeViet CMS is a multi Content Management System",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:56.79+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss",
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-94565",
+          "title": "NukeViet CMS is a multi Content Management System",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:56.5+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.3,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -1919,6 +1988,74 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-54064",
+          "title": "NukeViet CMS is a multi Content Management System",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:52.283+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-49259",
+          "title": "NukeViet CMS is a multi Content Management System",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:52.127+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-129424",
           "title": "Joomla Extension - solidres.com - Unauthenticated stored XSS through guest…",
           "score": 9,
@@ -1976,6 +2113,40 @@
           "epss_percentile": 0.17,
           "cvss": 8.7,
           "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-131163",
+          "title": "A stored XSS in pretix-adyen has been discovered where an attacker could…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T21:18:21.923+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
           "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
@@ -2053,184 +2224,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123132",
-          "title": "The Otter Blocks  WordPress plugin before 3.2.10 does not use URL-aware…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T15:17:29.19+09:00",
-          "poc_count": 0,
-          "epss": 0.0028,
-          "epss_percentile": 0.20,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130648",
-          "title": "WWBN AVideo from 6.5 contains a stored cross-site scripting vulnerability that…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T21:17:05.91+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.31,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130716",
-          "title": "NocoDB before 2026.08.0 contains a stored cross-site scripting vulnerability…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T21:17:17.01+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.24,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-103931",
-          "title": "Instatic is an open source visual content management system for building static…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T07:18:05.17+09:00",
-          "poc_count": 0,
-          "epss": 0.0049,
-          "epss_percentile": 0.43,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-132913",
-          "title": "In JetBrains TeamCity before 2026.2, 2026.1.4, 2025.11.8 stored XSS on the P4…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T20:16:57.917+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.36,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1242,
-      "count_30d": 4150,
+      "count_7d": 1322,
+      "count_30d": 4230,
       "kev_count": 268,
       "top": [
         {
@@ -2952,8 +2953,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 244,
-      "count_30d": 767,
+      "count_7d": 254,
+      "count_30d": 777,
       "kev_count": 27,
       "top": [
         {
@@ -3196,6 +3197,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-95517",
+          "title": "Reliance on obfuscation or encryption of Security-Relevant inputs without…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T07:19:56.293+09:00",
+          "poc_count": 0,
+          "epss": 0.0006,
+          "epss_percentile": 0.00,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "info"
           ],
           "summary_what": null,
@@ -3612,51 +3647,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-59988",
-          "title": "django-docutils provides reStructuredText support for Django",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.2,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T02:18:58.55+09:00",
-          "poc_count": 0,
-          "epss": 0.0044,
-          "epss_percentile": 0.39,
-          "cvss": 8.2,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss",
-            "info",
-            "path",
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 336,
-      "count_30d": 2835,
+      "count_7d": 351,
+      "count_30d": 2850,
       "kev_count": 463,
       "top": [
         {
@@ -4408,8 +4406,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 230,
-      "count_30d": 1022,
+      "count_7d": 234,
+      "count_30d": 1026,
       "kev_count": 14,
       "top": [
         {
@@ -4448,40 +4446,6 @@
             "13.2"
           ],
           "patch_url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10718"
-        },
-        {
-          "id": "CVE-2026-107494",
-          "title": "The QUIC stack queues a RETIRE_CONNECTION_ID frame also for retransmitted…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T21:17:01.347+09:00",
-          "poc_count": 0,
-          "epss": 0.0029,
-          "epss_percentile": 0.22,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         },
         {
           "id": "CVE-2025-62165",
@@ -5098,14 +5062,48 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
+        },
+        {
+          "id": "CVE-2026-114813",
+          "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": -0.4
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-18T07:18:09.28+09:00",
+          "poc_count": 0,
+          "epss": 0.0032,
+          "epss_percentile": 0.25,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 193,
-      "count_30d": 832,
+      "count_7d": 204,
+      "count_30d": 843,
       "kev_count": 162,
       "top": [
         {
@@ -5762,6 +5760,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-133968",
+          "title": "monailabel (aka MONAI Label) through 0.8.5 allows directory traversal, with…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:51.67+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2023-54422",
           "title": "iDocView before 13.10.1_20231115 contains an unrestricted file upload…",
           "score": 10,
@@ -5794,48 +5826,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130780",
-          "title": "Incus before 7.6.0 contains a path traversal vulnerability that allows…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T04:17:54.067+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.38,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 114,
-      "count_30d": 560,
+      "count_7d": 118,
+      "count_30d": 564,
       "kev_count": 32,
       "top": [
         {
@@ -6548,8 +6546,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 460,
-      "count_30d": 2255,
+      "count_7d": 473,
+      "count_30d": 2268,
       "kev_count": 233,
       "top": [
         {
@@ -7318,7 +7316,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 516,
-      "count_30d": 1236,
+      "count_30d": 1268,
       "kev_count": 286,
       "top": [
         {
@@ -7990,6 +7988,51 @@
           "patch_url": "http://rhn.redhat.com/errata/RHSA-2015-1482.html"
         },
         {
+          "id": "CVE-2026-88218",
+          "title": "Double free in Windows DNS allows an unauthorized attacker to execute code over…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.9
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:21:28.907+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.67,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Windows",
+          "product_family": "os",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "10.0.14393.9688",
+            "10.0.17763.9487",
+            "10.0.19044.7846",
+            "10.0.19045.7846",
+            "10.0.22631.7711",
+            "10.0.26100.9911",
+            "10.0.26200.9911",
+            "10.0.28000.3501",
+            "10.0.20348.5870",
+            "10.0.26100.33730"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-88218"
+        },
+        {
           "id": "CVE-2026-99309",
           "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: fix…",
           "score": 8,
@@ -8011,38 +8054,6 @@
           "poc_count": 0,
           "epss": 0.0033,
           "epss_percentile": 0.26,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "os",
-          "attack_types": [],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-99291",
-          "title": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: fix…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.7
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-16T19:17:01.393+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.24,
           "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
@@ -9541,8 +9552,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 379,
-      "count_30d": 1971,
+      "count_7d": 390,
+      "count_30d": 1982,
       "kev_count": 24,
       "top": [
         {
@@ -9864,6 +9875,40 @@
           "poc_count": 0,
           "epss": 0.0051,
           "epss_percentile": 0.44,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-121385",
+          "title": "The User Registration Aide WordPress plugin through 1.5.3.8 does not verify the…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T15:17:19.693+09:00",
+          "poc_count": 0,
+          "epss": 0.0018,
+          "epss_percentile": 0.07,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -10250,40 +10295,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125795",
-          "title": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-16T00:16:47.163+09:00",
-          "poc_count": 0,
-          "epss": 0.0044,
-          "epss_percentile": 0.39,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -10291,7 +10302,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 19,
+      "count_30d": 21,
       "kev_count": 166,
       "top": [
         {
@@ -12495,8 +12506,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 18,
-      "count_30d": 144,
+      "count_7d": 25,
+      "count_30d": 151,
       "kev_count": 138,
       "top": [
         {
@@ -12571,6 +12582,108 @@
             "9.4.0.029"
           ],
           "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+        },
+        {
+          "id": "CVE-2026-96805",
+          "title": "The affected products have an unauthenticated command injection, which may…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:58.183+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125273",
+          "title": "No replay or command-integrity protection",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:39.32+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-125132",
+          "title": "libumqtt is vulnerable to an integer underflow which may allow a remote…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T04:18:39.127+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-126088",
@@ -12665,6 +12778,40 @@
           "cvss": 9.1,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-95826",
+          "title": "The SMSC911x/LAN9220 Ethernet driver stages every outgoing frame in a…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T03:18:57.32+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
@@ -12879,6 +13026,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-95827",
+          "title": "The IPv6 neighbour discovery code in subsys/net/ip/ipv6_nbr.c keeps packets…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.5,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T03:18:57.47+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.5,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-95824",
           "title": "The IPv6 Neighbor Discovery code in subsys/net/ip/ipv6_nbr.c flushes a…",
           "score": 7,
@@ -13014,176 +13195,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-93668",
-          "title": "The Bluetooth Classic SDP server in subsys/bluetooth/host/classic/sdp.c…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-17T07:18:26.39+09:00",
-          "poc_count": 0,
-          "epss": 0.0014,
-          "epss_percentile": 0.03,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-85035",
-          "title": "The can_add_rx_filter_msgq() system call installs a CAN RX filter whose…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -2.8
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T23:17:39.29+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.13,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-90591",
-          "title": "The NXP ENET-QOS Ethernet driver's receive work handler eth_nxp_enet_qos_rx()…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -1.6
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T07:18:57.573+09:00",
-          "poc_count": 0,
-          "epss": 0.0028,
-          "epss_percentile": 0.20,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-87040",
-          "title": "The nRF link-layer receive paths of the open-source Bluetooth LE Controller did…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -2.6
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T15:17:06.773+09:00",
-          "poc_count": 0,
-          "epss": 0.0029,
-          "epss_percentile": 0.21,
-          "cvss": 8.3,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114595",
-          "title": "In EPICS Base release 7.0.10 and prior, an integer overflow in network request…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -4.1
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-10-28T02:16:58.53+09:00",
-          "poc_count": 0,
-          "epss": 0.0050,
-          "epss_percentile": 0.43,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -13191,7 +13202,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 289,
+      "count_30d": 290,
       "kev_count": 98,
       "top": [
         {
