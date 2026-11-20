@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 164,
-      "count_30d": 882,
+      "count_7d": 173,
+      "count_30d": 891,
       "kev_count": 327,
       "top": [
         {
@@ -785,8 +785,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 273,
-      "count_30d": 1321,
+      "count_7d": 287,
+      "count_30d": 1335,
       "kev_count": 308,
       "top": [
         {
@@ -1549,8 +1549,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 379,
-      "count_30d": 1449,
+      "count_7d": 411,
+      "count_30d": 1481,
       "kev_count": 32,
       "top": [
         {
@@ -2239,8 +2239,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1199,
-      "count_30d": 4164,
+      "count_7d": 1245,
+      "count_30d": 4210,
       "kev_count": 266,
       "top": [
         {
@@ -2966,8 +2966,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 235,
-      "count_30d": 760,
+      "count_7d": 241,
+      "count_30d": 766,
       "kev_count": 27,
       "top": [
         {
@@ -3666,8 +3666,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 336,
-      "count_30d": 2838,
+      "count_7d": 366,
+      "count_30d": 2868,
       "kev_count": 463,
       "top": [
         {
@@ -4423,8 +4423,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 217,
-      "count_30d": 1030,
+      "count_7d": 248,
+      "count_30d": 1061,
       "kev_count": 14,
       "top": [
         {
@@ -5118,8 +5118,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 195,
-      "count_30d": 857,
+      "count_7d": 204,
+      "count_30d": 866,
       "kev_count": 162,
       "top": [
         {
@@ -5846,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 111,
-      "count_30d": 568,
+      "count_7d": 115,
+      "count_30d": 572,
       "kev_count": 32,
       "top": [
         {
@@ -6557,8 +6557,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 470,
-      "count_30d": 2309,
+      "count_7d": 492,
+      "count_30d": 2331,
       "kev_count": 233,
       "top": [
         {
@@ -7338,8 +7338,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 278,
-      "count_30d": 993,
+      "count_7d": 517,
+      "count_30d": 1232,
       "kev_count": 286,
       "top": [
         {
@@ -9560,8 +9560,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 317,
-      "count_30d": 1974,
+      "count_7d": 396,
+      "count_30d": 2053,
       "kev_count": 24,
       "top": [
         {
@@ -9999,6 +9999,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-129056",
+          "title": "Incorrect Privilege Assignment vulnerability in Paul Ryan Authorizer authorizer…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-20T17:18:28.333+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-128851",
           "title": "The Probono Form Basic WordPress plugin before 1.3.3 does not validate the real…",
           "score": 10,
@@ -10266,40 +10300,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-19907",
-          "title": "The Shipo plugin for WordPress is vulnerable to Authentication Bypass in…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T22:17:23.137+09:00",
-          "poc_count": 0,
-          "epss": 0.0047,
-          "epss_percentile": 0.41,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
