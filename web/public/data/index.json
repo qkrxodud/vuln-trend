@@ -107,8 +107,10 @@
       "rce"
     ],
     "summary_what": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "6.1.5"
+    ],
+    "patch_url": "https://github.com/apache/roller/pull/171"
   },
   {
     "id": "CVE-2026-123890",
@@ -141,8 +143,11 @@
       "auth"
     ],
     "summary_what": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "9.0.2.0200",
+      "9.1.1.0200"
+    ],
+    "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
   },
   {
     "id": "CVE-2026-76466",
@@ -169,14 +174,16 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": "Expressway Series",
+    "primary_product": "Expressway",
     "product_family": null,
     "attack_types": [
       "auth"
     ],
     "summary_what": "지속 쿠키 사용과 클라이언트 인증서 검증 미흡으로 발생하는 취약점으로, 쿠키를 가진 원격 공격자가 운영체제에서 루트 권한으로 임의 명령을 실행할 수 있습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "x15.5.20"
+    ],
+    "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t"
   },
   {
     "id": "CVE-2024-10441",
@@ -278,7 +285,7 @@
     ],
     "summary_what": "인증되지 않은 공격자가 JNDI 조회에 사용할 환경 속성이나 URL을 주입해 의도하지 않은 JNDI 제공자에 접근하고 서버 정보를 노출하거나 수정할 수 있으며, 가용성 영향은 없습니다.",
     "fix_versions": [],
-    "patch_url": null
+    "patch_url": "https://url.sap/sapsecuritypatchday"
   },
   {
     "id": "CVE-2026-115731",

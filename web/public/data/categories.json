@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 164,
-      "count_30d": 876,
+      "count_7d": 168,
+      "count_30d": 880,
       "kev_count": 328,
       "top": [
         {
@@ -115,8 +115,10 @@
             "rce"
           ],
           "summary_what": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "6.1.5"
+          ],
+          "patch_url": "https://github.com/apache/roller/pull/171"
         },
         {
           "id": "CVE-2026-90436",
@@ -779,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 267,
-      "count_30d": 1291,
+      "count_7d": 274,
+      "count_30d": 1298,
       "kev_count": 309,
       "top": [
         {
@@ -892,7 +894,7 @@
           ],
           "summary_what": "인증되지 않은 공격자가 JNDI 조회에 사용할 환경 속성이나 URL을 주입해 의도하지 않은 JNDI 제공자에 접근하고 서버 정보를 노출하거나 수정할 수 있으며, 가용성 영향은 없습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://url.sap/sapsecuritypatchday"
         },
         {
           "id": "CVE-2026-115731",
@@ -1539,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 414,
-      "count_30d": 1482,
+      "count_7d": 416,
+      "count_30d": 1484,
       "kev_count": 32,
       "top": [
         {
@@ -2230,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1322,
-      "count_30d": 4230,
+      "count_7d": 1387,
+      "count_30d": 4295,
       "kev_count": 268,
       "top": [
         {
@@ -2265,8 +2267,11 @@
             "auth"
           ],
           "summary_what": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "9.0.2.0200",
+            "9.1.1.0200"
+          ],
+          "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
         },
         {
           "id": "CVE-2026-76466",
@@ -2293,14 +2298,16 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "Expressway Series",
+          "primary_product": "Expressway",
           "product_family": null,
           "attack_types": [
             "auth"
           ],
           "summary_what": "지속 쿠키 사용과 클라이언트 인증서 검증 미흡으로 발생하는 취약점으로, 쿠키를 가진 원격 공격자가 운영체제에서 루트 권한으로 임의 명령을 실행할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "x15.5.20"
+          ],
+          "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t"
         },
         {
           "id": "CVE-2026-116606",
@@ -2953,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 254,
-      "count_30d": 777,
+      "count_7d": 260,
+      "count_30d": 783,
       "kev_count": 27,
       "top": [
         {
@@ -3653,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 351,
-      "count_30d": 2850,
+      "count_7d": 367,
+      "count_30d": 2866,
       "kev_count": 463,
       "top": [
         {
@@ -4406,8 +4413,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 234,
-      "count_30d": 1026,
+      "count_7d": 236,
+      "count_30d": 1028,
       "kev_count": 14,
       "top": [
         {
@@ -5102,8 +5109,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 204,
-      "count_30d": 843,
+      "count_7d": 207,
+      "count_30d": 846,
       "kev_count": 162,
       "top": [
         {
@@ -5832,8 +5839,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 118,
-      "count_30d": 564,
+      "count_7d": 121,
+      "count_30d": 567,
       "kev_count": 32,
       "top": [
         {
@@ -6546,8 +6553,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 473,
-      "count_30d": 2268,
+      "count_7d": 475,
+      "count_30d": 2270,
       "kev_count": 233,
       "top": [
         {
@@ -10337,7 +10344,7 @@
           ],
           "summary_what": "인증되지 않은 공격자가 JNDI 조회에 사용할 환경 속성이나 URL을 주입해 의도하지 않은 JNDI 제공자에 접근하고 서버 정보를 노출하거나 수정할 수 있으며, 가용성 영향은 없습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://url.sap/sapsecuritypatchday"
         },
         {
           "id": "CVE-2026-123158",
@@ -11832,8 +11839,11 @@
             "auth"
           ],
           "summary_what": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "9.0.2.0200",
+            "9.1.1.0200"
+          ],
+          "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
         },
         {
           "id": "CVE-2026-41709",
