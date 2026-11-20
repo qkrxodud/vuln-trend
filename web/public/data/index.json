@@ -77,6 +77,108 @@
     "patch_url": null
   },
   {
+    "id": "CVE-2026-129448",
+    "title": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
+    "published_at": "2026-11-17T20:17:28.19+09:00",
+    "poc_count": 0,
+    "epss": 0.012,
+    "epss_percentile": 0.68,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Roller",
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-123890",
+    "title": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
+    "published_at": "2026-11-20T00:17:25.407+09:00",
+    "poc_count": 0,
+    "epss": 0.0084,
+    "epss_percentile": 0.58,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "VMware vCenter Server",
+    "product_family": "cloud",
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-76466",
+    "title": "지속 쿠키 사용과 클라이언트 인증서 검증 미흡으로 발생하는 취약점으로, 쿠키를 가진 원격 공격자가 운영체제에서 루트 권한으로 임의 명령을…",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
+    "published_at": "2026-10-22T02:19:06.813+09:00",
+    "poc_count": 0,
+    "epss": 0.0042,
+    "epss_percentile": 0.36,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Expressway Series",
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": "지속 쿠키 사용과 클라이언트 인증서 검증 미흡으로 발생하는 취약점으로, 쿠키를 가진 원격 공격자가 운영체제에서 루트 권한으로 임의 명령을 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2024-10441",
     "title": "시스템 플러그인 데몬의 출력 인코딩·이스케이프 처리 취약점으로 원격 공격자가 임의 코드를 실행할 수 있습니다",
     "score": 58,
@@ -143,6 +245,40 @@
     "summary_what": "인증되지 않은 원격 공격자가 SOAP 결함 역직렬화를 악용해 클래스 초기화 또는 인스턴스 생성을 유발하고, 조건에 따라 원격 코드 실행을 할 수 있습니다.",
     "fix_versions": [],
     "patch_url": "https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd"
+  },
+  {
+    "id": "CVE-2025-42884",
+    "title": "인증되지 않은 공격자가 JNDI 조회에 사용할 환경 속성이나 URL을 주입해 의도하지 않은 JNDI 제공자에 접근하고 서버 정보를 노출하거나…",
+    "score": 57,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.5,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
+    "published_at": "2025-11-11T10:15:36.893+09:00",
+    "poc_count": 0,
+    "epss": 0.0028,
+    "epss_percentile": 0.20,
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": "SAP NetWeaver",
+    "product_family": "server",
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": "인증되지 않은 공격자가 JNDI 조회에 사용할 환경 속성이나 URL을 주입해 의도하지 않은 JNDI 제공자에 접근하고 서버 정보를 노출하거나 수정할 수 있으며, 가용성 영향은 없습니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-115731",
@@ -3587,152 +3723,5 @@
       "2026.3"
     ],
     "patch_url": "https://me.n-able.com/s/security-advisory/aArVy0000002Ld3KAE/cve202686218-preauthentication-remote-code-execution"
-  },
-  {
-    "id": "CVE-2026-82078",
-    "title": "An unsafe dynamic class loading vulnerability exists in the database connection…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 18.3,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.1,
-      "decay": -65.5
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-14",
-    "kev_added_at": "2026-08-31",
-    "published_at": "2026-08-29T01:18:31.24+09:00",
-    "poc_count": 0,
-    "epss": 0.61,
-    "epss_percentile": 0.992,
-    "cvss": 9.1,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "PaperCut NG·MF",
-    "product_family": "server",
-    "attack_types": [
-      "rce"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "24.1.9",
-      "25.0.12",
-      "26.0.4"
-    ],
-    "patch_url": "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
-  },
-  {
-    "id": "CVE-2026-129474",
-    "title": "Use-after-free in magic method backtraces can lead to remote code execution",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 2.6,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.2,
-      "decay": -0.1
-    },
-    "why_now": "30일 내 악용 확률 상위 5%",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-11-20T00:17:28.11+09:00",
-    "poc_count": 0,
-    "epss": 0.087,
-    "epss_percentile": 0.95,
-    "cvss": 9.2,
-    "cvss_version": "4.0",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "memory"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
-  },
-  {
-    "id": "CVE-2021-23758",
-    "title": "All versions of package ajaxpro.2 are vulnerable to Deserialization of…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 24.8,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -73.0
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-09",
-    "kev_added_at": "2026-08-26",
-    "published_at": "2021-12-04T05:15:07.557+09:00",
-    "poc_count": 0,
-    "epss": 0.83,
-    "epss_percentile": 0.997,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "Ajax.NET Professional",
-    "product_family": "dev",
-    "attack_types": [
-      "rce"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "21.10.30.1"
-    ],
-    "patch_url": "https://github.com/michaelschwarz/Ajax.NET-Professional/commit/b0e63be5f0bb20dfce507cb8a1a9568f6e73de57"
-  },
-  {
-    "id": "CVE-2025-25249",
-    "title": "A heap-based buffer overflow vulnerability in Fortinet FortiOS 7.6.0 through…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 1.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.8,
-      "decay": -49.4
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-12",
-    "kev_added_at": "2026-09-09",
-    "published_at": "2026-01-14T02:15:56.91+09:00",
-    "poc_count": 0,
-    "epss": 0.037,
-    "epss_percentile": 0.90,
-    "cvss": 9.8,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "FortiOS",
-    "product_family": "network",
-    "attack_types": [
-      "memory"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "7.0.18",
-      "7.2.12",
-      "7.4.9",
-      "7.6.4"
-    ],
-    "patch_url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-084"
   }
 ]

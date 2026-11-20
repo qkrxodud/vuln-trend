@@ -1,5 +1,854 @@
 [
   {
+    "id": "CVE-2026-95824",
+    "title": "The IPv6 Neighbor Discovery code in subsys/net/ip/ipv6_nbr.c flushes a…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:28.167+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.5,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": "ics_iot",
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-82676",
+    "title": "The GiveWP – Donation Plugin and Fundraising Platform plugin for WordPress is…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:27.877+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": "web_cms",
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-82675",
+    "title": "The GiveWP – Donation Plugin and Fundraising Platform plugin for WordPress is…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:27.703+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": "web_cms",
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-79751",
+    "title": "SportEase is a web application for managing school sports events, class…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.6,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.6, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:27.397+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.6,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-77332",
+    "title": "memtomem-stm is a short-term memory proxy gateway with proactive memory…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:27.233+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.3,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-77331",
+    "title": "memtomem-stm is a short-term memory proxy gateway with proactive memory…",
+    "score": 2,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 2.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 2.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:27.08+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 2.0,
+    "cvss_version": "4.0",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-77329",
+    "title": "Tapo provides Rust and Python APIs and an MCP server for TP-Link Tapo smart…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:26.917+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.8,
+    "cvss_version": "4.0",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-23871",
+    "title": "Incomplete validation of external ad-reply URLs in WhatsApp for Android and…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 3.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 3.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:25.933+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 3.5,
+    "cvss_version": "3.1",
+    "severity": "LOW",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133879",
+    "title": "A flaw was found in KubeVirt/containerized-data-importer",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:25.317+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133878",
+    "title": "Mattermost versions 11.11.x <= 11.11.1, 11.7.x <= 11.7.14, 11.10.x <= 11.10.4…",
+    "score": 4,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:25.167+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133876",
+    "title": "Kartones flask-calendar before commit bfde72e contains a stored cross-site…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.997+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133875",
+    "title": "one-hub through 0.14.27 contains a server-side request forgery vulnerability in…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.0,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.0, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.82+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.0,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133874",
+    "title": "Iceburg CRM through 5.0.0 contains an incorrect authorization vulnerability in…",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.647+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.1,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133873",
+    "title": "Cloud Mail before 3.6.0 contains a stored cross-site scripting vulnerability in…",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.467+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.1,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133872",
+    "title": "LessPass self-hosted sync server backend before commit 9469b0c lacks rate…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.293+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.4,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133871",
+    "title": "Pydici through 2026.11.1 contains a stored cross-site scripting vulnerability…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.4,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.4, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:24.103+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.4,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-133199",
+    "title": "Incorrect privilege assignment in the user and group reconciliation logic in…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:17.783+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-132277",
+    "title": "Inscriptis is a Python library for converting HTML to text",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.3,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.3, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:12.893+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.3,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-132276",
+    "title": "wcmatch is a Python library for wildcard file-name matching",
+    "score": 6,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 5.9,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 5.9, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:12.723+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 5.9,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-132275",
+    "title": "svglib reads SVG files and converts them to other formats",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.5,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.5, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:12.567+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.5,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-122247",
+    "title": "Budibase is an open-source low-code platform",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.2,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 8.2, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:08.17+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 8.2,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "auth",
+      "dos"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-122244",
+    "title": "Budibase is an open-source low-code platform",
+    "score": 8,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 7.7,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 7.7, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:07.97+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 7.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "xss"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-115407",
+    "title": "In `github.com/eclipse-keypont/crypto11/v2` versions `<= 2.0.0-rc8` (and the…",
+    "score": 9,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.1,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 9.1, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T02:18:07.373+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 9.1,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-44908",
+    "title": "Improper following of a certificate’s chain of trust in the remote-attestation…",
+    "score": 5,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 4.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 4.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T01:18:04.707+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 4.8,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
+    "id": "CVE-2026-102769",
+    "title": "A SQL injection vulnerability when the recipient tapped on a specially crafted…",
+    "score": 7,
+    "score_breakdown": {
+      "kev": 0.0,
+      "ransomware": 0.0,
+      "epss": 0.0,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 6.8,
+      "decay": 0.0
+    },
+    "why_now": "CVSS 6.8, 최근 공개",
+    "is_kev": false,
+    "kev_ransomware": false,
+    "kev_due_date": null,
+    "kev_added_at": null,
+    "published_at": "2026-11-21T01:17:59.487+09:00",
+    "poc_count": 0,
+    "epss": null,
+    "epss_percentile": null,
+    "cvss": 6.8,
+    "cvss_version": "3.1",
+    "severity": "MEDIUM",
+    "primary_product": null,
+    "product_family": null,
+    "attack_types": [
+      "injection"
+    ],
+    "summary_what": null,
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-133855",
     "title": "flowintel contains an information disclosure vulnerability in its case history…",
     "score": 5,
@@ -18617,7 +19466,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "dos"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -19848,17 +20699,17 @@
   {
     "id": "CVE-2026-133325",
     "title": "Key exchange without entity authentication vulnerability in Apache Tomcat…",
-    "score": 0,
+    "score": 10,
     "score_breakdown": {
       "kev": 0.0,
       "ransomware": 0.0,
       "epss": 0.1,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 0.0,
+      "cvss": 9.8,
       "decay": 0.0
     },
-    "why_now": "CVSS 미평가, 최근 공개",
+    "why_now": "CVSS 9.8, 최근 공개",
     "is_kev": false,
     "kev_ransomware": false,
     "kev_due_date": null,
@@ -19867,9 +20718,9 @@
     "poc_count": 0,
     "epss": 0.0018,
     "epss_percentile": 0.07,
-    "cvss": null,
-    "cvss_version": null,
-    "severity": "UNRATED",
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
     "primary_product": null,
     "product_family": null,
     "attack_types": [
@@ -43807,22 +44658,22 @@
   },
   {
     "id": "CVE-2026-123890",
-    "title": "VMware vCenter contains an authentication bypass vulnerability in the VMware…",
-    "score": 10,
+    "title": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다",
+    "score": 60,
     "score_breakdown": {
-      "kev": 0.0,
+      "kev": 50.0,
       "ransomware": 0.0,
       "epss": 0.3,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.1
+      "decay": 0.0
     },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
     "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
     "published_at": "2026-11-20T00:17:25.407+09:00",
     "poc_count": 0,
     "epss": 0.0084,
@@ -43830,12 +44681,12 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
+    "primary_product": "VMware vCenter Server",
+    "product_family": "cloud",
     "attack_types": [
       "auth"
     ],
-    "summary_what": null,
+    "summary_what": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다.",
     "fix_versions": [],
     "patch_url": null
   },
@@ -88100,7 +88951,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88132,7 +88985,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88164,7 +89019,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88196,7 +89053,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88262,7 +89121,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88328,7 +89189,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88688,7 +89551,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88720,7 +89585,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88786,7 +89653,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88818,7 +89687,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88850,7 +89721,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88882,7 +89755,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88914,7 +89789,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88946,7 +89823,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -88978,7 +89857,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89010,7 +89891,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89042,7 +89925,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89074,7 +89959,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89140,7 +90027,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89172,7 +90061,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89204,7 +90095,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89236,7 +90129,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89268,7 +90163,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89300,7 +90197,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89332,7 +90231,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89364,7 +90265,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89498,7 +90401,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89530,7 +90435,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89664,7 +90571,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89696,7 +90605,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89728,7 +90639,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "info"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -89794,7 +90707,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -90166,7 +91081,9 @@
     "severity": "LOW",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "request_forgery"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -90198,7 +91115,9 @@
     "severity": "MEDIUM",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "auth"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -90230,7 +91149,9 @@
     "severity": "HIGH",
     "primary_product": null,
     "product_family": null,
-    "attack_types": [],
+    "attack_types": [
+      "other"
+    ],
     "summary_what": null,
     "fix_versions": [],
     "patch_url": null
@@ -105393,14 +106314,16 @@
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130982",
@@ -105931,14 +106854,16 @@
     "cvss": 9.6,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "memory"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130967",
@@ -105965,14 +106890,16 @@
     "cvss": 6.5,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130966",
@@ -106177,14 +107104,16 @@
     "cvss": 4.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130960",
@@ -106247,14 +107176,16 @@
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130958",
@@ -106389,14 +107320,16 @@
     "cvss": 5.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130954",
@@ -106603,14 +107536,16 @@
     "cvss": 5.4,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130948",
@@ -106673,14 +107608,16 @@
     "cvss": 4.3,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "memory"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130946",
@@ -106707,14 +107644,16 @@
     "cvss": 8.1,
     "cvss_version": "3.1",
     "severity": "HIGH",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130945",
@@ -106849,14 +107788,16 @@
     "cvss": 3.1,
     "cvss_version": "3.1",
     "severity": "LOW",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "info"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130941",
@@ -107207,14 +108148,16 @@
     "cvss": 4.2,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "other"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130931",
@@ -107241,14 +108184,16 @@
     "cvss": 4.2,
     "cvss_version": "3.1",
     "severity": "MEDIUM",
-    "primary_product": null,
+    "primary_product": "Chrome",
     "product_family": "browser",
     "attack_types": [
       "auth"
     ],
     "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "158.0.8127.36"
+    ],
+    "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
   },
   {
     "id": "CVE-2026-130930",
@@ -116138,22 +117083,22 @@
   },
   {
     "id": "CVE-2026-129448",
-    "title": "Deserialization of Untrusted Data in Apache Roller versions 4.0.0 through 6.1.4…",
-    "score": 10,
+    "title": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수…",
+    "score": 60,
     "score_breakdown": {
-      "kev": 0.0,
+      "kev": 50.0,
       "ransomware": 0.0,
       "epss": 0.4,
       "news": 0.0,
       "poc": 0.0,
       "cvss": 9.8,
-      "decay": -0.6
+      "decay": 0.0
     },
-    "why_now": "CVSS 9.8, 최근 공개",
-    "is_kev": false,
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
     "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
+    "kev_due_date": "2026-11-23",
+    "kev_added_at": "2026-11-20",
     "published_at": "2026-11-17T20:17:28.19+09:00",
     "poc_count": 0,
     "epss": 0.012,
@@ -116161,12 +117106,12 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": null,
+    "primary_product": "Roller",
     "product_family": null,
     "attack_types": [
       "rce"
     ],
-    "summary_what": null,
+    "summary_what": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수 있습니다.",
     "fix_versions": [],
     "patch_url": null
   },
