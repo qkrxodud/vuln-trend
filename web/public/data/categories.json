@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 168,
-      "count_30d": 880,
+      "count_7d": 172,
+      "count_30d": 884,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 274,
-      "count_30d": 1298,
+      "count_7d": 275,
+      "count_30d": 1299,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 416,
-      "count_30d": 1484,
+      "count_7d": 449,
+      "count_30d": 1517,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1387,
-      "count_30d": 4295,
+      "count_7d": 1392,
+      "count_30d": 4300,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 260,
-      "count_30d": 783,
+      "count_7d": 263,
+      "count_30d": 786,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 367,
-      "count_30d": 2866,
+      "count_7d": 368,
+      "count_30d": 2867,
       "kev_count": 463,
       "top": [
         {
@@ -4413,8 +4413,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 236,
-      "count_30d": 1028,
+      "count_7d": 241,
+      "count_30d": 1033,
       "kev_count": 14,
       "top": [
         {
@@ -5109,8 +5109,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 207,
-      "count_30d": 846,
+      "count_7d": 212,
+      "count_30d": 851,
       "kev_count": 162,
       "top": [
         {
@@ -5839,8 +5839,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 121,
-      "count_30d": 567,
+      "count_7d": 122,
+      "count_30d": 568,
       "kev_count": 32,
       "top": [
         {
@@ -6553,8 +6553,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 475,
-      "count_30d": 2270,
+      "count_7d": 478,
+      "count_30d": 2273,
       "kev_count": 233,
       "top": [
         {
@@ -9559,8 +9559,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 390,
-      "count_30d": 1982,
+      "count_7d": 466,
+      "count_30d": 2058,
       "kev_count": 24,
       "top": [
         {
@@ -9964,6 +9964,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-120539",
+          "title": "The Restrictions for BuddyPress plugin for WordPress is vulnerable to Remote…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-21T15:16:33.227+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-80188",
           "title": "The BuddyBoss Addons plugin for WordPress is vulnerable to Authentication…",
           "score": 10,
@@ -10264,40 +10299,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-120681",
-          "title": "The Mang Board plugin for WordPress is vulnerable to authorization bypass in…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T19:17:08.647+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
