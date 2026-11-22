@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 452,
-      "count_30d": 1511,
+      "count_7d": 466,
+      "count_30d": 1525,
       "kev_count": 32,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 266,
-      "count_30d": 775,
+      "count_7d": 267,
+      "count_30d": 776,
       "kev_count": 27,
       "top": [
         {
@@ -5115,8 +5115,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 211,
-      "count_30d": 831,
+      "count_7d": 213,
+      "count_30d": 833,
       "kev_count": 162,
       "top": [
         {
@@ -5845,8 +5845,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 127,
-      "count_30d": 557,
+      "count_7d": 128,
+      "count_30d": 558,
       "kev_count": 32,
       "top": [
         {
@@ -6058,6 +6058,40 @@
           "epss_percentile": 0.28,
           "cvss": 9.9,
           "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-134624",
+          "title": "N-able MailAssure (SpamExperts) before 20261121.1943 does not restrict the…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-23T04:16:32.163+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
@@ -6502,40 +6536,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-11T07:18:26.18+09:00",
-          "poc_count": 0,
-          "epss": 0.0089,
-          "epss_percentile": 0.60,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-121356",
-          "title": "Adobe Connect is affected by a Server-Side Request Forgery (SSRF) vulnerability…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -2.3
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:18:25.637+09:00",
           "poc_count": 0,
           "epss": 0.0089,
           "epss_percentile": 0.60,
@@ -9556,8 +9556,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 479,
-      "count_30d": 2047,
+      "count_7d": 496,
+      "count_30d": 2064,
       "kev_count": 24,
       "top": [
         {
