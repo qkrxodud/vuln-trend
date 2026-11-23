@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 164,
-      "count_30d": 823,
+      "count_7d": 168,
+      "count_30d": 827,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 282,
-      "count_30d": 1255,
+      "count_7d": 293,
+      "count_30d": 1266,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 436,
-      "count_30d": 1521,
+      "count_7d": 445,
+      "count_30d": 1530,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1339,
-      "count_30d": 4269,
+      "count_7d": 1367,
+      "count_30d": 4297,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 257,
-      "count_30d": 774,
+      "count_7d": 263,
+      "count_30d": 780,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 386,
-      "count_30d": 2879,
+      "count_7d": 398,
+      "count_30d": 2891,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 287,
-      "count_30d": 1036,
+      "count_7d": 299,
+      "count_30d": 1048,
       "kev_count": 14,
       "top": [
         {
@@ -4461,6 +4461,41 @@
             "13.2"
           ],
           "patch_url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10718"
+        },
+        {
+          "id": "CVE-2026-135249",
+          "title": "MISP accepted compressed HTTP request bodies (gzip, brotli, zstd) and…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T01:17:44.09+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-129797",
@@ -5075,48 +5110,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134299",
-          "title": "SurrealDB 3.0.4 before 4.0.0 does not apply operator-configured WebSocket…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.4,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-22T02:16:49.743+09:00",
-          "poc_count": 0,
-          "epss": 0.012,
-          "epss_percentile": 0.69,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 193,
-      "count_30d": 833,
+      "count_7d": 198,
+      "count_30d": 838,
       "kev_count": 162,
       "top": [
         {
@@ -5845,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 120,
-      "count_30d": 558,
+      "count_7d": 123,
+      "count_30d": 561,
       "kev_count": 32,
       "top": [
         {
@@ -6334,14 +6335,16 @@
           "cvss": 9.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "request_forgery"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.36"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
         },
         {
           "id": "CVE-2026-86126",
@@ -6556,8 +6559,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 436,
-      "count_30d": 2241,
+      "count_7d": 444,
+      "count_30d": 2249,
       "kev_count": 233,
       "top": [
         {
@@ -7331,7 +7334,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 493,
-      "count_30d": 1070,
+      "count_30d": 1097,
       "kev_count": 286,
       "top": [
         {
