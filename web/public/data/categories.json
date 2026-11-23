@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 168,
-      "count_30d": 827,
+      "count_7d": 175,
+      "count_30d": 834,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 293,
-      "count_30d": 1266,
+      "count_7d": 302,
+      "count_30d": 1275,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 445,
-      "count_30d": 1530,
+      "count_7d": 453,
+      "count_30d": 1538,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1367,
-      "count_30d": 4297,
+      "count_7d": 1383,
+      "count_30d": 4313,
       "kev_count": 268,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 398,
-      "count_30d": 2891,
+      "count_7d": 407,
+      "count_30d": 2895,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 299,
-      "count_30d": 1048,
+      "count_7d": 301,
+      "count_30d": 1050,
       "kev_count": 14,
       "top": [
         {
@@ -5116,8 +5116,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 198,
-      "count_30d": 838,
+      "count_7d": 200,
+      "count_30d": 840,
       "kev_count": 162,
       "top": [
         {
@@ -5846,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 123,
-      "count_30d": 561,
+      "count_7d": 124,
+      "count_30d": 562,
       "kev_count": 32,
       "top": [
         {
@@ -6559,8 +6559,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 444,
-      "count_30d": 2249,
+      "count_7d": 451,
+      "count_30d": 2256,
       "kev_count": 233,
       "top": [
         {
@@ -7334,7 +7334,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 493,
-      "count_30d": 1097,
+      "count_30d": 1101,
       "kev_count": 286,
       "top": [
         {
@@ -11032,8 +11032,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 1,
-      "count_30d": 49,
+      "count_7d": 7,
+      "count_30d": 55,
       "kev_count": 72,
       "top": [
         {
@@ -12512,8 +12512,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 17,
-      "count_30d": 134,
+      "count_7d": 27,
+      "count_30d": 144,
       "kev_count": 138,
       "top": [
         {
@@ -12692,6 +12692,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-100374",
+          "title": "The system call verification handlers for smbus_block_read() and…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T04:17:27.627+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-126088",
           "title": "In Autonomy Logic OpenPLC Runtime versions 4.2.4 and prior, a race condition…",
           "score": 8,
@@ -12852,6 +12886,108 @@
           "cvss": 7.5,
           "cvss_version": "3.1",
           "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-102954",
+          "title": "The STM32 SMBus driver (drivers/smbus/smbus_stm32.c) implements…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T04:17:28.707+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.8,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-102951",
+          "title": "The Intel SoC FPGA Agilex5 SoC's static MMU region table in…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T04:17:28.267+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.6,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-102949",
+          "title": "The Intel SEDI I2C controller driver (drivers/i2c/i2c_sedi.c, used on Intel ISH…",
+          "score": 6,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T04:17:27.963+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.4,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
           "primary_product": null,
           "product_family": "ics_iot",
           "attack_types": [
@@ -13064,142 +13200,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-63017",
-          "title": "Incorrect authorization in PowerSYSTEM Center allows a low-privileged…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.0,
-            "decay": -2.9
-          },
-          "why_now": "CVSS 9.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-06T10:17:50.297+09:00",
-          "poc_count": 0,
-          "epss": 0.0018,
-          "epss_percentile": 0.07,
-          "cvss": 9.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-90833",
-          "title": "The simulated EEPROM driver validated access ranges in eeprom_range_is_valid()…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.9
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:21:14.32+09:00",
-          "poc_count": 0,
-          "epss": 0.0015,
-          "epss_percentile": 0.04,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-124281",
-          "title": "The affected products use an unprotected firmware-update channel, which may…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.1,
-            "decay": -0.3
-          },
-          "why_now": "CVSS 6.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-21T04:18:38.197+09:00",
-          "poc_count": 0,
-          "epss": 0.0037,
-          "epss_percentile": 0.30,
-          "cvss": 6.1,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-90586",
-          "title": "The Xtensa MMU userspace port never initialized the per-thread page-table…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -2.0
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-10T07:18:56.813+09:00",
-          "poc_count": 0,
-          "epss": 0.0011,
-          "epss_percentile": 0.01,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -13207,7 +13207,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 290,
+      "count_30d": 291,
       "kev_count": 98,
       "top": [
         {
@@ -13489,6 +13489,40 @@
             "27.2"
           ],
           "patch_url": "https://support.apple.com/en-us/149227"
+        },
+        {
+          "id": "CVE-2026-21155",
+          "title": "Out-of-bounds write in bootloader prior to SMR Nov-2026 Release 1 allows…",
+          "score": 5,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.1,
+            "decay": -0.9
+          },
+          "why_now": "CVSS 6.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-16T21:17:56.143+09:00",
+          "poc_count": 0,
+          "epss": 0.0026,
+          "epss_percentile": 0.17,
+          "cvss": 6.1,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Android",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=11"
         },
         {
           "id": "CVE-2026-58828",
@@ -13859,40 +13893,6 @@
           "product_family": "mobile",
           "attack_types": [
             "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/2026/2026-11-01"
-        },
-        {
-          "id": "CVE-2026-59000",
-          "title": "In multiple locations, there is a possible permission bypass due to a confused…",
-          "score": 5,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -3.1
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:55.057+09:00",
-          "poc_count": 0,
-          "epss": 0.0010,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "request_forgery"
           ],
           "summary_what": null,
           "fix_versions": [],
