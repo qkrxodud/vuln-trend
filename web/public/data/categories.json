@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 167,
-      "count_30d": 819,
+      "count_7d": 174,
+      "count_30d": 826,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 286,
-      "count_30d": 1246,
+      "count_7d": 298,
+      "count_30d": 1258,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 466,
-      "count_30d": 1525,
+      "count_7d": 470,
+      "count_30d": 1529,
       "kev_count": 32,
       "top": [
         {
@@ -1637,6 +1637,40 @@
           "epss": 0.0031,
           "epss_percentile": 0.24,
           "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-115901",
+          "title": "Exploitation requires an identity admitted to a configured trusted IdP…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-23T18:17:05.293+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.0,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
@@ -2192,48 +2226,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-19609",
-          "title": "Cross-site scripting in the embedded co-browsing feature in Unblu inc",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T16:17:12.243+09:00",
-          "poc_count": 0,
-          "epss": 0.0047,
-          "epss_percentile": 0.41,
-          "cvss": 8.6,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1438,
-      "count_30d": 4255,
+      "count_7d": 1463,
+      "count_30d": 4280,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 267,
-      "count_30d": 776,
+      "count_7d": 269,
+      "count_30d": 778,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 390,
-      "count_30d": 2857,
+      "count_7d": 406,
+      "count_30d": 2873,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 280,
-      "count_30d": 1029,
+      "count_7d": 294,
+      "count_30d": 1043,
       "kev_count": 14,
       "top": [
         {
@@ -5115,8 +5115,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 213,
-      "count_30d": 833,
+      "count_7d": 221,
+      "count_30d": 841,
       "kev_count": 162,
       "top": [
         {
@@ -5845,8 +5845,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 128,
-      "count_30d": 558,
+      "count_7d": 135,
+      "count_30d": 565,
       "kev_count": 32,
       "top": [
         {
@@ -6556,8 +6556,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 479,
-      "count_30d": 2233,
+      "count_7d": 496,
+      "count_30d": 2250,
       "kev_count": 233,
       "top": [
         {
