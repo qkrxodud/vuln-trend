@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 175,
-      "count_30d": 834,
+      "count_7d": 176,
+      "count_30d": 835,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 302,
-      "count_30d": 1275,
+      "count_7d": 304,
+      "count_30d": 1277,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 453,
-      "count_30d": 1538,
+      "count_7d": 454,
+      "count_30d": 1539,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1383,
-      "count_30d": 4313,
+      "count_7d": 1392,
+      "count_30d": 4322,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 263,
-      "count_30d": 780,
+      "count_7d": 266,
+      "count_30d": 783,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 407,
-      "count_30d": 2895,
+      "count_7d": 418,
+      "count_30d": 2906,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 301,
-      "count_30d": 1050,
+      "count_7d": 305,
+      "count_30d": 1054,
       "kev_count": 14,
       "top": [
         {
@@ -5116,9 +5116,9 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 200,
-      "count_30d": 840,
-      "kev_count": 162,
+      "count_7d": 204,
+      "count_30d": 844,
+      "kev_count": 163,
       "top": [
         {
           "id": "CVE-2026-90817",
@@ -5158,6 +5158,40 @@
             "17.3.10",
             "17.4.4"
           ],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-133968",
+          "title": "monailabel (aka MONAI Label) through 0.8.5 allows directory traversal, with…",
+          "score": 61,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 1.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-26",
+          "kev_added_at": "2026-11-23",
+          "published_at": "2026-11-21T04:18:51.67+09:00",
+          "poc_count": 0,
+          "epss": 0.037,
+          "epss_percentile": 0.89,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "MONAI Label",
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": "이미지 매개변수를 통한 디렉터리 탐색 취약점으로 원격 코드 실행이 가능하며, 2026년 9월부터 실제 공격에 악용된 것으로 알려졌습니다.",
+          "fix_versions": [],
           "patch_url": null
         },
         {
@@ -5496,40 +5530,6 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963"
         },
         {
-          "id": "CVE-2026-133968",
-          "title": "monailabel (aka MONAI Label) through 0.8.5 allows directory traversal, with…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 1.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-21T04:18:51.67+09:00",
-          "poc_count": 0,
-          "epss": 0.037,
-          "epss_percentile": 0.89,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
           "id": "CVE-2026-14914",
           "title": "Unrestricted upload of file with dangerous type vulnerability in Tegsoft…",
           "score": 10,
@@ -5846,10 +5846,44 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 124,
-      "count_30d": 562,
-      "kev_count": 32,
+      "count_7d": 125,
+      "count_30d": 563,
+      "kev_count": 33,
       "top": [
+        {
+          "id": "CVE-2026-134624",
+          "title": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는…",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-26",
+          "kev_added_at": "2026-11-23",
+          "published_at": "2026-11-23T04:16:32.163+09:00",
+          "poc_count": 0,
+          "epss": 0.0035,
+          "epss_percentile": 0.29,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": "MailAssure",
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는 취약점입니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-96652",
           "title": "Plex Media Server before 1.43.3.10861 allows SSRF via '/player/timeline'",
@@ -5998,40 +6032,6 @@
             "12.5.0-02952"
           ],
           "patch_url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016"
-        },
-        {
-          "id": "CVE-2026-134624",
-          "title": "N-able MailAssure (SpamExperts) before 20261121.1943 does not restrict the…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-23T04:16:32.163+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.29,
-          "cvss": 9.3,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         },
         {
           "id": "CVE-2026-71499",
@@ -6559,8 +6559,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 451,
-      "count_30d": 2256,
+      "count_7d": 455,
+      "count_30d": 2260,
       "kev_count": 233,
       "top": [
         {

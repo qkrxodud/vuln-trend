@@ -147,6 +147,40 @@
     "patch_url": null
   },
   {
+    "id": "CVE-2026-133968",
+    "title": "monailabel (aka MONAI Label) through 0.8.5 allows directory traversal, with…",
+    "score": 61,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 1.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-26",
+    "kev_added_at": "2026-11-23",
+    "published_at": "2026-11-21T04:18:51.67+09:00",
+    "poc_count": 0,
+    "epss": 0.037,
+    "epss_percentile": 0.89,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "MONAI Label",
+    "product_family": null,
+    "attack_types": [
+      "path"
+    ],
+    "summary_what": "이미지 매개변수를 통한 디렉터리 탐색 취약점으로 원격 코드 실행이 가능하며, 2026년 9월부터 실제 공격에 악용된 것으로 알려졌습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-116606",
     "title": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수…",
     "score": 61,
@@ -181,6 +215,40 @@
       "9.4.0.030"
     ],
     "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+  },
+  {
+    "id": "CVE-2026-134624",
+    "title": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는…",
+    "score": 59,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.3,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-26",
+    "kev_added_at": "2026-11-23",
+    "published_at": "2026-11-23T04:16:32.163+09:00",
+    "poc_count": 0,
+    "epss": 0.0035,
+    "epss_percentile": 0.29,
+    "cvss": 9.3,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": "MailAssure",
+    "product_family": null,
+    "attack_types": [
+      "request_forgery"
+    ],
+    "summary_what": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는 취약점입니다.",
+    "fix_versions": [],
+    "patch_url": null
   },
   {
     "id": "CVE-2026-129448",
@@ -3664,76 +3732,5 @@
       "4.13.0"
     ],
     "patch_url": "https://my.f5.com/manage/s/article/K000163927"
-  },
-  {
-    "id": "CVE-2026-75869",
-    "title": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 6.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 8.8,
-      "decay": -3.2
-    },
-    "why_now": "30일 내 악용 확률 상위 2%",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-11-12T22:17:16.9+09:00",
-    "poc_count": 0,
-    "epss": 0.20,
-    "epss_percentile": 0.97,
-    "cvss": 8.8,
-    "cvss_version": "3.1",
-    "severity": "HIGH",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "rce",
-      "injection"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
-  },
-  {
-    "id": "CVE-2026-48710",
-    "title": "Starlette is a lightweight ASGI framework/toolkit",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 21.1,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 6.5,
-      "decay": -65.9
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-16",
-    "kev_added_at": "2026-09-02",
-    "published_at": "2026-05-27T07:16:44.02+09:00",
-    "poc_count": 0,
-    "epss": 0.70,
-    "epss_percentile": 0.994,
-    "cvss": 6.5,
-    "cvss_version": "3.1",
-    "severity": "MEDIUM",
-    "primary_product": "Starlette",
-    "product_family": "dev",
-    "attack_types": [
-      "other"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "1.0.1"
-    ],
-    "patch_url": "https://github.com/Kludex/starlette/commit/764dab0dcfb9033d75442d7a359645c9f94648c6"
   }
 ]
