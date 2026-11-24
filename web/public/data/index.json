@@ -24,14 +24,16 @@
     "cvss": 9.8,
     "cvss_version": "3.1",
     "severity": "CRITICAL",
-    "primary_product": "MONAI Label",
+    "primary_product": "Monai Label",
     "product_family": null,
     "attack_types": [
       "path"
     ],
     "summary_what": "이미지 매개변수를 통한 디렉터리 탐색 취약점으로 원격 코드 실행이 가능하며, 2026년 9월부터 실제 공격에 악용된 것으로 알려졌습니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "0.8.6"
+    ],
+    "patch_url": "https://github.com/Project-MONAI/MONAILabel/pull/1915"
   },
   {
     "id": "CVE-2026-40217",
@@ -262,8 +264,8 @@
       "epss": 0.2,
       "news": 0.0,
       "poc": 0.0,
-      "cvss": 9.3,
-      "decay": -1.4
+      "cvss": 8.7,
+      "decay": -1.3
     },
     "why_now": "CISA 악용 목록 등재",
     "is_kev": true,
@@ -274,17 +276,19 @@
     "poc_count": 0,
     "epss": 0.0062,
     "epss_percentile": 0.50,
-    "cvss": 9.3,
-    "cvss_version": "4.0",
-    "severity": "CRITICAL",
-    "primary_product": "MailAssure",
+    "cvss": 8.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "Mail Assure",
     "product_family": null,
     "attack_types": [
       "request_forgery"
     ],
     "summary_what": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는 취약점입니다.",
-    "fix_versions": [],
-    "patch_url": null
+    "fix_versions": [
+      "20261121.1943"
+    ],
+    "patch_url": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA"
   },
   {
     "id": "CVE-2026-123890",

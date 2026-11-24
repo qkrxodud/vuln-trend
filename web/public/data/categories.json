@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 204,
-      "count_30d": 863,
+      "count_7d": 162,
+      "count_30d": 849,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 344,
-      "count_30d": 1317,
+      "count_7d": 300,
+      "count_30d": 1291,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 486,
-      "count_30d": 1571,
+      "count_7d": 404,
+      "count_30d": 1549,
       "kev_count": 32,
       "top": [
         {
@@ -2233,8 +2233,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1490,
-      "count_30d": 4419,
+      "count_7d": 828,
+      "count_30d": 4375,
       "kev_count": 268,
       "top": [
         {
@@ -2961,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 276,
-      "count_30d": 793,
+      "count_7d": 145,
+      "count_30d": 784,
       "kev_count": 27,
       "top": [
         {
@@ -3661,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 459,
-      "count_30d": 2947,
+      "count_7d": 351,
+      "count_30d": 2965,
       "kev_count": 463,
       "top": [
         {
@@ -4424,8 +4424,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 322,
-      "count_30d": 1071,
+      "count_7d": 248,
+      "count_30d": 1064,
       "kev_count": 14,
       "top": [
         {
@@ -4494,6 +4494,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-116225",
+          "title": "Improper Validation of Specified Quantity in Input vulnerability in the BER…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T00:17:11.817+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "dos"
           ],
           "summary_what": null,
@@ -4590,6 +4624,40 @@
           "poc_count": 0,
           "epss": 0.0063,
           "epss_percentile": 0.51,
+          "cvss": 8.2,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-116382",
+          "title": "Allocation of Resources Without Limits or Throttling vulnerability in Erlang…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T00:17:12.62+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 8.2,
           "cvss_version": "4.0",
           "severity": "HIGH",
@@ -5045,82 +5113,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-127370",
-          "title": "Vulnerability in the Oracle Hyperion Financial Close Management product of…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -1.1
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T07:19:01.747+09:00",
-          "poc_count": 0,
-          "epss": 0.0036,
-          "epss_percentile": 0.30,
-          "cvss": 8.6,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134821",
-          "title": "Gunicorn 25.2.0 before 27.0.0 contains a memory exhaustion vulnerability in the…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-23T07:17:36.77+09:00",
-          "poc_count": 0,
-          "epss": 0.0079,
-          "epss_percentile": 0.57,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 225,
-      "count_30d": 865,
+      "count_7d": 180,
+      "count_30d": 858,
       "kev_count": 163,
       "top": [
         {
@@ -5148,14 +5148,16 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "MONAI Label",
+          "primary_product": "Monai Label",
           "product_family": null,
           "attack_types": [
             "path"
           ],
           "summary_what": "이미지 매개변수를 통한 디렉터리 탐색 취약점으로 원격 코드 실행이 가능하며, 2026년 9월부터 실제 공격에 악용된 것으로 알려졌습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "0.8.6"
+          ],
+          "patch_url": "https://github.com/Project-MONAI/MONAILabel/pull/1915"
         },
         {
           "id": "CVE-2026-90817",
@@ -5851,8 +5853,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 142,
-      "count_30d": 580,
+      "count_7d": 100,
+      "count_30d": 570,
       "kev_count": 33,
       "top": [
         {
@@ -5865,8 +5867,8 @@
             "epss": 0.2,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -1.4
+            "cvss": 8.7,
+            "decay": -1.3
           },
           "why_now": "CISA 악용 목록 등재",
           "is_kev": true,
@@ -5877,17 +5879,19 @@
           "poc_count": 0,
           "epss": 0.0062,
           "epss_percentile": 0.50,
-          "cvss": 9.3,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": "MailAssure",
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Mail Assure",
           "product_family": null,
           "attack_types": [
             "request_forgery"
           ],
           "summary_what": "인증된 API 사용자가 내부 임의 호스트와 포트로 연결을 유도해 접근 가능 여부를 확인하고 내부 서비스에 조작된 데이터를 보낼 수 있는 취약점입니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "20261121.1943"
+          ],
+          "patch_url": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA"
         },
         {
           "id": "CVE-2026-96652",
@@ -5960,6 +5964,40 @@
             "1.43.3.10861"
           ],
           "patch_url": "https://forums.plex.tv/t/plex-media-server/30447/711"
+        },
+        {
+          "id": "CVE-2026-109480",
+          "title": "Server-side request forgery in Profile Data Roaming Service (PDRS) allows an…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T07:18:29.133+09:00",
+          "poc_count": 0,
+          "epss": 0.0079,
+          "epss_percentile": 0.56,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-118285",
@@ -6520,48 +6558,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-77315",
-          "title": "Flyto2 Core is an execution kernel for automation and AI-agent workflows",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.5,
-            "decay": -0.8
-          },
-          "why_now": "CVSS 8.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T07:18:44.47+09:00",
-          "poc_count": 0,
-          "epss": 0.0038,
-          "epss_percentile": 0.31,
-          "cvss": 8.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 499,
-      "count_30d": 2304,
+      "count_7d": 362,
+      "count_30d": 2294,
       "kev_count": 233,
       "top": [
         {
@@ -7334,8 +7338,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 493,
-      "count_30d": 1110,
+      "count_7d": 485,
+      "count_30d": 1126,
       "kev_count": 286,
       "top": [
         {
@@ -8063,7 +8067,7 @@
     {
       "key": "browser",
       "label": "브라우저",
-      "count_7d": 204,
+      "count_7d": 1,
       "count_30d": 633,
       "kev_count": 112,
       "top": [
@@ -9546,8 +9550,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 505,
-      "count_30d": 2081,
+      "count_7d": 370,
+      "count_30d": 2045,
       "kev_count": 24,
       "top": [
         {
@@ -11031,8 +11035,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 15,
-      "count_30d": 63,
+      "count_7d": 22,
+      "count_30d": 71,
       "kev_count": 72,
       "top": [
         {
@@ -12511,8 +12515,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 27,
-      "count_30d": 144,
+      "count_7d": 26,
+      "count_30d": 146,
       "kev_count": 138,
       "top": [
         {
