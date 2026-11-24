@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 196,
-      "count_30d": 855,
+      "count_7d": 204,
+      "count_30d": 863,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 332,
-      "count_30d": 1305,
+      "count_7d": 341,
+      "count_30d": 1314,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 462,
-      "count_30d": 1547,
+      "count_7d": 471,
+      "count_30d": 1556,
       "kev_count": 32,
       "top": [
         {
@@ -1888,6 +1888,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-19881",
+          "title": "Cross-site scripting in the conversation file-sharing feature of Unblu inc",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T19:17:50.14+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss",
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-130158",
           "title": "RepoManager is a self-hosted deb/rpm package repository",
           "score": 8,
@@ -2192,48 +2227,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-131260",
-          "title": "In Splunk SOAR versions below 8.8.0, a user with the containers:edit permission…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T05:17:41.28+09:00",
-          "poc_count": 0,
-          "epss": 0.0020,
-          "epss_percentile": 0.09,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1439,
-      "count_30d": 4369,
+      "count_7d": 1458,
+      "count_30d": 4388,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2961,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 271,
-      "count_30d": 788,
+      "count_7d": 274,
+      "count_30d": 791,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 447,
-      "count_30d": 2935,
+      "count_7d": 455,
+      "count_30d": 2943,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4422,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 317,
-      "count_30d": 1066,
+      "count_7d": 319,
+      "count_30d": 1068,
       "kev_count": 14,
       "top": [
         {
@@ -5116,8 +5117,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 211,
-      "count_30d": 851,
+      "count_7d": 219,
+      "count_30d": 859,
       "kev_count": 163,
       "top": [
         {
@@ -5846,8 +5847,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 134,
-      "count_30d": 572,
+      "count_7d": 136,
+      "count_30d": 574,
       "kev_count": 33,
       "top": [
         {
@@ -6559,8 +6560,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 481,
-      "count_30d": 2286,
+      "count_7d": 493,
+      "count_30d": 2298,
       "kev_count": 233,
       "top": [
         {
