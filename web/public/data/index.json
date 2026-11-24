@@ -219,6 +219,40 @@
     "patch_url": null
   },
   {
+    "id": "CVE-2026-131914",
+    "title": "신뢰할 수 없는 데이터 역직렬화 취약점으로 원격 비인증 공격자가 객체 주입을 통해 코드를 실행할 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.2,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.3,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-27",
+    "kev_added_at": "2026-11-24",
+    "published_at": "2026-11-19T11:17:20.36+09:00",
+    "poc_count": 0,
+    "epss": 0.0061,
+    "epss_percentile": 0.50,
+    "cvss": 9.3,
+    "cvss_version": "4.0",
+    "severity": "CRITICAL",
+    "primary_product": "AntiCsrf",
+    "product_family": null,
+    "attack_types": [
+      "rce"
+    ],
+    "summary_what": "신뢰할 수 없는 데이터 역직렬화 취약점으로 원격 비인증 공격자가 객체 주입을 통해 코드를 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-116606",
     "title": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수…",
     "score": 60,
@@ -253,6 +287,42 @@
       "9.4.0.030"
     ],
     "patch_url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+  },
+  {
+    "id": "CVE-2026-132224",
+    "title": "계정 가입 흐름 처리 오류로 특정 자산의 Project JavaScript 필드에 공격자가 제어하는 코드가 삽입될 수 있습니다",
+    "score": 59,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.1,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 8.7,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-27",
+    "kev_added_at": "2026-11-24",
+    "published_at": "2026-11-19T01:18:15.627+09:00",
+    "poc_count": 0,
+    "epss": 0.0041,
+    "epss_percentile": 0.35,
+    "cvss": 8.7,
+    "cvss_version": "3.1",
+    "severity": "HIGH",
+    "primary_product": "Web Experimentation",
+    "product_family": null,
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "계정 가입 흐름 처리 오류로 특정 자산의 Project JavaScript 필드에 공격자가 제어하는 코드가 삽입될 수 있습니다.",
+    "fix_versions": [
+      "2026-11-17"
+    ],
+    "patch_url": "https://pages.optimizely.com/rs/947-RKE-048/images/Security%20Incident%20Report%20-%20Optimizely%20Web%20Experimentation%20-%20Nov%2017%202026.pdf"
   },
   {
     "id": "CVE-2026-134624",
@@ -3661,80 +3731,5 @@
       "26.0.4"
     ],
     "patch_url": "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
-  },
-  {
-    "id": "CVE-2026-126714",
-    "title": "Partially overwritten session files can lead to remote code execution",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 0.0,
-      "ransomware": 0.0,
-      "epss": 4.0,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 9.2,
-      "decay": -1.3
-    },
-    "why_now": "30일 내 악용 확률 상위 4%",
-    "is_kev": false,
-    "kev_ransomware": false,
-    "kev_due_date": null,
-    "kev_added_at": null,
-    "published_at": "2026-11-20T00:17:26.167+09:00",
-    "poc_count": 0,
-    "epss": 0.13,
-    "epss_percentile": 0.96,
-    "cvss": 9.2,
-    "cvss_version": "4.0",
-    "severity": "CRITICAL",
-    "primary_product": null,
-    "product_family": null,
-    "attack_types": [
-      "other"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": null
-  },
-  {
-    "id": "CVE-2025-39964",
-    "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 5.5,
-      "decay": -44.1
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-21",
-    "kev_added_at": "2026-09-18",
-    "published_at": "2025-10-13T23:15:34.737+09:00",
-    "poc_count": 0,
-    "epss": 0.016,
-    "epss_percentile": 0.76,
-    "cvss": 5.5,
-    "cvss_version": "3.1",
-    "severity": "MEDIUM",
-    "primary_product": "Linux Kernel",
-    "product_family": "os",
-    "attack_types": [
-      "other"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "5.10.245",
-      "5.15.194",
-      "6.1.154",
-      "6.6.108",
-      "6.12.49",
-      "6.16.9"
-    ],
-    "patch_url": "https://git.kernel.org/stable/c/0f28c4adbc4a97437874c9b669fd7958a8c6d6ce"
   }
 ]
