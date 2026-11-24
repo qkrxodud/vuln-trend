@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 190,
-      "count_30d": 849,
+      "count_7d": 193,
+      "count_30d": 852,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 324,
-      "count_30d": 1297,
+      "count_7d": 328,
+      "count_30d": 1301,
       "kev_count": 309,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1429,
-      "count_30d": 4359,
+      "count_7d": 1433,
+      "count_30d": 4363,
       "kev_count": 268,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 421,
-      "count_30d": 2909,
+      "count_7d": 423,
+      "count_30d": 2911,
       "kev_count": 463,
       "top": [
         {
@@ -5116,8 +5116,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 209,
-      "count_30d": 849,
+      "count_7d": 210,
+      "count_30d": 850,
       "kev_count": 163,
       "top": [
         {
@@ -5846,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 131,
-      "count_30d": 569,
+      "count_7d": 132,
+      "count_30d": 570,
       "kev_count": 33,
       "top": [
         {
@@ -7334,7 +7334,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 493,
-      "count_30d": 1101,
+      "count_30d": 1102,
       "kev_count": 286,
       "top": [
         {
@@ -8175,6 +8175,40 @@
           "patch_url": "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_0808145027.html"
         },
         {
+          "id": "CVE-2026-134401",
+          "title": "Improper input validation in Variations in Google Chrome prior to 158.0.8127.88…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T09:17:30.46+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "browser",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-85046",
           "title": "Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote…",
           "score": 9,
@@ -8733,42 +8767,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-18T06:17:59.463+09:00",
-          "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.37,
-          "cvss": 9.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Chrome",
-          "product_family": "browser",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "158.0.8127.36"
-          ],
-          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
-        },
-        {
-          "id": "CVE-2026-130963",
-          "title": "Use after free in WebView in Google Chrome on on Android prior to 158.0.8127.36…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.0,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T06:17:52.43+09:00",
           "poc_count": 0,
           "epss": 0.0043,
           "epss_percentile": 0.37,
@@ -11032,8 +11030,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 14,
-      "count_30d": 62,
+      "count_7d": 15,
+      "count_30d": 63,
       "kev_count": 72,
       "top": [
         {
