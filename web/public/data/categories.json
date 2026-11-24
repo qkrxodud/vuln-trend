@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 201,
-      "count_30d": 888,
+      "count_7d": 208,
+      "count_30d": 895,
       "kev_count": 329,
       "top": [
         {
@@ -130,7 +130,7 @@
             "epss": 0.2,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.3,
+            "cvss": 9.8,
             "decay": 0.0
           },
           "why_now": "CISA 악용 목록 등재",
@@ -142,17 +142,17 @@
           "poc_count": 0,
           "epss": 0.0061,
           "epss_percentile": 0.50,
-          "cvss": 9.3,
-          "cvss_version": "4.0",
+          "cvss": 9.8,
+          "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "AntiCsrf",
+          "primary_product": "Anticsrf",
           "product_family": null,
           "attack_types": [
             "rce"
           ],
           "summary_what": "신뢰할 수 없는 데이터 역직렬화 취약점으로 원격 비인증 공격자가 객체 주입을 통해 코드를 실행할 수 있습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md"
         },
         {
           "id": "CVE-2026-111560",
@@ -780,8 +780,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 334,
-      "count_30d": 1325,
+      "count_7d": 342,
+      "count_30d": 1333,
       "kev_count": 309,
       "top": [
         {
@@ -1540,8 +1540,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 523,
-      "count_30d": 1668,
+      "count_7d": 524,
+      "count_30d": 1669,
       "kev_count": 32,
       "top": [
         {
@@ -1566,6 +1566,40 @@
           "poc_count": 0,
           "epss": 0.0088,
           "epss_percentile": 0.59,
+          "cvss": 9.6,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-136522",
+          "title": "CubeWP Forms before 1.1.13 contains an unauthenticated stored cross-site…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T06:18:20.433+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -2192,48 +2226,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130680",
-          "title": "SiYuan from 3.3.0 before 3.8.10 contains a stored cross-site scripting…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.6,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 9.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T21:17:11.63+09:00",
-          "poc_count": 0,
-          "epss": 0.0039,
-          "epss_percentile": 0.33,
-          "cvss": 9.6,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 899,
-      "count_30d": 4447,
+      "count_7d": 909,
+      "count_30d": 4457,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 157,
-      "count_30d": 796,
+      "count_7d": 159,
+      "count_30d": 798,
       "kev_count": 27,
       "top": [
         {
@@ -3067,6 +3067,40 @@
             "auth",
             "info",
             "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128974",
+          "title": "Cleartext storage of the WhatsApp Noise static private key in the shared…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.1
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T06:17:48.497+09:00",
+          "poc_count": 0,
+          "epss": 0.0019,
+          "epss_percentile": 0.08,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -3620,48 +3654,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-114918",
-          "title": "Vulnerability in the Oracle Concurrent Processing product of Oracle E-Business…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T07:18:21.66+09:00",
-          "poc_count": 0,
-          "epss": 0.0041,
-          "epss_percentile": 0.35,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 390,
-      "count_30d": 3004,
+      "count_7d": 399,
+      "count_30d": 3013,
       "kev_count": 463,
       "top": [
         {
@@ -4423,8 +4423,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 271,
-      "count_30d": 1087,
+      "count_7d": 273,
+      "count_30d": 1089,
       "kev_count": 14,
       "top": [
         {
@@ -5118,8 +5118,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 193,
-      "count_30d": 871,
+      "count_7d": 198,
+      "count_30d": 876,
       "kev_count": 163,
       "top": [
         {
@@ -5852,8 +5852,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 111,
-      "count_30d": 581,
+      "count_7d": 115,
+      "count_30d": 585,
       "kev_count": 33,
       "top": [
         {
@@ -6248,6 +6248,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-135046",
+          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Rymera Web Co Store Exporter…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T05:18:52.033+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-134986",
           "title": "Cross-Site Request Forgery (CSRF) vulnerability in Brainstorm Force SureCart…",
           "score": 9,
@@ -6521,48 +6555,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-130583",
-          "title": "Rootways Authorize.net CIM Pro extension for Magento 2 before 4.1.5 contains an…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.3,
-            "decay": -1.3
-          },
-          "why_now": "CVSS 9.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-17T23:17:44.847+09:00",
-          "poc_count": 0,
-          "epss": 0.0017,
-          "epss_percentile": 0.05,
-          "cvss": 9.3,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 394,
-      "count_30d": 2326,
+      "count_7d": 400,
+      "count_30d": 2332,
       "kev_count": 234,
       "top": [
         {
@@ -7338,7 +7338,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 485,
-      "count_30d": 1155,
+      "count_30d": 1174,
       "kev_count": 286,
       "top": [
         {
@@ -9549,8 +9549,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 376,
-      "count_30d": 2051,
+      "count_7d": 377,
+      "count_30d": 2052,
       "kev_count": 24,
       "top": [
         {
@@ -10261,8 +10261,8 @@
           "patch_url": null
         },
         {
-          "id": "CVE-2026-134986",
-          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Brainstorm Force SureCart…",
+          "id": "CVE-2026-135046",
+          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Rymera Web Co Store Exporter…",
           "score": 9,
           "score_breakdown": {
             "kev": 0.0,
@@ -10278,7 +10278,7 @@
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-25T04:18:11.42+09:00",
+          "published_at": "2026-11-25T05:18:52.033+09:00",
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
@@ -10300,7 +10300,7 @@
       "key": "server",
       "label": "서버·DB·미들웨어",
       "count_7d": 0,
-      "count_30d": 16,
+      "count_30d": 30,
       "kev_count": 166,
       "top": [
         {
