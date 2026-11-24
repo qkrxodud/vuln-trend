@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 193,
-      "count_30d": 852,
+      "count_7d": 196,
+      "count_30d": 855,
       "kev_count": 328,
       "top": [
         {
@@ -781,8 +781,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 328,
-      "count_30d": 1301,
+      "count_7d": 332,
+      "count_30d": 1305,
       "kev_count": 309,
       "top": [
         {
@@ -1541,8 +1541,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 460,
-      "count_30d": 1545,
+      "count_7d": 462,
+      "count_30d": 1547,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1433,
-      "count_30d": 4363,
+      "count_7d": 1439,
+      "count_30d": 4369,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 270,
-      "count_30d": 787,
+      "count_7d": 271,
+      "count_30d": 788,
       "kev_count": 27,
       "top": [
         {
@@ -3660,8 +3660,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 423,
-      "count_30d": 2911,
+      "count_7d": 447,
+      "count_30d": 2935,
       "kev_count": 463,
       "top": [
         {
@@ -4421,8 +4421,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 311,
-      "count_30d": 1060,
+      "count_7d": 317,
+      "count_30d": 1066,
       "kev_count": 14,
       "top": [
         {
@@ -5116,8 +5116,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 210,
-      "count_30d": 850,
+      "count_7d": 211,
+      "count_30d": 851,
       "kev_count": 163,
       "top": [
         {
@@ -5846,8 +5846,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 132,
-      "count_30d": 570,
+      "count_7d": 134,
+      "count_30d": 572,
       "kev_count": 33,
       "top": [
         {
@@ -6208,6 +6208,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-105304",
+          "title": "ACME challenge routing logic of Zoraxy fails to validate request URIs properly…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.6,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.6, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T15:17:06.63+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.6,
+          "cvss_version": "3.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-135161",
           "title": "Interstellar before 6.3.0 contains a server-side request forgery vulnerability…",
           "score": 9,
@@ -6519,48 +6553,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-75795",
-          "title": "The Edwiser Bridge  WordPress plugin before 4.3.5 does not correctly scope one…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T15:17:30.913+09:00",
-          "poc_count": 0,
-          "epss": 0.0017,
-          "epss_percentile": 0.06,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 463,
-      "count_30d": 2268,
+      "count_7d": 481,
+      "count_30d": 2286,
       "kev_count": 233,
       "top": [
         {
@@ -9545,8 +9545,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 473,
-      "count_30d": 2049,
+      "count_7d": 476,
+      "count_30d": 2052,
       "kev_count": 24,
       "top": [
         {
@@ -9916,6 +9916,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-135202",
+          "title": "Several plugins for WordPress published by WP connect (Orders Sync to Airtable…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-24T15:17:08.08+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125294",
           "title": "The Nexter Blocks Pro plugin for WordPress is vulnerable to Privilege…",
           "score": 10,
@@ -10241,40 +10275,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-18T23:17:26.02+09:00",
-          "poc_count": 0,
-          "epss": 0.0054,
-          "epss_percentile": 0.46,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-110009",
-          "title": "The Unzer Payments plugin for WordPress is vulnerable to Authentication Bypass…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-18T23:17:25.86+09:00",
           "poc_count": 0,
           "epss": 0.0054,
           "epss_percentile": 0.46,
