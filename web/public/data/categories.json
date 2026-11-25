@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 212,
-      "count_30d": 899,
+      "count_7d": 213,
+      "count_30d": 900,
       "kev_count": 329,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 933,
-      "count_30d": 4481,
+      "count_7d": 937,
+      "count_30d": 4485,
       "kev_count": 268,
       "top": [
         {
@@ -3661,8 +3661,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 401,
-      "count_30d": 3015,
+      "count_7d": 404,
+      "count_30d": 3018,
       "kev_count": 463,
       "top": [
         {
@@ -4424,8 +4424,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 281,
-      "count_30d": 1097,
+      "count_7d": 285,
+      "count_30d": 1101,
       "kev_count": 14,
       "top": [
         {
@@ -5119,8 +5119,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 199,
-      "count_30d": 877,
+      "count_7d": 200,
+      "count_30d": 878,
       "kev_count": 163,
       "top": [
         {
@@ -5853,8 +5853,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 120,
-      "count_30d": 590,
+      "count_7d": 121,
+      "count_30d": 591,
       "kev_count": 33,
       "top": [
         {
@@ -6454,6 +6454,41 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-133462",
+          "title": "AutoGPT is a workflow automation platform for creating, deploying, and managing…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T09:17:10.413+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-135161",
           "title": "Interstellar before 6.3.0 contains a server-side request forgery vulnerability…",
           "score": 9,
@@ -6522,49 +6557,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134034",
-          "title": "HortusFox is a self-hosted web application for collaborative plant management",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T02:18:16.483+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "injection",
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 407,
-      "count_30d": 2339,
+      "count_7d": 413,
+      "count_30d": 2345,
       "kev_count": 234,
       "top": [
         {
@@ -12516,8 +12516,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 29,
-      "count_30d": 150,
+      "count_7d": 33,
+      "count_30d": 154,
       "kev_count": 138,
       "top": [
         {
@@ -13138,6 +13138,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-16667",
+          "title": "The Cypress/PSoC6 flash-map backend in boot/cypress/cy_flash_pal/cy_flash_map.c…",
+          "score": 6,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.2,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.2, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T09:17:11.79+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.2,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-95824",
           "title": "The IPv6 Neighbor Discovery code in subsys/net/ip/ipv6_nbr.c flushes a…",
           "score": 6,
@@ -13159,40 +13193,6 @@
           "poc_count": 0,
           "epss": 0.0046,
           "epss_percentile": 0.40,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-95827",
-          "title": "The IPv6 neighbour discovery code in subsys/net/ip/ipv6_nbr.c keeps packets…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-21T03:18:57.47+09:00",
-          "poc_count": 0,
-          "epss": 0.0040,
-          "epss_percentile": 0.34,
           "cvss": 6.5,
           "cvss_version": "3.1",
           "severity": "MEDIUM",
