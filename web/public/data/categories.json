@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 208,
-      "count_30d": 895,
+      "count_7d": 212,
+      "count_30d": 899,
       "kev_count": 329,
       "top": [
         {
@@ -780,8 +780,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 342,
-      "count_30d": 1333,
+      "count_7d": 349,
+      "count_30d": 1340,
       "kev_count": 309,
       "top": [
         {
@@ -1540,8 +1540,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 524,
-      "count_30d": 1669,
+      "count_7d": 546,
+      "count_30d": 1691,
       "kev_count": 32,
       "top": [
         {
@@ -2232,8 +2232,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 909,
-      "count_30d": 4457,
+      "count_7d": 933,
+      "count_30d": 4481,
       "kev_count": 268,
       "top": [
         {
@@ -2960,8 +2960,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 159,
-      "count_30d": 798,
+      "count_7d": 172,
+      "count_30d": 811,
       "kev_count": 27,
       "top": [
         {
@@ -3097,6 +3097,109 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-132736",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:30.037+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "injection",
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-132734",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:29.79+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-132710",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:26.637+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
           "primary_product": null,
           "product_family": null,
           "attack_types": [
@@ -3272,6 +3375,41 @@
           "primary_product": null,
           "product_family": null,
           "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-133438",
+          "title": "Improper Neutralization of Special Elements in Output Used by a Downstream…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:31.11+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.3,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "injection",
             "info"
           ],
           "summary_what": null,
@@ -3517,151 +3655,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-50048",
-          "title": "Genetec Security Center can expose access control unit credentials in plain…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T02:18:51.51+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-126315",
-          "title": "Frappe HRMS 16.14.0 before 16.20.1 sends product usage events on certain HR…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -2.2
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T19:17:37.443+09:00",
-          "poc_count": 0,
-          "epss": 0.0049,
-          "epss_percentile": 0.42,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134316",
-          "title": "@better-auth/electron 1.5.0-beta.12 before 1.7.16 and 1.8.0-beta.0 before…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": -0.4
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-22T02:16:52.55+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.23,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-110462",
-          "title": "The Comelit 1456B Multi-User Gateway, in firmware versions up to and including…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.6,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 8.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T16:17:09.183+09:00",
-          "poc_count": 0,
-          "epss": 0.0019,
-          "epss_percentile": 0.08,
-          "cvss": 8.6,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 399,
-      "count_30d": 3013,
+      "count_7d": 401,
+      "count_30d": 3015,
       "kev_count": 463,
       "top": [
         {
@@ -4423,8 +4424,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 273,
-      "count_30d": 1089,
+      "count_7d": 281,
+      "count_30d": 1097,
       "kev_count": 14,
       "top": [
         {
@@ -4493,6 +4494,40 @@
           "product_family": null,
           "attack_types": [
             "auth",
+            "dos"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-133460",
+          "title": "AutoGPT is a workflow automation platform for creating, deploying, and managing…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:31.36+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.7,
+          "cvss_version": "4.0",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
             "dos"
           ],
           "summary_what": null,
@@ -5078,48 +5113,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-118899",
-          "title": "When using the listen directive with the ssl parameter in the http block with…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 1.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.5,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 7.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T01:18:00.357+09:00",
-          "poc_count": 0,
-          "epss": 0.038,
-          "epss_percentile": 0.90,
-          "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Dos",
-          "product_family": null,
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://my.f5.com/manage/s/article/K000163930"
         }
       ]
     },
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 198,
-      "count_30d": 876,
+      "count_7d": 199,
+      "count_30d": 877,
       "kev_count": 163,
       "top": [
         {
@@ -5852,8 +5853,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 115,
-      "count_30d": 585,
+      "count_7d": 120,
+      "count_30d": 590,
       "kev_count": 33,
       "top": [
         {
@@ -6105,6 +6106,41 @@
             "1.3.21"
           ],
           "patch_url": "https://github.com/kestra-io/kestra/security/advisories/GHSA-5vc5-wxxq-3fjx"
+        },
+        {
+          "id": "CVE-2026-132669",
+          "title": "Improper Access Control vulnerability in Wikimedia Foundation MediaWiki…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.3,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.3, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T08:17:21.517+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.3,
+          "cvss_version": "4.0",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "auth",
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-83548",
@@ -6521,48 +6557,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-136120",
-          "title": "Ziit 1.3.2 contains a cross-site request forgery vulnerability in the…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-24T22:17:30.95+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 8.1,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 400,
-      "count_30d": 2332,
+      "count_7d": 407,
+      "count_30d": 2339,
       "kev_count": 234,
       "top": [
         {
@@ -7338,7 +7340,7 @@
       "key": "os",
       "label": "운영체제",
       "count_7d": 485,
-      "count_30d": 1174,
+      "count_30d": 1176,
       "kev_count": 286,
       "top": [
         {
@@ -12514,8 +12516,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 26,
-      "count_30d": 147,
+      "count_7d": 29,
+      "count_30d": 150,
       "kev_count": 138,
       "top": [
         {
@@ -12660,6 +12662,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-16663",
+          "title": "MCUboot's encrypted serial-recovery path contains an attacker-controlled…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T07:18:51.263+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125132",
           "title": "libumqtt is vulnerable to an integer underflow which may allow a remote…",
           "score": 8,
@@ -12790,6 +12826,40 @@
           "product_family": "ics_iot",
           "attack_types": [
             "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-16665",
+          "title": "Summary\n\nMCUboot enforces several security-critical invariants on the boot…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.4,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.4, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-25T07:18:51.42+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.4,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -13130,74 +13200,6 @@
           "product_family": "ics_iot",
           "attack_types": [
             "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-102953",
-          "title": "usbh_req_setup() in subsys/usb/host/usbh_ch9.c returns -ETIMEDOUT as soon as a…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.0,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 6.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-24T04:17:28.56+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.10,
-          "cvss": 6.0,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-91007",
-          "title": "The user-mode syscall verifiers for the charger driver API in…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -1.8
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-13T01:19:21.25+09:00",
-          "poc_count": 0,
-          "epss": 0.0011,
-          "epss_percentile": 0.01,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
           ],
           "summary_what": null,
           "fix_versions": [],
