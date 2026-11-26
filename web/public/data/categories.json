@@ -3,10 +3,45 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 194,
-      "count_30d": 883,
-      "kev_count": 330,
+      "count_7d": 223,
+      "count_30d": 912,
+      "kev_count": 331,
       "top": [
+        {
+          "id": "CVE-2026-133323",
+          "title": "Mitel MiCollab의 AWV 구성 요소에서 매개변수 검증이 부족해 비인증 공격자가 블라인드 명령 주입을 수행하고 시스템 권한으로 임의…",
+          "score": 61,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.8,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T02:18:52.88+09:00",
+          "poc_count": 0,
+          "epss": 0.025,
+          "epss_percentile": 0.85,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "Mitel MiCollab의 AWV 구성 요소에서 매개변수 검증이 부족해 비인증 공격자가 블라인드 명령 주입을 수행하고 시스템 권한으로 임의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
         {
           "id": "CVE-2026-103406",
           "title": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다",
@@ -32,15 +67,19 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "Juniper Session Smart Conductor and Session Smart Router",
+          "primary_product": "Session Smart Conductor",
           "product_family": null,
           "attack_types": [
             "rce",
             "injection"
           ],
           "summary_what": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다.",
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "7.0.5-14-lts",
+            "7.1.7-15-sts",
+            "7.2.3-8r2"
+          ],
+          "patch_url": "https://supportportal.juniper.net/JSA112183"
         },
         {
           "id": "CVE-2026-129448",
@@ -735,53 +774,51 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-65660",
-          "title": "Improper control of generation of code ('code injection') in Microsoft Office…",
-          "score": 15,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.8,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -45.0
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-28",
-          "kev_added_at": "2026-09-25",
-          "published_at": "2026-08-12T02:18:54.08+09:00",
-          "poc_count": 0,
-          "epss": 0.025,
-          "epss_percentile": 0.85,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Microsoft SharePoint Server",
-          "product_family": "server",
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "16.0.19725.20522"
-          ],
-          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660"
         }
       ]
     },
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 308,
-      "count_30d": 1318,
-      "kev_count": 310,
+      "count_7d": 365,
+      "count_30d": 1375,
+      "kev_count": 312,
       "top": [
+        {
+          "id": "CVE-2026-133323",
+          "title": "Mitel MiCollab의 AWV 구성 요소에서 매개변수 검증이 부족해 비인증 공격자가 블라인드 명령 주입을 수행하고 시스템 권한으로 임의…",
+          "score": 61,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.8,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T02:18:52.88+09:00",
+          "poc_count": 0,
+          "epss": 0.025,
+          "epss_percentile": 0.85,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "Mitel MiCollab의 AWV 구성 요소에서 매개변수 검증이 부족해 비인증 공격자가 블라인드 명령 주입을 수행하고 시스템 권한으로 임의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
         {
           "id": "CVE-2026-103406",
           "title": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다",
@@ -807,15 +844,53 @@
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": "Juniper Session Smart Conductor and Session Smart Router",
+          "primary_product": "Session Smart Conductor",
           "product_family": null,
           "attack_types": [
             "rce",
             "injection"
           ],
           "summary_what": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다.",
+          "fix_versions": [
+            "7.0.5-14-lts",
+            "7.1.7-15-sts",
+            "7.2.3-8r2"
+          ],
+          "patch_url": "https://supportportal.juniper.net/JSA112183"
+        },
+        {
+          "id": "CVE-2026-133303",
+          "title": "매개변수 검증 미흡으로 인증되지 않은 공격자가 사전 배치한 악성 콘텐츠를 이용해 XML 인젝션을 수행하고 시스템 권한으로 임의 명령을 실행할…",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T02:18:51.67+09:00",
+          "poc_count": 0,
+          "epss": 0.0052,
+          "epss_percentile": 0.37,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "injection"
+          ],
+          "summary_what": "매개변수 검증 미흡으로 인증되지 않은 공격자가 사전 배치한 악성 콘텐츠를 이용해 XML 인젝션을 수행하고 시스템 권한으로 임의 명령을 실행할 수 있습니다.",
           "fix_versions": [],
-          "patch_url": null
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
         },
         {
           "id": "CVE-2026-90817",
@@ -1457,87 +1532,14 @@
             "16.0.19725.20522"
           ],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660"
-        },
-        {
-          "id": "CVE-2026-86060",
-          "title": "RouterOS contains an argument-handling flaw in the SSH login\npath involving…",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 10.7,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -58.3
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-13",
-          "kev_added_at": "2026-09-10",
-          "published_at": "2026-09-06T05:17:18.703+09:00",
-          "poc_count": 0,
-          "epss": 0.36,
-          "epss_percentile": 0.98,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "MikroTik RouterOS",
-          "product_family": "network",
-          "attack_types": [
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "6.49.21",
-            "7.23.4",
-            "7.24.2"
-          ],
-          "patch_url": "https://mikrotik.com/supportsec/september-2026-vulnerability/"
-        },
-        {
-          "id": "CVE-2026-75869",
-          "title": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an…",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 7.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -4.0
-          },
-          "why_now": "30일 내 악용 확률 상위 2%",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T22:17:16.9+09:00",
-          "poc_count": 0,
-          "epss": 0.24,
-          "epss_percentile": 0.98,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 508,
-      "count_30d": 1734,
+      "count_7d": 533,
+      "count_30d": 1759,
       "kev_count": 32,
       "top": [
         {
@@ -2227,10 +2229,117 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 860,
-      "count_30d": 4406,
-      "kev_count": 268,
+      "count_7d": 960,
+      "count_30d": 4507,
+      "kev_count": 272,
       "top": [
+        {
+          "id": "CVE-2026-133469",
+          "title": "인증 토큰 쿠키 파싱 취약점으로, 공격자는 다른 사용자의 인증을 우회하고 재사용 가능한 로그인 토큰 ID를 탈취할 수 있습니다",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-24T02:17:31.78+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.65,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Xen Orchestra Server",
+          "product_family": null,
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "인증 토큰 쿠키 파싱 취약점으로, 공격자는 다른 사용자의 인증을 우회하고 재사용 가능한 로그인 토큰 ID를 탈취할 수 있습니다.",
+          "fix_versions": [
+            "5.211.2",
+            "5.213.1"
+          ],
+          "patch_url": "https://github.com/vatesfr/xen-orchestra/commit/50166fe3a49c02069d35ba9046ca4a1f77f4e11d"
+        },
+        {
+          "id": "CVE-2025-41450",
+          "title": "부적절한 인증 취약점으로 공격자가 할 수 있는 일은 원문 참고입니다",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-12-09",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2025-05-08T19:15:18.38+09:00",
+          "poc_count": 0,
+          "epss": 0.0051,
+          "epss_percentile": 0.37,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "부적절한 인증 취약점으로 공격자가 할 수 있는 일은 원문 참고입니다.",
+          "fix_versions": [
+            "4.2"
+          ],
+          "patch_url": "https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2025-03-01/"
+        },
+        {
+          "id": "CVE-2026-133311",
+          "title": "MiCollab의 AWV 구성 요소에서 인증이 부적절해 인증되지 않은 공격자가 민감한 정보를 얻을 수 있습니다",
+          "score": 56,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 5.9,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-12-09",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T02:18:52.74+09:00",
+          "poc_count": 0,
+          "epss": 0.0040,
+          "epss_percentile": 0.25,
+          "cvss": 5.9,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "MiCollab의 AWV 구성 요소에서 인증이 부적절해 인증되지 않은 공격자가 민감한 정보를 얻을 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
         {
           "id": "CVE-2026-123890",
           "title": "VMware Directory Service의 인증 우회 취약점으로 공격자가 인증을 우회할 수 있습니다",
@@ -2303,6 +2412,40 @@
             "x15.5.20"
           ],
           "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t"
+        },
+        {
+          "id": "CVE-2026-132165",
+          "title": "Missing Authentication for Critical Function vulnerability in Drupal Drupal…",
+          "score": 50,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 0.0,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-27",
+          "kev_added_at": "2026-11-24",
+          "published_at": "2026-11-26T10:17:10.29+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": null,
+          "cvss_version": null,
+          "severity": "UNRATED",
+          "primary_product": "Drupal",
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-116606",
@@ -2805,156 +2948,14 @@
             "r82.00.10"
           ],
           "patch_url": "https://support.checkpoint.com/results/sk/sk1000117"
-        },
-        {
-          "id": "CVE-2026-76460",
-          "title": "A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow…",
-          "score": 13,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 3.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -50.7
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-19",
-          "kev_added_at": "2026-09-16",
-          "published_at": "2026-09-17T06:17:21.43+09:00",
-          "poc_count": 0,
-          "epss": 0.12,
-          "epss_percentile": 0.96,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Cisco Identity Services Engine",
-          "product_family": "network",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5"
-        },
-        {
-          "id": "CVE-2026-87886",
-          "title": "Local privilege escalation due to insecure file permissions",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -45.9
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-19",
-          "kev_added_at": "2026-09-16",
-          "published_at": "2026-09-18T08:18:53.763+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.08,
-          "cvss": 7.8,
-          "cvss_version": "3.0",
-          "severity": "HIGH",
-          "primary_product": "Acronis Backup",
-          "product_family": "server",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "1.2.3",
-            "1.8.11",
-            "1.9.3"
-          ],
-          "patch_url": "https://security-advisory.acronis.com/advisories/SEC-10986"
-        },
-        {
-          "id": "CVE-2026-58704",
-          "title": "In Cellular Modem, there is a possible permission bypass due to a logic error…",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -47.2
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-19",
-          "kev_added_at": "2026-09-16",
-          "published_at": "2026-09-16T04:17:32.297+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://source.android.com/docs/security/bulletin/pixel/2026/2026-09-01"
-        },
-        {
-          "id": "CVE-2026-42016",
-          "title": "JFrog Artifactory (Self Hosted) versions before 7.133.11 are vulnerable to a…",
-          "score": 11,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 2.6,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -50.5
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-25",
-          "kev_added_at": "2026-09-11",
-          "published_at": "2026-07-28T05:16:39.613+09:00",
-          "poc_count": 0,
-          "epss": 0.086,
-          "epss_percentile": 0.95,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "JFrog Artifactory",
-          "product_family": "dev",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "7.133.11"
-          ],
-          "patch_url": "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
         }
       ]
     },
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 154,
-      "count_30d": 792,
+      "count_7d": 172,
+      "count_30d": 811,
       "kev_count": 27,
       "top": [
         {
@@ -3190,6 +3191,40 @@
           "poc_count": 0,
           "epss": 0.0028,
           "epss_percentile": 0.13,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-128719",
+          "title": "An issue in PHPGurukul Employee Leaves Management System (ELMS) Version 2.1…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.3
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T01:18:09.56+09:00",
+          "poc_count": 0,
+          "epss": 0.0023,
+          "epss_percentile": 0.08,
           "cvss": 9.8,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
@@ -3614,49 +3649,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-77295",
-          "title": "MyMangaDB is a self-hosted manga collection manager with automatic metadata…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T06:18:03.347+09:00",
-          "poc_count": 0,
-          "epss": 0.0060,
-          "epss_percentile": 0.42,
-          "cvss": 8.7,
-          "cvss_version": "4.0",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 364,
-      "count_30d": 2653,
+      "count_7d": 399,
+      "count_30d": 2688,
       "kev_count": 463,
       "top": [
         {
@@ -4409,8 +4409,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 263,
-      "count_30d": 1072,
+      "count_7d": 307,
+      "count_30d": 1116,
       "kev_count": 14,
       "top": [
         {
@@ -5103,9 +5103,9 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 164,
-      "count_30d": 863,
-      "kev_count": 163,
+      "count_7d": 174,
+      "count_30d": 873,
+      "kev_count": 165,
       "top": [
         {
           "id": "CVE-2026-133968",
@@ -5142,6 +5142,40 @@
             "0.8.6"
           ],
           "patch_url": "https://github.com/Project-MONAI/MONAILabel/pull/1915"
+        },
+        {
+          "id": "CVE-2023-25914",
+          "title": "접근 제한이 부적절해 인증된 공격자가 XML 인터페이스를 통해 서버의 시스템 파일을 읽을 수 있으며, 이 정보로 시스템을 완전히 침해할 수…",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2023-08-22T06:15:08.97+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.64,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": "접근 제한이 부적절해 인증된 공격자가 XML 인터페이스를 통해 서버의 시스템 파일을 읽을 수 있으며, 이 정보로 시스템을 완전히 침해할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-90817",
@@ -5182,6 +5216,40 @@
             "17.4.4"
           ],
           "patch_url": null
+        },
+        {
+          "id": "CVE-2026-133275",
+          "title": "Mitel MiCollab의 AWV 구성 요소에서 파일 형식 검증이 미흡해 인증되지 않은 공격자가 임의 파일을 업로드할 수 있습니다",
+          "score": 55,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 5.3,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T01:21:31.033+09:00",
+          "poc_count": 0,
+          "epss": 0.0032,
+          "epss_percentile": 0.16,
+          "cvss": 5.3,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": "Mitel MiCollab의 AWV 구성 요소에서 파일 형식 검증이 미흡해 인증되지 않은 공격자가 임의 파일을 업로드할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
         },
         {
           "id": "CVE-2026-48356",
@@ -5729,98 +5797,29 @@
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963"
         },
         {
-          "id": "CVE-2026-123167",
-          "title": "SolarWinds Serv-U is affected by a privilege escalation vulnerability that…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T02:18:13.293+09:00",
-          "poc_count": 0,
-          "epss": 0.0094,
-          "epss_percentile": 0.59,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-135888",
-          "title": "Directory traversal vulnerability in the custom-homepage asset endpoint…",
-          "score": 9,
+          "id": "CVE-2026-133336",
+          "title": "Joomla Extension - chronoengine.com - Unauthenticated arbitrary file upload in…",
+          "score": 10,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
             "epss": 0.0,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 9.2,
+            "cvss": 9.5,
             "decay": 0.0
           },
-          "why_now": "CVSS 9.2, 최근 공개",
+          "why_now": "CVSS 9.5, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-25T22:17:28.23+09:00",
+          "published_at": "2026-11-26T17:17:06.87+09:00",
           "poc_count": 0,
           "epss": null,
           "epss_percentile": null,
-          "cvss": 9.2,
+          "cvss": 9.5,
           "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-14914",
-          "title": "Unrestricted upload of file with dangerous type vulnerability in Tegsoft…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 10.0,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 10.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T23:17:53.043+09:00",
-          "poc_count": 0,
-          "epss": 0.0052,
-          "epss_percentile": 0.37,
-          "cvss": 10.0,
-          "cvss_version": "3.1",
           "severity": "CRITICAL",
           "primary_product": null,
           "product_family": null,
@@ -5836,8 +5835,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 130,
-      "count_30d": 602,
+      "count_7d": 147,
+      "count_30d": 620,
       "kev_count": 33,
       "top": [
         {
@@ -6541,9 +6540,9 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 381,
-      "count_30d": 2251,
-      "kev_count": 234,
+      "count_7d": 430,
+      "count_30d": 2300,
+      "kev_count": 236,
       "top": [
         {
           "id": "CVE-2024-10441",
@@ -6580,6 +6579,40 @@
           "patch_url": "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20"
         },
         {
+          "id": "CVE-2023-25915",
+          "title": "입력값 검증 미흡으로 인증된 원격 공격자가 대상 시스템에서 임의의 명령을 실행할 수 있습니다",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.4,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2023-08-22T06:15:09.17+09:00",
+          "poc_count": 0,
+          "epss": 0.014,
+          "epss_percentile": 0.73,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "입력값 검증 미흡으로 인증된 원격 공격자가 대상 시스템에서 임의의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-132224",
           "title": "계정 가입 흐름 처리 오류로 특정 자산의 Project JavaScript 필드에 공격자가 제어하는 코드가 삽입될 수 있습니다",
           "score": 58,
@@ -6614,6 +6647,40 @@
             "2026-11-17"
           ],
           "patch_url": "https://pages.optimizely.com/rs/947-RKE-048/images/Security%20Incident%20Report%20-%20Optimizely%20Web%20Experimentation%20-%20Nov%2017%202026.pdf"
+        },
+        {
+          "id": "CVE-2026-133324",
+          "title": "인증 처리 오류로 인증되지 않은 공격자가 인증을 우회해 애플리케이션 내에서 무단 작업을 수행할 수 있습니다",
+          "score": 55,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.1,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 5.3,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-11-20T02:18:53.017+09:00",
+          "poc_count": 0,
+          "epss": 0.0041,
+          "epss_percentile": 0.27,
+          "cvss": 5.3,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": "Micollab",
+          "product_family": null,
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "인증 처리 오류로 인증되지 않은 공격자가 인증을 우회해 애플리케이션 내에서 무단 작업을 수행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
         },
         {
           "id": "CVE-2026-114713",
@@ -7229,78 +7296,6 @@
             "14.1-73.37"
           ],
           "patch_url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096"
-        },
-        {
-          "id": "CVE-2026-129289",
-          "title": "PHP-FPM request smuggling through an unread HTTP request body",
-          "score": 15,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 7.4,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.2,
-            "decay": -1.9
-          },
-          "why_now": "30일 내 악용 확률 상위 2%",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T00:17:27.523+09:00",
-          "poc_count": 0,
-          "epss": 0.25,
-          "epss_percentile": 0.98,
-          "cvss": 9.2,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-67279",
-          "title": "RouterOS SSH enters the connection protocol after a client-requested rekey even…",
-          "score": 14,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 1.9,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -44.2
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-28",
-          "kev_added_at": "2026-09-25",
-          "published_at": "2026-09-06T05:17:18.39+09:00",
-          "poc_count": 0,
-          "epss": 0.065,
-          "epss_percentile": 0.94,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": "MikroTik RouterOS",
-          "product_family": "network",
-          "attack_types": [
-            "other"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "6.49.21",
-            "7.23.4",
-            "7.24.2"
-          ],
-          "patch_url": "https://mikrotik.com/supportsec/september-2026-vulnerability/"
         }
       ]
     }
@@ -7309,8 +7304,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 484,
-      "count_30d": 1057,
+      "count_7d": 491,
+      "count_30d": 1095,
       "kev_count": 286,
       "top": [
         {
@@ -8175,14 +8170,16 @@
           "cvss": 9.6,
           "cvss_version": "3.1",
           "severity": "CRITICAL",
-          "primary_product": null,
+          "primary_product": "Chrome",
           "product_family": "browser",
           "attack_types": [
             "other"
           ],
           "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
+          "fix_versions": [
+            "158.0.8127.88"
+          ],
+          "patch_url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01734282054.html"
         },
         {
           "id": "CVE-2026-85046",
@@ -9526,10 +9523,44 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 465,
-      "count_30d": 2144,
-      "kev_count": 24,
+      "count_7d": 529,
+      "count_30d": 2208,
+      "kev_count": 25,
       "top": [
+        {
+          "id": "CVE-2026-132165",
+          "title": "Missing Authentication for Critical Function vulnerability in Drupal Drupal…",
+          "score": 50,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 0.0,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-27",
+          "kev_added_at": "2026-11-24",
+          "published_at": "2026-11-26T10:17:10.29+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": null,
+          "cvss_version": null,
+          "severity": "UNRATED",
+          "primary_product": "Drupal",
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-119977",
           "title": "전체 패키지 코어 업그레이드 중 예측 가능한 웹 접근 가능 스테이징 경로로 인해 인증되지 않은 공격자가 업그레이드 시간에 서버에서 코드를…",
@@ -10221,40 +10252,6 @@
           "kev_due_date": null,
           "kev_added_at": null,
           "published_at": "2026-11-25T18:17:20.087+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-135049",
-          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Brainstorm Force Presto…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T18:17:19.763+09:00",
           "poc_count": 0,
           "epss": 0.0031,
           "epss_percentile": 0.16,
@@ -11012,7 +11009,7 @@
       "key": "dev",
       "label": "개발 라이브러리·도구",
       "count_7d": 0,
-      "count_30d": 125,
+      "count_30d": 131,
       "kev_count": 72,
       "top": [
         {
@@ -12486,10 +12483,114 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 33,
-      "count_30d": 149,
-      "kev_count": 138,
+      "count_7d": 37,
+      "count_30d": 153,
+      "kev_count": 141,
       "top": [
+        {
+          "id": "CVE-2023-25915",
+          "title": "입력값 검증 미흡으로 인증된 원격 공격자가 대상 시스템에서 임의의 명령을 실행할 수 있습니다",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.4,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2023-08-22T06:15:09.17+09:00",
+          "poc_count": 0,
+          "epss": 0.014,
+          "epss_percentile": 0.73,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": "입력값 검증 미흡으로 인증된 원격 공격자가 대상 시스템에서 임의의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2023-25914",
+          "title": "접근 제한이 부적절해 인증된 공격자가 XML 인터페이스를 통해 서버의 시스템 파일을 읽을 수 있으며, 이 정보로 시스템을 완전히 침해할 수…",
+          "score": 59,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2023-08-22T06:15:08.97+09:00",
+          "poc_count": 0,
+          "epss": 0.011,
+          "epss_percentile": 0.64,
+          "cvss": 8.8,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": "접근 제한이 부적절해 인증된 공격자가 XML 인터페이스를 통해 서버의 시스템 파일을 읽을 수 있으며, 이 정보로 시스템을 완전히 침해할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2025-41450",
+          "title": "부적절한 인증 취약점으로 공격자가 할 수 있는 일은 원문 참고입니다",
+          "score": 58,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-12-09",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2025-05-08T19:15:18.38+09:00",
+          "poc_count": 0,
+          "epss": 0.0051,
+          "epss_percentile": 0.37,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "Ak-Sm 800A Firmware",
+          "product_family": "ics_iot",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": "부적절한 인증 취약점으로 공격자가 할 수 있는 일은 원문 참고입니다.",
+          "fix_versions": [
+            "4.2"
+          ],
+          "patch_url": "https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2025-03-01/"
+        },
         {
           "id": "CVE-2026-116606",
           "title": "인증 우회 취약점으로 인증되지 않은 원격 공격자가 구성 가져오기 기능을 호출해 조작된 호환 백업을 복원하고 장비의 전역 구성을 무단 변경할 수…",
@@ -12734,6 +12835,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-102957",
+          "title": "z_impl_pwm_capture_cycles() in drivers/pwm/pwm_capture.c stores its capture…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-26T06:17:15.793+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-100374",
           "title": "The system call verification handlers for smbus_block_read() and…",
           "score": 8,
@@ -12904,6 +13039,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-102960",
+          "title": "The Grow R502-A fingerprint sensor driver…",
+          "score": 7,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 6.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 6.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-26T06:17:16.087+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 6.8,
+          "cvss_version": "3.1",
+          "severity": "MEDIUM",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-82391",
           "title": "The HTTP/2 front-end of the Zephyr HTTP server aliased connection receive state…",
           "score": 7,
@@ -12994,176 +13163,6 @@
           "epss": 0.0049,
           "epss_percentile": 0.34,
           "cvss": 7.5,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-102951",
-          "title": "The Intel SoC FPGA Agilex5 SoC's static MMU region table in…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.6,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 6.6, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-24T04:17:28.267+09:00",
-          "poc_count": 0,
-          "epss": 0.0013,
-          "epss_percentile": 0.01,
-          "cvss": 6.6,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-102949",
-          "title": "The Intel SEDI I2C controller driver (drivers/i2c/i2c_sedi.c, used on Intel ISH…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.4,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 6.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-24T04:17:27.963+09:00",
-          "poc_count": 0,
-          "epss": 0.0023,
-          "epss_percentile": 0.08,
-          "cvss": 6.4,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-16667",
-          "title": "The Cypress/PSoC6 flash-map backend in boot/cypress/cy_flash_pal/cy_flash_map.c…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.2,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 6.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T09:17:11.79+09:00",
-          "poc_count": 0,
-          "epss": 0.0021,
-          "epss_percentile": 0.06,
-          "cvss": 6.2,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2022-29966",
-          "title": "Emerson Ovation has several protocols that have no authentication, which could…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -3.8
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-04T08:17:20.353+09:00",
-          "poc_count": 0,
-          "epss": 0.0064,
-          "epss_percentile": 0.45,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-77685",
-          "title": "The RFCOMM multiplexer control-channel handler in…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.3,
-            "decay": -2.3
-          },
-          "why_now": "CVSS 8.3, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-11T07:20:53.717+09:00",
-          "poc_count": 0,
-          "epss": 0.0035,
-          "epss_percentile": 0.20,
-          "cvss": 8.3,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
