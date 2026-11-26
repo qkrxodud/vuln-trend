@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 190,
-      "count_30d": 879,
+      "count_7d": 192,
+      "count_30d": 881,
       "kev_count": 331,
       "top": [
         {
@@ -780,8 +780,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 288,
-      "count_30d": 1321,
+      "count_7d": 296,
+      "count_30d": 1329,
       "kev_count": 312,
       "top": [
         {
@@ -1538,8 +1538,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 541,
-      "count_30d": 1786,
+      "count_7d": 562,
+      "count_30d": 1807,
       "kev_count": 32,
       "top": [
         {
@@ -1735,6 +1735,40 @@
           "epss": 0.013,
           "epss_percentile": 0.70,
           "cvss": 8.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "xss"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-137470",
+          "title": "SiYuan before 3.8.11 contains a stored cross-site scripting vulnerability that…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T01:17:55.763+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -2189,48 +2223,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-133231",
-          "title": "Stored cross-site scripting in the documentation editor in Devolutions Server…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.7,
-            "decay": -0.5
-          },
-          "why_now": "CVSS 8.7, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-24T00:17:33.747+09:00",
-          "poc_count": 0,
-          "epss": 0.0046,
-          "epss_percentile": 0.31,
-          "cvss": 8.7,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 732,
-      "count_30d": 4420,
+      "count_7d": 787,
+      "count_30d": 4475,
       "kev_count": 272,
       "top": [
         {
@@ -2954,8 +2954,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 131,
-      "count_30d": 790,
+      "count_7d": 142,
+      "count_30d": 801,
       "kev_count": 27,
       "top": [
         {
@@ -3446,6 +3446,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-137547",
+          "title": "Coder before 2.29.27, 2.30.0 before 2.34.19, 2.35.0 before 2.37.11, 2.38.0…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 8.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 8.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T01:18:08.157+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 8.1,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-95517",
           "title": "Reliance on obfuscation or encryption of Security-Relevant inputs without…",
           "score": 8,
@@ -3548,6 +3582,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-137542",
+          "title": "LaraDashboard before 1.5.2 contains an information disclosure vulnerability in…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.7,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.7, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T01:18:07.26+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.7,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "info"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-114881",
           "title": "Vulnerability in the Document Management and Collaboration product of Oracle…",
           "score": 8,
@@ -3581,82 +3649,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-50048",
-          "title": "Genetec Security Center can expose access control unit credentials in plain…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 7.8,
-            "decay": -0.2
-          },
-          "why_now": "CVSS 7.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T02:18:51.51+09:00",
-          "poc_count": 0,
-          "epss": 0.0027,
-          "epss_percentile": 0.12,
-          "cvss": 7.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-123965",
-          "title": "A prompt injection vulnerability in all versions of Jet Admin Cloud Platform…",
-          "score": 8,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.9,
-            "decay": -2.5
-          },
-          "why_now": "CVSS 9.9, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-14T03:17:30.933+09:00",
-          "poc_count": 0,
-          "epss": 0.0059,
-          "epss_percentile": 0.42,
-          "cvss": 9.9,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "info"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 332,
-      "count_30d": 2600,
+      "count_7d": 337,
+      "count_30d": 2605,
       "kev_count": 463,
       "top": [
         {
@@ -4416,8 +4416,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 231,
-      "count_30d": 1084,
+      "count_7d": 249,
+      "count_30d": 1102,
       "kev_count": 14,
       "top": [
         {
@@ -5109,8 +5109,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 138,
-      "count_30d": 843,
+      "count_7d": 147,
+      "count_30d": 852,
       "kev_count": 165,
       "top": [
         {
@@ -5834,8 +5834,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 120,
-      "count_30d": 606,
+      "count_7d": 123,
+      "count_30d": 609,
       "kev_count": 33,
       "top": [
         {
@@ -5945,6 +5945,40 @@
             "1.43.3.10861"
           ],
           "patch_url": "https://forums.plex.tv/t/plex-media-server/30447/711"
+        },
+        {
+          "id": "CVE-2026-126984",
+          "title": "A **server-side request forgery** flaw has been found in the…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 10.0,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 10.0, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T01:17:50.623+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 10.0,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": null,
+          "attack_types": [
+            "request_forgery"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
         },
         {
           "id": "CVE-2026-86155",
@@ -6496,48 +6530,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134942",
-          "title": "Cross-Site Request Forgery (CSRF) vulnerability in 10up ElasticPress…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T17:16:45.363+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 320,
-      "count_30d": 2255,
+      "count_7d": 339,
+      "count_30d": 2274,
       "kev_count": 236,
       "top": [
         {
@@ -9519,8 +9519,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 527,
-      "count_30d": 2212,
+      "count_7d": 551,
+      "count_30d": 2236,
       "kev_count": 25,
       "top": [
         {
