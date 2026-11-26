@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 227,
-      "count_30d": 916,
+      "count_7d": 190,
+      "count_30d": 879,
       "kev_count": 331,
       "top": [
         {
@@ -780,8 +780,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 372,
-      "count_30d": 1382,
+      "count_7d": 288,
+      "count_30d": 1321,
       "kev_count": 312,
       "top": [
         {
@@ -1538,8 +1538,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 595,
-      "count_30d": 1821,
+      "count_7d": 541,
+      "count_30d": 1786,
       "kev_count": 32,
       "top": [
         {
@@ -2229,8 +2229,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 976,
-      "count_30d": 4523,
+      "count_7d": 732,
+      "count_30d": 4420,
       "kev_count": 272,
       "top": [
         {
@@ -2954,8 +2954,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 175,
-      "count_30d": 814,
+      "count_7d": 131,
+      "count_30d": 790,
       "kev_count": 27,
       "top": [
         {
@@ -3655,8 +3655,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 399,
-      "count_30d": 2688,
+      "count_7d": 332,
+      "count_30d": 2600,
       "kev_count": 463,
       "top": [
         {
@@ -4416,8 +4416,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 310,
-      "count_30d": 1119,
+      "count_7d": 231,
+      "count_30d": 1084,
       "kev_count": 14,
       "top": [
         {
@@ -5109,8 +5109,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 176,
-      "count_30d": 875,
+      "count_7d": 138,
+      "count_30d": 843,
       "kev_count": 165,
       "top": [
         {
@@ -5688,6 +5688,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-104998",
+          "title": "The Product Input Fields for WooCommerce plugin for WordPress is vulnerable to…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:22.833+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-133336",
           "title": "Joomla Extension - chronoengine.com - Unauthenticated arbitrary file upload in…",
           "score": 10,
@@ -5794,49 +5828,14 @@
             "9.1.0.0300"
           ],
           "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
-        },
-        {
-          "id": "CVE-2026-135888",
-          "title": "Directory traversal vulnerability in the custom-homepage asset endpoint…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.4,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.2,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 9.2, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-25T22:17:28.23+09:00",
-          "poc_count": 0,
-          "epss": 0.015,
-          "epss_percentile": 0.74,
-          "cvss": 9.2,
-          "cvss_version": "4.0",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "auth",
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 147,
-      "count_30d": 620,
+      "count_7d": 120,
+      "count_30d": 606,
       "kev_count": 33,
       "top": [
         {
@@ -6537,8 +6536,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 435,
-      "count_30d": 2305,
+      "count_7d": 320,
+      "count_30d": 2255,
       "kev_count": 236,
       "top": [
         {
@@ -7301,8 +7300,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 491,
-      "count_30d": 1095,
+      "count_7d": 7,
+      "count_30d": 978,
       "kev_count": 286,
       "top": [
         {
@@ -8031,7 +8030,7 @@
       "key": "browser",
       "label": "브라우저",
       "count_7d": 1,
-      "count_30d": 601,
+      "count_30d": 546,
       "kev_count": 112,
       "top": [
         {
@@ -9520,8 +9519,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 615,
-      "count_30d": 2294,
+      "count_7d": 527,
+      "count_30d": 2212,
       "kev_count": 25,
       "top": [
         {
@@ -9890,6 +9889,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-104998",
+          "title": "The Product Input Fields for WooCommerce plugin for WordPress is vulnerable to…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:22.833+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-134481",
           "title": "Deserialization of Untrusted Data vulnerability in Ultimate Member Ultimate…",
           "score": 10,
@@ -10061,6 +10094,142 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-136240",
+          "title": "The PDF Invoice for WooCommerce + Drag and Drop Template Builder plugin for…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:26.867+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-135641",
+          "title": "The WP Job Portal – AI-Powered Recruitment System for Company or Job Board…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:26.1+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-134173",
+          "title": "The WordPress File Upload plugin for WordPress is vulnerable to Arbitrary File…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:25.647+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-133951",
+          "title": "The Simple Membership plugin for WordPress is vulnerable to Privilege…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.1,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.1, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T00:17:25.487+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.1,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "auth"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-125294",
           "title": "The Nexter Blocks Pro plugin for WordPress is vulnerable to Privilege…",
           "score": 9,
@@ -10089,176 +10258,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-133525",
-          "title": "Deserialization of Untrusted Data vulnerability in ThemeFusion Fusion Builder…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-26T17:17:07.253+09:00",
-          "poc_count": 0,
-          "epss": 0.0051,
-          "epss_percentile": 0.36,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "rce"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-14492",
-          "title": "The WP Duplicate – WordPress Migration Plugin plugin for WordPress is…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.5
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T19:17:28.927+09:00",
-          "poc_count": 0,
-          "epss": 0.018,
-          "epss_percentile": 0.78,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-80188",
-          "title": "The BuddyBoss Addons plugin for WordPress is vulnerable to Authentication…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -1.2
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-20T23:17:54.003+09:00",
-          "poc_count": 0,
-          "epss": 0.0070,
-          "epss_percentile": 0.48,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134945",
-          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Brainstorm Force SureForms…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-26T00:17:39.147+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-134873",
-          "title": "Cross-Site Request Forgery (CSRF) vulnerability in Brainstorm Force CartFlows…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -0.1
-          },
-          "why_now": "CVSS 8.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-26T00:17:38.907+09:00",
-          "poc_count": 0,
-          "epss": 0.0031,
-          "epss_percentile": 0.16,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "request_forgery"
           ],
           "summary_what": null,
           "fix_versions": [],
@@ -11772,7 +11771,7 @@
     {
       "key": "cloud",
       "label": "클라우드·가상화",
-      "count_7d": 1,
+      "count_7d": 0,
       "count_30d": 1,
       "kev_count": 19,
       "top": [
@@ -12484,8 +12483,8 @@
     {
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
-      "count_7d": 37,
-      "count_30d": 153,
+      "count_7d": 30,
+      "count_30d": 149,
       "kev_count": 141,
       "top": [
         {
