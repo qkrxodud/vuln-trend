@@ -70,6 +70,41 @@
     "patch_url": "https://www.synology.com/en-global/security/advisory/Synology_SA_24_20"
   },
   {
+    "id": "CVE-2026-103406",
+    "title": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.3,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-28",
+    "kev_added_at": "2026-11-25",
+    "published_at": "2026-10-29T02:17:25.83+09:00",
+    "poc_count": 0,
+    "epss": 0.0086,
+    "epss_percentile": 0.56,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Juniper Session Smart Conductor and Session Smart Router",
+    "product_family": null,
+    "attack_types": [
+      "rce",
+      "injection"
+    ],
+    "summary_what": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다.",
+    "fix_versions": [],
+    "patch_url": null
+  },
+  {
     "id": "CVE-2026-129448",
     "title": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수…",
     "score": 60,
@@ -3681,46 +3716,5 @@
       "2.4.4"
     ],
     "patch_url": "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
-  },
-  {
-    "id": "CVE-2025-39964",
-    "title": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 0.2,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 5.5,
-      "decay": -44.1
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-21",
-    "kev_added_at": "2026-09-18",
-    "published_at": "2025-10-13T23:15:34.737+09:00",
-    "poc_count": 0,
-    "epss": 0.0058,
-    "epss_percentile": 0.41,
-    "cvss": 5.5,
-    "cvss_version": "3.1",
-    "severity": "MEDIUM",
-    "primary_product": "Linux Kernel",
-    "product_family": "os",
-    "attack_types": [
-      "other"
-    ],
-    "summary_what": null,
-    "fix_versions": [
-      "5.10.245",
-      "5.15.194",
-      "6.1.154",
-      "6.6.108",
-      "6.12.49",
-      "6.16.9"
-    ],
-    "patch_url": "https://git.kernel.org/stable/c/0f28c4adbc4a97437874c9b669fd7958a8c6d6ce"
   }
 ]

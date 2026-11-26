@@ -3,10 +3,45 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 229,
-      "count_30d": 916,
-      "kev_count": 329,
+      "count_7d": 194,
+      "count_30d": 883,
+      "kev_count": 330,
       "top": [
+        {
+          "id": "CVE-2026-103406",
+          "title": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-10-29T02:17:25.83+09:00",
+          "poc_count": 0,
+          "epss": 0.0086,
+          "epss_percentile": 0.56,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Juniper Session Smart Conductor and Session Smart Router",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-129448",
           "title": "Apache Roller의 XML-RPC 처리에서 인증 전 신뢰할 수 없는 데이터가 역직렬화되어 비인증 원격 공격자가 임의 코드를 실행할 수…",
@@ -737,51 +772,51 @@
             "16.0.19725.20522"
           ],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660"
-        },
-        {
-          "id": "CVE-2026-75869",
-          "title": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an…",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 7.3,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.8,
-            "decay": -4.0
-          },
-          "why_now": "30일 내 악용 확률 상위 2%",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-12T22:17:16.9+09:00",
-          "poc_count": 0,
-          "epss": 0.24,
-          "epss_percentile": 0.98,
-          "cvss": 8.8,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": null,
-          "product_family": null,
-          "attack_types": [
-            "rce",
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 371,
-      "count_30d": 1362,
-      "kev_count": 309,
+      "count_7d": 308,
+      "count_30d": 1318,
+      "kev_count": 310,
       "top": [
+        {
+          "id": "CVE-2026-103406",
+          "title": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다",
+          "score": 60,
+          "score_breakdown": {
+            "kev": 50.0,
+            "ransomware": 0.0,
+            "epss": 0.3,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CISA 악용 목록 등재",
+          "is_kev": true,
+          "kev_ransomware": false,
+          "kev_due_date": "2026-11-28",
+          "kev_added_at": "2026-11-25",
+          "published_at": "2026-10-29T02:17:25.83+09:00",
+          "poc_count": 0,
+          "epss": 0.0086,
+          "epss_percentile": 0.56,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "Juniper Session Smart Conductor and Session Smart Router",
+          "product_family": null,
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": "특수 요소의 부적절한 중립화 취약점으로 인해 원격 공격자가 조작된 Salt 미니언 ID를 통해 루트 권한으로 임의 명령을 실행할 수 있습니다.",
+          "fix_versions": [],
+          "patch_url": null
+        },
         {
           "id": "CVE-2026-90817",
           "title": "인증되지 않은 공격자가 공개 설문 경로와 가져오기 처리 과정의 취약점을 악용해 REDCap 서버에서 임의 코드를 원격 실행할 수 있습니다",
@@ -1495,52 +1530,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-76461",
-          "title": "A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure…",
-          "score": 12,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 0.0,
-            "epss": 1.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -49.1
-          },
-          "why_now": "CISA 악용 목록 등재",
-          "is_kev": true,
-          "kev_ransomware": false,
-          "kev_due_date": "2026-09-17",
-          "kev_added_at": "2026-09-14",
-          "published_at": "2026-09-15T02:17:51.113+09:00",
-          "poc_count": 0,
-          "epss": 0.033,
-          "epss_percentile": 0.89,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "Cisco AsyncOS",
-          "product_family": "network",
-          "attack_types": [
-            "injection"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "15.5.5-014",
-            "16.0.4-302",
-            "16.5.0-780"
-          ],
-          "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-inj-2bLVGmhX"
         }
       ]
     },
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 633,
-      "count_30d": 1778,
+      "count_7d": 508,
+      "count_30d": 1734,
       "kev_count": 32,
       "top": [
         {
@@ -2230,8 +2227,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 1006,
-      "count_30d": 4554,
+      "count_7d": 860,
+      "count_30d": 4406,
       "kev_count": 268,
       "top": [
         {
@@ -2956,8 +2953,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 194,
-      "count_30d": 833,
+      "count_7d": 154,
+      "count_30d": 792,
       "kev_count": 27,
       "top": [
         {
@@ -3658,8 +3655,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 414,
-      "count_30d": 3028,
+      "count_7d": 364,
+      "count_30d": 2653,
       "kev_count": 463,
       "top": [
         {
@@ -4412,8 +4409,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 297,
-      "count_30d": 1113,
+      "count_7d": 263,
+      "count_30d": 1072,
       "kev_count": 14,
       "top": [
         {
@@ -5106,8 +5103,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 212,
-      "count_30d": 890,
+      "count_7d": 164,
+      "count_30d": 863,
       "kev_count": 163,
       "top": [
         {
@@ -5839,8 +5836,8 @@
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 145,
-      "count_30d": 615,
+      "count_7d": 130,
+      "count_30d": 602,
       "kev_count": 33,
       "top": [
         {
@@ -6544,8 +6541,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 447,
-      "count_30d": 2379,
+      "count_7d": 381,
+      "count_30d": 2251,
       "kev_count": 234,
       "top": [
         {
@@ -7312,8 +7309,8 @@
     {
       "key": "os",
       "label": "운영체제",
-      "count_7d": 485,
-      "count_30d": 1179,
+      "count_7d": 484,
+      "count_30d": 1057,
       "kev_count": 286,
       "top": [
         {
@@ -8042,7 +8039,7 @@
       "key": "browser",
       "label": "브라우저",
       "count_7d": 1,
-      "count_30d": 633,
+      "count_30d": 601,
       "kev_count": 112,
       "top": [
         {
@@ -9529,8 +9526,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 467,
-      "count_30d": 2142,
+      "count_7d": 465,
+      "count_30d": 2144,
       "kev_count": 24,
       "top": [
         {
@@ -11014,8 +11011,8 @@
     {
       "key": "dev",
       "label": "개발 라이브러리·도구",
-      "count_7d": 52,
-      "count_30d": 101,
+      "count_7d": 0,
+      "count_30d": 125,
       "kev_count": 72,
       "top": [
         {
@@ -11516,6 +11513,43 @@
           "patch_url": "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
         },
         {
+          "id": "CVE-2026-132891",
+          "title": "In JetBrains TeamCity before 2026.2, 2026.1.4, 2025.11.8 remote code execution…",
+          "score": 9,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": -1.2
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-19T20:16:55.263+09:00",
+          "poc_count": 0,
+          "epss": 0.0080,
+          "epss_percentile": 0.53,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": "JetBrains TeamCity",
+          "product_family": "dev",
+          "attack_types": [
+            "other"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "2025.11.8",
+            "2026.1.4"
+          ],
+          "patch_url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
+        },
+        {
           "id": "CVE-2026-48710",
           "title": "Starlette is a lightweight ASGI framework/toolkit",
           "score": 8,
@@ -11699,71 +11733,34 @@
           "patch_url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
         },
         {
-          "id": "CVE-2026-132913",
-          "title": "In JetBrains TeamCity before 2026.2, 2026.1.4, 2025.11.8 stored XSS on the P4…",
+          "id": "CVE-2026-132906",
+          "title": "In JetBrains TeamCity before 2026.2, 2026.1.4, 2025.11.8 remote code execution…",
           "score": 8,
           "score_breakdown": {
             "kev": 0.0,
             "ransomware": 0.0,
-            "epss": 0.1,
+            "epss": 0.2,
             "news": 0.0,
             "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -1.0
+            "cvss": 8.8,
+            "decay": -1.1
           },
-          "why_now": "CVSS 8.4, 최근 공개",
+          "why_now": "CVSS 8.8, 최근 공개",
           "is_kev": false,
           "kev_ransomware": false,
           "kev_due_date": null,
           "kev_added_at": null,
-          "published_at": "2026-11-19T20:16:57.917+09:00",
+          "published_at": "2026-11-19T20:16:57.087+09:00",
           "poc_count": 0,
-          "epss": 0.0043,
-          "epss_percentile": 0.29,
-          "cvss": 8.4,
+          "epss": 0.0073,
+          "epss_percentile": 0.50,
+          "cvss": 8.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": "JetBrains TeamCity",
           "product_family": "dev",
           "attack_types": [
-            "xss"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "2025.11.8",
-            "2026.1.4"
-          ],
-          "patch_url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
-        },
-        {
-          "id": "CVE-2026-132914",
-          "title": "In JetBrains TeamCity before 2026.2, 2026.1.4, 2025.11.8 stored XSS on the…",
-          "score": 7,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.0,
-            "decay": -1.0
-          },
-          "why_now": "CVSS 8.0, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-19T20:16:58.04+09:00",
-          "poc_count": 0,
-          "epss": 0.0033,
-          "epss_percentile": 0.18,
-          "cvss": 8.0,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "JetBrains TeamCity",
-          "product_family": "dev",
-          "attack_types": [
-            "xss"
+            "other"
           ],
           "summary_what": null,
           "fix_versions": [
@@ -12490,7 +12487,7 @@
       "key": "ics_iot",
       "label": "산업제어·IoT·펌웨어",
       "count_7d": 33,
-      "count_30d": 154,
+      "count_30d": 149,
       "kev_count": 138,
       "top": [
         {
@@ -12691,6 +12688,40 @@
           "epss": 0.0060,
           "epss_percentile": 0.42,
           "cvss": 8.6,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": null,
+          "product_family": "ics_iot",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-127280",
+          "title": "C-More EA9 Programming Software V6.80 does not adequately validate data read…",
+          "score": 8,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 7.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-26T01:17:38.977+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 7.8,
           "cvss_version": "3.1",
           "severity": "HIGH",
           "primary_product": null,
@@ -13143,40 +13174,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-95824",
-          "title": "The IPv6 Neighbor Discovery code in subsys/net/ip/ipv6_nbr.c flushes a…",
-          "score": 6,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.1,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 6.5,
-            "decay": -0.6
-          },
-          "why_now": "CVSS 6.5, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-21T02:18:28.167+09:00",
-          "poc_count": 0,
-          "epss": 0.0034,
-          "epss_percentile": 0.19,
-          "cvss": 6.5,
-          "cvss_version": "3.1",
-          "severity": "MEDIUM",
-          "primary_product": null,
-          "product_family": "ics_iot",
-          "attack_types": [
-            "dos"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
         }
       ]
     },
@@ -13184,7 +13181,7 @@
       "key": "mobile",
       "label": "모바일",
       "count_7d": 0,
-      "count_30d": 293,
+      "count_30d": 146,
       "kev_count": 98,
       "top": [
         {
@@ -13501,6 +13498,42 @@
             "16.0.20625.20014"
           ],
           "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-95932"
+        },
+        {
+          "id": "CVE-2026-113749",
+          "title": "Heap-based buffer overflow in Microsoft Windows Codecs Library allows an…",
+          "score": 6,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.2,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 7.5,
+            "decay": -2.1
+          },
+          "why_now": "CVSS 7.5, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-11T04:18:52.763+09:00",
+          "poc_count": 0,
+          "epss": 0.0062,
+          "epss_percentile": 0.44,
+          "cvss": 7.5,
+          "cvss_version": "3.1",
+          "severity": "HIGH",
+          "primary_product": "365 Copilot",
+          "product_family": "mobile",
+          "attack_types": [
+            "memory"
+          ],
+          "summary_what": null,
+          "fix_versions": [
+            "16.0.20625.20014"
+          ],
+          "patch_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-113749"
         },
         {
           "id": "CVE-2026-112690",
@@ -13844,40 +13877,6 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": "https://android.googlesource.com/kernel/common/+/2f86c81dc9453ed385c4f0703d6bd664d0997567"
-        },
-        {
-          "id": "CVE-2026-58829",
-          "title": "In fuse_backing_mmap of backing.c, there is a possible memory corruption due to…",
-          "score": 5,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 8.4,
-            "decay": -3.4
-          },
-          "why_now": "CVSS 8.4, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-03T05:17:47.94+09:00",
-          "poc_count": 0,
-          "epss": 0.0012,
-          "epss_percentile": 0.00,
-          "cvss": 8.4,
-          "cvss_version": "3.1",
-          "severity": "HIGH",
-          "primary_product": "Android",
-          "product_family": "mobile",
-          "attack_types": [
-            "memory"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": "https://android.googlesource.com/kernel/common/+/517040c192cebb334766f43604e6a7ebb79d43ae"
         }
       ]
     },
