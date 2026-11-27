@@ -3,8 +3,8 @@
     {
       "key": "rce",
       "label": "원격 코드 실행",
-      "count_7d": 192,
-      "count_30d": 881,
+      "count_7d": 200,
+      "count_30d": 889,
       "kev_count": 331,
       "top": [
         {
@@ -780,8 +780,8 @@
     {
       "key": "injection",
       "label": "주입(SQL·명령)",
-      "count_7d": 296,
-      "count_30d": 1329,
+      "count_7d": 312,
+      "count_30d": 1345,
       "kev_count": 312,
       "top": [
         {
@@ -1538,8 +1538,8 @@
     {
       "key": "xss",
       "label": "크로스 사이트 스크립팅",
-      "count_7d": 562,
-      "count_30d": 1807,
+      "count_7d": 587,
+      "count_30d": 1832,
       "kev_count": 32,
       "top": [
         {
@@ -2229,8 +2229,8 @@
     {
       "key": "auth",
       "label": "인증·권한 우회",
-      "count_7d": 787,
-      "count_30d": 4475,
+      "count_7d": 814,
+      "count_30d": 4502,
       "kev_count": 272,
       "top": [
         {
@@ -2954,8 +2954,8 @@
     {
       "key": "info",
       "label": "정보 노출",
-      "count_7d": 142,
-      "count_30d": 801,
+      "count_7d": 146,
+      "count_30d": 805,
       "kev_count": 27,
       "top": [
         {
@@ -3655,8 +3655,8 @@
     {
       "key": "memory",
       "label": "메모리 손상",
-      "count_7d": 337,
-      "count_30d": 2605,
+      "count_7d": 341,
+      "count_30d": 2609,
       "kev_count": 463,
       "top": [
         {
@@ -4416,8 +4416,8 @@
     {
       "key": "dos",
       "label": "서비스 거부",
-      "count_7d": 249,
-      "count_30d": 1102,
+      "count_7d": 254,
+      "count_30d": 1107,
       "kev_count": 14,
       "top": [
         {
@@ -5109,8 +5109,8 @@
     {
       "key": "path",
       "label": "경로 조작·파일 업로드",
-      "count_7d": 147,
-      "count_30d": 852,
+      "count_7d": 167,
+      "count_30d": 872,
       "kev_count": 165,
       "top": [
         {
@@ -5688,6 +5688,40 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-115867",
+          "title": "The Database for Contact Form 7, WPforms, Elementor forms plugin for WordPress…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T11:16:43.77+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-104998",
           "title": "The Product Input Fields for WooCommerce plugin for WordPress is vulnerable to…",
           "score": 10,
@@ -5790,52 +5824,14 @@
           "summary_what": null,
           "fix_versions": [],
           "patch_url": null
-        },
-        {
-          "id": "CVE-2026-59310",
-          "title": "VMware vCenter contains a directory traversal vulnerability in the Syslog…",
-          "score": 10,
-          "score_breakdown": {
-            "kev": 50.0,
-            "ransomware": 10.0,
-            "epss": 26.5,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -86.8
-          },
-          "why_now": "랜섬웨어 캠페인에 사용 중",
-          "is_kev": true,
-          "kev_ransomware": true,
-          "kev_due_date": "2026-08-21",
-          "kev_added_at": "2026-08-18",
-          "published_at": "2026-07-30T22:16:53.993+09:00",
-          "poc_count": 0,
-          "epss": 0.88,
-          "epss_percentile": 0.999,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": "VMware vCenter Server",
-          "product_family": "cloud",
-          "attack_types": [
-            "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [
-            "8.0",
-            "9.0.2.0100",
-            "9.1.0.0300"
-          ],
-          "patch_url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
         }
       ]
     },
     {
       "key": "request_forgery",
       "label": "요청 위조(CSRF·SSRF)",
-      "count_7d": 123,
-      "count_30d": 609,
+      "count_7d": 124,
+      "count_30d": 610,
       "kev_count": 33,
       "top": [
         {
@@ -6536,8 +6532,8 @@
     {
       "key": "other",
       "label": "기타",
-      "count_7d": 339,
-      "count_30d": 2274,
+      "count_7d": 350,
+      "count_30d": 2285,
       "kev_count": 236,
       "top": [
         {
@@ -9519,8 +9515,8 @@
     {
       "key": "web_cms",
       "label": "웹 CMS·플러그인",
-      "count_7d": 551,
-      "count_30d": 2236,
+      "count_7d": 581,
+      "count_30d": 2266,
       "kev_count": 25,
       "top": [
         {
@@ -9889,6 +9885,75 @@
           "patch_url": null
         },
         {
+          "id": "CVE-2026-115867",
+          "title": "The Database for Contact Form 7, WPforms, Elementor forms plugin for WordPress…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T11:16:43.77+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "path"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
+          "id": "CVE-2026-106125",
+          "title": "The Sneeit Framework plugin for WordPress is vulnerable to Remote Code…",
+          "score": 10,
+          "score_breakdown": {
+            "kev": 0.0,
+            "ransomware": 0.0,
+            "epss": 0.0,
+            "news": 0.0,
+            "poc": 0.0,
+            "cvss": 9.8,
+            "decay": 0.0
+          },
+          "why_now": "CVSS 9.8, 최근 공개",
+          "is_kev": false,
+          "kev_ransomware": false,
+          "kev_due_date": null,
+          "kev_added_at": null,
+          "published_at": "2026-11-27T11:16:43.46+09:00",
+          "poc_count": 0,
+          "epss": null,
+          "epss_percentile": null,
+          "cvss": 9.8,
+          "cvss_version": "3.1",
+          "severity": "CRITICAL",
+          "primary_product": null,
+          "product_family": "web_cms",
+          "attack_types": [
+            "rce",
+            "injection"
+          ],
+          "summary_what": null,
+          "fix_versions": [],
+          "patch_url": null
+        },
+        {
           "id": "CVE-2026-104998",
           "title": "The Product Input Fields for WooCommerce plugin for WordPress is vulnerable to…",
           "score": 10,
@@ -10190,74 +10255,6 @@
           "product_family": "web_cms",
           "attack_types": [
             "path"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-133951",
-          "title": "The Simple Membership plugin for WordPress is vulnerable to Privilege…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.0,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.1,
-            "decay": 0.0
-          },
-          "why_now": "CVSS 9.1, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-27T00:17:25.487+09:00",
-          "poc_count": 0,
-          "epss": null,
-          "epss_percentile": null,
-          "cvss": 9.1,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
-          ],
-          "summary_what": null,
-          "fix_versions": [],
-          "patch_url": null
-        },
-        {
-          "id": "CVE-2026-125294",
-          "title": "The Nexter Blocks Pro plugin for WordPress is vulnerable to Privilege…",
-          "score": 9,
-          "score_breakdown": {
-            "kev": 0.0,
-            "ransomware": 0.0,
-            "epss": 0.2,
-            "news": 0.0,
-            "poc": 0.0,
-            "cvss": 9.8,
-            "decay": -0.9
-          },
-          "why_now": "CVSS 9.8, 최근 공개",
-          "is_kev": false,
-          "kev_ransomware": false,
-          "kev_due_date": null,
-          "kev_added_at": null,
-          "published_at": "2026-11-22T04:16:31.403+09:00",
-          "poc_count": 0,
-          "epss": 0.0064,
-          "epss_percentile": 0.45,
-          "cvss": 9.8,
-          "cvss_version": "3.1",
-          "severity": "CRITICAL",
-          "primary_product": null,
-          "product_family": "web_cms",
-          "attack_types": [
-            "auth"
           ],
           "summary_what": null,
           "fix_versions": [],
