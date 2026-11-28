@@ -111,6 +111,44 @@
     "patch_url": "https://www.drupal.org/sa-core-2026-017"
   },
   {
+    "id": "CVE-2026-136716",
+    "title": "예외 상황을 부적절하게 확인하는 취약점으로 공격자가 강제 브라우징을 할 수 있습니다",
+    "score": 60,
+    "score_breakdown": {
+      "kev": 50.0,
+      "ransomware": 0.0,
+      "epss": 0.4,
+      "news": 0.0,
+      "poc": 0.0,
+      "cvss": 9.8,
+      "decay": 0.0
+    },
+    "why_now": "CISA 악용 목록 등재",
+    "is_kev": true,
+    "kev_ransomware": false,
+    "kev_due_date": "2026-11-30",
+    "kev_added_at": "2026-11-27",
+    "published_at": "2026-11-26T10:17:10.517+09:00",
+    "poc_count": 0,
+    "epss": 0.012,
+    "epss_percentile": 0.68,
+    "cvss": 9.8,
+    "cvss_version": "3.1",
+    "severity": "CRITICAL",
+    "primary_product": "Drupal",
+    "product_family": "web_cms",
+    "attack_types": [
+      "other"
+    ],
+    "summary_what": "예외 상황을 부적절하게 확인하는 취약점으로 공격자가 강제 브라우징을 할 수 있습니다.",
+    "fix_versions": [
+      "10.6.23",
+      "11.3.23",
+      "11.4.14"
+    ],
+    "patch_url": "https://www.drupal.org/sa-core-2026-019"
+  },
+  {
     "id": "CVE-2026-133323",
     "title": "Mitel MiCollab의 AWV 구성 요소에서 매개변수 검증이 부족해 비인증 공격자가 블라인드 명령 주입을 수행하고 시스템 권한으로 임의…",
     "score": 59,
@@ -3659,39 +3697,5 @@
       "2.90\\(aahh.2\\)c0"
     ],
     "patch_url": "https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-stack-based-buffer-overflow-vulnerability-in-gs1900-series-switches-06-16-2026"
-  },
-  {
-    "id": "CVE-2026-76460",
-    "title": "A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow…",
-    "score": 12,
-    "score_breakdown": {
-      "kev": 50.0,
-      "ransomware": 0.0,
-      "epss": 3.5,
-      "news": 0.0,
-      "poc": 0.0,
-      "cvss": 10.0,
-      "decay": -51.2
-    },
-    "why_now": "CISA 악용 목록 등재",
-    "is_kev": true,
-    "kev_ransomware": false,
-    "kev_due_date": "2026-09-19",
-    "kev_added_at": "2026-09-16",
-    "published_at": "2026-09-17T06:17:21.43+09:00",
-    "poc_count": 0,
-    "epss": 0.12,
-    "epss_percentile": 0.96,
-    "cvss": 10.0,
-    "cvss_version": "3.1",
-    "severity": "CRITICAL",
-    "primary_product": "Cisco Identity Services Engine",
-    "product_family": "network",
-    "attack_types": [
-      "auth"
-    ],
-    "summary_what": null,
-    "fix_versions": [],
-    "patch_url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5"
   }
 ]
